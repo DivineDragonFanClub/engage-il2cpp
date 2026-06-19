@@ -20,6 +20,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-amiibosoundmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-amiibosoundmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AmiiboSoundMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:AmiiboSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <AmiiboSoundMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(AmiiboSoundMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:AmiiboSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <AmiiboSoundMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(AmiiboSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-amiibosoundmenu")]impl AmiiboSoundMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c883c0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -33,12 +56,10 @@ pub use __types::*;
 (AmiiboSoundMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AmiiboSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c88db0usize)as*mut u8, ::unity2::Il2CppString;
-(AmiiboSoundMenu)__receiver)}
+__AmiiboSoundMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <AmiiboSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c88e00usize)as*mut u8,();
-(AmiiboSoundMenu)__receiver)}
+__AmiiboSoundMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PlayPreviewSound(crate::app::musicdata::MusicData)` overload"]fn play_preview_sound(self,music_data:impl::core::convert::Into<crate::app::musicdata::MusicData>)->(){unsafe{let __receiver= <AmiiboSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c89100usize)as*mut u8,();

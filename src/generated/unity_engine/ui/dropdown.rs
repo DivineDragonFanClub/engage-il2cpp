@@ -28,9 +28,6 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/dropdown/Dropdown.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Dropdown")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Dropdown{#[offset(248)]#[rename(name="m_Template")]pub m_template:crate::unity_engine::recttransform::RectTransform, #[offset(256)]#[rename(name="m_CaptionText")]pub m_caption_text:crate::unity_engine::ui::text::Text, #[offset(264)]#[rename(name="m_CaptionImage")]pub m_caption_image:crate::unity_engine::ui::image::Image, #[offset(272)]#[rename(name="m_ItemText")]pub m_item_text:crate::unity_engine::ui::text::Text, #[offset(280)]#[rename(name="m_ItemImage")]pub m_item_image:crate::unity_engine::ui::image::Image, #[offset(288)]#[rename(name="m_Value")]pub m_value:i32, #[offset(296)]#[rename(name="m_Options")]pub m_options:crate::unity_engine::ui::dropdown::Dropdown_OptionDataList, #[offset(304)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::dropdown::Dropdown_DropdownEvent, #[offset(312)]#[rename(name="m_AlphaFadeSpeed")]pub m_alpha_fade_speed:f32, #[offset(320)]#[rename(name="m_Dropdown")]pub m_dropdown:crate::unity_engine::gameobject::GameObject, #[offset(328)]#[rename(name="m_Blocker")]pub m_blocker:crate::unity_engine::gameobject::GameObject, #[offset(336)]#[rename(name="m_Items")]pub m_items:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_DropdownItem> , #[offset(344)]#[rename(name="m_AlphaTweenRunner")]pub m_alpha_tween_runner:crate::unity_engine::ui::coroutine_tween::tweenrunner_1::TweenRunner_1<crate::unity_engine::ui::coroutine_tween::floattween::FloatTween> , #[offset(352)]#[rename(name="validTemplate")]pub valid_template:bool, #[static_field]#[rename(name="s_NoOptionData")]pub s_no_option_data:crate::unity_engine::ui::dropdown::Dropdown_OptionData,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/dropdown/Dropdown_OptionDataList.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Dropdown.OptionDataList")]#[parent(crate::system::object::Object)]pub struct Dropdown_OptionDataList{#[offset(16)]#[rename(name="m_Options")]pub m_options:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/dropdown/Dropdown_DropdownEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Dropdown.DropdownEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<i32>)]pub struct Dropdown_DropdownEvent{}
 
 
@@ -39,10 +36,136 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/dropdown/Dropdown_DropdownItem.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Dropdown.DropdownItem")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct Dropdown_DropdownItem{#[offset(24)]#[rename(name="m_Text")]pub m_text:crate::unity_engine::ui::text::Text, #[offset(32)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(40)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(48)]#[rename(name="m_Toggle")]pub m_toggle:crate::unity_engine::ui::toggle::Toggle,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/dropdown/Dropdown_OptionDataList.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Dropdown.OptionDataList")]#[parent(crate::system::object::Object)]pub struct Dropdown_OptionDataList{#[offset(16)]#[rename(name="m_Options")]pub m_options:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData> ,}
+
 }
 
 #[cfg(feature = "unity_engine-ui-dropdown-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-dropdown")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Dropdown_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:Dropdown,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start(this:Dropdown,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:Dropdown,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(Dropdown, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_pointer_click(this:Dropdown,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_submit(this:Dropdown,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_cancel(this:Dropdown,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"OnCancel",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn create_blocker(this:Dropdown,root_canvas:crate::unity_engine::canvas::Canvas,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"CreateBlocker",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::canvas::Canvas, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,root_canvas,__mi)}
+pub unsafe fn destroy_blocker(this:Dropdown,blocker:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyBlocker",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,blocker,__mi)}
+pub unsafe fn create_dropdown_list(this:Dropdown,template:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"CreateDropdownList",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,template,__mi)}
+pub unsafe fn destroy_dropdown_list(this:Dropdown,dropdown_list:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyDropdownList",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,dropdown_list,__mi)}
+pub unsafe fn create_item(this:Dropdown,item_template:crate::unity_engine::ui::dropdown::Dropdown_DropdownItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::dropdown::Dropdown_DropdownItem{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"CreateItem",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::ui::dropdown::Dropdown_DropdownItem, ::unity2::OptionalMethod,)->crate::unity_engine::ui::dropdown::Dropdown_DropdownItem= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,item_template,__mi)}
+pub unsafe fn destroy_item(this:Dropdown,item:crate::unity_engine::ui::dropdown::Dropdown_DropdownItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <Dropdown as::unity2::ClassIdentity> ::NAME,"DestroyItem",));
+let inner:extern "C" fn(Dropdown,crate::unity_engine::ui::dropdown::Dropdown_DropdownItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,item,__mi)}
+}
 
 #[cfg(feature="unity_engine-ui-dropdown")]impl Dropdown{pub fn get_or_add_component<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->M0{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<Dropdown as::unity2::ClassIdentity> ::class(),"GetOrAddComponent",1,)}
 );
@@ -154,16 +277,13 @@ __f(::core::convert::Into::into(go), ::core::option::Option::Some(__mi_opaque),)
 (Dropdown)__receiver)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3184c60usize)as*mut u8,();
-(Dropdown)__receiver)}
+__Dropdown_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3184d90usize)as*mut u8,();
-(Dropdown)__receiver)}
+__Dropdown_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3184e40usize)as*mut u8,();
-(Dropdown)__receiver)}
+__Dropdown_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RefreshShownValue()` overload"]fn refresh_shown_value(self,)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3183de0usize)as*mut u8,();
@@ -190,44 +310,35 @@ __f(::core::convert::Into::into(go), ::core::option::Option::Some(__mi_opaque),)
 (Dropdown)__receiver)}
 }
 #[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3185af0usize)as*mut u8,();
-(Dropdown)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Dropdown_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31868d0usize)as*mut u8,();
-(Dropdown)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__Dropdown_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_cancel(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31868e0usize)as*mut u8,();
-(Dropdown)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__Dropdown_unity2_raw::on_cancel(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3185b00usize)as*mut u8,();
 (Dropdown)__receiver)}
 }
 #[doc="`CreateBlocker(crate::unity_engine::canvas::Canvas)` overload"]fn create_blocker(self,root_canvas:impl::core::convert::Into<crate::unity_engine::canvas::Canvas>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3186f10usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(Dropdown)__receiver,(crate::unity_engine::canvas::Canvas)::core::convert::Into::into(root_canvas))}
+__Dropdown_unity2_raw::create_blocker(__receiver, ::core::convert::Into::into(root_canvas), ::core::option::Option::None)}
 }
 #[doc="`DestroyBlocker(crate::unity_engine::gameobject::GameObject)` overload"]fn destroy_blocker(self,blocker:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3187360usize)as*mut u8,();
-(Dropdown)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(blocker))}
+__Dropdown_unity2_raw::destroy_blocker(__receiver, ::core::convert::Into::into(blocker), ::core::option::Option::None)}
 }
 #[doc="`CreateDropdownList(crate::unity_engine::gameobject::GameObject)` overload"]fn create_dropdown_list(self,template:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31873d0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(Dropdown)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(template))}
+__Dropdown_unity2_raw::create_dropdown_list(__receiver, ::core::convert::Into::into(template), ::core::option::Option::None)}
 }
 #[doc="`DestroyDropdownList(crate::unity_engine::gameobject::GameObject)` overload"]fn destroy_dropdown_list(self,dropdown_list:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3187450usize)as*mut u8,();
-(Dropdown)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(dropdown_list))}
+__Dropdown_unity2_raw::destroy_dropdown_list(__receiver, ::core::convert::Into::into(dropdown_list), ::core::option::Option::None)}
 }
 #[doc="`CreateItem(crate::unity_engine::ui::dropdown::Dropdown_DropdownItem)` overload"]fn create_item(self,item_template:impl::core::convert::Into<crate::unity_engine::ui::dropdown::Dropdown_DropdownItem>)->crate::unity_engine::ui::dropdown::Dropdown_DropdownItem{unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31874c0usize)as*mut u8,crate::unity_engine::ui::dropdown::Dropdown_DropdownItem;
-(Dropdown)__receiver,(crate::unity_engine::ui::dropdown::Dropdown_DropdownItem)::core::convert::Into::into(item_template))}
+__Dropdown_unity2_raw::create_item(__receiver, ::core::convert::Into::into(item_template), ::core::option::Option::None)}
 }
 #[doc="`DestroyItem(crate::unity_engine::ui::dropdown::Dropdown_DropdownItem)` overload"]fn destroy_item(self,item:impl::core::convert::Into<crate::unity_engine::ui::dropdown::Dropdown_DropdownItem>)->(){unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3187540usize)as*mut u8,();
-(Dropdown)__receiver,(crate::unity_engine::ui::dropdown::Dropdown_DropdownItem)::core::convert::Into::into(item))}
+__Dropdown_unity2_raw::destroy_item(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)}
 }
 #[doc="`AddItem(crate::unity_engine::ui::dropdown::Dropdown_OptionData, bool, crate::unity_engine::ui::dropdown::Dropdown_DropdownItem, crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_DropdownItem>)` overload"]fn add_item(self,data:impl::core::convert::Into<crate::unity_engine::ui::dropdown::Dropdown_OptionData> ,selected:impl::core::convert::Into<bool> ,item_template:impl::core::convert::Into<crate::unity_engine::ui::dropdown::Dropdown_DropdownItem> ,items:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_DropdownItem> >)->crate::unity_engine::ui::dropdown::Dropdown_DropdownItem{unsafe{let __receiver= <Dropdown as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3186ac0usize)as*mut u8,crate::unity_engine::ui::dropdown::Dropdown_DropdownItem;
@@ -323,34 +434,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="unity_engine-ui-dropdown")]pub trait IDropdown_OptionDataListMethods:IDropdown_OptionDataList{#[doc="`get_options()` overload"]fn get_options(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>{unsafe{let __receiver= <Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c490usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData> ;
-(Dropdown_OptionDataList)__receiver)}
-}
-#[doc="`set_options(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)` overload"]fn set_options(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData> >)->(){unsafe{let __receiver= <Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c4a0usize)as*mut u8,();
-(Dropdown_OptionDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c4b0usize)as*mut u8,();
-(Dropdown_OptionDataList)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-ui-dropdown")]impl<__T:IDropdown_OptionDataList>IDropdown_OptionDataListMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-dropdown")]impl Dropdown_OptionDataList{pub fn get_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="unity_engine-ui-dropdown")]impl Dropdown_OptionDataList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Dropdown_OptionDataList), ::core::stringify!(new),));
- <Self as IDropdown_OptionDataListMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="unity_engine-ui-dropdown")]pub trait IDropdown_DropdownEventMethods:IDropdown_DropdownEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Dropdown_DropdownEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c130usize)as*mut u8,();
 (Dropdown_DropdownEvent)__receiver)}
@@ -437,6 +520,29 @@ this}
 this}
 }
 
+#[cfg(feature="unity_engine-ui-dropdown")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Dropdown_DropdownItem_unity2_raw{use super:: * ;
+pub unsafe fn on_pointer_enter(this:Dropdown_DropdownItem,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Dropdown_DropdownItem as::unity2::ClassIdentity> ::NAME,"OnPointerEnter",));
+let inner:extern "C" fn(Dropdown_DropdownItem,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_cancel(this:Dropdown_DropdownItem,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Dropdown_DropdownItem as::unity2::ClassIdentity> ::NAME,"OnCancel",));
+let inner:extern "C" fn(Dropdown_DropdownItem,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+}
+
 #[cfg(feature="unity_engine-ui-dropdown")]pub trait IDropdown_DropdownItemMethods:IDropdown_DropdownItem{#[doc="`get_text()` overload"]fn get_text(self,)->crate::unity_engine::ui::text::Text{unsafe{let __receiver= <Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c190usize)as*mut u8,crate::unity_engine::ui::text::Text;
 (Dropdown_DropdownItem)__receiver)}
@@ -470,12 +576,10 @@ this}
 (Dropdown_DropdownItem)__receiver,(crate::unity_engine::ui::toggle::Toggle)::core::convert::Into::into(value))}
 }
 #[doc="`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_enter(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c210usize)as*mut u8,();
-(Dropdown_DropdownItem)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Dropdown_DropdownItem_unity2_raw::on_pointer_enter(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnCancel(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_cancel(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c2a0usize)as*mut u8,();
-(Dropdown_DropdownItem)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__Dropdown_DropdownItem_unity2_raw::on_cancel(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Dropdown_DropdownItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c360usize)as*mut u8,();
@@ -505,15 +609,40 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="unity_engine-ui-dropdown")]pub trait IDropdown_OptionDataListMethods:IDropdown_OptionDataList{#[doc="`get_options()` overload"]fn get_options(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>{unsafe{let __receiver= <Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c490usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData> ;
+(Dropdown_OptionDataList)__receiver)}
+}
+#[doc="`set_options(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)` overload"]fn set_options(self,value:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData> >)->(){unsafe{let __receiver= <Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c4a0usize)as*mut u8,();
+(Dropdown_OptionDataList)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::dropdown::Dropdown_OptionData>)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Dropdown_OptionDataList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0c4b0usize)as*mut u8,();
+(Dropdown_OptionDataList)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-dropdown")]impl<__T:IDropdown_OptionDataList>IDropdown_OptionDataListMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-dropdown")]impl Dropdown_OptionDataList{pub fn get_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_options_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-ui-dropdown")]impl Dropdown_OptionDataList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Dropdown_OptionDataList), ::core::stringify!(new),));
+ <Self as IDropdown_OptionDataListMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-ui-dropdown")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Dropdown;
     pub use super::IDropdown;
     pub use super::IDropdownMethods;
-    pub use super::Dropdown_OptionDataList;
-    pub use super::IDropdown_OptionDataList;
-    pub use super::IDropdown_OptionDataListMethods;
     pub use super::Dropdown_DropdownEvent;
     pub use super::IDropdown_DropdownEvent;
     pub use super::IDropdown_DropdownEventMethods;
@@ -523,6 +652,9 @@ pub mod prelude {
     pub use super::Dropdown_DropdownItem;
     pub use super::IDropdown_DropdownItem;
     pub use super::IDropdown_DropdownItemMethods;
+    pub use super::Dropdown_OptionDataList;
+    pub use super::IDropdown_OptionDataList;
+    pub use super::IDropdown_OptionDataListMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

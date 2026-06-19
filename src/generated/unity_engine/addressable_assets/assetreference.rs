@@ -16,6 +16,169 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-addressable_assets-assetreference-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-addressable_assets-assetreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetReference_unity2_raw{use super:: * ;
+pub unsafe fn get_runtime_key(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"get_RuntimeKey",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_asset_guid(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"get_AssetGUID",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sub_object_name(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"get_SubObjectName",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_sub_object_name(this:AssetReference,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"set_SubObjectName",));
+let inner:extern "C" fn(AssetReference, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_sub_ojbect_type(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"get_SubOjbectType",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_asset(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"get_Asset",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn load_scene_async(this:AssetReference,load_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,activate_on_load:bool,priority:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"LoadSceneAsync",));
+let inner:extern "C" fn(AssetReference,crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,bool,i32, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,load_mode,activate_on_load,priority,__mi)}
+pub unsafe fn un_load_scene(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"UnLoadScene",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn instantiate_async(this:AssetReference,position:crate::unity_engine::vector3::Vector3,rotation:crate::unity_engine::quaternion::Quaternion,parent:crate::unity_engine::transform::Transform,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"InstantiateAsync",));
+let inner:extern "C" fn(AssetReference,crate::unity_engine::vector3::Vector3,crate::unity_engine::quaternion::Quaternion,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,position,rotation,parent,__mi)}
+pub unsafe fn instantiate_async_2(this:AssetReference,parent:crate::unity_engine::transform::Transform,instantiate_in_world_space:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"InstantiateAsync",));
+let inner:extern "C" fn(AssetReference,crate::unity_engine::transform::Transform,bool, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,parent,instantiate_in_world_space,__mi)}
+pub unsafe fn runtime_key_is_valid(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"RuntimeKeyIsValid",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn release_asset(this:AssetReference,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"ReleaseAsset",));
+let inner:extern "C" fn(AssetReference, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn release_instance(this:AssetReference,obj:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"ReleaseInstance",));
+let inner:extern "C" fn(AssetReference,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn validate_asset(this:AssetReference,obj:crate::unity_engine::object_2::Object_2,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
+let inner:extern "C" fn(AssetReference,crate::unity_engine::object_2::Object_2, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn validate_asset_2(this:AssetReference,path: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <AssetReference as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
+let inner:extern "C" fn(AssetReference, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,path,__mi)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-assetreference")]impl AssetReference{pub fn create_failed_operation<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>()->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<AssetReference as::unity2::ClassIdentity> ::class(),"CreateFailedOperation",0,)}
 );
  #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
@@ -43,24 +206,19 @@ __f(::core::option::Option::Some(__mi_opaque),)}
 (AssetReference)__receiver)}
 }
 #[doc="`get_RuntimeKey()` overload"]fn get_runtime_key(self,)->crate::system::object::Object{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db22e0usize)as*mut u8,crate::system::object::Object;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::get_runtime_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_AssetGUID()` overload"]fn get_asset_guid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2390usize)as*mut u8, ::unity2::Il2CppString;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::get_asset_guid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_SubObjectName()` overload"]fn get_sub_object_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db23a0usize)as*mut u8, ::unity2::Il2CppString;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::get_sub_object_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_SubObjectName(::unity2::Il2CppString)` overload"]fn set_sub_object_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db23b0usize)as*mut u8,();
-(AssetReference)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__AssetReference_unity2_raw::set_sub_object_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_SubOjbectType()` overload"]fn get_sub_ojbect_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db23c0usize)as*mut u8, ::unity2::SystemType;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::get_sub_ojbect_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2480usize)as*mut u8,bool;
@@ -79,12 +237,10 @@ __f(::core::option::Option::Some(__mi_opaque),)}
 (AssetReference)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(guid))}
 }
 #[doc="`get_Asset()` overload"]fn get_asset(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2590usize)as*mut u8,crate::unity_engine::object_2::Object_2;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::get_asset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2640usize)as*mut u8, ::unity2::Il2CppString;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 fn load_asset<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<M0>{static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<AssetReference as::unity2::ClassIdentity> ::class(),"LoadAsset",0,)}
 );
@@ -141,40 +297,31 @@ let __mi_opaque: & 'static()= & *(__inflated as*const _ as*const());
 __f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
 }
 #[doc="`LoadSceneAsync(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]fn load_scene_async(self,load_mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode> ,activate_on_load:impl::core::convert::Into<bool> ,priority:impl::core::convert::Into<i32>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db27b0usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ;
-(AssetReference)__receiver,(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(load_mode),(bool)::core::convert::Into::into(activate_on_load),(i32)::core::convert::Into::into(priority))}
+__AssetReference_unity2_raw::load_scene_async(__receiver, ::core::convert::Into::into(load_mode), ::core::convert::Into::into(activate_on_load), ::core::convert::Into::into(priority), ::core::option::Option::None)}
 }
 #[doc="`UnLoadScene()` overload"]fn un_load_scene(self,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2940usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::un_load_scene(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InstantiateAsync(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::transform::Transform)` overload"]fn instantiate_async(self,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject>{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db29f0usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ;
-(AssetReference)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(rotation),(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent))}
+__AssetReference_unity2_raw::instantiate_async(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(rotation), ::core::convert::Into::into(parent), ::core::option::Option::None)}
 }
 #[doc="`InstantiateAsync(crate::unity_engine::transform::Transform, bool)` overload"]fn instantiate_async_2(self,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,instantiate_in_world_space:impl::core::convert::Into<bool>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject>{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2b00usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ;
-(AssetReference)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(bool)::core::convert::Into::into(instantiate_in_world_space))}
+__AssetReference_unity2_raw::instantiate_async_2(__receiver, ::core::convert::Into::into(parent), ::core::convert::Into::into(instantiate_in_world_space), ::core::option::Option::None)}
 }
 #[doc="`RuntimeKeyIsValid()` overload"]fn runtime_key_is_valid(self,)->bool{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2bc0usize)as*mut u8,bool;
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::runtime_key_is_valid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReleaseAsset()` overload"]fn release_asset(self,)->(){unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2cb0usize)as*mut u8,();
-(AssetReference)__receiver)}
+__AssetReference_unity2_raw::release_asset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReleaseInstance(crate::unity_engine::gameobject::GameObject)` overload"]fn release_instance(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2db0usize)as*mut u8,();
-(AssetReference)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+__AssetReference_unity2_raw::release_instance(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`ValidateAsset(crate::unity_engine::object_2::Object_2)` overload"]fn validate_asset(self,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->bool{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2e20usize)as*mut u8,bool;
-(AssetReference)__receiver,(crate::unity_engine::object_2::Object_2)::core::convert::Into::into(obj))}
+__AssetReference_unity2_raw::validate_asset(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`ValidateAsset(::unity2::Il2CppString)` overload"]fn validate_asset_2(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AssetReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2e30usize)as*mut u8,bool;
-(AssetReference)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+__AssetReference_unity2_raw::validate_asset_2(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)}
 }
 }
 

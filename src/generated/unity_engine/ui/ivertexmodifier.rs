@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-ui-ivertexmodifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IVertexModifier_unity2_raw{use super:: * ;
-pub unsafe fn modify_vertices(this:IVertexModifier,verts:crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyVertices").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ModifyVertices", <IVertexModifier as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn modify_vertices(this:IVertexModifier,verts:crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IVertexModifier as::unity2::ClassIdentity> ::NAME,"ModifyVertices",));
 let inner:extern "C" fn(IVertexModifier,crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

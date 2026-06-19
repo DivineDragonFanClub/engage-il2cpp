@@ -20,13 +20,64 @@ use crate::unity_engine::timeline::runtimeelement::{IRuntimeElement,RuntimeEleme
 #[cfg(feature = "unity_engine-timeline-runtimeclip-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-timeline-runtimeclip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeClip_unity2_raw{use super:: * ;
+pub unsafe fn get_start(this:RuntimeClip,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <RuntimeClip as::unity2::ClassIdentity> ::NAME,"get_start",));
+let inner:extern "C" fn(RuntimeClip, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_duration(this:RuntimeClip,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RuntimeClip as::unity2::ClassIdentity> ::NAME,"get_duration",));
+let inner:extern "C" fn(RuntimeClip, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_enable(this:RuntimeClip,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RuntimeClip as::unity2::ClassIdentity> ::NAME,"set_enable",));
+let inner:extern "C" fn(RuntimeClip,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn evaluate_at(this:RuntimeClip,local_time:f64,frame_data:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RuntimeClip as::unity2::ClassIdentity> ::NAME,"EvaluateAt",));
+let inner:extern "C" fn(RuntimeClip,f64,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,local_time,frame_data,__mi)}
+pub unsafe fn reset(this:RuntimeClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RuntimeClip as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(RuntimeClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-timeline-runtimeclip")]pub trait IRuntimeClipMethods:IRuntimeClip{#[doc="`get_start()` overload"]fn get_start(self,)->f64{unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d94c0usize)as*mut u8,f64;
-(RuntimeClip)__receiver)}
+__RuntimeClip_unity2_raw::get_start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9500usize)as*mut u8,f64;
-(RuntimeClip)__receiver)}
+__RuntimeClip_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::playable::Playable)` overload"]fn ctor(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip> ,clip_playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,parent_mixer:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d2800usize)as*mut u8,();
@@ -49,8 +100,7 @@ pub use __types::*;
 (RuntimeClip)__receiver)}
 }
 #[doc="`set_enable(bool)` overload"]fn set_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d96e0usize)as*mut u8,();
-(RuntimeClip)__receiver,(bool)::core::convert::Into::into(value))}
+__RuntimeClip_unity2_raw::set_enable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`SetTime(f64)` overload"]fn set_time(self,time:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d98a0usize)as*mut u8,();
@@ -61,12 +111,10 @@ pub use __types::*;
 (RuntimeClip)__receiver,(f64)::core::convert::Into::into(duration))}
 }
 #[doc="`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"]fn evaluate_at(self,local_time:impl::core::convert::Into<f64> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9980usize)as*mut u8,();
-(RuntimeClip)__receiver,(f64)::core::convert::Into::into(local_time),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(frame_data))}
+__RuntimeClip_unity2_raw::evaluate_at(__receiver, ::core::convert::Into::into(local_time), ::core::convert::Into::into(frame_data), ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <RuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9fa0usize)as*mut u8,();
-(RuntimeClip)__receiver)}
+__RuntimeClip_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 }
 

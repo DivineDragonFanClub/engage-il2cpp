@@ -26,21 +26,51 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-cooking_menu-dishselectmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-cooking_menu-dishselectmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DishSelectMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:DishSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(DishSelectMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn after_build(this:DishSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(DishSelectMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:DishSelectMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DishSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(DishSelectMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+}
+
 #[cfg(feature="app-cooking_menu-dishselectmenucontent")]pub trait IDishSelectMenuContentMethods:IDishSelectMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf9280usize)as*mut u8,();
-(DishSelectMenuContent)__receiver)}
+__DishSelectMenuContent_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetMessage()` overload"]fn set_message(self,)->(){unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf92b0usize)as*mut u8,();
 (DishSelectMenuContent)__receiver)}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf97b0usize)as*mut u8,();
-(DishSelectMenuContent)__receiver)}
+__DishSelectMenuContent_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf99b0usize)as*mut u8,f32;
-(DishSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__DishSelectMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <DishSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf82a0usize)as*mut u8,bool;

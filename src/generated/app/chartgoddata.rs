@@ -25,12 +25,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData_FlagField.md"))]#[::unity2::class(namespace="App",name="ChartGodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::chartgoddata::ChartGodData_Flags>)]pub struct ChartGodData_FlagField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData.md"))]#[::unity2::class(namespace="App",name="ChartGodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::chartgoddata::ChartGodData>)]pub struct ChartGodData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ChartGodData_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for ChartGodData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ChartGodData.Flags";
@@ -44,10 +38,29 @@ impl ChartGodData_Flags{pub fn add_god_lueur()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData_FlagField.md"))]#[::unity2::class(namespace="App",name="ChartGodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::chartgoddata::ChartGodData_Flags>)]pub struct ChartGodData_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartgoddata/ChartGodData.md"))]#[::unity2::class(namespace="App",name="ChartGodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::chartgoddata::ChartGodData>)]pub struct ChartGodData{}
+
 }
 
 #[cfg(feature = "app-chartgoddata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-chartgoddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ChartGodData_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:ChartGodData_FlagField,value:crate::app::chartgoddata::ChartGodData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ChartGodData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(ChartGodData_FlagField,crate::app::chartgoddata::ChartGodData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
 
 #[cfg(feature="app-chartgoddata")]pub trait IChartGodData_FlagFieldMethods:IChartGodData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ChartGodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61e0usize)as*mut u8,();
@@ -58,8 +71,7 @@ pub use __types::*;
 (ChartGodData_FlagField)__receiver,(crate::app::chartgoddata::ChartGodData_Flags)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::chartgoddata::ChartGodData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::chartgoddata::ChartGodData_Flags>)->i32{unsafe{let __receiver= <ChartGodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19c62a0usize)as*mut u8,i32;
-(ChartGodData_FlagField)__receiver,(crate::app::chartgoddata::ChartGodData_Flags)::core::convert::Into::into(value))}
+__ChartGodData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 
@@ -80,6 +92,19 @@ this}
  failed to instantiate", ::core::stringify!(ChartGodData_FlagField), ::core::stringify!(new_2),));
  <Self as IChartGodData_FlagFieldMethods> ::ctor_2(this,f);
 this}
+}
+
+#[cfg(feature="app-chartgoddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ChartGodData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:ChartGodData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ChartGodData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(ChartGodData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-chartgoddata")]impl ChartGodData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0220usize)as*mut u8,();
@@ -203,8 +228,7 @@ this}
 (ChartGodData)__receiver,(crate::app::chartgoddata::ChartGodData_FlagField)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0490usize)as*mut u8, ::unity2::Il2CppString;
-(ChartGodData)__receiver)}
+__ChartGodData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Gid2Level(::unity2::Il2CppString)` overload"]fn gid2_level(self,gid:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <ChartGodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea05c0usize)as*mut u8,i32;
@@ -263,13 +287,13 @@ this}
 #[cfg(feature = "app-chartgoddata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ChartGodData_Flags;
     pub use super::ChartGodData_FlagField;
     pub use super::IChartGodData_FlagField;
     pub use super::IChartGodData_FlagFieldMethods;
     pub use super::ChartGodData;
     pub use super::IChartGodData;
     pub use super::IChartGodDataMethods;
-    pub use super::ChartGodData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

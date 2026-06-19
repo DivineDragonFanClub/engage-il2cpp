@@ -20,17 +20,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root_motion-final_ik-iksolverccd-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-iksolverccd")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverCCD_unity2_raw{use super:: * ;
+pub unsafe fn on_initiate(this:IKSolverCCD,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IKSolverCCD as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
+let inner:extern "C" fn(IKSolverCCD, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:IKSolverCCD,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IKSolverCCD as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(IKSolverCCD, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-iksolverccd")]pub trait IIKSolverCCDMethods:IIKSolverCCD{#[doc="`FadeOutBoneWeights()` overload"]fn fade_out_bone_weights(self,)->(){unsafe{let __receiver= <IKSolverCCD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c289a0usize)as*mut u8,();
 (IKSolverCCD)__receiver)}
 }
 #[doc="`OnInitiate()` overload"]fn on_initiate(self,)->(){unsafe{let __receiver= <IKSolverCCD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c28a40usize)as*mut u8,();
-(IKSolverCCD)__receiver)}
+__IKSolverCCD_unity2_raw::on_initiate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <IKSolverCCD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c28eb0usize)as*mut u8,();
-(IKSolverCCD)__receiver)}
+__IKSolverCCD_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Solve(crate::unity_engine::vector3::Vector3)` overload"]fn solve(self,target_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverCCD as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c29440usize)as*mut u8,();

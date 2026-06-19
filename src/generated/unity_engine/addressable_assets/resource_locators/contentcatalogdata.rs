@@ -32,49 +32,142 @@ impl::unity2::IlType for ContentCatalogData_Bucket{fn il_type()-> &'static::unit
 #[cfg(feature = "unity_engine-addressable_assets-resource_locators-contentcatalogdata-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ContentCatalogData_CompactLocation_unity2_raw{use super:: * ;
+pub unsafe fn get_internal_id(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_InternalId",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_provider_id(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_ProviderId",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_dependencies(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_Dependencies",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_has_dependencies(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_HasDependencies",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_dependency_hash_code(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_DependencyHashCode",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_data(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_Data",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_primary_key(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_PrimaryKey",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_resource_type(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"get_ResourceType",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:ContentCatalogData_CompactLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn hash(this:ContentCatalogData_CompactLocation,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ContentCatalogData_CompactLocation as::unity2::ClassIdentity> ::NAME,"Hash",));
+let inner:extern "C" fn(ContentCatalogData_CompactLocation, ::unity2::SystemType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-resource_locators-contentcatalogdata")]pub trait IContentCatalogData_CompactLocationMethods:IContentCatalogData_CompactLocation{#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbedc0usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_internal_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbedd0usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_provider_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbede0usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_dependencies(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_HasDependencies()` overload"]fn get_has_dependencies(self,)->bool{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeeb0usize)as*mut u8,bool;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_has_dependencies(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_DependencyHashCode()` overload"]fn get_dependency_hash_code(self,)->i32{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeec0usize)as*mut u8,i32;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_dependency_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeed0usize)as*mut u8,crate::system::object::Object;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_data(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_PrimaryKey()` overload"]fn get_primary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeee0usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_primary_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_PrimaryKey(::unity2::Il2CppString)` overload"]fn set_primary_key(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeef0usize)as*mut u8,();
 (ContentCatalogData_CompactLocation)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef00usize)as*mut u8, ::unity2::SystemType;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::get_resource_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef10usize)as*mut u8, ::unity2::Il2CppString;
-(ContentCatalogData_CompactLocation)__receiver)}
+__ContentCatalogData_CompactLocation_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Hash(::unity2::SystemType)` overload"]fn hash(self,t:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbef20usize)as*mut u8,i32;
-(ContentCatalogData_CompactLocation)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+__ContentCatalogData_CompactLocation_unity2_raw::hash(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap, ::unity2::Il2CppString, ::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object, i32, ::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn ctor(self,locator:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::resourcelocationmap::ResourceLocationMap> ,internal_id:impl::core::convert::Into< ::unity2::Il2CppString> ,provider_id:impl::core::convert::Into< ::unity2::Il2CppString> ,dependency_key:impl::core::convert::Into<crate::system::object::Object> ,data:impl::core::convert::Into<crate::system::object::Object> ,dep_hash:impl::core::convert::Into<i32> ,primary_key:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <ContentCatalogData_CompactLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db5180usize)as*mut u8,();

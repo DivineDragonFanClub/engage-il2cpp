@@ -14,13 +14,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream_SynchronousAsyncResult.md"))]#[::unity2::class(namespace="System.IO",name="Stream.SynchronousAsyncResult")]#[parent(crate::system::object::Object)]pub struct Stream_SynchronousAsyncResult{#[offset(16)]#[rename(name="_stateObject")]pub state_object: ::unity2::IlInstance, #[offset(24)]#[rename(name="_isWrite")]pub is_write:bool, #[offset(48)]#[rename(name="_endXxxCalled")]pub end_xxx_called:bool, #[offset(52)]#[rename(name="_bytesRead")]pub bytes_read:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream.md"))]#[::unity2::class(namespace="System.IO",name="Stream")]pub struct Stream{#[static_field]#[rename(name="Null")]pub null:crate::system::io::stream::Stream, #[offset(24)]#[rename(name="_activeReadWriteTask")]pub active_read_write_task:crate::system::io::stream::Stream_ReadWriteTask,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream_NullStream.md"))]#[::unity2::class(namespace="System.IO",name="Stream.NullStream")]#[parent(crate::system::io::stream::Stream)]pub struct Stream_NullStream{#[static_field]#[rename(name="s_nullReadTask")]pub s_null_read_task: ::unity2::IlInstance,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream_ReadWriteTask.md"))]#[::unity2::class(namespace="System.IO",name="Stream.ReadWriteTask")]pub struct Stream_ReadWriteTask{#[offset(84)]#[rename(name="_isRead")]pub is_read:bool, #[offset(88)]#[rename(name="_stream")]pub stream:crate::system::io::stream::Stream, #[offset(96)]#[rename(name="_buffer")]pub buffer: ::unity2::Array<u8> , #[offset(104)]#[rename(name="_offset")]pub offset:i32, #[offset(108)]#[rename(name="_count")]pub count:i32, #[static_field]#[rename(name="s_invokeAsyncCallback")]pub s_invoke_async_callback: ::unity2::IlInstance,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream.md"))]#[::unity2::class(namespace="System.IO",name="Stream")]pub struct Stream{#[static_field]#[rename(name="Null")]pub null:crate::system::io::stream::Stream, #[offset(24)]#[rename(name="_activeReadWriteTask")]pub active_read_write_task:crate::system::io::stream::Stream_ReadWriteTask,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream_ReadWriteParameters.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Stream_ReadWriteParameters{pub buffer: ::unity2::Array<u8>,pub offset:i32,pub count:i32,}
@@ -33,10 +30,46 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for Stream_ReadWriteParameters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/stream/Stream_NullStream.md"))]#[::unity2::class(namespace="System.IO",name="Stream.NullStream")]#[parent(crate::system::io::stream::Stream)]pub struct Stream_NullStream{#[static_field]#[rename(name="s_nullReadTask")]pub s_null_read_task: ::unity2::IlInstance,}
+
 }
 
 #[cfg(feature = "system-io-stream-types")]
 pub use __types::*;
+
+#[cfg(feature="system-io-stream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Stream_SynchronousAsyncResult_unity2_raw{use super:: * ;
+pub unsafe fn get_is_completed(this:Stream_SynchronousAsyncResult,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Stream_SynchronousAsyncResult as::unity2::ClassIdentity> ::NAME,"get_IsCompleted",));
+let inner:extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_async_state(this:Stream_SynchronousAsyncResult,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Stream_SynchronousAsyncResult as::unity2::ClassIdentity> ::NAME,"get_AsyncState",));
+let inner:extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_completed_synchronously(this:Stream_SynchronousAsyncResult,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Stream_SynchronousAsyncResult as::unity2::ClassIdentity> ::NAME,"get_CompletedSynchronously",));
+let inner:extern "C" fn(Stream_SynchronousAsyncResult, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="system-io-stream")]pub trait IStream_SynchronousAsyncResultMethods:IStream_SynchronousAsyncResult{#[doc="`.ctor(i32, crate::system::object::Object)` overload"]fn ctor(self,bytes_read:impl::core::convert::Into<i32> ,async_state_object:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Stream_SynchronousAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58d60usize)as*mut u8,();
@@ -47,16 +80,13 @@ pub use __types::*;
 (Stream_SynchronousAsyncResult)__receiver,(crate::system::object::Object)::core::convert::Into::into(async_state_object))}
 }
 #[doc="`get_IsCompleted()` overload"]fn get_is_completed(self,)->bool{unsafe{let __receiver= <Stream_SynchronousAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58e60usize)as*mut u8,bool;
-(Stream_SynchronousAsyncResult)__receiver)}
+__Stream_SynchronousAsyncResult_unity2_raw::get_is_completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_AsyncState()` overload"]fn get_async_state(self,)->crate::system::object::Object{unsafe{let __receiver= <Stream_SynchronousAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58fa0usize)as*mut u8,crate::system::object::Object;
-(Stream_SynchronousAsyncResult)__receiver)}
+__Stream_SynchronousAsyncResult_unity2_raw::get_async_state(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CompletedSynchronously()` overload"]fn get_completed_synchronously(self,)->bool{unsafe{let __receiver= <Stream_SynchronousAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58fb0usize)as*mut u8,bool;
-(Stream_SynchronousAsyncResult)__receiver)}
+__Stream_SynchronousAsyncResult_unity2_raw::get_completed_synchronously(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ThrowIfError()` overload"]fn throw_if_error(self,)->(){unsafe{let __receiver= <Stream_SynchronousAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58fc0usize)as*mut u8,();
@@ -86,84 +116,234 @@ this}
 this}
 }
 
+#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{#[doc="`InvokeAsyncCallback(crate::system::object::Object)` overload"]pub fn invoke_async_callback(completed_task:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c58ab0usize)as*mut u8,();
+(crate::system::object::Object)::core::convert::Into::into(completed_task))}
+}
+}
+
+#[cfg(feature="system-io-stream")]pub trait IStream_ReadWriteTaskMethods:IStream_ReadWriteTask{#[doc="`ClearBeginState()` overload"]fn clear_begin_state(self,)->(){unsafe{let __receiver= <Stream_ReadWriteTask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c580e0usize)as*mut u8,();
+(Stream_ReadWriteTask)__receiver)}
+}
+}
+
+#[cfg(feature="system-io-stream")]impl<__T:IStream_ReadWriteTask>IStream_ReadWriteTaskMethods for __T{}
+
+#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{pub fn clear_begin_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_async_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
 #[cfg(feature="system-io-stream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Stream_unity2_raw{use super:: * ;
-pub unsafe fn get_can_read(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_CanRead").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_CanRead", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_can_read(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
 let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_can_seek(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_CanSeek").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_CanSeek", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_can_seek(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_CanSeek",));
 let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_can_write(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_CanWrite").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_CanWrite", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_can_timeout(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_CanTimeout",));
 let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_length(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Length").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Length", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_can_write(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
+let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_length(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_Length",));
 let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_position(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Position").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Position", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_position(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_Position",));
 let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_position(this:Stream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Position").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_Position", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_position(this:Stream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"set_Position",));
 let inner:extern "C" fn(Stream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn flush(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Flush").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Flush", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_read_timeout(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_ReadTimeout",));
+let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_read_timeout(this:Stream,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"set_ReadTimeout",));
+let inner:extern "C" fn(Stream,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_write_timeout(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"get_WriteTimeout",));
+let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_write_timeout(this:Stream,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"set_WriteTimeout",));
+let inner:extern "C" fn(Stream,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn close(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"Close",));
 let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn seek(this:Stream,offset:i64,origin:crate::system::io::seekorigin::SeekOrigin,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Seek").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Seek", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn dispose(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose_2(this:Stream,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(Stream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn flush(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"Flush",));
+let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn seek(this:Stream,offset:i64,origin:crate::system::io::seekorigin::SeekOrigin,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"Seek",));
 let inner:extern "C" fn(Stream,i64,crate::system::io::seekorigin::SeekOrigin, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,offset,origin,__mi)}
-pub unsafe fn set_length(this:Stream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetLength").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetLength", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_length(this:Stream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"SetLength",));
 let inner:extern "C" fn(Stream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn read(this:Stream,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Read").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Read", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn read(this:Stream,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"Read",));
 let inner:extern "C" fn(Stream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,buffer,offset,count,__mi)}
-pub unsafe fn write(this:Stream,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Write").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Write", <Stream as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn read_byte(this:Stream,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"ReadByte",));
+let inner:extern "C" fn(Stream, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write(this:Stream,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"Write",));
 let inner:extern "C" fn(Stream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,buffer,offset,count,__mi)}
+pub unsafe fn write_byte(this:Stream,value:u8,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Stream as::unity2::ClassIdentity> ::NAME,"WriteByte",));
+let inner:extern "C" fn(Stream,u8, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
 }
 
 #[cfg(feature="system-io-stream")]impl Stream{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x377bfe0usize)as*mut u8,();
@@ -178,8 +358,7 @@ __Stream_unity2_raw::get_can_read(__receiver, ::core::option::Option::None)}
 __Stream_unity2_raw::get_can_seek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanTimeout()` overload"]fn get_can_timeout(self,)->bool{unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a600usize)as*mut u8,bool;
-(Stream)__receiver)}
+__Stream_unity2_raw::get_can_timeout(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __Stream_unity2_raw::get_can_write(__receiver, ::core::option::Option::None)}
@@ -194,32 +373,25 @@ __Stream_unity2_raw::get_position(__receiver, ::core::option::Option::None)}
 __Stream_unity2_raw::set_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_ReadTimeout()` overload"]fn get_read_timeout(self,)->i32{unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a610usize)as*mut u8,i32;
-(Stream)__receiver)}
+__Stream_unity2_raw::get_read_timeout(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_ReadTimeout(i32)` overload"]fn set_read_timeout(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a670usize)as*mut u8,();
-(Stream)__receiver,(i32)::core::convert::Into::into(value))}
+__Stream_unity2_raw::set_read_timeout(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_WriteTimeout()` overload"]fn get_write_timeout(self,)->i32{unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a6d0usize)as*mut u8,i32;
-(Stream)__receiver)}
+__Stream_unity2_raw::get_write_timeout(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_WriteTimeout(i32)` overload"]fn set_write_timeout(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a730usize)as*mut u8,();
-(Stream)__receiver,(i32)::core::convert::Into::into(value))}
+__Stream_unity2_raw::set_write_timeout(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a790usize)as*mut u8,();
-(Stream)__receiver)}
+__Stream_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a820usize)as*mut u8,();
-(Stream)__receiver)}
+__Stream_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377a830usize)as*mut u8,();
-(Stream)__receiver,(bool)::core::convert::Into::into(disposing))}
+__Stream_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __Stream_unity2_raw::flush(__receiver, ::core::option::Option::None)}
@@ -238,15 +410,13 @@ __Stream_unity2_raw::set_length(__receiver, ::core::convert::Into::into(value), 
 __Stream_unity2_raw::read(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377be90usize)as*mut u8,i32;
-(Stream)__receiver)}
+__Stream_unity2_raw::read_byte(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __Stream_unity2_raw::write(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`WriteByte(u8)` overload"]fn write_byte(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x377bf40usize)as*mut u8,();
-(Stream)__receiver,(u8)::core::convert::Into::into(value))}
+__Stream_unity2_raw::write_byte(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Stream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x377bfd0usize)as*mut u8,();
@@ -289,65 +459,194 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="system-io-stream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Stream_NullStream_unity2_raw{use super:: * ;
+pub unsafe fn get_can_read(this:Stream_NullStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_write(this:Stream_NullStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_seek(this:Stream_NullStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"get_CanSeek",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_length(this:Stream_NullStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"get_Length",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_position(this:Stream_NullStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"get_Position",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_position(this:Stream_NullStream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"set_Position",));
+let inner:extern "C" fn(Stream_NullStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn dispose(this:Stream_NullStream,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(Stream_NullStream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn flush(this:Stream_NullStream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"Flush",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read(this:Stream_NullStream,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,offset,count,__mi)}
+pub unsafe fn read_byte(this:Stream_NullStream,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"ReadByte",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write(this:Stream_NullStream,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(Stream_NullStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,offset,count,__mi)}
+pub unsafe fn write_byte(this:Stream_NullStream,value:u8,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"WriteByte",));
+let inner:extern "C" fn(Stream_NullStream,u8, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn seek(this:Stream_NullStream,offset:i64,origin:crate::system::io::seekorigin::SeekOrigin,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"Seek",));
+let inner:extern "C" fn(Stream_NullStream,i64,crate::system::io::seekorigin::SeekOrigin, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,offset,origin,__mi)}
+pub unsafe fn set_length(this:Stream_NullStream,length:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Stream_NullStream as::unity2::ClassIdentity> ::NAME,"SetLength",));
+let inner:extern "C" fn(Stream_NullStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,length,__mi)}
+}
+
 #[cfg(feature="system-io-stream")]pub trait IStream_NullStreamMethods:IStream_NullStream{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58390usize)as*mut u8,();
 (Stream_NullStream)__receiver)}
 }
 #[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58400usize)as*mut u8,bool;
-(Stream_NullStream)__receiver)}
+__Stream_NullStream_unity2_raw::get_can_read(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58410usize)as*mut u8,bool;
-(Stream_NullStream)__receiver)}
+__Stream_NullStream_unity2_raw::get_can_write(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58420usize)as*mut u8,bool;
-(Stream_NullStream)__receiver)}
+__Stream_NullStream_unity2_raw::get_can_seek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58430usize)as*mut u8,i64;
-(Stream_NullStream)__receiver)}
+__Stream_NullStream_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58440usize)as*mut u8,i64;
-(Stream_NullStream)__receiver)}
+__Stream_NullStream_unity2_raw::get_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58450usize)as*mut u8,();
-(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(value))}
+__Stream_NullStream_unity2_raw::set_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58460usize)as*mut u8,();
-(Stream_NullStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+__Stream_NullStream_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58470usize)as*mut u8,();
-(Stream_NullStream)__receiver)}
+__Stream_NullStream_unity2_raw::flush(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c586e0usize)as*mut u8,i32;
-(Stream_NullStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+__Stream_NullStream_unity2_raw::read(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c587f0usize)as*mut u8,i32;
-(Stream_NullStream)__receiver)}
+__Stream_NullStream_unity2_raw::read_byte(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c58800usize)as*mut u8,();
-(Stream_NullStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+__Stream_NullStream_unity2_raw::write(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`WriteByte(u8)` overload"]fn write_byte(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588c0usize)as*mut u8,();
-(Stream_NullStream)__receiver,(u8)::core::convert::Into::into(value))}
+__Stream_NullStream_unity2_raw::write_byte(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588d0usize)as*mut u8,i64;
-(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
+__Stream_NullStream_unity2_raw::seek(__receiver, ::core::convert::Into::into(offset), ::core::convert::Into::into(origin), ::core::option::Option::None)}
 }
 #[doc="`SetLength(i64)` overload"]fn set_length(self,length:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <Stream_NullStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c588e0usize)as*mut u8,();
-(Stream_NullStream)__receiver,(i64)::core::convert::Into::into(length))}
+__Stream_NullStream_unity2_raw::set_length(__receiver, ::core::convert::Into::into(length), ::core::option::Option::None)}
 }
 }
 
@@ -377,39 +676,22 @@ pub fn set_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{#[doc="`InvokeAsyncCallback(crate::system::object::Object)` overload"]pub fn invoke_async_callback(completed_task:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c58ab0usize)as*mut u8,();
-(crate::system::object::Object)::core::convert::Into::into(completed_task))}
-}
-}
-
-#[cfg(feature="system-io-stream")]pub trait IStream_ReadWriteTaskMethods:IStream_ReadWriteTask{#[doc="`ClearBeginState()` overload"]fn clear_begin_state(self,)->(){unsafe{let __receiver= <Stream_ReadWriteTask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c580e0usize)as*mut u8,();
-(Stream_ReadWriteTask)__receiver)}
-}
-}
-
-#[cfg(feature="system-io-stream")]impl<__T:IStream_ReadWriteTask>IStream_ReadWriteTaskMethods for __T{}
-
-#[cfg(feature="system-io-stream")]impl Stream_ReadWriteTask{pub fn clear_begin_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_async_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
 #[cfg(feature = "system-io-stream")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Stream_SynchronousAsyncResult;
     pub use super::IStream_SynchronousAsyncResult;
     pub use super::IStream_SynchronousAsyncResultMethods;
-    pub use super::Stream;
-    pub use super::IStream;
-    pub use super::IStreamMethods;
-    pub use super::Stream_NullStream;
-    pub use super::IStream_NullStream;
-    pub use super::IStream_NullStreamMethods;
     pub use super::Stream_ReadWriteTask;
     pub use super::IStream_ReadWriteTask;
     pub use super::IStream_ReadWriteTaskMethods;
+    pub use super::Stream;
+    pub use super::IStream;
+    pub use super::IStreamMethods;
     pub use super::Stream_ReadWriteParameters;
+    pub use super::Stream_NullStream;
+    pub use super::IStream_NullStream;
+    pub use super::IStream_NullStreamMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

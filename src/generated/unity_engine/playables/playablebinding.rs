@@ -48,13 +48,25 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"DefaultDurat
 #[cfg(feature = "unity_engine-playables-playablebinding-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-playables-playablebinding")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayableBinding_CreateOutputMethod_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:PlayableBinding_CreateOutputMethod,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutput::PlayableOutput{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PlayableBinding_CreateOutputMethod as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(PlayableBinding_CreateOutputMethod,crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutput::PlayableOutput= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,name,__mi)}
+}
+
 #[cfg(feature="unity_engine-playables-playablebinding")]pub trait IPlayableBinding_CreateOutputMethodMethods:IPlayableBinding_CreateOutputMethod{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PlayableBinding_CreateOutputMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x379d880usize)as*mut u8,();
 (PlayableBinding_CreateOutputMethod)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::playables::playablegraph::PlayableGraph, ::unity2::Il2CppString)` overload"]fn invoke(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::playables::playableoutput::PlayableOutput{unsafe{let __receiver= <PlayableBinding_CreateOutputMethod as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379d8a0usize)as*mut u8,crate::unity_engine::playables::playableoutput::PlayableOutput;
-(PlayableBinding_CreateOutputMethod)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__PlayableBinding_CreateOutputMethod_unity2_raw::invoke(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 }
 

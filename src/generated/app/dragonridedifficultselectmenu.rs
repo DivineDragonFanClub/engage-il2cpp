@@ -23,15 +23,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct DragonRideDifficultSelectMenu{#[offset(200)]#[rename(name="m_EnableChecker")]pub m_enable_checker: ::unity2::Array<bool> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DifficultyItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct DragonRideDifficultSelectMenu_DifficultyItem{#[offset(104)]#[rename(name="m_DifficultID")]pub m_difficult_id: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(113)]#[rename(name="m_IsExpert")]pub m_is_expert:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DragonRideDifficultSelectMenu_DecideEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DragonRideDifficultSelectMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for DragonRideDifficultSelectMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DragonRideDifficultSelectMenu.Result2";
@@ -51,10 +42,82 @@ pub fn expert()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct DragonRideDifficultSelectMenu{#[offset(200)]#[rename(name="m_EnableChecker")]pub m_enable_checker: ::unity2::Array<bool> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DifficultyItem.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DifficultyItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct DragonRideDifficultSelectMenu_DifficultyItem{#[offset(104)]#[rename(name="m_DifficultID")]pub m_difficult_id: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_IsEnable")]pub m_is_enable:bool, #[offset(113)]#[rename(name="m_IsExpert")]pub m_is_expert:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridedifficultselectmenu/DragonRideDifficultSelectMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="DragonRideDifficultSelectMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct DragonRideDifficultSelectMenu_DecideEventHandler{}
+
 }
 
 #[cfg(feature = "app-dragonridedifficultselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-dragonridedifficultselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRideDifficultSelectMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DragonRideDifficultSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <DragonRideDifficultSelectMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:DragonRideDifficultSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <DragonRideDifficultSelectMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DragonRideDifficultSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <DragonRideDifficultSelectMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:DragonRideDifficultSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <DragonRideDifficultSelectMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn x_call(this:DragonRideDifficultSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <DragonRideDifficultSelectMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn plus_call(this:DragonRideDifficultSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(56usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",56usize,__vt.len(), <DragonRideDifficultSelectMenu as::unity2::ClassIdentity> ::NAME,"PlusCall",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-dragonridedifficultselectmenu")]impl DragonRideDifficultSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2, crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2> ,event_handler:impl::core::convert::Into<crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ac35e0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
@@ -74,28 +137,22 @@ pub use __types::*;
 (DragonRideDifficultSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)::core::convert::Into::into(initial_selected),(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_DecideEventHandler)::core::convert::Into::into(event_handler),(::unity2::Array<bool>)::core::convert::Into::into(set_array))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRideDifficultSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac3580usize)as*mut u8, ::unity2::Il2CppString;
-(DragonRideDifficultSelectMenu)__receiver)}
+__DragonRideDifficultSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac35d0usize)as*mut u8,();
-(DragonRideDifficultSelectMenu)__receiver)}
+__DragonRideDifficultSelectMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DragonRideDifficultSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac46c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DragonRideDifficultSelectMenu)__receiver)}
+__DragonRideDifficultSelectMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DragonRideDifficultSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac47a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DragonRideDifficultSelectMenu)__receiver)}
+__DragonRideDifficultSelectMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DragonRideDifficultSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac4840usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DragonRideDifficultSelectMenu)__receiver)}
+__DragonRideDifficultSelectMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DragonRideDifficultSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ac48d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DragonRideDifficultSelectMenu)__receiver)}
+__DragonRideDifficultSelectMenu_unity2_raw::plus_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -120,17 +177,38 @@ pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="app-dragonridedifficultselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DragonRideDifficultSelectMenu_DifficultyItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DragonRideDifficultSelectMenu_DifficultyItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu_DifficultyItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:DragonRideDifficultSelectMenu_DifficultyItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <DragonRideDifficultSelectMenu_DifficultyItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu_DifficultyItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-dragonridedifficultselectmenu")]pub trait IDragonRideDifficultSelectMenu_DifficultyItemMethods:IDragonRideDifficultSelectMenu_DifficultyItem{#[doc="`.ctor(::unity2::Il2CppString, bool, bool)` overload"]fn ctor(self,difficult_id:impl::core::convert::Into< ::unity2::Il2CppString> ,enable:impl::core::convert::Into<bool> ,is_expert:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DifficultyItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd41a0usize)as*mut u8,();
 (DragonRideDifficultSelectMenu_DifficultyItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(difficult_id),(bool)::core::convert::Into::into(enable),(bool)::core::convert::Into::into(is_expert))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DragonRideDifficultSelectMenu_DifficultyItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd4240usize)as*mut u8, ::unity2::Il2CppString;
-(DragonRideDifficultSelectMenu_DifficultyItem)__receiver)}
+__DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <DragonRideDifficultSelectMenu_DifficultyItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd4310usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(DragonRideDifficultSelectMenu_DifficultyItem)__receiver)}
+__DragonRideDifficultSelectMenu_DifficultyItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -148,13 +226,25 @@ pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
+#[cfg(feature="app-dragonridedifficultselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRideDifficultSelectMenu_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:DragonRideDifficultSelectMenu_DecideEventHandler,result:crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DragonRideDifficultSelectMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(DragonRideDifficultSelectMenu_DecideEventHandler,crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,__mi)}
+}
+
 #[cfg(feature="app-dragonridedifficultselectmenu")]pub trait IDragonRideDifficultSelectMenu_DecideEventHandlerMethods:IDragonRideDifficultSelectMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3e80usize)as*mut u8,();
 (DragonRideDifficultSelectMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2>)->(){unsafe{let __receiver= <DragonRideDifficultSelectMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3ea0usize)as*mut u8,();
-(DragonRideDifficultSelectMenu_DecideEventHandler)__receiver,(crate::app::dragonridedifficultselectmenu::DragonRideDifficultSelectMenu_Result2)::core::convert::Into::into(result))}
+__DragonRideDifficultSelectMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
 }
 }
 
@@ -174,6 +264,7 @@ this}
 #[cfg(feature = "app-dragonridedifficultselectmenu")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DragonRideDifficultSelectMenu_Result2;
     pub use super::DragonRideDifficultSelectMenu;
     pub use super::IDragonRideDifficultSelectMenu;
     pub use super::IDragonRideDifficultSelectMenuMethods;
@@ -183,7 +274,6 @@ pub mod prelude {
     pub use super::DragonRideDifficultSelectMenu_DecideEventHandler;
     pub use super::IDragonRideDifficultSelectMenu_DecideEventHandler;
     pub use super::IDragonRideDifficultSelectMenu_DecideEventHandlerMethods;
-    pub use super::DragonRideDifficultSelectMenu_Result2;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

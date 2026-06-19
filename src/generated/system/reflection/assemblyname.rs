@@ -16,6 +16,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-reflection-assemblyname-types")]
 pub use __types::*;
 
+#[cfg(feature="system-reflection-assemblyname")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssemblyName_unity2_raw{use super:: * ;
+pub unsafe fn to_string(this:AssemblyName,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <AssemblyName as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(AssemblyName, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clone(this:AssemblyName,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AssemblyName as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(AssemblyName, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_deserialization(this:AssemblyName,sender:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AssemblyName as::unity2::ClassIdentity> ::NAME,"OnDeserialization",));
+let inner:extern "C" fn(AssemblyName,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,sender,__mi)}
+}
+
 #[cfg(feature="system-reflection-assemblyname")]impl AssemblyName{#[doc="`Create(crate::system::reflection::assembly::Assembly, bool)` overload"]pub fn create(assembly:impl::core::convert::Into<crate::system::reflection::assembly::Assembly> ,fill_codebase:impl::core::convert::Into<bool>)->crate::system::reflection::assemblyname::AssemblyName{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34039d0usize)as*mut u8,crate::system::reflection::assemblyname::AssemblyName;
 (crate::system::reflection::assembly::Assembly)::core::convert::Into::into(assembly),(bool)::core::convert::Into::into(fill_codebase))}
 }
@@ -42,8 +75,7 @@ pub use __types::*;
 (AssemblyName)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3403050usize)as*mut u8, ::unity2::Il2CppString;
-(AssemblyName)__receiver)}
+__AssemblyName_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPublicKeyToken()` overload"]fn get_public_key_token(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3403090usize)as*mut u8, ::unity2::Array<u8> ;
@@ -62,12 +94,10 @@ pub use __types::*;
 (AssemblyName)__receiver)}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34037d0usize)as*mut u8,crate::system::object::Object;
-(AssemblyName)__receiver)}
+__AssemblyName_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDeserialization(crate::system::object::Object)` overload"]fn on_deserialization(self,sender:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AssemblyName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34038f0usize)as*mut u8,();
-(AssemblyName)__receiver,(crate::system::object::Object)::core::convert::Into::into(sender))}
+__AssemblyName_unity2_raw::on_deserialization(__receiver, ::core::convert::Into::into(sender), ::core::option::Option::None)}
 }
 }
 

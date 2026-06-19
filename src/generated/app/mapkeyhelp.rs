@@ -17,42 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapKeyHelp_Label{pub value:i32,}
-impl::unity2::ClassIdentity for MapKeyHelp_Label{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapKeyHelp.Label";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapKeyHelp_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapKeyHelp_Label{pub fn stay()->Self{Self{value:0}
-}
-pub fn measure()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkeyhelp/MapKeyHelp_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapKeyHelp_Mode{pub value:i32,}
-impl::unity2::ClassIdentity for MapKeyHelp_Mode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapKeyHelp.Mode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapKeyHelp_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapKeyHelp_Mode{pub fn none()->Self{Self{value:0}
-}
-pub fn stay_show()->Self{Self{value:1}
-}
-pub fn stay_hide()->Self{Self{value:2}
-}
-pub fn measure()->Self{Self{value:3}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkeyhelp/MapKeyHelp_Types.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapKeyHelp_Types{pub value:i32,}
 impl::unity2::ClassIdentity for MapKeyHelp_Types{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapKeyHelp.Types";
@@ -117,10 +81,69 @@ pub fn map_edit_free_on_unit()->Self{Self{value:24}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkeyhelp/MapKeyHelp.md"))]#[::unity2::class(namespace="App",name="MapKeyHelp")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapkeyhelp::MapKeyHelp>)]pub struct MapKeyHelp{#[static_field]#[rename(name="ShowTime")]pub show_time:f32, #[offset(116)]#[rename(name="m_Mode")]pub m_mode:crate::app::mapkeyhelp::MapKeyHelp_Mode, #[offset(120)]#[rename(name="m_TemporaryHidingCount")]pub m_temporary_hiding_count:i32, #[offset(124)]#[rename(name="m_LastType")]pub m_last_type:crate::app::mapkeyhelp::MapKeyHelp_Types, #[offset(128)]#[rename(name="m_RequestType")]pub m_request_type:crate::app::mapkeyhelp::MapKeyHelp_Types, #[offset(132)]#[rename(name="m_Progress")]pub m_progress:f32,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkeyhelp/MapKeyHelp_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapKeyHelp_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for MapKeyHelp_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapKeyHelp.Mode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapKeyHelp_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapKeyHelp_Mode{pub fn none()->Self{Self{value:0}
+}
+pub fn stay_show()->Self{Self{value:1}
+}
+pub fn stay_hide()->Self{Self{value:2}
+}
+pub fn measure()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapkeyhelp/MapKeyHelp_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapKeyHelp_Label{pub value:i32,}
+impl::unity2::ClassIdentity for MapKeyHelp_Label{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapKeyHelp.Label";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapKeyHelp_Label{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapKeyHelp_Label{pub fn stay()->Self{Self{value:0}
+}
+pub fn measure()->Self{Self{value:1}
+}
+}
+
 }
 
 #[cfg(feature = "app-mapkeyhelp-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapkeyhelp")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapKeyHelp_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MapKeyHelp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapKeyHelp as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapKeyHelp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapKeyHelp as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapKeyHelp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-mapkeyhelp")]impl MapKeyHelp{#[doc="`CreateAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1deea60usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -158,12 +181,10 @@ pub use __types::*;
 (MapKeyHelp)__receiver,(bool)::core::convert::Into::into(is_reset_measuring))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapKeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1def160usize)as*mut u8,();
-(MapKeyHelp)__receiver)}
+__MapKeyHelp_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapKeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1def1f0usize)as*mut u8,();
-(MapKeyHelp)__receiver)}
+__MapKeyHelp_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Measure()` overload"]fn measure(self,)->(){unsafe{let __receiver= <MapKeyHelp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1def280usize)as*mut u8,();
@@ -207,12 +228,12 @@ this}
 #[cfg(feature = "app-mapkeyhelp")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapKeyHelp_Label;
-    pub use super::MapKeyHelp_Mode;
     pub use super::MapKeyHelp_Types;
     pub use super::MapKeyHelp;
     pub use super::IMapKeyHelp;
     pub use super::IMapKeyHelpMethods;
+    pub use super::MapKeyHelp_Mode;
+    pub use super::MapKeyHelp_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="nintendo-message_studio-lib-itaginfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ITagInfo_unity2_raw{use super:: * ;
-pub unsafe fn get_tag_group(this:ITagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_TagGroup").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_TagGroup", <ITagInfo as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_tag_group(this:ITagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ITagInfo as::unity2::ClassIdentity> ::NAME,"get_TagGroup",));
 let inner:extern "C" fn(ITagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_tag(this:ITagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Tag").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Tag", <ITagInfo as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_tag(this:ITagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <ITagInfo as::unity2::ClassIdentity> ::NAME,"get_Tag",));
 let inner:extern "C" fn(ITagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

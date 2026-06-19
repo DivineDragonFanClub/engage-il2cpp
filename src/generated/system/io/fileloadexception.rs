@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-fileloadexception-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-fileloadexception")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileLoadException_unity2_raw{use super:: * ;
+pub unsafe fn get_message(this:FileLoadException,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FileLoadException as::unity2::ClassIdentity> ::NAME,"get_Message",));
+let inner:extern "C" fn(FileLoadException, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:FileLoadException,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <FileLoadException as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(FileLoadException, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-io-fileloadexception")]impl FileLoadException{#[doc="`FormatFileLoadExceptionMessage(::unity2::Il2CppString, i32)` overload"]pub fn format_file_load_exception_message(file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,h_result:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x380d120usize)as*mut u8, ::unity2::Il2CppString;
 (::unity2::Il2CppString)::core::convert::Into::into(file_name),(i32)::core::convert::Into::into(h_result))}
 }
@@ -32,16 +55,14 @@ pub use __types::*;
 (FileLoadException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
 }
 #[doc="`get_Message()` overload"]fn get_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380d030usize)as*mut u8, ::unity2::Il2CppString;
-(FileLoadException)__receiver)}
+__FileLoadException_unity2_raw::get_message(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetMessageField()` overload"]fn set_message_field(self,)->(){unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x380d060usize)as*mut u8,();
 (FileLoadException)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380d1b0usize)as*mut u8, ::unity2::Il2CppString;
-(FileLoadException)__receiver)}
+__FileLoadException_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_FusionLog()` overload"]fn get_fusion_log(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileLoadException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x380d610usize)as*mut u8, ::unity2::Il2CppString;

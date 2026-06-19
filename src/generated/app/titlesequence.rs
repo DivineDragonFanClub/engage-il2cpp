@@ -26,12 +26,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlesequence/TitleSequence.md"))]#[::unity2::class(namespace="App",name="TitleSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::titlesequence::TitleSequence>)]pub struct TitleSequence{#[static_field]#[rename(name="MapSceneName")]pub map_scene_name: ::unity2::Il2CppString, #[static_field]#[rename(name="CameraPrefabPath")]pub camera_prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="FadeOutSec")]pub fade_out_sec:f32, #[static_field]#[rename(name="StartFadeOutElapsedTime")]pub start_fade_out_elapsed_time:f32, #[static_field]#[rename(name="s_TitleLogoTexturePath")]pub s_title_logo_texture_path: ::unity2::Il2CppString, #[offset(116)]#[rename(name="m_ElapsedTime")]pub m_elapsed_time:f32, #[offset(120)]#[rename(name="m_TitleLogoAnimator")]pub m_title_logo_animator:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_PressStartAnimator")]pub m_press_start_animator:crate::unity_engine::animator::Animator, #[offset(136)]#[rename(name="m_GameVersionText")]pub m_game_version_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlesequence/TitleSequence_ProcTitleCall.md"))]#[::unity2::class(namespace="App",name="TitleSequence.ProcTitleCall")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::titlesequence::TitleSequence_ProcTitleCall>)]pub struct TitleSequence_ProcTitleCall{#[offset(120)]#[rename(name="m_PidOrGid")]pub m_pid_or_gid: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_IsHeroFemale")]pub m_is_hero_female:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlesequence/TitleSequence_PedestalData.md"))]#[::unity2::class(namespace="App",name="TitleSequence.PedestalData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::titlesequence::TitleSequence_PedestalData>)]pub struct TitleSequence_PedestalData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlesequence/TitleSequence_ProcTitleCall_TitleCallData.md"))]#[::unity2::class(namespace="App",name="TitleSequence.ProcTitleCall.TitleCallData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::titlesequence::TitleSequence_ProcTitleCall_TitleCallData>)]pub struct TitleSequence_ProcTitleCall_TitleCallData{}
 
 
@@ -49,6 +43,12 @@ impl TitleSequence_Label{pub fn start()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlesequence/TitleSequence_PedestalData.md"))]#[::unity2::class(namespace="App",name="TitleSequence.PedestalData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::titlesequence::TitleSequence_PedestalData>)]pub struct TitleSequence_PedestalData{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/titlesequence/TitleSequence_ProcTitleCall.md"))]#[::unity2::class(namespace="App",name="TitleSequence.ProcTitleCall")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::titlesequence::TitleSequence_ProcTitleCall>)]pub struct TitleSequence_ProcTitleCall{#[offset(120)]#[rename(name="m_PidOrGid")]pub m_pid_or_gid: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_IsHeroFemale")]pub m_is_hero_female:bool,}
 
 }
 
@@ -146,6 +146,117 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-titlesequence")]impl TitleSequence_ProcTitleCall_TitleCallData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f1ee0usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-titlesequence")]pub trait ITitleSequence_ProcTitleCall_TitleCallDataMethods:ITitleSequence_ProcTitleCall_TitleCallData{#[doc="`get_PidOrGid()` overload"]fn get_pid_or_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e20usize)as*mut u8, ::unity2::Il2CppString;
+(TitleSequence_ProcTitleCall_TitleCallData)__receiver)}
+}
+#[doc="`set_PidOrGid(::unity2::Il2CppString)` overload"]fn set_pid_or_gid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e30usize)as*mut u8,();
+(TitleSequence_ProcTitleCall_TitleCallData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e40usize)as*mut u8, ::unity2::Il2CppString;
+(TitleSequence_ProcTitleCall_TitleCallData)__receiver)}
+}
+#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e50usize)as*mut u8,();
+(TitleSequence_ProcTitleCall_TitleCallData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e60usize)as*mut u8,();
+(TitleSequence_ProcTitleCall_TitleCallData)__receiver)}
+}
+}
+
+#[cfg(feature="app-titlesequence")]impl<__T:ITitleSequence_ProcTitleCall_TitleCallData>ITitleSequence_ProcTitleCall_TitleCallDataMethods for __T{}
+
+#[cfg(feature="app-titlesequence")]impl TitleSequence_ProcTitleCall_TitleCallData{pub fn get_pid_or_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pid_or_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-titlesequence")]impl TitleSequence_ProcTitleCall_TitleCallData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TitleSequence_ProcTitleCall_TitleCallData), ::core::stringify!(new),));
+ <Self as ITitleSequence_ProcTitleCall_TitleCallDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-titlesequence")]impl TitleSequence_PedestalData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2206220usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-titlesequence")]pub trait ITitleSequence_PedestalDataMethods:ITitleSequence_PedestalData{#[doc="`get_PedestalName()` overload"]fn get_pedestal_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2206160usize)as*mut u8, ::unity2::Il2CppString;
+(TitleSequence_PedestalData)__receiver)}
+}
+#[doc="`set_PedestalName(::unity2::Il2CppString)` overload"]fn set_pedestal_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2206170usize)as*mut u8,();
+(TitleSequence_PedestalData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2206180usize)as*mut u8, ::unity2::Il2CppString;
+(TitleSequence_PedestalData)__receiver)}
+}
+#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2206190usize)as*mut u8,();
+(TitleSequence_PedestalData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22061a0usize)as*mut u8,();
+(TitleSequence_PedestalData)__receiver)}
+}
+}
+
+#[cfg(feature="app-titlesequence")]impl<__T:ITitleSequence_PedestalData>ITitleSequence_PedestalDataMethods for __T{}
+
+#[cfg(feature="app-titlesequence")]impl TitleSequence_PedestalData{pub fn get_pedestal_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_pedestal_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-titlesequence")]impl TitleSequence_PedestalData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TitleSequence_PedestalData), ::core::stringify!(new),));
+ <Self as ITitleSequence_PedestalDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-titlesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TitleSequence_ProcTitleCall_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:TitleSequence_ProcTitleCall,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TitleSequence_ProcTitleCall as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(TitleSequence_ProcTitleCall, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:TitleSequence_ProcTitleCall,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TitleSequence_ProcTitleCall as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(TitleSequence_ProcTitleCall, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-titlesequence")]impl TitleSequence_ProcTitleCall{#[doc="`Create(crate::app::procinst::ProcInst)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2206e60usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -156,12 +267,10 @@ this}
 (TitleSequence_ProcTitleCall)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2206350usize)as*mut u8,();
-(TitleSequence_ProcTitleCall)__receiver)}
+__TitleSequence_ProcTitleCall_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2206860usize)as*mut u8,();
-(TitleSequence_ProcTitleCall)__receiver)}
+__TitleSequence_ProcTitleCall_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcPidOrGid()` overload"]fn calc_pid_or_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_ProcTitleCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2206490usize)as*mut u8, ::unity2::Il2CppString;
@@ -210,110 +319,22 @@ pub fn create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-titlesequence")]impl TitleSequence_PedestalData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2206220usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-titlesequence")]pub trait ITitleSequence_PedestalDataMethods:ITitleSequence_PedestalData{#[doc="`get_PedestalName()` overload"]fn get_pedestal_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2206160usize)as*mut u8, ::unity2::Il2CppString;
-(TitleSequence_PedestalData)__receiver)}
-}
-#[doc="`set_PedestalName(::unity2::Il2CppString)` overload"]fn set_pedestal_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2206170usize)as*mut u8,();
-(TitleSequence_PedestalData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2206180usize)as*mut u8, ::unity2::Il2CppString;
-(TitleSequence_PedestalData)__receiver)}
-}
-#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2206190usize)as*mut u8,();
-(TitleSequence_PedestalData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TitleSequence_PedestalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22061a0usize)as*mut u8,();
-(TitleSequence_PedestalData)__receiver)}
-}
-}
-
-#[cfg(feature="app-titlesequence")]impl<__T:ITitleSequence_PedestalData>ITitleSequence_PedestalDataMethods for __T{}
-
-#[cfg(feature="app-titlesequence")]impl TitleSequence_PedestalData{pub fn get_pedestal_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_pedestal_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-titlesequence")]impl TitleSequence_PedestalData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TitleSequence_PedestalData), ::core::stringify!(new),));
- <Self as ITitleSequence_PedestalDataMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-titlesequence")]impl TitleSequence_ProcTitleCall_TitleCallData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22f1ee0usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-titlesequence")]pub trait ITitleSequence_ProcTitleCall_TitleCallDataMethods:ITitleSequence_ProcTitleCall_TitleCallData{#[doc="`get_PidOrGid()` overload"]fn get_pid_or_gid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e20usize)as*mut u8, ::unity2::Il2CppString;
-(TitleSequence_ProcTitleCall_TitleCallData)__receiver)}
-}
-#[doc="`set_PidOrGid(::unity2::Il2CppString)` overload"]fn set_pid_or_gid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e30usize)as*mut u8,();
-(TitleSequence_ProcTitleCall_TitleCallData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Cid()` overload"]fn get_cid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e40usize)as*mut u8, ::unity2::Il2CppString;
-(TitleSequence_ProcTitleCall_TitleCallData)__receiver)}
-}
-#[doc="`set_Cid(::unity2::Il2CppString)` overload"]fn set_cid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e50usize)as*mut u8,();
-(TitleSequence_ProcTitleCall_TitleCallData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TitleSequence_ProcTitleCall_TitleCallData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f1e60usize)as*mut u8,();
-(TitleSequence_ProcTitleCall_TitleCallData)__receiver)}
-}
-}
-
-#[cfg(feature="app-titlesequence")]impl<__T:ITitleSequence_ProcTitleCall_TitleCallData>ITitleSequence_ProcTitleCall_TitleCallDataMethods for __T{}
-
-#[cfg(feature="app-titlesequence")]impl TitleSequence_ProcTitleCall_TitleCallData{pub fn get_pid_or_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_pid_or_gid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_cid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn load_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-titlesequence")]impl TitleSequence_ProcTitleCall_TitleCallData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TitleSequence_ProcTitleCall_TitleCallData), ::core::stringify!(new),));
- <Self as ITitleSequence_ProcTitleCall_TitleCallDataMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-titlesequence")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::TitleSequence;
     pub use super::ITitleSequence;
     pub use super::ITitleSequenceMethods;
-    pub use super::TitleSequence_ProcTitleCall;
-    pub use super::ITitleSequence_ProcTitleCall;
-    pub use super::ITitleSequence_ProcTitleCallMethods;
-    pub use super::TitleSequence_PedestalData;
-    pub use super::ITitleSequence_PedestalData;
-    pub use super::ITitleSequence_PedestalDataMethods;
     pub use super::TitleSequence_ProcTitleCall_TitleCallData;
     pub use super::ITitleSequence_ProcTitleCall_TitleCallData;
     pub use super::ITitleSequence_ProcTitleCall_TitleCallDataMethods;
     pub use super::TitleSequence_Label;
+    pub use super::TitleSequence_PedestalData;
+    pub use super::ITitleSequence_PedestalData;
+    pub use super::ITitleSequence_PedestalDataMethods;
+    pub use super::TitleSequence_ProcTitleCall;
+    pub use super::ITitleSequence_ProcTitleCall;
+    pub use super::ITitleSequence_ProcTitleCallMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::app::structbase::IStructBase;

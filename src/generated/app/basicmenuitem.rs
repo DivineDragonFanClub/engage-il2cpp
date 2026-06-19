@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicmenuitem/BasicMenuItem.md"))]#[::unity2::class(namespace="App",name="BasicMenuItem")]#[parent(crate::system::object::Object)]pub struct BasicMenuItem{#[offset(16)]#[rename(name="m_menu")]pub m_menu:crate::app::basicmenu::BasicMenu, #[offset(24)]#[rename(name="m_menuItemContent")]pub m_menu_item_content:crate::app::basicmenuitemcontent::BasicMenuItemContent, #[offset(32)]#[rename(name="m_name")]pub m_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_index")]pub m_index:i32, #[offset(44)]#[rename(name="m_fullIndex")]pub m_full_index:i32, #[offset(48)]#[rename(name="m_attribute")]pub m_attribute:crate::app::basicmenuitem::BasicMenuItem_Attribute, #[offset(52)]#[rename(name="m_cursorColor")]pub m_cursor_color:crate::unity_engine::color::Color, #[offset(68)]#[rename(name="m_activeTextColor")]pub m_active_text_color:crate::unity_engine::color::Color, #[offset(84)]#[rename(name="m_inactiveTextColor")]pub m_inactive_text_color:crate::unity_engine::color::Color,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicmenuitem/BasicMenuItem_Attribute.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BasicMenuItem_Attribute{pub value:i32,}
 impl::unity2::ClassIdentity for BasicMenuItem_Attribute{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BasicMenuItem.Attribute";
@@ -37,10 +34,246 @@ pub fn select()->Self{Self{value:16}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/basicmenuitem/BasicMenuItem.md"))]#[::unity2::class(namespace="App",name="BasicMenuItem")]#[parent(crate::system::object::Object)]pub struct BasicMenuItem{#[offset(16)]#[rename(name="m_menu")]pub m_menu:crate::app::basicmenu::BasicMenu, #[offset(24)]#[rename(name="m_menuItemContent")]pub m_menu_item_content:crate::app::basicmenuitemcontent::BasicMenuItemContent, #[offset(32)]#[rename(name="m_name")]pub m_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_index")]pub m_index:i32, #[offset(44)]#[rename(name="m_fullIndex")]pub m_full_index:i32, #[offset(48)]#[rename(name="m_attribute")]pub m_attribute:crate::app::basicmenuitem::BasicMenuItem_Attribute, #[offset(52)]#[rename(name="m_cursorColor")]pub m_cursor_color:crate::unity_engine::color::Color, #[offset(68)]#[rename(name="m_activeTextColor")]pub m_active_text_color:crate::unity_engine::color::Color, #[offset(84)]#[rename(name="m_inactiveTextColor")]pub m_inactive_text_color:crate::unity_engine::color::Color,}
+
 }
 
 #[cfg(feature = "app-basicmenuitem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-basicmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BasicMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_width(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"GetWidth",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_height(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"GetHeight",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_text_color(this:BasicMenuItem,color:crate::unity_engine::color::Color,b_inactive:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"SetTextColor",));
+let inner:extern "C" fn(BasicMenuItem,crate::unity_engine::color::Color,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,color,b_inactive,__mi)}
+pub unsafe fn build_attribute(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn tick(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"Tick",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build_menu_item_content(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_deselect(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_cursor_move_end(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"OnCursorMoveEnd",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn system_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"SystemCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"KeyCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn x_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn y_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"YCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn l_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"LCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn r_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"RCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn plus_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"PlusCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn minus_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"MinusCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn custom_call(this:BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <BasicMenuItem as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let inner:extern "C" fn(BasicMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-basicmenuitem")]pub trait IBasicMenuItemMethods:IBasicMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2455fc0usize)as*mut u8,();
@@ -91,24 +324,20 @@ pub use __types::*;
 (BasicMenuItem)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2465db0usize)as*mut u8, ::unity2::Il2CppString;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetWidth()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2465dc0usize)as*mut u8,f32;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::get_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHeight()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2465e80usize)as*mut u8,f32;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::get_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetCursorColor(crate::unity_engine::color::Color)` overload"]fn set_cursor_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2457910usize)as*mut u8,();
 (BasicMenuItem)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
 }
 #[doc="`SetTextColor(crate::unity_engine::color::Color, bool)` overload"]fn set_text_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,b_inactive:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2465f40usize)as*mut u8,();
-(BasicMenuItem)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color),(bool)::core::convert::Into::into(b_inactive))}
+__BasicMenuItem_unity2_raw::set_text_color(__receiver, ::core::convert::Into::into(color), ::core::convert::Into::into(b_inactive), ::core::option::Option::None)}
 }
 #[doc="`SetTextColor(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]fn set_text_color_2(self,active_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,inactive_color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24660e0usize)as*mut u8,();
@@ -163,80 +392,61 @@ pub use __types::*;
 (BasicMenuItem)__receiver,(crate::app::basicmenuitem::BasicMenuItem_Attribute)::core::convert::Into::into(attribute))}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466410usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466420usize)as*mut u8,();
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466430usize)as*mut u8,();
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466560usize)as*mut u8,();
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466570usize)as*mut u8,();
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24666d0usize)as*mut u8,();
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466780usize)as*mut u8,();
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466890usize)as*mut u8,();
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SystemCall()` overload"]fn system_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24668a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::system_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`KeyCall()` overload"]fn key_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24668b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::key_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24668c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24668d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24668e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`YCall()` overload"]fn y_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24668f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::y_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LCall()` overload"]fn l_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466900usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::l_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RCall()` overload"]fn r_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466910usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::r_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466920usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::plus_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MinusCall()` overload"]fn minus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466930usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::minus_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <BasicMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2466940usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(BasicMenuItem)__receiver)}
+__BasicMenuItem_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -303,10 +513,10 @@ this}
 #[cfg(feature = "app-basicmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::BasicMenuItem_Attribute;
     pub use super::BasicMenuItem;
     pub use super::IBasicMenuItem;
     pub use super::IBasicMenuItemMethods;
-    pub use super::BasicMenuItem_Attribute;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

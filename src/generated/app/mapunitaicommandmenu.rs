@@ -19,63 +19,97 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapunitaicommandmenu/MapUnitAICommandMenu.md"))]#[::unity2::class(namespace="App",name="MapUnitAICommandMenu")]#[parent(crate::app::mapbasicmenu::MapBasicMenu)]pub struct MapUnitAICommandMenu{#[offset(200)]#[rename(name="m_MapUnitMenuContent")]pub m_map_unit_menu_content:crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent, #[offset(208)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(216)]#[rename(name="m_OpenCallback")]pub m_open_callback:crate::system::action::Action, #[offset(224)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapunitaicommandmenu/MapUnitAICommandMenu_AIMenuItem.md"))]#[::unity2::class(namespace="App",name="MapUnitAICommandMenu.AIMenuItem")]#[parent(crate::app::mapbasicmenuitem::MapBasicMenuItem)]pub struct MapUnitAICommandMenu_AIMenuItem{#[offset(100)]#[rename(name="m_AIType")]pub m_ai_type:crate::app::unitai::UnitAI_VersusTypes,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapunitaicommandmenu/MapUnitAICommandMenu.md"))]#[::unity2::class(namespace="App",name="MapUnitAICommandMenu")]#[parent(crate::app::mapbasicmenu::MapBasicMenu)]pub struct MapUnitAICommandMenu{#[offset(200)]#[rename(name="m_MapUnitMenuContent")]pub m_map_unit_menu_content:crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent, #[offset(208)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(216)]#[rename(name="m_OpenCallback")]pub m_open_callback:crate::system::action::Action, #[offset(224)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
 
 }
 
 #[cfg(feature = "app-mapunitaicommandmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapunitaicommandmenu")]impl MapUnitAICommandMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,open_callback:impl::core::convert::Into<crate::system::action::Action> ,close_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202b4e0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::action::Action)::core::convert::Into::into(open_callback),(crate::system::action::Action)::core::convert::Into::into(close_callback))}
-}
-}
-
-#[cfg(feature="app-mapunitaicommandmenu")]pub trait IMapUnitAICommandMenuMethods:IMapUnitAICommandMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent, crate::app::unit::Unit, crate::system::action::Action, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,open_callback:impl::core::convert::Into<crate::system::action::Action> ,close_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202b410usize)as*mut u8,();
-(MapUnitAICommandMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)::core::convert::Into::into(menu_content),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::action::Action)::core::convert::Into::into(open_callback),(crate::system::action::Action)::core::convert::Into::into(close_callback))}
-}
-#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202b490usize)as*mut u8, ::unity2::Il2CppString;
-(MapUnitAICommandMenu)__receiver)}
-}
-#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202b860usize)as*mut u8,();
-(MapUnitAICommandMenu)__receiver)}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202b9e0usize)as*mut u8,();
-(MapUnitAICommandMenu)__receiver)}
-}
-#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202ba10usize)as*mut u8,();
-(MapUnitAICommandMenu)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202bac0usize)as*mut u8,();
-(MapUnitAICommandMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapunitaicommandmenu")]impl<__T:IMapUnitAICommandMenu>IMapUnitAICommandMenuMethods for __T{}
-
-#[cfg(feature="app-mapunitaicommandmenu")]impl MapUnitAICommandMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-mapunitaicommandmenu")]impl MapUnitAICommandMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent, crate::app::unit::Unit, crate::system::action::Action, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent,unit:crate::app::unit::Unit,open_callback:crate::system::action::Action,close_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapUnitAICommandMenu), ::core::stringify!(new),));
- <Self as IMapUnitAICommandMenuMethods> ::ctor(this,menu_item_list,menu_content,unit,open_callback,close_callback);
-this}
+#[cfg(feature="app-mapunitaicommandmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapUnitAICommandMenu_AIMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_flag_id(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_deselect(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_help_text(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelpText",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_map_attribute(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MapUnitAICommandMenu_AIMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapUnitAICommandMenu_AIMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MapUnitAICommandMenu_AIMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-mapunitaicommandmenu")]pub trait IMapUnitAICommandMenu_AIMenuItemMethods:IMapUnitAICommandMenu_AIMenuItem{#[doc="`.ctor(crate::app::unitai::UnitAI_VersusTypes)` overload"]fn ctor(self,ai_type:impl::core::convert::Into<crate::app::unitai::UnitAI_VersusTypes>)->(){unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -83,40 +117,32 @@ this}
 (MapUnitAICommandMenu_AIMenuItem)__receiver,(crate::app::unitai::UnitAI_VersusTypes)::core::convert::Into::into(ai_type))}
 }
 #[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e47910usize)as*mut u8, ::unity2::Il2CppString;
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e47960usize)as*mut u8,();
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetupHelpText()` overload"]fn setup_help_text(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e47a10usize)as*mut u8,();
 (MapUnitAICommandMenu_AIMenuItem)__receiver)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e47b20usize)as*mut u8,();
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e47c10usize)as*mut u8,();
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e47d00usize)as*mut u8, ::unity2::Il2CppString;
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHelpText()` overload"]fn get_help_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e47ee0usize)as*mut u8, ::unity2::Il2CppString;
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::get_help_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e480c0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapUnitAICommandMenu_AIMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e480d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MapUnitAICommandMenu_AIMenuItem)__receiver)}
+__MapUnitAICommandMenu_AIMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -141,15 +167,112 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-mapunitaicommandmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapUnitAICommandMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_flag_id(this:MapUnitAICommandMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <MapUnitAICommandMenu as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let inner:extern "C" fn(MapUnitAICommandMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn after_build(this:MapUnitAICommandMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <MapUnitAICommandMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(MapUnitAICommandMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn tick(this:MapUnitAICommandMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <MapUnitAICommandMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
+let inner:extern "C" fn(MapUnitAICommandMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_create(this:MapUnitAICommandMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapUnitAICommandMenu as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapUnitAICommandMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapUnitAICommandMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapUnitAICommandMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapUnitAICommandMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-mapunitaicommandmenu")]impl MapUnitAICommandMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::system::action::Action, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,open_callback:impl::core::convert::Into<crate::system::action::Action> ,close_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x202b4e0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::action::Action)::core::convert::Into::into(open_callback),(crate::system::action::Action)::core::convert::Into::into(close_callback))}
+}
+}
+
+#[cfg(feature="app-mapunitaicommandmenu")]pub trait IMapUnitAICommandMenuMethods:IMapUnitAICommandMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent, crate::app::unit::Unit, crate::system::action::Action, crate::system::action::Action)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,open_callback:impl::core::convert::Into<crate::system::action::Action> ,close_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x202b410usize)as*mut u8,();
+(MapUnitAICommandMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)::core::convert::Into::into(menu_content),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::action::Action)::core::convert::Into::into(open_callback),(crate::system::action::Action)::core::convert::Into::into(close_callback))}
+}
+#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapUnitAICommandMenu_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapUnitAICommandMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapUnitAICommandMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapUnitAICommandMenu_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapUnitAICommandMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapUnitAICommandMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-mapunitaicommandmenu")]impl<__T:IMapUnitAICommandMenu>IMapUnitAICommandMenuMethods for __T{}
+
+#[cfg(feature="app-mapunitaicommandmenu")]impl MapUnitAICommandMenu{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_flag_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn on_create_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-mapunitaicommandmenu")]impl MapUnitAICommandMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent, crate::app::unit::Unit, crate::system::action::Action, crate::system::action::Action)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent,unit:crate::app::unit::Unit,open_callback:crate::system::action::Action,close_callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapUnitAICommandMenu), ::core::stringify!(new),));
+ <Self as IMapUnitAICommandMenuMethods> ::ctor(this,menu_item_list,menu_content,unit,open_callback,close_callback);
+this}
+}
+
 #[cfg(feature = "app-mapunitaicommandmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapUnitAICommandMenu;
-    pub use super::IMapUnitAICommandMenu;
-    pub use super::IMapUnitAICommandMenuMethods;
     pub use super::MapUnitAICommandMenu_AIMenuItem;
     pub use super::IMapUnitAICommandMenu_AIMenuItem;
     pub use super::IMapUnitAICommandMenu_AIMenuItemMethods;
+    pub use super::MapUnitAICommandMenu;
+    pub use super::IMapUnitAICommandMenu;
+    pub use super::IMapUnitAICommandMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::mapbasicmenu::IMapBasicMenu;

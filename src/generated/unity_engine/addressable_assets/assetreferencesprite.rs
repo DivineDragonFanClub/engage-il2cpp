@@ -20,13 +20,25 @@ use crate::unity_engine::addressable_assets::assetreferencet_1::{AssetReferenceT
 #[cfg(feature = "unity_engine-addressable_assets-assetreferencesprite-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-addressable_assets-assetreferencesprite")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetReferenceSprite_unity2_raw{use super:: * ;
+pub unsafe fn validate_asset(this:AssetReferenceSprite,path: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <AssetReferenceSprite as::unity2::ClassIdentity> ::NAME,"ValidateAsset",));
+let inner:extern "C" fn(AssetReferenceSprite, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,path,__mi)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-assetreferencesprite")]pub trait IAssetReferenceSpriteMethods:IAssetReferenceSprite{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,guid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AssetReferenceSprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2fa0usize)as*mut u8,();
 (AssetReferenceSprite)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(guid))}
 }
 #[doc="`ValidateAsset(::unity2::Il2CppString)` overload"]fn validate_asset(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <AssetReferenceSprite as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3000usize)as*mut u8,bool;
-(AssetReferenceSprite)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+__AssetReferenceSprite_unity2_raw::validate_asset(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)}
 }
 }
 

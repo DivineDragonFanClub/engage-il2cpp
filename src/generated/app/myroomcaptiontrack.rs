@@ -24,9 +24,21 @@ use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
 #[cfg(feature = "app-myroomcaptiontrack-types")]
 pub use __types::*;
 
+#[cfg(feature="app-myroomcaptiontrack")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomCaptionTrack_unity2_raw{use super:: * ;
+pub unsafe fn create_track_mixer(this:MyRoomCaptionTrack,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,input_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <MyRoomCaptionTrack as::unity2::ClassIdentity> ::NAME,"CreateTrackMixer",));
+let inner:extern "C" fn(MyRoomCaptionTrack,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,input_count,__mi)}
+}
+
 #[cfg(feature="app-myroomcaptiontrack")]pub trait IMyRoomCaptionTrackMethods:IMyRoomCaptionTrack{#[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <MyRoomCaptionTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238c840usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(MyRoomCaptionTrack)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(input_count))}
+__MyRoomCaptionTrack_unity2_raw::create_track_mixer(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::convert::Into::into(input_count), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomCaptionTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x238cba0usize)as*mut u8,();

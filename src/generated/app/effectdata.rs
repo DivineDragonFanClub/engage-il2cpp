@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData.md"))]#[::unity2::class(namespace="App",name="EffectData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectdata::EffectData>)]pub struct EffectData{#[offset(80)]#[rename(name="m_FilePaths")]pub m_file_paths: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_Binder")]pub s_binder:crate::app::bindholder::BindHolder,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData_Residents.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectData_Residents{pub value:i32,}
 impl::unity2::ClassIdentity for EffectData_Residents{const NAMESPACE: &'static str="App";
 const NAME: &'static str="EffectData.Residents";
@@ -35,22 +38,6 @@ pub fn map()->Self{Self{value:1}
 pub fn combat()->Self{Self{value:2}
 }
 pub fn both()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData_Types.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectData_Types{pub value:i32,}
-impl::unity2::ClassIdentity for EffectData_Types{const NAMESPACE: &'static str="App";
-const NAME: &'static str="EffectData.Types";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for EffectData_Types{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl EffectData_Types{pub fn once()->Self{Self{value:0}
-}
-pub fn endless()->Self{Self{value:1}
 }
 }
 
@@ -73,12 +60,48 @@ pub fn num()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData.md"))]#[::unity2::class(namespace="App",name="EffectData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectdata::EffectData>)]pub struct EffectData{#[offset(80)]#[rename(name="m_FilePaths")]pub m_file_paths: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_Binder")]pub s_binder:crate::app::bindholder::BindHolder,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectdata/EffectData_Types.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectData_Types{pub value:i32,}
+impl::unity2::ClassIdentity for EffectData_Types{const NAMESPACE: &'static str="App";
+const NAME: &'static str="EffectData.Types";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for EffectData_Types{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl EffectData_Types{pub fn once()->Self{Self{value:0}
+}
+pub fn endless()->Self{Self{value:1}
+}
+}
 
 }
 
 #[cfg(feature = "app-effectdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-effectdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EffectData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:EffectData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <EffectData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(EffectData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:EffectData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <EffectData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(EffectData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-effectdata")]impl EffectData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d8140usize)as*mut u8,();
 )}
@@ -164,12 +187,10 @@ pub use __types::*;
 (EffectData)__receiver,(crate::app::effectdata::EffectData_Residents)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22d8310usize)as*mut u8,();
-(EffectData)__receiver)}
+__EffectData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22d84a0usize)as*mut u8, ::unity2::Il2CppString;
-(EffectData)__receiver)}
+__EffectData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPath(crate::app::effectdata::EffectData_Modes)` overload"]fn get_path(self,mode:impl::core::convert::Into<crate::app::effectdata::EffectData_Modes>)-> ::unity2::Il2CppString{unsafe{let __receiver= <EffectData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22d84b0usize)as*mut u8, ::unity2::Il2CppString;
@@ -235,12 +256,12 @@ this}
 #[cfg(feature = "app-effectdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EffectData_Residents;
-    pub use super::EffectData_Types;
-    pub use super::EffectData_Modes;
     pub use super::EffectData;
     pub use super::IEffectData;
     pub use super::IEffectDataMethods;
+    pub use super::EffectData_Residents;
+    pub use super::EffectData_Modes;
+    pub use super::EffectData_Types;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

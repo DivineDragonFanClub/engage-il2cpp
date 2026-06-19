@@ -20,9 +20,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontrigger/InteractionTrigger_Range_Interaction.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTrigger.Range.Interaction")]#[parent(crate::system::object::Object)]pub struct InteractionTrigger_Range_Interaction{#[offset(16)]#[rename(name="interactionObject")]pub interaction_object:crate::root_motion::final_ik::interactionobject::InteractionObject, #[offset(24)]#[rename(name="effectors")]pub effectors: ::unity2::Array<crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontrigger/InteractionTrigger.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTrigger")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InteractionTrigger{#[offset(24)]#[rename(name="ranges")]pub ranges: ::unity2::Array<crate::root_motion::final_ik::interactiontrigger::InteractionTrigger_Range> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontrigger/InteractionTrigger_CameraPosition.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTrigger.CameraPosition")]#[parent(crate::system::object::Object)]pub struct InteractionTrigger_CameraPosition{#[offset(16)]#[rename(name="lookAtTarget")]pub look_at_target:crate::unity_engine::collider::Collider, #[offset(24)]#[rename(name="direction")]pub direction:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="maxDistance")]pub max_distance:f32, #[offset(40)]#[rename(name="maxAngle")]pub max_angle:f32, #[offset(44)]#[rename(name="fixYAxis")]pub fix_y_axis:bool,}
 
 
@@ -30,6 +27,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontrigger/InteractionTrigger_Range.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTrigger.Range")]#[parent(crate::system::object::Object)]pub struct InteractionTrigger_Range{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="show")]pub show:bool, #[offset(32)]#[rename(name="characterPosition")]pub character_position:crate::root_motion::final_ik::interactiontrigger::InteractionTrigger_CharacterPosition, #[offset(40)]#[rename(name="cameraPosition")]pub camera_position:crate::root_motion::final_ik::interactiontrigger::InteractionTrigger_CameraPosition, #[offset(48)]#[rename(name="interactions")]pub interactions: ::unity2::Array<crate::root_motion::final_ik::interactiontrigger::InteractionTrigger_Range_Interaction> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontrigger/InteractionTrigger.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTrigger")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InteractionTrigger{#[offset(24)]#[rename(name="ranges")]pub ranges: ::unity2::Array<crate::root_motion::final_ik::interactiontrigger::InteractionTrigger_Range> ,}
 
 }
 
@@ -51,54 +51,6 @@ pub use __types::*;
 ::{}
  failed to instantiate", ::core::stringify!(InteractionTrigger_Range_Interaction), ::core::stringify!(new),));
  <Self as IInteractionTrigger_Range_InteractionMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-interactiontrigger")]pub trait IInteractionTriggerMethods:IInteractionTrigger{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2793880usize)as*mut u8,();
-(InteractionTrigger)__receiver)}
-}
-#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27938d0usize)as*mut u8,();
-(InteractionTrigger)__receiver)}
-}
-#[doc="`OpenTutorial4()` overload"]fn open_tutorial4(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2793920usize)as*mut u8,();
-(InteractionTrigger)__receiver)}
-}
-#[doc="`SupportGroup()` overload"]fn support_group(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2793970usize)as*mut u8,();
-(InteractionTrigger)__receiver)}
-}
-#[doc="`ASThread()` overload"]fn as_thread(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27939c0usize)as*mut u8,();
-(InteractionTrigger)__receiver)}
-}
-#[doc="`GetBestRangeIndex(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, crate::unity_engine::raycasthit::RaycastHit)` overload"]fn get_best_range_index(self,character:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,raycast_from:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,raycast_hit:impl::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>)->i32{unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2793a10usize)as*mut u8,i32;
-(InteractionTrigger)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(character),(crate::unity_engine::transform::Transform)::core::convert::Into::into(raycast_from),(crate::unity_engine::raycasthit::RaycastHit)::core::convert::Into::into(raycast_hit))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2793c00usize)as*mut u8,();
-(InteractionTrigger)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-interactiontrigger")]impl<__T:IInteractionTrigger>IInteractionTriggerMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-interactiontrigger")]impl InteractionTrigger{pub fn open_user_manual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn open_script_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn open_tutorial4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn support_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn as_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_best_range_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="root_motion-final_ik-interactiontrigger")]impl InteractionTrigger{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InteractionTrigger), ::core::stringify!(new),));
- <Self as IInteractionTriggerMethods> ::ctor(this,);
 this}
 }
 
@@ -195,15 +147,60 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-interactiontrigger")]pub trait IInteractionTriggerMethods:IInteractionTrigger{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2793880usize)as*mut u8,();
+(InteractionTrigger)__receiver)}
+}
+#[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27938d0usize)as*mut u8,();
+(InteractionTrigger)__receiver)}
+}
+#[doc="`OpenTutorial4()` overload"]fn open_tutorial4(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2793920usize)as*mut u8,();
+(InteractionTrigger)__receiver)}
+}
+#[doc="`SupportGroup()` overload"]fn support_group(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2793970usize)as*mut u8,();
+(InteractionTrigger)__receiver)}
+}
+#[doc="`ASThread()` overload"]fn as_thread(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x27939c0usize)as*mut u8,();
+(InteractionTrigger)__receiver)}
+}
+#[doc="`GetBestRangeIndex(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, crate::unity_engine::raycasthit::RaycastHit)` overload"]fn get_best_range_index(self,character:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,raycast_from:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,raycast_hit:impl::core::convert::Into<crate::unity_engine::raycasthit::RaycastHit>)->i32{unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2793a10usize)as*mut u8,i32;
+(InteractionTrigger)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(character),(crate::unity_engine::transform::Transform)::core::convert::Into::into(raycast_from),(crate::unity_engine::raycasthit::RaycastHit)::core::convert::Into::into(raycast_hit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InteractionTrigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2793c00usize)as*mut u8,();
+(InteractionTrigger)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-interactiontrigger")]impl<__T:IInteractionTrigger>IInteractionTriggerMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-interactiontrigger")]impl InteractionTrigger{pub fn open_user_manual_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn open_script_reference_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn open_tutorial4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn support_group_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn as_thread_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_best_range_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="root_motion-final_ik-interactiontrigger")]impl InteractionTrigger{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InteractionTrigger), ::core::stringify!(new),));
+ <Self as IInteractionTriggerMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-interactiontrigger")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::InteractionTrigger_Range_Interaction;
     pub use super::IInteractionTrigger_Range_Interaction;
     pub use super::IInteractionTrigger_Range_InteractionMethods;
-    pub use super::InteractionTrigger;
-    pub use super::IInteractionTrigger;
-    pub use super::IInteractionTriggerMethods;
     pub use super::InteractionTrigger_CameraPosition;
     pub use super::IInteractionTrigger_CameraPosition;
     pub use super::IInteractionTrigger_CameraPositionMethods;
@@ -213,6 +210,9 @@ pub mod prelude {
     pub use super::InteractionTrigger_Range;
     pub use super::IInteractionTrigger_Range;
     pub use super::IInteractionTrigger_RangeMethods;
+    pub use super::InteractionTrigger;
+    pub use super::IInteractionTrigger;
+    pub use super::IInteractionTriggerMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

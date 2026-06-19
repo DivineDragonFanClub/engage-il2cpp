@@ -23,6 +23,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skipindicator/SkipIndicator.md"))]#[::unity2::class(namespace="App",name="SkipIndicator")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::skipindicator::SkipIndicator>)]pub struct SkipIndicator{#[offset(32)]#[rename(name="m_Skip")]pub m_skip:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Auto")]pub m_auto:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Error")]pub m_error:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_CanvasManager")]pub m_canvas_manager:crate::app::canvasmanager::CanvasManager, #[offset(64)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(72)]#[rename(name="m_Seq")]pub m_seq:crate::app::skipindicator::SkipIndicator_Seq, #[offset(76)]#[rename(name="m_IsReqClose")]pub m_is_req_close:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skipindicator/SkipIndicator_Seq.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkipIndicator_Seq{pub value:i32,}
 impl::unity2::ClassIdentity for SkipIndicator_Seq{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SkipIndicator.Seq";
@@ -42,13 +45,23 @@ pub fn closing()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skipindicator/SkipIndicator.md"))]#[::unity2::class(namespace="App",name="SkipIndicator")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::skipindicator::SkipIndicator>)]pub struct SkipIndicator{#[offset(32)]#[rename(name="m_Skip")]pub m_skip:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Auto")]pub m_auto:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Error")]pub m_error:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_CanvasManager")]pub m_canvas_manager:crate::app::canvasmanager::CanvasManager, #[offset(64)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(72)]#[rename(name="m_Seq")]pub m_seq:crate::app::skipindicator::SkipIndicator_Seq, #[offset(76)]#[rename(name="m_IsReqClose")]pub m_is_req_close:bool,}
-
 }
 
 #[cfg(feature = "app-skipindicator-types")]
 pub use __types::*;
+
+#[cfg(feature="app-skipindicator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SkipIndicator_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:SkipIndicator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SkipIndicator as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(SkipIndicator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-skipindicator")]impl SkipIndicator{#[doc="`ShowSkip()` overload"]pub fn show_skip()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fdbfc0usize)as*mut u8,();
 )}
@@ -65,8 +78,7 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-skipindicator")]pub trait ISkipIndicatorMethods:ISkipIndicator{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <SkipIndicator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdb1d0usize)as*mut u8,();
-(SkipIndicator)__receiver)}
+__SkipIndicator_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <SkipIndicator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdb2a0usize)as*mut u8,();
@@ -144,10 +156,10 @@ this}
 #[cfg(feature = "app-skipindicator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SkipIndicator_Seq;
     pub use super::SkipIndicator;
     pub use super::ISkipIndicator;
     pub use super::ISkipIndicatorMethods;
+    pub use super::SkipIndicator_Seq;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

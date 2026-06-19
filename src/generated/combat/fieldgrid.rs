@@ -19,6 +19,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fieldgrid/FieldGrid.md"))]#[::unity2::class(namespace="Combat",name="FieldGrid")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FieldGrid{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fieldgrid/FieldGrid_PlayFieldRect.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct FieldGrid_PlayFieldRect{pub play_field:crate::unity_engine::rect::Rect,pub cell_size:f32,}
 impl::unity2::ClassIdentity for FieldGrid_PlayFieldRect{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="FieldGrid.PlayFieldRect";
@@ -29,21 +32,10 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for FieldGrid_PlayFieldRect{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/fieldgrid/FieldGrid.md"))]#[::unity2::class(namespace="Combat",name="FieldGrid")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FieldGrid{}
-
 }
 
 #[cfg(feature = "combat-fieldgrid-types")]
 pub use __types::*;
-
-#[cfg(feature="combat-fieldgrid")]impl FieldGrid_PlayFieldRect{#[doc="`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]pub fn ctor(&mut self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,size:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f150usize)as*mut u8,();
-(*mut FieldGrid_PlayFieldRect)self as*mut FieldGrid_PlayFieldRect,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(f32)::core::convert::Into::into(size))}
-}
-}
-
-#[cfg(feature="combat-fieldgrid")]impl FieldGrid_PlayFieldRect{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="combat-fieldgrid")]impl FieldGrid{#[doc="`FindGrid()` overload"]pub fn find_grid()->crate::combat::fieldgrid::FieldGrid{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d56fb0usize)as*mut u8,crate::combat::fieldgrid::FieldGrid;
 )}
@@ -93,13 +85,21 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="combat-fieldgrid")]impl FieldGrid_PlayFieldRect{#[doc="`.ctor(crate::unity_engine::rect::Rect, f32)` overload"]pub fn ctor(&mut self,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,size:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e5f150usize)as*mut u8,();
+(*mut FieldGrid_PlayFieldRect)self as*mut FieldGrid_PlayFieldRect,(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect),(f32)::core::convert::Into::into(size))}
+}
+}
+
+#[cfg(feature="combat-fieldgrid")]impl FieldGrid_PlayFieldRect{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "combat-fieldgrid")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FieldGrid_PlayFieldRect;
     pub use super::FieldGrid;
     pub use super::IFieldGrid;
     pub use super::IFieldGridMethods;
+    pub use super::FieldGrid_PlayFieldRect;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

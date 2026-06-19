@@ -18,13 +18,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-messloadcommand-types")]
 pub use __types::*;
 
+#[cfg(feature="app-messloadcommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MessLoadCommand_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MessLoadCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MessLoadCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(MessLoadCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn func(this:MessLoadCommand,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <MessLoadCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(MessLoadCommand, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg,__mi)}
+}
+
 #[cfg(feature="app-messloadcommand")]pub trait IMessLoadCommandMethods:IMessLoadCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MessLoadCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db500usize)as*mut u8, ::unity2::Il2CppString;
-(MessLoadCommand)__receiver)}
+__MessLoadCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Func(::unity2::Il2CppString)` overload"]fn func(self,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <MessLoadCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db550usize)as*mut u8,f32;
-(MessLoadCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+__MessLoadCommand_unity2_raw::func(__receiver, ::core::convert::Into::into(arg), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MessLoadCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25db620usize)as*mut u8,();

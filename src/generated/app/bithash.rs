@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-bithash-types")]
 pub use __types::*;
 
+#[cfg(feature="app-bithash")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BitHash_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:BitHash,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BitHash as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BitHash, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-bithash")]impl BitHash{#[doc="`CalcKey(::unity2::Il2CppString, i32)` overload"]pub fn calc_key(name:impl::core::convert::Into< ::unity2::Il2CppString> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2988cc0usize)as*mut u8,i32;
 (::unity2::Il2CppString)::core::convert::Into::into(name),(i32)::core::convert::Into::into(shift))}
 }
@@ -26,8 +39,7 @@ pub use __types::*;
 (BitHash)__receiver,(i32)::core::convert::Into::into(shift))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2988310usize)as*mut u8,();
-(BitHash)__receiver)}
+__BitHash_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Add(::unity2::Il2CppString)` overload"]fn add(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BitHash as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2988370usize)as*mut u8,();

@@ -47,16 +47,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <MonoBehaviourCallbackHooks as::unity2::ClassIdentity> ::NAME,"remove_OnUpdateDelegate",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_game_object_name{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<MonoBehaviourCallbackHooks as::unity2::ClassIdentity> ::class(),"GetGameObjectName",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <MonoBehaviourCallbackHooks as::unity2::ClassIdentity> ::NAME,"GetGameObjectName",e),}
-}
-}
+pub unsafe fn get_game_object_name(this:MonoBehaviourCallbackHooks,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MonoBehaviourCallbackHooks as::unity2::ClassIdentity> ::NAME,"GetGameObjectName",));
+let inner:extern "C" fn(MonoBehaviourCallbackHooks, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_update{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<MonoBehaviourCallbackHooks as::unity2::ClassIdentity> ::class(),"Update",0,param_types,false,)}
@@ -88,8 +88,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (MonoBehaviourCallbackHooks)__receiver,(crate::system::action_1::Action_1<f32>)::core::convert::Into::into(value))}
 }
 #[doc="`GetGameObjectName()` overload"]fn get_game_object_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoBehaviourCallbackHooks as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__MonoBehaviourCallbackHooks_unity2_raw::__lookup_get_game_object_name::get_method_info().method_ptr, ::unity2::Il2CppString;
-(MonoBehaviourCallbackHooks)__receiver)}
+__MonoBehaviourCallbackHooks_unity2_raw::get_game_object_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MonoBehaviourCallbackHooks as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__MonoBehaviourCallbackHooks_unity2_raw::__lookup_update::get_method_info().method_ptr,();

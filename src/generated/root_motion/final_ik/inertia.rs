@@ -22,23 +22,35 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/inertia/Inertia.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Inertia")]#[parent(crate::root_motion::final_ik::offsetmodifier::OffsetModifier)]pub struct Inertia{#[offset(48)]#[rename(name="bodies")]pub bodies: ::unity2::Array<crate::root_motion::final_ik::inertia::Inertia_Body> , #[offset(56)]#[rename(name="limits")]pub limits: ::unity2::Array<crate::root_motion::final_ik::offsetmodifier::OffsetModifier_OffsetLimits> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/inertia/Inertia_Body.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Inertia.Body")]#[parent(crate::system::object::Object)]pub struct Inertia_Body{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="effectorLinks")]pub effector_links: ::unity2::Array<crate::root_motion::final_ik::inertia::Inertia_Body_EffectorLink> , #[offset(32)]#[rename(name="speed")]pub speed:f32, #[offset(36)]#[rename(name="acceleration")]pub acceleration:f32, #[offset(40)]#[rename(name="matchVelocity")]pub match_velocity:f32, #[offset(44)]#[rename(name="gravity")]pub gravity:f32, #[offset(48)]#[rename(name="delta")]pub delta:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="lazyPoint")]pub lazy_point:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="direction")]pub direction:crate::unity_engine::vector3::Vector3, #[offset(84)]#[rename(name="lastPosition")]pub last_position:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="firstUpdate")]pub first_update:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/inertia/Inertia_Body_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Inertia.Body.EffectorLink")]#[parent(crate::system::object::Object)]pub struct Inertia_Body_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/inertia/Inertia_Body.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Inertia.Body")]#[parent(crate::system::object::Object)]pub struct Inertia_Body{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="effectorLinks")]pub effector_links: ::unity2::Array<crate::root_motion::final_ik::inertia::Inertia_Body_EffectorLink> , #[offset(32)]#[rename(name="speed")]pub speed:f32, #[offset(36)]#[rename(name="acceleration")]pub acceleration:f32, #[offset(40)]#[rename(name="matchVelocity")]pub match_velocity:f32, #[offset(44)]#[rename(name="gravity")]pub gravity:f32, #[offset(48)]#[rename(name="delta")]pub delta:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="lazyPoint")]pub lazy_point:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="direction")]pub direction:crate::unity_engine::vector3::Vector3, #[offset(84)]#[rename(name="lastPosition")]pub last_position:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="firstUpdate")]pub first_update:bool,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-inertia-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-inertia")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Inertia_unity2_raw{use super:: * ;
+pub unsafe fn on_modify_offset(this:Inertia,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Inertia as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
+let inner:extern "C" fn(Inertia, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-inertia")]pub trait IInertiaMethods:IInertia{#[doc="`ResetBodies()` overload"]fn reset_bodies(self,)->(){unsafe{let __receiver= <Inertia as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x290ef50usize)as*mut u8,();
 (Inertia)__receiver)}
 }
 #[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <Inertia as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290efd0usize)as*mut u8,();
-(Inertia)__receiver)}
+__Inertia_unity2_raw::on_modify_offset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Inertia as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x290f090usize)as*mut u8,();
@@ -57,6 +69,24 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(Inertia), ::core::stringify!(new),));
  <Self as IInertiaMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-inertia")]pub trait IInertia_Body_EffectorLinkMethods:IInertia_Body_EffectorLink{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Inertia_Body_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66220usize)as*mut u8,();
+(Inertia_Body_EffectorLink)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-inertia")]impl<__T:IInertia_Body_EffectorLink>IInertia_Body_EffectorLinkMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-inertia")]impl Inertia_Body_EffectorLink{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root_motion-final_ik-inertia")]impl Inertia_Body_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Inertia_Body_EffectorLink), ::core::stringify!(new),));
+ <Self as IInertia_Body_EffectorLinkMethods> ::ctor(this,);
 this}
 }
 
@@ -88,36 +118,18 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-inertia")]pub trait IInertia_Body_EffectorLinkMethods:IInertia_Body_EffectorLink{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Inertia_Body_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b66220usize)as*mut u8,();
-(Inertia_Body_EffectorLink)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-inertia")]impl<__T:IInertia_Body_EffectorLink>IInertia_Body_EffectorLinkMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-inertia")]impl Inertia_Body_EffectorLink{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root_motion-final_ik-inertia")]impl Inertia_Body_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Inertia_Body_EffectorLink), ::core::stringify!(new),));
- <Self as IInertia_Body_EffectorLinkMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-inertia")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Inertia;
     pub use super::IInertia;
     pub use super::IInertiaMethods;
-    pub use super::Inertia_Body;
-    pub use super::IInertia_Body;
-    pub use super::IInertia_BodyMethods;
     pub use super::Inertia_Body_EffectorLink;
     pub use super::IInertia_Body_EffectorLink;
     pub use super::IInertia_Body_EffectorLinkMethods;
+    pub use super::Inertia_Body;
+    pub use super::IInertia_Body;
+    pub use super::IInertia_BodyMethods;
     pub use crate::root_motion::final_ik::offsetmodifier::IOffsetModifier;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

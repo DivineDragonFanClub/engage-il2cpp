@@ -22,6 +22,29 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "root-aktimelinertpcplayable-types")]
 pub use __types::*;
 
+#[cfg(feature="root-aktimelinertpcplayable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkTimelineRtpcPlayable_unity2_raw{use super:: * ;
+pub unsafe fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps(this:AkTimelineRtpcPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AkTimelineRtpcPlayable as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ITimelineClipAsset.get_clipCaps",));
+let inner:extern "C" fn(AkTimelineRtpcPlayable, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_playable(this:AkTimelineRtpcPlayable,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkTimelineRtpcPlayable as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
+let inner:extern "C" fn(AkTimelineRtpcPlayable,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,game_object,__mi)}
+}
+
 #[cfg(feature="root-aktimelinertpcplayable")]pub trait IAkTimelineRtpcPlayableMethods:IAkTimelineRtpcPlayable{#[doc="`SetupClipDisplay()` overload"]fn setup_clip_display(self,)->(){unsafe{let __receiver= <AkTimelineRtpcPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28bc0usize)as*mut u8,();
 (AkTimelineRtpcPlayable)__receiver)}
@@ -35,12 +58,10 @@ pub use __types::*;
 (AkTimelineRtpcPlayable)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(value))}
 }
 #[doc="`UnityEngine.Timeline.ITimelineClipAsset.get_clipCaps()` overload"]fn unity_engine_timeline_i_timeline_clip_asset_get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <AkTimelineRtpcPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28bf0usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
-(AkTimelineRtpcPlayable)__receiver)}
+__AkTimelineRtpcPlayable_unity2_raw::unity_engine_timeline_i_timeline_clip_asset_get_clip_caps(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AkTimelineRtpcPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28c00usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(AkTimelineRtpcPlayable)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+__AkTimelineRtpcPlayable_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTimelineRtpcPlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28d30usize)as*mut u8,();

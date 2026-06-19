@@ -20,6 +20,69 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-commonrewardmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-commonrewardmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CommonRewardMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:CommonRewardMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <CommonRewardMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(CommonRewardMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn tick(this:CommonRewardMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <CommonRewardMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
+let inner:extern "C" fn(CommonRewardMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:CommonRewardMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <CommonRewardMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(CommonRewardMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:CommonRewardMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <CommonRewardMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(CommonRewardMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn move_up(this:CommonRewardMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <CommonRewardMenu as::unity2::ClassIdentity> ::NAME,"MoveUp",));
+let inner:extern "C" fn(CommonRewardMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn move_down(this:CommonRewardMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <CommonRewardMenu as::unity2::ClassIdentity> ::NAME,"MoveDown",));
+let inner:extern "C" fn(CommonRewardMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+}
+
 #[cfg(feature="app-commonrewardmenu")]impl CommonRewardMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,reward_exp_list:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> > ,add_level_up_unit_list:impl::core::convert::Into<crate::system::action_2::Action_2<crate::app::unit::Unit,i32> >)->crate::app::commonrewardmenu::CommonRewardMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25311a0usize)as*mut u8,crate::app::commonrewardmenu::CommonRewardMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(reward_exp_list),(crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(add_level_up_unit_list))}
 }
@@ -30,28 +93,22 @@ pub use __types::*;
 (CommonRewardMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::system::action_2::Action_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(add_level_up_unit_list))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2531660usize)as*mut u8, ::unity2::Il2CppString;
-(CommonRewardMenu)__receiver)}
+__CommonRewardMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25316b0usize)as*mut u8,();
-(CommonRewardMenu)__receiver)}
+__CommonRewardMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2532370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(CommonRewardMenu)__receiver)}
+__CommonRewardMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2532390usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(CommonRewardMenu)__receiver)}
+__CommonRewardMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MoveUp(bool)` overload"]fn move_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25323b0usize)as*mut u8,();
-(CommonRewardMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__CommonRewardMenu_unity2_raw::move_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`MoveDown(bool)` overload"]fn move_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CommonRewardMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25323d0usize)as*mut u8,();
-(CommonRewardMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__CommonRewardMenu_unity2_raw::move_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 }
 

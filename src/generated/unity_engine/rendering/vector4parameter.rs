@@ -20,13 +20,25 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-vector4parameter-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-vector4parameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Vector4Parameter_unity2_raw{use super:: * ;
+pub unsafe fn interp(this:Vector4Parameter,from:crate::unity_engine::vector4::Vector4,to:crate::unity_engine::vector4::Vector4,t:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Vector4Parameter as::unity2::ClassIdentity> ::NAME,"Interp",));
+let inner:extern "C" fn(Vector4Parameter,crate::unity_engine::vector4::Vector4,crate::unity_engine::vector4::Vector4,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,from,to,t,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-vector4parameter")]pub trait IVector4ParameterMethods:IVector4Parameter{#[doc="`.ctor(crate::unity_engine::vector4::Vector4, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector4::Vector4> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Vector4Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e48f0usize)as*mut u8,();
 (Vector4Parameter)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
 }
 #[doc="`Interp(crate::unity_engine::vector4::Vector4, crate::unity_engine::vector4::Vector4, f32)` overload"]fn interp(self,from:impl::core::convert::Into<crate::unity_engine::vector4::Vector4> ,to:impl::core::convert::Into<crate::unity_engine::vector4::Vector4> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Vector4Parameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4980usize)as*mut u8,();
-(Vector4Parameter)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(from),(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(to),(f32)::core::convert::Into::into(t))}
+__Vector4Parameter_unity2_raw::interp(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 }
 

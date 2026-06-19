@@ -25,9 +25,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelgimmick/MapPanelGimmick.md"))]#[::unity2::class(namespace="App",name="MapPanelGimmick")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelgimmick::MapPanelGimmick>)]pub struct MapPanelGimmick{#[offset(64)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(72)]#[rename(name="m_GimmickImage")]pub m_gimmick_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_GimmickColor")]pub m_gimmick_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(100)]#[rename(name="previousCount")]pub previous_count:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelgimmick/MapPanelGimmick_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelGimmick_MeshIndex{pub value:i32,}
 impl::unity2::ClassIdentity for MapPanelGimmick_MeshIndex{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapPanelGimmick.MeshIndex";
@@ -43,10 +40,36 @@ pub fn num()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappanelgimmick/MapPanelGimmick.md"))]#[::unity2::class(namespace="App",name="MapPanelGimmick")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappanelgimmick::MapPanelGimmick>)]pub struct MapPanelGimmick{#[offset(64)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(72)]#[rename(name="m_GimmickImage")]pub m_gimmick_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_GimmickColor")]pub m_gimmick_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(100)]#[rename(name="previousCount")]pub previous_count:i32,}
+
 }
 
 #[cfg(feature = "app-mappanelgimmick-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mappanelgimmick")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelGimmick_unity2_raw{use super:: * ;
+pub unsafe fn get_sub_mesh_count(this:MapPanelGimmick,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapPanelGimmick as::unity2::ClassIdentity> ::NAME,"get_SubMeshCount",));
+let inner:extern "C" fn(MapPanelGimmick, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_source_materials(this:MapPanelGimmick,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapPanelGimmick as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
+let inner:extern "C" fn(MapPanelGimmick, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-mappanelgimmick")]impl MapPanelGimmick{#[doc="`UpdateRequest()` overload"]pub fn update_request()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2351a80usize)as*mut u8,();
 )}
@@ -54,8 +77,7 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-mappanelgimmick")]pub trait IMapPanelGimmickMethods:IMapPanelGimmick{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelGimmick as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2351280usize)as*mut u8,i32;
-(MapPanelGimmick)__receiver)}
+__MapPanelGimmick_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapPanelGimmick as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2351290usize)as*mut u8,();
@@ -66,8 +88,7 @@ pub use __types::*;
 (MapPanelGimmick)__receiver)}
 }
 #[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelGimmick as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2351420usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(MapPanelGimmick)__receiver)}
+__MapPanelGimmick_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetVertex()` overload"]fn set_vertex(self,)->(){unsafe{let __receiver= <MapPanelGimmick as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23513c0usize)as*mut u8,();
@@ -110,10 +131,10 @@ this}
 #[cfg(feature = "app-mappanelgimmick")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapPanelGimmick_MeshIndex;
     pub use super::MapPanelGimmick;
     pub use super::IMapPanelGimmick;
     pub use super::IMapPanelGimmickMethods;
-    pub use super::MapPanelGimmick_MeshIndex;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

@@ -26,69 +26,216 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-event_systems-baseinput-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-event_systems-baseinput")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseInput_unity2_raw{use super:: * ;
+pub unsafe fn get_composition_string(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_compositionString",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_ime_composition_mode(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::imecompositionmode::IMECompositionMode{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_imeCompositionMode",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)->crate::unity_engine::imecompositionmode::IMECompositionMode= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_ime_composition_mode(this:BaseInput,value:crate::unity_engine::imecompositionmode::IMECompositionMode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"set_imeCompositionMode",));
+let inner:extern "C" fn(BaseInput,crate::unity_engine::imecompositionmode::IMECompositionMode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_composition_cursor_pos(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_compositionCursorPos",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_composition_cursor_pos(this:BaseInput,value:crate::unity_engine::vector2::Vector2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"set_compositionCursorPos",));
+let inner:extern "C" fn(BaseInput,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_mouse_present(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_mousePresent",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_mouse_button_down(this:BaseInput,button:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"GetMouseButtonDown",));
+let inner:extern "C" fn(BaseInput,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,button,__mi)}
+pub unsafe fn get_mouse_button_up(this:BaseInput,button:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"GetMouseButtonUp",));
+let inner:extern "C" fn(BaseInput,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,button,__mi)}
+pub unsafe fn get_mouse_button(this:BaseInput,button:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"GetMouseButton",));
+let inner:extern "C" fn(BaseInput,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,button,__mi)}
+pub unsafe fn get_mouse_position(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_mousePosition",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_mouse_scroll_delta(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_mouseScrollDelta",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_touch_supported(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_touchSupported",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_touch_count(this:BaseInput,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"get_touchCount",));
+let inner:extern "C" fn(BaseInput, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_touch(this:BaseInput,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::touch::Touch{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"GetTouch",));
+let inner:extern "C" fn(BaseInput,i32, ::unity2::OptionalMethod,)->crate::unity_engine::touch::Touch= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn get_axis_raw(this:BaseInput,axis_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"GetAxisRaw",));
+let inner:extern "C" fn(BaseInput, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,axis_name,__mi)}
+pub unsafe fn get_button_down(this:BaseInput,button_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <BaseInput as::unity2::ClassIdentity> ::NAME,"GetButtonDown",));
+let inner:extern "C" fn(BaseInput, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,button_name,__mi)}
+}
+
 #[cfg(feature="unity_engine-event_systems-baseinput")]pub trait IBaseInputMethods:IBaseInput{#[doc="`get_compositionString()` overload"]fn get_composition_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a3e0usize)as*mut u8, ::unity2::Il2CppString;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_composition_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_imeCompositionMode()` overload"]fn get_ime_composition_mode(self,)->crate::unity_engine::imecompositionmode::IMECompositionMode{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a3f0usize)as*mut u8,crate::unity_engine::imecompositionmode::IMECompositionMode;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_ime_composition_mode(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_imeCompositionMode(crate::unity_engine::imecompositionmode::IMECompositionMode)` overload"]fn set_ime_composition_mode(self,value:impl::core::convert::Into<crate::unity_engine::imecompositionmode::IMECompositionMode>)->(){unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a400usize)as*mut u8,();
-(BaseInput)__receiver,(crate::unity_engine::imecompositionmode::IMECompositionMode)::core::convert::Into::into(value))}
+__BaseInput_unity2_raw::set_ime_composition_mode(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_compositionCursorPos()` overload"]fn get_composition_cursor_pos(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a410usize)as*mut u8,crate::unity_engine::vector2::Vector2;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_composition_cursor_pos(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_compositionCursorPos(crate::unity_engine::vector2::Vector2)` overload"]fn set_composition_cursor_pos(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a420usize)as*mut u8,();
-(BaseInput)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+__BaseInput_unity2_raw::set_composition_cursor_pos(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_mousePresent()` overload"]fn get_mouse_present(self,)->bool{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a430usize)as*mut u8,bool;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_mouse_present(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMouseButtonDown(i32)` overload"]fn get_mouse_button_down(self,button:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a440usize)as*mut u8,bool;
-(BaseInput)__receiver,(i32)::core::convert::Into::into(button))}
+__BaseInput_unity2_raw::get_mouse_button_down(__receiver, ::core::convert::Into::into(button), ::core::option::Option::None)}
 }
 #[doc="`GetMouseButtonUp(i32)` overload"]fn get_mouse_button_up(self,button:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a450usize)as*mut u8,bool;
-(BaseInput)__receiver,(i32)::core::convert::Into::into(button))}
+__BaseInput_unity2_raw::get_mouse_button_up(__receiver, ::core::convert::Into::into(button), ::core::option::Option::None)}
 }
 #[doc="`GetMouseButton(i32)` overload"]fn get_mouse_button(self,button:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a460usize)as*mut u8,bool;
-(BaseInput)__receiver,(i32)::core::convert::Into::into(button))}
+__BaseInput_unity2_raw::get_mouse_button(__receiver, ::core::convert::Into::into(button), ::core::option::Option::None)}
 }
 #[doc="`get_mousePosition()` overload"]fn get_mouse_position(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a470usize)as*mut u8,crate::unity_engine::vector2::Vector2;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_mouse_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_mouseScrollDelta()` overload"]fn get_mouse_scroll_delta(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a480usize)as*mut u8,crate::unity_engine::vector2::Vector2;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_mouse_scroll_delta(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_touchSupported()` overload"]fn get_touch_supported(self,)->bool{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a490usize)as*mut u8,bool;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_touch_supported(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_touchCount()` overload"]fn get_touch_count(self,)->i32{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a4a0usize)as*mut u8,i32;
-(BaseInput)__receiver)}
+__BaseInput_unity2_raw::get_touch_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetTouch(i32)` overload"]fn get_touch(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::touch::Touch{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a4b0usize)as*mut u8,crate::unity_engine::touch::Touch;
-(BaseInput)__receiver,(i32)::core::convert::Into::into(index))}
+__BaseInput_unity2_raw::get_touch(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`GetAxisRaw(::unity2::Il2CppString)` overload"]fn get_axis_raw(self,axis_name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a510usize)as*mut u8,f32;
-(BaseInput)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(axis_name))}
+__BaseInput_unity2_raw::get_axis_raw(__receiver, ::core::convert::Into::into(axis_name), ::core::option::Option::None)}
 }
 #[doc="`GetButtonDown(::unity2::Il2CppString)` overload"]fn get_button_down(self,button_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a520usize)as*mut u8,bool;
-(BaseInput)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(button_name))}
+__BaseInput_unity2_raw::get_button_down(__receiver, ::core::convert::Into::into(button_name), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317a530usize)as*mut u8,();

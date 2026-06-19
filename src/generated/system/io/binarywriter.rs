@@ -16,6 +16,189 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-binarywriter-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-binarywriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BinaryWriter_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:BinaryWriter,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BinaryWriter,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn dispose_2(this:BinaryWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BinaryWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn flush(this:BinaryWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Flush",));
+let inner:extern "C" fn(BinaryWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write(this:BinaryWriter,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_2(this:BinaryWriter,value:u8,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,u8, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_3(this:BinaryWriter,value:i8,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,i8, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_4(this:BinaryWriter,buffer: ::unity2::Array<u8> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter, ::unity2::Array<u8> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,__mi)}
+pub unsafe fn write_5(this:BinaryWriter,buffer: ::unity2::Array<u8> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn write_6(this:BinaryWriter,ch:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ch,__mi)}
+pub unsafe fn write_7(this:BinaryWriter,chars: ::unity2::Array<u16> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,chars,__mi)}
+pub unsafe fn write_8(this:BinaryWriter,value:f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_9(this:BinaryWriter,value:i16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,i16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_10(this:BinaryWriter,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_11(this:BinaryWriter,value:u32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,u32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_12(this:BinaryWriter,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_13(this:BinaryWriter,value:u64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,u64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_14(this:BinaryWriter,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_15(this:BinaryWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <BinaryWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(BinaryWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="system-io-binarywriter")]impl BinaryWriter{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3390bb0usize)as*mut u8,();
 )}
 }
@@ -30,76 +213,58 @@ pub use __types::*;
 (BinaryWriter)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(output))}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390010usize)as*mut u8,();
-(BinaryWriter)__receiver,(bool)::core::convert::Into::into(disposing))}
+__BinaryWriter_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390040usize)as*mut u8,();
-(BinaryWriter)__receiver)}
+__BinaryWriter_unity2_raw::dispose_2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390050usize)as*mut u8,();
-(BinaryWriter)__receiver)}
+__BinaryWriter_unity2_raw::flush(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Write(bool)` overload"]fn write(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390070usize)as*mut u8,();
-(BinaryWriter)__receiver,(bool)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(u8)` overload"]fn write_2(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33900c0usize)as*mut u8,();
-(BinaryWriter)__receiver,(u8)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(i8)` overload"]fn write_3(self,value:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33900e0usize)as*mut u8,();
-(BinaryWriter)__receiver,(i8)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_3(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u8>)` overload"]fn write_4(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390100usize)as*mut u8,();
-(BinaryWriter)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer))}
+__BinaryWriter_unity2_raw::write_4(__receiver, ::core::convert::Into::into(buffer), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write_5(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390180usize)as*mut u8,();
-(BinaryWriter)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__BinaryWriter_unity2_raw::write_5(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`Write(u16)` overload"]fn write_6(self,ch:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33901a0usize)as*mut u8,();
-(BinaryWriter)__receiver,(u16)::core::convert::Into::into(ch))}
+__BinaryWriter_unity2_raw::write_6(__receiver, ::core::convert::Into::into(ch), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u16>)` overload"]fn write_7(self,chars:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33902e0usize)as*mut u8,();
-(BinaryWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(chars))}
+__BinaryWriter_unity2_raw::write_7(__receiver, ::core::convert::Into::into(chars), ::core::option::Option::None)}
 }
 #[doc="`Write(f64)` overload"]fn write_8(self,value:impl::core::convert::Into<f64>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390380usize)as*mut u8,();
-(BinaryWriter)__receiver,(f64)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_8(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(i16)` overload"]fn write_9(self,value:impl::core::convert::Into<i16>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390400usize)as*mut u8,();
-(BinaryWriter)__receiver,(i16)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_9(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(i32)` overload"]fn write_10(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33904c0usize)as*mut u8,();
-(BinaryWriter)__receiver,(i32)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_10(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(u32)` overload"]fn write_11(self,value:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390550usize)as*mut u8,();
-(BinaryWriter)__receiver,(u32)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_11(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(i64)` overload"]fn write_12(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33905e0usize)as*mut u8,();
-(BinaryWriter)__receiver,(i64)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_12(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(u64)` overload"]fn write_13(self,value:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33906d0usize)as*mut u8,();
-(BinaryWriter)__receiver,(u64)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_13(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(f32)` overload"]fn write_14(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33907c0usize)as*mut u8,();
-(BinaryWriter)__receiver,(f32)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_14(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Il2CppString)` overload"]fn write_15(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3390840usize)as*mut u8,();
-(BinaryWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__BinaryWriter_unity2_raw::write_15(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write7BitEncodedInt(i32)` overload"]fn write7_bit_encoded_int(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3390b40usize)as*mut u8,();

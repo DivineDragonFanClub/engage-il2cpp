@@ -26,28 +26,69 @@ impl::unity2::IlType for ParticleSystem_PlaybackState_Force{fn il_type()-> &'sta
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem.md"))]#[::unity2::class(namespace="UnityEngine",name="ParticleSystem")]#[parent(crate::unity_engine::component::Component)]pub struct ParticleSystem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Shape{pub m_random:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,pub m_radius_timer:f32,pub m_radius_timer_prev:f32,pub m_arc_timer:f32,pub m_arc_timer_prev:f32,pub m_mesh_spawn_timer:f32,pub m_mesh_spawn_timer_prev:f32,pub m_ordered_mesh_vertex_index:i32,}
-impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.PlaybackState.Shape";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_SizeBySpeedModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.SizeBySpeedModule";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_PlaybackState_Shape{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_SizeBySpeedModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Noise{pub m_scroll_offset:f32,}
-impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.PlaybackState.Noise";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_Particle{pub m_position:crate::unity_engine::vector3::Vector3,pub m_velocity:crate::unity_engine::vector3::Vector3,pub m_animated_velocity:crate::unity_engine::vector3::Vector3,pub m_initial_velocity:crate::unity_engine::vector3::Vector3,pub m_axis_of_rotation:crate::unity_engine::vector3::Vector3,pub m_rotation:crate::unity_engine::vector3::Vector3,pub m_angular_velocity:crate::unity_engine::vector3::Vector3,pub m_start_size:crate::unity_engine::vector3::Vector3,pub m_start_color:crate::unity_engine::color32::Color32,pub m_random_seed:u32,pub m_parent_random_seed:u32,pub m_lifetime:f32,pub m_start_lifetime:f32,pub m_mesh_index:i32,pub m_emit_accumulator0:f32,pub m_emit_accumulator1:f32,pub m_flags:u32,}
+impl::unity2::ClassIdentity for ParticleSystem_Particle{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.Particle";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_PlaybackState_Noise{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_Particle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ForceOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ForceOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_ForceOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.ForceOverLifetimeModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_ForceOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_MinMaxGradient.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_MinMaxGradient{pub m_mode:crate::unity_engine::particlesystemgradientmode::ParticleSystemGradientMode,pub m_gradient_min:crate::unity_engine::gradient::Gradient,pub m_gradient_max:crate::unity_engine::gradient::Gradient,pub m_color_min:crate::unity_engine::color::Color,pub m_color_max:crate::unity_engine::color::Color,}
+impl::unity2::ClassIdentity for ParticleSystem_MinMaxGradient{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.MinMaxGradient";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_MinMaxGradient{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_LightsModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_LightsModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_LightsModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.LightsModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_LightsModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_MinMaxCurve.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_MinMaxCurve{pub m_mode:crate::unity_engine::particlesystemcurvemode::ParticleSystemCurveMode,pub m_curve_multiplier:f32,pub m_curve_min:crate::unity_engine::animationcurve::AnimationCurve,pub m_curve_max:crate::unity_engine::animationcurve::AnimationCurve,pub m_constant_min:f32,pub m_constant_max:f32,}
+impl::unity2::ClassIdentity for ParticleSystem_MinMaxCurve{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.MinMaxCurve";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_MinMaxCurve{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -62,28 +103,6 @@ impl::unity2::IlType for ParticleSystem_TriggerModule{fn il_type()-> &'static::u
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_SizeBySpeedModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_SizeBySpeedModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_SizeBySpeedModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.SizeBySpeedModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_SizeBySpeedModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_SubEmittersModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_SubEmittersModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_SubEmittersModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.SubEmittersModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_SubEmittersModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_RotationBySpeedModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_RotationBySpeedModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
 impl::unity2::ClassIdentity for ParticleSystem_RotationBySpeedModule{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="ParticleSystem.RotationBySpeedModule";
@@ -95,14 +114,25 @@ impl::unity2::IlType for ParticleSystem_RotationBySpeedModule{fn il_type()-> &'s
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ColorBySpeedModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ColorBySpeedModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_ColorBySpeedModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.ColorBySpeedModule";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Collision.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Collision{pub m_random:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,}
+impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Collision{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.PlaybackState.Collision";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_ColorBySpeedModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_PlaybackState_Collision{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Shape.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Shape{pub m_random:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,pub m_radius_timer:f32,pub m_radius_timer_prev:f32,pub m_arc_timer:f32,pub m_arc_timer_prev:f32,pub m_mesh_spawn_timer:f32,pub m_mesh_spawn_timer_prev:f32,pub m_ordered_mesh_vertex_index:i32,}
+impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Shape{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.PlaybackState.Shape";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_PlaybackState_Shape{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -117,25 +147,25 @@ impl::unity2::IlType for ParticleSystem_PlaybackState_Emission{fn il_type()-> &'
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_CollisionModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_CollisionModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.CollisionModule";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Seed{pub x:u32,pub y:u32,pub z:u32,pub w:u32,}
+impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.PlaybackState.Seed";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_CollisionModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_PlaybackState_Seed{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ShapeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ShapeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_ShapeModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.ShapeModule";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_RotationOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.RotationOverLifetimeModule";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_ShapeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_RotationOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -161,25 +191,14 @@ impl::unity2::IlType for ParticleSystem_MainModule{fn il_type()-> &'static::unit
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_InheritVelocityModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_InheritVelocityModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_InheritVelocityModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.InheritVelocityModule";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Trail.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Trail{pub m_timer:f32,}
+impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Trail{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.PlaybackState.Trail";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_InheritVelocityModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ForceOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ForceOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_ForceOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.ForceOverLifetimeModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_ForceOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_PlaybackState_Trail{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -194,113 +213,14 @@ impl::unity2::IlType for ParticleSystem_LimitVelocityOverLifetimeModule{fn il_ty
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_LightsModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_LightsModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_LightsModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.LightsModule";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_CollisionModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_CollisionModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_CollisionModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.CollisionModule";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_LightsModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_TrailModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_TrailModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.TrailModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_TrailModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Trail.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Trail{pub m_timer:f32,}
-impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Trail{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.PlaybackState.Trail";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_PlaybackState_Trail{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_EmissionModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_EmissionModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_EmissionModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.EmissionModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_EmissionModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_VelocityOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.VelocityOverLifetimeModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ColorOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ColorOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_ColorOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.ColorOverLifetimeModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_ColorOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_NoiseModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_NoiseModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_NoiseModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.NoiseModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_NoiseModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_SizeOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_SizeOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_SizeOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.SizeOverLifetimeModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_SizeOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_TextureSheetAnimationModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_TextureSheetAnimationModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_TextureSheetAnimationModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.TextureSheetAnimationModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_TextureSheetAnimationModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_Trails{pub positions:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,pub front_positions:crate::system::collections::generic::list_1::List_1<i32>,pub back_positions:crate::system::collections::generic::list_1::List_1<i32>,pub position_counts:crate::system::collections::generic::list_1::List_1<i32>,pub max_trail_count:i32,pub max_positions_per_trail_count:i32,}
-impl::unity2::ClassIdentity for ParticleSystem_Trails{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.Trails";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_Trails{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_CollisionModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -315,6 +235,116 @@ impl::unity2::IlType for ParticleSystem_PlaybackState_Lights{fn il_type()-> &'st
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_LifetimeByEmitterSpeedModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_LifetimeByEmitterSpeedModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_LifetimeByEmitterSpeedModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.LifetimeByEmitterSpeedModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_LifetimeByEmitterSpeedModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_VelocityOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_VelocityOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_VelocityOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.VelocityOverLifetimeModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_VelocityOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_TextureSheetAnimationModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_TextureSheetAnimationModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_TextureSheetAnimationModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.TextureSheetAnimationModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_TextureSheetAnimationModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_SubEmittersModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_SubEmittersModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_SubEmittersModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.SubEmittersModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_SubEmittersModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_SizeOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_SizeOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_SizeOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.SizeOverLifetimeModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_SizeOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_EmissionModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_EmissionModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_EmissionModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.EmissionModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_EmissionModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ShapeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ShapeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_ShapeModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.ShapeModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_ShapeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_NoiseModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_NoiseModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_NoiseModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.NoiseModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_NoiseModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_Trails.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_Trails{pub positions:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>,pub front_positions:crate::system::collections::generic::list_1::List_1<i32>,pub back_positions:crate::system::collections::generic::list_1::List_1<i32>,pub position_counts:crate::system::collections::generic::list_1::List_1<i32>,pub max_trail_count:i32,pub max_positions_per_trail_count:i32,}
+impl::unity2::ClassIdentity for ParticleSystem_Trails{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.Trails";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_Trails{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_TrailModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_TrailModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_TrailModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.TrailModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_TrailModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed4.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Seed4{pub x:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,pub y:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,pub z:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,pub w:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed,}
 impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed4{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="ParticleSystem.PlaybackState.Seed4";
@@ -323,28 +353,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for ParticleSystem_PlaybackState_Seed4{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_MinMaxGradient.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_MinMaxGradient{pub m_mode:crate::unity_engine::particlesystemgradientmode::ParticleSystemGradientMode,pub m_gradient_min:crate::unity_engine::gradient::Gradient,pub m_gradient_max:crate::unity_engine::gradient::Gradient,pub m_color_min:crate::unity_engine::color::Color,pub m_color_max:crate::unity_engine::color::Color,}
-impl::unity2::ClassIdentity for ParticleSystem_MinMaxGradient{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.MinMaxGradient";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_MinMaxGradient{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ExternalForcesModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.ExternalForcesModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_ExternalForcesModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -359,70 +367,29 @@ impl::unity2::IlType for ParticleSystem_PlaybackState{fn il_type()-> &'static::u
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Initial{pub m_random:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,}
-impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.PlaybackState.Initial";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_InheritVelocityModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_InheritVelocityModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_InheritVelocityModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.InheritVelocityModule";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_PlaybackState_Initial{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_InheritVelocityModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_Particle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_Particle{pub m_position:crate::unity_engine::vector3::Vector3,pub m_velocity:crate::unity_engine::vector3::Vector3,pub m_animated_velocity:crate::unity_engine::vector3::Vector3,pub m_initial_velocity:crate::unity_engine::vector3::Vector3,pub m_axis_of_rotation:crate::unity_engine::vector3::Vector3,pub m_rotation:crate::unity_engine::vector3::Vector3,pub m_angular_velocity:crate::unity_engine::vector3::Vector3,pub m_start_size:crate::unity_engine::vector3::Vector3,pub m_start_color:crate::unity_engine::color32::Color32,pub m_random_seed:u32,pub m_parent_random_seed:u32,pub m_lifetime:f32,pub m_start_lifetime:f32,pub m_mesh_index:i32,pub m_emit_accumulator0:f32,pub m_emit_accumulator1:f32,pub m_flags:u32,}
-impl::unity2::ClassIdentity for ParticleSystem_Particle{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.Particle";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Noise.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Noise{pub m_scroll_offset:f32,}
+impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Noise{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.PlaybackState.Noise";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_Particle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_PlaybackState_Noise{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Collision.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Collision{pub m_random:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,}
-impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Collision{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.PlaybackState.Collision";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_PlaybackState_Collision{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_LifetimeByEmitterSpeedModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_LifetimeByEmitterSpeedModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_LifetimeByEmitterSpeedModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.LifetimeByEmitterSpeedModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_LifetimeByEmitterSpeedModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_RotationOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_RotationOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
-impl::unity2::ClassIdentity for ParticleSystem_RotationOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.RotationOverLifetimeModule";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_RotationOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_MinMaxCurve.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_MinMaxCurve{pub m_mode:crate::unity_engine::particlesystemcurvemode::ParticleSystemCurveMode,pub m_curve_multiplier:f32,pub m_curve_min:crate::unity_engine::animationcurve::AnimationCurve,pub m_curve_max:crate::unity_engine::animationcurve::AnimationCurve,pub m_constant_min:f32,pub m_constant_max:f32,}
-impl::unity2::ClassIdentity for ParticleSystem_MinMaxCurve{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.MinMaxCurve";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for ParticleSystem_MinMaxCurve{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem.md"))]#[::unity2::class(namespace="UnityEngine",name="ParticleSystem")]#[parent(crate::unity_engine::component::Component)]pub struct ParticleSystem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_EmitParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_EmitParams{pub m_particle:crate::unity_engine::particlesystem::ParticleSystem_Particle,pub m_position_set:bool,pub m_velocity_set:bool,pub m_axis_of_rotation_set:bool,pub m_rotation_set:bool,pub m_angular_velocity_set:bool,pub m_start_size_set:bool,pub m_start_color_set:bool,pub m_random_seed_set:bool,pub m_start_lifetime_set:bool,pub m_mesh_index_set:bool,pub m_apply_shape_to_position:bool,}
@@ -436,20 +403,784 @@ impl::unity2::IlType for ParticleSystem_EmitParams{fn il_type()-> &'static::unit
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Seed.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Seed{pub x:u32,pub y:u32,pub z:u32,pub w:u32,}
-impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Seed{const NAMESPACE: &'static str="UnityEngine";
-const NAME: &'static str="ParticleSystem.PlaybackState.Seed";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ColorOverLifetimeModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ColorOverLifetimeModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_ColorOverLifetimeModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.ColorOverLifetimeModule";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for ParticleSystem_PlaybackState_Seed{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for ParticleSystem_ColorOverLifetimeModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ExternalForcesModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ExternalForcesModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_ExternalForcesModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.ExternalForcesModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_ExternalForcesModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_PlaybackState_Initial.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_PlaybackState_Initial{pub m_random:crate::unity_engine::particlesystem::ParticleSystem_PlaybackState_Seed4,}
+impl::unity2::ClassIdentity for ParticleSystem_PlaybackState_Initial{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.PlaybackState.Initial";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_PlaybackState_Initial{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/particlesystem/ParticleSystem_ColorBySpeedModule.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ParticleSystem_ColorBySpeedModule{pub m_particle_system:crate::unity_engine::particlesystem::ParticleSystem,}
+impl::unity2::ClassIdentity for ParticleSystem_ColorBySpeedModule{const NAMESPACE: &'static str="UnityEngine";
+const NAME: &'static str="ParticleSystem.ColorBySpeedModule";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for ParticleSystem_ColorBySpeedModule{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
 
 #[cfg(feature = "unity_engine-particlesystem-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeBySpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf810usize)as*mut u8,();
+(*mut ParticleSystem_SizeBySpeedModule)self as*mut ParticleSystem_SizeBySpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeBySpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_Particle{#[doc="`set_lifetime(f32)` overload"]pub fn set_lifetime(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7b0usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_position(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_position(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb790usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_velocity(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7a0usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`set_remainingLifetime(f32)` overload"]pub fn set_remaining_lifetime(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee39a0usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_startLifetime(f32)` overload"]pub fn set_start_lifetime(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7c0usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_startColor(crate::unity_engine::color32::Color32)` overload"]pub fn set_start_color(&mut self,value:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb860usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::color32::Color32)::core::convert::Into::into(value))}
+}
+#[doc="`set_randomSeed(u32)` overload"]pub fn set_random_seed(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb870usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`set_startSize(f32)` overload"]pub fn set_start_size(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7d0usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_rotation(f32)` overload"]pub fn set_rotation(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee39b0usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_rotation3_d(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7e0usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_angular_velocity3_d(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb820usize)as*mut u8,();
+(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_Particle{pub fn set_lifetime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_remaining_lifetime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_start_lifetime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_random_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_start_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_rotation3_d_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_angular_velocity3_d_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ForceOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf710usize)as*mut u8,();
+(*mut ParticleSystem_ForceOverLifetimeModule)self as*mut ParticleSystem_ForceOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ForceOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxGradient{#[doc="`op_Implicit(crate::unity_engine::color::Color)` overload"]pub fn op_implicit(color:impl::core::convert::Into<crate::unity_engine::color::Color>)->crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc890usize)as*mut u8,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
+(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxGradient{#[doc="`.ctor(crate::unity_engine::color::Color)` overload"]pub fn ctor(&mut self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3910usize)as*mut u8,();
+(*mut ParticleSystem_MinMaxGradient)self as*mut ParticleSystem_MinMaxGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+}
+#[doc="`get_color()` overload"]pub fn get_color(&mut self,)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc790usize)as*mut u8,crate::unity_engine::color::Color;
+(*mut ParticleSystem_MinMaxGradient)self as*mut ParticleSystem_MinMaxGradient)}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxGradient{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LightsModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfa50usize)as*mut u8,();
+(*mut ParticleSystem_LightsModule)self as*mut ParticleSystem_LightsModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LightsModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxCurve{#[doc="`op_Implicit(f32)` overload"]pub fn op_implicit(constant:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc2d0usize)as*mut u8,crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
+(f32)::core::convert::Into::into(constant))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxCurve{#[doc="`.ctor(f32)` overload"]pub fn ctor(&mut self,constant:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee38c0usize)as*mut u8,();
+(*mut ParticleSystem_MinMaxCurve)self as*mut ParticleSystem_MinMaxCurve,(f32)::core::convert::Into::into(constant))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxCurve{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TriggerModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf990usize)as*mut u8,();
+(*mut ParticleSystem_TriggerModule)self as*mut ParticleSystem_TriggerModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TriggerModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationBySpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf890usize)as*mut u8,();
+(*mut ParticleSystem_RotationBySpeedModule)self as*mut ParticleSystem_RotationBySpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationBySpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf850usize)as*mut u8,();
+(*mut ParticleSystem_RotationOverLifetimeModule)self as*mut ParticleSystem_RotationOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CustomDataModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfad0usize)as*mut u8,();
+(*mut ParticleSystem_CustomDataModule)self as*mut ParticleSystem_CustomDataModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CustomDataModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MainModule{#[doc="`get_duration_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_duration_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2b50usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`get_loop_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_loop_injected()->(bool,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ba0usize)as*mut u8,bool;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_loop_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]pub fn set_loop_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2bf0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startDelayMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_delay_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2c40usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startDelayMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_delay_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2c90usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startLifetimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_lifetime_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ce0usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startLifetimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_lifetime_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2d30usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startSpeedMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_speed_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2d80usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startSpeedMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_speed_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2dd0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startSizeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_size_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2e20usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startSizeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_size_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2e70usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`set_startRotation_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_start_rotation_injected()->(crate::unity_engine::particlesystem::ParticleSystem_MainModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2f10usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`get_startRotationMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2f60usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startRotationMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2fb0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startRotationXMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_x_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3000usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startRotationXMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_x_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3050usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startRotationYMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_y_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee30a0usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startRotationYMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_y_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee30f0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startRotationZMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_z_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3140usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_startRotationZMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_z_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3190usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_startColor_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]pub fn get_start_color_injected()->(crate::unity_engine::particlesystem::ParticleSystem_MainModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee31e0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`set_startColor_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]pub fn set_start_color_injected()->(crate::unity_engine::particlesystem::ParticleSystem_MainModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3230usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`get_gravityModifierMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_gravity_modifier_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3280usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_gravityModifierMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_gravity_modifier_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee32d0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_simulationSpace_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_simulation_space_injected()->(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3320usize)as*mut u8,crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_simulationSpace_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]pub fn set_simulation_space_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3370usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_simulationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_simulation_speed_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee33c0usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_simulationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_simulation_speed_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3410usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_scalingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_scaling_mode_injected()->(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3460usize)as*mut u8,crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_scalingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]pub fn set_scaling_mode_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee34b0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_playOnAwake_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_play_on_awake_injected()->(bool,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3500usize)as*mut u8,bool;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_playOnAwake_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]pub fn set_play_on_awake_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3550usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_maxParticles_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_max_particles_injected()->(i32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee35a0usize)as*mut u8,i32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_maxParticles_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, i32)` overload"]pub fn set_max_particles_injected(value:impl::core::convert::Into<i32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee35f0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_stopAction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_stop_action_injected()->(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3690usize)as*mut u8,crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_stopAction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]pub fn set_stop_action_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3730usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_cullingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_culling_mode_injected()->(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee37d0usize)as*mut u8,crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_cullingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]pub fn set_culling_mode_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3870usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MainModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf580usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+#[doc="`get_duration()` overload"]pub fn get_duration(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbe00usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`get_loop()` overload"]pub fn get_loop(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbb20usize)as*mut u8,bool;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_loop(bool)` overload"]pub fn set_loop(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbbe0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_startDelayMultiplier()` overload"]pub fn get_start_delay_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb9b0usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startDelayMultiplier(f32)` overload"]pub fn set_start_delay_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edba70usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_startLifetimeMultiplier()` overload"]pub fn get_start_lifetime_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcf40usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startLifetimeMultiplier(f32)` overload"]pub fn set_start_lifetime_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd000usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_startSpeedMultiplier()` overload"]pub fn get_start_speed_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc400usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startSpeedMultiplier(f32)` overload"]pub fn set_start_speed_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc4c0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_startSizeMultiplier()` overload"]pub fn get_start_size_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc570usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startSizeMultiplier(f32)` overload"]pub fn set_start_size_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc630usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`set_startRotation(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_start_rotation(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ec0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)::core::convert::Into::into(value))}
+}
+#[doc="`get_startRotationMultiplier()` overload"]pub fn get_start_rotation_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edca10usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startRotationMultiplier(f32)` overload"]pub fn set_start_rotation_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcad0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_startRotationXMultiplier()` overload"]pub fn get_start_rotation_x_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcc20usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startRotationXMultiplier(f32)` overload"]pub fn set_start_rotation_x_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcdf0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_startRotationYMultiplier()` overload"]pub fn get_start_rotation_y_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcc70usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startRotationYMultiplier(f32)` overload"]pub fn set_start_rotation_y_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edce40usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_startRotationZMultiplier()` overload"]pub fn get_start_rotation_z_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edccc0usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startRotationZMultiplier(f32)` overload"]pub fn set_start_rotation_z_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edce90usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_startColor()` overload"]pub fn get_start_color(&mut self,)->crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc700usize)as*mut u8,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_startColor(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]pub fn set_start_color(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc960usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)::core::convert::Into::into(value))}
+}
+#[doc="`get_gravityModifierMultiplier()` overload"]pub fn get_gravity_modifier_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd0b0usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_gravityModifierMultiplier(f32)` overload"]pub fn set_gravity_modifier_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd170usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_simulationSpace()` overload"]pub fn get_simulation_space(&mut self,)->crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd390usize)as*mut u8,crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_simulationSpace(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]pub fn set_simulation_space(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd450usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)::core::convert::Into::into(value))}
+}
+#[doc="`get_simulationSpeed()` overload"]pub fn get_simulation_speed(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbeb0usize)as*mut u8,f32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_simulationSpeed(f32)` overload"]pub fn set_simulation_speed(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbf70usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_scalingMode()` overload"]pub fn get_scaling_mode(&mut self,)->crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd500usize)as*mut u8,crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_scalingMode(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]pub fn set_scaling_mode(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd5c0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)::core::convert::Into::into(value))}
+}
+#[doc="`get_playOnAwake()` overload"]pub fn get_play_on_awake(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbc90usize)as*mut u8,bool;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_playOnAwake(bool)` overload"]pub fn set_play_on_awake(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbd50usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_maxParticles()` overload"]pub fn get_max_particles(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd220usize)as*mut u8,i32;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_maxParticles(i32)` overload"]pub fn set_max_particles(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd2e0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_stopAction()` overload"]pub fn get_stop_action(&mut self,)->crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3640usize)as*mut u8,crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_stopAction(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]pub fn set_stop_action(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee36e0usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)::core::convert::Into::into(value))}
+}
+#[doc="`get_cullingMode()` overload"]pub fn get_culling_mode(&mut self,)->crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3780usize)as*mut u8,crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
+}
+#[doc="`set_cullingMode(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]pub fn set_culling_mode(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3820usize)as*mut u8,();
+(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MainModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_start_delay_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_start_delay_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_start_lifetime_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_start_lifetime_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_start_speed_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_start_speed_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_start_size_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_start_size_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_start_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_start_rotation_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_start_rotation_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_start_rotation_x_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_start_rotation_x_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_start_rotation_y_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn set_start_rotation_y_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_start_rotation_z_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn set_start_rotation_z_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn set_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_gravity_modifier_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_gravity_modifier_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn get_simulation_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_simulation_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn get_simulation_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_simulation_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn get_scaling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn set_scaling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_play_on_awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn set_play_on_awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_max_particles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn set_max_particles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn get_stop_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_stop_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn get_culling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn set_culling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn get_duration_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn get_loop_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn set_loop_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_start_delay_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn set_start_delay_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn get_start_lifetime_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn set_start_lifetime_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn get_start_speed_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+pub fn set_start_speed_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
+pub fn get_start_size_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
+pub fn set_start_size_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
+pub fn set_start_rotation_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
+pub fn get_start_rotation_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
+pub fn set_start_rotation_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
+pub fn get_start_rotation_x_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
+pub fn set_start_rotation_x_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
+pub fn get_start_rotation_y_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
+pub fn set_start_rotation_y_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
+pub fn get_start_rotation_z_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
+pub fn set_start_rotation_z_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
+pub fn get_start_color_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
+pub fn set_start_color_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
+pub fn get_gravity_modifier_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
+pub fn set_gravity_modifier_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
+pub fn get_simulation_space_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
+pub fn set_simulation_space_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
+pub fn get_simulation_speed_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
+pub fn set_simulation_speed_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
+pub fn get_scaling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
+pub fn set_scaling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
+pub fn get_play_on_awake_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
+pub fn set_play_on_awake_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
+pub fn get_max_particles_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
+pub fn set_max_particles_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
+pub fn get_stop_action_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
+pub fn set_stop_action_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
+pub fn get_culling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
+pub fn set_culling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LimitVelocityOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf650usize)as*mut u8,();
+(*mut ParticleSystem_LimitVelocityOverLifetimeModule)self as*mut ParticleSystem_LimitVelocityOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LimitVelocityOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CollisionModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf950usize)as*mut u8,();
+(*mut ParticleSystem_CollisionModule)self as*mut ParticleSystem_CollisionModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CollisionModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LifetimeByEmitterSpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf6d0usize)as*mut u8,();
+(*mut ParticleSystem_LifetimeByEmitterSpeedModule)self as*mut ParticleSystem_LifetimeByEmitterSpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LifetimeByEmitterSpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_VelocityOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf610usize)as*mut u8,();
+(*mut ParticleSystem_VelocityOverLifetimeModule)self as*mut ParticleSystem_VelocityOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_VelocityOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TextureSheetAnimationModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfa10usize)as*mut u8,();
+(*mut ParticleSystem_TextureSheetAnimationModule)self as*mut ParticleSystem_TextureSheetAnimationModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TextureSheetAnimationModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SubEmittersModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf9d0usize)as*mut u8,();
+(*mut ParticleSystem_SubEmittersModule)self as*mut ParticleSystem_SubEmittersModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SubEmittersModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf7d0usize)as*mut u8,();
+(*mut ParticleSystem_SizeOverLifetimeModule)self as*mut ParticleSystem_SizeOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_EmissionModule{#[doc="`get_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]pub fn get_enabled_injected()->(bool,crate::unity_engine::particlesystem::ParticleSystem_EmissionModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2a10usize)as*mut u8,bool;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule, bool)` overload"]pub fn set_enabled_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_EmissionModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2a60usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`set_rateOverTime_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_rate_over_time_injected()->(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ab0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`get_rateOverTimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]pub fn get_rate_over_time_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_EmissionModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2b00usize)as*mut u8,f32;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_EmissionModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf590usize)as*mut u8,();
+(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+#[doc="`get_enabled()` overload"]pub fn get_enabled(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc050usize)as*mut u8,bool;
+(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule)}
+}
+#[doc="`set_enabled(bool)` overload"]pub fn set_enabled(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc110usize)as*mut u8,();
+(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_rateOverTime(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_rate_over_time(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc350usize)as*mut u8,();
+(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule,(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)::core::convert::Into::into(value))}
+}
+#[doc="`get_rateOverTimeMultiplier()` overload"]pub fn get_rate_over_time_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc1c0usize)as*mut u8,f32;
+(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule)}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_EmissionModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rate_over_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_rate_over_time_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_enabled_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_enabled_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_rate_over_time_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_rate_over_time_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ShapeModule{#[doc="`set_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, bool)` overload"]pub fn set_enabled_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_ShapeModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3a20usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`set_shapeType_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]pub fn set_shape_type_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType>)->crate::unity_engine::particlesystem::ParticleSystem_ShapeModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3ac0usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+#[doc="`get_skinnedMeshRenderer_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule)` overload"]pub fn get_skinned_mesh_renderer_injected()->(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,crate::unity_engine::particlesystem::ParticleSystem_ShapeModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3b60usize)as*mut u8,crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer;
+(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`set_skinnedMeshRenderer_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]pub fn set_skinned_mesh_renderer_injected(value:impl::core::convert::Into<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>)->crate::unity_engine::particlesystem::ParticleSystem_ShapeModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3c00usize)as*mut u8,();
+(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr(),(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)::core::convert::Into::into(value));
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ShapeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf5d0usize)as*mut u8,();
+(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+#[doc="`set_enabled(bool)` overload"]pub fn set_enabled(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee39d0usize)as*mut u8,();
+(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`set_shapeType(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]pub fn set_shape_type(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3a70usize)as*mut u8,();
+(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)::core::convert::Into::into(value))}
+}
+#[doc="`get_skinnedMeshRenderer()` overload"]pub fn get_skinned_mesh_renderer(&mut self,)->crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3b10usize)as*mut u8,crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer;
+(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule)}
+}
+#[doc="`set_skinnedMeshRenderer(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]pub fn set_skinned_mesh_renderer(&mut self,value:impl::core::convert::Into<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3bb0usize)as*mut u8,();
+(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ShapeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_shape_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_skinned_mesh_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_skinned_mesh_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_enabled_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_shape_type_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_skinned_mesh_renderer_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_skinned_mesh_renderer_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_NoiseModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf910usize)as*mut u8,();
+(*mut ParticleSystem_NoiseModule)self as*mut ParticleSystem_NoiseModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_NoiseModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TrailModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfa90usize)as*mut u8,();
+(*mut ParticleSystem_TrailModule)self as*mut ParticleSystem_TrailModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TrailModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_InheritVelocityModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf690usize)as*mut u8,();
+(*mut ParticleSystem_InheritVelocityModule)self as*mut ParticleSystem_InheritVelocityModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
+}
+}
+
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_InheritVelocityModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem{#[doc="`ResetPreMappedBufferMemory()` overload"]pub fn reset_pre_mapped_buffer_memory()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf130usize)as*mut u8,();
 )}
@@ -1123,673 +1854,12 @@ pub fn trigger_sub_emitter_for_particle_injected_method_info()-> & 'static::unit
 this}
 }
 
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TriggerModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf990usize)as*mut u8,();
-(*mut ParticleSystem_TriggerModule)self as*mut ParticleSystem_TriggerModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TriggerModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeBySpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf810usize)as*mut u8,();
-(*mut ParticleSystem_SizeBySpeedModule)self as*mut ParticleSystem_SizeBySpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeBySpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SubEmittersModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf9d0usize)as*mut u8,();
-(*mut ParticleSystem_SubEmittersModule)self as*mut ParticleSystem_SubEmittersModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SubEmittersModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationBySpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf890usize)as*mut u8,();
-(*mut ParticleSystem_RotationBySpeedModule)self as*mut ParticleSystem_RotationBySpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationBySpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ColorBySpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf790usize)as*mut u8,();
-(*mut ParticleSystem_ColorBySpeedModule)self as*mut ParticleSystem_ColorBySpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ColorBySpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CollisionModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf950usize)as*mut u8,();
-(*mut ParticleSystem_CollisionModule)self as*mut ParticleSystem_CollisionModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CollisionModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ShapeModule{#[doc="`set_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, bool)` overload"]pub fn set_enabled_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_ShapeModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3a20usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`set_shapeType_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]pub fn set_shape_type_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType>)->crate::unity_engine::particlesystem::ParticleSystem_ShapeModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3ac0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_skinnedMeshRenderer_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule)` overload"]pub fn get_skinned_mesh_renderer_injected()->(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer,crate::unity_engine::particlesystem::ParticleSystem_ShapeModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3b60usize)as*mut u8,crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_skinnedMeshRenderer_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_ShapeModule, crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]pub fn set_skinned_mesh_renderer_injected(value:impl::core::convert::Into<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>)->crate::unity_engine::particlesystem::ParticleSystem_ShapeModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_ShapeModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3c00usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_ShapeModule)__out_0.as_mut_ptr(),(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ShapeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf5d0usize)as*mut u8,();
-(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-#[doc="`set_enabled(bool)` overload"]pub fn set_enabled(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee39d0usize)as*mut u8,();
-(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`set_shapeType(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)` overload"]pub fn set_shape_type(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3a70usize)as*mut u8,();
-(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(crate::unity_engine::particlesystemshapetype::ParticleSystemShapeType)::core::convert::Into::into(value))}
-}
-#[doc="`get_skinnedMeshRenderer()` overload"]pub fn get_skinned_mesh_renderer(&mut self,)->crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3b10usize)as*mut u8,crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer;
-(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule)}
-}
-#[doc="`set_skinnedMeshRenderer(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)` overload"]pub fn set_skinned_mesh_renderer(&mut self,value:impl::core::convert::Into<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3bb0usize)as*mut u8,();
-(*mut ParticleSystem_ShapeModule)self as*mut ParticleSystem_ShapeModule,(crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ShapeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_shape_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_skinned_mesh_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_skinned_mesh_renderer_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_enabled_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_shape_type_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_skinned_mesh_renderer_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_skinned_mesh_renderer_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CustomDataModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfad0usize)as*mut u8,();
-(*mut ParticleSystem_CustomDataModule)self as*mut ParticleSystem_CustomDataModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_CustomDataModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MainModule{#[doc="`get_duration_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_duration_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2b50usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`get_loop_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_loop_injected()->(bool,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ba0usize)as*mut u8,bool;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_loop_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]pub fn set_loop_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2bf0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startDelayMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_delay_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2c40usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startDelayMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_delay_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2c90usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startLifetimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_lifetime_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ce0usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startLifetimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_lifetime_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2d30usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startSpeedMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_speed_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2d80usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startSpeedMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_speed_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2dd0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startSizeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_size_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2e20usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startSizeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_size_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2e70usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`set_startRotation_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_start_rotation_injected()->(crate::unity_engine::particlesystem::ParticleSystem_MainModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2f10usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`get_startRotationMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2f60usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startRotationMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2fb0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startRotationXMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_x_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3000usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startRotationXMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_x_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3050usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startRotationYMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_y_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee30a0usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startRotationYMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_y_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee30f0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startRotationZMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_start_rotation_z_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3140usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_startRotationZMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_start_rotation_z_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3190usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_startColor_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]pub fn get_start_color_injected()->(crate::unity_engine::particlesystem::ParticleSystem_MainModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee31e0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`set_startColor_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]pub fn set_start_color_injected()->(crate::unity_engine::particlesystem::ParticleSystem_MainModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3230usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`get_gravityModifierMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_gravity_modifier_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3280usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_gravityModifierMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_gravity_modifier_multiplier_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee32d0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_simulationSpace_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_simulation_space_injected()->(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3320usize)as*mut u8,crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_simulationSpace_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]pub fn set_simulation_space_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3370usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_simulationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_simulation_speed_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee33c0usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_simulationSpeed_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, f32)` overload"]pub fn set_simulation_speed_injected(value:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3410usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_scalingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_scaling_mode_injected()->(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3460usize)as*mut u8,crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_scalingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]pub fn set_scaling_mode_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee34b0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_playOnAwake_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_play_on_awake_injected()->(bool,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3500usize)as*mut u8,bool;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_playOnAwake_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, bool)` overload"]pub fn set_play_on_awake_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3550usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_maxParticles_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_max_particles_injected()->(i32,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee35a0usize)as*mut u8,i32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_maxParticles_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, i32)` overload"]pub fn set_max_particles_injected(value:impl::core::convert::Into<i32>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee35f0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(i32)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_stopAction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_stop_action_injected()->(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3690usize)as*mut u8,crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_stopAction_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]pub fn set_stop_action_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3730usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`get_cullingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule)` overload"]pub fn get_culling_mode_injected()->(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode,crate::unity_engine::particlesystem::ParticleSystem_MainModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee37d0usize)as*mut u8,crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_cullingMode_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_MainModule, crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]pub fn set_culling_mode_injected(value:impl::core::convert::Into<crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode>)->crate::unity_engine::particlesystem::ParticleSystem_MainModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MainModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3870usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_MainModule)__out_0.as_mut_ptr(),(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MainModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf580usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-#[doc="`get_duration()` overload"]pub fn get_duration(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbe00usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`get_loop()` overload"]pub fn get_loop(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbb20usize)as*mut u8,bool;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_loop(bool)` overload"]pub fn set_loop(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbbe0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_startDelayMultiplier()` overload"]pub fn get_start_delay_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb9b0usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startDelayMultiplier(f32)` overload"]pub fn set_start_delay_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edba70usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_startLifetimeMultiplier()` overload"]pub fn get_start_lifetime_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcf40usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startLifetimeMultiplier(f32)` overload"]pub fn set_start_lifetime_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd000usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_startSpeedMultiplier()` overload"]pub fn get_start_speed_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc400usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startSpeedMultiplier(f32)` overload"]pub fn set_start_speed_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc4c0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_startSizeMultiplier()` overload"]pub fn get_start_size_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc570usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startSizeMultiplier(f32)` overload"]pub fn set_start_size_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc630usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`set_startRotation(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_start_rotation(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ec0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)::core::convert::Into::into(value))}
-}
-#[doc="`get_startRotationMultiplier()` overload"]pub fn get_start_rotation_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edca10usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startRotationMultiplier(f32)` overload"]pub fn set_start_rotation_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcad0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_startRotationXMultiplier()` overload"]pub fn get_start_rotation_x_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcc20usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startRotationXMultiplier(f32)` overload"]pub fn set_start_rotation_x_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcdf0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_startRotationYMultiplier()` overload"]pub fn get_start_rotation_y_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edcc70usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startRotationYMultiplier(f32)` overload"]pub fn set_start_rotation_y_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edce40usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_startRotationZMultiplier()` overload"]pub fn get_start_rotation_z_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edccc0usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startRotationZMultiplier(f32)` overload"]pub fn set_start_rotation_z_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edce90usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_startColor()` overload"]pub fn get_start_color(&mut self,)->crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc700usize)as*mut u8,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_startColor(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)` overload"]pub fn set_start_color(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc960usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient)::core::convert::Into::into(value))}
-}
-#[doc="`get_gravityModifierMultiplier()` overload"]pub fn get_gravity_modifier_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd0b0usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_gravityModifierMultiplier(f32)` overload"]pub fn set_gravity_modifier_multiplier(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd170usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_simulationSpace()` overload"]pub fn get_simulation_space(&mut self,)->crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd390usize)as*mut u8,crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_simulationSpace(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)` overload"]pub fn set_simulation_space(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd450usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemsimulationspace::ParticleSystemSimulationSpace)::core::convert::Into::into(value))}
-}
-#[doc="`get_simulationSpeed()` overload"]pub fn get_simulation_speed(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbeb0usize)as*mut u8,f32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_simulationSpeed(f32)` overload"]pub fn set_simulation_speed(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbf70usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_scalingMode()` overload"]pub fn get_scaling_mode(&mut self,)->crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd500usize)as*mut u8,crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_scalingMode(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)` overload"]pub fn set_scaling_mode(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd5c0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemscalingmode::ParticleSystemScalingMode)::core::convert::Into::into(value))}
-}
-#[doc="`get_playOnAwake()` overload"]pub fn get_play_on_awake(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbc90usize)as*mut u8,bool;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_playOnAwake(bool)` overload"]pub fn set_play_on_awake(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edbd50usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_maxParticles()` overload"]pub fn get_max_particles(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd220usize)as*mut u8,i32;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_maxParticles(i32)` overload"]pub fn set_max_particles(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edd2e0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_stopAction()` overload"]pub fn get_stop_action(&mut self,)->crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3640usize)as*mut u8,crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_stopAction(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)` overload"]pub fn set_stop_action(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee36e0usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemstopaction::ParticleSystemStopAction)::core::convert::Into::into(value))}
-}
-#[doc="`get_cullingMode()` overload"]pub fn get_culling_mode(&mut self,)->crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3780usize)as*mut u8,crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode;
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule)}
-}
-#[doc="`set_cullingMode(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)` overload"]pub fn set_culling_mode(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3820usize)as*mut u8,();
-(*mut ParticleSystem_MainModule)self as*mut ParticleSystem_MainModule,(crate::unity_engine::particlesystemcullingmode::ParticleSystemCullingMode)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MainModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_duration_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_start_delay_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_start_delay_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_start_lifetime_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_start_lifetime_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_start_speed_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_start_speed_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_start_size_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_start_size_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_start_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_start_rotation_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn set_start_rotation_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_start_rotation_x_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_start_rotation_x_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn get_start_rotation_y_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn set_start_rotation_y_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_start_rotation_z_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn set_start_rotation_z_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn get_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn set_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn get_gravity_modifier_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn set_gravity_modifier_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn get_simulation_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn set_simulation_space_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn get_simulation_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn set_simulation_speed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn get_scaling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn set_scaling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn get_play_on_awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn set_play_on_awake_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-pub fn get_max_particles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
-pub fn set_max_particles_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
-pub fn get_stop_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
-pub fn set_stop_action_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
-pub fn get_culling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
-pub fn set_culling_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
-pub fn get_duration_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
-pub fn get_loop_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
-pub fn set_loop_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
-pub fn get_start_delay_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
-pub fn set_start_delay_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
-pub fn get_start_lifetime_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
-pub fn set_start_lifetime_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
-pub fn get_start_speed_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
-pub fn set_start_speed_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[47]}
-pub fn get_start_size_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[48]}
-pub fn set_start_size_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[49]}
-pub fn set_start_rotation_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[50]}
-pub fn get_start_rotation_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[51]}
-pub fn set_start_rotation_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[52]}
-pub fn get_start_rotation_x_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[53]}
-pub fn set_start_rotation_x_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[54]}
-pub fn get_start_rotation_y_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[55]}
-pub fn set_start_rotation_y_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[56]}
-pub fn get_start_rotation_z_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[57]}
-pub fn set_start_rotation_z_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[58]}
-pub fn get_start_color_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[59]}
-pub fn set_start_color_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[60]}
-pub fn get_gravity_modifier_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[61]}
-pub fn set_gravity_modifier_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[62]}
-pub fn get_simulation_space_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[63]}
-pub fn set_simulation_space_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
-pub fn get_simulation_speed_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[65]}
-pub fn set_simulation_speed_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[66]}
-pub fn get_scaling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[67]}
-pub fn set_scaling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[68]}
-pub fn get_play_on_awake_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[69]}
-pub fn set_play_on_awake_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[70]}
-pub fn get_max_particles_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[71]}
-pub fn set_max_particles_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[72]}
-pub fn get_stop_action_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[73]}
-pub fn set_stop_action_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[74]}
-pub fn get_culling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[75]}
-pub fn set_culling_mode_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[76]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_InheritVelocityModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf690usize)as*mut u8,();
-(*mut ParticleSystem_InheritVelocityModule)self as*mut ParticleSystem_InheritVelocityModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_InheritVelocityModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ForceOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf710usize)as*mut u8,();
-(*mut ParticleSystem_ForceOverLifetimeModule)self as*mut ParticleSystem_ForceOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ForceOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LimitVelocityOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf650usize)as*mut u8,();
-(*mut ParticleSystem_LimitVelocityOverLifetimeModule)self as*mut ParticleSystem_LimitVelocityOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LimitVelocityOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LightsModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfa50usize)as*mut u8,();
-(*mut ParticleSystem_LightsModule)self as*mut ParticleSystem_LightsModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LightsModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TrailModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfa90usize)as*mut u8,();
-(*mut ParticleSystem_TrailModule)self as*mut ParticleSystem_TrailModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TrailModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_EmissionModule{#[doc="`get_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]pub fn get_enabled_injected()->(bool,crate::unity_engine::particlesystem::ParticleSystem_EmissionModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2a10usize)as*mut u8,bool;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`set_enabled_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule, bool)` overload"]pub fn set_enabled_injected(value:impl::core::convert::Into<bool>)->crate::unity_engine::particlesystem::ParticleSystem_EmissionModule{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2a60usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr(),(bool)::core::convert::Into::into(value));
-__out_0.assume_init()}
-}
-#[doc="`set_rateOverTime_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule, *mutcrate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_rate_over_time_injected()->(crate::unity_engine::particlesystem::ParticleSystem_EmissionModule,crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2ab0usize)as*mut u8,();
-(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr(),(*mut crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`get_rateOverTimeMultiplier_Injected(*mutcrate::unity_engine::particlesystem::ParticleSystem_EmissionModule)` overload"]pub fn get_rate_over_time_multiplier_injected()->(f32,crate::unity_engine::particlesystem::ParticleSystem_EmissionModule){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::particlesystem::ParticleSystem_EmissionModule> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ee2b00usize)as*mut u8,f32;
-(*mut crate::unity_engine::particlesystem::ParticleSystem_EmissionModule)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_EmissionModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf590usize)as*mut u8,();
-(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-#[doc="`get_enabled()` overload"]pub fn get_enabled(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc050usize)as*mut u8,bool;
-(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule)}
-}
-#[doc="`set_enabled(bool)` overload"]pub fn set_enabled(&mut self,value:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc110usize)as*mut u8,();
-(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`set_rateOverTime(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)` overload"]pub fn set_rate_over_time(&mut self,value:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc350usize)as*mut u8,();
-(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule,(crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve)::core::convert::Into::into(value))}
-}
-#[doc="`get_rateOverTimeMultiplier()` overload"]pub fn get_rate_over_time_multiplier(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc1c0usize)as*mut u8,f32;
-(*mut ParticleSystem_EmissionModule)self as*mut ParticleSystem_EmissionModule)}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_EmissionModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_enabled_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_rate_over_time_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_rate_over_time_multiplier_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_enabled_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_enabled_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_rate_over_time_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_rate_over_time_multiplier_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_VelocityOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf610usize)as*mut u8,();
-(*mut ParticleSystem_VelocityOverLifetimeModule)self as*mut ParticleSystem_VelocityOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_VelocityOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ColorOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf750usize)as*mut u8,();
 (*mut ParticleSystem_ColorOverLifetimeModule)self as*mut ParticleSystem_ColorOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
 }
 }
 
 #[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ColorOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_NoiseModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf910usize)as*mut u8,();
-(*mut ParticleSystem_NoiseModule)self as*mut ParticleSystem_NoiseModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_NoiseModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf7d0usize)as*mut u8,();
-(*mut ParticleSystem_SizeOverLifetimeModule)self as*mut ParticleSystem_SizeOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_SizeOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TextureSheetAnimationModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edfa10usize)as*mut u8,();
-(*mut ParticleSystem_TextureSheetAnimationModule)self as*mut ParticleSystem_TextureSheetAnimationModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_TextureSheetAnimationModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxGradient{#[doc="`op_Implicit(crate::unity_engine::color::Color)` overload"]pub fn op_implicit(color:impl::core::convert::Into<crate::unity_engine::color::Color>)->crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc890usize)as*mut u8,crate::unity_engine::particlesystem::ParticleSystem_MinMaxGradient;
-(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxGradient{#[doc="`.ctor(crate::unity_engine::color::Color)` overload"]pub fn ctor(&mut self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee3910usize)as*mut u8,();
-(*mut ParticleSystem_MinMaxGradient)self as*mut ParticleSystem_MinMaxGradient,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
-}
-#[doc="`get_color()` overload"]pub fn get_color(&mut self,)->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc790usize)as*mut u8,crate::unity_engine::color::Color;
-(*mut ParticleSystem_MinMaxGradient)self as*mut ParticleSystem_MinMaxGradient)}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxGradient{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
 #[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ExternalForcesModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf8d0usize)as*mut u8,();
@@ -1800,129 +1870,59 @@ pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 #[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ExternalForcesModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_Particle{#[doc="`set_lifetime(f32)` overload"]pub fn set_lifetime(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7b0usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`set_position(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_position(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb790usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`set_velocity(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_velocity(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7a0usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`set_remainingLifetime(f32)` overload"]pub fn set_remaining_lifetime(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee39a0usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`set_startLifetime(f32)` overload"]pub fn set_start_lifetime(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7c0usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`set_startColor(crate::unity_engine::color32::Color32)` overload"]pub fn set_start_color(&mut self,value:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb860usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::color32::Color32)::core::convert::Into::into(value))}
-}
-#[doc="`set_randomSeed(u32)` overload"]pub fn set_random_seed(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb870usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`set_startSize(f32)` overload"]pub fn set_start_size(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7d0usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`set_rotation(f32)` overload"]pub fn set_rotation(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee39b0usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`set_rotation3D(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_rotation3_d(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb7e0usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`set_angularVelocity3D(crate::unity_engine::vector3::Vector3)` overload"]pub fn set_angular_velocity3_d(&mut self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edb820usize)as*mut u8,();
-(*mut ParticleSystem_Particle)self as*mut ParticleSystem_Particle,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ColorBySpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf790usize)as*mut u8,();
+(*mut ParticleSystem_ColorBySpeedModule)self as*mut ParticleSystem_ColorBySpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
 }
 }
 
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_Particle{pub fn set_lifetime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_remaining_lifetime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_start_lifetime_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_start_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_random_seed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_start_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_rotation3_d_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_angular_velocity3_d_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LifetimeByEmitterSpeedModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf6d0usize)as*mut u8,();
-(*mut ParticleSystem_LifetimeByEmitterSpeedModule)self as*mut ParticleSystem_LifetimeByEmitterSpeedModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_LifetimeByEmitterSpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationOverLifetimeModule{#[doc="`.ctor(crate::unity_engine::particlesystem::ParticleSystem)` overload"]pub fn ctor(&mut self,particle_system:impl::core::convert::Into<crate::unity_engine::particlesystem::ParticleSystem>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edf850usize)as*mut u8,();
-(*mut ParticleSystem_RotationOverLifetimeModule)self as*mut ParticleSystem_RotationOverLifetimeModule,(crate::unity_engine::particlesystem::ParticleSystem)::core::convert::Into::into(particle_system))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_RotationOverLifetimeModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxCurve{#[doc="`op_Implicit(f32)` overload"]pub fn op_implicit(constant:impl::core::convert::Into<f32>)->crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3edc2d0usize)as*mut u8,crate::unity_engine::particlesystem::ParticleSystem_MinMaxCurve;
-(f32)::core::convert::Into::into(constant))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxCurve{#[doc="`.ctor(f32)` overload"]pub fn ctor(&mut self,constant:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ee38c0usize)as*mut u8,();
-(*mut ParticleSystem_MinMaxCurve)self as*mut ParticleSystem_MinMaxCurve,(f32)::core::convert::Into::into(constant))}
-}
-}
-
-#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_MinMaxCurve{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn op_implicit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="unity_engine-particlesystem")]impl ParticleSystem_ColorBySpeedModule{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature = "unity_engine-particlesystem")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::ParticleSystem_PlaybackState_Force;
+    pub use super::ParticleSystem_SizeBySpeedModule;
+    pub use super::ParticleSystem_Particle;
+    pub use super::ParticleSystem_ForceOverLifetimeModule;
+    pub use super::ParticleSystem_MinMaxGradient;
+    pub use super::ParticleSystem_LightsModule;
+    pub use super::ParticleSystem_MinMaxCurve;
+    pub use super::ParticleSystem_TriggerModule;
+    pub use super::ParticleSystem_RotationBySpeedModule;
+    pub use super::ParticleSystem_PlaybackState_Collision;
+    pub use super::ParticleSystem_PlaybackState_Shape;
+    pub use super::ParticleSystem_PlaybackState_Emission;
+    pub use super::ParticleSystem_PlaybackState_Seed;
+    pub use super::ParticleSystem_RotationOverLifetimeModule;
+    pub use super::ParticleSystem_CustomDataModule;
+    pub use super::ParticleSystem_MainModule;
+    pub use super::ParticleSystem_PlaybackState_Trail;
+    pub use super::ParticleSystem_LimitVelocityOverLifetimeModule;
+    pub use super::ParticleSystem_CollisionModule;
+    pub use super::ParticleSystem_PlaybackState_Lights;
+    pub use super::ParticleSystem_LifetimeByEmitterSpeedModule;
+    pub use super::ParticleSystem_VelocityOverLifetimeModule;
+    pub use super::ParticleSystem_TextureSheetAnimationModule;
+    pub use super::ParticleSystem_SubEmittersModule;
+    pub use super::ParticleSystem_SizeOverLifetimeModule;
+    pub use super::ParticleSystem_EmissionModule;
+    pub use super::ParticleSystem_ShapeModule;
+    pub use super::ParticleSystem_NoiseModule;
+    pub use super::ParticleSystem_Trails;
+    pub use super::ParticleSystem_TrailModule;
+    pub use super::ParticleSystem_PlaybackState_Seed4;
+    pub use super::ParticleSystem_PlaybackState;
+    pub use super::ParticleSystem_InheritVelocityModule;
+    pub use super::ParticleSystem_PlaybackState_Noise;
     pub use super::ParticleSystem;
     pub use super::IParticleSystem;
     pub use super::IParticleSystemMethods;
-    pub use super::ParticleSystem_PlaybackState_Shape;
-    pub use super::ParticleSystem_PlaybackState_Noise;
-    pub use super::ParticleSystem_TriggerModule;
-    pub use super::ParticleSystem_SizeBySpeedModule;
-    pub use super::ParticleSystem_SubEmittersModule;
-    pub use super::ParticleSystem_RotationBySpeedModule;
-    pub use super::ParticleSystem_ColorBySpeedModule;
-    pub use super::ParticleSystem_PlaybackState_Emission;
-    pub use super::ParticleSystem_CollisionModule;
-    pub use super::ParticleSystem_ShapeModule;
-    pub use super::ParticleSystem_CustomDataModule;
-    pub use super::ParticleSystem_MainModule;
-    pub use super::ParticleSystem_InheritVelocityModule;
-    pub use super::ParticleSystem_ForceOverLifetimeModule;
-    pub use super::ParticleSystem_LimitVelocityOverLifetimeModule;
-    pub use super::ParticleSystem_LightsModule;
-    pub use super::ParticleSystem_TrailModule;
-    pub use super::ParticleSystem_PlaybackState_Trail;
-    pub use super::ParticleSystem_EmissionModule;
-    pub use super::ParticleSystem_VelocityOverLifetimeModule;
-    pub use super::ParticleSystem_ColorOverLifetimeModule;
-    pub use super::ParticleSystem_NoiseModule;
-    pub use super::ParticleSystem_SizeOverLifetimeModule;
-    pub use super::ParticleSystem_TextureSheetAnimationModule;
-    pub use super::ParticleSystem_Trails;
-    pub use super::ParticleSystem_PlaybackState_Lights;
-    pub use super::ParticleSystem_PlaybackState_Seed4;
-    pub use super::ParticleSystem_MinMaxGradient;
-    pub use super::ParticleSystem_ExternalForcesModule;
-    pub use super::ParticleSystem_PlaybackState;
-    pub use super::ParticleSystem_PlaybackState_Initial;
-    pub use super::ParticleSystem_Particle;
-    pub use super::ParticleSystem_PlaybackState_Collision;
-    pub use super::ParticleSystem_LifetimeByEmitterSpeedModule;
-    pub use super::ParticleSystem_RotationOverLifetimeModule;
-    pub use super::ParticleSystem_MinMaxCurve;
     pub use super::ParticleSystem_EmitParams;
-    pub use super::ParticleSystem_PlaybackState_Seed;
+    pub use super::ParticleSystem_ColorOverLifetimeModule;
+    pub use super::ParticleSystem_ExternalForcesModule;
+    pub use super::ParticleSystem_PlaybackState_Initial;
+    pub use super::ParticleSystem_ColorBySpeedModule;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::component::IComponent;

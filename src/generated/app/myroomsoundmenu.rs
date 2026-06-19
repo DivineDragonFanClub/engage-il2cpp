@@ -42,6 +42,39 @@ pub fn bgm_select()->Self{Self{value:2}
 #[cfg(feature = "app-myroomsoundmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-myroomsoundmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomSoundMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MyRoomSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:MyRoomSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn tick(this:MyRoomSoundMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <MyRoomSoundMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
+let inner:extern "C" fn(MyRoomSoundMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-myroomsoundmenu")]impl MyRoomSoundMenu{#[doc="`get_SelectBgm()` overload"]pub fn get_select_bgm()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x239e750usize)as*mut u8, ::unity2::Il2CppString;
 )}
 }
@@ -71,12 +104,10 @@ pub use __types::*;
 (MyRoomSoundMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::myroomsoundmenu::MyRoomSoundMenu_MenuType)::core::convert::Into::into(menu_type),(::unity2::Il2CppString)::core::convert::Into::into(select_bgm))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x239fc10usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomSoundMenu)__receiver)}
+__MyRoomSoundMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x239fc60usize)as*mut u8,();
-(MyRoomSoundMenu)__receiver)}
+__MyRoomSoundMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetMusicName(::unity2::Il2CppString)` overload"]fn set_music_name(self,music_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x239ea10usize)as*mut u8,();
@@ -107,8 +138,7 @@ pub use __types::*;
 (MyRoomSoundMenu)__receiver,(crate::app::myroomsoundmenuitem::MyRoomSoundMenuItem)::core::convert::Into::into(item))}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MyRoomSoundMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a0810usize)as*mut u8,();
-(MyRoomSoundMenu)__receiver)}
+__MyRoomSoundMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -21,38 +21,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggerbase/AkTriggerBase_Trigger.md"))]#[::unity2::class(namespace="",name="AkTriggerBase.Trigger")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkTriggerBase_Trigger{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggerbase/AkTriggerBase.md"))]#[::unity2::class(namespace="",name="AkTriggerBase")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkTriggerBase{#[offset(24)]#[rename(name="triggerDelegate")]pub trigger_delegate:crate::root::aktriggerbase::AkTriggerBase_Trigger,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktriggerbase/AkTriggerBase_Trigger.md"))]#[::unity2::class(namespace="",name="AkTriggerBase.Trigger")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AkTriggerBase_Trigger{}
 
 }
 
 #[cfg(feature = "root-aktriggerbase-types")]
 pub use __types::*;
-
-#[cfg(feature="root-aktriggerbase")]pub trait IAkTriggerBase_TriggerMethods:IAkTriggerBase_Trigger{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkTriggerBase_Trigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2350usize)as*mut u8,();
-(AkTriggerBase_Trigger)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]fn invoke(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkTriggerBase_Trigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2370usize)as*mut u8,();
-(AkTriggerBase_Trigger)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
-}
-}
-
-#[cfg(feature="root-aktriggerbase")]impl<__T:IAkTriggerBase_Trigger>IAkTriggerBase_TriggerMethods for __T{}
-
-#[cfg(feature="root-aktriggerbase")]impl AkTriggerBase_Trigger{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root-aktriggerbase")]impl AkTriggerBase_Trigger{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkTriggerBase_Trigger), ::core::stringify!(new),));
- <Self as IAkTriggerBase_TriggerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="root-aktriggerbase")]impl AkTriggerBase{#[doc="`GetAllDerivedTypes()` overload"]pub fn get_all_derived_types()->crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d2a7c0usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<u32, ::unity2::Il2CppString> ;
 )}
@@ -78,15 +55,50 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root-aktriggerbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkTriggerBase_Trigger_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AkTriggerBase_Trigger,in_game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AkTriggerBase_Trigger as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AkTriggerBase_Trigger,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,in_game_object,__mi)}
+}
+
+#[cfg(feature="root-aktriggerbase")]pub trait IAkTriggerBase_TriggerMethods:IAkTriggerBase_Trigger{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkTriggerBase_Trigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba2350usize)as*mut u8,();
+(AkTriggerBase_Trigger)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]fn invoke(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkTriggerBase_Trigger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AkTriggerBase_Trigger_unity2_raw::invoke(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="root-aktriggerbase")]impl<__T:IAkTriggerBase_Trigger>IAkTriggerBase_TriggerMethods for __T{}
+
+#[cfg(feature="root-aktriggerbase")]impl AkTriggerBase_Trigger{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root-aktriggerbase")]impl AkTriggerBase_Trigger{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkTriggerBase_Trigger), ::core::stringify!(new),));
+ <Self as IAkTriggerBase_TriggerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "root-aktriggerbase")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkTriggerBase_Trigger;
-    pub use super::IAkTriggerBase_Trigger;
-    pub use super::IAkTriggerBase_TriggerMethods;
     pub use super::AkTriggerBase;
     pub use super::IAkTriggerBase;
     pub use super::IAkTriggerBaseMethods;
+    pub use super::AkTriggerBase_Trigger;
+    pub use super::IAkTriggerBase_Trigger;
+    pub use super::IAkTriggerBase_TriggerMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

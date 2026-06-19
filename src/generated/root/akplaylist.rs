@@ -18,6 +18,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akplaylist-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akplaylist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkPlaylist_unity2_raw{use super:: * ;
+pub unsafe fn set_c_ptr(this:AkPlaylist,c_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkPlaylist as::unity2::ClassIdentity> ::NAME,"setCPtr",));
+let inner:extern "C" fn(AkPlaylist, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,c_ptr,__mi)}
+pub unsafe fn finalize(this:AkPlaylist,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AkPlaylist as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AkPlaylist, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:AkPlaylist,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkPlaylist as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(AkPlaylist, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-akplaylist")]impl AkPlaylist{#[doc="`getCPtr(crate::root::akplaylist::AkPlaylist)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akplaylist::AkPlaylist>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b760usize)as*mut u8, ::unity2::IntPtr;
 (crate::root::akplaylist::AkPlaylist)::core::convert::Into::into(obj))}
 }
@@ -28,16 +61,13 @@ pub use __types::*;
 (AkPlaylist)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
 }
 #[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b7c0usize)as*mut u8,();
-(AkPlaylist)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+__AkPlaylist_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b880usize)as*mut u8,();
-(AkPlaylist)__receiver)}
+__AkPlaylist_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2b9e0usize)as*mut u8,();
-(AkPlaylist)__receiver)}
+__AkPlaylist_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Enqueue(u32, i32, ::unity2::IntPtr, u32, crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray)` overload"]fn enqueue(self,in_audio_node_id:impl::core::convert::Into<u32> ,in_ms_delay:impl::core::convert::Into<i32> ,in_p_custom_info:impl::core::convert::Into< ::unity2::IntPtr> ,in_c_externals:impl::core::convert::Into<u32> ,in_p_external_sources:impl::core::convert::Into<crate::root::akexternalsourceinfoarray::AkExternalSourceInfoArray>)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <AkPlaylist as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2bd00usize)as*mut u8,crate::root::akresult::AKRESULT;

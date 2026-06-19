@@ -133,9 +133,9 @@
  #[cfg(feature="unity_engine-rendering-computequeuetype-types")]pub use computequeuetype::{ComputeQueueType}
 ;
  #[cfg(any(feature="unity_engine-rendering-constantbuffer-types"))]pub mod constantbuffer;
- #[cfg(feature="unity_engine-rendering-constantbuffer-types")]pub use constantbuffer::{ConstantBuffer_TypedConstantBuffer_1,IConstantBuffer_TypedConstantBuffer_1,ConstantBuffer,IConstantBuffer,ConstantBuffer_ConstantBufferBase,IConstantBuffer_ConstantBufferBase}
+ #[cfg(feature="unity_engine-rendering-constantbuffer-types")]pub use constantbuffer::{ConstantBuffer_ConstantBufferBase,IConstantBuffer_ConstantBufferBase,ConstantBuffer,IConstantBuffer,ConstantBuffer_TypedConstantBuffer_1,IConstantBuffer_TypedConstantBuffer_1}
 ;
- #[cfg(feature="unity_engine-rendering-constantbuffer")]pub use constantbuffer::{IConstantBuffer_TypedConstantBuffer_1Methods,IConstantBufferMethods,IConstantBuffer_ConstantBufferBaseMethods}
+ #[cfg(feature="unity_engine-rendering-constantbuffer")]pub use constantbuffer::{IConstantBuffer_ConstantBufferBaseMethods,IConstantBufferMethods,IConstantBuffer_TypedConstantBuffer_1Methods}
 ;
  #[cfg(any(feature="unity_engine-rendering-copytexturesupport-types"))]pub mod copytexturesupport;
  #[cfg(feature="unity_engine-rendering-copytexturesupport-types")]pub use copytexturesupport::{CopyTextureSupport}
@@ -147,7 +147,7 @@
  #[cfg(feature="unity_engine-rendering-corematrixutils-types")]pub use corematrixutils::{CoreMatrixUtils,ICoreMatrixUtils}
 ;
  #[cfg(any(feature="unity_engine-rendering-coreunsafeutils-types"))]pub mod coreunsafeutils;
- #[cfg(feature="unity_engine-rendering-coreunsafeutils-types")]pub use coreunsafeutils::{CoreUnsafeUtils_FixedBufferStringQueue,CoreUnsafeUtils_UintKeyGetter,CoreUnsafeUtils,ICoreUnsafeUtils,CoreUnsafeUtils_DefaultKeyGetter_1,CoreUnsafeUtils_IKeyGetter_2,ICoreUnsafeUtils_IKeyGetter_2}
+ #[cfg(feature="unity_engine-rendering-coreunsafeutils-types")]pub use coreunsafeutils::{CoreUnsafeUtils_FixedBufferStringQueue,CoreUnsafeUtils,ICoreUnsafeUtils,CoreUnsafeUtils_UintKeyGetter,CoreUnsafeUtils_DefaultKeyGetter_1,CoreUnsafeUtils_IKeyGetter_2,ICoreUnsafeUtils_IKeyGetter_2}
 ;
  #[cfg(feature="unity_engine-rendering-coreunsafeutils")]pub use coreunsafeutils::{ICoreUnsafeUtils_IKeyGetter_2Methods}
 ;
@@ -183,7 +183,7 @@
  #[cfg(feature="unity_engine-rendering-debugactionrepeatmode-types")]pub use debugactionrepeatmode::{DebugActionRepeatMode}
 ;
  #[cfg(any(feature="unity_engine-rendering-debugactionstate-types"))]pub mod debugactionstate;
- #[cfg(feature="unity_engine-rendering-debugactionstate-types")]pub use debugactionstate::{DebugActionState_DebugActionKeyType,DebugActionState,IDebugActionState}
+ #[cfg(feature="unity_engine-rendering-debugactionstate-types")]pub use debugactionstate::{DebugActionState,IDebugActionState,DebugActionState_DebugActionKeyType}
 ;
  #[cfg(feature="unity_engine-rendering-debugactionstate")]pub use debugactionstate::{IDebugActionStateMethods}
 ;
@@ -198,9 +198,9 @@
  #[cfg(feature="unity_engine-rendering-debugshapes")]pub use debugshapes::{IDebugShapesMethods}
 ;
  #[cfg(any(feature="unity_engine-rendering-debugui-types"))]pub mod debugui;
- #[cfg(feature="unity_engine-rendering-debugui-types")]pub use debugui::{DebugUI_Vector3Field,IDebugUI_Vector3Field,DebugUI_Table,IDebugUI_Table,DebugUI_VBox,IDebugUI_VBox,DebugUI_HBox,IDebugUI_HBox,DebugUI_ColorField,IDebugUI_ColorField,DebugUI_IntField,IDebugUI_IntField,DebugUI_Field_1,IDebugUI_Field_1,DebugUI_Value,IDebugUI_Value,DebugUI_Vector2Field,IDebugUI_Vector2Field,DebugUI_Foldout,IDebugUI_Foldout,DebugUI_Vector4Field,IDebugUI_Vector4Field,DebugUI_EnumField,IDebugUI_EnumField,DebugUI_Flags,DebugUI_HistoryBoolField,IDebugUI_HistoryBoolField,DebugUI_IContainer,IDebugUI_IContainer,DebugUI_Widget,IDebugUI_Widget,DebugUI,IDebugUI,DebugUI_Button,IDebugUI_Button,DebugUI_Container,IDebugUI_Container,DebugUI_FloatField,IDebugUI_FloatField,DebugUI_UIntField,IDebugUI_UIntField,DebugUI_BoolField,IDebugUI_BoolField,DebugUI_HistoryEnumField,IDebugUI_HistoryEnumField,DebugUI_IValueField,IDebugUI_IValueField,DebugUI_BitField,IDebugUI_BitField,DebugUI_Panel,IDebugUI_Panel,DebugUI_Table_Row,IDebugUI_Table_Row}
+ #[cfg(feature="unity_engine-rendering-debugui-types")]pub use debugui::{DebugUI_BitField,IDebugUI_BitField,DebugUI_Value,IDebugUI_Value,DebugUI_Panel,IDebugUI_Panel,DebugUI_Button,IDebugUI_Button,DebugUI_HistoryEnumField,IDebugUI_HistoryEnumField,DebugUI_HBox,IDebugUI_HBox,DebugUI_VBox,IDebugUI_VBox,DebugUI_Vector3Field,IDebugUI_Vector3Field,DebugUI_Container,IDebugUI_Container,DebugUI_Foldout,IDebugUI_Foldout,DebugUI_FloatField,IDebugUI_FloatField,DebugUI_ColorField,IDebugUI_ColorField,DebugUI_Vector4Field,IDebugUI_Vector4Field,DebugUI_HistoryBoolField,IDebugUI_HistoryBoolField,DebugUI_Flags,DebugUI_Field_1,IDebugUI_Field_1,DebugUI,IDebugUI,DebugUI_Table,IDebugUI_Table,DebugUI_IntField,IDebugUI_IntField,DebugUI_BoolField,IDebugUI_BoolField,DebugUI_IContainer,IDebugUI_IContainer,DebugUI_EnumField,IDebugUI_EnumField,DebugUI_IValueField,IDebugUI_IValueField,DebugUI_UIntField,IDebugUI_UIntField,DebugUI_Widget,IDebugUI_Widget,DebugUI_Vector2Field,IDebugUI_Vector2Field,DebugUI_Table_Row,IDebugUI_Table_Row}
 ;
- #[cfg(feature="unity_engine-rendering-debugui")]pub use debugui::{IDebugUI_Vector3FieldMethods,IDebugUI_TableMethods,IDebugUI_VBoxMethods,IDebugUI_HBoxMethods,IDebugUI_ColorFieldMethods,IDebugUI_IntFieldMethods,IDebugUI_Field_1Methods,IDebugUI_ValueMethods,IDebugUI_Vector2FieldMethods,IDebugUI_FoldoutMethods,IDebugUI_Vector4FieldMethods,IDebugUI_EnumFieldMethods,IDebugUI_HistoryBoolFieldMethods,IDebugUI_IContainerMethods,IDebugUI_WidgetMethods,IDebugUIMethods,IDebugUI_ButtonMethods,IDebugUI_ContainerMethods,IDebugUI_FloatFieldMethods,IDebugUI_UIntFieldMethods,IDebugUI_BoolFieldMethods,IDebugUI_HistoryEnumFieldMethods,IDebugUI_IValueFieldMethods,IDebugUI_BitFieldMethods,IDebugUI_PanelMethods,IDebugUI_Table_RowMethods}
+ #[cfg(feature="unity_engine-rendering-debugui")]pub use debugui::{IDebugUI_BitFieldMethods,IDebugUI_ValueMethods,IDebugUI_PanelMethods,IDebugUI_ButtonMethods,IDebugUI_HistoryEnumFieldMethods,IDebugUI_HBoxMethods,IDebugUI_VBoxMethods,IDebugUI_Vector3FieldMethods,IDebugUI_ContainerMethods,IDebugUI_FoldoutMethods,IDebugUI_FloatFieldMethods,IDebugUI_ColorFieldMethods,IDebugUI_Vector4FieldMethods,IDebugUI_HistoryBoolFieldMethods,IDebugUI_Field_1Methods,IDebugUIMethods,IDebugUI_TableMethods,IDebugUI_IntFieldMethods,IDebugUI_BoolFieldMethods,IDebugUI_IContainerMethods,IDebugUI_EnumFieldMethods,IDebugUI_IValueFieldMethods,IDebugUI_UIntFieldMethods,IDebugUI_WidgetMethods,IDebugUI_Vector2FieldMethods,IDebugUI_Table_RowMethods}
 ;
  #[cfg(any(feature="unity_engine-rendering-debugupdater-types"))]pub mod debugupdater;
  #[cfg(feature="unity_engine-rendering-debugupdater-types")]pub use debugupdater::{DebugUpdater,IDebugUpdater}
@@ -322,9 +322,9 @@
  #[cfg(feature="unity_engine-rendering-graphicstier-types")]pub use graphicstier::{GraphicsTier}
 ;
  #[cfg(any(feature="unity_engine-rendering-hablecurve-types"))]pub mod hablecurve;
- #[cfg(feature="unity_engine-rendering-hablecurve-types")]pub use hablecurve::{HableCurve_Uniforms,IHableCurve_Uniforms,HableCurve,IHableCurve,HableCurve_DirectParams,HableCurve_Segment,IHableCurve_Segment}
+ #[cfg(feature="unity_engine-rendering-hablecurve-types")]pub use hablecurve::{HableCurve_Segment,IHableCurve_Segment,HableCurve,IHableCurve,HableCurve_DirectParams,HableCurve_Uniforms,IHableCurve_Uniforms}
 ;
- #[cfg(feature="unity_engine-rendering-hablecurve")]pub use hablecurve::{IHableCurve_UniformsMethods,IHableCurveMethods,IHableCurve_SegmentMethods}
+ #[cfg(feature="unity_engine-rendering-hablecurve")]pub use hablecurve::{IHableCurve_SegmentMethods,IHableCurveMethods,IHableCurve_UniformsMethods}
 ;
  #[cfg(any(feature="unity_engine-rendering-haltonsequence-types"))]pub mod haltonsequence;
  #[cfg(feature="unity_engine-rendering-haltonsequence-types")]pub use haltonsequence::{HaltonSequence,IHaltonSequence}
@@ -588,7 +588,7 @@
  #[cfg(feature="unity_engine-rendering-reflectionprobetype-types")]pub use reflectionprobetype::{ReflectionProbeType}
 ;
  #[cfg(any(feature="unity_engine-rendering-reloadattribute-types"))]pub mod reloadattribute;
- #[cfg(feature="unity_engine-rendering-reloadattribute-types")]pub use reloadattribute::{ReloadAttribute_Package,ReloadAttribute,IReloadAttribute}
+ #[cfg(feature="unity_engine-rendering-reloadattribute-types")]pub use reloadattribute::{ReloadAttribute,IReloadAttribute,ReloadAttribute_Package}
 ;
  #[cfg(feature="unity_engine-rendering-reloadattribute")]pub use reloadattribute::{IReloadAttributeMethods}
 ;
@@ -654,7 +654,7 @@
  #[cfg(feature="unity_engine-rendering-rthandles-types")]pub use rthandles::{RTHandles,IRTHandles}
 ;
  #[cfg(any(feature="unity_engine-rendering-rthandlesystem-types"))]pub mod rthandlesystem;
- #[cfg(feature="unity_engine-rendering-rthandlesystem-types")]pub use rthandlesystem::{RTHandleSystem_ResizeMode,RTHandleSystem,IRTHandleSystem}
+ #[cfg(feature="unity_engine-rendering-rthandlesystem-types")]pub use rthandlesystem::{RTHandleSystem,IRTHandleSystem,RTHandleSystem_ResizeMode}
 ;
  #[cfg(feature="unity_engine-rendering-rthandlesystem")]pub use rthandlesystem::{IRTHandleSystemMethods}
 ;
@@ -732,7 +732,7 @@
  #[cfg(feature="unity_engine-rendering-submeshdescriptor-types")]pub use submeshdescriptor::{SubMeshDescriptor}
 ;
  #[cfg(any(feature="unity_engine-rendering-supportedrenderingfeatures-types"))]pub mod supportedrenderingfeatures;
- #[cfg(feature="unity_engine-rendering-supportedrenderingfeatures-types")]pub use supportedrenderingfeatures::{SupportedRenderingFeatures_ReflectionProbeModes,SupportedRenderingFeatures_LightmapMixedBakeModes,SupportedRenderingFeatures,ISupportedRenderingFeatures}
+ #[cfg(feature="unity_engine-rendering-supportedrenderingfeatures-types")]pub use supportedrenderingfeatures::{SupportedRenderingFeatures,ISupportedRenderingFeatures,SupportedRenderingFeatures_ReflectionProbeModes,SupportedRenderingFeatures_LightmapMixedBakeModes}
 ;
  #[cfg(feature="unity_engine-rendering-supportedrenderingfeatures")]pub use supportedrenderingfeatures::{ISupportedRenderingFeaturesMethods}
 ;
@@ -863,7 +863,7 @@
  #[cfg(feature="unity_engine-rendering-volumestack")]pub use volumestack::{IVolumeStackMethods}
 ;
  #[cfg(any(feature="unity_engine-rendering-xrgraphics-types"))]pub mod xrgraphics;
- #[cfg(feature="unity_engine-rendering-xrgraphics-types")]pub use xrgraphics::{XRGraphics_StereoRenderingMode,XRGraphics,IXRGraphics}
+ #[cfg(feature="unity_engine-rendering-xrgraphics-types")]pub use xrgraphics::{XRGraphics,IXRGraphics,XRGraphics_StereoRenderingMode}
 ;
  #[cfg(feature="unity_engine-rendering-xrgraphics")]pub use xrgraphics::{IXRGraphicsMethods}
 ;

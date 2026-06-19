@@ -15,12 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager_Side.md"))]#[::unity2::class(namespace="App",name="SortieTradeManager.Side")]#[parent(crate::system::object::Object)]pub struct SortieTradeManager_Side{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager.md"))]#[::unity2::class(namespace="App",name="SortieTradeManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortietrademanager::SortieTradeManager>)]pub struct SortieTradeManager{#[offset(32)]#[rename(name="m_From")]pub m_from:crate::app::sortietrademanager::SortieTradeManager_Side, #[offset(40)]#[rename(name="m_To")]pub m_to:crate::app::sortietrademanager::SortieTradeManager_Side, #[offset(48)]#[rename(name="m_SelectSide")]pub m_select_side:crate::app::sortietrademanager::SortieTradeManager_SideId, #[offset(52)]#[rename(name="m_IsFirstSelected")]pub m_is_first_selected:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager_SideId.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieTradeManager_SideId{pub value:i32,}
 impl::unity2::ClassIdentity for SortieTradeManager_SideId{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SortieTradeManager.SideId";
@@ -37,6 +31,12 @@ pub fn from()->Self{Self{value:1}
 pub fn to()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager_Side.md"))]#[::unity2::class(namespace="App",name="SortieTradeManager.Side")]#[parent(crate::system::object::Object)]pub struct SortieTradeManager_Side{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortietrademanager/SortieTradeManager.md"))]#[::unity2::class(namespace="App",name="SortieTradeManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortietrademanager::SortieTradeManager>)]pub struct SortieTradeManager{#[offset(32)]#[rename(name="m_From")]pub m_from:crate::app::sortietrademanager::SortieTradeManager_Side, #[offset(40)]#[rename(name="m_To")]pub m_to:crate::app::sortietrademanager::SortieTradeManager_Side, #[offset(48)]#[rename(name="m_SelectSide")]pub m_select_side:crate::app::sortietrademanager::SortieTradeManager_SideId, #[offset(52)]#[rename(name="m_IsFirstSelected")]pub m_is_first_selected:bool,}
 
 }
 
@@ -142,13 +142,13 @@ this}
 #[cfg(feature = "app-sortietrademanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SortieTradeManager_SideId;
     pub use super::SortieTradeManager_Side;
     pub use super::ISortieTradeManager_Side;
     pub use super::ISortieTradeManager_SideMethods;
     pub use super::SortieTradeManager;
     pub use super::ISortieTradeManager;
     pub use super::ISortieTradeManagerMethods;
-    pub use super::SortieTradeManager_SideId;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

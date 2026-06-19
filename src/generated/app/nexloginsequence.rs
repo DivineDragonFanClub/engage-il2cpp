@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence.md"))]#[::unity2::class(namespace="App",name="NexLoginSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexLoginSequence{#[offset(112)]#[rename(name="m_IsShowError")]pub m_is_show_error:bool, #[static_field]#[rename(name="s_LastResult")]pub s_last_result:crate::app::nexloginsequence::NexLoginSequence_Result, #[static_field]#[rename(name="s_IsGotIntegerSettings")]pub s_is_got_integer_settings:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NexLoginSequence_Result{pub value:i32,}
 impl::unity2::ClassIdentity for NexLoginSequence_Result{const NAMESPACE: &'static str="App";
 const NAME: &'static str="NexLoginSequence.Result";
@@ -62,13 +65,23 @@ pub fn end()->Self{Self{value:8}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/nexloginsequence/NexLoginSequence.md"))]#[::unity2::class(namespace="App",name="NexLoginSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct NexLoginSequence{#[offset(112)]#[rename(name="m_IsShowError")]pub m_is_show_error:bool, #[static_field]#[rename(name="s_LastResult")]pub s_last_result:crate::app::nexloginsequence::NexLoginSequence_Result, #[static_field]#[rename(name="s_IsGotIntegerSettings")]pub s_is_got_integer_settings:bool,}
-
 }
 
 #[cfg(feature = "app-nexloginsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-nexloginsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NexLoginSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:NexLoginSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <NexLoginSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(NexLoginSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-nexloginsequence")]impl NexLoginSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_show_error:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f11260usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_show_error))}
@@ -86,8 +99,7 @@ pub use __types::*;
 (NexLoginSequence)__receiver,(bool)::core::convert::Into::into(is_show_error))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14ca0usize)as*mut u8,();
-(NexLoginSequence)__receiver)}
+__NexLoginSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`WaitAutoLogout()` overload"]fn wait_auto_logout(self,)->(){unsafe{let __receiver= <NexLoginSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f14d70usize)as*mut u8,();
@@ -160,11 +172,11 @@ this}
 #[cfg(feature = "app-nexloginsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::NexLoginSequence_Result;
-    pub use super::NexLoginSequence_Label;
     pub use super::NexLoginSequence;
     pub use super::INexLoginSequence;
     pub use super::INexLoginSequenceMethods;
+    pub use super::NexLoginSequence_Result;
+    pub use super::NexLoginSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

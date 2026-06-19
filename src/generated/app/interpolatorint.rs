@@ -20,17 +20,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-interpolatorint-types")]
 pub use __types::*;
 
+#[cfg(feature="app-interpolatorint")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InterpolatorInt_unity2_raw{use super:: * ;
+pub unsafe fn get_value(this:InterpolatorInt,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InterpolatorInt as::unity2::ClassIdentity> ::NAME,"get_Value",));
+let inner:extern "C" fn(InterpolatorInt, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_equal(this:InterpolatorInt,a:i32,b:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InterpolatorInt as::unity2::ClassIdentity> ::NAME,"IsEqual",));
+let inner:extern "C" fn(InterpolatorInt,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="app-interpolatorint")]pub trait IInterpolatorIntMethods:IInterpolatorInt{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2794c00usize)as*mut u8,();
 (InterpolatorInt)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
 }
 #[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <InterpolatorInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2794c70usize)as*mut u8,i32;
-(InterpolatorInt)__receiver)}
+__InterpolatorInt_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsEqual(i32, i32)` overload"]fn is_equal(self,a:impl::core::convert::Into<i32> ,b:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <InterpolatorInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2794cd0usize)as*mut u8,bool;
-(InterpolatorInt)__receiver,(i32)::core::convert::Into::into(a),(i32)::core::convert::Into::into(b))}
+__InterpolatorInt_unity2_raw::is_equal(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 }
 

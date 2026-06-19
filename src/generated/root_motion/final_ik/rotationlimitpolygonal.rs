@@ -80,6 +80,19 @@ pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RotationLimitPolygonal_unity2_raw{use super:: * ;
+pub unsafe fn limit_rotation(this:RotationLimitPolygonal,rotation:crate::unity_engine::quaternion::Quaternion,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RotationLimitPolygonal as::unity2::ClassIdentity> ::NAME,"LimitRotation",));
+let inner:extern "C" fn(RotationLimitPolygonal,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,rotation,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-rotationlimitpolygonal")]pub trait IRotationLimitPolygonalMethods:IRotationLimitPolygonal{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <RotationLimitPolygonal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec14d0usize)as*mut u8,();
 (RotationLimitPolygonal)__receiver)}
@@ -101,8 +114,7 @@ this}
 (RotationLimitPolygonal)__receiver,(::unity2::Array<crate::root_motion::final_ik::rotationlimitpolygonal::RotationLimitPolygonal_LimitPoint>)::core::convert::Into::into(points))}
 }
 #[doc="`LimitRotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_rotation(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitPolygonal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec1ad0usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(RotationLimitPolygonal)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(rotation))}
+__RotationLimitPolygonal_unity2_raw::limit_rotation(__receiver, ::core::convert::Into::into(rotation), ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RotationLimitPolygonal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec1b60usize)as*mut u8,();

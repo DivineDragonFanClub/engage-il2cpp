@@ -18,6 +18,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-stringcalculator-types")]
 pub use __types::*;
 
+#[cfg(feature="app-stringcalculator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StringCalculator_unity2_raw{use super:: * ;
+pub unsafe fn to_string(this:StringCalculator,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <StringCalculator as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(StringCalculator, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-stringcalculator")]impl StringCalculator{#[doc="`TrimString(::unity2::Il2CppString)` overload"]pub fn trim_string(name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x250a290usize)as*mut u8, ::unity2::Il2CppString;
 (::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
@@ -68,8 +81,7 @@ pub use __types::*;
 (StringCalculator)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StringCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x250a840usize)as*mut u8, ::unity2::Il2CppString;
-(StringCalculator)__receiver)}
+__StringCalculator_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 

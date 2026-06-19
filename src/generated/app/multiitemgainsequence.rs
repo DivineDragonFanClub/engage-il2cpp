@@ -18,6 +18,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-multiitemgainsequence-types")]
 pub use __types::*;
 
+#[cfg(feature="app-multiitemgainsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MultiItemGainSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_tick(this:MultiItemGainSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MultiItemGainSequence as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(MultiItemGainSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-multiitemgainsequence")]impl MultiItemGainSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,items:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2782f90usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(items))}
 }
@@ -28,8 +41,7 @@ pub use __types::*;
 (MultiItemGainSequence)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(items))}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <MultiItemGainSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2782ed0usize)as*mut u8,();
-(MultiItemGainSequence)__receiver)}
+__MultiItemGainSequence_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 }
 

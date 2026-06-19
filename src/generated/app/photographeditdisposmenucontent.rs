@@ -26,6 +26,49 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-photographeditdisposmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-photographeditdisposmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographEditDisposMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn calc_w(this:PhotographEditDisposMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <PhotographEditDisposMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(PhotographEditDisposMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:PhotographEditDisposMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <PhotographEditDisposMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(PhotographEditDisposMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_x(this:PhotographEditDisposMenuContent,menu_item_idx:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <PhotographEditDisposMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosX",));
+let inner:extern "C" fn(PhotographEditDisposMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_idx,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:PhotographEditDisposMenuContent,menu_item_idx:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <PhotographEditDisposMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(PhotographEditDisposMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_idx,__mi)}
+}
+
 #[cfg(feature="app-photographeditdisposmenucontent")]impl PhotographEditDisposMenuContent{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::photographallmenucontent::PhotographAllMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographeditdisposmenu::PhotographEditDisposMenu_ReturnHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,all_menu_content:impl::core::convert::Into<crate::app::photographallmenucontent::PhotographAllMenuContent> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,return_handler:impl::core::convert::Into<crate::app::photographeditdisposmenu::PhotographEditDisposMenu_ReturnHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2692f90usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::photographallmenucontent::PhotographAllMenuContent)::core::convert::Into::into(all_menu_content),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(crate::app::photographeditdisposmenu::PhotographEditDisposMenu_ReturnHandler)::core::convert::Into::into(return_handler))}
 }
@@ -36,20 +79,16 @@ pub use __types::*;
 (PhotographEditDisposMenuContent)__receiver,(bool)::core::convert::Into::into(is_arrow_active),(bool)::core::convert::Into::into(is_mascot),(i32)::core::convert::Into::into(pause_no),(i32)::core::convert::Into::into(pause_count))}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <PhotographEditDisposMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2693470usize)as*mut u8,f32;
-(PhotographEditDisposMenuContent)__receiver)}
+__PhotographEditDisposMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <PhotographEditDisposMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26934e0usize)as*mut u8,f32;
-(PhotographEditDisposMenuContent)__receiver)}
+__PhotographEditDisposMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_idx:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <PhotographEditDisposMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2693550usize)as*mut u8,f32;
-(PhotographEditDisposMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_idx))}
+__PhotographEditDisposMenuContent_unity2_raw::calc_cursor_moved_pos_x(__receiver, ::core::convert::Into::into(menu_item_idx), ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_idx:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <PhotographEditDisposMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26935f0usize)as*mut u8,f32;
-(PhotographEditDisposMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_idx))}
+__PhotographEditDisposMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_idx), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PhotographEditDisposMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2693690usize)as*mut u8,();

@@ -16,13 +16,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-grandewbrain-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-grandewbrain")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GrandewBrain_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:GrandewBrain,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GrandewBrain as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(GrandewBrain, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-grandewbrain")]pub trait IGrandewBrainMethods:IGrandewBrain{#[doc="`.ctor(crate::combat::character::Character)` overload"]fn ctor(self,grandew:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <GrandewBrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x234ab60usize)as*mut u8,();
 (GrandewBrain)__receiver,(crate::combat::character::Character)::core::convert::Into::into(grandew))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <GrandewBrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x234b0c0usize)as*mut u8,();
-(GrandewBrain)__receiver)}
+__GrandewBrain_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 }
 

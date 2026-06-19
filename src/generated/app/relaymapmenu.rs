@@ -19,46 +19,66 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayMapMenu_SelectEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RelayMapMenu{#[offset(200)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::relaymapmenu::RelayMapMenu_DecideEventHandler, #[offset(208)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::relaymapmenu::RelayMapMenu_RequestCloseEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayMapMenu_DecideEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu_MapMenuItem.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu.MapMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RelayMapMenu_MapMenuItem{#[offset(104)]#[rename(name="m_Rdata")]pub m_rdata:crate::app::relaydata::RelayData, #[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayMapMenu_RequestCloseEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu_MapMenuItem.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu.MapMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RelayMapMenu_MapMenuItem{#[offset(104)]#[rename(name="m_Rdata")]pub m_rdata:crate::app::relaydata::RelayData, #[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayMapMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymapmenu/RelayMapMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="RelayMapMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RelayMapMenu_SelectEventHandler{}
 
 }
 
 #[cfg(feature = "app-relaymapmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-relaymapmenu")]pub trait IRelayMapMenu_SelectEventHandlerMethods:IRelayMapMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayMapMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05b10usize)as*mut u8,();
-(RelayMapMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::relaydata::RelayData)` overload"]fn invoke(self,relay_data:impl::core::convert::Into<crate::app::relaydata::RelayData>)->(){unsafe{let __receiver= <RelayMapMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05510usize)as*mut u8,();
-(RelayMapMenu_SelectEventHandler)__receiver,(crate::app::relaydata::RelayData)::core::convert::Into::into(relay_data))}
-}
-}
-
-#[cfg(feature="app-relaymapmenu")]impl<__T:IRelayMapMenu_SelectEventHandler>IRelayMapMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayMapMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IRelayMapMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-relaymapmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMapMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:RelayMapMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RelayMapMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RelayMapMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_tutorial(this:RelayMapMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <RelayMapMenu as::unity2::ClassIdentity> ::NAME,"GetTutorial",));
+let inner:extern "C" fn(RelayMapMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:RelayMapMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <RelayMapMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RelayMapMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RelayMapMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <RelayMapMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RelayMapMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-relaymapmenu")]impl RelayMapMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler, crate::app::relaymapmenu::RelayMapMenu_DecideEventHandler, crate::app::relaymapmenu::RelayMapMenu_RequestCloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,select_event_handler:impl::core::convert::Into<crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::relaymapmenu::RelayMapMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::relaymapmenu::RelayMapMenu_RequestCloseEventHandler>)->crate::app::relaymapmenu::RelayMapMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffde20usize)as*mut u8,crate::app::relaymapmenu::RelayMapMenu;
@@ -71,20 +91,16 @@ this}
 (RelayMapMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::relaymapmenucontent::RelayMapMenuContent)::core::convert::Into::into(menu_content),(crate::app::relaymapmenu::RelayMapMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::relaymapmenu::RelayMapMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe220usize)as*mut u8, ::unity2::Il2CppString;
-(RelayMapMenu)__receiver)}
+__RelayMapMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetTutorial()` overload"]fn get_tutorial(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe270usize)as*mut u8, ::unity2::Il2CppString;
-(RelayMapMenu)__receiver)}
+__RelayMapMenu_unity2_raw::get_tutorial(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe2c0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RelayMapMenu)__receiver)}
+__RelayMapMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffe300usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RelayMapMenu)__receiver)}
+__RelayMapMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -105,50 +121,37 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-relaymapmenu")]pub trait IRelayMapMenu_DecideEventHandlerMethods:IRelayMapMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayMapMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05170usize)as*mut u8,();
-(RelayMapMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RelayMapMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05190usize)as*mut u8,();
-(RelayMapMenu_DecideEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-relaymapmenu")]impl<__T:IRelayMapMenu_DecideEventHandler>IRelayMapMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayMapMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IRelayMapMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-relaymapmenu")]pub trait IRelayMapMenu_RequestCloseEventHandlerMethods:IRelayMapMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayMapMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b058a0usize)as*mut u8,();
-(RelayMapMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RelayMapMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b058c0usize)as*mut u8,();
-(RelayMapMenu_RequestCloseEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-relaymapmenu")]impl<__T:IRelayMapMenu_RequestCloseEventHandler>IRelayMapMenu_RequestCloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayMapMenu_RequestCloseEventHandler), ::core::stringify!(new),));
- <Self as IRelayMapMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-relaymapmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMapMenu_MapMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn on_build_menu_item_content(this:RelayMapMenu_MapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <RelayMapMenu_MapMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(RelayMapMenu_MapMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:RelayMapMenu_MapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RelayMapMenu_MapMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(RelayMapMenu_MapMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:RelayMapMenu_MapMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RelayMapMenu_MapMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RelayMapMenu_MapMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-relaymapmenu")]pub trait IRelayMapMenu_MapMenuItemMethods:IRelayMapMenu_MapMenuItem{#[doc="`.ctor(crate::app::chapterdata::ChapterData, crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler)` overload"]fn ctor(self,cdata:impl::core::convert::Into<crate::app::chapterdata::ChapterData> ,select_event_handler:impl::core::convert::Into<crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler>)->(){unsafe{let __receiver= <RelayMapMenu_MapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -156,16 +159,13 @@ this}
 (RelayMapMenu_MapMenuItem)__receiver,(crate::app::chapterdata::ChapterData)::core::convert::Into::into(cdata),(crate::app::relaymapmenu::RelayMapMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RelayMapMenu_MapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b054c0usize)as*mut u8,();
-(RelayMapMenu_MapMenuItem)__receiver)}
+__RelayMapMenu_MapMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RelayMapMenu_MapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b054d0usize)as*mut u8,();
-(RelayMapMenu_MapMenuItem)__receiver)}
+__RelayMapMenu_MapMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelayMapMenu_MapMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05870usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RelayMapMenu_MapMenuItem)__receiver)}
+__RelayMapMenu_MapMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -184,24 +184,129 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-relaymapmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMapMenu_RequestCloseEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RelayMapMenu_RequestCloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RelayMapMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RelayMapMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-relaymapmenu")]pub trait IRelayMapMenu_RequestCloseEventHandlerMethods:IRelayMapMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayMapMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b058a0usize)as*mut u8,();
+(RelayMapMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RelayMapMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RelayMapMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-relaymapmenu")]impl<__T:IRelayMapMenu_RequestCloseEventHandler>IRelayMapMenu_RequestCloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_RequestCloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayMapMenu_RequestCloseEventHandler), ::core::stringify!(new),));
+ <Self as IRelayMapMenu_RequestCloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-relaymapmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMapMenu_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RelayMapMenu_DecideEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RelayMapMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RelayMapMenu_DecideEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-relaymapmenu")]pub trait IRelayMapMenu_DecideEventHandlerMethods:IRelayMapMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayMapMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05170usize)as*mut u8,();
+(RelayMapMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RelayMapMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RelayMapMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-relaymapmenu")]impl<__T:IRelayMapMenu_DecideEventHandler>IRelayMapMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayMapMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRelayMapMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-relaymapmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMapMenu_SelectEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RelayMapMenu_SelectEventHandler,relay_data:crate::app::relaydata::RelayData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RelayMapMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RelayMapMenu_SelectEventHandler,crate::app::relaydata::RelayData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,relay_data,__mi)}
+}
+
+#[cfg(feature="app-relaymapmenu")]pub trait IRelayMapMenu_SelectEventHandlerMethods:IRelayMapMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RelayMapMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b05b10usize)as*mut u8,();
+(RelayMapMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::relaydata::RelayData)` overload"]fn invoke(self,relay_data:impl::core::convert::Into<crate::app::relaydata::RelayData>)->(){unsafe{let __receiver= <RelayMapMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RelayMapMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(relay_data), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-relaymapmenu")]impl<__T:IRelayMapMenu_SelectEventHandler>IRelayMapMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-relaymapmenu")]impl RelayMapMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayMapMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IRelayMapMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-relaymapmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayMapMenu_SelectEventHandler;
-    pub use super::IRelayMapMenu_SelectEventHandler;
-    pub use super::IRelayMapMenu_SelectEventHandlerMethods;
     pub use super::RelayMapMenu;
     pub use super::IRelayMapMenu;
     pub use super::IRelayMapMenuMethods;
-    pub use super::RelayMapMenu_DecideEventHandler;
-    pub use super::IRelayMapMenu_DecideEventHandler;
-    pub use super::IRelayMapMenu_DecideEventHandlerMethods;
-    pub use super::RelayMapMenu_RequestCloseEventHandler;
-    pub use super::IRelayMapMenu_RequestCloseEventHandler;
-    pub use super::IRelayMapMenu_RequestCloseEventHandlerMethods;
     pub use super::RelayMapMenu_MapMenuItem;
     pub use super::IRelayMapMenu_MapMenuItem;
     pub use super::IRelayMapMenu_MapMenuItemMethods;
+    pub use super::RelayMapMenu_RequestCloseEventHandler;
+    pub use super::IRelayMapMenu_RequestCloseEventHandler;
+    pub use super::IRelayMapMenu_RequestCloseEventHandlerMethods;
+    pub use super::RelayMapMenu_DecideEventHandler;
+    pub use super::IRelayMapMenu_DecideEventHandler;
+    pub use super::IRelayMapMenu_DecideEventHandlerMethods;
+    pub use super::RelayMapMenu_SelectEventHandler;
+    pub use super::IRelayMapMenu_SelectEventHandler;
+    pub use super::IRelayMapMenu_SelectEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

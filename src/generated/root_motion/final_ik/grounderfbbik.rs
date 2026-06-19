@@ -19,31 +19,89 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounderfbbik/GrounderFBBIK.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="GrounderFBBIK")]#[parent(crate::root_motion::final_ik::grounder::Grounder)]pub struct GrounderFBBIK{#[offset(64)]#[rename(name="ik")]pub ik:crate::root_motion::final_ik::fullbodybipedik::FullBodyBipedIK, #[offset(72)]#[rename(name="spineBend")]pub spine_bend:f32, #[offset(76)]#[rename(name="spineSpeed")]pub spine_speed:f32, #[offset(80)]#[rename(name="spine")]pub spine: ::unity2::Array<crate::root_motion::final_ik::grounderfbbik::GrounderFBBIK_SpineEffector> , #[offset(88)]#[rename(name="feet")]pub feet: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(96)]#[rename(name="spineOffset")]pub spine_offset:crate::unity_engine::vector3::Vector3, #[offset(108)]#[rename(name="firstSolve")]pub first_solve:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounderfbbik/GrounderFBBIK_SpineEffector.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="GrounderFBBIK.SpineEffector")]#[parent(crate::system::object::Object)]pub struct GrounderFBBIK_SpineEffector{#[offset(16)]#[rename(name="effectorType")]pub effector_type:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="horizontalWeight")]pub horizontal_weight:f32, #[offset(24)]#[rename(name="verticalWeight")]pub vertical_weight:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounderfbbik/GrounderFBBIK.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="GrounderFBBIK")]#[parent(crate::root_motion::final_ik::grounder::Grounder)]pub struct GrounderFBBIK{#[offset(64)]#[rename(name="ik")]pub ik:crate::root_motion::final_ik::fullbodybipedik::FullBodyBipedIK, #[offset(72)]#[rename(name="spineBend")]pub spine_bend:f32, #[offset(76)]#[rename(name="spineSpeed")]pub spine_speed:f32, #[offset(80)]#[rename(name="spine")]pub spine: ::unity2::Array<crate::root_motion::final_ik::grounderfbbik::GrounderFBBIK_SpineEffector> , #[offset(88)]#[rename(name="feet")]pub feet: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(96)]#[rename(name="spineOffset")]pub spine_offset:crate::unity_engine::vector3::Vector3, #[offset(108)]#[rename(name="firstSolve")]pub first_solve:bool,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-grounderfbbik-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-grounderfbbik")]pub trait IGrounderFBBIK_SpineEffectorMethods:IGrounderFBBIK_SpineEffector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GrounderFBBIK_SpineEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb770usize)as*mut u8,();
+(GrounderFBBIK_SpineEffector)__receiver)}
+}
+#[doc="`.ctor(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, f32, f32)` overload"]fn ctor_2(self,effector_type:impl::core::convert::Into<crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector> ,horizontal_weight:impl::core::convert::Into<f32> ,vertical_weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GrounderFBBIK_SpineEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb780usize)as*mut u8,();
+(GrounderFBBIK_SpineEffector)__receiver,(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector)::core::convert::Into::into(effector_type),(f32)::core::convert::Into::into(horizontal_weight),(f32)::core::convert::Into::into(vertical_weight))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-grounderfbbik")]impl<__T:IGrounderFBBIK_SpineEffector>IGrounderFBBIK_SpineEffectorMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-grounderfbbik")]impl GrounderFBBIK_SpineEffector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-grounderfbbik")]impl GrounderFBBIK_SpineEffector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GrounderFBBIK_SpineEffector), ::core::stringify!(new),));
+ <Self as IGrounderFBBIK_SpineEffectorMethods> ::ctor(this,);
+this}
+#[doc="`.ctor(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, f32, f32)` — overload selector"]pub fn new_2(effector_type:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector,horizontal_weight:f32,vertical_weight:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GrounderFBBIK_SpineEffector), ::core::stringify!(new_2),));
+ <Self as IGrounderFBBIK_SpineEffectorMethods> ::ctor_2(this,effector_type,horizontal_weight,vertical_weight);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-grounderfbbik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GrounderFBBIK_unity2_raw{use super:: * ;
+pub unsafe fn open_user_manual(this:GrounderFBBIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GrounderFBBIK as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
+let inner:extern "C" fn(GrounderFBBIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn open_script_reference(this:GrounderFBBIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GrounderFBBIK as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
+let inner:extern "C" fn(GrounderFBBIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset_position(this:GrounderFBBIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GrounderFBBIK as::unity2::ClassIdentity> ::NAME,"ResetPosition",));
+let inner:extern "C" fn(GrounderFBBIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-grounderfbbik")]pub trait IGrounderFBBIKMethods:IGrounderFBBIK{#[doc="`OpenTutorial()` overload"]fn open_tutorial(self,)->(){unsafe{let __receiver= <GrounderFBBIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29727f0usize)as*mut u8,();
 (GrounderFBBIK)__receiver)}
 }
 #[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <GrounderFBBIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2972840usize)as*mut u8,();
-(GrounderFBBIK)__receiver)}
+__GrounderFBBIK_unity2_raw::open_user_manual(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <GrounderFBBIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2972890usize)as*mut u8,();
-(GrounderFBBIK)__receiver)}
+__GrounderFBBIK_unity2_raw::open_script_reference(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ResetPosition()` overload"]fn reset_position(self,)->(){unsafe{let __receiver= <GrounderFBBIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29728e0usize)as*mut u8,();
-(GrounderFBBIK)__receiver)}
+__GrounderFBBIK_unity2_raw::reset_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsReadyToInitiate()` overload"]fn is_ready_to_initiate(self,)->bool{unsafe{let __receiver= <GrounderFBBIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2972980usize)as*mut u8,bool;
@@ -112,43 +170,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-grounderfbbik")]pub trait IGrounderFBBIK_SpineEffectorMethods:IGrounderFBBIK_SpineEffector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GrounderFBBIK_SpineEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb770usize)as*mut u8,();
-(GrounderFBBIK_SpineEffector)__receiver)}
-}
-#[doc="`.ctor(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, f32, f32)` overload"]fn ctor_2(self,effector_type:impl::core::convert::Into<crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector> ,horizontal_weight:impl::core::convert::Into<f32> ,vertical_weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GrounderFBBIK_SpineEffector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb780usize)as*mut u8,();
-(GrounderFBBIK_SpineEffector)__receiver,(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector)::core::convert::Into::into(effector_type),(f32)::core::convert::Into::into(horizontal_weight),(f32)::core::convert::Into::into(vertical_weight))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-grounderfbbik")]impl<__T:IGrounderFBBIK_SpineEffector>IGrounderFBBIK_SpineEffectorMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-grounderfbbik")]impl GrounderFBBIK_SpineEffector{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-grounderfbbik")]impl GrounderFBBIK_SpineEffector{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GrounderFBBIK_SpineEffector), ::core::stringify!(new),));
- <Self as IGrounderFBBIK_SpineEffectorMethods> ::ctor(this,);
-this}
-#[doc="`.ctor(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, f32, f32)` — overload selector"]pub fn new_2(effector_type:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector,horizontal_weight:f32,vertical_weight:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GrounderFBBIK_SpineEffector), ::core::stringify!(new_2),));
- <Self as IGrounderFBBIK_SpineEffectorMethods> ::ctor_2(this,effector_type,horizontal_weight,vertical_weight);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-grounderfbbik")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GrounderFBBIK;
-    pub use super::IGrounderFBBIK;
-    pub use super::IGrounderFBBIKMethods;
     pub use super::GrounderFBBIK_SpineEffector;
     pub use super::IGrounderFBBIK_SpineEffector;
     pub use super::IGrounderFBBIK_SpineEffectorMethods;
+    pub use super::GrounderFBBIK;
+    pub use super::IGrounderFBBIK;
+    pub use super::IGrounderFBBIKMethods;
     pub use crate::root_motion::final_ik::grounder::IGrounder;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

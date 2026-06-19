@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographsequence/PhotographSequence.md"))]#[::unity2::class(namespace="App",name="PhotographSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct PhotographSequence{#[offset(112)]#[rename(name="m_ReservedLabel")]pub m_reserved_label:crate::app::photographsequence::PhotographSequence_Label, #[offset(120)]#[rename(name="m_AllMenuContent")]pub m_all_menu_content:crate::app::photographallmenucontent::PhotographAllMenuContent, #[offset(128)]#[rename(name="m_SpotObj")]pub m_spot_obj:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(144)]#[rename(name="m_CameraController")]pub m_camera_controller:crate::app::photographcameracontroller::PhotographCameraController, #[offset(152)]#[rename(name="m_AnimalLocatorNameList")]pub m_animal_locator_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographsequence/PhotographSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct PhotographSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for PhotographSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="PhotographSequence.Label";
@@ -47,9 +50,6 @@ pub fn photograph_mode()->Self{Self{value:9}
 pub fn exit()->Self{Self{value:10}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographsequence/PhotographSequence.md"))]#[::unity2::class(namespace="App",name="PhotographSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct PhotographSequence{#[offset(112)]#[rename(name="m_ReservedLabel")]pub m_reserved_label:crate::app::photographsequence::PhotographSequence_Label, #[offset(120)]#[rename(name="m_AllMenuContent")]pub m_all_menu_content:crate::app::photographallmenucontent::PhotographAllMenuContent, #[offset(128)]#[rename(name="m_SpotObj")]pub m_spot_obj:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(144)]#[rename(name="m_CameraController")]pub m_camera_controller:crate::app::photographcameracontroller::PhotographCameraController, #[offset(152)]#[rename(name="m_AnimalLocatorNameList")]pub m_animal_locator_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
 
 }
 
@@ -208,10 +208,10 @@ this}
 #[cfg(feature = "app-photographsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PhotographSequence_Label;
     pub use super::PhotographSequence;
     pub use super::IPhotographSequence;
     pub use super::IPhotographSequenceMethods;
+    pub use super::PhotographSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

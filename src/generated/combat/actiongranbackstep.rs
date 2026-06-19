@@ -24,21 +24,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actiongranbackstep-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actiongranbackstep")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionGranBackstep_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionGranBackstep,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionGranBackstep as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionGranBackstep, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enter(this:ActionGranBackstep,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ActionGranBackstep as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(ActionGranBackstep, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_exit(this:ActionGranBackstep,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ActionGranBackstep as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let inner:extern "C" fn(ActionGranBackstep, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actiongranbackstep")]pub trait IActionGranBackstepMethods:IActionGranBackstep{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5df0usize)as*mut u8, ::unity2::Il2CppString;
-(ActionGranBackstep)__receiver)}
+__ActionGranBackstep_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::combat::character::Character)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5e40usize)as*mut u8,();
 (ActionGranBackstep)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr))}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5e70usize)as*mut u8,();
-(ActionGranBackstep)__receiver)}
+__ActionGranBackstep_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionGranBackstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc6560usize)as*mut u8,();
-(ActionGranBackstep)__receiver)}
+__ActionGranBackstep_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -28,13 +28,44 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-ccdik-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-ccdik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CCDIK_unity2_raw{use super:: * ;
+pub unsafe fn open_user_manual(this:CCDIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CCDIK as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
+let inner:extern "C" fn(CCDIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn open_script_reference(this:CCDIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CCDIK as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
+let inner:extern "C" fn(CCDIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_ik_solver(this:CCDIK,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CCDIK as::unity2::ClassIdentity> ::NAME,"GetIKSolver",));
+let inner:extern "C" fn(CCDIK, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-ccdik")]pub trait ICCDIKMethods:ICCDIK{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <CCDIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298c7a0usize)as*mut u8,();
-(CCDIK)__receiver)}
+__CCDIK_unity2_raw::open_user_manual(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <CCDIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298c7f0usize)as*mut u8,();
-(CCDIK)__receiver)}
+__CCDIK_unity2_raw::open_script_reference(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SupportGroup()` overload"]fn support_group(self,)->(){unsafe{let __receiver= <CCDIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x298c840usize)as*mut u8,();
@@ -45,8 +76,7 @@ pub use __types::*;
 (CCDIK)__receiver)}
 }
 #[doc="`GetIKSolver()` overload"]fn get_ik_solver(self,)->crate::root_motion::final_ik::iksolver::IKSolver{unsafe{let __receiver= <CCDIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298c8e0usize)as*mut u8,crate::root_motion::final_ik::iksolver::IKSolver;
-(CCDIK)__receiver)}
+__CCDIK_unity2_raw::get_ik_solver(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CCDIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x298c8f0usize)as*mut u8,();

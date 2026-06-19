@@ -16,17 +16,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-pixelperfectcamerainternal-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PixelPerfectCameraInternal_unity2_raw{use super:: * ;
+pub unsafe fn on_before_serialize(this:PixelPerfectCameraInternal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PixelPerfectCameraInternal as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
+let inner:extern "C" fn(PixelPerfectCameraInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_after_deserialize(this:PixelPerfectCameraInternal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <PixelPerfectCameraInternal as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
+let inner:extern "C" fn(PixelPerfectCameraInternal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-experimental-rendering-universal-pixelperfectcamerainternal")]pub trait IPixelPerfectCameraInternalMethods:IPixelPerfectCameraInternal{#[doc="`.ctor(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)` overload"]fn ctor(self,component:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface>)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3196210usize)as*mut u8,();
 (PixelPerfectCameraInternal)__receiver,(crate::unity_engine::experimental::rendering::universal::ipixelperfectcamera_interface::IPixelPerfectCamera_Interface)::core::convert::Into::into(component))}
 }
 #[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31971f0usize)as*mut u8,();
-(PixelPerfectCameraInternal)__receiver)}
+__PixelPerfectCameraInternal_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3197280usize)as*mut u8,();
-(PixelPerfectCameraInternal)__receiver)}
+__PixelPerfectCameraInternal_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateCameraProperties(i32, i32)` overload"]fn calculate_camera_properties(self,screen_width:impl::core::convert::Into<i32> ,screen_height:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PixelPerfectCameraInternal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3196430usize)as*mut u8,();

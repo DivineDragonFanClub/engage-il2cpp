@@ -18,17 +18,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actioncamera-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actioncamera")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionCamera_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionCamera,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionCamera as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionCamera, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enter(this:ActionCamera,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ActionCamera as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(ActionCamera, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actioncamera")]pub trait IActionCameraMethods:IActionCamera{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3f90usize)as*mut u8, ::unity2::Il2CppString;
-(ActionCamera)__receiver)}
+__ActionCamera_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::combat::camerasituation::CameraSituation, bool)` overload"]fn ctor(self,style:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,force:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ActionCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3fe0usize)as*mut u8,();
 (ActionCamera)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(style),(bool)::core::convert::Into::into(force))}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionCamera as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4020usize)as*mut u8,();
-(ActionCamera)__receiver)}
+__ActionCamera_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 }
 

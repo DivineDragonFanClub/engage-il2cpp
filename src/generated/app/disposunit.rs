@@ -19,9 +19,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposunit/DisposUnit.md"))]#[::unity2::class(namespace="App",name="DisposUnit")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DisposUnit{#[static_field]#[rename(name="LevelMax")]pub level_max:i32, #[offset(24)]#[rename(name="m_Person")]pub m_person: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Job")]pub m_job: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Force")]pub m_force: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Level")]pub m_level:i32, #[offset(52)]#[rename(name="m_Normal")]pub m_normal:bool, #[offset(53)]#[rename(name="m_Hard")]pub m_hard:bool, #[offset(54)]#[rename(name="m_Lunatic")]pub m_lunatic:bool, #[offset(55)]#[rename(name="新規生成")]pub 新規生成:bool, #[offset(56)]#[rename(name="リーダー")]pub リーダー:bool, #[offset(57)]#[rename(name="移動禁止")]pub 移動禁止:bool, #[offset(58)]#[rename(name="進撃位置")]pub 進撃位置:bool, #[offset(59)]#[rename(name="進撃強制")]pub 進撃強制:bool, #[offset(60)]#[rename(name="進撃固定")]pub 進撃固定:bool, #[offset(61)]#[rename(name="外枠配置")]pub 外枠配置:bool, #[offset(62)]#[rename(name="ゲスト")]pub ゲスト:bool, #[offset(64)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposunit/DisposUnit_Item.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DisposUnit_Item{pub m_item: ::unity2::Il2CppString,pub m_is_drop:bool,}
 impl::unity2::ClassIdentity for DisposUnit_Item{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DisposUnit.Item";
@@ -31,6 +28,9 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for DisposUnit_Item{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposunit/DisposUnit.md"))]#[::unity2::class(namespace="App",name="DisposUnit")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DisposUnit{#[static_field]#[rename(name="LevelMax")]pub level_max:i32, #[offset(24)]#[rename(name="m_Person")]pub m_person: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Job")]pub m_job: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Force")]pub m_force: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Level")]pub m_level:i32, #[offset(52)]#[rename(name="m_Normal")]pub m_normal:bool, #[offset(53)]#[rename(name="m_Hard")]pub m_hard:bool, #[offset(54)]#[rename(name="m_Lunatic")]pub m_lunatic:bool, #[offset(55)]#[rename(name="新規生成")]pub 新規生成:bool, #[offset(56)]#[rename(name="リーダー")]pub リーダー:bool, #[offset(57)]#[rename(name="移動禁止")]pub 移動禁止:bool, #[offset(58)]#[rename(name="進撃位置")]pub 進撃位置:bool, #[offset(59)]#[rename(name="進撃強制")]pub 進撃強制:bool, #[offset(60)]#[rename(name="進撃固定")]pub 進撃固定:bool, #[offset(61)]#[rename(name="外枠配置")]pub 外枠配置:bool, #[offset(62)]#[rename(name="ゲスト")]pub ゲスト:bool, #[offset(64)]#[rename(name="m_Items")]pub m_items: ::unity2::Array<crate::app::disposunit::DisposUnit_Item> ,}
 
 }
 
@@ -77,10 +77,10 @@ this}
 #[cfg(feature = "app-disposunit")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DisposUnit_Item;
     pub use super::DisposUnit;
     pub use super::IDisposUnit;
     pub use super::IDisposUnitMethods;
-    pub use super::DisposUnit_Item;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::behaviour::IBehaviour;

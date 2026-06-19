@@ -26,17 +26,38 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-refineshopengravegodmenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refineshopengravegodmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopEngraveGodMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn build_text(this:RefineShopEngraveGodMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefineShopEngraveGodMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
+let inner:extern "C" fn(RefineShopEngraveGodMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_text_color(this:RefineShopEngraveGodMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <RefineShopEngraveGodMenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
+let inner:extern "C" fn(RefineShopEngraveGodMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshopengravegodmenuitemcontent")]pub trait IRefineShopEngraveGodMenuItemContentMethods:IRefineShopEngraveGodMenuItemContent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopEngraveGodMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x295bd20usize)as*mut u8,();
 (RefineShopEngraveGodMenuItemContent)__receiver)}
 }
 #[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <RefineShopEngraveGodMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x295bd30usize)as*mut u8,();
-(RefineShopEngraveGodMenuItemContent)__receiver)}
+__RefineShopEngraveGodMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <RefineShopEngraveGodMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x295c140usize)as*mut u8,();
-(RefineShopEngraveGodMenuItemContent)__receiver)}
+__RefineShopEngraveGodMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)}
 }
 }
 

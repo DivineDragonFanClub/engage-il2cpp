@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-materiallistmenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-materiallistmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaterialListMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:MaterialListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MaterialListMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(MaterialListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:MaterialListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MaterialListMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(MaterialListMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-materiallistmenuitem")]pub trait IMaterialListMenuItemMethods:IMaterialListMenuItem{#[doc="`get_Item()` overload"]fn get_item(self,)->crate::app::itemdata::ItemData{unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25c90e0usize)as*mut u8,crate::app::itemdata::ItemData;
 (MaterialListMenuItem)__receiver)}
@@ -31,12 +54,10 @@ pub use __types::*;
 (MaterialListMenuItem)__receiver,(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data))}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9100usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MaterialListMenuItem)__receiver)}
+__MaterialListMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MaterialListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c9110usize)as*mut u8,();
-(MaterialListMenuItem)__receiver)}
+__MaterialListMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 }
 

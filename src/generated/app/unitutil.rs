@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitutil/UnitUtil.md"))]#[::unity2::class(namespace="App",name="UnitUtil")]#[parent(crate::system::object::Object)]pub struct UnitUtil{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitutil/UnitUtil_DieType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitUtil_DieType{pub value:i32,}
 impl::unity2::ClassIdentity for UnitUtil_DieType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitUtil.DieType";
@@ -31,9 +34,6 @@ pub fn exist()->Self{Self{value:2}
 pub fn die()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitutil/UnitUtil.md"))]#[::unity2::class(namespace="App",name="UnitUtil")]#[parent(crate::system::object::Object)]pub struct UnitUtil{}
 
 }
 
@@ -346,10 +346,10 @@ this}
 #[cfg(feature = "app-unitutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitUtil_DieType;
     pub use super::UnitUtil;
     pub use super::IUnitUtil;
     pub use super::IUnitUtilMethods;
+    pub use super::UnitUtil_DieType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

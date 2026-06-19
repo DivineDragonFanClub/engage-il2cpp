@@ -18,6 +18,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-gmapspotmanager-types")]
 pub use __types::*;
 
+#[cfg(feature="app-gmapspotmanager")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapSpotManager_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:GmapSpotManager,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GmapSpotManager as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(GmapSpotManager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_serialize(this:GmapSpotManager,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GmapSpotManager as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let inner:extern "C" fn(GmapSpotManager,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn on_deserialize(this:GmapSpotManager,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GmapSpotManager as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let inner:extern "C" fn(GmapSpotManager,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,version,__mi)}
+}
+
 #[cfg(feature="app-gmapspotmanager")]impl GmapSpotManager{#[doc="`ForEachImpl(crate::system::func_2::Func_2<crate::app::gmapspot::GmapSpot,bool>, crate::system::action_1::Action_1<crate::app::gmapspot::GmapSpot>)` overload"]pub fn for_each_impl(cond:impl::core::convert::Into<crate::system::func_2::Func_2<crate::app::gmapspot::GmapSpot,bool> > ,func:impl::core::convert::Into<crate::system::action_1::Action_1<crate::app::gmapspot::GmapSpot> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b495a0usize)as*mut u8,();
 (crate::system::func_2::Func_2<crate::app::gmapspot::GmapSpot,bool>)::core::convert::Into::into(cond),(crate::system::action_1::Action_1<crate::app::gmapspot::GmapSpot>)::core::convert::Into::into(func))}
 }
@@ -54,8 +87,7 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-gmapspotmanager")]pub trait IGmapSpotManagerMethods:IGmapSpotManager{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GmapSpotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2b486e0usize)as*mut u8,();
-(GmapSpotManager)__receiver)}
+__GmapSpotManager_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AttachChapterToSpot()` overload"]fn attach_chapter_to_spot(self,)->(){unsafe{let __receiver= <GmapSpotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b39700usize)as*mut u8,();
@@ -134,12 +166,10 @@ pub use __types::*;
 (GmapSpotManager)__receiver)}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GmapSpotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2b49cb0usize)as*mut u8,();
-(GmapSpotManager)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__GmapSpotManager_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GmapSpotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2b49d20usize)as*mut u8,();
-(GmapSpotManager)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+__GmapSpotManager_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GmapSpotManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b49d30usize)as*mut u8,();

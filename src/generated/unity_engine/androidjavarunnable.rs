@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-androidjavarunnable-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-androidjavarunnable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AndroidJavaRunnable_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AndroidJavaRunnable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AndroidJavaRunnable as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AndroidJavaRunnable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-androidjavarunnable")]pub trait IAndroidJavaRunnableMethods:IAndroidJavaRunnable{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AndroidJavaRunnable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f14ca0usize)as*mut u8,();
 (AndroidJavaRunnable)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AndroidJavaRunnable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f14cc0usize)as*mut u8,();
-(AndroidJavaRunnable)__receiver)}
+__AndroidJavaRunnable_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 

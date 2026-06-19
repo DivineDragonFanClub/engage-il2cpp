@@ -19,17 +19,83 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="app-profilecardvisualbasemenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardVisualBaseMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn is_new_arrival(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsNewArrival").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsNewArrival", <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_build(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build_menu_item_content(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_new_arrival(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"IsNewArrival",));
 let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_already_read(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetAlreadyRead").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetAlreadyRead", <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_already_read(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"SetAlreadyRead",));
 let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_cursor_move_end(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"OnCursorMoveEnd",));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_deselect(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:ProfileCardVisualBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ProfileCardVisualBaseMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(ProfileCardVisualBaseMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -40,12 +106,10 @@ inner(this,__mi)}
 (ProfileCardVisualBaseMenuItem)__receiver,(bool)::core::convert::Into::into(initial_select))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02ab0usize)as*mut u8,();
-(ProfileCardVisualBaseMenuItem)__receiver)}
+__ProfileCardVisualBaseMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02c20usize)as*mut u8,();
-(ProfileCardVisualBaseMenuItem)__receiver)}
+__ProfileCardVisualBaseMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c02ac0usize)as*mut u8,();
@@ -70,20 +134,16 @@ __ProfileCardVisualBaseMenuItem_unity2_raw::set_already_read(__receiver, ::core:
 (ProfileCardVisualBaseMenuItem)__receiver,(bool)::core::convert::Into::into(decided))}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03110usize)as*mut u8,();
-(ProfileCardVisualBaseMenuItem)__receiver)}
+__ProfileCardVisualBaseMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03510usize)as*mut u8,();
-(ProfileCardVisualBaseMenuItem)__receiver)}
+__ProfileCardVisualBaseMenuItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03520usize)as*mut u8,();
-(ProfileCardVisualBaseMenuItem)__receiver)}
+__ProfileCardVisualBaseMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardVisualBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03550usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardVisualBaseMenuItem)__receiver)}
+__ProfileCardVisualBaseMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 

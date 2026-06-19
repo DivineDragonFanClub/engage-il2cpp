@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/inputtracking/InputTracking.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="InputTracking")]#[parent(crate::system::object::Object)]pub struct InputTracking{#[static_field]#[rename(name="trackingAcquired")]pub tracking_acquired:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> , #[static_field]#[rename(name="trackingLost")]pub tracking_lost:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> , #[static_field]#[rename(name="nodeAdded")]pub node_added:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> , #[static_field]#[rename(name="nodeRemoved")]pub node_removed:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/inputtracking/InputTracking_TrackingStateEventType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputTracking_TrackingStateEventType{pub value:i32,}
 impl::unity2::ClassIdentity for InputTracking_TrackingStateEventType{const NAMESPACE: &'static str="UnityEngine.XR";
 const NAME: &'static str="InputTracking.TrackingStateEventType";
@@ -31,9 +34,6 @@ pub fn tracking_acquired()->Self{Self{value:2}
 pub fn tracking_lost()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/inputtracking/InputTracking.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="InputTracking")]#[parent(crate::system::object::Object)]pub struct InputTracking{#[static_field]#[rename(name="trackingAcquired")]pub tracking_acquired:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> , #[static_field]#[rename(name="trackingLost")]pub tracking_lost:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> , #[static_field]#[rename(name="nodeAdded")]pub node_added:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> , #[static_field]#[rename(name="nodeRemoved")]pub node_removed:crate::system::action_1::Action_1<crate::unity_engine::xr::xrnodestate::XRNodeState> ,}
 
 }
 
@@ -55,9 +55,9 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "unity_engine-xr-inputtracking")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InputTracking_TrackingStateEventType;
     pub use super::InputTracking;
     pub use super::IInputTracking;
+    pub use super::InputTracking_TrackingStateEventType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

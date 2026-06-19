@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procbattlecallback-types")]
 pub use __types::*;
 
+#[cfg(feature="app-procbattlecallback")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcBattleCallback_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:ProcBattleCallback,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ProcBattleCallback as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:ProcBattleCallback,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProcBattleCallback as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(ProcBattleCallback, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-procbattlecallback")]impl ProcBattleCallback{#[doc="`GetCurrent(crate::app::procinst::ProcInst)` overload"]pub fn get_current(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x281c630usize)as*mut u8,crate::app::procinst::ProcInst;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -28,12 +51,10 @@ pub use __types::*;
 (ProcBattleCallback)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::system::action::Action)::core::convert::Into::into(completed),(bool)::core::convert::Into::into(skipable))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ProcBattleCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281c5b0usize)as*mut u8,();
-(ProcBattleCallback)__receiver)}
+__ProcBattleCallback_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProcBattleCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281c5e0usize)as*mut u8,();
-(ProcBattleCallback)__receiver)}
+__ProcBattleCallback_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 }
 

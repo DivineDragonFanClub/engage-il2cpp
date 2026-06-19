@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-iinstanceprovider_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IInstanceProvider_Interface_unity2_raw{use super:: * ;
-pub unsafe fn provide_instance(this:IInstanceProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,prefab_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,instantiate_parameters:crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProvideInstance").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProvideInstance", <IInstanceProvider_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn provide_instance(this:IInstanceProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,prefab_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,instantiate_parameters:crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IInstanceProvider_Interface as::unity2::ClassIdentity> ::NAME,"ProvideInstance",));
 let inner:extern "C" fn(IInstanceProvider_Interface,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::gameobject::GameObject> ,crate::unity_engine::resource_management::resource_providers::instantiationparameters::InstantiationParameters, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,resource_manager,prefab_handle,instantiate_parameters,__mi)}
-pub unsafe fn release_instance(this:IInstanceProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,instance:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ReleaseInstance").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ReleaseInstance", <IInstanceProvider_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn release_instance(this:IInstanceProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,instance:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IInstanceProvider_Interface as::unity2::ClassIdentity> ::NAME,"ReleaseInstance",));
 let inner:extern "C" fn(IInstanceProvider_Interface,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -25,9 +25,72 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="combat-basecameracontroller")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseCameraController_unity2_raw{use super:: * ;
-pub unsafe fn get_camera_targets(this:BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<i32>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetCameraTargets").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetCameraTargets", <BaseCameraController as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_inverse(this:BaseCameraController,inv_side:bool,inv_camera:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BaseCameraController as::unity2::ClassIdentity> ::NAME,"SetInverse",));
+let inner:extern "C" fn(BaseCameraController,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inv_side,inv_camera,__mi)}
+pub unsafe fn get_is_active_v_cam(this:BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BaseCameraController as::unity2::ClassIdentity> ::NAME,"get_IsActiveVCam",));
+let inner:extern "C" fn(BaseCameraController, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn stabilize(this:BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <BaseCameraController as::unity2::ClassIdentity> ::NAME,"Stabilize",));
+let inner:extern "C" fn(BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn check_usable(this:BaseCameraController,is_routine:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <BaseCameraController as::unity2::ClassIdentity> ::NAME,"CheckUsable",));
+let inner:extern "C" fn(BaseCameraController,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_routine,__mi)}
+pub unsafe fn activate(this:BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BaseCameraController as::unity2::ClassIdentity> ::NAME,"Activate",));
+let inner:extern "C" fn(BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn deactivate(this:BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <BaseCameraController as::unity2::ClassIdentity> ::NAME,"Deactivate",));
+let inner:extern "C" fn(BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_camera_targets(this:BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<i32>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <BaseCameraController as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
 let inner:extern "C" fn(BaseCameraController, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -123,8 +186,7 @@ inner(this,__mi)}
 (BaseCameraController)__receiver,(f32)::core::convert::Into::into(value))}
 }
 #[doc="`SetInverse(bool, bool)` overload"]fn set_inverse(self,inv_side:impl::core::convert::Into<bool> ,inv_camera:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2127180usize)as*mut u8,();
-(BaseCameraController)__receiver,(bool)::core::convert::Into::into(inv_side),(bool)::core::convert::Into::into(inv_camera))}
+__BaseCameraController_unity2_raw::set_inverse(__receiver, ::core::convert::Into::into(inv_side), ::core::convert::Into::into(inv_camera), ::core::option::Option::None)}
 }
 #[doc="`get_Switch()` overload"]fn get_switch(self,)->crate::combat::cameraswitch::CameraSwitch{unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2127190usize)as*mut u8,crate::combat::cameraswitch::CameraSwitch;
@@ -135,8 +197,7 @@ inner(this,__mi)}
 (BaseCameraController)__receiver,(crate::combat::cameraswitch::CameraSwitch)::core::convert::Into::into(value))}
 }
 #[doc="`get_IsActiveVCam()` overload"]fn get_is_active_v_cam(self,)->bool{unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21271f0usize)as*mut u8,bool;
-(BaseCameraController)__receiver)}
+__BaseCameraController_unity2_raw::get_is_active_v_cam(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2127310usize)as*mut u8,();
@@ -151,20 +212,16 @@ inner(this,__mi)}
 (BaseCameraController)__receiver,(bool)::core::convert::Into::into(force))}
 }
 #[doc="`Stabilize()` overload"]fn stabilize(self,)->(){unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2128130usize)as*mut u8,();
-(BaseCameraController)__receiver)}
+__BaseCameraController_unity2_raw::stabilize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2128140usize)as*mut u8,();
-(BaseCameraController)__receiver,(bool)::core::convert::Into::into(is_routine))}
+__BaseCameraController_unity2_raw::check_usable(__receiver, ::core::convert::Into::into(is_routine), ::core::option::Option::None)}
 }
 #[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2128150usize)as*mut u8,();
-(BaseCameraController)__receiver)}
+__BaseCameraController_unity2_raw::activate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Deactivate()` overload"]fn deactivate(self,)->(){unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2128160usize)as*mut u8,();
-(BaseCameraController)__receiver)}
+__BaseCameraController_unity2_raw::deactivate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetFollowLookupPos(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn set_follow_lookup_pos(self,follow_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,lookat_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <BaseCameraController as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21276d0usize)as*mut u8,();

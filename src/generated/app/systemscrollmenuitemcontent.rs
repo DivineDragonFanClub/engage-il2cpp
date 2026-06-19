@@ -26,21 +26,60 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-systemscrollmenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-systemscrollmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SystemScrollMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn build(this:SystemScrollMenuItemContent,menu_item:crate::app::basicmenuitem::BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SystemScrollMenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(SystemScrollMenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item,__mi)}
+pub unsafe fn update(this:SystemScrollMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SystemScrollMenuItemContent as::unity2::ClassIdentity> ::NAME,"Update",));
+let inner:extern "C" fn(SystemScrollMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_text_color(this:SystemScrollMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SystemScrollMenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
+let inner:extern "C" fn(SystemScrollMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn disable(this:SystemScrollMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SystemScrollMenuItemContent as::unity2::ClassIdentity> ::NAME,"Disable",));
+let inner:extern "C" fn(SystemScrollMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-systemscrollmenuitemcontent")]pub trait ISystemScrollMenuItemContentMethods:ISystemScrollMenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b6d30usize)as*mut u8,();
-(SystemScrollMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+__SystemScrollMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7050usize)as*mut u8,();
-(SystemScrollMenuItemContent)__receiver)}
+__SystemScrollMenuItemContent_unity2_raw::update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7160usize)as*mut u8,();
-(SystemScrollMenuItemContent)__receiver)}
+__SystemScrollMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Disable()` overload"]fn disable(self,)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b72e0usize)as*mut u8,();
-(SystemScrollMenuItemContent)__receiver)}
+__SystemScrollMenuItemContent_unity2_raw::disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]fn set_help_text(self,help:impl::core::convert::Into< ::unity2::Il2CppString> ,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <SystemScrollMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20b7380usize)as*mut u8,();

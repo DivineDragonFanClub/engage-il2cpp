@@ -27,13 +27,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-synthesisringbaseringmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-synthesisringbaseringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SynthesisRingBaseRingMenu_CloseEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:SynthesisRingBaseRingMenu_CloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SynthesisRingBaseRingMenu_CloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(SynthesisRingBaseRingMenu_CloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-synthesisringbaseringmenu")]pub trait ISynthesisRingBaseRingMenu_CloseEventHandlerMethods:ISynthesisRingBaseRingMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SynthesisRingBaseRingMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7400usize)as*mut u8,();
 (SynthesisRingBaseRingMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <SynthesisRingBaseRingMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7420usize)as*mut u8,();
-(SynthesisRingBaseRingMenu_CloseEventHandler)__receiver)}
+__SynthesisRingBaseRingMenu_CloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -48,6 +60,49 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
  failed to instantiate", ::core::stringify!(SynthesisRingBaseRingMenu_CloseEventHandler), ::core::stringify!(new),));
  <Self as ISynthesisRingBaseRingMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
 this}
+}
+
+#[cfg(feature="app-synthesisringbaseringmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SynthesisRingBaseRingMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:SynthesisRingBaseRingMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SynthesisRingBaseRingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(SynthesisRingBaseRingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_left(this:SynthesisRingBaseRingMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <SynthesisRingBaseRingMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(SynthesisRingBaseRingMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:SynthesisRingBaseRingMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <SynthesisRingBaseRingMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(SynthesisRingBaseRingMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn b_call(this:SynthesisRingBaseRingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <SynthesisRingBaseRingMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(SynthesisRingBaseRingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-synthesisringbaseringmenu")]impl SynthesisRingBaseRingMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, i32, crate::app::basicmenuselect::BasicMenuSelect, crate::app::ringmenuitem::RingMenuItem_SelectEventHandler, crate::app::ringmenuitem::RingMenuItem_DecideEventHandler, crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu_CloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,initial_god_unit_index:impl::core::convert::Into<i32> ,initial_menu_select:impl::core::convert::Into<crate::app::basicmenuselect::BasicMenuSelect> ,select_event_handler:impl::core::convert::Into<crate::app::ringmenuitem::RingMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::ringmenuitem::RingMenuItem_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu_CloseEventHandler>)->crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20b13c0usize)as*mut u8,crate::app::synthesisringbaseringmenu::SynthesisRingBaseRingMenu;
@@ -95,8 +150,7 @@ this}
 (SynthesisRingBaseRingMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SynthesisRingBaseRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b2190usize)as*mut u8, ::unity2::Il2CppString;
-(SynthesisRingBaseRingMenu)__receiver)}
+__SynthesisRingBaseRingMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`EnableMenu()` overload"]fn enable_menu(self,)->(){unsafe{let __receiver= <SynthesisRingBaseRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20b21e0usize)as*mut u8,();
@@ -111,16 +165,13 @@ this}
 (SynthesisRingBaseRingMenu)__receiver)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SynthesisRingBaseRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b22c0usize)as*mut u8,();
-(SynthesisRingBaseRingMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__SynthesisRingBaseRingMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SynthesisRingBaseRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b2470usize)as*mut u8,();
-(SynthesisRingBaseRingMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__SynthesisRingBaseRingMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SynthesisRingBaseRingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20b2630usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SynthesisRingBaseRingMenu)__receiver)}
+__SynthesisRingBaseRingMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -15,10 +15,10 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects.CustomCameraSettings")]#[parent(crate::system::object::Object)]pub struct RenderObjects_CustomCameraSettings{#[offset(16)]#[rename(name="overrideCamera")]pub override_camera:bool, #[offset(17)]#[rename(name="restoreCamera")]pub restore_camera:bool, #[offset(20)]#[rename(name="offset")]pub offset:crate::unity_engine::vector4::Vector4, #[offset(36)]#[rename(name="cameraFieldOfView")]pub camera_field_of_view:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects")]#[parent(crate::unity_engine::rendering::universal::scriptablerendererfeature::ScriptableRendererFeature)]pub struct RenderObjects{#[offset(32)]#[rename(name="settings")]pub settings:crate::unity_engine::experimental::rendering::universal::renderobjects::RenderObjects_RenderObjectsSettings, #[offset(40)]#[rename(name="renderObjectsPass")]pub render_objects_pass:crate::unity_engine::experimental::rendering::universal::renderobjectspass::RenderObjectsPass,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_CustomCameraSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects.CustomCameraSettings")]#[parent(crate::system::object::Object)]pub struct RenderObjects_CustomCameraSettings{#[offset(16)]#[rename(name="overrideCamera")]pub override_camera:bool, #[offset(17)]#[rename(name="restoreCamera")]pub restore_camera:bool, #[offset(20)]#[rename(name="offset")]pub offset:crate::unity_engine::vector4::Vector4, #[offset(36)]#[rename(name="cameraFieldOfView")]pub camera_field_of_view:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/renderobjects/RenderObjects_FilterSettings.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="RenderObjects.FilterSettings")]#[parent(crate::system::object::Object)]pub struct RenderObjects_FilterSettings{#[offset(16)]#[rename(name="RenderQueueType")]pub render_queue_type:crate::unity_engine::experimental::rendering::universal::renderqueuetype::RenderQueueType, #[offset(20)]#[rename(name="LayerMask")]pub layer_mask:crate::unity_engine::layermask::LayerMask, #[offset(24)]#[rename(name="PassNames")]pub pass_names: ::unity2::Array< ::unity2::Il2CppString> ,}
@@ -31,32 +31,35 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]pub trait IRenderObjects_CustomCameraSettingsMethods:IRenderObjects_CustomCameraSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderObjects_CustomCameraSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb8670usize)as*mut u8,();
-(RenderObjects_CustomCameraSettings)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl<__T:IRenderObjects_CustomCameraSettings>IRenderObjects_CustomCameraSettingsMethods for __T{}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RenderObjects_CustomCameraSettings), ::core::stringify!(new),));
- <Self as IRenderObjects_CustomCameraSettingsMethods> ::ctor(this,);
-this}
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RenderObjects_unity2_raw{use super:: * ;
+pub unsafe fn create(this:RenderObjects,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RenderObjects as::unity2::ClassIdentity> ::NAME,"Create",));
+let inner:extern "C" fn(RenderObjects, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn add_render_passes(this:RenderObjects,renderer:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RenderObjects as::unity2::ClassIdentity> ::NAME,"AddRenderPasses",));
+let inner:extern "C" fn(RenderObjects,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,renderer,rendering_data,__mi)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]pub trait IRenderObjectsMethods:IRenderObjects{#[doc="`Create()` overload"]fn create(self,)->(){unsafe{let __receiver= <RenderObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31a9360usize)as*mut u8,();
-(RenderObjects)__receiver)}
+__RenderObjects_unity2_raw::create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AddRenderPasses(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn add_render_passes(self,renderer:impl::core::convert::Into<crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <RenderObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31a9a80usize)as*mut u8,();
-(RenderObjects)__receiver,(crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer)::core::convert::Into::into(renderer),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__RenderObjects_unity2_raw::add_render_passes(__receiver, ::core::convert::Into::into(renderer),__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderObjects as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -76,6 +79,24 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(RenderObjects), ::core::stringify!(new),));
  <Self as IRenderObjectsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]pub trait IRenderObjects_CustomCameraSettingsMethods:IRenderObjects_CustomCameraSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderObjects_CustomCameraSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb8670usize)as*mut u8,();
+(RenderObjects_CustomCameraSettings)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl<__T:IRenderObjects_CustomCameraSettings>IRenderObjects_CustomCameraSettingsMethods for __T{}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderobjects")]impl RenderObjects_CustomCameraSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RenderObjects_CustomCameraSettings), ::core::stringify!(new),));
+ <Self as IRenderObjects_CustomCameraSettingsMethods> ::ctor(this,);
 this}
 }
 
@@ -118,12 +139,12 @@ this}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderobjects")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RenderObjects_CustomCameraSettings;
-    pub use super::IRenderObjects_CustomCameraSettings;
-    pub use super::IRenderObjects_CustomCameraSettingsMethods;
     pub use super::RenderObjects;
     pub use super::IRenderObjects;
     pub use super::IRenderObjectsMethods;
+    pub use super::RenderObjects_CustomCameraSettings;
+    pub use super::IRenderObjects_CustomCameraSettings;
+    pub use super::IRenderObjects_CustomCameraSettingsMethods;
     pub use super::RenderObjects_FilterSettings;
     pub use super::IRenderObjects_FilterSettings;
     pub use super::IRenderObjects_FilterSettingsMethods;

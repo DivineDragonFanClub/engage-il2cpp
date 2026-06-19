@@ -18,6 +18,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-fileinfo-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-fileinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:FileInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FileInfo as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(FileInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_exists(this:FileInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <FileInfo as::unity2::ClassIdentity> ::NAME,"get_Exists",));
+let inner:extern "C" fn(FileInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:FileInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <FileInfo as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(FileInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-io-fileinfo")]pub trait IFileInfoMethods:IFileInfo{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x380c780usize)as*mut u8,();
 (FileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file_name))}
@@ -31,8 +64,7 @@ pub use __types::*;
 (FileInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(original_path))}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380cba0usize)as*mut u8, ::unity2::Il2CppString;
-(FileInfo)__receiver)}
+__FileInfo_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_DirectoryName()` overload"]fn get_directory_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x380cbb0usize)as*mut u8, ::unity2::Il2CppString;
@@ -43,12 +75,10 @@ pub use __types::*;
 (FileInfo)__receiver)}
 }
 #[doc="`get_Exists()` overload"]fn get_exists(self,)->bool{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380cd00usize)as*mut u8,bool;
-(FileInfo)__receiver)}
+__FileInfo_unity2_raw::get_exists(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380cf60usize)as*mut u8, ::unity2::Il2CppString;
-(FileInfo)__receiver)}
+__FileInfo_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 

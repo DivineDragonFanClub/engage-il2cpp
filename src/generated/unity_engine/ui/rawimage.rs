@@ -30,13 +30,55 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "unity_engine-ui-rawimage-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-ui-rawimage")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RawImage_unity2_raw{use super:: * ;
+pub unsafe fn get_main_texture(this:RawImage,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <RawImage as::unity2::ClassIdentity> ::NAME,"get_mainTexture",));
+let inner:extern "C" fn(RawImage, ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_native_size(this:RawImage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <RawImage as::unity2::ClassIdentity> ::NAME,"SetNativeSize",));
+let inner:extern "C" fn(RawImage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_populate_mesh(this:RawImage,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <RawImage as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
+let inner:extern "C" fn(RawImage,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vh,__mi)}
+pub unsafe fn on_did_apply_animation_properties(this:RawImage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RawImage as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let inner:extern "C" fn(RawImage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-ui-rawimage")]pub trait IRawImageMethods:IRawImage{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3721960usize)as*mut u8,();
 (RawImage)__receiver)}
 }
 #[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x37219c0usize)as*mut u8,crate::unity_engine::texture::Texture;
-(RawImage)__receiver)}
+__RawImage_unity2_raw::get_main_texture(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_texture()` overload"]fn get_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3721b40usize)as*mut u8,crate::unity_engine::texture::Texture;
@@ -55,16 +97,13 @@ pub use __types::*;
 (RawImage)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(value))}
 }
 #[doc="`SetNativeSize()` overload"]fn set_native_size(self,)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3721cd0usize)as*mut u8,();
-(RawImage)__receiver)}
+__RawImage_unity2_raw::set_native_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3721e40usize)as*mut u8,();
-(RawImage)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh))}
+__RawImage_unity2_raw::on_populate_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <RawImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3722280usize)as*mut u8,();
-(RawImage)__receiver)}
+__RawImage_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -15,9 +15,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="TextAsset.EncodingUtility")]#[parent(crate::system::object::Object)]pub struct TextAsset_EncodingUtility{#[static_field]#[rename(name="targetEncoding")]pub target_encoding: ::unity2::IlInstance,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textasset/TextAsset.md"))]#[::unity2::class(namespace="UnityEngine",name="TextAsset")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct TextAsset{}
 
 
@@ -36,17 +33,25 @@ pub fn create_native_object()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/textasset/TextAsset_EncodingUtility.md"))]#[::unity2::class(namespace="UnityEngine",name="TextAsset.EncodingUtility")]#[parent(crate::system::object::Object)]pub struct TextAsset_EncodingUtility{#[static_field]#[rename(name="targetEncoding")]pub target_encoding: ::unity2::IlInstance,}
+
 }
 
 #[cfg(feature = "unity_engine-textasset-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-textasset")]impl TextAsset_EncodingUtility{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379e800usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-textasset")]impl TextAsset_EncodingUtility{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="unity_engine-textasset")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextAsset_unity2_raw{use super:: * ;
+pub unsafe fn to_string(this:TextAsset,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <TextAsset as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(TextAsset, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-textasset")]impl TextAsset{#[doc="`Internal_CreateInstance(crate::unity_engine::textasset::TextAsset, ::unity2::Il2CppString)` overload"]pub fn internal_create_instance(self_:impl::core::convert::Into<crate::unity_engine::textasset::TextAsset> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3788cf0usize)as*mut u8,();
@@ -70,8 +75,7 @@ pub use __types::*;
 (TextAsset)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3789070usize)as*mut u8, ::unity2::Il2CppString;
-(TextAsset)__receiver)}
+__TextAsset_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x37890c0usize)as*mut u8,();
@@ -122,15 +126,23 @@ this}
 this}
 }
 
+#[cfg(feature="unity_engine-textasset")]impl TextAsset_EncodingUtility{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379e800usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-textasset")]impl TextAsset_EncodingUtility{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-textasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TextAsset_EncodingUtility;
-    pub use super::ITextAsset_EncodingUtility;
     pub use super::TextAsset;
     pub use super::ITextAsset;
     pub use super::ITextAssetMethods;
     pub use super::TextAsset_CreateOptions;
+    pub use super::TextAsset_EncodingUtility;
+    pub use super::ITextAsset_EncodingUtility;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

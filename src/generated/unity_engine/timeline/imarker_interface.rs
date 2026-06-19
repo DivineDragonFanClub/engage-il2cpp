@@ -15,30 +15,42 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-timeline-imarker_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMarker_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_time(this:IMarker_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_time").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_time", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_time(this:IMarker_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IMarker_Interface as::unity2::ClassIdentity> ::NAME,"get_time",));
 let inner:extern "C" fn(IMarker_Interface, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_time(this:IMarker_Interface,value:f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_time").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_time", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_time(this:IMarker_Interface,value:f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IMarker_Interface as::unity2::ClassIdentity> ::NAME,"set_time",));
 let inner:extern "C" fn(IMarker_Interface,f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_parent(this:IMarker_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_parent").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_parent", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_parent(this:IMarker_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IMarker_Interface as::unity2::ClassIdentity> ::NAME,"get_parent",));
 let inner:extern "C" fn(IMarker_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn initialize(this:IMarker_Interface,parent:crate::unity_engine::timeline::trackasset::TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Initialize").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Initialize", <IMarker_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn initialize(this:IMarker_Interface,parent:crate::unity_engine::timeline::trackasset::TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IMarker_Interface as::unity2::ClassIdentity> ::NAME,"Initialize",));
 let inner:extern "C" fn(IMarker_Interface,crate::unity_engine::timeline::trackasset::TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

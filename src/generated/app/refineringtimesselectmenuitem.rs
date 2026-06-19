@@ -18,6 +18,69 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-refineringtimesselectmenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refineringtimesselectmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineRingTimesSelectMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:RefineRingTimesSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RefineRingTimesSelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RefineRingTimesSelectMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:RefineRingTimesSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RefineRingTimesSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(RefineRingTimesSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:RefineRingTimesSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefineRingTimesSelectMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(RefineRingTimesSelectMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build_menu_item_content(this:RefineRingTimesSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <RefineRingTimesSelectMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(RefineRingTimesSelectMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:RefineRingTimesSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefineRingTimesSelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RefineRingTimesSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RefineRingTimesSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RefineRingTimesSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RefineRingTimesSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineringtimesselectmenuitem")]pub trait IRefineRingTimesSelectMenuItemMethods:IRefineRingTimesSelectMenuItem{#[doc="`get_m_Times()` overload"]fn get_m_times(self,)->i32{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2957730usize)as*mut u8,i32;
 (RefineRingTimesSelectMenuItem)__receiver)}
@@ -47,32 +110,26 @@ pub use __types::*;
 (RefineRingTimesSelectMenuItem)__receiver,(i32)::core::convert::Into::into(times),(crate::app::refineringtimesselectmenu::RefineRingTimesSelectMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2957790usize)as*mut u8, ::unity2::Il2CppString;
-(RefineRingTimesSelectMenuItem)__receiver)}
+__RefineRingTimesSelectMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2957820usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RefineRingTimesSelectMenuItem)__receiver)}
+__RefineRingTimesSelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2957840usize)as*mut u8,();
-(RefineRingTimesSelectMenuItem)__receiver)}
+__RefineRingTimesSelectMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2957a30usize)as*mut u8,();
-(RefineRingTimesSelectMenuItem)__receiver)}
+__RefineRingTimesSelectMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2957850usize)as*mut u8,();
 (RefineRingTimesSelectMenuItem)__receiver)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2957a40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefineRingTimesSelectMenuItem)__receiver)}
+__RefineRingTimesSelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineRingTimesSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2957ab0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefineRingTimesSelectMenuItem)__receiver)}
+__RefineRingTimesSelectMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -27,30 +27,72 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="root_motion-final_ik-poser")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Poser_unity2_raw{use super:: * ;
-pub unsafe fn auto_mapping(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("AutoMapping").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","AutoMapping", <Poser as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn auto_mapping(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Poser as::unity2::ClassIdentity> ::NAME,"AutoMapping",));
 let inner:extern "C" fn(Poser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn initiate_poser(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("InitiatePoser").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","InitiatePoser", <Poser as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn initiate_poser(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Poser as::unity2::ClassIdentity> ::NAME,"InitiatePoser",));
 let inner:extern "C" fn(Poser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn update_poser(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UpdatePoser").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UpdatePoser", <Poser as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn update_poser(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <Poser as::unity2::ClassIdentity> ::NAME,"UpdatePoser",));
 let inner:extern "C" fn(Poser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn fix_poser_transforms(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("FixPoserTransforms").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","FixPoserTransforms", <Poser as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn fix_poser_transforms(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Poser as::unity2::ClassIdentity> ::NAME,"FixPoserTransforms",));
+let inner:extern "C" fn(Poser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_solver(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Poser as::unity2::ClassIdentity> ::NAME,"UpdateSolver",));
+let inner:extern "C" fn(Poser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn initiate_solver(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Poser as::unity2::ClassIdentity> ::NAME,"InitiateSolver",));
+let inner:extern "C" fn(Poser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn fix_transforms(this:Poser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Poser as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
 let inner:extern "C" fn(Poser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -74,16 +116,13 @@ __Poser_unity2_raw::update_poser(__receiver, ::core::option::Option::None)}
 __Poser_unity2_raw::fix_poser_transforms(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateSolver()` overload"]fn update_solver(self,)->(){unsafe{let __receiver= <Poser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2815580usize)as*mut u8,();
-(Poser)__receiver)}
+__Poser_unity2_raw::update_solver(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InitiateSolver()` overload"]fn initiate_solver(self,)->(){unsafe{let __receiver= <Poser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28155e0usize)as*mut u8,();
-(Poser)__receiver)}
+__Poser_unity2_raw::initiate_solver(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <Poser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2815630usize)as*mut u8,();
-(Poser)__receiver)}
+__Poser_unity2_raw::fix_transforms(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Poser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2815650usize)as*mut u8,();

@@ -20,25 +20,73 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-unexceptionalstreamwriter-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-unexceptionalstreamwriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnexceptionalStreamWriter_unity2_raw{use super:: * ;
+pub unsafe fn flush(this:UnexceptionalStreamWriter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Flush",));
+let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write(this:UnexceptionalStreamWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn write_2(this:UnexceptionalStreamWriter,value:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(UnexceptionalStreamWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_3(this:UnexceptionalStreamWriter,value: ::unity2::Array<u16> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn write_4(this:UnexceptionalStreamWriter,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <UnexceptionalStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(UnexceptionalStreamWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="system-io-unexceptionalstreamwriter")]pub trait IUnexceptionalStreamWriterMethods:IUnexceptionalStreamWriter{#[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3572b70usize)as*mut u8,();
-(UnexceptionalStreamWriter)__receiver)}
+__UnexceptionalStreamWriter_unity2_raw::flush(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3572c10usize)as*mut u8,();
-(UnexceptionalStreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__UnexceptionalStreamWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`Write(u16)` overload"]fn write_2(self,value:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3572cb0usize)as*mut u8,();
-(UnexceptionalStreamWriter)__receiver,(u16)::core::convert::Into::into(value))}
+__UnexceptionalStreamWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u16>)` overload"]fn write_3(self,value:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3572d50usize)as*mut u8,();
-(UnexceptionalStreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(value))}
+__UnexceptionalStreamWriter_unity2_raw::write_3(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <UnexceptionalStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3572df0usize)as*mut u8,();
-(UnexceptionalStreamWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__UnexceptionalStreamWriter_unity2_raw::write_4(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 

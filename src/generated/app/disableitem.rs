@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-disableitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-disableitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DisableItem_unity2_raw{use super:: * ;
+pub unsafe fn is_enable(this:DisableItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <DisableItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let inner:extern "C" fn(DisableItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-disableitem")]pub trait IDisableItemMethods:IDisableItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DisableItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceea30usize)as*mut u8,();
 (DisableItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
 #[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <DisableItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ceea40usize)as*mut u8,bool;
-(DisableItem)__receiver)}
+__DisableItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
 }
 }
 

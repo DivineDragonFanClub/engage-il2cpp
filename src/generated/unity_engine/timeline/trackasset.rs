@@ -49,6 +49,279 @@ pub use __types::*;
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="unity_engine-timeline-trackasset")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TrackAsset_unity2_raw{use super:: * ;
+pub unsafe fn on_before_track_serialize(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"OnBeforeTrackSerialize",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_after_track_deserialize(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"OnAfterTrackDeserialize",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_upgrade_from_version(this:TrackAsset,old_version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"OnUpgradeFromVersion",));
+let inner:extern "C" fn(TrackAsset,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,old_version,__mi)}
+pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_duration(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"get_duration",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_empty(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"get_isEmpty",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_has_curves(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"get_hasCurves",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_outputs(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"get_outputs",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_curves(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"get_curves",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->crate::unity_engine::animationclip::AnimationClip= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_timeline_i_curves_owner_get_default_curves_name(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_timeline_i_curves_owner_get_asset(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_asset",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_timeline_i_curves_owner_get_asset_owner(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_assetOwner",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_timeline_i_curves_owner_get_target_track(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ICurvesOwner.get_targetTrack",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::trackasset::TrackAsset= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_curves(this:TrackAsset,curves_clip_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"CreateCurves",));
+let inner:extern "C" fn(TrackAsset, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,curves_clip_name,__mi)}
+pub unsafe fn create_track_mixer(this:TrackAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,input_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"CreateTrackMixer",));
+let inner:extern "C" fn(TrackAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,input_count,__mi)}
+pub unsafe fn create_playable(this:TrackAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
+let inner:extern "C" fn(TrackAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,__mi)}
+pub unsafe fn compile_clips(this:TrackAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,timeline_clips:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::timelineclip::TimelineClip> ,tree:crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"CompileClips",));
+let inner:extern "C" fn(TrackAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::timelineclip::TimelineClip> ,crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> , ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,timeline_clips,tree,__mi)}
+pub unsafe fn on_create_clip_playable_graph(this:TrackAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,tree:crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"OnCreateClipPlayableGraph",));
+let inner:extern "C" fn(TrackAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> , ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,tree,__mi)}
+pub unsafe fn get_evaluation_time(this:TrackAsset,out_start: *mut f64,out_duration: *mut f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"GetEvaluationTime",));
+let inner:extern "C" fn(TrackAsset, *mut f64, *mut f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,out_start,out_duration,__mi)}
+pub unsafe fn get_sequence_time(this:TrackAsset,out_start: *mut f64,out_duration: *mut f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"GetSequenceTime",));
+let inner:extern "C" fn(TrackAsset, *mut f64, *mut f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,out_start,out_duration,__mi)}
+pub unsafe fn gather_properties(this:TrackAsset,director:crate::unity_engine::playables::playabledirector::PlayableDirector,driver:crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"GatherProperties",));
+let inner:extern "C" fn(TrackAsset,crate::unity_engine::playables::playabledirector::PlayableDirector,crate::unity_engine::timeline::ipropertycollector::IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,director,driver,__mi)}
+pub unsafe fn on_create_clip(this:TrackAsset,clip:crate::unity_engine::timeline::timelineclip::TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"OnCreateClip",));
+let inner:extern "C" fn(TrackAsset,crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip,__mi)}
+pub unsafe fn calculate_items_hash(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"CalculateItemsHash",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_playable_2(this:TrackAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,game_object:crate::unity_engine::gameobject::GameObject,clip:crate::unity_engine::timeline::timelineclip::TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
+let inner:extern "C" fn(TrackAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,game_object,clip,__mi)}
+pub unsafe fn can_compile_clips(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"CanCompileClips",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn hash(this:TrackAsset,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <TrackAsset as::unity2::ClassIdentity> ::NAME,"Hash",));
+let inner:extern "C" fn(TrackAsset, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-timeline-trackasset")]impl TrackAsset{#[doc="`add_OnClipPlayableCreate(crate::system::action_3::Action_3<crate::unity_engine::timeline::timelineclip::TimelineClip,crate::unity_engine::gameobject::GameObject,crate::unity_engine::playables::playable::Playable>)` overload"]pub fn add_on_clip_playable_create(value:impl::core::convert::Into<crate::system::action_3::Action_3<crate::unity_engine::timeline::timelineclip::TimelineClip,crate::unity_engine::gameobject::GameObject,crate::unity_engine::playables::playable::Playable> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35e4ca0usize)as*mut u8,();
 (crate::system::action_3::Action_3<crate::unity_engine::timeline::timelineclip::TimelineClip,crate::unity_engine::gameobject::GameObject,crate::unity_engine::playables::playable::Playable>)::core::convert::Into::into(value))}
 }
@@ -70,24 +343,19 @@ pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 }
 
 #[cfg(feature="unity_engine-timeline-trackasset")]pub trait ITrackAssetMethods:ITrackAsset{#[doc="`OnBeforeTrackSerialize()` overload"]fn on_before_track_serialize(self,)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e4660usize)as*mut u8,();
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::on_before_track_serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnAfterTrackDeserialize()` overload"]fn on_after_track_deserialize(self,)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e4670usize)as*mut u8,();
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::on_after_track_deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpgradeFromVersion(i32)` overload"]fn on_upgrade_from_version(self,old_version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e4680usize)as*mut u8,();
-(TrackAsset)__receiver,(i32)::core::convert::Into::into(old_version))}
+__TrackAsset_unity2_raw::on_upgrade_from_version(__receiver, ::core::convert::Into::into(old_version), ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self,)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e4690usize)as*mut u8,();
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_before_serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self,)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e4840usize)as*mut u8,();
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_after_deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpgradeToLatestVersion()` overload"]fn upgrade_to_latest_version(self,)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e4c60usize)as*mut u8,();
@@ -102,8 +370,7 @@ pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 (TrackAsset)__receiver)}
 }
 #[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e52a0usize)as*mut u8,f64;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_muted()` overload"]fn get_muted(self,)->bool{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5380usize)as*mut u8,bool;
@@ -134,24 +401,21 @@ pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 (TrackAsset)__receiver)}
 }
 #[doc="`get_isEmpty()` overload"]fn get_is_empty(self,)->bool{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e53c0usize)as*mut u8,bool;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::get_is_empty(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_hasClips()` overload"]fn get_has_clips(self,)->bool{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e54d0usize)as*mut u8,bool;
 (TrackAsset)__receiver)}
 }
 #[doc="`get_hasCurves()` overload"]fn get_has_curves(self,)->bool{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5530usize)as*mut u8,bool;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::get_has_curves(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_isSubTrack()` overload"]fn get_is_sub_track(self,)->bool{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d1f50usize)as*mut u8,bool;
 (TrackAsset)__receiver)}
 }
 #[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d8610usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> ;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::get_outputs(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetChildTracks()` overload"]fn get_child_tracks(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d3cc0usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset> ;
@@ -166,28 +430,23 @@ pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 (TrackAsset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_curves()` overload"]fn get_curves(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e58b0usize)as*mut u8,crate::unity_engine::animationclip::AnimationClip;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::get_curves(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_curves(crate::unity_engine::animationclip::AnimationClip)` overload"]fn set_curves(self,value:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e58c0usize)as*mut u8,();
 (TrackAsset)__receiver,(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(value))}
 }
 #[doc="`UnityEngine.Timeline.ICurvesOwner.get_defaultCurvesName()` overload"]fn unity_engine_timeline_i_curves_owner_get_default_curves_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e58d0usize)as*mut u8, ::unity2::Il2CppString;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_default_curves_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.Timeline.ICurvesOwner.get_asset()` overload"]fn unity_engine_timeline_i_curves_owner_get_asset(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5920usize)as*mut u8,crate::unity_engine::object_2::Object_2;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.Timeline.ICurvesOwner.get_assetOwner()` overload"]fn unity_engine_timeline_i_curves_owner_get_asset_owner(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5930usize)as*mut u8,crate::unity_engine::object_2::Object_2;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_asset_owner(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.Timeline.ICurvesOwner.get_targetTrack()` overload"]fn unity_engine_timeline_i_curves_owner_get_target_track(self,)->crate::unity_engine::timeline::trackasset::TrackAsset{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5940usize)as*mut u8,crate::unity_engine::timeline::trackasset::TrackAsset;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::unity_engine_timeline_i_curves_owner_get_target_track(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_subTracksObjects()` overload"]fn get_sub_tracks_objects(self,)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject>{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5950usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> ;
@@ -214,16 +473,13 @@ pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 (TrackAsset)__receiver)}
 }
 #[doc="`CreateCurves(::unity2::Il2CppString)` overload"]fn create_curves(self,curves_clip_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5c50usize)as*mut u8,();
-(TrackAsset)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(curves_clip_name))}
+__TrackAsset_unity2_raw::create_curves(__receiver, ::core::convert::Into::into(curves_clip_name), ::core::option::Option::None)}
 }
 #[doc="`CreateTrackMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn create_track_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5d40usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(TrackAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(input_count))}
+__TrackAsset_unity2_raw::create_track_mixer(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::convert::Into::into(input_count), ::core::option::Option::None)}
 }
 #[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5dd0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(TrackAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+__TrackAsset_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::option::Option::None)}
 }
 #[doc="`CreateDefaultClip()` overload"]fn create_default_clip(self,)->crate::unity_engine::timeline::timelineclip::TimelineClip{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5e40usize)as*mut u8,crate::unity_engine::timeline::timelineclip::TimelineClip;
@@ -348,8 +604,7 @@ __f(__receiver, ::core::convert::Into::into(time), ::core::option::Option::Some(
 (TrackAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)::core::convert::Into::into(tree),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(timeline_playable))}
 }
 #[doc="`CompileClips(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::timelineclip::TimelineClip>, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)` overload"]fn compile_clips(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,timeline_clips:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::timelineclip::TimelineClip> > ,tree:impl::core::convert::Into<crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> >)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e8120usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(TrackAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::timelineclip::TimelineClip>)::core::convert::Into::into(timeline_clips),(crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)::core::convert::Into::into(tree))}
+__TrackAsset_unity2_raw::compile_clips(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::convert::Into::into(timeline_clips), ::core::convert::Into::into(tree), ::core::option::Option::None)}
 }
 #[doc="`GatherCompilableTracks(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::trackasset::TrackAsset>)` overload"]fn gather_compilable_tracks(self,tracks:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::timeline::trackasset::TrackAsset> >)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e8760usize)as*mut u8,();
@@ -360,8 +615,7 @@ __f(__receiver, ::core::convert::Into::into(time), ::core::option::Option::Some(
 (TrackAsset)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::imarker_interface::IMarker_Interface>)::core::convert::Into::into(markers))}
 }
 #[doc="`OnCreateClipPlayableGraph(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)` overload"]fn on_create_clip_playable_graph(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,tree:impl::core::convert::Into<crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> >)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e8b30usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(TrackAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)::core::convert::Into::into(tree))}
+__TrackAsset_unity2_raw::on_create_clip_playable_graph(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::convert::Into::into(tree), ::core::option::Option::None)}
 }
 #[doc="`ConfigureTrackAnimation(crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>, crate::unity_engine::gameobject::GameObject, crate::unity_engine::playables::playable::Playable)` overload"]fn configure_track_animation(self,tree:impl::core::convert::Into<crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> > ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,blend:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e8580usize)as*mut u8,();
@@ -406,20 +660,17 @@ __f(__receiver, ::core::convert::Into::into(time), ::core::option::Option::Some(
 #[doc="`GetEvaluationTime(*mutf64, *mutf64)` overload"]fn get_evaluation_time(self,)->(f64,f64){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <f64> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d48e0usize)as*mut u8,();
-(TrackAsset)__receiver,(*mut f64)__out_0.as_mut_ptr(),(*mut f64)__out_1.as_mut_ptr());
+__TrackAsset_unity2_raw::get_evaluation_time(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`GetSequenceTime(*mutf64, *mutf64)` overload"]fn get_sequence_time(self,)->(f64,f64){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <f64> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d4ce0usize)as*mut u8,();
-(TrackAsset)__receiver,(*mut f64)__out_0.as_mut_ptr(),(*mut f64)__out_1.as_mut_ptr());
+__TrackAsset_unity2_raw::get_sequence_time(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]fn gather_properties(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector> ,driver:impl::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e9560usize)as*mut u8,();
-(TrackAsset)__receiver,(crate::unity_engine::playables::playabledirector::PlayableDirector)::core::convert::Into::into(director),(crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)::core::convert::Into::into(driver))}
+__TrackAsset_unity2_raw::gather_properties(__receiver, ::core::convert::Into::into(director), ::core::convert::Into::into(driver), ::core::option::Option::None)}
 }
 #[doc="`GetGameObjectBinding(crate::unity_engine::playables::playabledirector::PlayableDirector)` overload"]fn get_game_object_binding(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e9c50usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
@@ -430,20 +681,17 @@ let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
 (TrackAsset)__receiver,(::unity2::SystemType)::core::convert::Into::into(clip_type))}
 }
 #[doc="`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn on_create_clip(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e9df0usize)as*mut u8,();
-(TrackAsset)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+__TrackAsset_unity2_raw::on_create_clip(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)}
 }
 #[doc="`UpdateDuration()` overload"]fn update_duration(self,)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e5180usize)as*mut u8,();
 (TrackAsset)__receiver)}
 }
 #[doc="`CalculateItemsHash()` overload"]fn calculate_items_hash(self,)->i32{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d2290usize)as*mut u8,i32;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::calculate_items_hash(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn create_playable_2(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e9f30usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(TrackAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+__TrackAsset_unity2_raw::create_playable_2(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(game_object), ::core::convert::Into::into(clip), ::core::option::Option::None)}
 }
 #[doc="`Invalidate()` overload"]fn invalidate(self,)->(){unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e4b90usize)as*mut u8,();
@@ -454,8 +702,7 @@ let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
 (TrackAsset)__receiver)}
 }
 #[doc="`CanCompileClips()` overload"]fn can_compile_clips(self,)->bool{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35ea200usize)as*mut u8,bool;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::can_compile_clips(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsCompilable()` overload"]fn is_compilable(self,)->bool{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e2900usize)as*mut u8,bool;
@@ -466,8 +713,7 @@ let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
 (TrackAsset)__receiver)}
 }
 #[doc="`Hash()` overload"]fn hash(self,)->i32{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35ea2d0usize)as*mut u8,i32;
-(TrackAsset)__receiver)}
+__TrackAsset_unity2_raw::hash(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetClipsHash()` overload"]fn get_clips_hash(self,)->i32{unsafe{let __receiver= <TrackAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e9e00usize)as*mut u8,i32;

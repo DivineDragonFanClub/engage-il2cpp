@@ -30,25 +30,64 @@ use crate::unity_engine::ui::layoutgroup::{ILayoutGroup,LayoutGroup}
 #[cfg(feature = "unity_engine-ui-horizontallayoutgroup-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-ui-horizontallayoutgroup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HorizontalLayoutGroup_unity2_raw{use super:: * ;
+pub unsafe fn calculate_layout_input_horizontal(this:HorizontalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <HorizontalLayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let inner:extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate_layout_input_vertical(this:HorizontalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <HorizontalLayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let inner:extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_layout_horizontal(this:HorizontalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <HorizontalLayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
+let inner:extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_layout_vertical(this:HorizontalLayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <HorizontalLayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
+let inner:extern "C" fn(HorizontalLayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-ui-horizontallayoutgroup")]pub trait IHorizontalLayoutGroupMethods:IHorizontalLayoutGroup{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3192b40usize)as*mut u8,();
 (HorizontalLayoutGroup)__receiver)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3192b60usize)as*mut u8,();
-(HorizontalLayoutGroup)__receiver)}
+__HorizontalLayoutGroup_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3192f70usize)as*mut u8,();
-(HorizontalLayoutGroup)__receiver)}
+__HorizontalLayoutGroup_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3192f80usize)as*mut u8,();
-(HorizontalLayoutGroup)__receiver)}
+__HorizontalLayoutGroup_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <HorizontalLayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31935e0usize)as*mut u8,();
-(HorizontalLayoutGroup)__receiver)}
+__HorizontalLayoutGroup_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)}
 }
 }
 

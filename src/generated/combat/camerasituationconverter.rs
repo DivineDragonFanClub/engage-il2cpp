@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerasituationconverter/CameraSituationConverter.md"))]#[::unity2::class(namespace="Combat",name="CameraSituationConverter")]#[parent(crate::system::object::Object)]pub struct CameraSituationConverter{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerasituationconverter/CameraSituationConverter_CameraLocateStyle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CameraSituationConverter_CameraLocateStyle{pub value:i32,}
 impl::unity2::ClassIdentity for CameraSituationConverter_CameraLocateStyle{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="CameraSituationConverter.CameraLocateStyle";
@@ -36,6 +33,9 @@ pub fn look_up()->Self{Self{value:256}
 pub fn high()->Self{Self{value:512}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerasituationconverter/CameraSituationConverter.md"))]#[::unity2::class(namespace="Combat",name="CameraSituationConverter")]#[parent(crate::system::object::Object)]pub struct CameraSituationConverter{}
 
 }
 
@@ -84,10 +84,10 @@ this}
 #[cfg(feature = "combat-camerasituationconverter")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::CameraSituationConverter_CameraLocateStyle;
     pub use super::CameraSituationConverter;
     pub use super::ICameraSituationConverter;
     pub use super::ICameraSituationConverterMethods;
-    pub use super::CameraSituationConverter_CameraLocateStyle;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

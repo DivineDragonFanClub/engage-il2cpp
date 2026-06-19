@@ -28,13 +28,34 @@ use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWid
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerenumhistory-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumhistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUIHandlerEnumHistory_unity2_raw{use super:: * ;
+pub unsafe fn set_widget(this:DebugUIHandlerEnumHistory,widget:crate::unity_engine::rendering::debugui::DebugUI_Widget,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugUIHandlerEnumHistory as::unity2::ClassIdentity> ::NAME,"SetWidget",));
+let inner:extern "C" fn(DebugUIHandlerEnumHistory,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,widget,__mi)}
+pub unsafe fn update_value_label(this:DebugUIHandlerEnumHistory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DebugUIHandlerEnumHistory as::unity2::ClassIdentity> ::NAME,"UpdateValueLabel",));
+let inner:extern "C" fn(DebugUIHandlerEnumHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-ui-debuguihandlerenumhistory")]pub trait IDebugUIHandlerEnumHistoryMethods:IDebugUIHandlerEnumHistory{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerEnumHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x353fc80usize)as*mut u8,();
-(DebugUIHandlerEnumHistory)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+__DebugUIHandlerEnumHistory_unity2_raw::set_widget(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)}
 }
 #[doc="`UpdateValueLabel()` overload"]fn update_value_label(self,)->(){unsafe{let __receiver= <DebugUIHandlerEnumHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x353ffa0usize)as*mut u8,();
-(DebugUIHandlerEnumHistory)__receiver)}
+__DebugUIHandlerEnumHistory_unity2_raw::update_value_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RefreshAfterSanitization()` overload"]fn refresh_after_sanitization(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <DebugUIHandlerEnumHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3540200usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;

@@ -16,10 +16,10 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maplayer/MapLayer_Data.md"))]#[::unity2::class(namespace="App",name="MapLayer.Data")]#[parent(crate::system::object::Object)]pub struct MapLayer_Data{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maplayer/MapLayer_List.md"))]#[::unity2::class(namespace="App",name="MapLayer.List")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::maplayer::MapLayer_Data>)]pub struct MapLayer_List{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maplayer/MapLayer.md"))]#[::unity2::class(namespace="App",name="MapLayer")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::maplayer::MapLayer>)]pub struct MapLayer{#[offset(32)]#[rename(name="m_List")]pub m_list:crate::app::maplayer::MapLayer_List,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/maplayer/MapLayer_List.md"))]#[::unity2::class(namespace="App",name="MapLayer.List")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::maplayer::MapLayer_Data>)]pub struct MapLayer_List{}
 
 }
 
@@ -149,32 +149,37 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-maplayer")]pub trait IMapLayer_ListMethods:IMapLayer_List{#[doc="`Exists(crate::app::maplayer::MapLayer_Data)` overload"]fn exists(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->bool{unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186870usize)as*mut u8,bool;
-(MapLayer_List)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
-}
-#[doc="`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]fn is_connect(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->bool{unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186920usize)as*mut u8,bool;
-(MapLayer_List)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186a80usize)as*mut u8,();
-(MapLayer_List)__receiver)}
-}
-}
-
-#[cfg(feature="app-maplayer")]impl<__T:IMapLayer_List>IMapLayer_ListMethods for __T{}
-
-#[cfg(feature="app-maplayer")]impl MapLayer_List{pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-maplayer")]impl MapLayer_List{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapLayer_List), ::core::stringify!(new),));
- <Self as IMapLayer_ListMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-maplayer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapLayer_unity2_raw{use super:: * ;
+pub unsafe fn get_version(this:MapLayer,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapLayer as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let inner:extern "C" fn(MapLayer, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_serialize(this:MapLayer,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapLayer as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let inner:extern "C" fn(MapLayer,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn on_deserialize(this:MapLayer,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapLayer as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let inner:extern "C" fn(MapLayer,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,version,__mi)}
 }
 
 #[cfg(feature="app-maplayer")]pub trait IMapLayerMethods:IMapLayer{#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -210,16 +215,13 @@ this}
 (MapLayer)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3740usize)as*mut u8,i32;
-(MapLayer)__receiver)}
+__MapLayer_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3750usize)as*mut u8,();
-(MapLayer)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__MapLayer_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3880usize)as*mut u8,();
-(MapLayer)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+__MapLayer_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapLayer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1df3d90usize)as*mut u8,();
@@ -250,18 +252,46 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-maplayer")]pub trait IMapLayer_ListMethods:IMapLayer_List{#[doc="`Exists(crate::app::maplayer::MapLayer_Data)` overload"]fn exists(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->bool{unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186870usize)as*mut u8,bool;
+(MapLayer_List)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
+}
+#[doc="`IsConnect(crate::app::maplayer::MapLayer_Data)` overload"]fn is_connect(self,data:impl::core::convert::Into<crate::app::maplayer::MapLayer_Data>)->bool{unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186920usize)as*mut u8,bool;
+(MapLayer_List)__receiver,(crate::app::maplayer::MapLayer_Data)::core::convert::Into::into(data))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapLayer_List as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186a80usize)as*mut u8,();
+(MapLayer_List)__receiver)}
+}
+}
+
+#[cfg(feature="app-maplayer")]impl<__T:IMapLayer_List>IMapLayer_ListMethods for __T{}
+
+#[cfg(feature="app-maplayer")]impl MapLayer_List{pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_connect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-maplayer")]impl MapLayer_List{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapLayer_List), ::core::stringify!(new),));
+ <Self as IMapLayer_ListMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-maplayer")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapLayer_Data;
     pub use super::IMapLayer_Data;
     pub use super::IMapLayer_DataMethods;
-    pub use super::MapLayer_List;
-    pub use super::IMapLayer_List;
-    pub use super::IMapLayer_ListMethods;
     pub use super::MapLayer;
     pub use super::IMapLayer;
     pub use super::IMapLayerMethods;
+    pub use super::MapLayer_List;
+    pub use super::IMapLayer_List;
+    pub use super::IMapLayer_ListMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;

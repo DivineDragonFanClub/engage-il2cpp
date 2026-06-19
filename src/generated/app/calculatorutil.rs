@@ -13,6 +13,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil{#[static_field]#[rename(name="NullArgs")]pub null_args:crate::system::collections::generic::list_1::List_1<f32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Entity.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil.Entity")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil_Entity{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::calculatorutil::CalculatorUtil_Type, #[offset(24)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Value")]pub m_value:f32, #[offset(36)]#[rename(name="m_Code")]pub m_code:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CalculatorUtil_Type{pub value:i32,}
 impl::unity2::ClassIdentity for CalculatorUtil_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="CalculatorUtil.Type";
@@ -101,12 +107,6 @@ pub fn args()->Self{Self{value:37}
 pub fn string()->Self{Self{value:38}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil{#[static_field]#[rename(name="NullArgs")]pub null_args:crate::system::collections::generic::list_1::List_1<f32> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/calculatorutil/CalculatorUtil_Entity.md"))]#[::unity2::class(namespace="App",name="CalculatorUtil.Entity")]#[parent(crate::system::object::Object)]pub struct CalculatorUtil_Entity{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::calculatorutil::CalculatorUtil_Type, #[offset(24)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Value")]pub m_value:f32, #[offset(36)]#[rename(name="m_Code")]pub m_code:i32,}
 
 }
 
@@ -238,13 +238,13 @@ this}
 #[cfg(feature = "app-calculatorutil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CalculatorUtil_Type;
     pub use super::CalculatorUtil;
     pub use super::ICalculatorUtil;
     pub use super::ICalculatorUtilMethods;
     pub use super::CalculatorUtil_Entity;
     pub use super::ICalculatorUtil_Entity;
     pub use super::ICalculatorUtil_EntityMethods;
+    pub use super::CalculatorUtil_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

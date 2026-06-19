@@ -20,6 +20,59 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-skillinheritancemenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-skillinheritancemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SkillInheritanceMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:SkillInheritanceMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:SkillInheritanceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn custom_call(this:SkillInheritanceMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let inner:extern "C" fn(SkillInheritanceMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_left(this:SkillInheritanceMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(SkillInheritanceMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:SkillInheritanceMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <SkillInheritanceMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(SkillInheritanceMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+}
+
 #[cfg(feature="app-skillinheritancemenu")]impl SkillInheritanceMenu{#[doc="`get_m_Unit()` overload"]pub fn get_m_unit()->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24a1de0usize)as*mut u8,crate::app::unit::Unit;
 )}
 }
@@ -50,24 +103,19 @@ pub use __types::*;
 (SkillInheritanceMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a3980usize)as*mut u8, ::unity2::Il2CppString;
-(SkillInheritanceMenu)__receiver)}
+__SkillInheritanceMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a39d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SkillInheritanceMenu)__receiver)}
+__SkillInheritanceMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a3bd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SkillInheritanceMenu)__receiver)}
+__SkillInheritanceMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a4d50usize)as*mut u8,();
-(SkillInheritanceMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__SkillInheritanceMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24a5350usize)as*mut u8,();
-(SkillInheritanceMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__SkillInheritanceMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`GetGod()` overload"]fn get_god(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <SkillInheritanceMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24a3710usize)as*mut u8,crate::app::godunit::GodUnit;

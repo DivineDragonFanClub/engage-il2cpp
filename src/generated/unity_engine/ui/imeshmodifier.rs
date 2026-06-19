@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-ui-imeshmodifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMeshModifier_unity2_raw{use super:: * ;
-pub unsafe fn modify_mesh(this:IMeshModifier,mesh:crate::unity_engine::mesh::Mesh,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyMesh").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ModifyMesh", <IMeshModifier as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn modify_mesh(this:IMeshModifier,mesh:crate::unity_engine::mesh::Mesh,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IMeshModifier as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
 let inner:extern "C" fn(IMeshModifier,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,mesh,__mi)}
-pub unsafe fn modify_mesh_2(this:IMeshModifier,verts:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyMesh").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ModifyMesh", <IMeshModifier as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn modify_mesh_2(this:IMeshModifier,verts:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IMeshModifier as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
 let inner:extern "C" fn(IMeshModifier,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

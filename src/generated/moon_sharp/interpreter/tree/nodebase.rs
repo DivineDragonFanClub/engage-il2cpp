@@ -67,9 +67,12 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <NodeBase as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-pub unsafe fn compile(this:NodeBase,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Compile").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Compile", <NodeBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn compile(this:NodeBase,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NodeBase as::unity2::ClassIdentity> ::NAME,"Compile",));
 let inner:extern "C" fn(NodeBase,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

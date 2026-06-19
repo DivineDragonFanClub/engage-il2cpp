@@ -11,13 +11,13 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugAccessoryMenu.DeleteAllMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugAccessoryMenu_DeleteAllMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugaccessorymenu/DebugAccessoryMenu_AddAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugAccessoryMenu.AddAllMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugAccessoryMenu_AddAllMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugaccessorymenu/DebugAccessoryMenu.md"))]#[::unity2::class(namespace="App",name="DebugAccessoryMenu")]#[parent(crate::system::object::Object)]pub struct DebugAccessoryMenu{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugaccessorymenu/DebugAccessoryMenu_AddAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugAccessoryMenu.AddAllMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugAccessoryMenu_AddAllMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugaccessorymenu/DebugAccessoryMenu_DeleteAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugAccessoryMenu.DeleteAllMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugAccessoryMenu_DeleteAllMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugaccessorymenu/DebugAccessoryMenu_AccessoryMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugAccessoryMenu.AccessoryMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugAccessoryMenu_AccessoryMenuItem{#[offset(32)]#[rename(name="m_Index")]pub m_index:i32, #[offset(40)]#[rename(name="m_Data")]pub m_data:crate::app::accessorydata::AccessoryData,}
@@ -27,31 +27,52 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-debugaccessorymenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-debugaccessorymenu")]pub trait IDebugAccessoryMenu_DeleteAllMenuItemMethods:IDebugAccessoryMenu_DeleteAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d39f0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugAccessoryMenu_DeleteAllMenuItem)__receiver)}
+#[cfg(feature="app-debugaccessorymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugAccessoryMenu_AddAllMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugAccessoryMenu_AddAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugAccessoryMenu_AddAllMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugAccessoryMenu_AddAllMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugAccessoryMenu_AddAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugAccessoryMenu_AddAllMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugAccessoryMenu_AddAllMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3a40usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugAccessoryMenu_DeleteAllMenuItem)__receiver)}
+
+#[cfg(feature="app-debugaccessorymenu")]pub trait IDebugAccessoryMenu_AddAllMenuItemMethods:IDebugAccessoryMenu_AddAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugAccessoryMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugAccessoryMenu_AddAllMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3b70usize)as*mut u8,();
-(DebugAccessoryMenu_DeleteAllMenuItem)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugAccessoryMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugAccessoryMenu_AddAllMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugAccessoryMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d39e0usize)as*mut u8,();
+(DebugAccessoryMenu_AddAllMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugaccessorymenu")]impl<__T:IDebugAccessoryMenu_DeleteAllMenuItem>IDebugAccessoryMenu_DeleteAllMenuItemMethods for __T{}
+#[cfg(feature="app-debugaccessorymenu")]impl<__T:IDebugAccessoryMenu_AddAllMenuItem>IDebugAccessoryMenu_AddAllMenuItemMethods for __T{}
 
-#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_DeleteAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_AddAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_DeleteAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_AddAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugAccessoryMenu_DeleteAllMenuItem), ::core::stringify!(new),));
- <Self as IDebugAccessoryMenu_DeleteAllMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugAccessoryMenu_AddAllMenuItem), ::core::stringify!(new),));
+ <Self as IDebugAccessoryMenu_AddAllMenuItemMethods> ::ctor(this,);
 this}
 }
 
@@ -79,32 +100,126 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-debugaccessorymenu")]pub trait IDebugAccessoryMenu_AddAllMenuItemMethods:IDebugAccessoryMenu_AddAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugAccessoryMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3820usize)as*mut u8, ::unity2::Il2CppString;
-(DebugAccessoryMenu_AddAllMenuItem)__receiver)}
+#[cfg(feature="app-debugaccessorymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugAccessoryMenu_DeleteAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugAccessoryMenu_DeleteAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugAccessoryMenu_DeleteAllMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugAccessoryMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3870usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugAccessoryMenu_AddAllMenuItem)__receiver)}
+
+#[cfg(feature="app-debugaccessorymenu")]pub trait IDebugAccessoryMenu_DeleteAllMenuItemMethods:IDebugAccessoryMenu_DeleteAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugAccessoryMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d39e0usize)as*mut u8,();
-(DebugAccessoryMenu_AddAllMenuItem)__receiver)}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugAccessoryMenu_DeleteAllMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugAccessoryMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3b70usize)as*mut u8,();
+(DebugAccessoryMenu_DeleteAllMenuItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-debugaccessorymenu")]impl<__T:IDebugAccessoryMenu_AddAllMenuItem>IDebugAccessoryMenu_AddAllMenuItemMethods for __T{}
+#[cfg(feature="app-debugaccessorymenu")]impl<__T:IDebugAccessoryMenu_DeleteAllMenuItem>IDebugAccessoryMenu_DeleteAllMenuItemMethods for __T{}
 
-#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_AddAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_DeleteAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_AddAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-debugaccessorymenu")]impl DebugAccessoryMenu_DeleteAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(DebugAccessoryMenu_AddAllMenuItem), ::core::stringify!(new),));
- <Self as IDebugAccessoryMenu_AddAllMenuItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(DebugAccessoryMenu_DeleteAllMenuItem), ::core::stringify!(new),));
+ <Self as IDebugAccessoryMenu_DeleteAllMenuItemMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="app-debugaccessorymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugAccessoryMenu_AccessoryMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_column_count(this:DebugAccessoryMenu_AccessoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <DebugAccessoryMenu_AccessoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
+let inner:extern "C" fn(DebugAccessoryMenu_AccessoryMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name0(this:DebugAccessoryMenu_AccessoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <DebugAccessoryMenu_AccessoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(DebugAccessoryMenu_AccessoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width0(this:DebugAccessoryMenu_AccessoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <DebugAccessoryMenu_AccessoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
+let inner:extern "C" fn(DebugAccessoryMenu_AccessoryMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name1(this:DebugAccessoryMenu_AccessoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <DebugAccessoryMenu_AccessoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let inner:extern "C" fn(DebugAccessoryMenu_AccessoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width1(this:DebugAccessoryMenu_AccessoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <DebugAccessoryMenu_AccessoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
+let inner:extern "C" fn(DebugAccessoryMenu_AccessoryMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_tick(this:DebugAccessoryMenu_AccessoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <DebugAccessoryMenu_AccessoryMenuItem as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(DebugAccessoryMenu_AccessoryMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_help(this:DebugAccessoryMenu_AccessoryMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DebugAccessoryMenu_AccessoryMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
+let inner:extern "C" fn(DebugAccessoryMenu_AccessoryMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-debugaccessorymenu")]pub trait IDebugAccessoryMenu_AccessoryMenuItemMethods:IDebugAccessoryMenu_AccessoryMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -112,32 +227,25 @@ this}
 (DebugAccessoryMenu_AccessoryMenuItem)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3590usize)as*mut u8,i32;
-(DebugAccessoryMenu_AccessoryMenuItem)__receiver)}
+__DebugAccessoryMenu_AccessoryMenuItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d35a0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugAccessoryMenu_AccessoryMenuItem)__receiver)}
+__DebugAccessoryMenu_AccessoryMenuItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3640usize)as*mut u8,f32;
-(DebugAccessoryMenu_AccessoryMenuItem)__receiver)}
+__DebugAccessoryMenu_AccessoryMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3650usize)as*mut u8, ::unity2::Il2CppString;
-(DebugAccessoryMenu_AccessoryMenuItem)__receiver)}
+__DebugAccessoryMenu_AccessoryMenuItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3710usize)as*mut u8,f32;
-(DebugAccessoryMenu_AccessoryMenuItem)__receiver)}
+__DebugAccessoryMenu_AccessoryMenuItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d3720usize)as*mut u8,();
-(DebugAccessoryMenu_AccessoryMenuItem)__receiver)}
+__DebugAccessoryMenu_AccessoryMenuItem_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugAccessoryMenu_AccessoryMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19d37d0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugAccessoryMenu_AccessoryMenuItem)__receiver)}
+__DebugAccessoryMenu_AccessoryMenuItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -163,15 +271,15 @@ this}
 #[cfg(feature = "app-debugaccessorymenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugAccessoryMenu_DeleteAllMenuItem;
-    pub use super::IDebugAccessoryMenu_DeleteAllMenuItem;
-    pub use super::IDebugAccessoryMenu_DeleteAllMenuItemMethods;
-    pub use super::DebugAccessoryMenu;
-    pub use super::IDebugAccessoryMenu;
-    pub use super::IDebugAccessoryMenuMethods;
     pub use super::DebugAccessoryMenu_AddAllMenuItem;
     pub use super::IDebugAccessoryMenu_AddAllMenuItem;
     pub use super::IDebugAccessoryMenu_AddAllMenuItemMethods;
+    pub use super::DebugAccessoryMenu;
+    pub use super::IDebugAccessoryMenu;
+    pub use super::IDebugAccessoryMenuMethods;
+    pub use super::DebugAccessoryMenu_DeleteAllMenuItem;
+    pub use super::IDebugAccessoryMenu_DeleteAllMenuItem;
+    pub use super::IDebugAccessoryMenu_DeleteAllMenuItemMethods;
     pub use super::DebugAccessoryMenu_AccessoryMenuItem;
     pub use super::IDebugAccessoryMenu_AccessoryMenuItem;
     pub use super::IDebugAccessoryMenu_AccessoryMenuItemMethods;

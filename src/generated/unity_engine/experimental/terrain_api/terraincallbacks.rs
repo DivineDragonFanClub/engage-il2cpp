@@ -38,13 +38,25 @@ pub use __types::*;
 pub fn invoke_texture_changed_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="unity_engine-experimental-terrain_api-terraincallbacks")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TerrainCallbacks_HeightmapChangedCallback_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:TerrainCallbacks_HeightmapChangedCallback,terrain:crate::unity_engine::terrain::Terrain,height_region:crate::unity_engine::rectint::RectInt,synched:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TerrainCallbacks_HeightmapChangedCallback as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(TerrainCallbacks_HeightmapChangedCallback,crate::unity_engine::terrain::Terrain,crate::unity_engine::rectint::RectInt,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,terrain,height_region,synched,__mi)}
+}
+
 #[cfg(feature="unity_engine-experimental-terrain_api-terraincallbacks")]pub trait ITerrainCallbacks_HeightmapChangedCallbackMethods:ITerrainCallbacks_HeightmapChangedCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TerrainCallbacks_HeightmapChangedCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2ac10usize)as*mut u8,();
 (TerrainCallbacks_HeightmapChangedCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::terrain::Terrain, crate::unity_engine::rectint::RectInt, bool)` overload"]fn invoke(self,terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain> ,height_region:impl::core::convert::Into<crate::unity_engine::rectint::RectInt> ,synched:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TerrainCallbacks_HeightmapChangedCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28480usize)as*mut u8,();
-(TerrainCallbacks_HeightmapChangedCallback)__receiver,(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(terrain),(crate::unity_engine::rectint::RectInt)::core::convert::Into::into(height_region),(bool)::core::convert::Into::into(synched))}
+__TerrainCallbacks_HeightmapChangedCallback_unity2_raw::invoke(__receiver, ::core::convert::Into::into(terrain), ::core::convert::Into::into(height_region), ::core::convert::Into::into(synched), ::core::option::Option::None)}
 }
 }
 
@@ -61,13 +73,25 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="unity_engine-experimental-terrain_api-terraincallbacks")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TerrainCallbacks_TextureChangedCallback_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:TerrainCallbacks_TextureChangedCallback,terrain:crate::unity_engine::terrain::Terrain,texture_name: ::unity2::Il2CppString,texel_region:crate::unity_engine::rectint::RectInt,synched:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TerrainCallbacks_TextureChangedCallback as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(TerrainCallbacks_TextureChangedCallback,crate::unity_engine::terrain::Terrain, ::unity2::Il2CppString,crate::unity_engine::rectint::RectInt,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,terrain,texture_name,texel_region,synched,__mi)}
+}
+
 #[cfg(feature="unity_engine-experimental-terrain_api-terraincallbacks")]pub trait ITerrainCallbacks_TextureChangedCallbackMethods:ITerrainCallbacks_TextureChangedCallback{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TerrainCallbacks_TextureChangedCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f2ad10usize)as*mut u8,();
 (TerrainCallbacks_TextureChangedCallback)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::terrain::Terrain, ::unity2::Il2CppString, crate::unity_engine::rectint::RectInt, bool)` overload"]fn invoke(self,terrain:impl::core::convert::Into<crate::unity_engine::terrain::Terrain> ,texture_name:impl::core::convert::Into< ::unity2::Il2CppString> ,texel_region:impl::core::convert::Into<crate::unity_engine::rectint::RectInt> ,synched:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TerrainCallbacks_TextureChangedCallback as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f28950usize)as*mut u8,();
-(TerrainCallbacks_TextureChangedCallback)__receiver,(crate::unity_engine::terrain::Terrain)::core::convert::Into::into(terrain),(::unity2::Il2CppString)::core::convert::Into::into(texture_name),(crate::unity_engine::rectint::RectInt)::core::convert::Into::into(texel_region),(bool)::core::convert::Into::into(synched))}
+__TerrainCallbacks_TextureChangedCallback_unity2_raw::invoke(__receiver, ::core::convert::Into::into(terrain), ::core::convert::Into::into(texture_name), ::core::convert::Into::into(texel_region), ::core::convert::Into::into(synched), ::core::option::Option::None)}
 }
 }
 

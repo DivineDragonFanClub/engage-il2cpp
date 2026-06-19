@@ -22,13 +22,34 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-rendering-universal-custom-customheathaze-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-universal-custom-customheathaze")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CustomHeatHaze_unity2_raw{use super:: * ;
+pub unsafe fn is_active(this:CustomHeatHaze,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CustomHeatHaze as::unity2::ClassIdentity> ::NAME,"IsActive",));
+let inner:extern "C" fn(CustomHeatHaze, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_tile_compatible(this:CustomHeatHaze,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CustomHeatHaze as::unity2::ClassIdentity> ::NAME,"IsTileCompatible",));
+let inner:extern "C" fn(CustomHeatHaze, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-universal-custom-customheathaze")]pub trait ICustomHeatHazeMethods:ICustomHeatHaze{#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <CustomHeatHaze as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4ba20usize)as*mut u8,bool;
-(CustomHeatHaze)__receiver)}
+__CustomHeatHaze_unity2_raw::is_active(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsTileCompatible()` overload"]fn is_tile_compatible(self,)->bool{unsafe{let __receiver= <CustomHeatHaze as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4ba50usize)as*mut u8,bool;
-(CustomHeatHaze)__receiver)}
+__CustomHeatHaze_unity2_raw::is_tile_compatible(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomHeatHaze as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a4ba60usize)as*mut u8,();

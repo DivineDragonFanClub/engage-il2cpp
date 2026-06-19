@@ -16,9 +16,9 @@
  #[cfg(feature="root_motion-final_ik-aimposer")]pub use aimposer::{IAimPoserMethods,IAimPoser_PoseMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-amplifier-types"))]pub mod amplifier;
- #[cfg(feature="root_motion-final_ik-amplifier-types")]pub use amplifier::{Amplifier_Body_EffectorLink,IAmplifier_Body_EffectorLink,Amplifier_Body,IAmplifier_Body,Amplifier,IAmplifier}
+ #[cfg(feature="root_motion-final_ik-amplifier-types")]pub use amplifier::{Amplifier_Body,IAmplifier_Body,Amplifier_Body_EffectorLink,IAmplifier_Body_EffectorLink,Amplifier,IAmplifier}
 ;
- #[cfg(feature="root_motion-final_ik-amplifier")]pub use amplifier::{IAmplifier_Body_EffectorLinkMethods,IAmplifier_BodyMethods,IAmplifierMethods}
+ #[cfg(feature="root_motion-final_ik-amplifier")]pub use amplifier::{IAmplifier_BodyMethods,IAmplifier_Body_EffectorLinkMethods,IAmplifierMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-armik-types"))]pub mod armik;
  #[cfg(feature="root_motion-final_ik-armik-types")]pub use armik::{ArmIK,IArmIK}
@@ -116,12 +116,12 @@
  #[cfg(feature="root_motion-final_ik-fbbikheadeffector")]pub use fbbikheadeffector::{IFBBIKHeadEffectorMethods,IFBBIKHeadEffector_BendBoneMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-fbikchain-types"))]pub mod fbikchain;
- #[cfg(feature="root_motion-final_ik-fbikchain-types")]pub use fbikchain::{FBIKChain_Smoothing,FBIKChain_ChildConstraint,IFBIKChain_ChildConstraint,FBIKChain,IFBIKChain}
+ #[cfg(feature="root_motion-final_ik-fbikchain-types")]pub use fbikchain::{FBIKChain_Smoothing,FBIKChain,IFBIKChain,FBIKChain_ChildConstraint,IFBIKChain_ChildConstraint}
 ;
- #[cfg(feature="root_motion-final_ik-fbikchain")]pub use fbikchain::{IFBIKChain_ChildConstraintMethods,IFBIKChainMethods}
+ #[cfg(feature="root_motion-final_ik-fbikchain")]pub use fbikchain::{IFBIKChainMethods,IFBIKChain_ChildConstraintMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-finger-types"))]pub mod finger;
- #[cfg(feature="root_motion-final_ik-finger-types")]pub use finger::{Finger_DOF,Finger,IFinger}
+ #[cfg(feature="root_motion-final_ik-finger-types")]pub use finger::{Finger,IFinger,Finger_DOF}
 ;
  #[cfg(feature="root_motion-final_ik-finger")]pub use finger::{IFingerMethods}
 ;
@@ -147,9 +147,9 @@
  #[cfg(feature="root_motion-final_ik-genericposer")]pub use genericposer::{IGenericPoser_MapMethods,IGenericPoserMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-grounder-types"))]pub mod grounder;
- #[cfg(feature="root_motion-final_ik-grounder-types")]pub use grounder::{Grounder_GrounderDelegate,IGrounder_GrounderDelegate,Grounder,IGrounder}
+ #[cfg(feature="root_motion-final_ik-grounder-types")]pub use grounder::{Grounder,IGrounder,Grounder_GrounderDelegate,IGrounder_GrounderDelegate}
 ;
- #[cfg(feature="root_motion-final_ik-grounder")]pub use grounder::{IGrounder_GrounderDelegateMethods,IGrounderMethods}
+ #[cfg(feature="root_motion-final_ik-grounder")]pub use grounder::{IGrounderMethods,IGrounder_GrounderDelegateMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-grounderbipedik-types"))]pub mod grounderbipedik;
  #[cfg(feature="root_motion-final_ik-grounderbipedik-types")]pub use grounderbipedik::{GrounderBipedIK,IGrounderBipedIK}
@@ -157,9 +157,9 @@
  #[cfg(feature="root_motion-final_ik-grounderbipedik")]pub use grounderbipedik::{IGrounderBipedIKMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-grounderfbbik-types"))]pub mod grounderfbbik;
- #[cfg(feature="root_motion-final_ik-grounderfbbik-types")]pub use grounderfbbik::{GrounderFBBIK,IGrounderFBBIK,GrounderFBBIK_SpineEffector,IGrounderFBBIK_SpineEffector}
+ #[cfg(feature="root_motion-final_ik-grounderfbbik-types")]pub use grounderfbbik::{GrounderFBBIK_SpineEffector,IGrounderFBBIK_SpineEffector,GrounderFBBIK,IGrounderFBBIK}
 ;
- #[cfg(feature="root_motion-final_ik-grounderfbbik")]pub use grounderfbbik::{IGrounderFBBIKMethods,IGrounderFBBIK_SpineEffectorMethods}
+ #[cfg(feature="root_motion-final_ik-grounderfbbik")]pub use grounderfbbik::{IGrounderFBBIK_SpineEffectorMethods,IGrounderFBBIKMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-grounderik-types"))]pub mod grounderik;
  #[cfg(feature="root_motion-final_ik-grounderik-types")]pub use grounderik::{GrounderIK,IGrounderIK}
@@ -177,9 +177,9 @@
  #[cfg(feature="root_motion-final_ik-groundervrik")]pub use groundervrik::{IGrounderVRIKMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-grounding-types"))]pub mod grounding;
- #[cfg(feature="root_motion-final_ik-grounding-types")]pub use grounding::{Grounding_Quality,Grounding_Pelvis,IGrounding_Pelvis,Grounding,IGrounding,Grounding_Leg,IGrounding_Leg}
+ #[cfg(feature="root_motion-final_ik-grounding-types")]pub use grounding::{Grounding,IGrounding,Grounding_Leg,IGrounding_Leg,Grounding_Pelvis,IGrounding_Pelvis,Grounding_Quality}
 ;
- #[cfg(feature="root_motion-final_ik-grounding")]pub use grounding::{IGrounding_PelvisMethods,IGroundingMethods,IGrounding_LegMethods}
+ #[cfg(feature="root_motion-final_ik-grounding")]pub use grounding::{IGroundingMethods,IGrounding_LegMethods,IGrounding_PelvisMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-handposer-types"))]pub mod handposer;
  #[cfg(feature="root_motion-final_ik-handposer-types")]pub use handposer::{HandPoser,IHandPoser}
@@ -187,14 +187,14 @@
  #[cfg(feature="root_motion-final_ik-handposer")]pub use handposer::{IHandPoserMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-hitreaction-types"))]pub mod hitreaction;
- #[cfg(feature="root_motion-final_ik-hitreaction-types")]pub use hitreaction::{HitReaction_HitPointBone_BoneLink,IHitReaction_HitPointBone_BoneLink,HitReaction_HitPointEffector,IHitReaction_HitPointEffector,HitReaction_HitPoint,IHitReaction_HitPoint,HitReaction,IHitReaction,HitReaction_HitPointBone,IHitReaction_HitPointBone,HitReaction_HitPointEffector_EffectorLink,IHitReaction_HitPointEffector_EffectorLink}
+ #[cfg(feature="root_motion-final_ik-hitreaction-types")]pub use hitreaction::{HitReaction_HitPointBone_BoneLink,IHitReaction_HitPointBone_BoneLink,HitReaction_HitPointEffector,IHitReaction_HitPointEffector,HitReaction_HitPointBone,IHitReaction_HitPointBone,HitReaction_HitPointEffector_EffectorLink,IHitReaction_HitPointEffector_EffectorLink,HitReaction_HitPoint,IHitReaction_HitPoint,HitReaction,IHitReaction}
 ;
- #[cfg(feature="root_motion-final_ik-hitreaction")]pub use hitreaction::{IHitReaction_HitPointBone_BoneLinkMethods,IHitReaction_HitPointEffectorMethods,IHitReaction_HitPointMethods,IHitReactionMethods,IHitReaction_HitPointBoneMethods,IHitReaction_HitPointEffector_EffectorLinkMethods}
+ #[cfg(feature="root_motion-final_ik-hitreaction")]pub use hitreaction::{IHitReaction_HitPointBone_BoneLinkMethods,IHitReaction_HitPointEffectorMethods,IHitReaction_HitPointBoneMethods,IHitReaction_HitPointEffector_EffectorLinkMethods,IHitReaction_HitPointMethods,IHitReactionMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-hitreactionvrik-types"))]pub mod hitreactionvrik;
- #[cfg(feature="root_motion-final_ik-hitreactionvrik-types")]pub use hitreactionvrik::{HitReactionVRIK_PositionOffset,IHitReactionVRIK_PositionOffset,HitReactionVRIK_PositionOffset_PositionOffsetLink,IHitReactionVRIK_PositionOffset_PositionOffsetLink,HitReactionVRIK_RotationOffset_RotationOffsetLink,IHitReactionVRIK_RotationOffset_RotationOffsetLink,HitReactionVRIK_RotationOffset,IHitReactionVRIK_RotationOffset,HitReactionVRIK_Offset,IHitReactionVRIK_Offset,HitReactionVRIK,IHitReactionVRIK}
+ #[cfg(feature="root_motion-final_ik-hitreactionvrik-types")]pub use hitreactionvrik::{HitReactionVRIK_PositionOffset,IHitReactionVRIK_PositionOffset,HitReactionVRIK_RotationOffset_RotationOffsetLink,IHitReactionVRIK_RotationOffset_RotationOffsetLink,HitReactionVRIK_PositionOffset_PositionOffsetLink,IHitReactionVRIK_PositionOffset_PositionOffsetLink,HitReactionVRIK,IHitReactionVRIK,HitReactionVRIK_Offset,IHitReactionVRIK_Offset,HitReactionVRIK_RotationOffset,IHitReactionVRIK_RotationOffset}
 ;
- #[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub use hitreactionvrik::{IHitReactionVRIK_PositionOffsetMethods,IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods,IHitReactionVRIK_RotationOffset_RotationOffsetLinkMethods,IHitReactionVRIK_RotationOffsetMethods,IHitReactionVRIK_OffsetMethods,IHitReactionVRIKMethods}
+ #[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub use hitreactionvrik::{IHitReactionVRIK_PositionOffsetMethods,IHitReactionVRIK_RotationOffset_RotationOffsetLinkMethods,IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods,IHitReactionVRIKMethods,IHitReactionVRIK_OffsetMethods,IHitReactionVRIK_RotationOffsetMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-ik-types"))]pub mod ik;
  #[cfg(feature="root_motion-final_ik-ik-types")]pub use ik::{IK,IIK}
@@ -217,9 +217,9 @@
  #[cfg(feature="root_motion-final_ik-ikexecutionorder")]pub use ikexecutionorder::{IIKExecutionOrderMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-ikmapping-types"))]pub mod ikmapping;
- #[cfg(feature="root_motion-final_ik-ikmapping-types")]pub use ikmapping::{IKMapping_BoneMap,IIKMapping_BoneMap,IKMapping,IIKMapping}
+ #[cfg(feature="root_motion-final_ik-ikmapping-types")]pub use ikmapping::{IKMapping,IIKMapping,IKMapping_BoneMap,IIKMapping_BoneMap}
 ;
- #[cfg(feature="root_motion-final_ik-ikmapping")]pub use ikmapping::{IIKMapping_BoneMapMethods,IIKMappingMethods}
+ #[cfg(feature="root_motion-final_ik-ikmapping")]pub use ikmapping::{IIKMappingMethods,IIKMapping_BoneMapMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-ikmappingbone-types"))]pub mod ikmappingbone;
  #[cfg(feature="root_motion-final_ik-ikmappingbone-types")]pub use ikmappingbone::{IKMappingBone,IIKMappingBone}
@@ -227,7 +227,7 @@
  #[cfg(feature="root_motion-final_ik-ikmappingbone")]pub use ikmappingbone::{IIKMappingBoneMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-ikmappinglimb-types"))]pub mod ikmappinglimb;
- #[cfg(feature="root_motion-final_ik-ikmappinglimb-types")]pub use ikmappinglimb::{IKMappingLimb_BoneMapType,IKMappingLimb,IIKMappingLimb}
+ #[cfg(feature="root_motion-final_ik-ikmappinglimb-types")]pub use ikmappinglimb::{IKMappingLimb,IIKMappingLimb,IKMappingLimb_BoneMapType}
 ;
  #[cfg(feature="root_motion-final_ik-ikmappinglimb")]pub use ikmappinglimb::{IIKMappingLimbMethods}
 ;
@@ -237,9 +237,9 @@
  #[cfg(feature="root_motion-final_ik-ikmappingspine")]pub use ikmappingspine::{IIKMappingSpineMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-iksolver-types"))]pub mod iksolver;
- #[cfg(feature="root_motion-final_ik-iksolver-types")]pub use iksolver::{IKSolver_UpdateDelegate,IIKSolver_UpdateDelegate,IKSolver_IterationDelegate,IIKSolver_IterationDelegate,IKSolver_Node,IIKSolver_Node,IKSolver,IIKSolver,IKSolver_Bone,IIKSolver_Bone,IKSolver_Point,IIKSolver_Point}
+ #[cfg(feature="root_motion-final_ik-iksolver-types")]pub use iksolver::{IKSolver_Point,IIKSolver_Point,IKSolver_Node,IIKSolver_Node,IKSolver_IterationDelegate,IIKSolver_IterationDelegate,IKSolver_UpdateDelegate,IIKSolver_UpdateDelegate,IKSolver,IIKSolver,IKSolver_Bone,IIKSolver_Bone}
 ;
- #[cfg(feature="root_motion-final_ik-iksolver")]pub use iksolver::{IIKSolver_UpdateDelegateMethods,IIKSolver_IterationDelegateMethods,IIKSolver_NodeMethods,IIKSolverMethods,IIKSolver_BoneMethods,IIKSolver_PointMethods}
+ #[cfg(feature="root_motion-final_ik-iksolver")]pub use iksolver::{IIKSolver_PointMethods,IIKSolver_NodeMethods,IIKSolver_IterationDelegateMethods,IIKSolver_UpdateDelegateMethods,IIKSolverMethods,IIKSolver_BoneMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-iksolveraim-types"))]pub mod iksolveraim;
  #[cfg(feature="root_motion-final_ik-iksolveraim-types")]pub use iksolveraim::{IKSolverAim,IIKSolverAim}
@@ -287,7 +287,7 @@
  #[cfg(feature="root_motion-final_ik-iksolverleg")]pub use iksolverleg::{IIKSolverLegMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-iksolverlimb-types"))]pub mod iksolverlimb;
- #[cfg(feature="root_motion-final_ik-iksolverlimb-types")]pub use iksolverlimb::{IKSolverLimb_BendModifier,IKSolverLimb_AxisDirection,IKSolverLimb,IIKSolverLimb}
+ #[cfg(feature="root_motion-final_ik-iksolverlimb-types")]pub use iksolverlimb::{IKSolverLimb,IIKSolverLimb,IKSolverLimb_AxisDirection,IKSolverLimb_BendModifier}
 ;
  #[cfg(feature="root_motion-final_ik-iksolverlimb")]pub use iksolverlimb::{IIKSolverLimbMethods}
 ;
@@ -302,14 +302,14 @@
  #[cfg(feature="root_motion-final_ik-iksolvertrigonometric")]pub use iksolvertrigonometric::{IIKSolverTrigonometric_TrigonometricBoneMethods,IIKSolverTrigonometricMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-iksolvervr-types"))]pub mod iksolvervr;
- #[cfg(feature="root_motion-final_ik-iksolvervr-types")]pub use iksolvervr::{IKSolverVR_VirtualBone,IIKSolverVR_VirtualBone,IKSolverVR_Locomotion,IIKSolverVR_Locomotion,IKSolverVR_Spine,IIKSolverVR_Spine,IKSolverVR_RotationOffset,IKSolverVR_BodyPart,IIKSolverVR_BodyPart,IKSolverVR_Leg,IIKSolverVR_Leg,IKSolverVR_Arm,IIKSolverVR_Arm,IKSolverVR,IIKSolverVR,IKSolverVR_PositionOffset,IKSolverVR_Arm_ShoulderRotationMode,IKSolverVR_Footstep,IIKSolverVR_Footstep}
+ #[cfg(feature="root_motion-final_ik-iksolvervr-types")]pub use iksolvervr::{IKSolverVR_Footstep,IIKSolverVR_Footstep,IKSolverVR_VirtualBone,IIKSolverVR_VirtualBone,IKSolverVR_PositionOffset,IKSolverVR_Spine,IIKSolverVR_Spine,IKSolverVR_Arm_ShoulderRotationMode,IKSolverVR_Leg,IIKSolverVR_Leg,IKSolverVR,IIKSolverVR,IKSolverVR_BodyPart,IIKSolverVR_BodyPart,IKSolverVR_Arm,IIKSolverVR_Arm,IKSolverVR_RotationOffset,IKSolverVR_Locomotion,IIKSolverVR_Locomotion}
 ;
- #[cfg(feature="root_motion-final_ik-iksolvervr")]pub use iksolvervr::{IIKSolverVR_VirtualBoneMethods,IIKSolverVR_LocomotionMethods,IIKSolverVR_SpineMethods,IIKSolverVR_BodyPartMethods,IIKSolverVR_LegMethods,IIKSolverVR_ArmMethods,IIKSolverVRMethods,IIKSolverVR_FootstepMethods}
+ #[cfg(feature="root_motion-final_ik-iksolvervr")]pub use iksolvervr::{IIKSolverVR_FootstepMethods,IIKSolverVR_VirtualBoneMethods,IIKSolverVR_SpineMethods,IIKSolverVR_LegMethods,IIKSolverVRMethods,IIKSolverVR_BodyPartMethods,IIKSolverVR_ArmMethods,IIKSolverVR_LocomotionMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-inertia-types"))]pub mod inertia;
- #[cfg(feature="root_motion-final_ik-inertia-types")]pub use inertia::{Inertia,IInertia,Inertia_Body,IInertia_Body,Inertia_Body_EffectorLink,IInertia_Body_EffectorLink}
+ #[cfg(feature="root_motion-final_ik-inertia-types")]pub use inertia::{Inertia,IInertia,Inertia_Body_EffectorLink,IInertia_Body_EffectorLink,Inertia_Body,IInertia_Body}
 ;
- #[cfg(feature="root_motion-final_ik-inertia")]pub use inertia::{IInertiaMethods,IInertia_BodyMethods,IInertia_Body_EffectorLinkMethods}
+ #[cfg(feature="root_motion-final_ik-inertia")]pub use inertia::{IInertiaMethods,IInertia_Body_EffectorLinkMethods,IInertia_BodyMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-interactioneffector-types"))]pub mod interactioneffector;
  #[cfg(feature="root_motion-final_ik-interactioneffector-types")]pub use interactioneffector::{InteractionEffector,IInteractionEffector}
@@ -322,24 +322,24 @@
  #[cfg(feature="root_motion-final_ik-interactionlookat")]pub use interactionlookat::{IInteractionLookAtMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-interactionobject-types"))]pub mod interactionobject;
- #[cfg(feature="root_motion-final_ik-interactionobject-types")]pub use interactionobject::{InteractionObject_Multiplier,IInteractionObject_Multiplier,InteractionObject_WeightCurve,IInteractionObject_WeightCurve,InteractionObject_Message,IInteractionObject_Message,InteractionObject,IInteractionObject,InteractionObject_AnimatorEvent,IInteractionObject_AnimatorEvent,InteractionObject_InteractionEvent,IInteractionObject_InteractionEvent,InteractionObject_WeightCurve_Type}
+ #[cfg(feature="root_motion-final_ik-interactionobject-types")]pub use interactionobject::{InteractionObject_Multiplier,IInteractionObject_Multiplier,InteractionObject_AnimatorEvent,IInteractionObject_AnimatorEvent,InteractionObject,IInteractionObject,InteractionObject_InteractionEvent,IInteractionObject_InteractionEvent,InteractionObject_WeightCurve_Type,InteractionObject_Message,IInteractionObject_Message,InteractionObject_WeightCurve,IInteractionObject_WeightCurve}
 ;
- #[cfg(feature="root_motion-final_ik-interactionobject")]pub use interactionobject::{IInteractionObject_MultiplierMethods,IInteractionObject_WeightCurveMethods,IInteractionObject_MessageMethods,IInteractionObjectMethods,IInteractionObject_AnimatorEventMethods,IInteractionObject_InteractionEventMethods}
+ #[cfg(feature="root_motion-final_ik-interactionobject")]pub use interactionobject::{IInteractionObject_MultiplierMethods,IInteractionObject_AnimatorEventMethods,IInteractionObjectMethods,IInteractionObject_InteractionEventMethods,IInteractionObject_MessageMethods,IInteractionObject_WeightCurveMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-interactionsystem-types"))]pub mod interactionsystem;
- #[cfg(feature="root_motion-final_ik-interactionsystem-types")]pub use interactionsystem::{InteractionSystem,IInteractionSystem,InteractionSystem_InteractionEventDelegate,IInteractionSystem_InteractionEventDelegate,InteractionSystem_InteractionDelegate,IInteractionSystem_InteractionDelegate}
+ #[cfg(feature="root_motion-final_ik-interactionsystem-types")]pub use interactionsystem::{InteractionSystem_InteractionEventDelegate,IInteractionSystem_InteractionEventDelegate,InteractionSystem_InteractionDelegate,IInteractionSystem_InteractionDelegate,InteractionSystem,IInteractionSystem}
 ;
- #[cfg(feature="root_motion-final_ik-interactionsystem")]pub use interactionsystem::{IInteractionSystemMethods,IInteractionSystem_InteractionEventDelegateMethods,IInteractionSystem_InteractionDelegateMethods}
+ #[cfg(feature="root_motion-final_ik-interactionsystem")]pub use interactionsystem::{IInteractionSystem_InteractionEventDelegateMethods,IInteractionSystem_InteractionDelegateMethods,IInteractionSystemMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-interactiontarget-types"))]pub mod interactiontarget;
- #[cfg(feature="root_motion-final_ik-interactiontarget-types")]pub use interactiontarget::{InteractionTarget,IInteractionTarget,InteractionTarget_Multiplier,IInteractionTarget_Multiplier,InteractionTarget_RotationMode}
+ #[cfg(feature="root_motion-final_ik-interactiontarget-types")]pub use interactiontarget::{InteractionTarget,IInteractionTarget,InteractionTarget_RotationMode,InteractionTarget_Multiplier,IInteractionTarget_Multiplier}
 ;
  #[cfg(feature="root_motion-final_ik-interactiontarget")]pub use interactiontarget::{IInteractionTargetMethods,IInteractionTarget_MultiplierMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-interactiontrigger-types"))]pub mod interactiontrigger;
- #[cfg(feature="root_motion-final_ik-interactiontrigger-types")]pub use interactiontrigger::{InteractionTrigger_Range_Interaction,IInteractionTrigger_Range_Interaction,InteractionTrigger,IInteractionTrigger,InteractionTrigger_CameraPosition,IInteractionTrigger_CameraPosition,InteractionTrigger_CharacterPosition,IInteractionTrigger_CharacterPosition,InteractionTrigger_Range,IInteractionTrigger_Range}
+ #[cfg(feature="root_motion-final_ik-interactiontrigger-types")]pub use interactiontrigger::{InteractionTrigger_Range_Interaction,IInteractionTrigger_Range_Interaction,InteractionTrigger_CameraPosition,IInteractionTrigger_CameraPosition,InteractionTrigger_CharacterPosition,IInteractionTrigger_CharacterPosition,InteractionTrigger_Range,IInteractionTrigger_Range,InteractionTrigger,IInteractionTrigger}
 ;
- #[cfg(feature="root_motion-final_ik-interactiontrigger")]pub use interactiontrigger::{IInteractionTrigger_Range_InteractionMethods,IInteractionTriggerMethods,IInteractionTrigger_CameraPositionMethods,IInteractionTrigger_CharacterPositionMethods,IInteractionTrigger_RangeMethods}
+ #[cfg(feature="root_motion-final_ik-interactiontrigger")]pub use interactiontrigger::{IInteractionTrigger_Range_InteractionMethods,IInteractionTrigger_CameraPositionMethods,IInteractionTrigger_CharacterPositionMethods,IInteractionTrigger_RangeMethods,IInteractionTriggerMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-legik-types"))]pub mod legik;
  #[cfg(feature="root_motion-final_ik-legik-types")]pub use legik::{LegIK,ILegIK}
@@ -362,9 +362,9 @@
  #[cfg(feature="root_motion-final_ik-lookatik")]pub use lookatik::{ILookAtIKMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-offsetmodifier-types"))]pub mod offsetmodifier;
- #[cfg(feature="root_motion-final_ik-offsetmodifier-types")]pub use offsetmodifier::{OffsetModifier,IOffsetModifier,OffsetModifier_OffsetLimits,IOffsetModifier_OffsetLimits}
+ #[cfg(feature="root_motion-final_ik-offsetmodifier-types")]pub use offsetmodifier::{OffsetModifier_OffsetLimits,IOffsetModifier_OffsetLimits,OffsetModifier,IOffsetModifier}
 ;
- #[cfg(feature="root_motion-final_ik-offsetmodifier")]pub use offsetmodifier::{IOffsetModifierMethods,IOffsetModifier_OffsetLimitsMethods}
+ #[cfg(feature="root_motion-final_ik-offsetmodifier")]pub use offsetmodifier::{IOffsetModifier_OffsetLimitsMethods,IOffsetModifierMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-offsetmodifiervrik-types"))]pub mod offsetmodifiervrik;
  #[cfg(feature="root_motion-final_ik-offsetmodifiervrik-types")]pub use offsetmodifiervrik::{OffsetModifierVRIK,IOffsetModifierVRIK}
@@ -377,9 +377,9 @@
  #[cfg(feature="root_motion-final_ik-offsetpose")]pub use offsetpose::{IOffsetPoseMethods,IOffsetPose_EffectorLinkMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-penetrationavoidance-types"))]pub mod penetrationavoidance;
- #[cfg(feature="root_motion-final_ik-penetrationavoidance-types")]pub use penetrationavoidance::{PenetrationAvoidance_Avoider_EffectorLink,IPenetrationAvoidance_Avoider_EffectorLink,PenetrationAvoidance_Avoider,IPenetrationAvoidance_Avoider,PenetrationAvoidance,IPenetrationAvoidance}
+ #[cfg(feature="root_motion-final_ik-penetrationavoidance-types")]pub use penetrationavoidance::{PenetrationAvoidance,IPenetrationAvoidance,PenetrationAvoidance_Avoider,IPenetrationAvoidance_Avoider,PenetrationAvoidance_Avoider_EffectorLink,IPenetrationAvoidance_Avoider_EffectorLink}
 ;
- #[cfg(feature="root_motion-final_ik-penetrationavoidance")]pub use penetrationavoidance::{IPenetrationAvoidance_Avoider_EffectorLinkMethods,IPenetrationAvoidance_AvoiderMethods,IPenetrationAvoidanceMethods}
+ #[cfg(feature="root_motion-final_ik-penetrationavoidance")]pub use penetrationavoidance::{IPenetrationAvoidanceMethods,IPenetrationAvoidance_AvoiderMethods,IPenetrationAvoidance_Avoider_EffectorLinkMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-poser-types"))]pub mod poser;
  #[cfg(feature="root_motion-final_ik-poser-types")]pub use poser::{Poser,IPoser}
@@ -387,14 +387,14 @@
  #[cfg(feature="root_motion-final_ik-poser")]pub use poser::{IPoserMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-ragdollutility-types"))]pub mod ragdollutility;
- #[cfg(feature="root_motion-final_ik-ragdollutility-types")]pub use ragdollutility::{RagdollUtility,IRagdollUtility,RagdollUtility_Child,IRagdollUtility_Child,RagdollUtility_Rigidbone,IRagdollUtility_Rigidbone}
+ #[cfg(feature="root_motion-final_ik-ragdollutility-types")]pub use ragdollutility::{RagdollUtility_Child,IRagdollUtility_Child,RagdollUtility_Rigidbone,IRagdollUtility_Rigidbone,RagdollUtility,IRagdollUtility}
 ;
- #[cfg(feature="root_motion-final_ik-ragdollutility")]pub use ragdollutility::{IRagdollUtilityMethods,IRagdollUtility_ChildMethods,IRagdollUtility_RigidboneMethods}
+ #[cfg(feature="root_motion-final_ik-ragdollutility")]pub use ragdollutility::{IRagdollUtility_ChildMethods,IRagdollUtility_RigidboneMethods,IRagdollUtilityMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-recoil-types"))]pub mod recoil;
- #[cfg(feature="root_motion-final_ik-recoil-types")]pub use recoil::{Recoil_RecoilOffset_EffectorLink,IRecoil_RecoilOffset_EffectorLink,Recoil,IRecoil,Recoil_Handedness,Recoil_RecoilOffset,IRecoil_RecoilOffset}
+ #[cfg(feature="root_motion-final_ik-recoil-types")]pub use recoil::{Recoil,IRecoil,Recoil_RecoilOffset,IRecoil_RecoilOffset,Recoil_Handedness,Recoil_RecoilOffset_EffectorLink,IRecoil_RecoilOffset_EffectorLink}
 ;
- #[cfg(feature="root_motion-final_ik-recoil")]pub use recoil::{IRecoil_RecoilOffset_EffectorLinkMethods,IRecoilMethods,IRecoil_RecoilOffsetMethods}
+ #[cfg(feature="root_motion-final_ik-recoil")]pub use recoil::{IRecoilMethods,IRecoil_RecoilOffsetMethods,IRecoil_RecoilOffset_EffectorLinkMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-rotationlimit-types"))]pub mod rotationlimit;
  #[cfg(feature="root_motion-final_ik-rotationlimit-types")]pub use rotationlimit::{RotationLimit,IRotationLimit}
@@ -442,14 +442,14 @@
  #[cfg(feature="root_motion-final_ik-twistsolver")]pub use twistsolver::{ITwistSolverMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-vrik-types"))]pub mod vrik;
- #[cfg(feature="root_motion-final_ik-vrik-types")]pub use vrik::{VRIK,IVRIK,VRIK_References,IVRIK_References}
+ #[cfg(feature="root_motion-final_ik-vrik-types")]pub use vrik::{VRIK_References,IVRIK_References,VRIK,IVRIK}
 ;
- #[cfg(feature="root_motion-final_ik-vrik")]pub use vrik::{IVRIKMethods,IVRIK_ReferencesMethods}
+ #[cfg(feature="root_motion-final_ik-vrik")]pub use vrik::{IVRIK_ReferencesMethods,IVRIKMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-vrikcalibrator-types"))]pub mod vrikcalibrator;
- #[cfg(feature="root_motion-final_ik-vrikcalibrator-types")]pub use vrikcalibrator::{VRIKCalibrator_CalibrationData_Target,IVRIKCalibrator_CalibrationData_Target,VRIKCalibrator_CalibrationData,IVRIKCalibrator_CalibrationData,VRIKCalibrator_Settings,IVRIKCalibrator_Settings,VRIKCalibrator,IVRIKCalibrator}
+ #[cfg(feature="root_motion-final_ik-vrikcalibrator-types")]pub use vrikcalibrator::{VRIKCalibrator,IVRIKCalibrator,VRIKCalibrator_Settings,IVRIKCalibrator_Settings,VRIKCalibrator_CalibrationData_Target,IVRIKCalibrator_CalibrationData_Target,VRIKCalibrator_CalibrationData,IVRIKCalibrator_CalibrationData}
 ;
- #[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub use vrikcalibrator::{IVRIKCalibrator_CalibrationData_TargetMethods,IVRIKCalibrator_CalibrationDataMethods,IVRIKCalibrator_SettingsMethods}
+ #[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub use vrikcalibrator::{IVRIKCalibrator_SettingsMethods,IVRIKCalibrator_CalibrationData_TargetMethods,IVRIKCalibrator_CalibrationDataMethods}
 ;
  #[cfg(any(feature="root_motion-final_ik-vriklodcontroller-types"))]pub mod vriklodcontroller;
  #[cfg(feature="root_motion-final_ik-vriklodcontroller-types")]pub use vriklodcontroller::{VRIKLODController,IVRIKLODController}

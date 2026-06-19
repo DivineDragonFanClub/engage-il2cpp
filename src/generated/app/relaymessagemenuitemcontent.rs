@@ -26,9 +26,21 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-relaymessagemenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-relaymessagemenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMessageMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn build_text(this:RelayMessageMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RelayMessageMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
+let inner:extern "C" fn(RelayMessageMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-relaymessagemenuitemcontent")]pub trait IRelayMessageMenuItemContentMethods:IRelayMessageMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <RelayMessageMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2001260usize)as*mut u8,();
-(RelayMessageMenuItemContent)__receiver)}
+__RelayMessageMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetData(crate::app::relaystampdata::RelayStampData)` overload"]fn set_data(self,data:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData>)->(){unsafe{let __receiver= <RelayMessageMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20012f0usize)as*mut u8,();

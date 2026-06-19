@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-timeline-iinterval")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IInterval_unity2_raw{use super:: * ;
-pub unsafe fn get_interval_start(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_intervalStart").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_intervalStart", <IInterval as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_interval_start(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IInterval as::unity2::ClassIdentity> ::NAME,"get_intervalStart",));
 let inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_interval_end(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_intervalEnd").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_intervalEnd", <IInterval as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_interval_end(this:IInterval,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IInterval as::unity2::ClassIdentity> ::NAME,"get_intervalEnd",));
 let inner:extern "C" fn(IInterval, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

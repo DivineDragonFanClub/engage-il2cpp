@@ -17,38 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectskilllistsetter/ArenaBondGodSelectSkillListSetter.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectSkillListSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ArenaBondGodSelectSkillListSetter{#[offset(24)]#[rename(name="m_MessageRoot")]pub m_message_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_AddAbilitys")]pub m_add_abilitys: ::unity2::Array<crate::app::arenabondgodselectskilllistsetter::ArenaBondGodSelectSkillListSetter_AddAbility> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectskilllistsetter/ArenaBondGodSelectSkillListSetter_AddAbility.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectSkillListSetter.AddAbility")]#[parent(crate::system::object::Object)]pub struct ArenaBondGodSelectSkillListSetter_AddAbility{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_LvValue")]pub m_lv_value:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_TalkRoot")]pub m_talk_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_Abilitys")]pub m_abilitys: ::unity2::Array<crate::app::ringlistskillmenuitemcontent::RingListSkillMenuItemContent> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/arenabondgodselectskilllistsetter/ArenaBondGodSelectSkillListSetter.md"))]#[::unity2::class(namespace="App",name="ArenaBondGodSelectSkillListSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ArenaBondGodSelectSkillListSetter{#[offset(24)]#[rename(name="m_MessageRoot")]pub m_message_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_AddAbilitys")]pub m_add_abilitys: ::unity2::Array<crate::app::arenabondgodselectskilllistsetter::ArenaBondGodSelectSkillListSetter_AddAbility> ,}
 
 }
 
 #[cfg(feature = "app-arenabondgodselectskilllistsetter-types")]
 pub use __types::*;
-
-#[cfg(feature="app-arenabondgodselectskilllistsetter")]pub trait IArenaBondGodSelectSkillListSetterMethods:IArenaBondGodSelectSkillListSetter{#[doc="`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn set_data(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <ArenaBondGodSelectSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9f3a0usize)as*mut u8,();
-(ArenaBondGodSelectSkillListSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0340usize)as*mut u8,();
-(ArenaBondGodSelectSkillListSetter)__receiver)}
-}
-}
-
-#[cfg(feature="app-arenabondgodselectskilllistsetter")]impl<__T:IArenaBondGodSelectSkillListSetter>IArenaBondGodSelectSkillListSetterMethods for __T{}
-
-#[cfg(feature="app-arenabondgodselectskilllistsetter")]impl ArenaBondGodSelectSkillListSetter{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-arenabondgodselectskilllistsetter")]impl ArenaBondGodSelectSkillListSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ArenaBondGodSelectSkillListSetter), ::core::stringify!(new),));
- <Self as IArenaBondGodSelectSkillListSetterMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-arenabondgodselectskilllistsetter")]pub trait IArenaBondGodSelectSkillListSetter_AddAbilityMethods:IArenaBondGodSelectSkillListSetter_AddAbility{#[doc="`SetData(i32, bool, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]fn set_data(self,lv:impl::core::convert::Into<i32> ,is_level_cap_talk:impl::core::convert::Into<bool> ,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->(){unsafe{let __receiver= <ArenaBondGodSelectSkillListSetter_AddAbility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba8fe0usize)as*mut u8,();
@@ -78,15 +55,38 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-arenabondgodselectskilllistsetter")]pub trait IArenaBondGodSelectSkillListSetterMethods:IArenaBondGodSelectSkillListSetter{#[doc="`SetData(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn set_data(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <ArenaBondGodSelectSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1c9f3a0usize)as*mut u8,();
+(ArenaBondGodSelectSkillListSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::godunit::GodUnit)::core::convert::Into::into(god))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ArenaBondGodSelectSkillListSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca0340usize)as*mut u8,();
+(ArenaBondGodSelectSkillListSetter)__receiver)}
+}
+}
+
+#[cfg(feature="app-arenabondgodselectskilllistsetter")]impl<__T:IArenaBondGodSelectSkillListSetter>IArenaBondGodSelectSkillListSetterMethods for __T{}
+
+#[cfg(feature="app-arenabondgodselectskilllistsetter")]impl ArenaBondGodSelectSkillListSetter{pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-arenabondgodselectskilllistsetter")]impl ArenaBondGodSelectSkillListSetter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ArenaBondGodSelectSkillListSetter), ::core::stringify!(new),));
+ <Self as IArenaBondGodSelectSkillListSetterMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-arenabondgodselectskilllistsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ArenaBondGodSelectSkillListSetter;
-    pub use super::IArenaBondGodSelectSkillListSetter;
-    pub use super::IArenaBondGodSelectSkillListSetterMethods;
     pub use super::ArenaBondGodSelectSkillListSetter_AddAbility;
     pub use super::IArenaBondGodSelectSkillListSetter_AddAbility;
     pub use super::IArenaBondGodSelectSkillListSetter_AddAbilityMethods;
+    pub use super::ArenaBondGodSelectSkillListSetter;
+    pub use super::IArenaBondGodSelectSkillListSetter;
+    pub use super::IArenaBondGodSelectSkillListSetterMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

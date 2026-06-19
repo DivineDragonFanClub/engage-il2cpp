@@ -25,66 +25,66 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <BinaryEncoding as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_byte_count{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<u16>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<BinaryEncoding as::unity2::ClassIdentity> ::class(),"GetByteCount",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetByteCount",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_bytes{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<u16>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), < ::unity2::Array<u8>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<BinaryEncoding as::unity2::ClassIdentity> ::class(),"GetBytes",5,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetBytes",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_char_count{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<u8>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<BinaryEncoding as::unity2::ClassIdentity> ::class(),"GetCharCount",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetCharCount",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_chars{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<u8>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), < ::unity2::Array<u16>as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<BinaryEncoding as::unity2::ClassIdentity> ::class(),"GetChars",5,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetChars",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_max_byte_count{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<BinaryEncoding as::unity2::ClassIdentity> ::class(),"GetMaxByteCount",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetMaxByteCount",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_max_char_count{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<BinaryEncoding as::unity2::ClassIdentity> ::class(),"GetMaxCharCount",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetMaxCharCount",e),}
-}
-}
+pub unsafe fn get_byte_count(this:BinaryEncoding,chars: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetByteCount",));
+let inner:extern "C" fn(BinaryEncoding, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,chars,index,count,__mi)}
+pub unsafe fn get_bytes(this:BinaryEncoding,chars: ::unity2::Array<u16> ,char_index:i32,char_count:i32,bytes: ::unity2::Array<u8> ,byte_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetBytes",));
+let inner:extern "C" fn(BinaryEncoding, ::unity2::Array<u16> ,i32,i32, ::unity2::Array<u8> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,chars,char_index,char_count,bytes,byte_index,__mi)}
+pub unsafe fn get_char_count(this:BinaryEncoding,bytes: ::unity2::Array<u8> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetCharCount",));
+let inner:extern "C" fn(BinaryEncoding, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bytes,index,count,__mi)}
+pub unsafe fn get_chars(this:BinaryEncoding,bytes: ::unity2::Array<u8> ,byte_index:i32,byte_count:i32,chars: ::unity2::Array<u16> ,char_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetChars",));
+let inner:extern "C" fn(BinaryEncoding, ::unity2::Array<u8> ,i32,i32, ::unity2::Array<u16> ,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bytes,byte_index,byte_count,chars,char_index,__mi)}
+pub unsafe fn get_max_byte_count(this:BinaryEncoding,char_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetMaxByteCount",));
+let inner:extern "C" fn(BinaryEncoding,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,char_count,__mi)}
+pub unsafe fn get_max_char_count(this:BinaryEncoding,byte_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <BinaryEncoding as::unity2::ClassIdentity> ::NAME,"GetMaxCharCount",));
+let inner:extern "C" fn(BinaryEncoding,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,byte_count,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-core_lib-io-binaryencoding")]pub trait IBinaryEncodingMethods:IBinaryEncoding{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BinaryEncoding as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -92,28 +92,22 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (BinaryEncoding)__receiver)}
 }
 #[doc="`GetByteCount(::unity2::Array<u16>, i32, i32)` overload"]fn get_byte_count(self,chars:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryEncoding as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinaryEncoding_unity2_raw::__lookup_get_byte_count::get_method_info().method_ptr,i32;
-(BinaryEncoding)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(chars),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__BinaryEncoding_unity2_raw::get_byte_count(__receiver, ::core::convert::Into::into(chars), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`GetBytes(::unity2::Array<u16>, i32, i32, ::unity2::Array<u8>, i32)` overload"]fn get_bytes(self,chars:impl::core::convert::Into< ::unity2::Array<u16> > ,char_index:impl::core::convert::Into<i32> ,char_count:impl::core::convert::Into<i32> ,bytes:impl::core::convert::Into< ::unity2::Array<u8> > ,byte_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryEncoding as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinaryEncoding_unity2_raw::__lookup_get_bytes::get_method_info().method_ptr,i32;
-(BinaryEncoding)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(chars),(i32)::core::convert::Into::into(char_index),(i32)::core::convert::Into::into(char_count),(::unity2::Array<u8>)::core::convert::Into::into(bytes),(i32)::core::convert::Into::into(byte_index))}
+__BinaryEncoding_unity2_raw::get_bytes(__receiver, ::core::convert::Into::into(chars), ::core::convert::Into::into(char_index), ::core::convert::Into::into(char_count), ::core::convert::Into::into(bytes), ::core::convert::Into::into(byte_index), ::core::option::Option::None)}
 }
 #[doc="`GetCharCount(::unity2::Array<u8>, i32, i32)` overload"]fn get_char_count(self,bytes:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryEncoding as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinaryEncoding_unity2_raw::__lookup_get_char_count::get_method_info().method_ptr,i32;
-(BinaryEncoding)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(bytes),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__BinaryEncoding_unity2_raw::get_char_count(__receiver, ::core::convert::Into::into(bytes), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`GetChars(::unity2::Array<u8>, i32, i32, ::unity2::Array<u16>, i32)` overload"]fn get_chars(self,bytes:impl::core::convert::Into< ::unity2::Array<u8> > ,byte_index:impl::core::convert::Into<i32> ,byte_count:impl::core::convert::Into<i32> ,chars:impl::core::convert::Into< ::unity2::Array<u16> > ,char_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryEncoding as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinaryEncoding_unity2_raw::__lookup_get_chars::get_method_info().method_ptr,i32;
-(BinaryEncoding)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(bytes),(i32)::core::convert::Into::into(byte_index),(i32)::core::convert::Into::into(byte_count),(::unity2::Array<u16>)::core::convert::Into::into(chars),(i32)::core::convert::Into::into(char_index))}
+__BinaryEncoding_unity2_raw::get_chars(__receiver, ::core::convert::Into::into(bytes), ::core::convert::Into::into(byte_index), ::core::convert::Into::into(byte_count), ::core::convert::Into::into(chars), ::core::convert::Into::into(char_index), ::core::option::Option::None)}
 }
 #[doc="`GetMaxByteCount(i32)` overload"]fn get_max_byte_count(self,char_count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryEncoding as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinaryEncoding_unity2_raw::__lookup_get_max_byte_count::get_method_info().method_ptr,i32;
-(BinaryEncoding)__receiver,(i32)::core::convert::Into::into(char_count))}
+__BinaryEncoding_unity2_raw::get_max_byte_count(__receiver, ::core::convert::Into::into(char_count), ::core::option::Option::None)}
 }
 #[doc="`GetMaxCharCount(i32)` overload"]fn get_max_char_count(self,byte_count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryEncoding as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinaryEncoding_unity2_raw::__lookup_get_max_char_count::get_method_info().method_ptr,i32;
-(BinaryEncoding)__receiver,(i32)::core::convert::Into::into(byte_count))}
+__BinaryEncoding_unity2_raw::get_max_char_count(__receiver, ::core::convert::Into::into(byte_count), ::core::option::Option::None)}
 }
 }
 

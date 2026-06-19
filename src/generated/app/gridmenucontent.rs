@@ -26,6 +26,139 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-gridmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-gridmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GridMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn get_menu_item_content_max(this:GridMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"GetMenuItemContentMax",));
+let inner:extern "C" fn(GridMenuContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_x(this:GridMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosX",));
+let inner:extern "C" fn(GridMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:GridMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(GridMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn init_obj_reference(this:GridMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"InitObjReference",));
+let inner:extern "C" fn(GridMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_w(this:GridMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(GridMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:GridMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(GridMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn cycle_menu_item_content(this:GridMenuContent,is_forward:bool,cycle_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CycleMenuItemContent",));
+let inner:extern "C" fn(GridMenuContent,bool,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_forward,cycle_count,__mi)}
+pub unsafe fn get_line_height_for_scroll(this:GridMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"GetLineHeightForScroll",));
+let inner:extern "C" fn(GridMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn awake(this:GridMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(GridMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_column(this:GridMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CalcColumn",));
+let inner:extern "C" fn(GridMenuContent,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn calc_row(this:GridMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CalcRow",));
+let inner:extern "C" fn(GridMenuContent,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn calc_menu_item_index(this:GridMenuContent,row:i32,column:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"CalcMenuItemIndex",));
+let inner:extern "C" fn(GridMenuContent,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,row,column,__mi)}
+pub unsafe fn update_cursor_size(this:GridMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <GridMenuContent as::unity2::ClassIdentity> ::NAME,"UpdateCursorSize",));
+let inner:extern "C" fn(GridMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-gridmenucontent")]impl GridMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x296f040usize)as*mut u8,();
 )}
 }
@@ -38,52 +171,40 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-gridmenucontent")]pub trait IGridMenuContentMethods:IGridMenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296e720usize)as*mut u8,i32;
-(GridMenuContent)__receiver)}
+__GridMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296e7c0usize)as*mut u8,f32;
-(GridMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__GridMenuContent_unity2_raw::calc_cursor_moved_pos_x(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296e8c0usize)as*mut u8,f32;
-(GridMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__GridMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296e9e0usize)as*mut u8,();
-(GridMenuContent)__receiver)}
+__GridMenuContent_unity2_raw::init_obj_reference(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296ea50usize)as*mut u8,f32;
-(GridMenuContent)__receiver)}
+__GridMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296eae0usize)as*mut u8,f32;
-(GridMenuContent)__receiver)}
+__GridMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CycleMenuItemContent(bool, i32)` overload"]fn cycle_menu_item_content(self,is_forward:impl::core::convert::Into<bool> ,cycle_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296eb80usize)as*mut u8,();
-(GridMenuContent)__receiver,(bool)::core::convert::Into::into(is_forward),(i32)::core::convert::Into::into(cycle_count))}
+__GridMenuContent_unity2_raw::cycle_menu_item_content(__receiver, ::core::convert::Into::into(is_forward), ::core::convert::Into::into(cycle_count), ::core::option::Option::None)}
 }
 #[doc="`GetLineHeightForScroll()` overload"]fn get_line_height_for_scroll(self,)->f32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296ee80usize)as*mut u8,f32;
-(GridMenuContent)__receiver)}
+__GridMenuContent_unity2_raw::get_line_height_for_scroll(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296eea0usize)as*mut u8,();
-(GridMenuContent)__receiver)}
+__GridMenuContent_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcColumn(i32)` overload"]fn calc_column(self,menu_item_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296eee0usize)as*mut u8,i32;
-(GridMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__GridMenuContent_unity2_raw::calc_column(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`CalcRow(i32)` overload"]fn calc_row(self,menu_item_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296ef10usize)as*mut u8,i32;
-(GridMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__GridMenuContent_unity2_raw::calc_row(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`CalcMenuItemIndex(i32, i32)` overload"]fn calc_menu_item_index(self,row:impl::core::convert::Into<i32> ,column:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296ef40usize)as*mut u8,i32;
-(GridMenuContent)__receiver,(i32)::core::convert::Into::into(row),(i32)::core::convert::Into::into(column))}
+__GridMenuContent_unity2_raw::calc_menu_item_index(__receiver, ::core::convert::Into::into(row), ::core::convert::Into::into(column), ::core::option::Option::None)}
 }
 #[doc="`SetCellSize(f32, f32)` overload"]fn set_cell_size(self,w:impl::core::convert::Into<f32> ,h:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x296e260usize)as*mut u8,();
@@ -118,8 +239,7 @@ pub use __types::*;
 (GridMenuContent)__receiver)}
 }
 #[doc="`UpdateCursorSize()` overload"]fn update_cursor_size(self,)->(){unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296ef70usize)as*mut u8,();
-(GridMenuContent)__receiver)}
+__GridMenuContent_unity2_raw::update_cursor_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GridMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x296f1a0usize)as*mut u8,();

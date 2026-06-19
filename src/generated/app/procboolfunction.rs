@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procboolfunction-types")]
 pub use __types::*;
 
+#[cfg(feature="app-procboolfunction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcBoolFunction_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:ProcBoolFunction,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ProcBoolFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(ProcBoolFunction,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+}
+
 #[cfg(feature="app-procboolfunction")]pub trait IProcBoolFunctionMethods:IProcBoolFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProcBoolFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281c6c0usize)as*mut u8,();
 (ProcBoolFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::procinst::ProcInst)` overload"]fn invoke(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <ProcBoolFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281c6e0usize)as*mut u8,bool;
-(ProcBoolFunction)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+__ProcBoolFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 }
 

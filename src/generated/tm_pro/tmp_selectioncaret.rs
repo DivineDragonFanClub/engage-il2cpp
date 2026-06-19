@@ -30,13 +30,34 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "tm_pro-tmp_selectioncaret-types")]
 pub use __types::*;
 
+#[cfg(feature="tm_pro-tmp_selectioncaret")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_SelectionCaret_unity2_raw{use super:: * ;
+pub unsafe fn cull(this:TMP_SelectionCaret,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <TMP_SelectionCaret as::unity2::ClassIdentity> ::NAME,"Cull",));
+let inner:extern "C" fn(TMP_SelectionCaret,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip_rect,valid_rect,__mi)}
+pub unsafe fn update_geometry(this:TMP_SelectionCaret,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <TMP_SelectionCaret as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let inner:extern "C" fn(TMP_SelectionCaret, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="tm_pro-tmp_selectioncaret")]pub trait ITMP_SelectionCaretMethods:ITMP_SelectionCaret{#[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x282a7f0usize)as*mut u8,();
-(TMP_SelectionCaret)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(clip_rect),(bool)::core::convert::Into::into(valid_rect))}
+__TMP_SelectionCaret_unity2_raw::cull(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x282a8d0usize)as*mut u8,();
-(TMP_SelectionCaret)__receiver)}
+__TMP_SelectionCaret_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_SelectionCaret as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x282a8e0usize)as*mut u8,();

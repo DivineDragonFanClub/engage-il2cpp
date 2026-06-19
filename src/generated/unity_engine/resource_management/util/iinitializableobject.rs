@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-util-iinitializableobject")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IInitializableObject_unity2_raw{use super:: * ;
-pub unsafe fn initialize(this:IInitializableObject,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Initialize").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Initialize", <IInitializableObject as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn initialize(this:IInitializableObject,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IInitializableObject as::unity2::ClassIdentity> ::NAME,"Initialize",));
 let inner:extern "C" fn(IInitializableObject, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,id,data,__mi)}
-pub unsafe fn initialize_async(this:IInitializableObject,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("InitializeAsync").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","InitializeAsync", <IInitializableObject as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn initialize_async(this:IInitializableObject,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,id: ::unity2::Il2CppString,data: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IInitializableObject as::unity2::ClassIdentity> ::NAME,"InitializeAsync",));
 let inner:extern "C" fn(IInitializableObject,crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<bool> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

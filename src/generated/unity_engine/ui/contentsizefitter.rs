@@ -23,6 +23,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ContentSizeFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct ContentSizeFitter{#[offset(24)]#[rename(name="m_HorizontalFit")]pub m_horizontal_fit:crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode, #[offset(28)]#[rename(name="m_VerticalFit")]pub m_vertical_fit:crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/contentsizefitter/ContentSizeFitter_FitMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ContentSizeFitter_FitMode{pub value:i32,}
 impl::unity2::ClassIdentity for ContentSizeFitter_FitMode{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="ContentSizeFitter.FitMode";
@@ -40,13 +43,63 @@ pub fn preferred_size()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/contentsizefitter/ContentSizeFitter.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="ContentSizeFitter")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct ContentSizeFitter{#[offset(24)]#[rename(name="m_HorizontalFit")]pub m_horizontal_fit:crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode, #[offset(28)]#[rename(name="m_VerticalFit")]pub m_vertical_fit:crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode, #[offset(32)]#[rename(name="m_Rect")]pub m_rect:crate::unity_engine::recttransform::RectTransform, #[offset(40)]#[rename(name="m_Tracker")]pub m_tracker:crate::unity_engine::drivenrecttransformtracker::DrivenRectTransformTracker,}
-
 }
 
 #[cfg(feature = "unity_engine-ui-contentsizefitter-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-contentsizefitter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ContentSizeFitter_unity2_raw{use super:: * ;
+pub unsafe fn on_enable(this:ContentSizeFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ContentSizeFitter as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:ContentSizeFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ContentSizeFitter as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_rect_transform_dimensions_change(this:ContentSizeFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ContentSizeFitter as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let inner:extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_layout_horizontal(this:ContentSizeFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ContentSizeFitter as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
+let inner:extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_layout_vertical(this:ContentSizeFitter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <ContentSizeFitter as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
+let inner:extern "C" fn(ContentSizeFitter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="unity_engine-ui-contentsizefitter")]pub trait IContentSizeFitterMethods:IContentSizeFitter{#[doc="`get_horizontalFit()` overload"]fn get_horizontal_fit(self,)->crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode{unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317fad0usize)as*mut u8,crate::unity_engine::ui::contentsizefitter::ContentSizeFitter_FitMode;
@@ -73,28 +126,23 @@ pub use __types::*;
 (ContentSizeFitter)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317fe10usize)as*mut u8,();
-(ContentSizeFitter)__receiver)}
+__ContentSizeFitter_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317feb0usize)as*mut u8,();
-(ContentSizeFitter)__receiver)}
+__ContentSizeFitter_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317ff40usize)as*mut u8,();
-(ContentSizeFitter)__receiver)}
+__ContentSizeFitter_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
 }
 #[doc="`HandleSelfFittingAlongAxis(i32)` overload"]fn handle_self_fitting_along_axis(self,axis:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317ffd0usize)as*mut u8,();
 (ContentSizeFitter)__receiver,(i32)::core::convert::Into::into(axis))}
 }
 #[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31800a0usize)as*mut u8,();
-(ContentSizeFitter)__receiver)}
+__ContentSizeFitter_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetLayoutVertical()` overload"]fn set_layout_vertical(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31800d0usize)as*mut u8,();
-(ContentSizeFitter)__receiver)}
+__ContentSizeFitter_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetDirty()` overload"]fn set_dirty(self,)->(){unsafe{let __receiver= <ContentSizeFitter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317fbc0usize)as*mut u8,();
@@ -129,10 +177,10 @@ this}
 #[cfg(feature = "unity_engine-ui-contentsizefitter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ContentSizeFitter_FitMode;
     pub use super::ContentSizeFitter;
     pub use super::IContentSizeFitter;
     pub use super::IContentSizeFitterMethods;
+    pub use super::ContentSizeFitter_FitMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

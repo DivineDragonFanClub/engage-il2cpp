@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenuitem/MyRoomMovieMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomMovieMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomMovieMenuItem{#[offset(104)]#[rename(name="m_movieFileName")]pub m_movie_file_name: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_help")]pub m_help: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_label")]pub m_label: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomMovieMenuItem.MyRoomMovieCallSequence.Label";
@@ -37,9 +40,6 @@ pub fn end()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenuitem/MyRoomMovieMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomMovieMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomMovieMenuItem{#[offset(104)]#[rename(name="m_movieFileName")]pub m_movie_file_name: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_help")]pub m_help: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_label")]pub m_label: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroommoviemenuitem/MyRoomMovieMenuItem_MyRoomMovieCallSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomMovieMenuItem.MyRoomMovieCallSequence")]#[parent(crate::app::stackprocinst_1::StackProcInst_1<crate::app::myroommoviemenuitem::MyRoomMovieMenuItem_MyRoomMovieCallSequence>)]pub struct MyRoomMovieMenuItem_MyRoomMovieCallSequence{}
 
 }
@@ -47,21 +47,51 @@ pub fn end()->Self{Self{value:2}
 #[cfg(feature = "app-myroommoviemenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-myroommoviemenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomMovieMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MyRoomMovieMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MyRoomMovieMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MyRoomMovieMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:MyRoomMovieMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MyRoomMovieMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(MyRoomMovieMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MyRoomMovieMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomMovieMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MyRoomMovieMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-myroommoviemenuitem")]pub trait IMyRoomMovieMenuItemMethods:IMyRoomMovieMenuItem{#[doc="`.ctor(crate::app::moviedefinedata::MovieDefineData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::moviedefinedata::MovieDefineData>)->(){unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2390fe0usize)as*mut u8,();
 (MyRoomMovieMenuItem)__receiver,(crate::app::moviedefinedata::MovieDefineData)::core::convert::Into::into(data))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2392220usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomMovieMenuItem)__receiver)}
+__MyRoomMovieMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2392230usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomMovieMenuItem)__receiver)}
+__MyRoomMovieMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2392240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomMovieMenuItem)__receiver)}
+__MyRoomMovieMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetCurrentMovieInfo()` overload"]fn set_current_movie_info(self,)->(){unsafe{let __receiver= <MyRoomMovieMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2392270usize)as*mut u8,();
@@ -142,10 +172,10 @@ this}
 #[cfg(feature = "app-myroommoviemenuitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label;
     pub use super::MyRoomMovieMenuItem;
     pub use super::IMyRoomMovieMenuItem;
     pub use super::IMyRoomMovieMenuItemMethods;
+    pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence_Label;
     pub use super::MyRoomMovieMenuItem_MyRoomMovieCallSequence;
     pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequence;
     pub use super::IMyRoomMovieMenuItem_MyRoomMovieCallSequenceMethods;

@@ -79,16 +79,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <AssetBundleResource as::unity2::ClassIdentity> ::NAME,"GetDownloadStatus",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_asset_bundle{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleResource as::unity2::ClassIdentity> ::class(),"GetAssetBundle",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <AssetBundleResource as::unity2::ClassIdentity> ::NAME,"GetAssetBundle",e),}
-}
-}
+pub unsafe fn get_asset_bundle(this:AssetBundleResource,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::assetbundle::AssetBundle{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AssetBundleResource as::unity2::ClassIdentity> ::NAME,"GetAssetBundle",));
+let inner:extern "C" fn(AssetBundleResource, ::unity2::OptionalMethod,)->crate::unity_engine::assetbundle::AssetBundle= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_start{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleResource as::unity2::ClassIdentity> ::class(),"Start",1,param_types,false,)}
@@ -216,8 +216,7 @@ let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit()
 (AssetBundleResource)__receiver)}
 }
 #[doc="`GetAssetBundle()` overload"]fn get_asset_bundle(self,)->crate::unity_engine::assetbundle::AssetBundle{unsafe{let __receiver= <AssetBundleResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__AssetBundleResource_unity2_raw::__lookup_get_asset_bundle::get_method_info().method_ptr,crate::unity_engine::assetbundle::AssetBundle;
-(AssetBundleResource)__receiver)}
+__AssetBundleResource_unity2_raw::get_asset_bundle(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn start(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <AssetBundleResource as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__AssetBundleResource_unity2_raw::__lookup_start::get_method_info().method_ptr,();

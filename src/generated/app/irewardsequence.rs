@@ -19,9 +19,12 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="app-irewardsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IRewardSequence_unity2_raw{use super:: * ;
-pub unsafe fn get_desc(this:IRewardSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetDesc").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetDesc", <IRewardSequence as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_desc(this:IRewardSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <IRewardSequence as::unity2::ClassIdentity> ::NAME,"GetDesc",));
 let inner:extern "C" fn(IRewardSequence, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

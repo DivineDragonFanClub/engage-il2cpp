@@ -9,15 +9,88 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/boxcaster/BoxCaster.md"))]#[::unity2::class(namespace="Combat",name="BoxCaster")]#[parent(crate::system::object::Object)]pub struct BoxCaster{#[offset(16)]#[rename(name="BoxHalfXZ")]pub box_half_xz:f32, #[offset(20)]#[rename(name="BoxHalfY")]pub box_half_y:f32, #[offset(24)]#[rename(name="BoxFlotingHeight")]pub box_floting_height:f32, #[offset(40)]#[rename(name="IsFlying")]pub is_flying:bool, #[offset(44)]#[rename(name="in_Pos0")]pub in_pos0:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="in_Pos1")]pub in_pos1:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="Dir2D")]pub dir2_d:crate::combat::fxz::FXZ, #[offset(80)]#[rename(name="WorldPos0")]pub world_pos0:crate::unity_engine::vector3::Vector3, #[offset(92)]#[rename(name="WorldPos1")]pub world_pos1:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="Dir3D")]pub dir3_d:crate::unity_engine::vector3::Vector3, #[offset(120)]#[rename(name="Result0")]pub result0:crate::combat::boxcaster::BoxCaster_CastResult, #[offset(128)]#[rename(name="Result1")]pub result1:crate::combat::boxcaster::BoxCaster_CastResult,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/boxcaster/BoxCaster_CastResult.md"))]#[::unity2::class(namespace="Combat",name="BoxCaster.CastResult")]#[parent(crate::system::object::Object)]pub struct BoxCaster_CastResult{#[offset(16)]#[rename(name="startPos")]pub start_pos:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="endPos")]pub end_pos:crate::unity_engine::vector3::Vector3, #[offset(40)]#[rename(name="dir")]pub dir:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="sizeXZ")]pub size_xz:f32, #[offset(56)]#[rename(name="sizeY")]pub size_y:f32, #[offset(60)]#[rename(name="forward")]pub forward:crate::unity_engine::quaternion::Quaternion, #[offset(76)]#[rename(name="NumHits")]pub num_hits:i32, #[offset(80)]#[rename(name="Hits")]pub hits: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/boxcaster/BoxCaster.md"))]#[::unity2::class(namespace="Combat",name="BoxCaster")]#[parent(crate::system::object::Object)]pub struct BoxCaster{#[offset(16)]#[rename(name="BoxHalfXZ")]pub box_half_xz:f32, #[offset(20)]#[rename(name="BoxHalfY")]pub box_half_y:f32, #[offset(24)]#[rename(name="BoxFlotingHeight")]pub box_floting_height:f32, #[offset(40)]#[rename(name="IsFlying")]pub is_flying:bool, #[offset(44)]#[rename(name="in_Pos0")]pub in_pos0:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="in_Pos1")]pub in_pos1:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="Dir2D")]pub dir2_d:crate::combat::fxz::FXZ, #[offset(80)]#[rename(name="WorldPos0")]pub world_pos0:crate::unity_engine::vector3::Vector3, #[offset(92)]#[rename(name="WorldPos1")]pub world_pos1:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="Dir3D")]pub dir3_d:crate::unity_engine::vector3::Vector3, #[offset(120)]#[rename(name="Result0")]pub result0:crate::combat::boxcaster::BoxCaster_CastResult, #[offset(128)]#[rename(name="Result1")]pub result1:crate::combat::boxcaster::BoxCaster_CastResult,}
 
 }
 
 #[cfg(feature = "combat-boxcaster-types")]
 pub use __types::*;
+
+#[cfg(feature="combat-boxcaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BoxCaster_CastResult_unity2_raw{use super:: * ;
+pub unsafe fn to_string(this:BoxCaster_CastResult,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <BoxCaster_CastResult as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(BoxCaster_CastResult, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="combat-boxcaster")]pub trait IBoxCaster_CastResultMethods:IBoxCaster_CastResult{#[doc="`get_centerPos()` overload"]fn get_center_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc160usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(BoxCaster_CastResult)__receiver)}
+}
+#[doc="`.ctor(f32, f32)` overload"]fn ctor(self,setting_xz:impl::core::convert::Into<f32> ,setting_y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc190usize)as*mut u8,();
+(BoxCaster_CastResult)__receiver,(f32)::core::convert::Into::into(setting_xz),(f32)::core::convert::Into::into(setting_y))}
+}
+#[doc="`Cast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32)` overload"]fn cast(self,start_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,end_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,half_box_size:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,mask:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc220usize)as*mut u8,();
+(BoxCaster_CastResult)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(start_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(end_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(half_box_size),(i32)::core::convert::Into::into(mask))}
+}
+#[doc="`IsIntersect(crate::combat::fxz::FXZ, f32)` overload"]fn is_intersect(self,pos:impl::core::convert::Into<crate::combat::fxz::FXZ> ,radius:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc430usize)as*mut u8,bool;
+(BoxCaster_CastResult)__receiver,(crate::combat::fxz::FXZ)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(radius))}
+}
+#[doc="`IsDividedBy(i32)` overload"]fn is_divided_by(self,mask:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc5b0usize)as*mut u8,bool;
+(BoxCaster_CastResult)__receiver,(i32)::core::convert::Into::into(mask))}
+}
+#[doc="`DrawGizmos()` overload"]fn draw_gizmos(self,)->(){unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc650usize)as*mut u8,();
+(BoxCaster_CastResult)__receiver)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BoxCaster_CastResult_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="combat-boxcaster")]impl<__T:IBoxCaster_CastResult>IBoxCaster_CastResultMethods for __T{}
+
+#[cfg(feature="combat-boxcaster")]impl BoxCaster_CastResult{pub fn get_center_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn cast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_intersect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_divided_by_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="combat-boxcaster")]impl BoxCaster_CastResult{#[doc="`.ctor(f32, f32)` — overload selector"]pub fn new(setting_xz:f32,setting_y:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BoxCaster_CastResult), ::core::stringify!(new),));
+ <Self as IBoxCaster_CastResultMethods> ::ctor(this,setting_xz,setting_y);
+this}
+}
+
+#[cfg(feature="combat-boxcaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BoxCaster_unity2_raw{use super:: * ;
+pub unsafe fn to_string(this:BoxCaster,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <BoxCaster as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(BoxCaster, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="combat-boxcaster")]pub trait IBoxCasterMethods:IBoxCaster{#[doc="`get_HalfBoxSize()` overload"]fn get_half_box_size(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x298b280usize)as*mut u8,crate::unity_engine::vector3::Vector3;
@@ -111,8 +184,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x298bca0usize)as*mut
 (BoxCaster)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BoxCaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298bde0usize)as*mut u8, ::unity2::Il2CppString;
-(BoxCaster)__receiver)}
+__BoxCaster_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -159,63 +231,15 @@ this}
 this}
 }
 
-#[cfg(feature="combat-boxcaster")]pub trait IBoxCaster_CastResultMethods:IBoxCaster_CastResult{#[doc="`get_centerPos()` overload"]fn get_center_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc160usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(BoxCaster_CastResult)__receiver)}
-}
-#[doc="`.ctor(f32, f32)` overload"]fn ctor(self,setting_xz:impl::core::convert::Into<f32> ,setting_y:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc190usize)as*mut u8,();
-(BoxCaster_CastResult)__receiver,(f32)::core::convert::Into::into(setting_xz),(f32)::core::convert::Into::into(setting_y))}
-}
-#[doc="`Cast(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, i32)` overload"]fn cast(self,start_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,end_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,half_box_size:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,mask:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc220usize)as*mut u8,();
-(BoxCaster_CastResult)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(start_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(end_pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(half_box_size),(i32)::core::convert::Into::into(mask))}
-}
-#[doc="`IsIntersect(crate::combat::fxz::FXZ, f32)` overload"]fn is_intersect(self,pos:impl::core::convert::Into<crate::combat::fxz::FXZ> ,radius:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc430usize)as*mut u8,bool;
-(BoxCaster_CastResult)__receiver,(crate::combat::fxz::FXZ)::core::convert::Into::into(pos),(f32)::core::convert::Into::into(radius))}
-}
-#[doc="`IsDividedBy(i32)` overload"]fn is_divided_by(self,mask:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc5b0usize)as*mut u8,bool;
-(BoxCaster_CastResult)__receiver,(i32)::core::convert::Into::into(mask))}
-}
-#[doc="`DrawGizmos()` overload"]fn draw_gizmos(self,)->(){unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bc650usize)as*mut u8,();
-(BoxCaster_CastResult)__receiver)}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BoxCaster_CastResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bca70usize)as*mut u8, ::unity2::Il2CppString;
-(BoxCaster_CastResult)__receiver)}
-}
-}
-
-#[cfg(feature="combat-boxcaster")]impl<__T:IBoxCaster_CastResult>IBoxCaster_CastResultMethods for __T{}
-
-#[cfg(feature="combat-boxcaster")]impl BoxCaster_CastResult{pub fn get_center_pos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn cast_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_intersect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_divided_by_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn draw_gizmos_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="combat-boxcaster")]impl BoxCaster_CastResult{#[doc="`.ctor(f32, f32)` — overload selector"]pub fn new(setting_xz:f32,setting_y:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BoxCaster_CastResult), ::core::stringify!(new),));
- <Self as IBoxCaster_CastResultMethods> ::ctor(this,setting_xz,setting_y);
-this}
-}
-
 #[cfg(feature = "combat-boxcaster")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BoxCaster;
-    pub use super::IBoxCaster;
-    pub use super::IBoxCasterMethods;
     pub use super::BoxCaster_CastResult;
     pub use super::IBoxCaster_CastResult;
     pub use super::IBoxCaster_CastResultMethods;
+    pub use super::BoxCaster;
+    pub use super::IBoxCaster;
+    pub use super::IBoxCasterMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

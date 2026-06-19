@@ -20,6 +20,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root_motion-final_ik-iksolverfullbodybiped-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-iksolverfullbodybiped")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverFullBodyBiped_unity2_raw{use super:: * ;
+pub unsafe fn is_valid(this:IKSolverFullBodyBiped,message: *mut::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolverFullBodyBiped as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let inner:extern "C" fn(IKSolverFullBodyBiped, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,message,__mi)}
+pub unsafe fn read_pose(this:IKSolverFullBodyBiped,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IKSolverFullBodyBiped as::unity2::ClassIdentity> ::NAME,"ReadPose",));
+let inner:extern "C" fn(IKSolverFullBodyBiped, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn apply_bend_constraints(this:IKSolverFullBodyBiped,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <IKSolverFullBodyBiped as::unity2::ClassIdentity> ::NAME,"ApplyBendConstraints",));
+let inner:extern "C" fn(IKSolverFullBodyBiped, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write_pose(this:IKSolverFullBodyBiped,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <IKSolverFullBodyBiped as::unity2::ClassIdentity> ::NAME,"WritePose",));
+let inner:extern "C" fn(IKSolverFullBodyBiped, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-iksolverfullbodybiped")]impl IKSolverFullBodyBiped{#[doc="`DetectRootNodeBone(crate::root_motion::bipedreferences::BipedReferences)` overload"]pub fn detect_root_node_bone(references:impl::core::convert::Into<crate::root_motion::bipedreferences::BipedReferences>)->crate::unity_engine::transform::Transform{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c30180usize)as*mut u8,crate::unity_engine::transform::Transform;
 (crate::root_motion::bipedreferences::BipedReferences)::core::convert::Into::into(references))}
 }
@@ -148,8 +191,7 @@ pub use __types::*;
 }
 #[doc="`IsValid(*mut::unity2::Il2CppString)` overload"]fn is_valid(self,)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKSolverFullBodyBiped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3c2ecc0usize)as*mut u8,bool;
-(IKSolverFullBodyBiped)__receiver,(*mut::unity2::Il2CppString)__out_0.as_mut_ptr())}
+let __ret={__IKSolverFullBodyBiped_unity2_raw::is_valid(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -174,8 +216,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3c2ecc0usize)as*mut
 (IKSolverFullBodyBiped)__receiver,(crate::root_motion::final_ik::fullbodybipedchain::FullBodyBipedChain)::core::convert::Into::into(chain),(crate::root_motion::bipedlimborientations::BipedLimbOrientations_LimbOrientation)::core::convert::Into::into(limb_orientation))}
 }
 #[doc="`ReadPose()` overload"]fn read_pose(self,)->(){unsafe{let __receiver= <IKSolverFullBodyBiped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c309c0usize)as*mut u8,();
-(IKSolverFullBodyBiped)__receiver)}
+__IKSolverFullBodyBiped_unity2_raw::read_pose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PullBody()` overload"]fn pull_body(self,)->(){unsafe{let __receiver= <IKSolverFullBodyBiped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c30aa0usize)as*mut u8,();
@@ -190,12 +231,10 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3c2ecc0usize)as*mut
 (IKSolverFullBodyBiped)__receiver,(crate::root_motion::final_ik::ikeffector::IKEffector)::core::convert::Into::into(effector),(crate::root_motion::final_ik::fbikchain::FBIKChain)::core::convert::Into::into(arm),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset))}
 }
 #[doc="`ApplyBendConstraints()` overload"]fn apply_bend_constraints(self,)->(){unsafe{let __receiver= <IKSolverFullBodyBiped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c30e50usize)as*mut u8,();
-(IKSolverFullBodyBiped)__receiver)}
+__IKSolverFullBodyBiped_unity2_raw::apply_bend_constraints(__receiver, ::core::option::Option::None)}
 }
 #[doc="`WritePose()` overload"]fn write_pose(self,)->(){unsafe{let __receiver= <IKSolverFullBodyBiped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c311a0usize)as*mut u8,();
-(IKSolverFullBodyBiped)__receiver)}
+__IKSolverFullBodyBiped_unity2_raw::write_pose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverFullBodyBiped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c31230usize)as*mut u8,();

@@ -16,6 +16,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-addressable_assets-assetlabelreference-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-addressable_assets-assetlabelreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetLabelReference_unity2_raw{use super:: * ;
+pub unsafe fn get_runtime_key(this:AssetLabelReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AssetLabelReference as::unity2::ClassIdentity> ::NAME,"get_RuntimeKey",));
+let inner:extern "C" fn(AssetLabelReference, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn runtime_key_is_valid(this:AssetLabelReference,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AssetLabelReference as::unity2::ClassIdentity> ::NAME,"RuntimeKeyIsValid",));
+let inner:extern "C" fn(AssetLabelReference, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_hash_code(this:AssetLabelReference,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <AssetLabelReference as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(AssetLabelReference, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-assetlabelreference")]pub trait IAssetLabelReferenceMethods:IAssetLabelReference{#[doc="`get_labelString()` overload"]fn get_label_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2170usize)as*mut u8, ::unity2::Il2CppString;
 (AssetLabelReference)__receiver)}
@@ -25,16 +58,13 @@ pub use __types::*;
 (AssetLabelReference)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_RuntimeKey()` overload"]fn get_runtime_key(self,)->crate::system::object::Object{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2190usize)as*mut u8,crate::system::object::Object;
-(AssetLabelReference)__receiver)}
+__AssetLabelReference_unity2_raw::get_runtime_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RuntimeKeyIsValid()` overload"]fn runtime_key_is_valid(self,)->bool{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db2210usize)as*mut u8,bool;
-(AssetLabelReference)__receiver)}
+__AssetLabelReference_unity2_raw::runtime_key_is_valid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db22a0usize)as*mut u8,i32;
-(AssetLabelReference)__receiver)}
+__AssetLabelReference_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetLabelReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2db22b0usize)as*mut u8,();

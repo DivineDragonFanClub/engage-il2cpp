@@ -9,10 +9,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="OverloadedMethodMemberDescriptor.OverloadableMemberDescriptorComparer")]#[parent(crate::system::object::Object)]pub struct OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="OverloadedMethodMemberDescriptor")]#[parent(crate::system::object::Object)]pub struct OverloadedMethodMemberDescriptor{#[static_field]#[rename(name="CACHE_SIZE")]pub cache_size:i32, #[offset(16)]#[rename(name="m_Overloads")]pub m_overloads:crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor> , #[offset(24)]#[rename(name="m_ExtOverloads")]pub m_ext_overloads:crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor> , #[offset(32)]#[rename(name="m_Unsorted")]pub m_unsorted:bool, #[offset(40)]#[rename(name="m_Cache")]pub m_cache: ::unity2::Array<crate::moon_sharp::interpreter::interop::overloadedmethodmemberdescriptor::OverloadedMethodMemberDescriptor_OverloadCacheItem> , #[offset(48)]#[rename(name="m_CacheHits")]pub m_cache_hits:i32, #[offset(52)]#[rename(name="m_ExtensionMethodVersion")]pub m_extension_method_version:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="OverloadedMethodMemberDescriptor.OverloadableMemberDescriptorComparer")]#[parent(crate::system::object::Object)]pub struct OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/overloadedmethodmemberdescriptor/OverloadedMethodMemberDescriptor_OverloadCacheItem.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="OverloadedMethodMemberDescriptor.OverloadCacheItem")]#[parent(crate::system::object::Object)]pub struct OverloadedMethodMemberDescriptor_OverloadCacheItem{#[offset(16)]#[rename(name="HasObject")]pub has_object:bool, #[offset(24)]#[rename(name="Method")]pub method:crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor, #[offset(32)]#[rename(name="ArgsDataType")]pub args_data_type:crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::datatype::DataType> , #[offset(40)]#[rename(name="ArgsUserDataType")]pub args_user_data_type:crate::system::collections::generic::list_1::List_1< ::unity2::SystemType> , #[offset(48)]#[rename(name="HitIndexAtLastHit")]pub hit_index_at_last_hit:i32,}
@@ -21,52 +21,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor-types")]
 pub use __types::*;
-
-#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compare{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::ClassIdentity> ::class(),"Compare",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::ClassIdentity> ::NAME,"Compare",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]pub trait IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods:IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{#[doc="`Compare(crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor, crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor)` overload"]fn compare(self,x:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor> ,y:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor>)->i32{unsafe{let __receiver= <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer_unity2_raw::__lookup_compare::get_method_info().method_ptr,i32;
-(OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer)__receiver,(crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor)::core::convert::Into::into(x),(crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor)::core::convert::Into::into(y))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer)__receiver)}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]impl<__T:IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer>IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]impl OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]impl OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer), ::core::stringify!(new),));
- <Self as IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __OverloadedMethodMemberDescriptor_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_ignore_extension_methods{use super:: * ;
@@ -129,16 +83,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"SetExtensionMethodsSnapshot",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_name{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_Name",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",e),}
-}
-}
+pub unsafe fn get_name(this:OverloadedMethodMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_name{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"set_Name",1,param_types,false,)}
@@ -249,16 +203,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetCallback",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",e),}
-}
-}
+pub unsafe fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(this:OverloadedMethodMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_callback_function{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), < ::unity2::IlInstance as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"GetCallbackFunction",2,param_types,false,)}
@@ -269,56 +223,56 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetCallbackFunction",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_static{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_IsStatic",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_IsStatic",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_member_access{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_MemberAccess",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"GetValue",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetValue",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"SetValue",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"SetValue",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_prepare_for_wiring{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"PrepareForWiring",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",e),}
-}
-}
+pub unsafe fn get_is_static(this:OverloadedMethodMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_IsStatic",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_member_access(this:OverloadedMethodMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value(this:OverloadedMethodMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,__mi)}
+pub unsafe fn set_value(this:OverloadedMethodMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,value:crate::moon_sharp::interpreter::dynvalue::DynValue,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,value,__mi)}
+pub unsafe fn prepare_for_wiring(this:OverloadedMethodMemberDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <OverloadedMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]impl OverloadedMethodMemberDescriptor{#[doc="`CalcScoreForSingleArgument(crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor, ::unity2::SystemType, crate::moon_sharp::interpreter::dynvalue::DynValue, bool)` overload"]pub fn calc_score_for_single_argument(desc:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> ,parameter_type:impl::core::convert::Into< ::unity2::SystemType> ,arg:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,is_optional:impl::core::convert::Into<bool>)->i32{unsafe{::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_calc_score_for_single_argument::get_method_info().method_ptr,i32;
@@ -351,8 +305,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (OverloadedMethodMemberDescriptor)__receiver,(i32)::core::convert::Into::into(version),(crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor>)::core::convert::Into::into(ext_methods))}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_get_name::get_method_info().method_ptr, ::unity2::Il2CppString;
-(OverloadedMethodMemberDescriptor)__receiver)}
+__OverloadedMethodMemberDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_set_name::get_method_info().method_ptr,();
@@ -395,32 +348,26 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (OverloadedMethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj))}
 }
 #[doc="`MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize()` overload"]fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(self,)->(){unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize::get_method_info().method_ptr,();
-(OverloadedMethodMemberDescriptor)__receiver)}
+__OverloadedMethodMemberDescriptor_unity2_raw::moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCallbackFunction(crate::moon_sharp::interpreter::script::Script, ::unity2::IlInstance)` overload"]fn get_callback_function(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into< ::unity2::IlInstance>)->crate::moon_sharp::interpreter::callbackfunction::CallbackFunction{unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_get_callback_function::get_method_info().method_ptr,crate::moon_sharp::interpreter::callbackfunction::CallbackFunction;
 (OverloadedMethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(::unity2::IlInstance)::core::convert::Into::into(obj))}
 }
 #[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_get_is_static::get_method_info().method_ptr,bool;
-(OverloadedMethodMemberDescriptor)__receiver)}
+__OverloadedMethodMemberDescriptor_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_MemberAccess()` overload"]fn get_member_access(self,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_get_member_access::get_method_info().method_ptr,crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess;
-(OverloadedMethodMemberDescriptor)__receiver)}
+__OverloadedMethodMemberDescriptor_unity2_raw::get_member_access(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]fn get_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_get_value::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(OverloadedMethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__OverloadedMethodMemberDescriptor_unity2_raw::get_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_set_value::get_method_info().method_ptr,();
-(OverloadedMethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj),(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+__OverloadedMethodMemberDescriptor_unity2_raw::set_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <OverloadedMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_unity2_raw::__lookup_prepare_for_wiring::get_method_info().method_ptr,();
-(OverloadedMethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(t))}
+__OverloadedMethodMemberDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 }
 
@@ -470,6 +417,51 @@ this}
 this}
 }
 
+#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer,x:crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor,y:crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer,crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor,crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]pub trait IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods:IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{#[doc="`Compare(crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor, crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor)` overload"]fn compare(self,x:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor> ,y:impl::core::convert::Into<crate::moon_sharp::interpreter::interop::basic_descriptors::ioverloadablememberdescriptor::IOverloadableMemberDescriptor>)->i32{unsafe{let __receiver= <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer)__receiver)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]impl<__T:IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer>IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]impl OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]impl OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer), ::core::stringify!(new),));
+ <Self as IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __OverloadedMethodMemberDescriptor_OverloadCacheItem_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
@@ -504,12 +496,12 @@ this}
 #[cfg(feature = "moon_sharp-interpreter-interop-overloadedmethodmemberdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer;
-    pub use super::IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer;
-    pub use super::IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods;
     pub use super::OverloadedMethodMemberDescriptor;
     pub use super::IOverloadedMethodMemberDescriptor;
     pub use super::IOverloadedMethodMemberDescriptorMethods;
+    pub use super::OverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer;
+    pub use super::IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparer;
+    pub use super::IOverloadedMethodMemberDescriptor_OverloadableMemberDescriptorComparerMethods;
     pub use super::OverloadedMethodMemberDescriptor_OverloadCacheItem;
     pub use super::IOverloadedMethodMemberDescriptor_OverloadCacheItem;
     pub use super::IOverloadedMethodMemberDescriptor_OverloadCacheItemMethods;

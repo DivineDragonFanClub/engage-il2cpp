@@ -20,6 +20,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-arenacombatsequence-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-arenacombatsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ArenaCombatSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:ArenaCombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ArenaCombatSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(ArenaCombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:ArenaCombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ArenaCombatSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(ArenaCombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_persistent(this:ArenaCombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ArenaCombatSequence as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let inner:extern "C" fn(ArenaCombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-arenacombatsequence")]impl ArenaCombatSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::app::battlecalculator::BattleCalculator, bool, bool, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,sim_calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,is_emblem_battle:impl::core::convert::Into<bool> ,is_special:impl::core::convert::Into<bool> ,bond_exp:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3000usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(sim_calculator),(bool)::core::convert::Into::into(is_emblem_battle),(bool)::core::convert::Into::into(is_special),(i32)::core::convert::Into::into(bond_exp))}
 }
@@ -54,16 +87,13 @@ pub use __types::*;
 (ArenaCombatSequence)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(sim_calculator),(bool)::core::convert::Into::into(is_emblem_battle),(bool)::core::convert::Into::into(is_special),(i32)::core::convert::Into::into(bond_exp))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ArenaCombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca3890usize)as*mut u8,();
-(ArenaCombatSequence)__receiver)}
+__ArenaCombatSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ArenaCombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca38a0usize)as*mut u8,();
-(ArenaCombatSequence)__receiver)}
+__ArenaCombatSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <ArenaCombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca38b0usize)as*mut u8,();
-(ArenaCombatSequence)__receiver)}
+__ArenaCombatSequence_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Setup()` overload"]fn setup(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ArenaCombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ca38c0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;

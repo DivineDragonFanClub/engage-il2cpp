@@ -25,9 +25,12 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="combat-magicsub")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MagicSub_unity2_raw{use super:: * ;
-pub unsafe fn setup(this:MagicSub,chr:crate::combat::character::Character,initial_start_pos: *mut crate::unity_engine::vector3::Vector3,initial_end_pos: *mut crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Setup").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Setup", <MagicSub as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn setup(this:MagicSub,chr:crate::combat::character::Character,initial_start_pos: *mut crate::unity_engine::vector3::Vector3,initial_end_pos: *mut crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MagicSub as::unity2::ClassIdentity> ::NAME,"Setup",));
 let inner:extern "C" fn(MagicSub,crate::combat::character::Character, *mut crate::unity_engine::vector3::Vector3, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

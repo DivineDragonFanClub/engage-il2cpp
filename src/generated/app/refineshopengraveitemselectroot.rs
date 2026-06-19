@@ -26,22 +26,52 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-refineshopengraveitemselectroot-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refineshopengraveitemselectroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopEngraveItemSelectRoot_unity2_raw{use super:: * ;
+pub unsafe fn create(this:RefineShopEngraveItemSelectRoot,super_:crate::app::procinst::ProcInst,shop_weapon_model_renderer:crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,default_unit:crate::app::unit::Unit,default_item_index:i32,default_item_kind:crate::app::itemdata::ItemData_Kinds,return_event_handler:crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RefineShopEngraveItemSelectRoot as::unity2::ClassIdentity> ::NAME,"Create",));
+let inner:extern "C" fn(RefineShopEngraveItemSelectRoot,crate::app::procinst::ProcInst,crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer,crate::app::unit::Unit,i32,crate::app::itemdata::ItemData_Kinds,crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,super_,shop_weapon_model_renderer,default_unit,default_item_index,default_item_kind,return_event_handler,__mi)}
+pub unsafe fn destroy(this:RefineShopEngraveItemSelectRoot,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RefineShopEngraveItemSelectRoot as::unity2::ClassIdentity> ::NAME,"Destroy",));
+let inner:extern "C" fn(RefineShopEngraveItemSelectRoot, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn close(this:RefineShopEngraveItemSelectRoot,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RefineShopEngraveItemSelectRoot as::unity2::ClassIdentity> ::NAME,"Close",));
+let inner:extern "C" fn(RefineShopEngraveItemSelectRoot, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshopengraveitemselectroot")]impl RefineShopEngraveItemSelectRoot{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,return_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>)->crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x295e8f0usize)as*mut u8,crate::app::refineshopengraveitemselectroot::RefineShopEngraveItemSelectRoot;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(default_item_kind),(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
 }
 }
 
 #[cfg(feature="app-refineshopengraveitemselectroot")]pub trait IRefineShopEngraveItemSelectRootMethods:IRefineShopEngraveItemSelectRoot{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)` overload"]fn create(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,shop_weapon_model_renderer:impl::core::convert::Into<crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,return_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler>)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x295ea90usize)as*mut u8,();
-(RefineShopEngraveItemSelectRoot)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::shopweaponmodelrenderer::ShopWeaponModelRenderer)::core::convert::Into::into(shop_weapon_model_renderer),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(default_item_kind),(crate::app::refineshoprefinebaseroot::RefineShopRefineBaseRoot_ReturnEventHandler)::core::convert::Into::into(return_event_handler))}
+__RefineShopEngraveItemSelectRoot_unity2_raw::create(__receiver, ::core::convert::Into::into(super_), ::core::convert::Into::into(shop_weapon_model_renderer), ::core::convert::Into::into(default_unit), ::core::convert::Into::into(default_item_index), ::core::convert::Into::into(default_item_kind), ::core::convert::Into::into(return_event_handler), ::core::option::Option::None)}
 }
 #[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x295f160usize)as*mut u8,();
-(RefineShopEngraveItemSelectRoot)__receiver)}
+__RefineShopEngraveItemSelectRoot_unity2_raw::destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x295f300usize)as*mut u8,();
-(RefineShopEngraveItemSelectRoot)__receiver)}
+__RefineShopEngraveItemSelectRoot_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x295f3b0usize)as*mut u8,();

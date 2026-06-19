@@ -98,6 +98,19 @@ pub fn test_system_voice_play()->Self{Self{value:102}
 #[cfg(feature = "app-eventdata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-eventdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:EventData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <EventData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(EventData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-eventdata")]impl EventData{#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24d38e0usize)as*mut u8,();
 (::unity2::Il2CppString)::core::convert::Into::into(file_name))}
 }
@@ -176,8 +189,7 @@ pub use __types::*;
 (EventData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24d39b0usize)as*mut u8, ::unity2::Il2CppString;
-(EventData)__receiver)}
+__EventData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EventData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24d3a70usize)as*mut u8,();

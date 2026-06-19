@@ -21,6 +21,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog")]#[parent(crate::system::object::Object)]pub struct RefreshConfirmDialog{#[static_field]#[rename(name="m_PosX")]pub m_pos_x:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshConfirmDialog_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefreshConfirmDialog_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for RefreshConfirmDialog_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RefreshConfirmDialog.Result2";
@@ -37,12 +43,6 @@ pub fn ok_without_demo()->Self{Self{value:1}
 pub fn cancel()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog")]#[parent(crate::system::object::Object)]pub struct RefreshConfirmDialog{#[static_field]#[rename(name="m_PosX")]pub m_pos_x:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshConfirmDialog_DecideEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshconfirmdialog/RefreshConfirmDialog_DialogMenuItem.md"))]#[::unity2::class(namespace="App",name="RefreshConfirmDialog.DialogMenuItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct RefreshConfirmDialog_DialogMenuItem{#[offset(112)]#[rename(name="m_Result")]pub m_result:crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler,}
@@ -80,13 +80,25 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-refreshconfirmdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefreshConfirmDialog_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefreshConfirmDialog_DecideEventHandler,result:crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefreshConfirmDialog_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefreshConfirmDialog_DecideEventHandler,crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,__mi)}
+}
+
 #[cfg(feature="app-refreshconfirmdialog")]pub trait IRefreshConfirmDialog_DecideEventHandlerMethods:IRefreshConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe340usize)as*mut u8,();
 (RefreshConfirmDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2>)->(){unsafe{let __receiver= <RefreshConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe360usize)as*mut u8,();
-(RefreshConfirmDialog_DecideEventHandler)__receiver,(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)::core::convert::Into::into(result))}
+__RefreshConfirmDialog_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
 }
 }
 
@@ -103,17 +115,38 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-refreshconfirmdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefreshConfirmDialog_DialogMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:RefreshConfirmDialog_DialogMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefreshConfirmDialog_DialogMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RefreshConfirmDialog_DialogMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RefreshConfirmDialog_DialogMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RefreshConfirmDialog_DialogMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RefreshConfirmDialog_DialogMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refreshconfirmdialog")]pub trait IRefreshConfirmDialog_DialogMenuItemMethods:IRefreshConfirmDialog_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2, crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,result:impl::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <RefreshConfirmDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe660usize)as*mut u8,();
 (RefreshConfirmDialog_DialogMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::refreshconfirmdialog::RefreshConfirmDialog_Result2)::core::convert::Into::into(result),(crate::app::refreshconfirmdialog::RefreshConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshConfirmDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe6b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefreshConfirmDialog_DialogMenuItem)__receiver)}
+__RefreshConfirmDialog_DialogMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshConfirmDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afe6f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefreshConfirmDialog_DialogMenuItem)__receiver)}
+__RefreshConfirmDialog_DialogMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -134,13 +167,13 @@ this}
 #[cfg(feature = "app-refreshconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefreshConfirmDialog_Result2;
     pub use super::RefreshConfirmDialog;
     pub use super::IRefreshConfirmDialog;
     pub use super::IRefreshConfirmDialogMethods;
     pub use super::RefreshConfirmDialog_DecideEventHandler;
     pub use super::IRefreshConfirmDialog_DecideEventHandler;
     pub use super::IRefreshConfirmDialog_DecideEventHandlerMethods;
+    pub use super::RefreshConfirmDialog_Result2;
     pub use super::RefreshConfirmDialog_DialogMenuItem;
     pub use super::IRefreshConfirmDialog_DialogMenuItem;
     pub use super::IRefreshConfirmDialog_DialogMenuItemMethods;

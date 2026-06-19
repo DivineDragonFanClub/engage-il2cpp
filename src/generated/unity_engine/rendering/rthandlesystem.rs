@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/rthandlesystem/RTHandleSystem.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="RTHandleSystem")]#[parent(crate::system::object::Object)]pub struct RTHandleSystem{#[offset(16)]#[rename(name="m_HardwareDynamicResRequested")]pub m_hardware_dynamic_res_requested:bool, #[offset(17)]#[rename(name="m_ScaledRTSupportsMSAA")]pub m_scaled_rt_supports_msaa:bool, #[offset(20)]#[rename(name="m_ScaledRTCurrentMSAASamples")]pub m_scaled_rt_current_msaa_samples:crate::unity_engine::rendering::msaasamples::MSAASamples, #[offset(24)]#[rename(name="m_AutoSizedRTs")]pub m_auto_sized_r_ts:crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle> , #[offset(32)]#[rename(name="m_AutoSizedRTsArray")]pub m_auto_sized_r_ts_array: ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle> , #[offset(40)]#[rename(name="m_ResizeOnDemandRTs")]pub m_resize_on_demand_r_ts:crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle> , #[offset(48)]#[rename(name="m_RTHandleProperties")]pub m_rt_handle_properties:crate::unity_engine::rendering::rthandleproperties::RTHandleProperties, #[offset(96)]#[rename(name="m_MaxWidths")]pub m_max_widths:i32, #[offset(100)]#[rename(name="m_MaxHeights")]pub m_max_heights:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/rthandlesystem/RTHandleSystem_ResizeMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RTHandleSystem_ResizeMode{pub value:i32,}
 impl::unity2::ClassIdentity for RTHandleSystem_ResizeMode{const NAMESPACE: &'static str="UnityEngine.Rendering";
 const NAME: &'static str="RTHandleSystem.ResizeMode";
@@ -28,13 +31,23 @@ pub fn on_demand()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/rthandlesystem/RTHandleSystem.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="RTHandleSystem")]#[parent(crate::system::object::Object)]pub struct RTHandleSystem{#[offset(16)]#[rename(name="m_HardwareDynamicResRequested")]pub m_hardware_dynamic_res_requested:bool, #[offset(17)]#[rename(name="m_ScaledRTSupportsMSAA")]pub m_scaled_rt_supports_msaa:bool, #[offset(20)]#[rename(name="m_ScaledRTCurrentMSAASamples")]pub m_scaled_rt_current_msaa_samples:crate::unity_engine::rendering::msaasamples::MSAASamples, #[offset(24)]#[rename(name="m_AutoSizedRTs")]pub m_auto_sized_r_ts:crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle> , #[offset(32)]#[rename(name="m_AutoSizedRTsArray")]pub m_auto_sized_r_ts_array: ::unity2::Array<crate::unity_engine::rendering::rthandle::RTHandle> , #[offset(40)]#[rename(name="m_ResizeOnDemandRTs")]pub m_resize_on_demand_r_ts:crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::rendering::rthandle::RTHandle> , #[offset(48)]#[rename(name="m_RTHandleProperties")]pub m_rt_handle_properties:crate::unity_engine::rendering::rthandleproperties::RTHandleProperties, #[offset(96)]#[rename(name="m_MaxWidths")]pub m_max_widths:i32, #[offset(100)]#[rename(name="m_MaxHeights")]pub m_max_heights:i32,}
-
 }
 
 #[cfg(feature = "unity_engine-rendering-rthandlesystem-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-rendering-rthandlesystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RTHandleSystem_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:RTHandleSystem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RTHandleSystem as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(RTHandleSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="unity_engine-rendering-rthandlesystem")]impl RTHandleSystem{#[doc="`Alloc(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]pub fn alloc_8(tex:impl::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>)->crate::unity_engine::rendering::rthandle::RTHandle{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x30afe10usize)as*mut u8,crate::unity_engine::rendering::rthandle::RTHandle;
 (crate::unity_engine::rendering::rthandle::RTHandle)::core::convert::Into::into(tex))}
@@ -50,8 +63,7 @@ pub use __types::*;
 (RTHandleSystem)__receiver)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <RTHandleSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30adbd0usize)as*mut u8,();
-(RTHandleSystem)__receiver)}
+__RTHandleSystem_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Initialize(i32, i32, bool, crate::unity_engine::rendering::msaasamples::MSAASamples)` overload"]fn initialize(self,width:impl::core::convert::Into<i32> ,height:impl::core::convert::Into<i32> ,scaled_r_tsupports_msaa:impl::core::convert::Into<bool> ,scaled_rtmsaa_samples:impl::core::convert::Into<crate::unity_engine::rendering::msaasamples::MSAASamples>)->(){unsafe{let __receiver= <RTHandleSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30adda0usize)as*mut u8,();
@@ -183,10 +195,10 @@ this}
 #[cfg(feature = "unity_engine-rendering-rthandlesystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RTHandleSystem_ResizeMode;
     pub use super::RTHandleSystem;
     pub use super::IRTHandleSystem;
     pub use super::IRTHandleSystemMethods;
+    pub use super::RTHandleSystem_ResizeMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

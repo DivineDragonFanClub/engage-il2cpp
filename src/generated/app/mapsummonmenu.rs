@@ -29,6 +29,59 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapsummonmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapsummonmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSummonMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_flag_id(this:MapSummonMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <MapSummonMenu as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let inner:extern "C" fn(MapSummonMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:MapSummonMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MapSummonMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MapSummonMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapSummonMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSummonMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapSummonMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:MapSummonMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <MapSummonMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(MapSummonMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn tick(this:MapSummonMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <MapSummonMenu as::unity2::ClassIdentity> ::NAME,"Tick",));
+let inner:extern "C" fn(MapSummonMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapsummonmenu")]impl MapSummonMenu{#[doc="`CreateSummonBind(crate::app::procinst::ProcInst)` overload"]pub fn create_summon_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f51dd0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -45,24 +98,19 @@ pub use __types::*;
 (MapSummonMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::mapunitcommandmenucontent::MapUnitCommandMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSummonMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51bf0usize)as*mut u8, ::unity2::Il2CppString;
-(MapSummonMenu)__receiver)}
+__MapSummonMenu_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSummonMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51c40usize)as*mut u8, ::unity2::Il2CppString;
-(MapSummonMenu)__receiver)}
+__MapSummonMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSummonMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51c90usize)as*mut u8,();
-(MapSummonMenu)__receiver)}
+__MapSummonMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSummonMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51d10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MapSummonMenu)__receiver)}
+__MapSummonMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <MapSummonMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f51da0usize)as*mut u8,();
-(MapSummonMenu)__receiver)}
+__MapSummonMenu_unity2_raw::tick(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -86,49 +134,133 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-mapsummonmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSummonMenu_SummonColorMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_flag_id(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"get_FlagID",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_deselect(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_cursor_move_end(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"OnCursorMoveEnd",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_command_help(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"GetCommandHelp",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_map_attribute(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"GetMapAttribute",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MapSummonMenu_SummonColorMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSummonMenu_SummonColorMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MapSummonMenu_SummonColorMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapsummonmenu")]pub trait IMapSummonMenu_SummonColorMenuItemMethods:IMapSummonMenu_SummonColorMenuItem{#[doc="`get_FlagID()` overload"]fn get_flag_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e8d0usize)as*mut u8, ::unity2::Il2CppString;
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::get_flag_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e920usize)as*mut u8,();
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3ead0usize)as*mut u8,();
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3ebc0usize)as*mut u8,();
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3ecb0usize)as*mut u8,();
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::app::persondata::PersonData_Colors)` overload"]fn ctor(self,color:impl::core::convert::Into<crate::app::persondata::PersonData_Colors>)->(){unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3eda0usize)as*mut u8,();
 (MapSummonMenu_SummonColorMenuItem)__receiver,(crate::app::persondata::PersonData_Colors)::core::convert::Into::into(color))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3edd0usize)as*mut u8, ::unity2::Il2CppString;
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCommandHelp()` overload"]fn get_command_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3ef30usize)as*mut u8, ::unity2::Il2CppString;
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::get_command_help(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetupHelpText()` overload"]fn setup_help_text(self,)->(){unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e9c0usize)as*mut u8,();
 (MapSummonMenu_SummonColorMenuItem)__receiver)}
 }
 #[doc="`GetMapAttribute()` overload"]fn get_map_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f090usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::get_map_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapSummonMenu_SummonColorMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3f0a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MapSummonMenu_SummonColorMenuItem)__receiver)}
+__MapSummonMenu_SummonColorMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 

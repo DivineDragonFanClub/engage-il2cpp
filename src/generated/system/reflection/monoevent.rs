@@ -22,53 +22,164 @@ use crate::system::reflection::runtimeeventinfo::{IRuntimeEventInfo,RuntimeEvent
 #[cfg(feature = "system-reflection-monoevent-types")]
 pub use __types::*;
 
+#[cfg(feature="system-reflection-monoevent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MonoEvent_unity2_raw{use super:: * ;
+pub unsafe fn get_attributes(this:MonoEvent,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::eventattributes::EventAttributes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"get_Attributes",));
+let inner:extern "C" fn(MonoEvent, ::unity2::OptionalMethod,)->crate::system::reflection::eventattributes::EventAttributes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_add_method(this:MonoEvent,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"GetAddMethod",));
+let inner:extern "C" fn(MonoEvent,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn get_raise_method(this:MonoEvent,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"GetRaiseMethod",));
+let inner:extern "C" fn(MonoEvent,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn get_remove_method(this:MonoEvent,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"GetRemoveMethod",));
+let inner:extern "C" fn(MonoEvent,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn get_declaring_type(this:MonoEvent,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"get_DeclaringType",));
+let inner:extern "C" fn(MonoEvent, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_reflected_type(this:MonoEvent,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"get_ReflectedType",));
+let inner:extern "C" fn(MonoEvent, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:MonoEvent,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(MonoEvent, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:MonoEvent,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(MonoEvent, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_defined(this:MonoEvent,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"IsDefined",));
+let inner:extern "C" fn(MonoEvent, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn get_custom_attributes(this:MonoEvent,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let inner:extern "C" fn(MonoEvent,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inherit,__mi)}
+pub unsafe fn get_custom_attributes_2(this:MonoEvent,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let inner:extern "C" fn(MonoEvent, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn get_custom_attributes_data(this:MonoEvent,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MonoEvent as::unity2::ClassIdentity> ::NAME,"GetCustomAttributesData",));
+let inner:extern "C" fn(MonoEvent, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-reflection-monoevent")]pub trait IMonoEventMethods:IMonoEvent{#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::eventattributes::EventAttributes{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337ec10usize)as*mut u8,crate::system::reflection::eventattributes::EventAttributes;
-(MonoEvent)__receiver)}
+__MonoEvent_unity2_raw::get_attributes(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetAddMethod(bool)` overload"]fn get_add_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337ecb0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(MonoEvent)__receiver,(bool)::core::convert::Into::into(non_public))}
+__MonoEvent_unity2_raw::get_add_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
 }
 #[doc="`GetRaiseMethod(bool)` overload"]fn get_raise_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337ed40usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(MonoEvent)__receiver,(bool)::core::convert::Into::into(non_public))}
+__MonoEvent_unity2_raw::get_raise_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
 }
 #[doc="`GetRemoveMethod(bool)` overload"]fn get_remove_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337edd0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(MonoEvent)__receiver,(bool)::core::convert::Into::into(non_public))}
+__MonoEvent_unity2_raw::get_remove_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
 }
 #[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337ee60usize)as*mut u8, ::unity2::SystemType;
-(MonoEvent)__receiver)}
+__MonoEvent_unity2_raw::get_declaring_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337eea0usize)as*mut u8, ::unity2::SystemType;
-(MonoEvent)__receiver)}
+__MonoEvent_unity2_raw::get_reflected_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337eee0usize)as*mut u8, ::unity2::Il2CppString;
-(MonoEvent)__receiver)}
+__MonoEvent_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337ef20usize)as*mut u8, ::unity2::Il2CppString;
-(MonoEvent)__receiver)}
+__MonoEvent_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337efb0usize)as*mut u8,bool;
-(MonoEvent)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__MonoEvent_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337f030usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(MonoEvent)__receiver,(bool)::core::convert::Into::into(inherit))}
+__MonoEvent_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337f0a0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(MonoEvent)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__MonoEvent_unity2_raw::get_custom_attributes_2(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributesData()` overload"]fn get_custom_attributes_data(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x337f120usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> ;
-(MonoEvent)__receiver)}
+__MonoEvent_unity2_raw::get_custom_attributes_data(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MonoEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x337f130usize)as*mut u8,();

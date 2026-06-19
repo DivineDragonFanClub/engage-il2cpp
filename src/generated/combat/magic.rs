@@ -26,6 +26,49 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-magic-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-magic")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Magic_unity2_raw{use super:: * ;
+pub unsafe fn recalc_flying_time(this:Magic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Magic as::unity2::ClassIdentity> ::NAME,"RecalcFlyingTime",));
+let inner:extern "C" fn(Magic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_character_setup(this:Magic,owner:crate::combat::character::Character,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Magic as::unity2::ClassIdentity> ::NAME,"OnCharacterSetup",));
+let inner:extern "C" fn(Magic,crate::combat::character::Character, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,owner,__mi)}
+pub unsafe fn on_enter_attack(this:Magic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Magic as::unity2::ClassIdentity> ::NAME,"OnEnterAttack",));
+let inner:extern "C" fn(Magic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_hit_time_predicted(this:Magic,world_hit_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Magic as::unity2::ClassIdentity> ::NAME,"OnHitTimePredicted",));
+let inner:extern "C" fn(Magic,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,world_hit_time,__mi)}
+}
+
 #[cfg(feature="combat-magic")]pub trait IMagicMethods:IMagic{#[doc="`get_InitialStartPos()` overload"]fn get_initial_start_pos(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf17d0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
 (Magic)__receiver)}
@@ -59,20 +102,16 @@ pub use __types::*;
 (Magic)__receiver)}
 }
 #[doc="`RecalcFlyingTime()` overload"]fn recalc_flying_time(self,)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1b90usize)as*mut u8,();
-(Magic)__receiver)}
+__Magic_unity2_raw::recalc_flying_time(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCharacterSetup(crate::combat::character::Character)` overload"]fn on_character_setup(self,owner:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1d90usize)as*mut u8,();
-(Magic)__receiver,(crate::combat::character::Character)::core::convert::Into::into(owner))}
+__Magic_unity2_raw::on_character_setup(__receiver, ::core::convert::Into::into(owner), ::core::option::Option::None)}
 }
 #[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1da0usize)as*mut u8,();
-(Magic)__receiver)}
+__Magic_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnHitTimePredicted(f32)` overload"]fn on_hit_time_predicted(self,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf1f50usize)as*mut u8,();
-(Magic)__receiver,(f32)::core::convert::Into::into(world_hit_time))}
+__Magic_unity2_raw::on_hit_time_predicted(__receiver, ::core::convert::Into::into(world_hit_time), ::core::option::Option::None)}
 }
 #[doc="`OnHitMagicSwordHit()` overload"]fn on_hit_magic_sword_hit(self,)->(){unsafe{let __receiver= <Magic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bf25b0usize)as*mut u8,();

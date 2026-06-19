@@ -18,6 +18,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-talk3_d-talkkeywait-types")]
 pub use __types::*;
 
+#[cfg(feature="app-talk3_d-talkkeywait")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkKeyWait_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:TalkKeyWait,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TalkKeyWait as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(TalkKeyWait, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:TalkKeyWait,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TalkKeyWait as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(TalkKeyWait, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_shutdown(this:TalkKeyWait,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <TalkKeyWait as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(TalkKeyWait, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-talk3_d-talkkeywait")]impl TalkKeyWait{#[doc="`CreateInstBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString)` overload"]pub fn create_inst_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::talk3_d::talkkeywait::TalkKeyWait{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c0070usize)as*mut u8,crate::app::talk3_d::talkkeywait::TalkKeyWait;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(parent),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
 }
@@ -28,20 +61,17 @@ pub use __types::*;
 (TalkKeyWait)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20bf7d0usize)as*mut u8,();
-(TalkKeyWait)__receiver)}
+__TalkKeyWait_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20bf850usize)as*mut u8,();
-(TalkKeyWait)__receiver)}
+__TalkKeyWait_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20bfa00usize)as*mut u8,();
 (TalkKeyWait)__receiver)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <TalkKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20c0060usize)as*mut u8,();
-(TalkKeyWait)__receiver)}
+__TalkKeyWait_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -28,16 +28,22 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="root-akobstructionocclusion")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkObstructionOcclusion_unity2_raw{use super:: * ;
-pub unsafe fn update_current_listener_list(this:AkObstructionOcclusion,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UpdateCurrentListenerList").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UpdateCurrentListenerList", <AkObstructionOcclusion as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn update_current_listener_list(this:AkObstructionOcclusion,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkObstructionOcclusion as::unity2::ClassIdentity> ::NAME,"UpdateCurrentListenerList",));
 let inner:extern "C" fn(AkObstructionOcclusion, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_obstruction_occlusion(this:AkObstructionOcclusion,obs_occ_pair:crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetObstructionOcclusion").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetObstructionOcclusion", <AkObstructionOcclusion as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_obstruction_occlusion(this:AkObstructionOcclusion,obs_occ_pair:crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkObstructionOcclusion as::unity2::ClassIdentity> ::NAME,"SetObstructionOcclusion",));
 let inner:extern "C" fn(AkObstructionOcclusion,crate::system::collections::generic::keyvaluepair_2::KeyValuePair_2<crate::root::akaudiolistener::AkAudioListener,crate::root::akobstructionocclusion::AkObstructionOcclusion_ObstructionOcclusionValue> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

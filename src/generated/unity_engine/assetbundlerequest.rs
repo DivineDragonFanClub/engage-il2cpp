@@ -22,9 +22,21 @@ use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
 #[cfg(feature = "unity_engine-assetbundlerequest-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-assetbundlerequest")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetBundleRequest_unity2_raw{use super:: * ;
+pub unsafe fn get_result(this:AssetBundleRequest,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AssetBundleRequest as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let inner:extern "C" fn(AssetBundleRequest, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-assetbundlerequest")]pub trait IAssetBundleRequestMethods:IAssetBundleRequest{#[doc="`GetResult()` overload"]fn get_result(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <AssetBundleRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42940usize)as*mut u8,crate::unity_engine::object_2::Object_2;
-(AssetBundleRequest)__receiver)}
+__AssetBundleRequest_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_asset()` overload"]fn get_asset(self,)->crate::unity_engine::object_2::Object_2{unsafe{let __receiver= <AssetBundleRequest as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42990usize)as*mut u8,crate::unity_engine::object_2::Object_2;

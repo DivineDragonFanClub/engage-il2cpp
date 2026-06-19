@@ -41,116 +41,116 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"CheckFileIsNotClosed",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_eof{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"Eof",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Eof",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_line{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"ReadLine",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"ReadLine",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_to_end{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"ReadToEnd",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"ReadToEnd",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_buffer{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"ReadBuffer",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"ReadBuffer",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_peek{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"Peek",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Peek",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_write{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"Write",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Write",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_close{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"Close",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Close",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_flush{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"flush",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"flush",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_seek{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <i64 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"seek",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"seek",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_setvbuf{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"setvbuf",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"setvbuf",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_isopen{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),"isopen",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"isopen",e),}
-}
-}
+pub unsafe fn eof(this:StreamFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Eof",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_line(this:StreamFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"ReadLine",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_to_end(this:StreamFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"ReadToEnd",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_buffer(this:StreamFileUserDataBase,p:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"ReadBuffer",));
+let inner:extern "C" fn(StreamFileUserDataBase,i32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,p,__mi)}
+pub unsafe fn peek(this:StreamFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Peek",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write(this:StreamFileUserDataBase,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn close(this:StreamFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Close",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn flush(this:StreamFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"flush",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn seek(this:StreamFileUserDataBase,whence: ::unity2::Il2CppString,offset:i64,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"seek",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::Il2CppString,i64, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,whence,offset,__mi)}
+pub unsafe fn setvbuf(this:StreamFileUserDataBase,mode: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"setvbuf",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mode,__mi)}
+pub unsafe fn isopen(this:StreamFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <StreamFileUserDataBase as::unity2::ClassIdentity> ::NAME,"isopen",));
+let inner:extern "C" fn(StreamFileUserDataBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<StreamFileUserDataBase as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -172,48 +172,37 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (StreamFileUserDataBase)__receiver)}
 }
 #[doc="`Eof()` overload"]fn eof(self,)->bool{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_eof::get_method_info().method_ptr,bool;
-(StreamFileUserDataBase)__receiver)}
+__StreamFileUserDataBase_unity2_raw::eof(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_read_line::get_method_info().method_ptr, ::unity2::Il2CppString;
-(StreamFileUserDataBase)__receiver)}
+__StreamFileUserDataBase_unity2_raw::read_line(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_read_to_end::get_method_info().method_ptr, ::unity2::Il2CppString;
-(StreamFileUserDataBase)__receiver)}
+__StreamFileUserDataBase_unity2_raw::read_to_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadBuffer(i32)` overload"]fn read_buffer(self,p:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_read_buffer::get_method_info().method_ptr, ::unity2::Il2CppString;
-(StreamFileUserDataBase)__receiver,(i32)::core::convert::Into::into(p))}
+__StreamFileUserDataBase_unity2_raw::read_buffer(__receiver, ::core::convert::Into::into(p), ::core::option::Option::None)}
 }
 #[doc="`Peek()` overload"]fn peek(self,)->u16{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_peek::get_method_info().method_ptr,u16;
-(StreamFileUserDataBase)__receiver)}
+__StreamFileUserDataBase_unity2_raw::peek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Il2CppString)` overload"]fn write(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_write::get_method_info().method_ptr,();
-(StreamFileUserDataBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__StreamFileUserDataBase_unity2_raw::write(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Close()` overload"]fn close(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_close::get_method_info().method_ptr, ::unity2::Il2CppString;
-(StreamFileUserDataBase)__receiver)}
+__StreamFileUserDataBase_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`flush()` overload"]fn flush(self,)->bool{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_flush::get_method_info().method_ptr,bool;
-(StreamFileUserDataBase)__receiver)}
+__StreamFileUserDataBase_unity2_raw::flush(__receiver, ::core::option::Option::None)}
 }
 #[doc="`seek(::unity2::Il2CppString, i64)` overload"]fn seek(self,whence:impl::core::convert::Into< ::unity2::Il2CppString> ,offset:impl::core::convert::Into<i64>)->i64{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_seek::get_method_info().method_ptr,i64;
-(StreamFileUserDataBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(whence),(i64)::core::convert::Into::into(offset))}
+__StreamFileUserDataBase_unity2_raw::seek(__receiver, ::core::convert::Into::into(whence), ::core::convert::Into::into(offset), ::core::option::Option::None)}
 }
 #[doc="`setvbuf(::unity2::Il2CppString)` overload"]fn setvbuf(self,mode:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_setvbuf::get_method_info().method_ptr,bool;
-(StreamFileUserDataBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mode))}
+__StreamFileUserDataBase_unity2_raw::setvbuf(__receiver, ::core::convert::Into::into(mode), ::core::option::Option::None)}
 }
 #[doc="`isopen()` overload"]fn isopen(self,)->bool{unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_isopen::get_method_info().method_ptr,bool;
-(StreamFileUserDataBase)__receiver)}
+__StreamFileUserDataBase_unity2_raw::isopen(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StreamFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__StreamFileUserDataBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

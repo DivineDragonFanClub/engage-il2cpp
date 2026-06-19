@@ -31,13 +31,25 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-accessoryshopchangeroot-types")]
 pub use __types::*;
 
+#[cfg(feature="app-accessoryshopchangeroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRoot_ReturnEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopChangeRoot_ReturnEventHandler,unit:crate::app::unit::Unit,changed:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeRoot_ReturnEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopChangeRoot_ReturnEventHandler,crate::app::unit::Unit,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit,changed,__mi)}
+}
+
 #[cfg(feature="app-accessoryshopchangeroot")]pub trait IAccessoryShopChangeRoot_ReturnEventHandlerMethods:IAccessoryShopChangeRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2904b50usize)as*mut u8,();
 (AccessoryShopChangeRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::unit::Unit, bool)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,changed:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AccessoryShopChangeRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2904b70usize)as*mut u8,();
-(AccessoryShopChangeRoot_ReturnEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(changed))}
+__AccessoryShopChangeRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(changed), ::core::option::Option::None)}
 }
 }
 

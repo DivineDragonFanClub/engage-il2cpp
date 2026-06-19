@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapgodexp/MapGodExp.md"))]#[::unity2::class(namespace="App",name="MapGodExp")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapgodexp::MapGodExp>)]pub struct MapGodExp{#[offset(32)]#[rename(name="m_AddFlag")]pub m_add_flag:crate::app::bitfield32::BitField32, #[offset(40)]#[rename(name="m_CommitUnit")]pub m_commit_unit:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_CommitGodUnit")]pub m_commit_god_unit:crate::app::godunit::GodUnit, #[offset(56)]#[rename(name="m_Exp")]pub m_exp:i32, #[offset(60)]#[rename(name="m_Dirty")]pub m_dirty:i32, #[static_field]#[rename(name="KindDescs")]pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc> , #[static_field]#[rename(name="EngageParamNameSuffix")]pub engage_param_name_suffix: ::unity2::Il2CppString, #[static_field]#[rename(name="RingDirtyKindDescs")]pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapgodexp/MapGodExp_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapGodExp_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for MapGodExp_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapGodExp.Kinds";
@@ -54,10 +51,25 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for MapGodExp_KindDesc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapgodexp/MapGodExp.md"))]#[::unity2::class(namespace="App",name="MapGodExp")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapgodexp::MapGodExp>)]pub struct MapGodExp{#[offset(32)]#[rename(name="m_AddFlag")]pub m_add_flag:crate::app::bitfield32::BitField32, #[offset(40)]#[rename(name="m_CommitUnit")]pub m_commit_unit:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_CommitGodUnit")]pub m_commit_god_unit:crate::app::godunit::GodUnit, #[offset(56)]#[rename(name="m_Exp")]pub m_exp:i32, #[offset(60)]#[rename(name="m_Dirty")]pub m_dirty:i32, #[static_field]#[rename(name="KindDescs")]pub kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc> , #[static_field]#[rename(name="EngageParamNameSuffix")]pub engage_param_name_suffix: ::unity2::Il2CppString, #[static_field]#[rename(name="RingDirtyKindDescs")]pub ring_dirty_kind_descs: ::unity2::Array<crate::app::mapgodexp::MapGodExp_KindDesc> ,}
+
 }
 
 #[cfg(feature = "app-mapgodexp-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapgodexp")]impl MapGodExp_KindDesc{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,param_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c8410usize)as*mut u8,();
+(*mut MapGodExp_KindDesc)self as*mut MapGodExp_KindDesc,(::unity2::Il2CppString)::core::convert::Into::into(param_name))}
+}
+#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]pub fn ctor_2(&mut self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_multi:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c8440usize)as*mut u8,();
+(*mut MapGodExp_KindDesc)self as*mut MapGodExp_KindDesc,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(bool)::core::convert::Into::into(is_multi))}
+}
+}
+
+#[cfg(feature="app-mapgodexp")]impl MapGodExp_KindDesc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
 
 #[cfg(feature="app-mapgodexp")]impl MapGodExp{#[doc="`GetMultiplier(crate::app::godunit::GodUnit)` overload"]pub fn get_multiplier(god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dca360usize)as*mut u8,f32;
 (crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
@@ -137,26 +149,14 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-mapgodexp")]impl MapGodExp_KindDesc{#[doc="`.ctor(::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,param_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c8410usize)as*mut u8,();
-(*mut MapGodExp_KindDesc)self as*mut MapGodExp_KindDesc,(::unity2::Il2CppString)::core::convert::Into::into(param_name))}
-}
-#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]pub fn ctor_2(&mut self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_multi:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24c8440usize)as*mut u8,();
-(*mut MapGodExp_KindDesc)self as*mut MapGodExp_KindDesc,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(bool)::core::convert::Into::into(is_multi))}
-}
-}
-
-#[cfg(feature="app-mapgodexp")]impl MapGodExp_KindDesc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
 #[cfg(feature = "app-mapgodexp")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapGodExp_Kinds;
+    pub use super::MapGodExp_KindDesc;
     pub use super::MapGodExp;
     pub use super::IMapGodExp;
     pub use super::IMapGodExpMethods;
-    pub use super::MapGodExp_Kinds;
-    pub use super::MapGodExp_KindDesc;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

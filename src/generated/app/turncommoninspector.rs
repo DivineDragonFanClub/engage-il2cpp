@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-turncommoninspector-types")]
 pub use __types::*;
 
+#[cfg(feature="app-turncommoninspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TurnCommonInspector_unity2_raw{use super:: * ;
+pub unsafe fn is_eanble(this:TurnCommonInspector,turn:i32,force:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TurnCommonInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let inner:extern "C" fn(TurnCommonInspector,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,turn,force,__mi)}
+}
+
 #[cfg(feature="app-turncommoninspector")]pub trait ITurnCommonInspectorMethods:ITurnCommonInspector{#[doc="`.ctor(crate::app::mapinspector::MapInspector_Kind, ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::mapinspector::MapInspector_Kind> ,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <TurnCommonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22acb00usize)as*mut u8,();
 (TurnCommonInspector)__receiver,(crate::app::mapinspector::MapInspector_Kind)::core::convert::Into::into(kind),(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
 }
 #[doc="`IsEanble(i32, i32)` overload"]fn is_eanble(self,turn:impl::core::convert::Into<i32> ,force:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <TurnCommonInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22acd50usize)as*mut u8,bool;
-(TurnCommonInspector)__receiver,(i32)::core::convert::Into::into(turn),(i32)::core::convert::Into::into(force))}
+__TurnCommonInspector_unity2_raw::is_eanble(__receiver, ::core::convert::Into::into(turn), ::core::convert::Into::into(force), ::core::option::Option::None)}
 }
 }
 

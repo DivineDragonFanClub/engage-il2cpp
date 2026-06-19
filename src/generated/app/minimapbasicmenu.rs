@@ -22,29 +22,77 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-minimapbasicmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-minimapbasicmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MiniMapBasicMenu_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MiniMapBasicMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MiniMapBasicMenu as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MiniMapBasicMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:MiniMapBasicMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MiniMapBasicMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(MiniMapBasicMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MiniMapBasicMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MiniMapBasicMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MiniMapBasicMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_bind(this:MiniMapBasicMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MiniMapBasicMenu as::unity2::ClassIdentity> ::NAME,"OnBind",));
+let inner:extern "C" fn(MiniMapBasicMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_unbind(this:MiniMapBasicMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MiniMapBasicMenu as::unity2::ClassIdentity> ::NAME,"OnUnbind",));
+let inner:extern "C" fn(MiniMapBasicMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-minimapbasicmenu")]pub trait IMiniMapBasicMenuMethods:IMiniMapBasicMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent>)->(){unsafe{let __receiver= <MiniMapBasicMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25db740usize)as*mut u8,();
 (MiniMapBasicMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MiniMapBasicMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db750usize)as*mut u8,();
-(MiniMapBasicMenu)__receiver)}
+__MiniMapBasicMenu_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MiniMapBasicMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db780usize)as*mut u8,();
-(MiniMapBasicMenu)__receiver)}
+__MiniMapBasicMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MiniMapBasicMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db7b0usize)as*mut u8,();
-(MiniMapBasicMenu)__receiver)}
+__MiniMapBasicMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBind()` overload"]fn on_bind(self,)->(){unsafe{let __receiver= <MiniMapBasicMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db7e0usize)as*mut u8,();
-(MiniMapBasicMenu)__receiver)}
+__MiniMapBasicMenu_unity2_raw::on_bind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUnbind()` overload"]fn on_unbind(self,)->(){unsafe{let __receiver= <MiniMapBasicMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25db810usize)as*mut u8,();
-(MiniMapBasicMenu)__receiver)}
+__MiniMapBasicMenu_unity2_raw::on_unbind(__receiver, ::core::option::Option::None)}
 }
 }
 

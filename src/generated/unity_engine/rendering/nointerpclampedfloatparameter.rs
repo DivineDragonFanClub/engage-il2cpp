@@ -20,13 +20,34 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-nointerpclampedfloatparameter-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-nointerpclampedfloatparameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoInterpClampedFloatParameter_unity2_raw{use super:: * ;
+pub unsafe fn get_value(this:NoInterpClampedFloatParameter,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <NoInterpClampedFloatParameter as::unity2::ClassIdentity> ::NAME,"get_value",));
+let inner:extern "C" fn(NoInterpClampedFloatParameter, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_value(this:NoInterpClampedFloatParameter,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <NoInterpClampedFloatParameter as::unity2::ClassIdentity> ::NAME,"set_value",));
+let inner:extern "C" fn(NoInterpClampedFloatParameter,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-nointerpclampedfloatparameter")]pub trait INoInterpClampedFloatParameterMethods:INoInterpClampedFloatParameter{#[doc="`get_value()` overload"]fn get_value(self,)->f32{unsafe{let __receiver= <NoInterpClampedFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd70usize)as*mut u8,f32;
-(NoInterpClampedFloatParameter)__receiver)}
+__NoInterpClampedFloatParameter_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_value(f32)` overload"]fn set_value(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <NoInterpClampedFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30abd80usize)as*mut u8,();
-(NoInterpClampedFloatParameter)__receiver,(f32)::core::convert::Into::into(value))}
+__NoInterpClampedFloatParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(f32, f32, f32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<f32> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpClampedFloatParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30abdb0usize)as*mut u8,();

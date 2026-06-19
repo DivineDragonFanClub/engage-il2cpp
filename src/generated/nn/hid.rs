@@ -151,13 +151,13 @@
  #[cfg(feature="nn-hid-touchscreenstate1-types")]pub use touchscreenstate1::{TouchScreenState1_TouchStateArray1,TouchScreenState1}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate10-types"))]pub mod touchscreenstate10;
- #[cfg(feature="nn-hid-touchscreenstate10-types")]pub use touchscreenstate10::{TouchScreenState10_TouchStateArray10,TouchScreenState10}
+ #[cfg(feature="nn-hid-touchscreenstate10-types")]pub use touchscreenstate10::{TouchScreenState10,TouchScreenState10_TouchStateArray10}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate11-types"))]pub mod touchscreenstate11;
- #[cfg(feature="nn-hid-touchscreenstate11-types")]pub use touchscreenstate11::{TouchScreenState11_TouchStateArray11,TouchScreenState11}
+ #[cfg(feature="nn-hid-touchscreenstate11-types")]pub use touchscreenstate11::{TouchScreenState11,TouchScreenState11_TouchStateArray11}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate12-types"))]pub mod touchscreenstate12;
- #[cfg(feature="nn-hid-touchscreenstate12-types")]pub use touchscreenstate12::{TouchScreenState12_TouchStateArray12,TouchScreenState12}
+ #[cfg(feature="nn-hid-touchscreenstate12-types")]pub use touchscreenstate12::{TouchScreenState12,TouchScreenState12_TouchStateArray12}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate13-types"))]pub mod touchscreenstate13;
  #[cfg(feature="nn-hid-touchscreenstate13-types")]pub use touchscreenstate13::{TouchScreenState13_TouchStateArray13,TouchScreenState13}
@@ -166,7 +166,7 @@
  #[cfg(feature="nn-hid-touchscreenstate14-types")]pub use touchscreenstate14::{TouchScreenState14,TouchScreenState14_TouchStateArray14}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate15-types"))]pub mod touchscreenstate15;
- #[cfg(feature="nn-hid-touchscreenstate15-types")]pub use touchscreenstate15::{TouchScreenState15,TouchScreenState15_TouchStateArray15}
+ #[cfg(feature="nn-hid-touchscreenstate15-types")]pub use touchscreenstate15::{TouchScreenState15_TouchStateArray15,TouchScreenState15}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate16-types"))]pub mod touchscreenstate16;
  #[cfg(feature="nn-hid-touchscreenstate16-types")]pub use touchscreenstate16::{TouchScreenState16,TouchScreenState16_TouchStateArray16}
@@ -181,13 +181,13 @@
  #[cfg(feature="nn-hid-touchscreenstate4-types")]pub use touchscreenstate4::{TouchScreenState4_TouchStateArray4,TouchScreenState4}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate5-types"))]pub mod touchscreenstate5;
- #[cfg(feature="nn-hid-touchscreenstate5-types")]pub use touchscreenstate5::{TouchScreenState5_TouchStateArray5,TouchScreenState5}
+ #[cfg(feature="nn-hid-touchscreenstate5-types")]pub use touchscreenstate5::{TouchScreenState5,TouchScreenState5_TouchStateArray5}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate6-types"))]pub mod touchscreenstate6;
- #[cfg(feature="nn-hid-touchscreenstate6-types")]pub use touchscreenstate6::{TouchScreenState6,TouchScreenState6_TouchStateArray6}
+ #[cfg(feature="nn-hid-touchscreenstate6-types")]pub use touchscreenstate6::{TouchScreenState6_TouchStateArray6,TouchScreenState6}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate7-types"))]pub mod touchscreenstate7;
- #[cfg(feature="nn-hid-touchscreenstate7-types")]pub use touchscreenstate7::{TouchScreenState7_TouchStateArray7,TouchScreenState7}
+ #[cfg(feature="nn-hid-touchscreenstate7-types")]pub use touchscreenstate7::{TouchScreenState7,TouchScreenState7_TouchStateArray7}
 ;
  #[cfg(any(feature="nn-hid-touchscreenstate8-types"))]pub mod touchscreenstate8;
  #[cfg(feature="nn-hid-touchscreenstate8-types")]pub use touchscreenstate8::{TouchScreenState8_TouchStateArray8,TouchScreenState8}

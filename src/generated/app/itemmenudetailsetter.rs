@@ -21,6 +21,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemmenudetailsetter/ItemMenuDetailSetter.md"))]#[::unity2::class(namespace="App",name="ItemMenuDetailSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ItemMenuDetailSetter{#[offset(24)]#[rename(name="m_MenuTitle")]pub m_menu_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_ContentsTitle")]pub m_contents_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TitleAtk")]pub m_title_atk:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_ValueAtk")]pub m_value_atk:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_IconAtk")]pub m_icon_atk:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_TitleHit")]pub m_title_hit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_ValueHit")]pub m_value_hit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_IconHit")]pub m_icon_hit:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_TitleCrit")]pub m_title_crit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_ValueCrit")]pub m_value_crit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_IconCrit")]pub m_icon_crit:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_TitleAvo")]pub m_title_avo:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_ValueAvo")]pub m_value_avo:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_IconAvo")]pub m_icon_avo:crate::unity_engine::ui::image::Image, #[offset(136)]#[rename(name="m_ObjectSpd")]pub m_object_spd:crate::unity_engine::gameobject::GameObject, #[offset(144)]#[rename(name="m_TitleSpd")]pub m_title_spd:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(152)]#[rename(name="m_ValueSpd")]pub m_value_spd:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_IconSpd")]pub m_icon_spd:crate::unity_engine::ui::image::Image, #[offset(168)]#[rename(name="m_ObjectWeight")]pub m_object_weight:crate::unity_engine::gameobject::GameObject, #[offset(176)]#[rename(name="m_TitleWeight")]pub m_title_weight:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_ValueWeight")]pub m_value_weight:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_IconWeight")]pub m_icon_weight:crate::unity_engine::ui::image::Image, #[offset(200)]#[rename(name="m_TitleRange")]pub m_title_range:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_ValueRange")]pub m_value_range:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_TitleSecure")]pub m_title_secure:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(224)]#[rename(name="m_ValueSecure")]pub m_value_secure:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(232)]#[rename(name="m_IconSecure")]pub m_icon_secure:crate::unity_engine::ui::image::Image, #[offset(240)]#[rename(name="m_TitleWeaponLevel")]pub m_title_weapon_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_ValueWeaponLevel")]pub m_value_weapon_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_IconWeaponLevel")]pub m_icon_weapon_level:crate::unity_engine::ui::image::Image, #[offset(264)]#[rename(name="m_WeaponLevelNothing")]pub m_weapon_level_nothing:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_TitleEfficacy")]pub m_title_efficacy:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_EfficacyIcons")]pub m_efficacy_icons: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(288)]#[rename(name="m_EfficacyNothing")]pub m_efficacy_nothing:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_ContentsText")]pub m_contents_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_ContentsEngWep")]pub m_contents_eng_wep:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(312)]#[rename(name="m_ContentsEnchant")]pub m_contents_enchant:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(320)]#[rename(name="m_ContentsSubText")]pub m_contents_sub_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(336)]#[rename(name="m_ContentsTitleMID")]pub m_contents_title_mid: ::unity2::Il2CppString, #[offset(344)]#[rename(name="m_AtkTitleMID")]pub m_atk_title_mid: ::unity2::Il2CppString, #[offset(352)]#[rename(name="m_ColorValueAtk")]pub m_color_value_atk:crate::unity_engine::color::Color, #[offset(368)]#[rename(name="m_ColorValueHit")]pub m_color_value_hit:crate::unity_engine::color::Color, #[offset(384)]#[rename(name="m_ColorValueCrit")]pub m_color_value_crit:crate::unity_engine::color::Color, #[offset(400)]#[rename(name="m_ColorValueAvo")]pub m_color_value_avo:crate::unity_engine::color::Color, #[offset(416)]#[rename(name="m_ColorValueSpd")]pub m_color_value_spd:crate::unity_engine::color::Color, #[offset(432)]#[rename(name="m_ColorValueWeight")]pub m_color_value_weight:crate::unity_engine::color::Color, #[offset(448)]#[rename(name="m_ColorValueSecure")]pub m_color_value_secure:crate::unity_engine::color::Color, #[offset(464)]#[rename(name="m_TmpUnit")]pub m_tmp_unit:crate::app::unit::Unit, #[offset(472)]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo, #[offset(480)]#[rename(name="m_TmpBattleInfo")]pub m_tmp_battle_info:crate::app::battleinfo::BattleInfo,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemmenudetailsetter/ItemMenuDetailSetter_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ItemMenuDetailSetter_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for ItemMenuDetailSetter_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ItemMenuDetailSetter.Kind";
@@ -44,13 +47,63 @@ pub fn secure()->Self{Self{value:5}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemmenudetailsetter/ItemMenuDetailSetter.md"))]#[::unity2::class(namespace="App",name="ItemMenuDetailSetter")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ItemMenuDetailSetter{#[offset(24)]#[rename(name="m_MenuTitle")]pub m_menu_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_ContentsTitle")]pub m_contents_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TitleAtk")]pub m_title_atk:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_ValueAtk")]pub m_value_atk:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_IconAtk")]pub m_icon_atk:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_TitleHit")]pub m_title_hit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_ValueHit")]pub m_value_hit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_IconHit")]pub m_icon_hit:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_TitleCrit")]pub m_title_crit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_ValueCrit")]pub m_value_crit:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(104)]#[rename(name="m_IconCrit")]pub m_icon_crit:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_TitleAvo")]pub m_title_avo:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(120)]#[rename(name="m_ValueAvo")]pub m_value_avo:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_IconAvo")]pub m_icon_avo:crate::unity_engine::ui::image::Image, #[offset(136)]#[rename(name="m_ObjectSpd")]pub m_object_spd:crate::unity_engine::gameobject::GameObject, #[offset(144)]#[rename(name="m_TitleSpd")]pub m_title_spd:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(152)]#[rename(name="m_ValueSpd")]pub m_value_spd:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_IconSpd")]pub m_icon_spd:crate::unity_engine::ui::image::Image, #[offset(168)]#[rename(name="m_ObjectWeight")]pub m_object_weight:crate::unity_engine::gameobject::GameObject, #[offset(176)]#[rename(name="m_TitleWeight")]pub m_title_weight:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_ValueWeight")]pub m_value_weight:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_IconWeight")]pub m_icon_weight:crate::unity_engine::ui::image::Image, #[offset(200)]#[rename(name="m_TitleRange")]pub m_title_range:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_ValueRange")]pub m_value_range:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_TitleSecure")]pub m_title_secure:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(224)]#[rename(name="m_ValueSecure")]pub m_value_secure:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(232)]#[rename(name="m_IconSecure")]pub m_icon_secure:crate::unity_engine::ui::image::Image, #[offset(240)]#[rename(name="m_TitleWeaponLevel")]pub m_title_weapon_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_ValueWeaponLevel")]pub m_value_weapon_level:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_IconWeaponLevel")]pub m_icon_weapon_level:crate::unity_engine::ui::image::Image, #[offset(264)]#[rename(name="m_WeaponLevelNothing")]pub m_weapon_level_nothing:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_TitleEfficacy")]pub m_title_efficacy:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_EfficacyIcons")]pub m_efficacy_icons: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(288)]#[rename(name="m_EfficacyNothing")]pub m_efficacy_nothing:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(296)]#[rename(name="m_ContentsText")]pub m_contents_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_ContentsEngWep")]pub m_contents_eng_wep:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(312)]#[rename(name="m_ContentsEnchant")]pub m_contents_enchant:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(320)]#[rename(name="m_ContentsSubText")]pub m_contents_sub_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(336)]#[rename(name="m_ContentsTitleMID")]pub m_contents_title_mid: ::unity2::Il2CppString, #[offset(344)]#[rename(name="m_AtkTitleMID")]pub m_atk_title_mid: ::unity2::Il2CppString, #[offset(352)]#[rename(name="m_ColorValueAtk")]pub m_color_value_atk:crate::unity_engine::color::Color, #[offset(368)]#[rename(name="m_ColorValueHit")]pub m_color_value_hit:crate::unity_engine::color::Color, #[offset(384)]#[rename(name="m_ColorValueCrit")]pub m_color_value_crit:crate::unity_engine::color::Color, #[offset(400)]#[rename(name="m_ColorValueAvo")]pub m_color_value_avo:crate::unity_engine::color::Color, #[offset(416)]#[rename(name="m_ColorValueSpd")]pub m_color_value_spd:crate::unity_engine::color::Color, #[offset(432)]#[rename(name="m_ColorValueWeight")]pub m_color_value_weight:crate::unity_engine::color::Color, #[offset(448)]#[rename(name="m_ColorValueSecure")]pub m_color_value_secure:crate::unity_engine::color::Color, #[offset(464)]#[rename(name="m_TmpUnit")]pub m_tmp_unit:crate::app::unit::Unit, #[offset(472)]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo, #[offset(480)]#[rename(name="m_TmpBattleInfo")]pub m_tmp_battle_info:crate::app::battleinfo::BattleInfo,}
-
 }
 
 #[cfg(feature = "app-itemmenudetailsetter-types")]
 pub use __types::*;
+
+#[cfg(feature="app-itemmenudetailsetter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ItemMenuDetailSetter_unity2_raw{use super:: * ;
+pub unsafe fn set_data(this:ItemMenuDetailSetter,selected_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ItemMenuDetailSetter as::unity2::ClassIdentity> ::NAME,"SetData",));
+let inner:extern "C" fn(ItemMenuDetailSetter,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,selected_item,__mi)}
+pub unsafe fn set_data_2(this:ItemMenuDetailSetter,unit:crate::app::unit::Unit,selected_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ItemMenuDetailSetter as::unity2::ClassIdentity> ::NAME,"SetData",));
+let inner:extern "C" fn(ItemMenuDetailSetter,crate::app::unit::Unit,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit,selected_item,__mi)}
+pub unsafe fn set_data_3(this:ItemMenuDetailSetter,unit_item_base:crate::app::unititem::UnitItem,unit_item_target:crate::app::unititem::UnitItem,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ItemMenuDetailSetter as::unity2::ClassIdentity> ::NAME,"SetData",));
+let inner:extern "C" fn(ItemMenuDetailSetter,crate::app::unititem::UnitItem,crate::app::unititem::UnitItem,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit_item_base,unit_item_target,unit,__mi)}
+pub unsafe fn set_data_4(this:ItemMenuDetailSetter,unit_item:crate::app::unititem::UnitItem,kind:crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ItemMenuDetailSetter as::unity2::ClassIdentity> ::NAME,"SetData",));
+let inner:extern "C" fn(ItemMenuDetailSetter,crate::app::unititem::UnitItem,crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit_item,kind,value,__mi)}
+pub unsafe fn set_menu_title(this:ItemMenuDetailSetter,title: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ItemMenuDetailSetter as::unity2::ClassIdentity> ::NAME,"SetMenuTitle",));
+let inner:extern "C" fn(ItemMenuDetailSetter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,title,__mi)}
+}
 
 #[cfg(feature="app-itemmenudetailsetter")]pub trait IItemMenuDetailSetterMethods:IItemMenuDetailSetter{#[doc="`get_IsEnchantMode()` overload"]fn get_is_enchant_mode(self,)->bool{unsafe{let __receiver= <ItemMenuDetailSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2040dc0usize)as*mut u8,bool;
@@ -69,24 +122,19 @@ pub use __types::*;
 (ItemMenuDetailSetter)__receiver)}
 }
 #[doc="`SetData(crate::app::unititem::UnitItem)` overload"]fn set_data(self,selected_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <ItemMenuDetailSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2040f40usize)as*mut u8,();
-(ItemMenuDetailSetter)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(selected_item))}
+__ItemMenuDetailSetter_unity2_raw::set_data(__receiver, ::core::convert::Into::into(selected_item), ::core::option::Option::None)}
 }
 #[doc="`SetData(crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]fn set_data_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,selected_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <ItemMenuDetailSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2042910usize)as*mut u8,();
-(ItemMenuDetailSetter)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unititem::UnitItem)::core::convert::Into::into(selected_item))}
+__ItemMenuDetailSetter_unity2_raw::set_data_2(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(selected_item), ::core::option::Option::None)}
 }
 #[doc="`SetData(crate::app::unititem::UnitItem, crate::app::unititem::UnitItem, crate::app::unit::Unit)` overload"]fn set_data_3(self,unit_item_base:impl::core::convert::Into<crate::app::unititem::UnitItem> ,unit_item_target:impl::core::convert::Into<crate::app::unititem::UnitItem> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ItemMenuDetailSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2045e40usize)as*mut u8,();
-(ItemMenuDetailSetter)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item_base),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item_target),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+__ItemMenuDetailSetter_unity2_raw::set_data_3(__receiver, ::core::convert::Into::into(unit_item_base), ::core::convert::Into::into(unit_item_target), ::core::convert::Into::into(unit), ::core::option::Option::None)}
 }
 #[doc="`SetData(crate::app::unititem::UnitItem, crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind, i32)` overload"]fn set_data_4(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,kind:impl::core::convert::Into<crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ItemMenuDetailSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20481c0usize)as*mut u8,();
-(ItemMenuDetailSetter)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(crate::app::itemmenudetailsetter::ItemMenuDetailSetter_Kind)::core::convert::Into::into(kind),(i32)::core::convert::Into::into(value))}
+__ItemMenuDetailSetter_unity2_raw::set_data_4(__receiver, ::core::convert::Into::into(unit_item), ::core::convert::Into::into(kind), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`SetMenuTitle(::unity2::Il2CppString)` overload"]fn set_menu_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ItemMenuDetailSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2049730usize)as*mut u8,();
-(ItemMenuDetailSetter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+__ItemMenuDetailSetter_unity2_raw::set_menu_title(__receiver, ::core::convert::Into::into(title), ::core::option::Option::None)}
 }
 #[doc="`SetContentsText(::unity2::Il2CppString)` overload"]fn set_contents_text(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ItemMenuDetailSetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20497b0usize)as*mut u8,();
@@ -152,10 +200,10 @@ this}
 #[cfg(feature = "app-itemmenudetailsetter")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ItemMenuDetailSetter_Kind;
     pub use super::ItemMenuDetailSetter;
     pub use super::IItemMenuDetailSetter;
     pub use super::IItemMenuDetailSetterMethods;
+    pub use super::ItemMenuDetailSetter_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

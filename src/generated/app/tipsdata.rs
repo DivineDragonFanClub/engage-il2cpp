@@ -19,7 +19,22 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData.md"))]#[::unity2::class(namespace="App",name="TipsData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::tipsdata::TipsData>)]pub struct TipsData{#[offset(92)]#[rename(name="m_Kind")]pub m_kind:crate::app::tipsdata::TipsData_Kinds,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData_Allows.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TipsData_Allows{pub value:i32,}
+impl::unity2::ClassIdentity for TipsData_Allows{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TipsData.Allows";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TipsData_Allows{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TipsData_Allows{pub fn map()->Self{Self{value:1}
+}
+pub fn hub()->Self{Self{value:2}
+}
+pub fn gmap()->Self{Self{value:4}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TipsData_Kinds{pub value:i32,}
@@ -40,27 +55,35 @@ pub fn skill()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData_Allows.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TipsData_Allows{pub value:i32,}
-impl::unity2::ClassIdentity for TipsData_Allows{const NAMESPACE: &'static str="App";
-const NAME: &'static str="TipsData.Allows";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TipsData_Allows{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TipsData_Allows{pub fn map()->Self{Self{value:1}
-}
-pub fn hub()->Self{Self{value:2}
-}
-pub fn gmap()->Self{Self{value:4}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/tipsdata/TipsData.md"))]#[::unity2::class(namespace="App",name="TipsData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::tipsdata::TipsData>)]pub struct TipsData{#[offset(92)]#[rename(name="m_Kind")]pub m_kind:crate::app::tipsdata::TipsData_Kinds,}
 
 }
 
 #[cfg(feature = "app-tipsdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-tipsdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TipsData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:TipsData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TipsData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(TipsData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_release(this:TipsData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TipsData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let inner:extern "C" fn(TipsData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-tipsdata")]impl TipsData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21ebf80usize)as*mut u8,();
 )}
@@ -140,12 +163,10 @@ pub use __types::*;
 (TipsData)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec760usize)as*mut u8,();
-(TipsData)__receiver)}
+__TipsData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec810usize)as*mut u8,();
-(TipsData)__receiver)}
+__TipsData_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsCondition()` overload"]fn is_condition(self,)->bool{unsafe{let __receiver= <TipsData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ec820usize)as*mut u8,bool;
@@ -194,11 +215,11 @@ this}
 #[cfg(feature = "app-tipsdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TipsData_Allows;
+    pub use super::TipsData_Kinds;
     pub use super::TipsData;
     pub use super::ITipsData;
     pub use super::ITipsDataMethods;
-    pub use super::TipsData_Kinds;
-    pub use super::TipsData_Allows;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

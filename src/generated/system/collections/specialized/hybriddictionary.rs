@@ -16,17 +16,168 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-specialized-hybriddictionary-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-specialized-hybriddictionary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HybridDictionary_unity2_raw{use super:: * ;
+pub unsafe fn get_item(this:HybridDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let inner:extern "C" fn(HybridDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn set_item(this:HybridDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let inner:extern "C" fn(HybridDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,value,__mi)}
+pub unsafe fn get_count(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_keys(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_Keys",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_fixed_size(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sync_root(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_values(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"get_Values",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn add(this:HybridDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(HybridDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,value,__mi)}
+pub unsafe fn contains(this:HybridDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"Contains",));
+let inner:extern "C" fn(HybridDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn copy_to(this:HybridDictionary,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,index,__mi)}
+pub unsafe fn get_enumerator(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn system_collections_i_enumerable_get_enumerator(this:HybridDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
+let inner:extern "C" fn(HybridDictionary, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn remove(this:HybridDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <HybridDictionary as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(HybridDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+}
+
 #[cfg(feature="system-collections-specialized-hybriddictionary")]pub trait IHybridDictionaryMethods:IHybridDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34ab420usize)as*mut u8,();
 (HybridDictionary)__receiver)}
 }
 #[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34ab430usize)as*mut u8,crate::system::object::Object;
-(HybridDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__HybridDictionary_unity2_raw::get_item(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34ab4f0usize)as*mut u8,();
-(HybridDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+__HybridDictionary_unity2_raw::set_item(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_List()` overload"]fn get_list(self,)->crate::system::collections::specialized::listdictionary::ListDictionary{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34ab930usize)as*mut u8,crate::system::collections::specialized::listdictionary::ListDictionary;
@@ -37,56 +188,43 @@ pub use __types::*;
 (HybridDictionary)__receiver)}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34aba80usize)as*mut u8,i32;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abac0usize)as*mut u8,crate::system::collections::icollection::ICollection;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_keys(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abb00usize)as*mut u8,bool;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abb10usize)as*mut u8,bool;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_is_fixed_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abb20usize)as*mut u8,bool;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abb30usize)as*mut u8,crate::system::object::Object;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abb40usize)as*mut u8,crate::system::collections::icollection::ICollection;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_values(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abb80usize)as*mut u8,();
-(HybridDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+__HybridDictionary_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abd00usize)as*mut u8,bool;
-(HybridDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__HybridDictionary_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abdc0usize)as*mut u8,();
-(HybridDictionary)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+__HybridDictionary_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abe20usize)as*mut u8,crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34abf50usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(HybridDictionary)__receiver)}
+__HybridDictionary_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <HybridDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34ac080usize)as*mut u8,();
-(HybridDictionary)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__HybridDictionary_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 }
 

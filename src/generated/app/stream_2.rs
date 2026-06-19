@@ -11,6 +11,17 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stream_2/Stream_ReadScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Stream_ReadScope{pub m_stream:crate::app::stream_2::Stream_2,}
+impl::unity2::ClassIdentity for Stream_ReadScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Stream.ReadScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Stream_ReadScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stream_2/Stream_PositionScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Stream_PositionScope{pub m_stream:crate::app::stream_2::Stream_2,pub m_position:i32,}
 impl::unity2::ClassIdentity for Stream_PositionScope{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Stream.PositionScope";
@@ -25,17 +36,6 @@ impl::unity2::IlType for Stream_PositionScope{fn il_type()-> &'static::unity2::i
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stream_2/Stream_2.md"))]#[::unity2::class(namespace="App",name="Stream")]#[parent(crate::system::object::Object)]pub struct Stream_2{#[offset(32)]#[rename(name="m_Stack")]pub m_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::stream_2::Stream_Info> , #[static_field]#[rename(name="MAGIC_CODE")]pub magic_code:u32, #[static_field]#[rename(name="Magic_Number_Compress")]pub magic_number_compress:u64, #[static_field]#[rename(name="HashCode")]pub hash_code:u16, #[static_field]#[rename(name="NullCode")]pub null_code:u16,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stream_2/Stream_WriteScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Stream_WriteScope{pub m_stream:crate::app::stream_2::Stream_2,}
-impl::unity2::ClassIdentity for Stream_WriteScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Stream.WriteScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Stream_WriteScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stream_2/Stream_Info.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Stream_Info{pub position:i32,pub version:i32,pub size:i32,}
 impl::unity2::ClassIdentity for Stream_Info{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Stream.Info";
@@ -47,20 +47,40 @@ impl::unity2::IlType for Stream_Info{fn il_type()-> &'static::unity2::il2cpp::Il
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stream_2/Stream_ReadScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Stream_ReadScope{pub m_stream:crate::app::stream_2::Stream_2,}
-impl::unity2::ClassIdentity for Stream_ReadScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Stream.ReadScope";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/stream_2/Stream_WriteScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Stream_WriteScope{pub m_stream:crate::app::stream_2::Stream_2,}
+impl::unity2::ClassIdentity for Stream_WriteScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Stream.WriteScope";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for Stream_ReadScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for Stream_WriteScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
 
 #[cfg(feature = "app-stream_2-types")]
 pub use __types::*;
+
+#[cfg(feature="app-stream_2")]impl Stream_ReadScope{#[doc="`.ctor(crate::app::stream_2::Stream_2)` overload"]pub fn ctor(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f5890usize)as*mut u8,();
+(*mut Stream_ReadScope)self as*mut Stream_ReadScope,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f58f0usize)as*mut u8,();
+(*mut Stream_ReadScope)self as*mut Stream_ReadScope)}
+}
+#[doc="`get_Version()` overload"]pub fn get_version(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f5940usize)as*mut u8,i32;
+(*mut Stream_ReadScope)self as*mut Stream_ReadScope)}
+}
+#[doc="`set_Version(i32)` overload"]pub fn set_version(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f5950usize)as*mut u8,();
+(*mut Stream_ReadScope)self as*mut Stream_ReadScope,(i32)::core::convert::Into::into(value))}
+}
+}
+
+#[cfg(feature="app-stream_2")]impl Stream_ReadScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
 
 #[cfg(feature="app-stream_2")]impl Stream_PositionScope{#[doc="`.ctor(crate::app::stream_2::Stream_2, i32)` overload"]pub fn ctor(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,position:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f57e0usize)as*mut u8,();
 (*mut Stream_PositionScope)self as*mut Stream_PositionScope,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(position))}
@@ -72,6 +92,39 @@ pub use __types::*;
 
 #[cfg(feature="app-stream_2")]impl Stream_PositionScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-stream_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Stream_2_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <Stream_2 as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Stream_2 as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_hash_code(this:Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <Stream_2 as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(Stream_2, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-stream_2")]pub trait IStream_2Methods:IStream_2{#[doc="`get_m_Buffer()` overload"]fn get_m_buffer(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <Stream_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -107,16 +160,14 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 (Stream_2)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Stream_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2504cd0usize)as*mut u8,();
-(Stream_2)__receiver)}
+__Stream_2_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Setup(i32)` overload"]fn setup(self,size:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Stream_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2504d80usize)as*mut u8,();
 (Stream_2)__receiver,(i32)::core::convert::Into::into(size))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <Stream_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2504d50usize)as*mut u8,();
-(Stream_2)__receiver)}
+__Stream_2_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Position()` overload"]fn get_position(self,)->i32{unsafe{let __receiver= <Stream_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2504df0usize)as*mut u8,i32;
@@ -447,8 +498,7 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 (Stream_2)__receiver)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Stream_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2508b20usize)as*mut u8,i32;
-(Stream_2)__receiver)}
+__Stream_2_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Compress(i32)` overload"]fn compress(self,offset:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <Stream_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2508c80usize)as*mut u8,bool;
@@ -688,36 +738,16 @@ this}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-stream_2")]impl Stream_ReadScope{#[doc="`.ctor(crate::app::stream_2::Stream_2)` overload"]pub fn ctor(&mut self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f5890usize)as*mut u8,();
-(*mut Stream_ReadScope)self as*mut Stream_ReadScope,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f58f0usize)as*mut u8,();
-(*mut Stream_ReadScope)self as*mut Stream_ReadScope)}
-}
-#[doc="`get_Version()` overload"]pub fn get_version(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f5940usize)as*mut u8,i32;
-(*mut Stream_ReadScope)self as*mut Stream_ReadScope)}
-}
-#[doc="`set_Version(i32)` overload"]pub fn set_version(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f5950usize)as*mut u8,();
-(*mut Stream_ReadScope)self as*mut Stream_ReadScope,(i32)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-stream_2")]impl Stream_ReadScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_version_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
 #[cfg(feature = "app-stream_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Stream_ReadScope;
     pub use super::Stream_PositionScope;
     pub use super::Stream_2;
     pub use super::IStream_2;
     pub use super::IStream_2Methods;
-    pub use super::Stream_WriteScope;
     pub use super::Stream_Info;
-    pub use super::Stream_ReadScope;
+    pub use super::Stream_WriteScope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

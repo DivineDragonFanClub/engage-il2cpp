@@ -17,16 +17,42 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="nintendo-message_studio-lib-binlibmsfilebase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BinLibmsFileBase_unity2_raw{use super:: * ;
-pub unsafe fn init_object(this:BinLibmsFileBase,resource_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::IntPtr{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("InitObject").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","InitObject", <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn finalize(this:BinLibmsFileBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:BinLibmsFileBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BinLibmsFileBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn init_object(this:BinLibmsFileBase,resource_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::IntPtr{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,"InitObject",));
 let inner:extern "C" fn(BinLibmsFileBase, ::unity2::IntPtr, ::unity2::OptionalMethod,)-> ::unity2::IntPtr= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,resource_ptr,__mi)}
-pub unsafe fn close_object(this:BinLibmsFileBase,object_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CloseObject").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CloseObject", <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn close_object(this:BinLibmsFileBase,object_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BinLibmsFileBase as::unity2::ClassIdentity> ::NAME,"CloseObject",));
 let inner:extern "C" fn(BinLibmsFileBase, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -50,12 +76,10 @@ inner(this,object_ptr,__mi)}
 (BinLibmsFileBase)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e965e0usize)as*mut u8,();
-(BinLibmsFileBase)__receiver)}
+__BinLibmsFileBase_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e96650usize)as*mut u8,();
-(BinLibmsFileBase)__receiver)}
+__BinLibmsFileBase_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InitObject(::unity2::IntPtr)` overload"]fn init_object(self,resource_ptr:impl::core::convert::Into< ::unity2::IntPtr>)-> ::unity2::IntPtr{unsafe{let __receiver= <BinLibmsFileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __BinLibmsFileBase_unity2_raw::init_object(__receiver, ::core::convert::Into::into(resource_ptr), ::core::option::Option::None)}

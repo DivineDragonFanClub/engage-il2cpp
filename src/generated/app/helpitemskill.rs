@@ -26,17 +26,38 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-helpitemskill-types")]
 pub use __types::*;
 
+#[cfg(feature="app-helpitemskill")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HelpItemSkill_unity2_raw{use super:: * ;
+pub unsafe fn is_valid(this:HelpItemSkill,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HelpItemSkill as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let inner:extern "C" fn(HelpItemSkill, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_contents(this:HelpItemSkill,setter:crate::app::helpparamsetter::HelpParamSetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HelpItemSkill as::unity2::ClassIdentity> ::NAME,"SetContents",));
+let inner:extern "C" fn(HelpItemSkill,crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,setter,__mi)}
+}
+
 #[cfg(feature="app-helpitemskill")]pub trait IHelpItemSkillMethods:IHelpItemSkill{#[doc="`SetSkillData(crate::app::skilldata::SkillData, crate::app::unit::Unit, bool)` overload"]fn set_skill_data(self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,is_forced_engage:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x297db10usize)as*mut u8,();
 (HelpItemSkill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(crate::app::unit::Unit)::core::convert::Into::into(unit),(bool)::core::convert::Into::into(is_forced_engage))}
 }
 #[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297db60usize)as*mut u8,bool;
-(HelpItemSkill)__receiver)}
+__HelpItemSkill_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297db90usize)as*mut u8,();
-(HelpItemSkill)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+__HelpItemSkill_unity2_raw::set_contents(__receiver, ::core::convert::Into::into(setter), ::core::option::Option::None)}
 }
 #[doc="`SetForceDisplay()` overload"]fn set_force_display(self,)->(){unsafe{let __receiver= <HelpItemSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x297dd20usize)as*mut u8,();

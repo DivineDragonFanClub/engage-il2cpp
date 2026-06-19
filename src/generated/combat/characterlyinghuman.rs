@@ -26,6 +26,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-characterlyinghuman-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-characterlyinghuman")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterLyingHuman_unity2_raw{use super:: * ;
+pub unsafe fn my_start(this:CharacterLyingHuman,die_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CharacterLyingHuman as::unity2::ClassIdentity> ::NAME,"MyStart",));
+let inner:extern "C" fn(CharacterLyingHuman,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,die_hash,__mi)}
+pub unsafe fn make_my_dead_pose(this:CharacterLyingHuman,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CharacterLyingHuman as::unity2::ClassIdentity> ::NAME,"MakeMyDeadPose",));
+let inner:extern "C" fn(CharacterLyingHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn my_late_update(this:CharacterLyingHuman,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CharacterLyingHuman as::unity2::ClassIdentity> ::NAME,"MyLateUpdate",));
+let inner:extern "C" fn(CharacterLyingHuman, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-characterlyinghuman")]pub trait ICharacterLyingHumanMethods:ICharacterLyingHuman{#[doc="`get_IsInAir()` overload"]fn get_is_in_air(self,)->bool{unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4be0usize)as*mut u8,bool;
 (CharacterLyingHuman)__receiver)}
@@ -35,16 +68,13 @@ pub use __types::*;
 (CharacterLyingHuman)__receiver)}
 }
 #[doc="`MyStart(i32)` overload"]fn my_start(self,die_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4c00usize)as*mut u8,();
-(CharacterLyingHuman)__receiver,(i32)::core::convert::Into::into(die_hash))}
+__CharacterLyingHuman_unity2_raw::my_start(__receiver, ::core::convert::Into::into(die_hash), ::core::option::Option::None)}
 }
 #[doc="`MakeMyDeadPose()` overload"]fn make_my_dead_pose(self,)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4cb0usize)as*mut u8,();
-(CharacterLyingHuman)__receiver)}
+__CharacterLyingHuman_unity2_raw::make_my_dead_pose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25e4d90usize)as*mut u8,();
-(CharacterLyingHuman)__receiver)}
+__CharacterLyingHuman_unity2_raw::my_late_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CharacterLyingHuman as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25e5050usize)as*mut u8,();

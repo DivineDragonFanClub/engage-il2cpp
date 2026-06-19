@@ -17,15 +17,33 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/emittersconstraint/EmittersConstraint.md"))]#[::unity2::class(namespace="Combat",name="EmittersConstraint")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EmittersConstraint{#[offset(24)]#[rename(name="m_Pairs")]pub m_pairs:crate::system::collections::generic::list_1::List_1<crate::combat::emittersconstraint::EmittersConstraint_Pair> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/emittersconstraint/EmittersConstraint_Pair.md"))]#[::unity2::class(namespace="Combat",name="EmittersConstraint.Pair")]#[parent(crate::system::object::Object)]pub struct EmittersConstraint_Pair{#[offset(16)]#[rename(name="ParticleSystem")]pub particle_system:crate::unity_engine::particlesystem::ParticleSystem, #[offset(24)]#[rename(name="AttachTransform")]pub attach_transform:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="TargetBoneName")]pub target_bone_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/emittersconstraint/EmittersConstraint.md"))]#[::unity2::class(namespace="Combat",name="EmittersConstraint")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EmittersConstraint{#[offset(24)]#[rename(name="m_Pairs")]pub m_pairs:crate::system::collections::generic::list_1::List_1<crate::combat::emittersconstraint::EmittersConstraint_Pair> ,}
 
 }
 
 #[cfg(feature = "combat-emittersconstraint-types")]
 pub use __types::*;
+
+#[cfg(feature="combat-emittersconstraint")]pub trait IEmittersConstraint_PairMethods:IEmittersConstraint_Pair{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EmittersConstraint_Pair as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd69c0usize)as*mut u8,();
+(EmittersConstraint_Pair)__receiver)}
+}
+}
+
+#[cfg(feature="combat-emittersconstraint")]impl<__T:IEmittersConstraint_Pair>IEmittersConstraint_PairMethods for __T{}
+
+#[cfg(feature="combat-emittersconstraint")]impl EmittersConstraint_Pair{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="combat-emittersconstraint")]impl EmittersConstraint_Pair{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EmittersConstraint_Pair), ::core::stringify!(new),));
+ <Self as IEmittersConstraint_PairMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="combat-emittersconstraint")]pub trait IEmittersConstraintMethods:IEmittersConstraint{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <EmittersConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22da630usize)as*mut u8,();
@@ -60,33 +78,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="combat-emittersconstraint")]pub trait IEmittersConstraint_PairMethods:IEmittersConstraint_Pair{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EmittersConstraint_Pair as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd69c0usize)as*mut u8,();
-(EmittersConstraint_Pair)__receiver)}
-}
-}
-
-#[cfg(feature="combat-emittersconstraint")]impl<__T:IEmittersConstraint_Pair>IEmittersConstraint_PairMethods for __T{}
-
-#[cfg(feature="combat-emittersconstraint")]impl EmittersConstraint_Pair{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="combat-emittersconstraint")]impl EmittersConstraint_Pair{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EmittersConstraint_Pair), ::core::stringify!(new),));
- <Self as IEmittersConstraint_PairMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "combat-emittersconstraint")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EmittersConstraint;
-    pub use super::IEmittersConstraint;
-    pub use super::IEmittersConstraintMethods;
     pub use super::EmittersConstraint_Pair;
     pub use super::IEmittersConstraint_Pair;
     pub use super::IEmittersConstraint_PairMethods;
+    pub use super::EmittersConstraint;
+    pub use super::IEmittersConstraint;
+    pub use super::IEmittersConstraintMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

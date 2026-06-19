@@ -28,17 +28,17 @@
  #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-mesh_2")]pub use mesh_2::{IMesh_2Methods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types"))]pub mod meshutils;
- #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")]pub use meshutils::{MeshUtils_Vertex,IMeshUtils_Vertex,MeshUtils_Edge,IMeshUtils_Edge,MeshUtils,IMeshUtils,MeshUtils_Pooled_1,IMeshUtils_Pooled_1,MeshUtils_Face,IMeshUtils_Face,MeshUtils_EdgePair}
+ #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")]pub use meshutils::{MeshUtils,IMeshUtils,MeshUtils_Edge,IMeshUtils_Edge,MeshUtils_Pooled_1,IMeshUtils_Pooled_1,MeshUtils_Vertex,IMeshUtils_Vertex,MeshUtils_Face,IMeshUtils_Face,MeshUtils_EdgePair}
 ;
- #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]pub use meshutils::{IMeshUtils_VertexMethods,IMeshUtils_EdgeMethods,IMeshUtils_Pooled_1Methods,IMeshUtils_FaceMethods}
+ #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]pub use meshutils::{IMeshUtils_EdgeMethods,IMeshUtils_Pooled_1Methods,IMeshUtils_VertexMethods,IMeshUtils_FaceMethods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle-types"))]pub mod pqhandle;
  #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-pqhandle-types")]pub use pqhandle::{PQHandle}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types"))]pub mod priorityheap_1;
- #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types")]pub use priorityheap_1::{PriorityHeap_1,IPriorityHeap_1,PriorityHeap_1_LessOrEqual,IPriorityHeap_1_LessOrEqual,PriorityHeap_1_HandleElem,IPriorityHeap_1_HandleElem}
+ #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1-types")]pub use priorityheap_1::{PriorityHeap_1_LessOrEqual,IPriorityHeap_1_LessOrEqual,PriorityHeap_1_HandleElem,IPriorityHeap_1_HandleElem,PriorityHeap_1,IPriorityHeap_1}
 ;
- #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]pub use priorityheap_1::{IPriorityHeap_1Methods,IPriorityHeap_1_LessOrEqualMethods,IPriorityHeap_1_HandleElemMethods}
+ #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityheap_1")]pub use priorityheap_1::{IPriorityHeap_1_LessOrEqualMethods,IPriorityHeap_1_HandleElemMethods,IPriorityHeap_1Methods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1-types"))]pub mod priorityqueue_1;
  #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-priorityqueue_1-types")]pub use priorityqueue_1::{PriorityQueue_1,IPriorityQueue_1,PriorityQueue_1_StackItem,IPriorityQueue_1_StackItem}

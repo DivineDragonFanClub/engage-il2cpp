@@ -16,6 +16,59 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-fsmbuilder-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-fsmbuilder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FSMBuilder_unity2_raw{use super:: * ;
+pub unsafe fn build(this:FSMBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FSMBuilder as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(FSMBuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_start(this:FSMBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FSMBuilder as::unity2::ClassIdentity> ::NAME,"BuildStart",));
+let inner:extern "C" fn(FSMBuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_main(this:FSMBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FSMBuilder as::unity2::ClassIdentity> ::NAME,"BuildMain",));
+let inner:extern "C" fn(FSMBuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_end(this:FSMBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FSMBuilder as::unity2::ClassIdentity> ::NAME,"BuildEnd",));
+let inner:extern "C" fn(FSMBuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_skipover(this:FSMBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FSMBuilder as::unity2::ClassIdentity> ::NAME,"BuildSkipover",));
+let inner:extern "C" fn(FSMBuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-fsmbuilder")]impl FSMBuilder{#[doc="`get_world()` overload"]pub fn get_world()->crate::combat::combatworld::CombatWorld{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d47110usize)as*mut u8,crate::combat::combatworld::CombatWorld;
 )}
 }
@@ -61,24 +114,19 @@ pub use __types::*;
 }
 
 #[cfg(feature="combat-fsmbuilder")]pub trait IFSMBuilderMethods:IFSMBuilder{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d478d0usize)as*mut u8,();
-(FSMBuilder)__receiver)}
+__FSMBuilder_unity2_raw::build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildStart()` overload"]fn build_start(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47920usize)as*mut u8,();
-(FSMBuilder)__receiver)}
+__FSMBuilder_unity2_raw::build_start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildMain()` overload"]fn build_main(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47930usize)as*mut u8,();
-(FSMBuilder)__receiver)}
+__FSMBuilder_unity2_raw::build_main(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildEnd()` overload"]fn build_end(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47940usize)as*mut u8,();
-(FSMBuilder)__receiver)}
+__FSMBuilder_unity2_raw::build_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildSkipover()` overload"]fn build_skipover(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47950usize)as*mut u8,();
-(FSMBuilder)__receiver)}
+__FSMBuilder_unity2_raw::build_skipover(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48320usize)as*mut u8,();

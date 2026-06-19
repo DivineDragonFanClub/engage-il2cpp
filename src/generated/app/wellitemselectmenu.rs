@@ -26,9 +26,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellitemselectmenu/WellItemSelectMenu.md"))]#[::unity2::class(namespace="App",name="WellItemSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct WellItemSelectMenu{#[offset(200)]#[rename(name="ItemKindList")]pub item_kind_list: ::unity2::Array<crate::app::itemdata::ItemData_Kinds> , #[static_field]#[rename(name="SELECT_ITEM_MAX")]pub select_item_max:i32, #[offset(208)]#[rename(name="m_SelectedKindIndex")]pub m_selected_kind_index:i32, #[static_field]#[rename(name="ShowRowNum")]pub show_row_num:i32, #[offset(216)]#[rename(name="m_SavedFullMenuItemList")]pub m_saved_full_menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> , #[offset(224)]#[rename(name="m_SortMenuItemList")]pub m_sort_menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> , #[offset(232)]#[rename(name="m_ItemKind")]pub m_item_kind:crate::app::itemdata::ItemData_Kinds, #[offset(240)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(248)]#[rename(name="m_SelectedItemList")]pub m_selected_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicitemmenuitem::BasicItemMenuItem> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]#[::unity2::class(namespace="App",name="WellItemSelectMenu.SelectedItem")]#[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]pub struct WellItemSelectMenu_SelectedItem{#[offset(128)]#[rename(name="m_MenuItem")]pub m_menu_item:crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellitemselectmenu/WellItemSelectMenu_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WellItemSelectMenu_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for WellItemSelectMenu_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WellItemSelectMenu.Kinds";
@@ -46,10 +43,86 @@ pub fn last()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/wellitemselectmenu/WellItemSelectMenu_SelectedItem.md"))]#[::unity2::class(namespace="App",name="WellItemSelectMenu.SelectedItem")]#[parent(crate::app::wellitemselectmenuitem::WellItemSelectMenuItem)]pub struct WellItemSelectMenu_SelectedItem{#[offset(128)]#[rename(name="m_MenuItem")]pub m_menu_item:crate::app::wellitemselectmenuitem::WellItemSelectMenuItem,}
+
 }
 
 #[cfg(feature = "app-wellitemselectmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-wellitemselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WellItemSelectMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:WellItemSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <WellItemSelectMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn after_build(this:WellItemSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <WellItemSelectMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(WellItemSelectMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clamp_menu_item_index(this:WellItemSelectMenu,item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <WellItemSelectMenu as::unity2::ClassIdentity> ::NAME,"ClampMenuItemIndex",));
+let inner:extern "C" fn(WellItemSelectMenu,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,item_index,__mi)}
+pub unsafe fn key_up(this:WellItemSelectMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <WellItemSelectMenu as::unity2::ClassIdentity> ::NAME,"KeyUp",));
+let inner:extern "C" fn(WellItemSelectMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_down(this:WellItemSelectMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <WellItemSelectMenu as::unity2::ClassIdentity> ::NAME,"KeyDown",));
+let inner:extern "C" fn(WellItemSelectMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_left(this:WellItemSelectMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <WellItemSelectMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(WellItemSelectMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:WellItemSelectMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <WellItemSelectMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(WellItemSelectMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+}
 
 #[cfg(feature="app-wellitemselectmenu")]impl WellItemSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(parent:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::wellitemselectmenu::WellItemSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21d4830usize)as*mut u8,crate::app::wellitemselectmenu::WellItemSelectMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(parent))}
@@ -163,32 +236,25 @@ pub use __types::*;
 (WellItemSelectMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7210usize)as*mut u8, ::unity2::Il2CppString;
-(WellItemSelectMenu)__receiver)}
+__WellItemSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7260usize)as*mut u8,();
-(WellItemSelectMenu)__receiver)}
+__WellItemSelectMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ClampMenuItemIndex(i32)` overload"]fn clamp_menu_item_index(self,item_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7300usize)as*mut u8,i32;
-(WellItemSelectMenu)__receiver,(i32)::core::convert::Into::into(item_index))}
+__WellItemSelectMenu_unity2_raw::clamp_menu_item_index(__receiver, ::core::convert::Into::into(item_index), ::core::option::Option::None)}
 }
 #[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d73d0usize)as*mut u8,();
-(WellItemSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__WellItemSelectMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7410usize)as*mut u8,();
-(WellItemSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__WellItemSelectMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7450usize)as*mut u8,();
-(WellItemSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__WellItemSelectMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7540usize)as*mut u8,();
-(WellItemSelectMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__WellItemSelectMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`Sort()` overload"]fn sort(self,)->(){unsafe{let __receiver= <WellItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d5080usize)as*mut u8,();
@@ -287,10 +353,10 @@ pub mod prelude {
     pub use super::WellItemSelectMenu;
     pub use super::IWellItemSelectMenu;
     pub use super::IWellItemSelectMenuMethods;
+    pub use super::WellItemSelectMenu_Kinds;
     pub use super::WellItemSelectMenu_SelectedItem;
     pub use super::IWellItemSelectMenu_SelectedItem;
     pub use super::IWellItemSelectMenu_SelectedItemMethods;
-    pub use super::WellItemSelectMenu_Kinds;
     pub use crate::app::basicitemmenuitem::IBasicItemMenuItem;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

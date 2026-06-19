@@ -14,17 +14,38 @@ mod __types {
 #[cfg(feature = "unity_engine-bindings-nativetypeattribute-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-bindings-nativetypeattribute")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NativeTypeAttribute_unity2_raw{use super:: * ;
+pub unsafe fn set_header(this:NativeTypeAttribute,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NativeTypeAttribute as::unity2::ClassIdentity> ::NAME,"set_Header",));
+let inner:extern "C" fn(NativeTypeAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn set_codegen_options(this:NativeTypeAttribute,value:crate::unity_engine::bindings::codegenoptions::CodegenOptions,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <NativeTypeAttribute as::unity2::ClassIdentity> ::NAME,"set_CodegenOptions",));
+let inner:extern "C" fn(NativeTypeAttribute,crate::unity_engine::bindings::codegenoptions::CodegenOptions, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="unity_engine-bindings-nativetypeattribute")]pub trait INativeTypeAttributeMethods:INativeTypeAttribute{#[doc="`set_Header(::unity2::Il2CppString)` overload"]fn set_header(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38270usize)as*mut u8,();
-(NativeTypeAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__NativeTypeAttribute_unity2_raw::set_header(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`set_IntermediateScriptingStructName(::unity2::Il2CppString)` overload"]fn set_intermediate_scripting_struct_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38280usize)as*mut u8,();
 (NativeTypeAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`set_CodegenOptions(crate::unity_engine::bindings::codegenoptions::CodegenOptions)` overload"]fn set_codegen_options(self,value:impl::core::convert::Into<crate::unity_engine::bindings::codegenoptions::CodegenOptions>)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f38290usize)as*mut u8,();
-(NativeTypeAttribute)__receiver,(crate::unity_engine::bindings::codegenoptions::CodegenOptions)::core::convert::Into::into(value))}
+__NativeTypeAttribute_unity2_raw::set_codegen_options(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NativeTypeAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f382a0usize)as*mut u8,();

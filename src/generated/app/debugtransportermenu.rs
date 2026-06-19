@@ -15,117 +15,33 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_AddAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.AddAllMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_AddAllMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_BaseMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.BaseMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugTransporterMenu_BaseMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_TitleItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.TitleItem")]#[parent(crate::app::labelitem::LabelItem)]pub struct DebugTransporterMenu_TitleItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_FillAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.FillAllMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_FillAllMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_AddByKindMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.AddByKindMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_AddByKindMenuItem{#[offset(32)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds, #[offset(40)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_BaseMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.BaseMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugTransporterMenu_BaseMenuItem{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_AddAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.AddAllMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_AddAllMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_DeleteAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.DeleteAllMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_DeleteAllMenuItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_LowestItemMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.LowestItemMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_LowestItemMenuItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_AddByKindMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.AddByKindMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_AddByKindMenuItem{#[offset(32)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds, #[offset(40)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu")]#[parent(crate::system::object::Object)]pub struct DebugTransporterMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_FillAllMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.FillAllMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_FillAllMenuItem{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransportermenu/DebugTransporterMenu_LowestItemMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterMenu.LowestItemMenuItem")]#[parent(crate::app::debugtransportermenu::DebugTransporterMenu_BaseMenuItem)]pub struct DebugTransporterMenu_LowestItemMenuItem{}
 
 }
 
 #[cfg(feature = "app-debugtransportermenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_AddAllMenuItemMethods:IDebugTransporterMenu_AddAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba760usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_AddAllMenuItem)__receiver)}
-}
-#[doc="`GetNameEnglish()` overload"]fn get_name_english(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba7b0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_AddAllMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba800usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterMenu_AddAllMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba950usize)as*mut u8,();
-(DebugTransporterMenu_AddAllMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_AddAllMenuItem>IDebugTransporterMenu_AddAllMenuItemMethods for __T{}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_english_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterMenu_AddAllMenuItem), ::core::stringify!(new),));
- <Self as IDebugTransporterMenu_AddAllMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_TitleItemMethods:IDebugTransporterMenu_TitleItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_TitleItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb4d0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_TitleItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_TitleItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb5e0usize)as*mut u8,();
-(DebugTransporterMenu_TitleItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_TitleItem>IDebugTransporterMenu_TitleItemMethods for __T{}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_TitleItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_TitleItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterMenu_TitleItem), ::core::stringify!(new),));
- <Self as IDebugTransporterMenu_TitleItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_FillAllMenuItemMethods:IDebugTransporterMenu_FillAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_FillAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbaef0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_FillAllMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_FillAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbaf40usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterMenu_FillAllMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_FillAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb020usize)as*mut u8,();
-(DebugTransporterMenu_FillAllMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_FillAllMenuItem>IDebugTransporterMenu_FillAllMenuItemMethods for __T{}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_FillAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_FillAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterMenu_FillAllMenuItem), ::core::stringify!(new),));
- <Self as IDebugTransporterMenu_FillAllMenuItemMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_BaseMenuItemMethods:IDebugTransporterMenu_BaseMenuItem{#[doc="`CanAddToTransport(crate::app::itemdata::ItemData)` overload"]fn can_add_to_transport(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->bool{unsafe{let __receiver= <DebugTransporterMenu_BaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbace0usize)as*mut u8,bool;
@@ -155,13 +71,181 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-debugtransportermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterMenu_TitleItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugTransporterMenu_TitleItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugTransporterMenu_TitleItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugTransporterMenu_TitleItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_TitleItemMethods:IDebugTransporterMenu_TitleItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_TitleItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_TitleItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_TitleItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb5e0usize)as*mut u8,();
+(DebugTransporterMenu_TitleItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_TitleItem>IDebugTransporterMenu_TitleItemMethods for __T{}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_TitleItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_TitleItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterMenu_TitleItem), ::core::stringify!(new),));
+ <Self as IDebugTransporterMenu_TitleItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugtransportermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterMenu_AddByKindMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugTransporterMenu_AddByKindMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugTransporterMenu_AddByKindMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugTransporterMenu_AddByKindMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugTransporterMenu_AddByKindMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugTransporterMenu_AddByKindMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugTransporterMenu_AddByKindMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_AddByKindMenuItemMethods:IDebugTransporterMenu_AddByKindMenuItem{#[doc="`.ctor(crate::app::itemdata::ItemData_Kinds)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <DebugTransporterMenu_AddByKindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba970usize)as*mut u8,();
+(DebugTransporterMenu_AddByKindMenuItem)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_AddByKindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_AddByKindMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_AddByKindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_AddByKindMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_AddByKindMenuItem>IDebugTransporterMenu_AddByKindMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddByKindMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddByKindMenuItem{#[doc="`.ctor(crate::app::itemdata::ItemData_Kinds)` — overload selector"]pub fn new(kind:crate::app::itemdata::ItemData_Kinds)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterMenu_AddByKindMenuItem), ::core::stringify!(new),));
+ <Self as IDebugTransporterMenu_AddByKindMenuItemMethods> ::ctor(this,kind);
+this}
+}
+
+#[cfg(feature="app-debugtransportermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterMenu_AddAllMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugTransporterMenu_AddAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugTransporterMenu_AddAllMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugTransporterMenu_AddAllMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name_english(this:DebugTransporterMenu_AddAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DebugTransporterMenu_AddAllMenuItem as::unity2::ClassIdentity> ::NAME,"GetNameEnglish",));
+let inner:extern "C" fn(DebugTransporterMenu_AddAllMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugTransporterMenu_AddAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugTransporterMenu_AddAllMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugTransporterMenu_AddAllMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_AddAllMenuItemMethods:IDebugTransporterMenu_AddAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_AddAllMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetNameEnglish()` overload"]fn get_name_english(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_AddAllMenuItem_unity2_raw::get_name_english(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_AddAllMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_AddAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba950usize)as*mut u8,();
+(DebugTransporterMenu_AddAllMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_AddAllMenuItem>IDebugTransporterMenu_AddAllMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_english_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterMenu_AddAllMenuItem), ::core::stringify!(new),));
+ <Self as IDebugTransporterMenu_AddAllMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugtransportermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterMenu_DeleteAllMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugTransporterMenu_DeleteAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugTransporterMenu_DeleteAllMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugTransporterMenu_DeleteAllMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugTransporterMenu_DeleteAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugTransporterMenu_DeleteAllMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugTransporterMenu_DeleteAllMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_DeleteAllMenuItemMethods:IDebugTransporterMenu_DeleteAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbae70usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_DeleteAllMenuItem)__receiver)}
+__DebugTransporterMenu_DeleteAllMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbaec0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterMenu_DeleteAllMenuItem)__receiver)}
+__DebugTransporterMenu_DeleteAllMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_DeleteAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbaee0usize)as*mut u8,();
@@ -180,67 +264,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(DebugTransporterMenu_DeleteAllMenuItem), ::core::stringify!(new),));
  <Self as IDebugTransporterMenu_DeleteAllMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_LowestItemMenuItemMethods:IDebugTransporterMenu_LowestItemMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb030usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_LowestItemMenuItem)__receiver)}
-}
-#[doc="`GetNameEnglish()` overload"]fn get_name_english(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb080usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_LowestItemMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb0d0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterMenu_LowestItemMenuItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb4c0usize)as*mut u8,();
-(DebugTransporterMenu_LowestItemMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_LowestItemMenuItem>IDebugTransporterMenu_LowestItemMenuItemMethods for __T{}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_LowestItemMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_english_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_LowestItemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterMenu_LowestItemMenuItem), ::core::stringify!(new),));
- <Self as IDebugTransporterMenu_LowestItemMenuItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_AddByKindMenuItemMethods:IDebugTransporterMenu_AddByKindMenuItem{#[doc="`.ctor(crate::app::itemdata::ItemData_Kinds)` overload"]fn ctor(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <DebugTransporterMenu_AddByKindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba970usize)as*mut u8,();
-(DebugTransporterMenu_AddByKindMenuItem)__receiver,(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_AddByKindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbab90usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterMenu_AddByKindMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_AddByKindMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbaba0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterMenu_AddByKindMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_AddByKindMenuItem>IDebugTransporterMenu_AddByKindMenuItemMethods for __T{}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddByKindMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_AddByKindMenuItem{#[doc="`.ctor(crate::app::itemdata::ItemData_Kinds)` — overload selector"]pub fn new(kind:crate::app::itemdata::ItemData_Kinds)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterMenu_AddByKindMenuItem), ::core::stringify!(new),));
- <Self as IDebugTransporterMenu_AddByKindMenuItemMethods> ::ctor(this,kind);
 this}
 }
 
@@ -268,33 +291,145 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-debugtransportermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterMenu_FillAllMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugTransporterMenu_FillAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugTransporterMenu_FillAllMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugTransporterMenu_FillAllMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugTransporterMenu_FillAllMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugTransporterMenu_FillAllMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugTransporterMenu_FillAllMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_FillAllMenuItemMethods:IDebugTransporterMenu_FillAllMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_FillAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_FillAllMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_FillAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_FillAllMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_FillAllMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb020usize)as*mut u8,();
+(DebugTransporterMenu_FillAllMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_FillAllMenuItem>IDebugTransporterMenu_FillAllMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_FillAllMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_FillAllMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterMenu_FillAllMenuItem), ::core::stringify!(new),));
+ <Self as IDebugTransporterMenu_FillAllMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugtransportermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterMenu_LowestItemMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:DebugTransporterMenu_LowestItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugTransporterMenu_LowestItemMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(DebugTransporterMenu_LowestItemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name_english(this:DebugTransporterMenu_LowestItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DebugTransporterMenu_LowestItemMenuItem as::unity2::ClassIdentity> ::NAME,"GetNameEnglish",));
+let inner:extern "C" fn(DebugTransporterMenu_LowestItemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugTransporterMenu_LowestItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugTransporterMenu_LowestItemMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugTransporterMenu_LowestItemMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-debugtransportermenu")]pub trait IDebugTransporterMenu_LowestItemMenuItemMethods:IDebugTransporterMenu_LowestItemMenuItem{#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_LowestItemMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetNameEnglish()` overload"]fn get_name_english(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_LowestItemMenuItem_unity2_raw::get_name_english(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterMenu_LowestItemMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterMenu_LowestItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bbb4c0usize)as*mut u8,();
+(DebugTransporterMenu_LowestItemMenuItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl<__T:IDebugTransporterMenu_LowestItemMenuItem>IDebugTransporterMenu_LowestItemMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_LowestItemMenuItem{pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_english_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-debugtransportermenu")]impl DebugTransporterMenu_LowestItemMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterMenu_LowestItemMenuItem), ::core::stringify!(new),));
+ <Self as IDebugTransporterMenu_LowestItemMenuItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-debugtransportermenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugTransporterMenu_AddAllMenuItem;
-    pub use super::IDebugTransporterMenu_AddAllMenuItem;
-    pub use super::IDebugTransporterMenu_AddAllMenuItemMethods;
-    pub use super::DebugTransporterMenu_TitleItem;
-    pub use super::IDebugTransporterMenu_TitleItem;
-    pub use super::IDebugTransporterMenu_TitleItemMethods;
-    pub use super::DebugTransporterMenu_FillAllMenuItem;
-    pub use super::IDebugTransporterMenu_FillAllMenuItem;
-    pub use super::IDebugTransporterMenu_FillAllMenuItemMethods;
     pub use super::DebugTransporterMenu_BaseMenuItem;
     pub use super::IDebugTransporterMenu_BaseMenuItem;
     pub use super::IDebugTransporterMenu_BaseMenuItemMethods;
-    pub use super::DebugTransporterMenu_DeleteAllMenuItem;
-    pub use super::IDebugTransporterMenu_DeleteAllMenuItem;
-    pub use super::IDebugTransporterMenu_DeleteAllMenuItemMethods;
-    pub use super::DebugTransporterMenu_LowestItemMenuItem;
-    pub use super::IDebugTransporterMenu_LowestItemMenuItem;
-    pub use super::IDebugTransporterMenu_LowestItemMenuItemMethods;
+    pub use super::DebugTransporterMenu_TitleItem;
+    pub use super::IDebugTransporterMenu_TitleItem;
+    pub use super::IDebugTransporterMenu_TitleItemMethods;
     pub use super::DebugTransporterMenu_AddByKindMenuItem;
     pub use super::IDebugTransporterMenu_AddByKindMenuItem;
     pub use super::IDebugTransporterMenu_AddByKindMenuItemMethods;
+    pub use super::DebugTransporterMenu_AddAllMenuItem;
+    pub use super::IDebugTransporterMenu_AddAllMenuItem;
+    pub use super::IDebugTransporterMenu_AddAllMenuItemMethods;
+    pub use super::DebugTransporterMenu_DeleteAllMenuItem;
+    pub use super::IDebugTransporterMenu_DeleteAllMenuItem;
+    pub use super::IDebugTransporterMenu_DeleteAllMenuItemMethods;
     pub use super::DebugTransporterMenu;
     pub use super::IDebugTransporterMenu;
     pub use super::IDebugTransporterMenuMethods;
+    pub use super::DebugTransporterMenu_FillAllMenuItem;
+    pub use super::IDebugTransporterMenu_FillAllMenuItem;
+    pub use super::IDebugTransporterMenu_FillAllMenuItemMethods;
+    pub use super::DebugTransporterMenu_LowestItemMenuItem;
+    pub use super::IDebugTransporterMenu_LowestItemMenuItem;
+    pub use super::IDebugTransporterMenu_LowestItemMenuItemMethods;
     pub use crate::app::labelitem::ILabelItem;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::stringitem::IStringItem;

@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask.md"))]#[::unity2::class(namespace="App",name="WeaponMask")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::weaponmask::WeaponMask_Flag>)]pub struct WeaponMask{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask_Flag.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WeaponMask_Flag{pub value:i32,}
 impl::unity2::ClassIdentity for WeaponMask_Flag{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WeaponMask.Flag";
@@ -50,13 +53,23 @@ pub fn special()->Self{Self{value:512}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponmask/WeaponMask.md"))]#[::unity2::class(namespace="App",name="WeaponMask")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::weaponmask::WeaponMask_Flag>)]pub struct WeaponMask{}
-
 }
 
 #[cfg(feature = "app-weaponmask-types")]
 pub use __types::*;
+
+#[cfg(feature="app-weaponmask")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WeaponMask_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:WeaponMask,value:crate::app::weaponmask::WeaponMask_Flag,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <WeaponMask as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(WeaponMask,crate::app::weaponmask::WeaponMask_Flag, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
 
 #[cfg(feature="app-weaponmask")]pub trait IWeaponMaskMethods:IWeaponMask{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca020usize)as*mut u8,();
@@ -71,8 +84,7 @@ pub use __types::*;
 (WeaponMask)__receiver,(crate::app::weaponmask::WeaponMask_Flag)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::weaponmask::WeaponMask_Flag)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::weaponmask::WeaponMask_Flag>)->i32{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca140usize)as*mut u8,i32;
-(WeaponMask)__receiver,(crate::app::weaponmask::WeaponMask_Flag)::core::convert::Into::into(value))}
+__WeaponMask_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Test(crate::app::itemdata::ItemData)` overload"]fn test(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->bool{unsafe{let __receiver= <WeaponMask as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ca150usize)as*mut u8,bool;
@@ -139,10 +151,10 @@ this}
 #[cfg(feature = "app-weaponmask")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::WeaponMask_Flag;
     pub use super::WeaponMask;
     pub use super::IWeaponMask;
     pub use super::IWeaponMaskMethods;
+    pub use super::WeaponMask_Flag;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

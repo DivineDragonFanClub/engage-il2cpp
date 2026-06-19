@@ -16,6 +16,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-androidjavaproxy-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-androidjavaproxy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AndroidJavaProxy_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:AndroidJavaProxy,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AndroidJavaProxy as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AndroidJavaProxy, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn invoke(this:AndroidJavaProxy,method_name: ::unity2::Il2CppString,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::androidjavaobject::AndroidJavaObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AndroidJavaProxy as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AndroidJavaProxy, ::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::unity_engine::androidjavaobject::AndroidJavaObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,method_name,args,__mi)}
+pub unsafe fn invoke_2(this:AndroidJavaProxy,method_name: ::unity2::Il2CppString,java_args: ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::androidjavaobject::AndroidJavaObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AndroidJavaProxy as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AndroidJavaProxy, ::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject> , ::unity2::OptionalMethod,)->crate::unity_engine::androidjavaobject::AndroidJavaObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,method_name,java_args,__mi)}
+}
+
 #[cfg(feature="unity_engine-androidjavaproxy")]impl AndroidJavaProxy{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f14b30usize)as*mut u8,();
 )}
 }
@@ -30,16 +63,13 @@ pub use __types::*;
 (AndroidJavaProxy)__receiver,(crate::unity_engine::androidjavaclass::AndroidJavaClass)::core::convert::Into::into(java_interface))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12b20usize)as*mut u8,();
-(AndroidJavaProxy)__receiver)}
+__AndroidJavaProxy_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f12bf0usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;
-(AndroidJavaProxy)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(method_name),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+__AndroidJavaProxy_unity2_raw::invoke(__receiver, ::core::convert::Into::into(method_name), ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`Invoke(::unity2::Il2CppString, ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>)` overload"]fn invoke_2(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,java_args:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject> >)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f14060usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;
-(AndroidJavaProxy)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(method_name),(::unity2::Array<crate::unity_engine::androidjavaobject::AndroidJavaObject>)::core::convert::Into::into(java_args))}
+__AndroidJavaProxy_unity2_raw::invoke_2(__receiver, ::core::convert::Into::into(method_name), ::core::convert::Into::into(java_args), ::core::option::Option::None)}
 }
 #[doc="`GetProxyObject()` overload"]fn get_proxy_object(self,)->crate::unity_engine::androidjavaobject::AndroidJavaObject{unsafe{let __receiver= <AndroidJavaProxy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f14ab0usize)as*mut u8,crate::unity_engine::androidjavaobject::AndroidJavaObject;

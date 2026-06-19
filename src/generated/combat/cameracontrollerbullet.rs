@@ -50,6 +50,29 @@ pub fn after_shoot()->Self{Self{value:3}
 #[cfg(feature = "combat-cameracontrollerbullet-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-cameracontrollerbullet")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CameraControllerBullet_unity2_raw{use super:: * ;
+pub unsafe fn activate(this:CameraControllerBullet,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CameraControllerBullet as::unity2::ClassIdentity> ::NAME,"Activate",));
+let inner:extern "C" fn(CameraControllerBullet, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_camera_targets(this:CameraControllerBullet,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<i32>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CameraControllerBullet as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
+let inner:extern "C" fn(CameraControllerBullet, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-cameracontrollerbullet")]pub trait ICameraControllerBulletMethods:ICameraControllerBullet{#[doc="`get_ShootState()` overload"]fn get_shoot_state(self,)->crate::combat::cameracontrollerbullet::CameraControllerBullet_State{unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25aea10usize)as*mut u8,crate::combat::cameracontrollerbullet::CameraControllerBullet_State;
 (CameraControllerBullet)__receiver)}
@@ -75,12 +98,10 @@ pub use __types::*;
 (CameraControllerBullet)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(look_at_vector))}
 }
 #[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25af590usize)as*mut u8,();
-(CameraControllerBullet)__receiver)}
+__CameraControllerBullet_unity2_raw::activate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25af620usize)as*mut u8, ::unity2::Array<i32> ;
-(CameraControllerBullet)__receiver)}
+__CameraControllerBullet_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerBullet as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25af690usize)as*mut u8,();

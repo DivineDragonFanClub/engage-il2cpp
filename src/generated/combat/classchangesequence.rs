@@ -40,6 +40,19 @@ pub fn skip_fade_out()->Self{Self{value:1}
 #[cfg(feature = "combat-classchangesequence-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-classchangesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ClassChangeSequence_unity2_raw{use super:: * ;
+pub unsafe fn get_global_asset_path(this:ClassChangeSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ClassChangeSequence as::unity2::ClassIdentity> ::NAME,"get_GlobalAssetPath",));
+let inner:extern "C" fn(ClassChangeSequence, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-classchangesequence")]impl ClassChangeSequence{#[doc="`IsExist()` overload"]pub fn is_exist()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ea68c0usize)as*mut u8,bool;
 )}
 }
@@ -49,8 +62,7 @@ pub use __types::*;
 }
 
 #[cfg(feature="combat-classchangesequence")]pub trait IClassChangeSequenceMethods:IClassChangeSequence{#[doc="`get_GlobalAssetPath()` overload"]fn get_global_asset_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea6870usize)as*mut u8, ::unity2::Il2CppString;
-(ClassChangeSequence)__receiver)}
+__ClassChangeSequence_unity2_raw::get_global_asset_path(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ReturnMode()` overload"]fn get_return_mode(self,)->crate::app::viewmode::ViewMode_Mode{unsafe{let __receiver= <ClassChangeSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea7950usize)as*mut u8,crate::app::viewmode::ViewMode_Mode;

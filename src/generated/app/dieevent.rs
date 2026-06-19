@@ -20,6 +20,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-dieevent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-dieevent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DieEvent_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:DieEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <DieEvent as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(DieEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:DieEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DieEvent as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(DieEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-dieevent")]impl DieEvent{#[doc="`IsEnable(crate::app::battlecalculator::BattleCalculator)` overload"]pub fn is_enable(calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ced5d0usize)as*mut u8,bool;
 (crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator))}
 }
@@ -46,12 +69,10 @@ pub use __types::*;
 (DieEvent)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecf40usize)as*mut u8,();
-(DieEvent)__receiver)}
+__DieEvent_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecf70usize)as*mut u8,();
-(DieEvent)__receiver)}
+__DieEvent_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DieTalk()` overload"]fn die_talk(self,)->(){unsafe{let __receiver= <DieEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecfa0usize)as*mut u8,();

@@ -15,6 +15,9 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktimelineeventplayablebehavior/AkTimelineEventPlayableBehavior.md"))]#[::unity2::class(namespace="",name="AkTimelineEventPlayableBehavior")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct AkTimelineEventPlayableBehavior{#[offset(16)]#[rename(name="currentDuration")]pub current_duration:f32, #[offset(20)]#[rename(name="currentDurationProportion")]pub current_duration_proportion:f32, #[offset(24)]#[rename(name="eventIsPlaying")]pub event_is_playing:bool, #[offset(25)]#[rename(name="fadeinTriggered")]pub fadein_triggered:bool, #[offset(26)]#[rename(name="fadeoutTriggered")]pub fadeout_triggered:bool, #[offset(28)]#[rename(name="previousEventStartTime")]pub previous_event_start_time:f32, #[static_field]#[rename(name="CallbackFlags")]pub callback_flags:u32, #[offset(32)]#[rename(name="requiredActions")]pub required_actions:crate::root::aktimelineeventplayablebehavior::AkTimelineEventPlayableBehavior_Actions, #[static_field]#[rename(name="scrubPlaybackLengthMs")]pub scrub_playback_length_ms:i32, #[offset(48)]#[rename(name="eventDurationMax")]pub event_duration_max:f32, #[offset(52)]#[rename(name="eventDurationMin")]pub event_duration_min:f32, #[offset(56)]#[rename(name="blendInDuration")]pub blend_in_duration:f32, #[offset(60)]#[rename(name="blendOutDuration")]pub blend_out_duration:f32, #[offset(64)]#[rename(name="easeInDuration")]pub ease_in_duration:f32, #[offset(68)]#[rename(name="easeOutDuration")]pub ease_out_duration:f32, #[offset(72)]#[rename(name="blendInCurve")]pub blend_in_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(76)]#[rename(name="blendOutCurve")]pub blend_out_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(80)]#[rename(name="eventObject")]pub event_object:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="retriggerEvent")]pub retrigger_event_field:bool, #[offset(89)]#[rename(name="wasScrubbingAndRequiresRetrigger")]pub was_scrubbing_and_requires_retrigger:bool, #[offset(90)]#[rename(name="StopEventAtClipEnd")]pub stop_event_at_clip_end:bool, #[offset(91)]#[rename(name="PrintDebugInformation")]pub print_debug_information:bool, #[static_field]#[rename(name="alph")]pub alph:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktimelineeventplayablebehavior/AkTimelineEventPlayableBehavior_Actions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkTimelineEventPlayableBehavior_Actions{pub value:i32,}
 impl::unity2::ClassIdentity for AkTimelineEventPlayableBehavior_Actions{const NAMESPACE: &'static str="";
 const NAME: &'static str="AkTimelineEventPlayableBehavior.Actions";
@@ -40,13 +43,53 @@ pub fn fade_out()->Self{Self{value:32}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/aktimelineeventplayablebehavior/AkTimelineEventPlayableBehavior.md"))]#[::unity2::class(namespace="",name="AkTimelineEventPlayableBehavior")]#[parent(crate::unity_engine::playables::playablebehaviour::PlayableBehaviour)]pub struct AkTimelineEventPlayableBehavior{#[offset(16)]#[rename(name="currentDuration")]pub current_duration:f32, #[offset(20)]#[rename(name="currentDurationProportion")]pub current_duration_proportion:f32, #[offset(24)]#[rename(name="eventIsPlaying")]pub event_is_playing:bool, #[offset(25)]#[rename(name="fadeinTriggered")]pub fadein_triggered:bool, #[offset(26)]#[rename(name="fadeoutTriggered")]pub fadeout_triggered:bool, #[offset(28)]#[rename(name="previousEventStartTime")]pub previous_event_start_time:f32, #[static_field]#[rename(name="CallbackFlags")]pub callback_flags:u32, #[offset(32)]#[rename(name="requiredActions")]pub required_actions:crate::root::aktimelineeventplayablebehavior::AkTimelineEventPlayableBehavior_Actions, #[static_field]#[rename(name="scrubPlaybackLengthMs")]pub scrub_playback_length_ms:i32, #[offset(48)]#[rename(name="eventDurationMax")]pub event_duration_max:f32, #[offset(52)]#[rename(name="eventDurationMin")]pub event_duration_min:f32, #[offset(56)]#[rename(name="blendInDuration")]pub blend_in_duration:f32, #[offset(60)]#[rename(name="blendOutDuration")]pub blend_out_duration:f32, #[offset(64)]#[rename(name="easeInDuration")]pub ease_in_duration:f32, #[offset(68)]#[rename(name="easeOutDuration")]pub ease_out_duration:f32, #[offset(72)]#[rename(name="blendInCurve")]pub blend_in_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(76)]#[rename(name="blendOutCurve")]pub blend_out_curve:crate::root::akcurveinterpolation::AkCurveInterpolation, #[offset(80)]#[rename(name="eventObject")]pub event_object:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="retriggerEvent")]pub retrigger_event_field:bool, #[offset(89)]#[rename(name="wasScrubbingAndRequiresRetrigger")]pub was_scrubbing_and_requires_retrigger:bool, #[offset(90)]#[rename(name="StopEventAtClipEnd")]pub stop_event_at_clip_end:bool, #[offset(91)]#[rename(name="PrintDebugInformation")]pub print_debug_information:bool, #[static_field]#[rename(name="alph")]pub alph:f32,}
-
 }
 
 #[cfg(feature = "root-aktimelineeventplayablebehavior-types")]
 pub use __types::*;
+
+#[cfg(feature="root-aktimelineeventplayablebehavior")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkTimelineEventPlayableBehavior_unity2_raw{use super:: * ;
+pub unsafe fn prepare_frame(this:AkTimelineEventPlayableBehavior,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <AkTimelineEventPlayableBehavior as::unity2::ClassIdentity> ::NAME,"PrepareFrame",));
+let inner:extern "C" fn(AkTimelineEventPlayableBehavior,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,info,__mi)}
+pub unsafe fn on_behaviour_play(this:AkTimelineEventPlayableBehavior,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <AkTimelineEventPlayableBehavior as::unity2::ClassIdentity> ::NAME,"OnBehaviourPlay",));
+let inner:extern "C" fn(AkTimelineEventPlayableBehavior,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,info,__mi)}
+pub unsafe fn on_behaviour_pause(this:AkTimelineEventPlayableBehavior,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AkTimelineEventPlayableBehavior as::unity2::ClassIdentity> ::NAME,"OnBehaviourPause",));
+let inner:extern "C" fn(AkTimelineEventPlayableBehavior,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,info,__mi)}
+pub unsafe fn process_frame(this:AkTimelineEventPlayableBehavior,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <AkTimelineEventPlayableBehavior as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
+let inner:extern "C" fn(AkTimelineEventPlayableBehavior,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,info,player_data,__mi)}
+}
 
 #[cfg(feature="root-aktimelineeventplayablebehavior")]pub trait IAkTimelineEventPlayableBehaviorMethods:IAkTimelineEventPlayableBehavior{#[doc="`CallbackHandler(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]fn callback_handler(self,in_cookie:impl::core::convert::Into<crate::system::object::Object> ,in_type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,in_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{let __receiver= <AkTimelineEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d26b80usize)as*mut u8,();
@@ -61,20 +104,16 @@ pub use __types::*;
 (AkTimelineEventPlayableBehavior)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(function_name),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
 }
 #[doc="`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn prepare_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <AkTimelineEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d275c0usize)as*mut u8,();
-(AkTimelineEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+__AkTimelineEventPlayableBehavior_unity2_raw::prepare_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
 }
 #[doc="`OnBehaviourPlay(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <AkTimelineEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d27ac0usize)as*mut u8,();
-(AkTimelineEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+__AkTimelineEventPlayableBehavior_unity2_raw::on_behaviour_play(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
 }
 #[doc="`OnBehaviourPause(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn on_behaviour_pause(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <AkTimelineEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d27d30usize)as*mut u8,();
-(AkTimelineEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+__AkTimelineEventPlayableBehavior_unity2_raw::on_behaviour_pause(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
 }
 #[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkTimelineEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d27ec0usize)as*mut u8,();
-(AkTimelineEventPlayableBehavior)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+__AkTimelineEventPlayableBehavior_unity2_raw::process_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::convert::Into::into(player_data), ::core::option::Option::None)}
 }
 #[doc="`ShouldPlay(crate::unity_engine::playables::playable::Playable)` overload"]fn should_play(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->bool{unsafe{let __receiver= <AkTimelineEventPlayableBehavior as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d277e0usize)as*mut u8,bool;
@@ -159,10 +198,10 @@ this}
 #[cfg(feature = "root-aktimelineeventplayablebehavior")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkTimelineEventPlayableBehavior_Actions;
     pub use super::AkTimelineEventPlayableBehavior;
     pub use super::IAkTimelineEventPlayableBehavior;
     pub use super::IAkTimelineEventPlayableBehaviorMethods;
+    pub use super::AkTimelineEventPlayableBehavior_Actions;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

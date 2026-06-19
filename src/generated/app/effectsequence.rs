@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence.md"))]#[::unity2::class(namespace="App",name="EffectSequence")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectsequence::EffectSequence>)]pub struct EffectSequence{#[offset(64)]#[rename(name="m_Effects")]pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EffectSequence_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for EffectSequence_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="EffectSequence.Kind";
@@ -38,13 +41,23 @@ pub fn num()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/effectsequence/EffectSequence.md"))]#[::unity2::class(namespace="App",name="EffectSequence")]#[parent(crate::app::structdata_1::StructData_1<crate::app::effectsequence::EffectSequence>)]pub struct EffectSequence{#[offset(64)]#[rename(name="m_Effects")]pub m_effects: ::unity2::Array<crate::app::effectdata::EffectData> ,}
-
 }
 
 #[cfg(feature = "app-effectsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-effectsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EffectSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:EffectSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <EffectSequence as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(EffectSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-effectsequence")]impl EffectSequence{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d8cb0usize)as*mut u8,();
 )}
@@ -111,8 +124,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22d90b0usize)as*mut
 (EffectSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22d92c0usize)as*mut u8,();
-(EffectSequence)__receiver)}
+__EffectSequence_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22d95b0usize)as*mut u8,();
@@ -151,10 +163,10 @@ this}
 #[cfg(feature = "app-effectsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EffectSequence_Kind;
     pub use super::EffectSequence;
     pub use super::IEffectSequence;
     pub use super::IEffectSequenceMethods;
+    pub use super::EffectSequence_Kind;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

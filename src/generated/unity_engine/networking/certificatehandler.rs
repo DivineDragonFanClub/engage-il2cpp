@@ -16,21 +16,42 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-networking-certificatehandler-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-networking-certificatehandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CertificateHandler_unity2_raw{use super:: * ;
+pub unsafe fn validate_certificate(this:CertificateHandler,certificate_data: ::unity2::Array<u8> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CertificateHandler as::unity2::ClassIdentity> ::NAME,"ValidateCertificate",));
+let inner:extern "C" fn(CertificateHandler, ::unity2::Array<u8> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,certificate_data,__mi)}
+pub unsafe fn dispose(this:CertificateHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CertificateHandler as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(CertificateHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-networking-certificatehandler")]pub trait ICertificateHandlerMethods:ICertificateHandler{#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18230usize)as*mut u8,();
 (CertificateHandler)__receiver)}
 }
 #[doc="`ValidateCertificate(::unity2::Array<u8>)` overload"]fn validate_certificate(self,certificate_data:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18280usize)as*mut u8,bool;
-(CertificateHandler)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(certificate_data))}
+__CertificateHandler_unity2_raw::validate_certificate(__receiver, ::core::convert::Into::into(certificate_data), ::core::option::Option::None)}
 }
 #[doc="`ValidateCertificateNative(::unity2::Array<u8>)` overload"]fn validate_certificate_native(self,certificate_data:impl::core::convert::Into< ::unity2::Array<u8> >)->bool{unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18290usize)as*mut u8,bool;
 (CertificateHandler)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(certificate_data))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <CertificateHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f182a0usize)as*mut u8,();
-(CertificateHandler)__receiver)}
+__CertificateHandler_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 }
 

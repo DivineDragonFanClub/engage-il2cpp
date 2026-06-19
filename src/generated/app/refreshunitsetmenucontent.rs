@@ -26,25 +26,64 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-refreshunitsetmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refreshunitsetmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefreshUnitSetMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn start(this:RefreshUnitSetMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <RefreshUnitSetMenuContent as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(RefreshUnitSetMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:RefreshUnitSetMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefreshUnitSetMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(RefreshUnitSetMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn calc_w(this:RefreshUnitSetMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <RefreshUnitSetMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(RefreshUnitSetMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:RefreshUnitSetMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <RefreshUnitSetMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(RefreshUnitSetMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refreshunitsetmenucontent")]pub trait IRefreshUnitSetMenuContentMethods:IRefreshUnitSetMenuContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RefreshUnitSetMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6530usize)as*mut u8,();
-(RefreshUnitSetMenuContent)__receiver)}
+__RefreshUnitSetMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRefreshUnitSetDecideMenuContent()` overload"]fn get_refresh_unit_set_decide_menu_content(self,)->crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent{unsafe{let __receiver= <RefreshUnitSetMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6640usize)as*mut u8,crate::app::refreshunitsetdecidemenucontent::RefreshUnitSetDecideMenuContent;
 (RefreshUnitSetMenuContent)__receiver)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RefreshUnitSetMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6650usize)as*mut u8,f32;
-(RefreshUnitSetMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__RefreshUnitSetMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <RefreshUnitSetMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6740usize)as*mut u8,f32;
-(RefreshUnitSetMenuContent)__receiver)}
+__RefreshUnitSetMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <RefreshUnitSetMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c67b0usize)as*mut u8,f32;
-(RefreshUnitSetMenuContent)__receiver)}
+__RefreshUnitSetMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateFacility(::unity2::Il2CppString, i32, i32)` overload"]fn update_facility(self,mid:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32> ,facility_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RefreshUnitSetMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22c5c30usize)as*mut u8,();

@@ -17,23 +17,32 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="system-reflection-binder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Binder_unity2_raw{use super:: * ;
-pub unsafe fn select_method(this:Binder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::methodbase::MethodBase> ,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SelectMethod").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SelectMethod", <Binder as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn select_method(this:Binder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::methodbase::MethodBase> ,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Binder as::unity2::ClassIdentity> ::NAME,"SelectMethod",));
 let inner:extern "C" fn(Binder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::methodbase::MethodBase> , ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,binding_attr,r#match,types,modifiers,__mi)}
-pub unsafe fn select_property(this:Binder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> ,return_type: ::unity2::SystemType,indexes: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SelectProperty").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SelectProperty", <Binder as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn select_property(this:Binder,binding_attr:crate::system::reflection::bindingflags::BindingFlags,r#match: ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> ,return_type: ::unity2::SystemType,indexes: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Binder as::unity2::ClassIdentity> ::NAME,"SelectProperty",));
 let inner:extern "C" fn(Binder,crate::system::reflection::bindingflags::BindingFlags, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> , ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,binding_attr,r#match,return_type,indexes,modifiers,__mi)}
-pub unsafe fn reorder_argument_array(this:Binder,args: *mut::unity2::Array<crate::system::object::Object> ,state:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ReorderArgumentArray").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ReorderArgumentArray", <Binder as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn reorder_argument_array(this:Binder,args: *mut::unity2::Array<crate::system::object::Object> ,state:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <Binder as::unity2::ClassIdentity> ::NAME,"ReorderArgumentArray",));
 let inner:extern "C" fn(Binder, *mut::unity2::Array<crate::system::object::Object> ,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

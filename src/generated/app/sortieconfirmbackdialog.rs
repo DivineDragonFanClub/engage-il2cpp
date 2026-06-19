@@ -57,13 +57,25 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-sortieconfirmbackdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieConfirmBackDialog_ConfirmYesDialogItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:SortieConfirmBackDialog_ConfirmYesDialogItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieConfirmBackDialog_ConfirmYesDialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(SortieConfirmBackDialog_ConfirmYesDialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-sortieconfirmbackdialog")]pub trait ISortieConfirmBackDialog_ConfirmYesDialogItemMethods:ISortieConfirmBackDialog_ConfirmYesDialogItem{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SortieConfirmBackDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d728d0usize)as*mut u8,();
 (SortieConfirmBackDialog_ConfirmYesDialogItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SortieConfirmBackDialog_ConfirmYesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d728e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SortieConfirmBackDialog_ConfirmYesDialogItem)__receiver)}
+__SortieConfirmBackDialog_ConfirmYesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 

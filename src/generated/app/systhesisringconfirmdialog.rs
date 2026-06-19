@@ -56,13 +56,25 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-systhesisringconfirmdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:SysthesisRingConfirmDialog_DecideEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SysthesisRingConfirmDialog_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(SysthesisRingConfirmDialog_DecideEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-systhesisringconfirmdialog")]pub trait ISysthesisRingConfirmDialog_DecideEventHandlerMethods:ISysthesisRingConfirmDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SysthesisRingConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21f9f20usize)as*mut u8,();
 (SysthesisRingConfirmDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <SysthesisRingConfirmDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f9f40usize)as*mut u8,();
-(SysthesisRingConfirmDialog_DecideEventHandler)__receiver)}
+__SysthesisRingConfirmDialog_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -79,13 +91,25 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-systhesisringconfirmdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SysthesisRingConfirmDialog_YesDialogItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:SysthesisRingConfirmDialog_YesDialogItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SysthesisRingConfirmDialog_YesDialogItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(SysthesisRingConfirmDialog_YesDialogItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-systhesisringconfirmdialog")]pub trait ISysthesisRingConfirmDialog_YesDialogItemMethods:ISysthesisRingConfirmDialog_YesDialogItem{#[doc="`.ctor(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)` overload"]fn ctor(self,decide_event_handler:impl::core::convert::Into<crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler>)->(){unsafe{let __receiver= <SysthesisRingConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa190usize)as*mut u8,();
 (SysthesisRingConfirmDialog_YesDialogItem)__receiver,(crate::app::systhesisringconfirmdialog::SysthesisRingConfirmDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SysthesisRingConfirmDialog_YesDialogItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21fa240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SysthesisRingConfirmDialog_YesDialogItem)__receiver)}
+__SysthesisRingConfirmDialog_YesDialogItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 

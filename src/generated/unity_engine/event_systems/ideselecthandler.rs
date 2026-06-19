@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-event_systems-ideselecthandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDeselectHandler_unity2_raw{use super:: * ;
-pub unsafe fn on_deselect(this:IDeselectHandler,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnDeselect").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnDeselect", <IDeselectHandler as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_deselect(this:IDeselectHandler,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IDeselectHandler as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
 let inner:extern "C" fn(IDeselectHandler,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -19,40 +19,70 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu.UnitSelectMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_2.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct UnitSelectMenu_2{#[static_field]#[rename(name="s_SelectUnitList")]pub s_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[static_field]#[rename(name="s_Content")]pub s_content:crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2, #[static_field]#[rename(name="s_SelectIndex")]pub s_select_index:i32, #[static_field]#[rename(name="s_ScrollIndex")]pub s_scroll_index:i32, #[static_field]#[rename(name="s_IsFirstSelect")]pub s_is_first_select:bool, #[offset(200)]#[rename(name="m_CloseCallback")]pub m_close_callback:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu.UnitSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct UnitSelectMenu_UnitSelectMenuItem{#[offset(104)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_IsDecided")]pub m_is_decided:bool, #[offset(120)]#[rename(name="m_SelectEventHander")]pub m_select_event_hander:crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/unitselectmenu_2/UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="UnitSelectMenu.UnitSelectMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{}
 
 }
 
 #[cfg(feature = "app-cooking_menu-unitselectmenu_2-types")]
 pub use __types::*;
 
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]pub trait IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5a50usize)as*mut u8,();
-(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5a70usize)as*mut u8,();
-(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl<__T:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler>IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler), ::core::stringify!(new),));
- <Self as IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectMenu_2_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:UnitSelectMenu_2,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <UnitSelectMenu_2 as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(UnitSelectMenu_2, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:UnitSelectMenu_2,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <UnitSelectMenu_2 as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(UnitSelectMenu_2, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:UnitSelectMenu_2,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <UnitSelectMenu_2 as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(UnitSelectMenu_2, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:UnitSelectMenu_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <UnitSelectMenu_2 as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(UnitSelectMenu_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:UnitSelectMenu_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <UnitSelectMenu_2 as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(UnitSelectMenu_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_2{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_unit_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,all_content:impl::core::convert::Into<crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent> ,close_callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5e5e0usize)as*mut u8,();
@@ -74,20 +104,17 @@ this}
 (UnitSelectMenu_2)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::cooking_menu::unitselectmenucontent_2::UnitSelectMenuContent_2)::core::convert::Into::into(menu_content),(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(select_unit_list),(crate::system::action::Action)::core::convert::Into::into(close_callback))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitSelectMenu_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5e590usize)as*mut u8, ::unity2::Il2CppString;
-(UnitSelectMenu_2)__receiver)}
+__UnitSelectMenu_2_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectMenu_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5eb60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(UnitSelectMenu_2)__receiver)}
+__UnitSelectMenu_2_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`NextItem()` overload"]fn next_item(self,)->(){unsafe{let __receiver= <UnitSelectMenu_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5eec0usize)as*mut u8,();
 (UnitSelectMenu_2)__receiver)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <UnitSelectMenu_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5efb0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(UnitSelectMenu_2)__receiver)}
+__UnitSelectMenu_2_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetUnitMenuItemCurrent()` overload"]fn get_unit_menu_item_current(self,)->crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem{unsafe{let __receiver= <UnitSelectMenu_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5f340usize)as*mut u8,crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem;
@@ -102,12 +129,10 @@ this}
 (UnitSelectMenu_2)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <UnitSelectMenu_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5f3f0usize)as*mut u8,();
-(UnitSelectMenu_2)__receiver)}
+__UnitSelectMenu_2_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <UnitSelectMenu_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5f5a0usize)as*mut u8,();
-(UnitSelectMenu_2)__receiver)}
+__UnitSelectMenu_2_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -136,6 +161,29 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectMenu_UnitSelectMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn on_select(this:UnitSelectMenu_UnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <UnitSelectMenu_UnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(UnitSelectMenu_UnitSelectMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:UnitSelectMenu_UnitSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <UnitSelectMenu_UnitSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(UnitSelectMenu_UnitSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-cooking_menu-unitselectmenu_2")]pub trait IUnitSelectMenu_UnitSelectMenuItemMethods:IUnitSelectMenu_UnitSelectMenuItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,select_event_handler:impl::core::convert::Into<crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b55b60usize)as*mut u8,();
 (UnitSelectMenu_UnitSelectMenuItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::cooking_menu::unitselectmenu_2::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
@@ -149,12 +197,10 @@ this}
 (UnitSelectMenu_UnitSelectMenuItem)__receiver)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b55bd0usize)as*mut u8,();
-(UnitSelectMenu_UnitSelectMenuItem)__receiver)}
+__UnitSelectMenu_UnitSelectMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b55dc0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(UnitSelectMenu_UnitSelectMenuItem)__receiver)}
+__UnitSelectMenu_UnitSelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b55dd0usize)as*mut u8,crate::app::unit::Unit;
@@ -184,18 +230,53 @@ pub fn is_decided_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit,__mi)}
+}
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]pub trait IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f5a50usize)as*mut u8,();
+(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl<__T:IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler>IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-cooking_menu-unitselectmenu_2")]impl UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-cooking_menu-unitselectmenu_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler;
-    pub use super::IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler;
-    pub use super::IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods;
     pub use super::UnitSelectMenu_2;
     pub use super::IUnitSelectMenu_2;
     pub use super::IUnitSelectMenu_2Methods;
     pub use super::UnitSelectMenu_UnitSelectMenuItem;
     pub use super::IUnitSelectMenu_UnitSelectMenuItem;
     pub use super::IUnitSelectMenu_UnitSelectMenuItemMethods;
+    pub use super::UnitSelectMenu_UnitSelectMenuItem_SelectEventHandler;
+    pub use super::IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandler;
+    pub use super::IUnitSelectMenu_UnitSelectMenuItem_SelectEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

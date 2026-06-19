@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistsequence/TutorialListSequence.md"))]#[::unity2::class(namespace="",name="TutorialListSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct TutorialListSequence{#[offset(112)]#[rename(name="m_CategorySelectObject")]pub m_category_select_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_TutorialListObject")]pub m_tutorial_list_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_PathTable")]pub m_path_table:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_SelectCategory")]pub m_select_category:crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, #[offset(144)]#[rename(name="m_CategoryList")]pub m_category_list:crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> , #[offset(152)]#[rename(name="m_IsGetAllTutorial")]pub m_is_get_all_tutorial:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistsequence/TutorialListSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialListSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for TutorialListSequence_Label{const NAMESPACE: &'static str="";
 const NAME: &'static str="TutorialListSequence.Label";
@@ -37,10 +34,26 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistsequence/TutorialListSequence.md"))]#[::unity2::class(namespace="",name="TutorialListSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct TutorialListSequence{#[offset(112)]#[rename(name="m_CategorySelectObject")]pub m_category_select_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_TutorialListObject")]pub m_tutorial_list_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_PathTable")]pub m_path_table:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_SelectCategory")]pub m_select_category:crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType, #[offset(144)]#[rename(name="m_CategoryList")]pub m_category_list:crate::system::collections::generic::list_1::List_1<crate::root::tutoriallisttopmenu::TutorialListTopMenu_SelectCategoryType> , #[offset(152)]#[rename(name="m_IsGetAllTutorial")]pub m_is_get_all_tutorial:bool,}
+
 }
 
 #[cfg(feature = "root-tutoriallistsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="root-tutoriallistsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TutorialListSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_dispose(this:TutorialListSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TutorialListSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(TutorialListSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="root-tutoriallistsequence")]impl TutorialListSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_get_all_tutorial:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b2c40usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_get_all_tutorial))}
@@ -96,8 +109,7 @@ pub use __types::*;
 (TutorialListSequence)__receiver)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TutorialListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22b3980usize)as*mut u8,();
-(TutorialListSequence)__receiver)}
+__TutorialListSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TutorialListSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22b2cd0usize)as*mut u8,();
@@ -134,10 +146,10 @@ this}
 #[cfg(feature = "root-tutoriallistsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TutorialListSequence_Label;
     pub use super::TutorialListSequence;
     pub use super::ITutorialListSequence;
     pub use super::ITutorialListSequenceMethods;
-    pub use super::TutorialListSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

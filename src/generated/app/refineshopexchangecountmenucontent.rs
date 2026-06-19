@@ -26,37 +26,103 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-refineshopexchangecountmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refineshopexchangecountmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopExchangeCountMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:RefineShopExchangeCountMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RefineShopExchangeCountMenuContent as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(RefineShopExchangeCountMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start(this:RefineShopExchangeCountMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <RefineShopExchangeCountMenuContent as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(RefineShopExchangeCountMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_menu_item_content(this:RefineShopExchangeCountMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefineShopExchangeCountMenuContent as::unity2::ClassIdentity> ::NAME,"BuildMenuItemContent",));
+let inner:extern "C" fn(RefineShopExchangeCountMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_menu_item_content_max(this:RefineShopExchangeCountMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RefineShopExchangeCountMenuContent as::unity2::ClassIdentity> ::NAME,"GetMenuItemContentMax",));
+let inner:extern "C" fn(RefineShopExchangeCountMenuContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:RefineShopExchangeCountMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefineShopExchangeCountMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(RefineShopExchangeCountMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn calc_w(this:RefineShopExchangeCountMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <RefineShopExchangeCountMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(RefineShopExchangeCountMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:RefineShopExchangeCountMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <RefineShopExchangeCountMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(RefineShopExchangeCountMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshopexchangecountmenucontent")]pub trait IRefineShopExchangeCountMenuContentMethods:IRefineShopExchangeCountMenuContent{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960bd0usize)as*mut u8,();
-(RefineShopExchangeCountMenuContent)__receiver)}
+__RefineShopExchangeCountMenuContent_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960be0usize)as*mut u8,();
-(RefineShopExchangeCountMenuContent)__receiver)}
+__RefineShopExchangeCountMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2960f50usize)as*mut u8,();
 (RefineShopExchangeCountMenuContent)__receiver)}
 }
 #[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2961280usize)as*mut u8,();
-(RefineShopExchangeCountMenuContent)__receiver)}
+__RefineShopExchangeCountMenuContent_unity2_raw::build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2961380usize)as*mut u8,i32;
-(RefineShopExchangeCountMenuContent)__receiver)}
+__RefineShopExchangeCountMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2961400usize)as*mut u8,f32;
-(RefineShopExchangeCountMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__RefineShopExchangeCountMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29614e0usize)as*mut u8,f32;
-(RefineShopExchangeCountMenuContent)__receiver)}
+__RefineShopExchangeCountMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2961500usize)as*mut u8,f32;
-(RefineShopExchangeCountMenuContent)__receiver)}
+__RefineShopExchangeCountMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x295fc00usize)as*mut u8,();

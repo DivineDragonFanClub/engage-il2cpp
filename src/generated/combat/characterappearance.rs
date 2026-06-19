@@ -16,6 +16,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-characterappearance-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-characterappearance")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterAppearance_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:CharacterAppearance,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CharacterAppearance as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn finalize(this:CharacterAppearance,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <CharacterAppearance as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(CharacterAppearance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-characterappearance")]impl CharacterAppearance{#[doc="`op_Implicit(crate::combat::characterappearance::CharacterAppearance)` overload"]pub fn op_implicit(a:impl::core::convert::Into<crate::combat::characterappearance::CharacterAppearance>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b0abf0usize)as*mut u8,bool;
 (crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(a))}
 }
@@ -134,12 +157,10 @@ pub use __types::*;
 (CharacterAppearance)__receiver,(crate::combat::characterappearance::CharacterAppearance)::core::convert::Into::into(rhs),(crate::combat::weaponstyle::WeaponStyle)::core::convert::Into::into(weapon_style))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <CharacterAppearance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2b0bd60usize)as*mut u8,();
-(CharacterAppearance)__receiver)}
+__CharacterAppearance_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <CharacterAppearance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2b0c020usize)as*mut u8,();
-(CharacterAppearance)__receiver)}
+__CharacterAppearance_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetDefaultName()` overload"]fn set_default_name(self,)->(){unsafe{let __receiver= <CharacterAppearance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b0c0b0usize)as*mut u8,();

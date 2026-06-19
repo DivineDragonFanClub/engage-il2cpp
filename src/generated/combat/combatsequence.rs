@@ -20,6 +20,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-combatsequence-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-combatsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CombatSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:CombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CombatSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(CombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:CombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CombatSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(CombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_persistent(this:CombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CombatSequence as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let inner:extern "C" fn(CombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-combatsequence")]impl CombatSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::battlecalculator::BattleCalculator, crate::app::battlecalculator::BattleCalculator, crate::app::procvoidmethod::ProcVoidMethod)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,sim_calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,callback:impl::core::convert::Into<crate::app::procvoidmethod::ProcVoidMethod>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x292bf90usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(sim_calculator),(crate::app::procvoidmethod::ProcVoidMethod)::core::convert::Into::into(callback))}
 }
@@ -94,16 +127,13 @@ pub use __types::*;
 (CombatSequence)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <CombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x292d770usize)as*mut u8,();
-(CombatSequence)__receiver)}
+__CombatSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <CombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x292d7f0usize)as*mut u8,();
-(CombatSequence)__receiver)}
+__CombatSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <CombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x292d860usize)as*mut u8,();
-(CombatSequence)__receiver)}
+__CombatSequence_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BoundToCombatCamera()` overload"]fn bound_to_combat_camera(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x292d870usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;

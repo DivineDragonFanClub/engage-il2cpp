@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence.ProcDiscardMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence_ProcDiscardMessage{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence{#[offset(112)]#[rename(name="m_Bg")]pub m_bg:crate::app::menubg::MenuBg, #[offset(120)]#[rename(name="m_RewardExpList")]pub m_reward_exp_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> , #[offset(128)]#[rename(name="m_RewardItemList")]pub m_reward_item_list:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> , #[offset(136)]#[rename(name="m_RewardMoney")]pub m_reward_money:i32, #[offset(140)]#[rename(name="m_IsDiscard")]pub m_is_discard:bool, #[offset(141)]#[rename(name="m_IsCreateBg")]pub m_is_create_bg:bool, #[offset(142)]#[rename(name="m_IsClear")]pub m_is_clear:bool, #[offset(144)]#[rename(name="TitleMID")]pub title_mid: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_LevelUpUnitList")]pub m_level_up_unit_list:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> ,}
 
 
@@ -40,39 +37,13 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonrewardsequence/CommonRewardSequence_ProcDiscardMessage.md"))]#[::unity2::class(namespace="App",name="CommonRewardSequence.ProcDiscardMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct CommonRewardSequence_ProcDiscardMessage{}
+
 }
 
 #[cfg(feature = "app-commonrewardsequence-types")]
 pub use __types::*;
-
-#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19cb910usize)as*mut u8,crate::app::procinst::ProcInst;
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-commonrewardsequence")]pub trait ICommonRewardSequence_ProcDiscardMessageMethods:ICommonRewardSequence_ProcDiscardMessage{#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <CommonRewardSequence_ProcDiscardMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cb880usize)as*mut u8,();
-(CommonRewardSequence_ProcDiscardMessage)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRewardSequence_ProcDiscardMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbb10usize)as*mut u8,();
-(CommonRewardSequence_ProcDiscardMessage)__receiver)}
-}
-}
-
-#[cfg(feature="app-commonrewardsequence")]impl<__T:ICommonRewardSequence_ProcDiscardMessage>ICommonRewardSequence_ProcDiscardMessageMethods for __T{}
-
-#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CommonRewardSequence_ProcDiscardMessage), ::core::stringify!(new),));
- <Self as ICommonRewardSequence_ProcDiscardMessageMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>, crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>, i32, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,reward_exp_list:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32> > ,reward_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> > ,reward_money:impl::core::convert::Into<i32> ,is_create_bg:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2532f40usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::unit::Unit,i32>)::core::convert::Into::into(reward_exp_list),(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)::core::convert::Into::into(reward_list),(i32)::core::convert::Into::into(reward_money),(bool)::core::convert::Into::into(is_create_bg))}
@@ -173,16 +144,45 @@ pub fn check_item_overflow_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 this}
 }
 
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19cb910usize)as*mut u8,crate::app::procinst::ProcInst;
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-commonrewardsequence")]pub trait ICommonRewardSequence_ProcDiscardMessageMethods:ICommonRewardSequence_ProcDiscardMessage{#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <CommonRewardSequence_ProcDiscardMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cb880usize)as*mut u8,();
+(CommonRewardSequence_ProcDiscardMessage)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CommonRewardSequence_ProcDiscardMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbb10usize)as*mut u8,();
+(CommonRewardSequence_ProcDiscardMessage)__receiver)}
+}
+}
+
+#[cfg(feature="app-commonrewardsequence")]impl<__T:ICommonRewardSequence_ProcDiscardMessage>ICommonRewardSequence_ProcDiscardMessageMethods for __T{}
+
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-commonrewardsequence")]impl CommonRewardSequence_ProcDiscardMessage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CommonRewardSequence_ProcDiscardMessage), ::core::stringify!(new),));
+ <Self as ICommonRewardSequence_ProcDiscardMessageMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-commonrewardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CommonRewardSequence_ProcDiscardMessage;
-    pub use super::ICommonRewardSequence_ProcDiscardMessage;
-    pub use super::ICommonRewardSequence_ProcDiscardMessageMethods;
     pub use super::CommonRewardSequence;
     pub use super::ICommonRewardSequence;
     pub use super::ICommonRewardSequenceMethods;
     pub use super::CommonRewardSequence_Label2;
+    pub use super::CommonRewardSequence_ProcDiscardMessage;
+    pub use super::ICommonRewardSequence_ProcDiscardMessage;
+    pub use super::ICommonRewardSequence_ProcDiscardMessageMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

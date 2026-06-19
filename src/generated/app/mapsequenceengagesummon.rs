@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceengagesummon/MapSequenceEngageSummon.md"))]#[::unity2::class(namespace="App",name="MapSequenceEngageSummon")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequenceengagesummon::MapSequenceEngageSummon>)]pub struct MapSequenceEngageSummon{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceengagesummon/MapSequenceEngageSummon_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceEngageSummon_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceEngageSummon_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceEngageSummon.Label";
@@ -37,9 +40,6 @@ pub fn after()->Self{Self{value:2}
 pub fn end()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceengagesummon/MapSequenceEngageSummon.md"))]#[::unity2::class(namespace="App",name="MapSequenceEngageSummon")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequenceengagesummon::MapSequenceEngageSummon>)]pub struct MapSequenceEngageSummon{}
 
 }
 
@@ -158,10 +158,10 @@ this}
 #[cfg(feature = "app-mapsequenceengagesummon")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceEngageSummon_Label;
     pub use super::MapSequenceEngageSummon;
     pub use super::IMapSequenceEngageSummon;
     pub use super::IMapSequenceEngageSummonMethods;
+    pub use super::MapSequenceEngageSummon_Label;
     pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

@@ -26,17 +26,47 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-helpitembattlestyle-types")]
 pub use __types::*;
 
+#[cfg(feature="app-helpitembattlestyle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HelpItemBattleStyle_unity2_raw{use super:: * ;
+pub unsafe fn get_help_item_type(this:HelpItemBattleStyle,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HelpItemBattleStyle as::unity2::ClassIdentity> ::NAME,"get_HelpItemType",));
+let inner:extern "C" fn(HelpItemBattleStyle, ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_valid(this:HelpItemBattleStyle,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HelpItemBattleStyle as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let inner:extern "C" fn(HelpItemBattleStyle, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_contents(this:HelpItemBattleStyle,setter:crate::app::helpparamsetter::HelpParamSetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HelpItemBattleStyle as::unity2::ClassIdentity> ::NAME,"SetContents",));
+let inner:extern "C" fn(HelpItemBattleStyle,crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,setter,__mi)}
+}
+
 #[cfg(feature="app-helpitembattlestyle")]pub trait IHelpItemBattleStyleMethods:IHelpItemBattleStyle{#[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemBattleStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297c340usize)as*mut u8,crate::app::helpmanager::HelpManager_HelpItemType;
-(HelpItemBattleStyle)__receiver)}
+__HelpItemBattleStyle_unity2_raw::get_help_item_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <HelpItemBattleStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297c350usize)as*mut u8,bool;
-(HelpItemBattleStyle)__receiver)}
+__HelpItemBattleStyle_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemBattleStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297c3d0usize)as*mut u8,();
-(HelpItemBattleStyle)__receiver,(crate::app::helpparamsetter::HelpParamSetter)::core::convert::Into::into(setter))}
+__HelpItemBattleStyle_unity2_raw::set_contents(__receiver, ::core::convert::Into::into(setter), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HelpItemBattleStyle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x297c500usize)as*mut u8,();

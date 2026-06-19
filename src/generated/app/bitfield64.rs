@@ -18,6 +18,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-bitfield64-types")]
 pub use __types::*;
 
+#[cfg(feature="app-bitfield64")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BitField64_unity2_raw{use super:: * ;
+pub unsafe fn to_string(this:BitField64,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <BitField64 as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(BitField64, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value_type(this:BitField64,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BitField64 as::unity2::ClassIdentity> ::NAME,"get_ValueType",));
+let inner:extern "C" fn(BitField64, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn equals(this:BitField64,rhs_obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <BitField64 as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(BitField64,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,rhs_obj,__mi)}
+pub unsafe fn get_hash_code(this:BitField64,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <BitField64 as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(BitField64, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-bitfield64")]impl BitField64{#[doc="`op_Equality(crate::app::bitfield64::BitField64, i64)` overload"]pub fn op_equality(lhs:impl::core::convert::Into<crate::app::bitfield64::BitField64> ,rhs:impl::core::convert::Into<i64>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2987f10usize)as*mut u8,bool;
 (crate::app::bitfield64::BitField64)::core::convert::Into::into(lhs),(i64)::core::convert::Into::into(rhs))}
 }
@@ -121,12 +164,10 @@ pub use __types::*;
 (BitField64)__receiver,(crate::app::bitfield64::BitField64)::core::convert::Into::into(f))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BitField64 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2987b30usize)as*mut u8, ::unity2::Il2CppString;
-(BitField64)__receiver)}
+__BitField64_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <BitField64 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2987e80usize)as*mut u8, ::unity2::SystemType;
-(BitField64)__receiver)}
+__BitField64_unity2_raw::get_value_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Value()` overload"]fn get_value(self,)->i64{unsafe{let __receiver= <BitField64 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2987ef0usize)as*mut u8,i64;
@@ -137,16 +178,14 @@ pub use __types::*;
 (BitField64)__receiver,(i64)::core::convert::Into::into(value))}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,rhs_obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <BitField64 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2987fb0usize)as*mut u8,bool;
-(BitField64)__receiver,(crate::system::object::Object)::core::convert::Into::into(rhs_obj))}
+__BitField64_unity2_raw::equals(__receiver, ::core::convert::Into::into(rhs_obj), ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::app::bitfield64::BitField64)` overload"]fn equals_2(self,rhs:impl::core::convert::Into<crate::app::bitfield64::BitField64>)->bool{unsafe{let __receiver= <BitField64 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2988060usize)as*mut u8,bool;
 (BitField64)__receiver,(crate::app::bitfield64::BitField64)::core::convert::Into::into(rhs))}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <BitField64 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2988080usize)as*mut u8,i32;
-(BitField64)__receiver)}
+__BitField64_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 }
 

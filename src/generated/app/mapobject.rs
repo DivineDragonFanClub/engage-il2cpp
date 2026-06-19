@@ -26,10 +26,28 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_DitherManager.md"))]#[::unity2::class(namespace="App",name="MapObject.DitherManager")]#[parent(crate::system::object::Object)]pub struct MapObject_DitherManager{#[offset(16)]#[rename(name="m_Pairs")]pub m_pairs:crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject_DitherPair> , #[offset(24)]#[rename(name="m_Renderers")]pub m_renderers:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::unity_engine::renderer::Renderer,crate::app::mapobject::MapObject_DitherPair> , #[offset(32)]#[rename(name="m_Alpha")]pub m_alpha:f32,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_State.md"))]#[::unity2::class(namespace="App",name="MapObject.State")]#[parent(crate::system::object::Object)]pub struct MapObject_State{#[offset(16)]#[rename(name="対象オブジェクト")]pub 対象オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(24)]#[rename(name="エフェクト")]pub エフェクト:crate::unity_engine::gameobject::GameObject,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_Pair.md"))]#[::unity2::class(namespace="App",name="MapObject.Pair")]#[parent(crate::system::object::Object)]pub struct MapObject_Pair{#[offset(16)]#[rename(name="src")]pub src:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="dst")]pub dst:crate::unity_engine::gameobject::GameObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject.md"))]#[::unity2::class(namespace="App",name="MapObject")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapObject{#[static_field]#[rename(name="InvalidState")]pub invalid_state:i32, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapobject::MapObject_Kinds, #[offset(28)]#[rename(name="m_Lods")]pub m_lods:crate::app::mapobject::MapObject_Lods, #[offset(32)]#[rename(name="m_LodManual")]pub m_lod_manual:bool, #[offset(33)]#[rename(name="m_LodAssign")]pub m_lod_assign:bool, #[offset(34)]#[rename(name="m_DisableBake")]pub m_disable_bake:bool, #[offset(35)]#[rename(name="m_DisableOccluder")]pub m_disable_occluder:bool, #[offset(36)]#[rename(name="m_BakeTypes")]pub m_bake_types:crate::app::mapobject::MapObject_BakeTypes, #[offset(40)]#[rename(name="エフェクト発生位置")]pub エフェクト発生位置:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="停止エフェクト")]pub 停止エフェクト:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="起動エフェクト")]pub 起動エフェクト:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="破壊エフェクト")]pub 破壊エフェクト:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="動作透過無効化")]pub 動作透過無効化:bool, #[offset(76)]#[rename(name="動作透過遅延")]pub 動作透過遅延:f32, #[offset(80)]#[rename(name="動作透過時間")]pub 動作透過時間:f32, #[offset(88)]#[rename(name="状態変化")]pub 状態変化: ::unity2::Array<crate::app::mapobject::MapObject_State> , #[offset(96)]#[rename(name="破壊前オブジェクト")]pub 破壊前オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(104)]#[rename(name="破壊後オブジェクト")]pub 破壊後オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(112)]#[rename(name="m_MapSoundLabel")]pub m_map_sound_label:crate::root::mapsoundlabel::MapSoundLabel, #[offset(120)]#[rename(name="m_LightmapPairs")]pub m_lightmap_pairs:crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject_Pair> , #[offset(128)]#[rename(name="m_LightmapScale")]pub m_lightmap_scale:crate::app::mapobject::MapObject_LightmapScales, #[offset(132)]#[rename(name="m_ViewDistance")]pub m_view_distance:f32, #[offset(136)]#[rename(name="m_EditAlpha")]pub m_edit_alpha:f32, #[offset(144)]#[rename(name="m_Terrain")]pub m_terrain: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_FadeAlpha")]pub m_fade_alpha:f32, #[offset(156)]#[rename(name="m_ActionAlpha")]pub m_action_alpha:f32, #[offset(160)]#[rename(name="m_TransparentAlpha")]pub m_transparent_alpha:f32, #[offset(164)]#[rename(name="m_DestructoniAlpha")]pub m_destructoni_alpha:f32, #[offset(168)]#[rename(name="m_Action")]pub m_action:crate::app::mapobject::MapObject_Actions, #[offset(172)]#[rename(name="m_PreviwAction")]pub m_previw_action:crate::app::mapobject::MapObject_Actions, #[offset(176)]#[rename(name="m_State")]pub m_state:i32, #[offset(180)]#[rename(name="m_PreviwState")]pub m_previw_state:i32, #[offset(184)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(192)]#[rename(name="m_MapMaterial")]pub m_map_material:crate::app::mapmaterial::MapMaterial, #[offset(200)]#[rename(name="m_IsBroken")]pub m_is_broken:bool, #[offset(208)]#[rename(name="m_BrokenList")]pub m_broken_list:crate::app::mapobject::MapObject_RigidList, #[offset(216)]#[rename(name="m_DitherManager")]pub m_dither_manager:crate::app::mapobject::MapObject_DitherManager, #[static_field]#[rename(name="Version")]pub version:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_Actions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_Actions{pub value:i32,}
+impl::unity2::ClassIdentity for MapObject_Actions{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapObject.Actions";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapObject_Actions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapObject_Actions{pub fn none()->Self{Self{value:0}
+}
+pub fn idle()->Self{Self{value:1}
+}
+pub fn done()->Self{Self{value:2}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_BakeTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_BakeTypes{pub value:i32,}
@@ -54,33 +72,34 @@ pub fn 変化後を強制ベイク()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_Lods.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_Lods{pub value:i32,}
-impl::unity2::ClassIdentity for MapObject_Lods{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapObject.Lods";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapObject_Lods{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapObject_Lods{pub fn 切替早()->Self{Self{value:0}
-}
-pub fn 切替中()->Self{Self{value:1}
-}
-pub fn 切替遅()->Self{Self{value:2}
-}
-pub fn 切替早_cull()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_DitherPair.md"))]#[::unity2::class(namespace="App",name="MapObject.DitherPair")]#[parent(crate::system::object::Object)]pub struct MapObject_DitherPair{#[offset(16)]#[rename(name="m_Render")]pub m_render:crate::unity_engine::renderer::Renderer, #[offset(24)]#[rename(name="m_Shareds")]pub m_shareds: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(32)]#[rename(name="m_Dithers")]pub m_dithers: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(40)]#[rename(name="m_Manager")]pub m_manager:crate::app::mapobject::MapObject_DitherManager, #[offset(48)]#[rename(name="m_Alpha")]pub m_alpha:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_RigidInfo.md"))]#[::unity2::class(namespace="App",name="MapObject.RigidInfo")]#[parent(crate::system::object::Object)]pub struct MapObject_RigidInfo{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="position")]pub position:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="scale")]pub scale:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="rotation")]pub rotation:crate::unity_engine::quaternion::Quaternion, #[offset(64)]#[rename(name="rigidbody")]pub rigidbody:crate::unity_engine::rigidbody::Rigidbody,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_RigidList.md"))]#[::unity2::class(namespace="App",name="MapObject.RigidList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject_RigidInfo>)]pub struct MapObject_RigidList{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_LightmapScales.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_LightmapScales{pub value:i32,}
+impl::unity2::ClassIdentity for MapObject_LightmapScales{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapObject.LightmapScales";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapObject_LightmapScales{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapObject_LightmapScales{pub fn 通常()->Self{Self{value:0}
+}
+pub fn なし()->Self{Self{value:1}
+}
+pub fn 遠景x0125()->Self{Self{value:2}
+}
+pub fn 縮小x05()->Self{Self{value:3}
+}
+pub fn 拡大x2()->Self{Self{value:4}
+}
+pub fn 極大x4()->Self{Self{value:5}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_Kinds{pub value:i32,}
@@ -121,49 +140,30 @@ pub fn 復帰()->Self{Self{value:12}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_Actions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_Actions{pub value:i32,}
-impl::unity2::ClassIdentity for MapObject_Actions{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapObject.Actions";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject.md"))]#[::unity2::class(namespace="App",name="MapObject")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MapObject{#[static_field]#[rename(name="InvalidState")]pub invalid_state:i32, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapobject::MapObject_Kinds, #[offset(28)]#[rename(name="m_Lods")]pub m_lods:crate::app::mapobject::MapObject_Lods, #[offset(32)]#[rename(name="m_LodManual")]pub m_lod_manual:bool, #[offset(33)]#[rename(name="m_LodAssign")]pub m_lod_assign:bool, #[offset(34)]#[rename(name="m_DisableBake")]pub m_disable_bake:bool, #[offset(35)]#[rename(name="m_DisableOccluder")]pub m_disable_occluder:bool, #[offset(36)]#[rename(name="m_BakeTypes")]pub m_bake_types:crate::app::mapobject::MapObject_BakeTypes, #[offset(40)]#[rename(name="エフェクト発生位置")]pub エフェクト発生位置:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="停止エフェクト")]pub 停止エフェクト:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="起動エフェクト")]pub 起動エフェクト:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="破壊エフェクト")]pub 破壊エフェクト:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="動作透過無効化")]pub 動作透過無効化:bool, #[offset(76)]#[rename(name="動作透過遅延")]pub 動作透過遅延:f32, #[offset(80)]#[rename(name="動作透過時間")]pub 動作透過時間:f32, #[offset(88)]#[rename(name="状態変化")]pub 状態変化: ::unity2::Array<crate::app::mapobject::MapObject_State> , #[offset(96)]#[rename(name="破壊前オブジェクト")]pub 破壊前オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(104)]#[rename(name="破壊後オブジェクト")]pub 破壊後オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(112)]#[rename(name="m_MapSoundLabel")]pub m_map_sound_label:crate::root::mapsoundlabel::MapSoundLabel, #[offset(120)]#[rename(name="m_LightmapPairs")]pub m_lightmap_pairs:crate::system::collections::generic::list_1::List_1<crate::app::mapobject::MapObject_Pair> , #[offset(128)]#[rename(name="m_LightmapScale")]pub m_lightmap_scale:crate::app::mapobject::MapObject_LightmapScales, #[offset(132)]#[rename(name="m_ViewDistance")]pub m_view_distance:f32, #[offset(136)]#[rename(name="m_EditAlpha")]pub m_edit_alpha:f32, #[offset(144)]#[rename(name="m_Terrain")]pub m_terrain: ::unity2::Il2CppString, #[offset(152)]#[rename(name="m_FadeAlpha")]pub m_fade_alpha:f32, #[offset(156)]#[rename(name="m_ActionAlpha")]pub m_action_alpha:f32, #[offset(160)]#[rename(name="m_TransparentAlpha")]pub m_transparent_alpha:f32, #[offset(164)]#[rename(name="m_DestructoniAlpha")]pub m_destructoni_alpha:f32, #[offset(168)]#[rename(name="m_Action")]pub m_action:crate::app::mapobject::MapObject_Actions, #[offset(172)]#[rename(name="m_PreviwAction")]pub m_previw_action:crate::app::mapobject::MapObject_Actions, #[offset(176)]#[rename(name="m_State")]pub m_state:i32, #[offset(180)]#[rename(name="m_PreviwState")]pub m_previw_state:i32, #[offset(184)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(192)]#[rename(name="m_MapMaterial")]pub m_map_material:crate::app::mapmaterial::MapMaterial, #[offset(200)]#[rename(name="m_IsBroken")]pub m_is_broken:bool, #[offset(208)]#[rename(name="m_BrokenList")]pub m_broken_list:crate::app::mapobject::MapObject_RigidList, #[offset(216)]#[rename(name="m_DitherManager")]pub m_dither_manager:crate::app::mapobject::MapObject_DitherManager, #[static_field]#[rename(name="Version")]pub version:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_Lods.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_Lods{pub value:i32,}
+impl::unity2::ClassIdentity for MapObject_Lods{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapObject.Lods";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for MapObject_Actions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for MapObject_Lods{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl MapObject_Actions{pub fn none()->Self{Self{value:0}
+impl MapObject_Lods{pub fn 切替早()->Self{Self{value:0}
 }
-pub fn idle()->Self{Self{value:1}
+pub fn 切替中()->Self{Self{value:1}
 }
-pub fn done()->Self{Self{value:2}
+pub fn 切替遅()->Self{Self{value:2}
+}
+pub fn 切替早_cull()->Self{Self{value:3}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_State.md"))]#[::unity2::class(namespace="App",name="MapObject.State")]#[parent(crate::system::object::Object)]pub struct MapObject_State{#[offset(16)]#[rename(name="対象オブジェクト")]pub 対象オブジェクト: ::unity2::Array<crate::unity_engine::gameobject::GameObject> , #[offset(24)]#[rename(name="エフェクト")]pub エフェクト:crate::unity_engine::gameobject::GameObject,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_LightmapScales.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapObject_LightmapScales{pub value:i32,}
-impl::unity2::ClassIdentity for MapObject_LightmapScales{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapObject.LightmapScales";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapObject_LightmapScales{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapObject_LightmapScales{pub fn 通常()->Self{Self{value:0}
-}
-pub fn なし()->Self{Self{value:1}
-}
-pub fn 遠景x0125()->Self{Self{value:2}
-}
-pub fn 縮小x05()->Self{Self{value:3}
-}
-pub fn 拡大x2()->Self{Self{value:4}
-}
-pub fn 極大x4()->Self{Self{value:5}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapobject/MapObject_DitherPair.md"))]#[::unity2::class(namespace="App",name="MapObject.DitherPair")]#[parent(crate::system::object::Object)]pub struct MapObject_DitherPair{#[offset(16)]#[rename(name="m_Render")]pub m_render:crate::unity_engine::renderer::Renderer, #[offset(24)]#[rename(name="m_Shareds")]pub m_shareds: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(32)]#[rename(name="m_Dithers")]pub m_dithers: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(40)]#[rename(name="m_Manager")]pub m_manager:crate::app::mapobject::MapObject_DitherManager, #[offset(48)]#[rename(name="m_Alpha")]pub m_alpha:f32,}
 
 }
 
@@ -218,6 +218,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapobject")]pub trait IMapObject_StateMethods:IMapObject_State{#[doc="`SetActive(bool)` overload"]fn set_active(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapObject_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218b9a0usize)as*mut u8,();
+(MapObject_State)__receiver,(bool)::core::convert::Into::into(enable))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapObject_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218bab0usize)as*mut u8,();
+(MapObject_State)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapobject")]impl<__T:IMapObject_State>IMapObject_StateMethods for __T{}
+
+#[cfg(feature="app-mapobject")]impl MapObject_State{pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapobject")]impl MapObject_State{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapObject_State), ::core::stringify!(new),));
+ <Self as IMapObject_StateMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-mapobject")]pub trait IMapObject_PairMethods:IMapObject_Pair{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapObject_Pair as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x218b2d0usize)as*mut u8,();
 (MapObject_Pair)__receiver)}
@@ -233,6 +256,62 @@ this}
 ::{}
  failed to instantiate", ::core::stringify!(MapObject_Pair), ::core::stringify!(new),));
  <Self as IMapObject_PairMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapobject")]pub trait IMapObject_RigidInfoMethods:IMapObject_RigidInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapObject_RigidInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218b2e0usize)as*mut u8,();
+(MapObject_RigidInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapobject")]impl<__T:IMapObject_RigidInfo>IMapObject_RigidInfoMethods for __T{}
+
+#[cfg(feature="app-mapobject")]impl MapObject_RigidInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapobject")]impl MapObject_RigidInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapObject_RigidInfo), ::core::stringify!(new),));
+ <Self as IMapObject_RigidInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapobject")]pub trait IMapObject_RigidListMethods:IMapObject_RigidList{#[doc="`Add(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]fn add(self,objects:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::gameobject::GameObject> >)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218b2f0usize)as*mut u8,();
+(MapObject_RigidList)__receiver,(::unity2::Array<crate::unity_engine::gameobject::GameObject>)::core::convert::Into::into(objects))}
+}
+#[doc="`Add(crate::unity_engine::gameobject::GameObject)` overload"]fn add_2(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218b3f0usize)as*mut u8,();
+(MapObject_RigidList)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+}
+#[doc="`SetBreak(bool)` overload"]fn set_break(self,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218b5d0usize)as*mut u8,();
+(MapObject_RigidList)__receiver,(bool)::core::convert::Into::into(enabled))}
+}
+#[doc="`Explosion(crate::unity_engine::vector3::Vector3, f32)` overload"]fn explosion(self,hit:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,pow:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218b7c0usize)as*mut u8,();
+(MapObject_RigidList)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(hit),(f32)::core::convert::Into::into(pow))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218b920usize)as*mut u8,();
+(MapObject_RigidList)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapobject")]impl<__T:IMapObject_RigidList>IMapObject_RigidListMethods for __T{}
+
+#[cfg(feature="app-mapobject")]impl MapObject_RigidList{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn explosion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-mapobject")]impl MapObject_RigidList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapObject_RigidList), ::core::stringify!(new),));
+ <Self as IMapObject_RigidListMethods> ::ctor(this,);
 this}
 }
 
@@ -657,114 +736,35 @@ pub fn get_alpha_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-mapobject")]pub trait IMapObject_RigidInfoMethods:IMapObject_RigidInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapObject_RigidInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218b2e0usize)as*mut u8,();
-(MapObject_RigidInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapobject")]impl<__T:IMapObject_RigidInfo>IMapObject_RigidInfoMethods for __T{}
-
-#[cfg(feature="app-mapobject")]impl MapObject_RigidInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapobject")]impl MapObject_RigidInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapObject_RigidInfo), ::core::stringify!(new),));
- <Self as IMapObject_RigidInfoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapobject")]pub trait IMapObject_RigidListMethods:IMapObject_RigidList{#[doc="`Add(::unity2::Array<crate::unity_engine::gameobject::GameObject>)` overload"]fn add(self,objects:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::gameobject::GameObject> >)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218b2f0usize)as*mut u8,();
-(MapObject_RigidList)__receiver,(::unity2::Array<crate::unity_engine::gameobject::GameObject>)::core::convert::Into::into(objects))}
-}
-#[doc="`Add(crate::unity_engine::gameobject::GameObject)` overload"]fn add_2(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218b3f0usize)as*mut u8,();
-(MapObject_RigidList)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
-}
-#[doc="`SetBreak(bool)` overload"]fn set_break(self,enabled:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218b5d0usize)as*mut u8,();
-(MapObject_RigidList)__receiver,(bool)::core::convert::Into::into(enabled))}
-}
-#[doc="`Explosion(crate::unity_engine::vector3::Vector3, f32)` overload"]fn explosion(self,hit:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,pow:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218b7c0usize)as*mut u8,();
-(MapObject_RigidList)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(hit),(f32)::core::convert::Into::into(pow))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapObject_RigidList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218b920usize)as*mut u8,();
-(MapObject_RigidList)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapobject")]impl<__T:IMapObject_RigidList>IMapObject_RigidListMethods for __T{}
-
-#[cfg(feature="app-mapobject")]impl MapObject_RigidList{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_break_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn explosion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-mapobject")]impl MapObject_RigidList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapObject_RigidList), ::core::stringify!(new),));
- <Self as IMapObject_RigidListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapobject")]pub trait IMapObject_StateMethods:IMapObject_State{#[doc="`SetActive(bool)` overload"]fn set_active(self,enable:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapObject_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218b9a0usize)as*mut u8,();
-(MapObject_State)__receiver,(bool)::core::convert::Into::into(enable))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapObject_State as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218bab0usize)as*mut u8,();
-(MapObject_State)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapobject")]impl<__T:IMapObject_State>IMapObject_StateMethods for __T{}
-
-#[cfg(feature="app-mapobject")]impl MapObject_State{pub fn set_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapobject")]impl MapObject_State{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapObject_State), ::core::stringify!(new),));
- <Self as IMapObject_StateMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapobject")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MapObject_DitherManager;
     pub use super::IMapObject_DitherManager;
     pub use super::IMapObject_DitherManagerMethods;
+    pub use super::MapObject_State;
+    pub use super::IMapObject_State;
+    pub use super::IMapObject_StateMethods;
     pub use super::MapObject_Pair;
     pub use super::IMapObject_Pair;
     pub use super::IMapObject_PairMethods;
-    pub use super::MapObject;
-    pub use super::IMapObject;
-    pub use super::IMapObjectMethods;
+    pub use super::MapObject_Actions;
     pub use super::MapObject_BakeTypes;
-    pub use super::MapObject_Lods;
-    pub use super::MapObject_DitherPair;
-    pub use super::IMapObject_DitherPair;
-    pub use super::IMapObject_DitherPairMethods;
     pub use super::MapObject_RigidInfo;
     pub use super::IMapObject_RigidInfo;
     pub use super::IMapObject_RigidInfoMethods;
     pub use super::MapObject_RigidList;
     pub use super::IMapObject_RigidList;
     pub use super::IMapObject_RigidListMethods;
-    pub use super::MapObject_Kinds;
-    pub use super::MapObject_Actions;
-    pub use super::MapObject_State;
-    pub use super::IMapObject_State;
-    pub use super::IMapObject_StateMethods;
     pub use super::MapObject_LightmapScales;
+    pub use super::MapObject_Kinds;
+    pub use super::MapObject;
+    pub use super::IMapObject;
+    pub use super::IMapObjectMethods;
+    pub use super::MapObject_Lods;
+    pub use super::MapObject_DitherPair;
+    pub use super::IMapObject_DitherPair;
+    pub use super::IMapObject_DitherPairMethods;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

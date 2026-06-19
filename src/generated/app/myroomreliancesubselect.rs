@@ -21,13 +21,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSubSelect.MyRoomRelianceSubSelectItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{#[offset(104)]#[rename(name="m_UnitL")]pub m_unit_l:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_UnitR")]pub m_unit_r:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSubSelect.MyRoomRelianceCallSequence")]#[parent(crate::app::stackprocinst_1::StackProcInst_1<crate::app::myroomreliancesubselect::MyRoomRelianceSubSelect_MyRoomRelianceCallSequence>)]pub struct MyRoomRelianceSubSelect_MyRoomRelianceCallSequence{#[offset(184)]#[rename(name="m_bind")]pub m_bind:bool, #[offset(192)]#[rename(name="m_camera")]pub m_camera:crate::unity_engine::camera::Camera,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSubSelect")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomRelianceSubSelect{#[offset(196)]#[rename(name="IsRankPhase")]pub is_rank_phase:bool, #[offset(200)]#[rename(name="m_MenuSelectList")]pub m_menu_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSubSelect.MyRoomRelianceSubSelectItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{#[offset(104)]#[rename(name="m_UnitL")]pub m_unit_l:crate::app::unit::Unit, #[offset(112)]#[rename(name="m_UnitR")]pub m_unit_r:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label{pub value:i32,}
@@ -50,133 +47,13 @@ pub fn end()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect_AmiiboBenefitSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSubSelect.AmiiboBenefitSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MyRoomRelianceSubSelect_AmiiboBenefitSequence{#[offset(112)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(120)]#[rename(name="m_PieceCount")]pub m_piece_count:i32,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesubselect/MyRoomRelianceSubSelect.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSubSelect")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomRelianceSubSelect{#[offset(196)]#[rename(name="IsRankPhase")]pub is_rank_phase:bool, #[offset(200)]#[rename(name="m_MenuSelectList")]pub m_menu_select_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuselect::BasicMenuSelect> ,}
+
 }
 
 #[cfg(feature = "app-myroomreliancesubselect-types")]
 pub use __types::*;
-
-#[cfg(feature="app-myroomreliancesubselect")]pub trait IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods:IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{#[doc="`get_IsSelected()` overload"]fn get_is_selected(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c00usize)as*mut u8,bool;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`set_IsSelected(bool)` overload"]fn set_is_selected(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c10usize)as*mut u8,();
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_IsTalk()` overload"]fn get_is_talk(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c20usize)as*mut u8,bool;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`set_IsTalk(bool)` overload"]fn set_is_talk(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c30usize)as*mut u8,();
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_Cursor()` overload"]fn get_cursor(self,)->crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c40usize)as*mut u8,crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`get_IsBlank()` overload"]fn get_is_blank(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098cc0usize)as*mut u8,bool;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`get_IsAPlus()` overload"]fn get_is_a_plus(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098cf0usize)as*mut u8,bool;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`GetSortOrder()` overload"]fn get_sort_order(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2095d90usize)as*mut u8,i32;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`GetCommandColor()` overload"]fn get_command_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098da0usize)as*mut u8,crate::unity_engine::color::Color;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`GetOpenCount()` overload"]fn get_open_count(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098d30usize)as*mut u8,i32;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn ctor(self,unit_l:impl::core::convert::Into<crate::app::unit::Unit> ,unit_r:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098e20usize)as*mut u8,();
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_l),(crate::app::unit::Unit)::core::convert::Into::into(unit_r))}
-}
-#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn ctor_2(self,unit_l:impl::core::convert::Into<crate::app::unit::Unit> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098fc0usize)as*mut u8,();
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_l),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
-}
-#[doc="`UpdateTalk()` overload"]fn update_talk(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2098e80usize)as*mut u8,();
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099020usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099210usize)as*mut u8,();
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`GetPlayerGodLevel(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn get_player_god_level(self,unit_l:impl::core::convert::Into<crate::app::unit::Unit> ,unit_r:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099330usize)as*mut u8,i32;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_l),(crate::app::unit::Unit)::core::convert::Into::into(unit_r))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20993d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099a90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`GetUnitL()` overload"]fn get_unit_l(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099bc0usize)as*mut u8,crate::app::unit::Unit;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`GetUnitR()` overload"]fn get_unit_r(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099bd0usize)as*mut u8,crate::app::unit::Unit;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-#[doc="`GetGodUnit()` overload"]fn get_god_unit(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2099be0usize)as*mut u8,crate::app::godunit::GodUnit;
-(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomreliancesubselect")]impl<__T:IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem>IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods for __T{}
-
-#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{pub fn get_is_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_is_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_is_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_is_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_is_a_plus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_sort_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_command_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_open_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn update_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_player_god_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn get_unit_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_unit_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn get_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-}
-
-#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new(unit_l:crate::app::unit::Unit,unit_r:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem), ::core::stringify!(new),));
- <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods> ::ctor(this,unit_l,unit_r);
-this}
-#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]pub fn new_2(unit_l:crate::app::unit::Unit,god_unit:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem), ::core::stringify!(new_2),));
- <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods> ::ctor_2(this,unit_l,god_unit);
-this}
-}
 
 #[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect_MyRoomRelianceCallSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::reliancedata::RelianceData_Level, i32, i32)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,self_:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,level:impl::core::convert::Into<crate::app::reliancedata::RelianceData_Level> ,pre_level:impl::core::convert::Into<i32> ,next_level:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20969b0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(self_),(crate::app::unit::Unit)::core::convert::Into::into(target),(crate::app::reliancedata::RelianceData_Level)::core::convert::Into::into(level),(i32)::core::convert::Into::into(pre_level),(i32)::core::convert::Into::into(next_level))}
@@ -361,81 +238,165 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23970a0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+#[cfg(feature="app-myroomreliancesubselect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`CreateMenuList(crate::app::unit::Unit)` overload"]pub fn create_menu_list(select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23971a0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
-(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+
+#[cfg(feature="app-myroomreliancesubselect")]pub trait IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods:IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{#[doc="`get_IsSelected()` overload"]fn get_is_selected(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c00usize)as*mut u8,bool;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`set_IsSelected(bool)` overload"]fn set_is_selected(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c10usize)as*mut u8,();
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsTalk()` overload"]fn get_is_talk(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c20usize)as*mut u8,bool;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`set_IsTalk(bool)` overload"]fn set_is_talk(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c30usize)as*mut u8,();
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Cursor()` overload"]fn get_cursor(self,)->crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098c40usize)as*mut u8,crate::app::myroomrelianceselectroot::MyRoomRelianceSelectRoot_CursorTop;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`get_IsBlank()` overload"]fn get_is_blank(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098cc0usize)as*mut u8,bool;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`get_IsAPlus()` overload"]fn get_is_a_plus(self,)->bool{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098cf0usize)as*mut u8,bool;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`GetSortOrder()` overload"]fn get_sort_order(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2095d90usize)as*mut u8,i32;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`GetCommandColor()` overload"]fn get_command_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098da0usize)as*mut u8,crate::unity_engine::color::Color;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`GetOpenCount()` overload"]fn get_open_count(self,)->i32{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098d30usize)as*mut u8,i32;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn ctor(self,unit_l:impl::core::convert::Into<crate::app::unit::Unit> ,unit_r:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098e20usize)as*mut u8,();
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_l),(crate::app::unit::Unit)::core::convert::Into::into(unit_r))}
+}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` overload"]fn ctor_2(self,unit_l:impl::core::convert::Into<crate::app::unit::Unit> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098fc0usize)as*mut u8,();
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_l),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit))}
+}
+#[doc="`UpdateTalk()` overload"]fn update_talk(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2098e80usize)as*mut u8,();
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetPlayerGodLevel(crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn get_player_god_level(self,unit_l:impl::core::convert::Into<crate::app::unit::Unit> ,unit_r:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2099330usize)as*mut u8,i32;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit_l),(crate::app::unit::Unit)::core::convert::Into::into(unit_r))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetUnitL()` overload"]fn get_unit_l(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2099bc0usize)as*mut u8,crate::app::unit::Unit;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`GetUnitR()` overload"]fn get_unit_r(self,)->crate::app::unit::Unit{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2099bd0usize)as*mut u8,crate::app::unit::Unit;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
+}
+#[doc="`GetGodUnit()` overload"]fn get_god_unit(self,)->crate::app::godunit::GodUnit{unsafe{let __receiver= <MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2099be0usize)as*mut u8,crate::app::godunit::GodUnit;
+(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-myroomreliancesubselect")]pub trait IMyRoomRelianceSubSelectMethods:IMyRoomRelianceSubSelect{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23978f0usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)::core::convert::Into::into(menu_content))}
-}
-#[doc="`RebuildMenu(crate::app::unit::Unit)` overload"]fn rebuild_menu(self,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2397af0usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
-}
-#[doc="`UpdateTalkState()` overload"]fn update_talk_state(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2397b80usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2397cd0usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomRelianceSubSelect)__receiver)}
-}
-#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2397d20usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver)}
-}
-#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2397d30usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2397d50usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2397d70usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2398210usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23986b0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomRelianceSubSelect)__receiver)}
-}
-#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2398c30usize)as*mut u8,();
-(MyRoomRelianceSubSelect)__receiver)}
-}
+#[cfg(feature="app-myroomreliancesubselect")]impl<__T:IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem>IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods for __T{}
+
+#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{pub fn get_is_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_is_selected_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_blank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_is_a_plus_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_sort_order_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_command_color_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_open_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn update_talk_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_player_god_level_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_unit_l_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_unit_r_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn get_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
 }
 
-#[cfg(feature="app-myroomreliancesubselect")]impl<__T:IMyRoomRelianceSubSelect>IMyRoomRelianceSubSelectMethods for __T{}
-
-#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_menu_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn update_talk_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem{#[doc="`.ctor(crate::app::unit::Unit, crate::app::unit::Unit)` — overload selector"]pub fn new(unit_l:crate::app::unit::Unit,unit_r:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MyRoomRelianceSubSelect), ::core::stringify!(new),));
- <Self as IMyRoomRelianceSubSelectMethods> ::ctor(this,menu_item_list,menu_content);
+ failed to instantiate", ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem), ::core::stringify!(new),));
+ <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods> ::ctor(this,unit_l,unit_r);
+this}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::godunit::GodUnit)` — overload selector"]pub fn new_2(unit_l:crate::app::unit::Unit,god_unit:crate::app::godunit::GodUnit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem), ::core::stringify!(new_2),));
+ <Self as IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods> ::ctor_2(this,unit_l,god_unit);
 this}
 }
 
@@ -483,22 +444,175 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-myroomreliancesubselect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomRelianceSubSelect_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MyRoomRelianceSubSelect,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn after_build(this:MyRoomRelianceSubSelect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_up(this:MyRoomRelianceSubSelect,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"KeyUp",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_down(this:MyRoomRelianceSubSelect,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"KeyDown",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_left(this:MyRoomRelianceSubSelect,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:MyRoomRelianceSubSelect,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn custom_call(this:MyRoomRelianceSubSelect,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MyRoomRelianceSubSelect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MyRoomRelianceSubSelect as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MyRoomRelianceSubSelect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23970a0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+}
+#[doc="`CreateMenuList(crate::app::unit::Unit)` overload"]pub fn create_menu_list(select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23971a0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ;
+(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+}
+}
+
+#[cfg(feature="app-myroomreliancesubselect")]pub trait IMyRoomRelianceSubSelectMethods:IMyRoomRelianceSubSelect{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x23978f0usize)as*mut u8,();
+(MyRoomRelianceSubSelect)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)::core::convert::Into::into(menu_content))}
+}
+#[doc="`RebuildMenu(crate::app::unit::Unit)` overload"]fn rebuild_menu(self,select_unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2397af0usize)as*mut u8,();
+(MyRoomRelianceSubSelect)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(select_unit))}
+}
+#[doc="`UpdateTalkState()` overload"]fn update_talk_state(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2397b80usize)as*mut u8,();
+(MyRoomRelianceSubSelect)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
+}
+#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MyRoomRelianceSubSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomRelianceSubSelect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-myroomreliancesubselect")]impl<__T:IMyRoomRelianceSubSelect>IMyRoomRelianceSubSelectMethods for __T{}
+
+#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_menu_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn rebuild_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn update_talk_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn after_build_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn custom_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-myroomreliancesubselect")]impl MyRoomRelianceSubSelect{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::myroomreliancesubselectcontent::MyRoomRelianceSubSelectContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomRelianceSubSelect), ::core::stringify!(new),));
+ <Self as IMyRoomRelianceSubSelectMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
 #[cfg(feature = "app-myroomreliancesubselect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem;
-    pub use super::IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem;
-    pub use super::IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods;
     pub use super::MyRoomRelianceSubSelect_MyRoomRelianceCallSequence;
     pub use super::IMyRoomRelianceSubSelect_MyRoomRelianceCallSequence;
     pub use super::IMyRoomRelianceSubSelect_MyRoomRelianceCallSequenceMethods;
-    pub use super::MyRoomRelianceSubSelect;
-    pub use super::IMyRoomRelianceSubSelect;
-    pub use super::IMyRoomRelianceSubSelectMethods;
+    pub use super::MyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem;
+    pub use super::IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItem;
+    pub use super::IMyRoomRelianceSubSelect_MyRoomRelianceSubSelectItemMethods;
     pub use super::MyRoomRelianceSubSelect_MyRoomRelianceCallSequence_Label;
     pub use super::MyRoomRelianceSubSelect_AmiiboBenefitSequence;
     pub use super::IMyRoomRelianceSubSelect_AmiiboBenefitSequence;
     pub use super::IMyRoomRelianceSubSelect_AmiiboBenefitSequenceMethods;
+    pub use super::MyRoomRelianceSubSelect;
+    pub use super::IMyRoomRelianceSubSelect;
+    pub use super::IMyRoomRelianceSubSelectMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

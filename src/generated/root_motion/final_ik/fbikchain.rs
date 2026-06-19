@@ -31,68 +31,15 @@ pub fn cubic()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/fbikchain/FBIKChain_ChildConstraint.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="FBIKChain.ChildConstraint")]#[parent(crate::system::object::Object)]pub struct FBIKChain_ChildConstraint{#[offset(16)]#[rename(name="pushElasticity")]pub push_elasticity:f32, #[offset(20)]#[rename(name="pullElasticity")]pub pull_elasticity:f32, #[offset(24)]#[rename(name="bone1")]pub bone1:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="bone2")]pub bone2:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="crossFade")]pub cross_fade:f32, #[offset(52)]#[rename(name="inverseCrossFade")]pub inverse_cross_fade:f32, #[offset(56)]#[rename(name="chain1Index")]pub chain1_index:i32, #[offset(60)]#[rename(name="chain2Index")]pub chain2_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/fbikchain/FBIKChain.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="FBIKChain")]#[parent(crate::system::object::Object)]pub struct FBIKChain{#[offset(16)]#[rename(name="pin")]pub pin:f32, #[offset(20)]#[rename(name="pull")]pub pull:f32, #[offset(24)]#[rename(name="push")]pub push_field:f32, #[offset(28)]#[rename(name="pushParent")]pub push_parent:f32, #[offset(32)]#[rename(name="reach")]pub reach_field:f32, #[offset(36)]#[rename(name="reachSmoothing")]pub reach_smoothing:crate::root_motion::final_ik::fbikchain::FBIKChain_Smoothing, #[offset(40)]#[rename(name="pushSmoothing")]pub push_smoothing:crate::root_motion::final_ik::fbikchain::FBIKChain_Smoothing, #[offset(48)]#[rename(name="nodes")]pub nodes_field: ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Node> , #[offset(56)]#[rename(name="children")]pub children: ::unity2::Array<i32> , #[offset(64)]#[rename(name="childConstraints")]pub child_constraints: ::unity2::Array<crate::root_motion::final_ik::fbikchain::FBIKChain_ChildConstraint> , #[offset(72)]#[rename(name="bendConstraint")]pub bend_constraint:crate::root_motion::final_ik::ikconstraintbend::IKConstraintBend, #[offset(80)]#[rename(name="rootLength")]pub root_length:f32, #[offset(84)]#[rename(name="initiated")]pub initiated:bool, #[offset(88)]#[rename(name="length")]pub length:f32, #[offset(92)]#[rename(name="distance")]pub distance:f32, #[offset(96)]#[rename(name="p")]pub p:crate::root_motion::final_ik::iksolver::IKSolver_Point, #[offset(104)]#[rename(name="reachForce")]pub reach_force:f32, #[offset(108)]#[rename(name="pullParentSum")]pub pull_parent_sum:f32, #[offset(112)]#[rename(name="crossFades")]pub cross_fades: ::unity2::Array<f32> , #[offset(120)]#[rename(name="sqrMag1")]pub sqr_mag1:f32, #[offset(124)]#[rename(name="sqrMag2")]pub sqr_mag2:f32, #[offset(128)]#[rename(name="sqrMagDif")]pub sqr_mag_dif:f32, #[static_field]#[rename(name="maxLimbLength")]pub max_limb_length:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/fbikchain/FBIKChain_ChildConstraint.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="FBIKChain.ChildConstraint")]#[parent(crate::system::object::Object)]pub struct FBIKChain_ChildConstraint{#[offset(16)]#[rename(name="pushElasticity")]pub push_elasticity:f32, #[offset(20)]#[rename(name="pullElasticity")]pub pull_elasticity:f32, #[offset(24)]#[rename(name="bone1")]pub bone1:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="bone2")]pub bone2:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="crossFade")]pub cross_fade:f32, #[offset(52)]#[rename(name="inverseCrossFade")]pub inverse_cross_fade:f32, #[offset(56)]#[rename(name="chain1Index")]pub chain1_index:i32, #[offset(60)]#[rename(name="chain2Index")]pub chain2_index:i32,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-fbikchain-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-final_ik-fbikchain")]pub trait IFBIKChain_ChildConstraintMethods:IFBIKChain_ChildConstraint{#[doc="`get_nominalDistance()` overload"]fn get_nominal_distance(self,)->f32{unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a060usize)as*mut u8,f32;
-(FBIKChain_ChildConstraint)__receiver)}
-}
-#[doc="`set_nominalDistance(f32)` overload"]fn set_nominal_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a070usize)as*mut u8,();
-(FBIKChain_ChildConstraint)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_isRigid()` overload"]fn get_is_rigid(self,)->bool{unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a080usize)as*mut u8,bool;
-(FBIKChain_ChildConstraint)__receiver)}
-}
-#[doc="`set_isRigid(bool)` overload"]fn set_is_rigid(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a090usize)as*mut u8,();
-(FBIKChain_ChildConstraint)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, f32, f32)` overload"]fn ctor(self,bone1:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,bone2:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,push_elasticity:impl::core::convert::Into<f32> ,pull_elasticity:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a0a0usize)as*mut u8,();
-(FBIKChain_ChildConstraint)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone1),(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone2),(f32)::core::convert::Into::into(push_elasticity),(f32)::core::convert::Into::into(pull_elasticity))}
-}
-#[doc="`Initiate(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a110usize)as*mut u8,();
-(FBIKChain_ChildConstraint)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
-}
-#[doc="`OnPreSolve(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn on_pre_solve(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a160usize)as*mut u8,();
-(FBIKChain_ChildConstraint)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
-}
-#[doc="`Solve(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn solve(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a2c0usize)as*mut u8,();
-(FBIKChain_ChildConstraint)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-fbikchain")]impl<__T:IFBIKChain_ChildConstraint>IFBIKChain_ChildConstraintMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-fbikchain")]impl FBIKChain_ChildConstraint{pub fn get_nominal_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_nominal_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_rigid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_is_rigid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn on_pre_solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="root_motion-final_ik-fbikchain")]impl FBIKChain_ChildConstraint{#[doc="`.ctor(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, f32, f32)` — overload selector"]pub fn new(bone1:crate::unity_engine::transform::Transform,bone2:crate::unity_engine::transform::Transform,push_elasticity:f32,pull_elasticity:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FBIKChain_ChildConstraint), ::core::stringify!(new),));
- <Self as IFBIKChain_ChildConstraintMethods> ::ctor(this,bone1,bone2,push_elasticity,pull_elasticity);
-this}
-}
 
 #[cfg(feature="root_motion-final_ik-fbikchain")]pub trait IFBIKChainMethods:IFBIKChain{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FBIKChain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d43fa0usize)as*mut u8,();
@@ -215,16 +162,69 @@ this}
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-fbikchain")]pub trait IFBIKChain_ChildConstraintMethods:IFBIKChain_ChildConstraint{#[doc="`get_nominalDistance()` overload"]fn get_nominal_distance(self,)->f32{unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a060usize)as*mut u8,f32;
+(FBIKChain_ChildConstraint)__receiver)}
+}
+#[doc="`set_nominalDistance(f32)` overload"]fn set_nominal_distance(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a070usize)as*mut u8,();
+(FBIKChain_ChildConstraint)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_isRigid()` overload"]fn get_is_rigid(self,)->bool{unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a080usize)as*mut u8,bool;
+(FBIKChain_ChildConstraint)__receiver)}
+}
+#[doc="`set_isRigid(bool)` overload"]fn set_is_rigid(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a090usize)as*mut u8,();
+(FBIKChain_ChildConstraint)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, f32, f32)` overload"]fn ctor(self,bone1:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,bone2:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,push_elasticity:impl::core::convert::Into<f32> ,pull_elasticity:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a0a0usize)as*mut u8,();
+(FBIKChain_ChildConstraint)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone1),(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone2),(f32)::core::convert::Into::into(push_elasticity),(f32)::core::convert::Into::into(pull_elasticity))}
+}
+#[doc="`Initiate(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a110usize)as*mut u8,();
+(FBIKChain_ChildConstraint)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
+}
+#[doc="`OnPreSolve(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn on_pre_solve(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a160usize)as*mut u8,();
+(FBIKChain_ChildConstraint)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
+}
+#[doc="`Solve(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn solve(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <FBIKChain_ChildConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e5a2c0usize)as*mut u8,();
+(FBIKChain_ChildConstraint)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-fbikchain")]impl<__T:IFBIKChain_ChildConstraint>IFBIKChain_ChildConstraintMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-fbikchain")]impl FBIKChain_ChildConstraint{pub fn get_nominal_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_nominal_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_rigid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_rigid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn on_pre_solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="root_motion-final_ik-fbikchain")]impl FBIKChain_ChildConstraint{#[doc="`.ctor(crate::unity_engine::transform::Transform, crate::unity_engine::transform::Transform, f32, f32)` — overload selector"]pub fn new(bone1:crate::unity_engine::transform::Transform,bone2:crate::unity_engine::transform::Transform,push_elasticity:f32,pull_elasticity:f32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FBIKChain_ChildConstraint), ::core::stringify!(new),));
+ <Self as IFBIKChain_ChildConstraintMethods> ::ctor(this,bone1,bone2,push_elasticity,pull_elasticity);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-fbikchain")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::FBIKChain_Smoothing;
-    pub use super::FBIKChain_ChildConstraint;
-    pub use super::IFBIKChain_ChildConstraint;
-    pub use super::IFBIKChain_ChildConstraintMethods;
     pub use super::FBIKChain;
     pub use super::IFBIKChain;
     pub use super::IFBIKChainMethods;
+    pub use super::FBIKChain_ChildConstraint;
+    pub use super::IFBIKChain_ChildConstraint;
+    pub use super::IFBIKChain_ChildConstraintMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

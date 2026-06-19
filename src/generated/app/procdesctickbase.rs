@@ -19,9 +19,22 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="app-procdesctickbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescTickBase_unity2_raw{use super:: * ;
-pub unsafe fn execute_impl(this:ProcDescTickBase,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ExecuteImpl").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ExecuteImpl", <ProcDescTickBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn execute(this:ProcDescTickBase,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProcDescTickBase as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(ProcDescTickBase,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+pub unsafe fn execute_impl(this:ProcDescTickBase,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ProcDescTickBase as::unity2::ClassIdentity> ::NAME,"ExecuteImpl",));
 let inner:extern "C" fn(ProcDescTickBase,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -33,8 +46,7 @@ inner(this,inst,__mi)}
 (ProcDescTickBase)__receiver,(crate::app::procdesc::ProcDesc_Type)::core::convert::Into::into(r#type))}
 }
 #[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescTickBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281db20usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
-(ProcDescTickBase)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+__ProcDescTickBase_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 #[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescTickBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __ProcDescTickBase_unity2_raw::execute_impl(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}

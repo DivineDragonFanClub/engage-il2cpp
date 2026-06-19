@@ -15,52 +15,42 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ShowUIEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.ShowUIEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_ShowUIEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_StartWatchingEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.StartWatchingEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_StartWatchingEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.ChangeUnitToPrevEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_HideUIEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.HideUIEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_HideUIEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.ChangeUnitToNextEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc")]#[parent(crate::app::procinst::ProcInst)]pub struct AccessoryShopChangeRootProc{#[offset(112)]#[rename(name="m_KeyHelpAllObject")]pub m_key_help_all_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_KeyHelpAllAnimator")]pub m_key_help_all_animator:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler, #[offset(136)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler, #[offset(144)]#[rename(name="m_StartWatchingEventHandler")]pub m_start_watching_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_StartWatchingEventHandler, #[offset(152)]#[rename(name="m_EndWatchingEventHandler")]pub m_end_watching_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_EndWatchingEventHandler, #[offset(160)]#[rename(name="m_ShowUIEventHandler")]pub m_show_ui_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ShowUIEventHandler, #[offset(168)]#[rename(name="m_HideUIEventHandler")]pub m_hide_ui_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_HideUIEventHandler, #[offset(176)]#[rename(name="watching")]pub watching:bool, #[offset(177)]#[rename(name="visibleUI")]pub visible_ui:bool,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_EndWatchingEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.EndWatchingEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_EndWatchingEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_HideUIEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.HideUIEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_HideUIEventHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc")]#[parent(crate::app::procinst::ProcInst)]pub struct AccessoryShopChangeRootProc{#[offset(112)]#[rename(name="m_KeyHelpAllObject")]pub m_key_help_all_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_KeyHelpAllAnimator")]pub m_key_help_all_animator:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_ChangeUnitToPrevEventHandler")]pub m_change_unit_to_prev_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler, #[offset(136)]#[rename(name="m_ChangeUnitToNextEventHandler")]pub m_change_unit_to_next_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler, #[offset(144)]#[rename(name="m_StartWatchingEventHandler")]pub m_start_watching_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_StartWatchingEventHandler, #[offset(152)]#[rename(name="m_EndWatchingEventHandler")]pub m_end_watching_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_EndWatchingEventHandler, #[offset(160)]#[rename(name="m_ShowUIEventHandler")]pub m_show_ui_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ShowUIEventHandler, #[offset(168)]#[rename(name="m_HideUIEventHandler")]pub m_hide_ui_event_handler:crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_HideUIEventHandler, #[offset(176)]#[rename(name="watching")]pub watching:bool, #[offset(177)]#[rename(name="visibleUI")]pub visible_ui:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopchangerootproc/AccessoryShopChangeRootProc_ShowUIEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopChangeRootProc.ShowUIEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopChangeRootProc_ShowUIEventHandler{}
 
 }
 
 #[cfg(feature = "app-accessoryshopchangerootproc-types")]
 pub use __types::*;
 
-#[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods:IAccessoryShopChangeRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2905a70usize)as*mut u8,();
-(AccessoryShopChangeRootProc_ShowUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2905a90usize)as*mut u8,();
-(AccessoryShopChangeRootProc_ShowUIEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-accessoryshopchangerootproc")]impl<__T:IAccessoryShopChangeRootProc_ShowUIEventHandler>IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_ShowUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopChangeRootProc_ShowUIEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-accessoryshopchangerootproc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRootProc_StartWatchingEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopChangeRootProc_StartWatchingEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeRootProc_StartWatchingEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopChangeRootProc_StartWatchingEventHandler, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_StartWatchingEventHandlerMethods:IAccessoryShopChangeRootProc_StartWatchingEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_StartWatchingEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -68,8 +58,7 @@ this}
 (AccessoryShopChangeRootProc_StartWatchingEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->bool{unsafe{let __receiver= <AccessoryShopChangeRootProc_StartWatchingEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2905d00usize)as*mut u8,bool;
-(AccessoryShopChangeRootProc_StartWatchingEventHandler)__receiver)}
+__AccessoryShopChangeRootProc_StartWatchingEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -86,13 +75,25 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-accessoryshopchangerootproc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler,watching:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,watching,__mi)}
+}
+
 #[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandlerMethods:IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2905290usize)as*mut u8,();
 (AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(bool)` overload"]fn invoke(self,watching:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29052b0usize)as*mut u8,();
-(AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler)__receiver,(bool)::core::convert::Into::into(watching))}
+__AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(watching), ::core::option::Option::None)}
 }
 }
 
@@ -109,13 +110,60 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-accessoryshopchangerootproc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRootProc_HideUIEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopChangeRootProc_HideUIEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeRootProc_HideUIEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopChangeRootProc_HideUIEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_HideUIEventHandlerMethods:IAccessoryShopChangeRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2905800usize)as*mut u8,();
+(AccessoryShopChangeRootProc_HideUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AccessoryShopChangeRootProc_HideUIEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]impl<__T:IAccessoryShopChangeRootProc_HideUIEventHandler>IAccessoryShopChangeRootProc_HideUIEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_HideUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopChangeRootProc_HideUIEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopChangeRootProc_HideUIEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler,watching:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,watching,__mi)}
+}
+
 #[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandlerMethods:IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2904f90usize)as*mut u8,();
 (AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(bool)` overload"]fn invoke(self,watching:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2904fb0usize)as*mut u8,();
-(AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler)__receiver,(bool)::core::convert::Into::into(watching))}
+__AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(watching), ::core::option::Option::None)}
 }
 }
 
@@ -132,13 +180,60 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-accessoryshopchangerootproc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRootProc_EndWatchingEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopChangeRootProc_EndWatchingEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeRootProc_EndWatchingEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopChangeRootProc_EndWatchingEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods:IAccessoryShopChangeRootProc_EndWatchingEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_EndWatchingEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2905590usize)as*mut u8,();
+(AccessoryShopChangeRootProc_EndWatchingEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_EndWatchingEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AccessoryShopChangeRootProc_EndWatchingEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]impl<__T:IAccessoryShopChangeRootProc_EndWatchingEventHandler>IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_EndWatchingEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_EndWatchingEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopChangeRootProc_EndWatchingEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRootProc_unity2_raw{use super:: * ;
+pub unsafe fn on_tick(this:AccessoryShopChangeRootProc,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AccessoryShopChangeRootProc as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(AccessoryShopChangeRootProc, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProcMethods:IAccessoryShopChangeRootProc{#[doc="`.ctor(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::unity_engine::animator::Animator, crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler, crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler, crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_StartWatchingEventHandler, crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_EndWatchingEventHandler, crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ShowUIEventHandler, crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_HideUIEventHandler)` overload"]fn ctor(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,key_help_all_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,key_help_all_animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,change_unit_to_prev_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler> ,change_unit_to_next_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler> ,start_watching_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_StartWatchingEventHandler> ,end_watching_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_EndWatchingEventHandler> ,show_ui_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ShowUIEventHandler> ,hide_ui_event_handler:impl::core::convert::Into<crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_HideUIEventHandler>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27c20a0usize)as*mut u8,();
 (AccessoryShopChangeRootProc)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(key_help_all_object),(crate::unity_engine::animator::Animator)::core::convert::Into::into(key_help_all_animator),(crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler)::core::convert::Into::into(change_unit_to_prev_event_handler),(crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler)::core::convert::Into::into(change_unit_to_next_event_handler),(crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_StartWatchingEventHandler)::core::convert::Into::into(start_watching_event_handler),(crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_EndWatchingEventHandler)::core::convert::Into::into(end_watching_event_handler),(crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_ShowUIEventHandler)::core::convert::Into::into(show_ui_event_handler),(crate::app::accessoryshopchangerootproc::AccessoryShopChangeRootProc_HideUIEventHandler)::core::convert::Into::into(hide_ui_event_handler))}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27c3d80usize)as*mut u8,();
-(AccessoryShopChangeRootProc)__receiver)}
+__AccessoryShopChangeRootProc_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`KeyHelpAllOpen()` overload"]fn key_help_all_open(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27c4650usize)as*mut u8,();
@@ -165,76 +260,65 @@ pub fn key_help_all_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 this}
 }
 
-#[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods:IAccessoryShopChangeRootProc_EndWatchingEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_EndWatchingEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2905590usize)as*mut u8,();
-(AccessoryShopChangeRootProc_EndWatchingEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-accessoryshopchangerootproc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopChangeRootProc_ShowUIEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopChangeRootProc_ShowUIEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopChangeRootProc_ShowUIEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopChangeRootProc_ShowUIEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_EndWatchingEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29055b0usize)as*mut u8,();
-(AccessoryShopChangeRootProc_EndWatchingEventHandler)__receiver)}
+
+#[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods:IAccessoryShopChangeRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2905a70usize)as*mut u8,();
+(AccessoryShopChangeRootProc_ShowUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_ShowUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AccessoryShopChangeRootProc_ShowUIEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-accessoryshopchangerootproc")]impl<__T:IAccessoryShopChangeRootProc_EndWatchingEventHandler>IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods for __T{}
+#[cfg(feature="app-accessoryshopchangerootproc")]impl<__T:IAccessoryShopChangeRootProc_ShowUIEventHandler>IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods for __T{}
 
-#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_EndWatchingEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_ShowUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_EndWatchingEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_ShowUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AccessoryShopChangeRootProc_EndWatchingEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-accessoryshopchangerootproc")]pub trait IAccessoryShopChangeRootProc_HideUIEventHandlerMethods:IAccessoryShopChangeRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2905800usize)as*mut u8,();
-(AccessoryShopChangeRootProc_HideUIEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopChangeRootProc_HideUIEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2905820usize)as*mut u8,();
-(AccessoryShopChangeRootProc_HideUIEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-accessoryshopchangerootproc")]impl<__T:IAccessoryShopChangeRootProc_HideUIEventHandler>IAccessoryShopChangeRootProc_HideUIEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_HideUIEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopchangerootproc")]impl AccessoryShopChangeRootProc_HideUIEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopChangeRootProc_HideUIEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopChangeRootProc_HideUIEventHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(AccessoryShopChangeRootProc_ShowUIEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
 #[cfg(feature = "app-accessoryshopchangerootproc")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopChangeRootProc_ShowUIEventHandler;
-    pub use super::IAccessoryShopChangeRootProc_ShowUIEventHandler;
-    pub use super::IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods;
     pub use super::AccessoryShopChangeRootProc_StartWatchingEventHandler;
     pub use super::IAccessoryShopChangeRootProc_StartWatchingEventHandler;
     pub use super::IAccessoryShopChangeRootProc_StartWatchingEventHandlerMethods;
     pub use super::AccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler;
     pub use super::IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandler;
     pub use super::IAccessoryShopChangeRootProc_ChangeUnitToPrevEventHandlerMethods;
-    pub use super::AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler;
-    pub use super::IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandler;
-    pub use super::IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandlerMethods;
-    pub use super::AccessoryShopChangeRootProc;
-    pub use super::IAccessoryShopChangeRootProc;
-    pub use super::IAccessoryShopChangeRootProcMethods;
-    pub use super::AccessoryShopChangeRootProc_EndWatchingEventHandler;
-    pub use super::IAccessoryShopChangeRootProc_EndWatchingEventHandler;
-    pub use super::IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods;
     pub use super::AccessoryShopChangeRootProc_HideUIEventHandler;
     pub use super::IAccessoryShopChangeRootProc_HideUIEventHandler;
     pub use super::IAccessoryShopChangeRootProc_HideUIEventHandlerMethods;
+    pub use super::AccessoryShopChangeRootProc_ChangeUnitToNextEventHandler;
+    pub use super::IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandler;
+    pub use super::IAccessoryShopChangeRootProc_ChangeUnitToNextEventHandlerMethods;
+    pub use super::AccessoryShopChangeRootProc_EndWatchingEventHandler;
+    pub use super::IAccessoryShopChangeRootProc_EndWatchingEventHandler;
+    pub use super::IAccessoryShopChangeRootProc_EndWatchingEventHandlerMethods;
+    pub use super::AccessoryShopChangeRootProc;
+    pub use super::IAccessoryShopChangeRootProc;
+    pub use super::IAccessoryShopChangeRootProcMethods;
+    pub use super::AccessoryShopChangeRootProc_ShowUIEventHandler;
+    pub use super::IAccessoryShopChangeRootProc_ShowUIEventHandler;
+    pub use super::IAccessoryShopChangeRootProc_ShowUIEventHandlerMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

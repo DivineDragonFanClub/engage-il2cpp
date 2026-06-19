@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-jobs-ijobparallelfortransform")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IJobParallelForTransform_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:IJobParallelForTransform,index:i32,transform:crate::unity_engine::jobs::transformaccess::TransformAccess,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Execute").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Execute", <IJobParallelForTransform as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn execute(this:IJobParallelForTransform,index:i32,transform:crate::unity_engine::jobs::transformaccess::TransformAccess,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IJobParallelForTransform as::unity2::ClassIdentity> ::NAME,"Execute",));
 let inner:extern "C" fn(IJobParallelForTransform,i32,crate::unity_engine::jobs::transformaccess::TransformAccess, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

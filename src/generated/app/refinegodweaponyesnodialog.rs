@@ -40,13 +40,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-refinegodweaponyesnodialog-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refinegodweaponyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponYesNoDialog_YesMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:RefineGodWeaponYesNoDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefineGodWeaponYesNoDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RefineGodWeaponYesNoDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refinegodweaponyesnodialog")]pub trait IRefineGodWeaponYesNoDialog_YesMenuItemMethods:IRefineGodWeaponYesNoDialog_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_event_handler:impl::core::convert::Into<crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1af87f0usize)as*mut u8,();
 (RefineGodWeaponYesNoDialog_YesMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8830usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefineGodWeaponYesNoDialog_YesMenuItem)__receiver)}
+__RefineGodWeaponYesNoDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -61,6 +73,19 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
  failed to instantiate", ::core::stringify!(RefineGodWeaponYesNoDialog_YesMenuItem), ::core::stringify!(new),));
  <Self as IRefineGodWeaponYesNoDialog_YesMenuItemMethods> ::ctor(this,message,yes_event_handler);
 this}
+}
+
+#[cfg(feature="app-refinegodweaponyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponYesNoDialog_unity2_raw{use super:: * ;
+pub unsafe fn on_close(this:RefineGodWeaponYesNoDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <RefineGodWeaponYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(RefineGodWeaponYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-refinegodweaponyesnodialog")]impl RefineGodWeaponYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, i32, crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,god_weapon_refine_data:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData> ,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> ,current_level:impl::core::convert::Into<i32> ,yes_event_handler:impl::core::convert::Into<crate::app::refinegodweaponyesnodialog::RefineGodWeaponYesNoDialog_YesEventHandler>)->crate::app::exchangeyesnodialog::ExchangeYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2951610usize)as*mut u8,crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
@@ -79,8 +104,7 @@ this}
 (RefineGodWeaponYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <RefineGodWeaponYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29524b0usize)as*mut u8,();
-(RefineGodWeaponYesNoDialog)__receiver)}
+__RefineGodWeaponYesNoDialog_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -100,13 +124,25 @@ pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
+#[cfg(feature="app-refinegodweaponyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponYesNoDialog_YesEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefineGodWeaponYesNoDialog_YesEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineGodWeaponYesNoDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefineGodWeaponYesNoDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refinegodweaponyesnodialog")]pub trait IRefineGodWeaponYesNoDialog_YesEventHandlerMethods:IRefineGodWeaponYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8580usize)as*mut u8,();
 (RefineGodWeaponYesNoDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineGodWeaponYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af85a0usize)as*mut u8,();
-(RefineGodWeaponYesNoDialog_YesEventHandler)__receiver)}
+__RefineGodWeaponYesNoDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -23,10 +23,10 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/recoil/Recoil_RecoilOffset_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Recoil.RecoilOffset.EffectorLink")]#[parent(crate::system::object::Object)]pub struct Recoil_RecoilOffset_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/recoil/Recoil.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Recoil")]#[parent(crate::root_motion::final_ik::offsetmodifier::OffsetModifier)]pub struct Recoil{#[offset(48)]#[rename(name="aimIK")]pub aim_ik:crate::root_motion::final_ik::aimik::AimIK, #[offset(56)]#[rename(name="aimIKSolvedLast")]pub aim_ik_solved_last:bool, #[offset(60)]#[rename(name="handedness")]pub handedness:crate::root_motion::final_ik::recoil::Recoil_Handedness, #[offset(64)]#[rename(name="twoHanded")]pub two_handed:bool, #[offset(72)]#[rename(name="recoilWeight")]pub recoil_weight:crate::unity_engine::animationcurve::AnimationCurve, #[offset(80)]#[rename(name="magnitudeRandom")]pub magnitude_random:f32, #[offset(84)]#[rename(name="rotationRandom")]pub rotation_random:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="handRotationOffset")]pub hand_rotation_offset:crate::unity_engine::vector3::Vector3, #[offset(108)]#[rename(name="blendTime")]pub blend_time:f32, #[offset(112)]#[rename(name="offsets")]pub offsets: ::unity2::Array<crate::root_motion::final_ik::recoil::Recoil_RecoilOffset> , #[offset(120)]#[rename(name="rotationOffset")]pub rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(136)]#[rename(name="magnitudeMlp")]pub magnitude_mlp:f32, #[offset(140)]#[rename(name="endTime")]pub end_time:f32, #[offset(144)]#[rename(name="handRotation")]pub hand_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(160)]#[rename(name="secondaryHandRelativeRotation")]pub secondary_hand_relative_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(176)]#[rename(name="randomRotation")]pub random_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(192)]#[rename(name="length")]pub length:f32, #[offset(196)]#[rename(name="initiated")]pub initiated:bool, #[offset(200)]#[rename(name="blendWeight")]pub blend_weight:f32, #[offset(204)]#[rename(name="w")]pub w:f32, #[offset(208)]#[rename(name="primaryHandRotation")]pub primary_hand_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(224)]#[rename(name="handRotationsSet")]pub hand_rotations_set:bool, #[offset(228)]#[rename(name="aimIKAxis")]pub aim_ik_axis:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/recoil/Recoil_RecoilOffset.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Recoil.RecoilOffset")]#[parent(crate::system::object::Object)]pub struct Recoil_RecoilOffset{#[offset(16)]#[rename(name="offset")]pub offset:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="additivity")]pub additivity:f32, #[offset(32)]#[rename(name="maxAdditiveOffsetMag")]pub max_additive_offset_mag:f32, #[offset(40)]#[rename(name="effectorLinks")]pub effector_links: ::unity2::Array<crate::root_motion::final_ik::recoil::Recoil_RecoilOffset_EffectorLink> , #[offset(48)]#[rename(name="additiveOffset")]pub additive_offset:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="lastOffset")]pub last_offset:crate::unity_engine::vector3::Vector3,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/recoil/Recoil_Handedness.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Recoil_Handedness{pub value:i32,}
@@ -45,29 +45,34 @@ pub fn left()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/recoil/Recoil_RecoilOffset.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Recoil.RecoilOffset")]#[parent(crate::system::object::Object)]pub struct Recoil_RecoilOffset{#[offset(16)]#[rename(name="offset")]pub offset:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="additivity")]pub additivity:f32, #[offset(32)]#[rename(name="maxAdditiveOffsetMag")]pub max_additive_offset_mag:f32, #[offset(40)]#[rename(name="effectorLinks")]pub effector_links: ::unity2::Array<crate::root_motion::final_ik::recoil::Recoil_RecoilOffset_EffectorLink> , #[offset(48)]#[rename(name="additiveOffset")]pub additive_offset:crate::unity_engine::vector3::Vector3, #[offset(60)]#[rename(name="lastOffset")]pub last_offset:crate::unity_engine::vector3::Vector3,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/recoil/Recoil_RecoilOffset_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Recoil.RecoilOffset.EffectorLink")]#[parent(crate::system::object::Object)]pub struct Recoil_RecoilOffset_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-recoil-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-recoil")]pub trait IRecoil_RecoilOffset_EffectorLinkMethods:IRecoil_RecoilOffset_EffectorLink{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Recoil_RecoilOffset_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7b120usize)as*mut u8,();
-(Recoil_RecoilOffset_EffectorLink)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-recoil")]impl<__T:IRecoil_RecoilOffset_EffectorLink>IRecoil_RecoilOffset_EffectorLinkMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-recoil")]impl Recoil_RecoilOffset_EffectorLink{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root_motion-final_ik-recoil")]impl Recoil_RecoilOffset_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Recoil_RecoilOffset_EffectorLink), ::core::stringify!(new),));
- <Self as IRecoil_RecoilOffset_EffectorLinkMethods> ::ctor(this,);
-this}
+#[cfg(feature="root_motion-final_ik-recoil")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Recoil_unity2_raw{use super:: * ;
+pub unsafe fn on_modify_offset(this:Recoil,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Recoil as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
+let inner:extern "C" fn(Recoil, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_destroy(this:Recoil,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Recoil as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(Recoil, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="root_motion-final_ik-recoil")]pub trait IRecoilMethods:IRecoil{#[doc="`get_isFinished()` overload"]fn get_is_finished(self,)->bool{unsafe{let __receiver= <Recoil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -83,8 +88,7 @@ this}
 (Recoil)__receiver,(f32)::core::convert::Into::into(magnitude))}
 }
 #[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <Recoil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x237e9a0usize)as*mut u8,();
-(Recoil)__receiver)}
+__Recoil_unity2_raw::on_modify_offset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AfterFBBIK()` overload"]fn after_fbbik(self,)->(){unsafe{let __receiver= <Recoil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x237f380usize)as*mut u8,();
@@ -111,8 +115,7 @@ this}
 (Recoil)__receiver)}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <Recoil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x237f490usize)as*mut u8,();
-(Recoil)__receiver)}
+__Recoil_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Recoil as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x237f670usize)as*mut u8,();
@@ -171,19 +174,37 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-recoil")]pub trait IRecoil_RecoilOffset_EffectorLinkMethods:IRecoil_RecoilOffset_EffectorLink{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Recoil_RecoilOffset_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7b120usize)as*mut u8,();
+(Recoil_RecoilOffset_EffectorLink)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-recoil")]impl<__T:IRecoil_RecoilOffset_EffectorLink>IRecoil_RecoilOffset_EffectorLinkMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-recoil")]impl Recoil_RecoilOffset_EffectorLink{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root_motion-final_ik-recoil")]impl Recoil_RecoilOffset_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Recoil_RecoilOffset_EffectorLink), ::core::stringify!(new),));
+ <Self as IRecoil_RecoilOffset_EffectorLinkMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-recoil")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Recoil_RecoilOffset_EffectorLink;
-    pub use super::IRecoil_RecoilOffset_EffectorLink;
-    pub use super::IRecoil_RecoilOffset_EffectorLinkMethods;
     pub use super::Recoil;
     pub use super::IRecoil;
     pub use super::IRecoilMethods;
-    pub use super::Recoil_Handedness;
     pub use super::Recoil_RecoilOffset;
     pub use super::IRecoil_RecoilOffset;
     pub use super::IRecoil_RecoilOffsetMethods;
+    pub use super::Recoil_Handedness;
+    pub use super::Recoil_RecoilOffset_EffectorLink;
+    pub use super::IRecoil_RecoilOffset_EffectorLink;
+    pub use super::IRecoil_RecoilOffset_EffectorLinkMethods;
     pub use crate::root_motion::final_ik::offsetmodifier::IOffsetModifier;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

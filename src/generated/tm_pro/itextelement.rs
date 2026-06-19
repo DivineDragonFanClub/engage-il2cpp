@@ -15,23 +15,32 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="tm_pro-itextelement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ITextElement_unity2_raw{use super:: * ;
-pub unsafe fn get_shared_material(this:ITextElement,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_sharedMaterial").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_sharedMaterial", <ITextElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_shared_material(this:ITextElement,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ITextElement as::unity2::ClassIdentity> ::NAME,"get_sharedMaterial",));
 let inner:extern "C" fn(ITextElement, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn rebuild(this:ITextElement,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Rebuild").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Rebuild", <ITextElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn rebuild(this:ITextElement,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <ITextElement as::unity2::ClassIdentity> ::NAME,"Rebuild",));
 let inner:extern "C" fn(ITextElement,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,update,__mi)}
-pub unsafe fn get_instance_id(this:ITextElement,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetInstanceID").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetInstanceID", <ITextElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_instance_id(this:ITextElement,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <ITextElement as::unity2::ClassIdentity> ::NAME,"GetInstanceID",));
 let inner:extern "C" fn(ITextElement, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

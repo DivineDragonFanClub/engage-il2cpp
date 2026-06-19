@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Debugging",name="DebuggerAction")]#[parent(crate::system::object::Object)]pub struct DebuggerAction{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction_ActionType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DebuggerAction_ActionType{pub value:i32,}
 impl::unity2::ClassIdentity for DebuggerAction_ActionType{const NAMESPACE: &'static str="MoonSharp.Interpreter.Debugging";
 const NAME: &'static str="DebuggerAction.ActionType";
@@ -51,9 +54,6 @@ pub fn hard_refresh()->Self{Self{value:12}
 pub fn none()->Self{Self{value:13}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/debugging/debuggeraction/DebuggerAction.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Debugging",name="DebuggerAction")]#[parent(crate::system::object::Object)]pub struct DebuggerAction{}
 
 }
 
@@ -171,16 +171,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <DebuggerAction as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<DebuggerAction as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <DebuggerAction as::unity2::ClassIdentity> ::NAME,"ToString",e),}
-}
-}
+pub unsafe fn to_string(this:DebuggerAction,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <DebuggerAction as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(DebuggerAction, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-debugging-debuggeraction")]pub trait IDebuggerActionMethods:IDebuggerAction{#[doc="`get_Action()` overload"]fn get_action(self,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction_ActionType{unsafe{let __receiver= <DebuggerAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -228,8 +228,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (DebuggerAction)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebuggerAction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__DebuggerAction_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
-(DebuggerAction)__receiver)}
+__DebuggerAction_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -259,10 +258,10 @@ this}
 #[cfg(feature = "moon_sharp-interpreter-debugging-debuggeraction")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebuggerAction_ActionType;
     pub use super::DebuggerAction;
     pub use super::IDebuggerAction;
     pub use super::IDebuggerActionMethods;
+    pub use super::DebuggerAction_ActionType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

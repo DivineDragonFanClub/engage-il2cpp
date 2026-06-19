@@ -349,16 +349,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ScriptRuntimeException as::unity2::ClassIdentity> ::NAME,"AccessInstanceMemberOnStatics",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_rethrow{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ScriptRuntimeException as::unity2::ClassIdentity> ::class(),"Rethrow",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ScriptRuntimeException as::unity2::ClassIdentity> ::NAME,"Rethrow",e),}
-}
-}
+pub unsafe fn rethrow(this:ScriptRuntimeException,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ScriptRuntimeException as::unity2::ClassIdentity> ::NAME,"Rethrow",));
+let inner:extern "C" fn(ScriptRuntimeException, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-scriptruntimeexception")]impl ScriptRuntimeException{#[doc="`ArithmeticOnNonNumber(crate::moon_sharp::interpreter::dynvalue::DynValue, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]pub fn arithmetic_on_non_number(l:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue> ,r:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException{unsafe{::unity2::il2cpp_call!(__ScriptRuntimeException_unity2_raw::__lookup_arithmetic_on_non_number::get_method_info().method_ptr,crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException;
@@ -466,8 +466,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ScriptRuntimeException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(format),(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
 }
 #[doc="`Rethrow()` overload"]fn rethrow(self,)->(){unsafe{let __receiver= <ScriptRuntimeException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ScriptRuntimeException_unity2_raw::__lookup_rethrow::get_method_info().method_ptr,();
-(ScriptRuntimeException)__receiver)}
+__ScriptRuntimeException_unity2_raw::rethrow(__receiver, ::core::option::Option::None)}
 }
 }
 

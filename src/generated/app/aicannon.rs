@@ -14,17 +14,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_CannonData.md"))]#[::unity2::class(namespace="App",name="AICannon.CannonData")]#[parent(crate::system::object::Object)]pub struct AICannon_CannonData{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_ChangeEquipScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AICannon_ChangeEquipScope{pub m_actor:crate::app::unit::Unit,pub m_equipped_index:i32,}
-impl::unity2::ClassIdentity for AICannon_ChangeEquipScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AICannon.ChangeEquipScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AICannon_ChangeEquipScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon.md"))]#[::unity2::class(namespace="App",name="AICannon")]#[parent(crate::system::object::Object)]pub struct AICannon{#[offset(16)]#[rename(name="m_Cannons")]pub m_cannons:crate::system::collections::generic::list_1::List_1<crate::app::aicannon::AICannon_CannonData> , #[offset(24)]#[rename(name="m_Simulator")]pub m_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(32)]#[rename(name="m_EnemiesMoveImage")]pub m_enemies_move_image:crate::app::mapdeploymoveimage::MapDeployMoveImage, #[offset(40)]#[rename(name="m_NearEnemies")]pub m_near_enemies: ::unity2::Array<crate::app::unit::Unit> , #[offset(48)]#[rename(name="m_EnemyDists")]pub m_enemy_dists: ::unity2::Array<i32> ,}
 
 
@@ -36,6 +25,17 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for AICannon_CannonSkillScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aicannon/AICannon_ChangeEquipScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AICannon_ChangeEquipScope{pub m_actor:crate::app::unit::Unit,pub m_equipped_index:i32,}
+impl::unity2::ClassIdentity for AICannon_ChangeEquipScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AICannon.ChangeEquipScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AICannon_ChangeEquipScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -84,18 +84,6 @@ pub fn set_occupant_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
  failed to instantiate", ::core::stringify!(AICannon_CannonData), ::core::stringify!(new),));
  <Self as IAICannon_CannonDataMethods> ::ctor(this,x,z,inspector);
 this}
-}
-
-#[cfg(feature="app-aicannon")]impl AICannon_ChangeEquipScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,actor:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2942160usize)as*mut u8,();
-(*mut AICannon_ChangeEquipScope)self as*mut AICannon_ChangeEquipScope,(crate::app::unit::Unit)::core::convert::Into::into(actor))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29421a0usize)as*mut u8,();
-(*mut AICannon_ChangeEquipScope)self as*mut AICannon_ChangeEquipScope)}
-}
-}
-
-#[cfg(feature="app-aicannon")]impl AICannon_ChangeEquipScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
 #[cfg(feature="app-aicannon")]impl AICannon{#[doc="`CanUse(crate::app::unit::Unit, crate::app::aicannon::AICannon_CannonData)` overload"]pub fn can_use(actor:impl::core::convert::Into<crate::app::unit::Unit> ,cannon:impl::core::convert::Into<crate::app::aicannon::AICannon_CannonData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x192c8a0usize)as*mut u8,bool;
@@ -168,17 +156,29 @@ this}
 pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
+#[cfg(feature="app-aicannon")]impl AICannon_ChangeEquipScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,actor:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2942160usize)as*mut u8,();
+(*mut AICannon_ChangeEquipScope)self as*mut AICannon_ChangeEquipScope,(crate::app::unit::Unit)::core::convert::Into::into(actor))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29421a0usize)as*mut u8,();
+(*mut AICannon_ChangeEquipScope)self as*mut AICannon_ChangeEquipScope)}
+}
+}
+
+#[cfg(feature="app-aicannon")]impl AICannon_ChangeEquipScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
 #[cfg(feature = "app-aicannon")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AICannon_CannonData;
     pub use super::IAICannon_CannonData;
     pub use super::IAICannon_CannonDataMethods;
-    pub use super::AICannon_ChangeEquipScope;
     pub use super::AICannon;
     pub use super::IAICannon;
     pub use super::IAICannonMethods;
     pub use super::AICannon_CannonSkillScope;
+    pub use super::AICannon_ChangeEquipScope;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

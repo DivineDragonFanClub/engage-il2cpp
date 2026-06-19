@@ -25,29 +25,90 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_HealRodScoreImplResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_HealRodScoreImplResult{}
-impl::unity2::ClassIdentity for AIThink_HealRodScoreImplResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.HealRodScoreImplResult";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_CalcUnitScoreFunction.md"))]#[::unity2::class(namespace="App",name="AIThink.EnchantThink.CalcUnitScoreFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_EnchantThink_CalcUnitScoreFunction{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AttackPositionResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_AttackPositionResult{}
+impl::unity2::ClassIdentity for AIThink_AttackPositionResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.AttackPositionResult";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_HealRodScoreImplResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AIThink_AttackPositionResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_WarpRodEvaluationResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_WarpRodEvaluationResult{}
-impl::unity2::ClassIdentity for AIThink_WarpRodEvaluationResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.WarpRodEvaluationResult";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EntrustAttackTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EntrustAttackTarget{pub eas_result:crate::app::aithink::AIThink_EntrustAttackScoreResult,}
+impl::unity2::ClassIdentity for AIThink_EntrustAttackTarget{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.EntrustAttackTarget";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_WarpRodEvaluationResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AIThink_EntrustAttackTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink.md"))]#[::unity2::class(namespace="App",name="AIThink")]#[parent(crate::system::object::Object)]pub struct AIThink{#[static_field]#[rename(name="BlowScoreNone")]pub blow_score_none:u32, #[static_field]#[rename(name="BlowScoreWall")]pub blow_score_wall:u32, #[static_field]#[rename(name="BlowScoreBlew")]pub blow_score_blew:u32, #[static_field]#[rename(name="BlowScoreHole")]pub blow_score_hole:u32, #[static_field]#[rename(name="BlowScoreBit")]pub blow_score_bit:i32, #[static_field]#[rename(name="TerrainScoreBit")]pub terrain_score_bit:i32, #[static_field]#[rename(name="IceTileMoveMax")]pub ice_tile_move_max:i32, #[static_field]#[rename(name="EscortDistance")]pub escort_distance:i32, #[static_field]#[rename(name="EntrustAskHealA")]pub entrust_ask_heal_a:i32, #[static_field]#[rename(name="EntrustAskHealB")]pub entrust_ask_heal_b:i32, #[static_field]#[rename(name="AttackTargetMax")]pub attack_target_max:u32, #[static_field]#[rename(name="EngageHealTargetCountThreshold")]pub engage_heal_target_count_threshold:i32, #[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_Think")]pub m_think:crate::app::aithink::AIThink_Think, #[offset(28)]#[rename(name="m_Order")]pub m_order:crate::app::aivalue::AIValue_Order, #[offset(32)]#[rename(name="m_UpdateFlag")]pub m_update_flag:crate::app::aithink::AIThink_UpdateFlag, #[offset(40)]#[rename(name="m_UpdateActive")]pub m_update_active:i32, #[offset(48)]#[rename(name="m_aUpdateValue")]pub m_a_update_value: ::unity2::Array<crate::app::aivalue::AIValue> , #[offset(56)]#[rename(name="m_Caution")]pub m_caution:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(64)]#[rename(name="m_Rerewarp")]pub m_rerewarp:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(72)]#[rename(name="m_aAttackTargetForCandidate")]pub m_a_attack_target_for_candidate: ::unity2::Array<u8> , #[offset(80)]#[rename(name="m_aAttackTargetForMind")]pub m_a_attack_target_for_mind: ::unity2::Array<u8> , #[offset(88)]#[rename(name="m_ProhibitEngageAttack")]pub m_prohibit_engage_attack:i32, #[offset(92)]#[rename(name="m_ProhibitRod")]pub m_prohibit_rod:i32, #[offset(96)]#[rename(name="m_ProhibitOverlap")]pub m_prohibit_overlap:i32, #[offset(100)]#[rename(name="m_IsEngageAttackOnceDone")]pub m_is_engage_attack_once_done:bool, #[offset(101)]#[rename(name="m_IsMagicShieldOnceDone")]pub m_is_magic_shield_once_done:bool, #[offset(102)]#[rename(name="m_IsEnchantWeaponDone")]pub m_is_enchant_weapon_done:bool, #[offset(104)]#[rename(name="m_BulletPattern")]pub m_bullet_pattern:i32, #[offset(108)]#[rename(name="m_IsChangeATAttack")]pub m_is_change_at_attack:bool, #[offset(112)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> , #[offset(120)]#[rename(name="m_OverlapSkills")]pub m_overlap_skills:crate::app::aithink::AIThink_OverlapSkills, #[offset(136)]#[rename(name="m_TrimasteriesSkills")]pub m_trimasteries_skills:crate::app::aithink::AIThink_TrimasteriesSkills, #[offset(152)]#[rename(name="m_BattleSimulator")]pub m_battle_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(160)]#[rename(name="m_BattleSimulatorForScore")]pub m_battle_simulator_for_score:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(168)]#[rename(name="m_InterferenceSimulator")]pub m_interference_simulator:crate::app::aiinterferencesimulator::AIInterferenceSimulator, #[offset(176)]#[rename(name="m_NearTargetsCSO")]pub m_near_targets_cso: ::unity2::Array<crate::app::unit::Unit> , #[offset(184)]#[rename(name="m_TargetDistsCSO")]pub m_target_dists_cso: ::unity2::Array<i32> , #[offset(192)]#[rename(name="m_UnitScores")]pub m_unit_scores:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u32> , #[static_field]#[rename(name="s_CellsGAP")]pub s_cells_gap: ::unity2::Array<crate::app::mappos::MapPos> , #[static_field]#[rename(name="s_BattleInfoGAP")]pub s_battle_info_gap:crate::app::battleinfo::BattleInfo, #[static_field]#[rename(name="s_UnitItemGAR")]pub s_unit_item_gar:crate::app::unititem::UnitItem, #[offset(200)]#[rename(name="m_EngageWaitAdditionalAttackImage")]pub m_engage_wait_additional_attack_image:crate::app::aithink::AIThink_EngageWaitAdditionalAttackImage, #[offset(208)]#[rename(name="m_HolyShield")]pub m_holy_shield:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(216)]#[rename(name="m_EnchantThink")]pub m_enchant_think:crate::app::aithink::AIThink_EnchantThink,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_ItemInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EnchantThink_ItemInfo{pub item_index:u8,pub kind:u8,}
+impl::unity2::ClassIdentity for AIThink_EnchantThink_ItemInfo{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.EnchantThink.ItemInfo";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_EnchantThink_ItemInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AttackFlag.md"))]#[::unity2::class(namespace="App",name="AIThink.AttackFlag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIThink_AttackFlag{#[static_field]#[rename(name="Side")]pub side:i32, #[static_field]#[rename(name="Nearest")]pub nearest:i32, #[static_field]#[rename(name="AheadIgnore")]pub ahead_ignore:i32, #[static_field]#[rename(name="__IgnoreSilent")]pub ignore_silent:i32, #[static_field]#[rename(name="__DestroyTargetCastleOffset")]pub destroy_target_castle_offset:i32, #[static_field]#[rename(name="ScoreExpectation")]pub score_expectation:i32, #[static_field]#[rename(name="InterferenceHighMagic")]pub interference_high_magic:i32, #[static_field]#[rename(name="InterferenceLowMagic")]pub interference_low_magic:i32, #[static_field]#[rename(name="Break")]pub r#break:i32, #[static_field]#[rename(name="Chain")]pub chain:i32, #[static_field]#[rename(name="MagicOnly")]pub magic_only:i32, #[static_field]#[rename(name="ChainAttackCount")]pub chain_attack_count:i32, #[static_field]#[rename(name="PierceMultiple")]pub pierce_multiple:i32, #[static_field]#[rename(name="InterferenceRange")]pub interference_range:i32, #[static_field]#[rename(name="EquipSkillMultiple")]pub equip_skill_multiple:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_InterferenceTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_InterferenceTarget{pub is_result:crate::app::aithink::AIThink_InterferenceScoreResult,}
+impl::unity2::ClassIdentity for AIThink_InterferenceTarget{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.InterferenceTarget";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_InterferenceTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AttackTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_AttackTarget{pub as_result:crate::app::aithink::AIThink_AttackScoreResult,}
+impl::unity2::ClassIdentity for AIThink_AttackTarget{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.AttackTarget";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_AttackTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EngageWaitResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EngageWaitResult{pub score:u32,pub x:i32,pub z:i32,pub item_index:i32,pub power:i32,pub unit:crate::app::unit::Unit,}
+impl::unity2::ClassIdentity for AIThink_EngageWaitResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.EngageWaitResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_EngageWaitResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_Desc.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EnchantThink_Desc{pub priority:i32,pub calc_unit_score:crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,}
+impl::unity2::ClassIdentity for AIThink_EnchantThink_Desc{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.EnchantThink.Desc";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_EnchantThink_Desc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_Command.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_Command{pub value:i32,}
@@ -68,121 +129,6 @@ pub fn active()->Self{Self{value:0}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_CGBSResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_CGBSResult{pub value:i32,}
-impl::unity2::ClassIdentity for AIThink_CGBSResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.CGBSResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_CGBSResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AIThink_CGBSResult{pub fn no_give()->Self{Self{value:0}
-}
-pub fn cannot_give()->Self{Self{value:1}
-}
-pub fn can_give()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EngageWaitRangeScore.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EngageWaitRangeScore{pub score:u32,pub x:i32,pub z:i32,}
-impl::unity2::ClassIdentity for AIThink_EngageWaitRangeScore{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.EngageWaitRangeScore";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_EngageWaitRangeScore{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_RcFunc.md"))]#[::unity2::class(namespace="App",name="AIThink.RcFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_RcFunc{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_InterferenceScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_InterferenceScoreResult{}
-impl::unity2::ClassIdentity for AIThink_InterferenceScoreResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.InterferenceScoreResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_InterferenceScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_ActionFunc.md"))]#[::unity2::class(namespace="App",name="AIThink.ActionFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_ActionFunc{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink.md"))]#[::unity2::class(namespace="App",name="AIThink")]#[parent(crate::system::object::Object)]pub struct AIThink{#[static_field]#[rename(name="BlowScoreNone")]pub blow_score_none:u32, #[static_field]#[rename(name="BlowScoreWall")]pub blow_score_wall:u32, #[static_field]#[rename(name="BlowScoreBlew")]pub blow_score_blew:u32, #[static_field]#[rename(name="BlowScoreHole")]pub blow_score_hole:u32, #[static_field]#[rename(name="BlowScoreBit")]pub blow_score_bit:i32, #[static_field]#[rename(name="TerrainScoreBit")]pub terrain_score_bit:i32, #[static_field]#[rename(name="IceTileMoveMax")]pub ice_tile_move_max:i32, #[static_field]#[rename(name="EscortDistance")]pub escort_distance:i32, #[static_field]#[rename(name="EntrustAskHealA")]pub entrust_ask_heal_a:i32, #[static_field]#[rename(name="EntrustAskHealB")]pub entrust_ask_heal_b:i32, #[static_field]#[rename(name="AttackTargetMax")]pub attack_target_max:u32, #[static_field]#[rename(name="EngageHealTargetCountThreshold")]pub engage_heal_target_count_threshold:i32, #[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_Think")]pub m_think:crate::app::aithink::AIThink_Think, #[offset(28)]#[rename(name="m_Order")]pub m_order:crate::app::aivalue::AIValue_Order, #[offset(32)]#[rename(name="m_UpdateFlag")]pub m_update_flag:crate::app::aithink::AIThink_UpdateFlag, #[offset(40)]#[rename(name="m_UpdateActive")]pub m_update_active:i32, #[offset(48)]#[rename(name="m_aUpdateValue")]pub m_a_update_value: ::unity2::Array<crate::app::aivalue::AIValue> , #[offset(56)]#[rename(name="m_Caution")]pub m_caution:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(64)]#[rename(name="m_Rerewarp")]pub m_rerewarp:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(72)]#[rename(name="m_aAttackTargetForCandidate")]pub m_a_attack_target_for_candidate: ::unity2::Array<u8> , #[offset(80)]#[rename(name="m_aAttackTargetForMind")]pub m_a_attack_target_for_mind: ::unity2::Array<u8> , #[offset(88)]#[rename(name="m_ProhibitEngageAttack")]pub m_prohibit_engage_attack:i32, #[offset(92)]#[rename(name="m_ProhibitRod")]pub m_prohibit_rod:i32, #[offset(96)]#[rename(name="m_ProhibitOverlap")]pub m_prohibit_overlap:i32, #[offset(100)]#[rename(name="m_IsEngageAttackOnceDone")]pub m_is_engage_attack_once_done:bool, #[offset(101)]#[rename(name="m_IsMagicShieldOnceDone")]pub m_is_magic_shield_once_done:bool, #[offset(102)]#[rename(name="m_IsEnchantWeaponDone")]pub m_is_enchant_weapon_done:bool, #[offset(104)]#[rename(name="m_BulletPattern")]pub m_bullet_pattern:i32, #[offset(108)]#[rename(name="m_IsChangeATAttack")]pub m_is_change_at_attack:bool, #[offset(112)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mappos::MapPos> , #[offset(120)]#[rename(name="m_OverlapSkills")]pub m_overlap_skills:crate::app::aithink::AIThink_OverlapSkills, #[offset(136)]#[rename(name="m_TrimasteriesSkills")]pub m_trimasteries_skills:crate::app::aithink::AIThink_TrimasteriesSkills, #[offset(152)]#[rename(name="m_BattleSimulator")]pub m_battle_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(160)]#[rename(name="m_BattleSimulatorForScore")]pub m_battle_simulator_for_score:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(168)]#[rename(name="m_InterferenceSimulator")]pub m_interference_simulator:crate::app::aiinterferencesimulator::AIInterferenceSimulator, #[offset(176)]#[rename(name="m_NearTargetsCSO")]pub m_near_targets_cso: ::unity2::Array<crate::app::unit::Unit> , #[offset(184)]#[rename(name="m_TargetDistsCSO")]pub m_target_dists_cso: ::unity2::Array<i32> , #[offset(192)]#[rename(name="m_UnitScores")]pub m_unit_scores:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u32> , #[static_field]#[rename(name="s_CellsGAP")]pub s_cells_gap: ::unity2::Array<crate::app::mappos::MapPos> , #[static_field]#[rename(name="s_BattleInfoGAP")]pub s_battle_info_gap:crate::app::battleinfo::BattleInfo, #[static_field]#[rename(name="s_UnitItemGAR")]pub s_unit_item_gar:crate::app::unititem::UnitItem, #[offset(200)]#[rename(name="m_EngageWaitAdditionalAttackImage")]pub m_engage_wait_additional_attack_image:crate::app::aithink::AIThink_EngageWaitAdditionalAttackImage, #[offset(208)]#[rename(name="m_HolyShield")]pub m_holy_shield:crate::app::mapimagecorebyte::MapImageCoreByte, #[offset(216)]#[rename(name="m_EnchantThink")]pub m_enchant_think:crate::app::aithink::AIThink_EnchantThink,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_Desc.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EnchantThink_Desc{pub priority:i32,pub calc_unit_score:crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction,}
-impl::unity2::ClassIdentity for AIThink_EnchantThink_Desc{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.EnchantThink.Desc";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_EnchantThink_Desc{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_GodSkillTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_GodSkillTypes{pub value:i32,}
-impl::unity2::ClassIdentity for AIThink_GodSkillTypes{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.GodSkillTypes";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_GodSkillTypes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AIThink_GodSkillTypes{pub fn none()->Self{Self{value:0}
-}
-pub fn remagic()->Self{Self{value:1}
-}
-pub fn before_move()->Self{Self{value:2}
-}
-pub fn vision()->Self{Self{value:3}
-}
-pub fn overlap()->Self{Self{value:4}
-}
-pub fn support()->Self{Self{value:5}
-}
-pub fn engage_guard()->Self{Self{value:6}
-}
-pub fn pull_back()->Self{Self{value:7}
-}
-pub fn god_change()->Self{Self{value:8}
-}
-pub fn decoy()->Self{Self{value:9}
-}
-pub fn strategy()->Self{Self{value:10}
-}
-pub fn strategy_holy_shield()->Self{Self{value:11}
-}
-pub fn trimasteries()->Self{Self{value:12}
-}
-pub fn contract()->Self{Self{value:13}
-}
-pub fn gaze()->Self{Self{value:14}
-}
-pub fn num()->Self{Self{value:15}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_RescueRodTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_RescueRodTarget{pub rrs_result:crate::app::aithink::AIThink_RescueRodScoreResult,}
-impl::unity2::ClassIdentity for AIThink_RescueRodTarget{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.RescueRodTarget";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_RescueRodTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AttackScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_AttackScoreResult{}
 impl::unity2::ClassIdentity for AIThink_AttackScoreResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIThink.AttackScoreResult";
@@ -192,74 +138,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for AIThink_AttackScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_HealRodPositionResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_HealRodPositionResult{}
-impl::unity2::ClassIdentity for AIThink_HealRodPositionResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.HealRodPositionResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_HealRodPositionResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EngageWaitResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EngageWaitResult{pub score:u32,pub x:i32,pub z:i32,pub item_index:i32,pub power:i32,pub unit:crate::app::unit::Unit,}
-impl::unity2::ClassIdentity for AIThink_EngageWaitResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.EngageWaitResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_EngageWaitResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_DMPTResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EnchantThink_DMPTResult{pub move_x:i32,pub move_z:i32,pub target_index:i32,pub target_x:i32,pub target_z:i32,}
-impl::unity2::ClassIdentity for AIThink_EnchantThink_DMPTResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.EnchantThink.DMPTResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_EnchantThink_DMPTResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_MoveFlag.md"))]#[::unity2::class(namespace="App",name="AIThink.MoveFlag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIThink_MoveFlag{#[static_field]#[rename(name="Through")]pub through:i32, #[static_field]#[rename(name="Break")]pub r#break:i32, #[static_field]#[rename(name="Back")]pub back:i32, #[static_field]#[rename(name="Slow")]pub slow:i32, #[static_field]#[rename(name="Door")]pub door:i32, #[static_field]#[rename(name="Ignore")]pub ignore:i32, #[static_field]#[rename(name="IgnoreIceTile")]pub ignore_ice_tile:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_Result{pub value:i32,}
-impl::unity2::ClassIdentity for AIThink_Result{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.Result";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AIThink_Result{pub fn none()->Self{Self{value:0}
-}
-pub fn decide()->Self{Self{value:1}
-}
-pub fn reserve()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AttackTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_AttackTarget{pub as_result:crate::app::aithink::AIThink_AttackScoreResult,}
-impl::unity2::ClassIdentity for AIThink_AttackTarget{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.AttackTarget";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_AttackTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink.md"))]#[::unity2::class(namespace="App",name="AIThink.EnchantThink")]#[parent(crate::system::object::Object)]pub struct AIThink_EnchantThink{#[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_ItemInfos")]pub m_item_infos: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_ItemInfo> , #[offset(32)]#[rename(name="m_ItemInfoCount")]pub m_item_info_count:i32, #[offset(40)]#[rename(name="m_UnitScores")]pub m_unit_scores:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u8> , #[offset(48)]#[rename(name="m_UnitSurroundings")]pub m_unit_surroundings:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::aithink::AIThink_EnchantThink_SurroundingInfo> , #[static_field]#[rename(name="Descs")]pub descs: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_Desc> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_SurroundingInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EnchantThink_SurroundingInfo{pub m_value:u32,}
@@ -330,6 +208,50 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"FreezeShift"
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_GodSkillTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_GodSkillTypes{pub value:i32,}
+impl::unity2::ClassIdentity for AIThink_GodSkillTypes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.GodSkillTypes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_GodSkillTypes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AIThink_GodSkillTypes{pub fn none()->Self{Self{value:0}
+}
+pub fn remagic()->Self{Self{value:1}
+}
+pub fn before_move()->Self{Self{value:2}
+}
+pub fn vision()->Self{Self{value:3}
+}
+pub fn overlap()->Self{Self{value:4}
+}
+pub fn support()->Self{Self{value:5}
+}
+pub fn engage_guard()->Self{Self{value:6}
+}
+pub fn pull_back()->Self{Self{value:7}
+}
+pub fn god_change()->Self{Self{value:8}
+}
+pub fn decoy()->Self{Self{value:9}
+}
+pub fn strategy()->Self{Self{value:10}
+}
+pub fn strategy_holy_shield()->Self{Self{value:11}
+}
+pub fn trimasteries()->Self{Self{value:12}
+}
+pub fn contract()->Self{Self{value:13}
+}
+pub fn gaze()->Self{Self{value:14}
+}
+pub fn num()->Self{Self{value:15}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_Think.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_Think{pub value:i32,}
 impl::unity2::ClassIdentity for AIThink_Think{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIThink.Think";
@@ -376,6 +298,29 @@ pub fn uncontroll_fixed()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AcFunc.md"))]#[::unity2::class(namespace="App",name="AIThink.AcFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_AcFunc{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_ActionFunc.md"))]#[::unity2::class(namespace="App",name="AIThink.ActionFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_ActionFunc{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_MoveFlag.md"))]#[::unity2::class(namespace="App",name="AIThink.MoveFlag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIThink_MoveFlag{#[static_field]#[rename(name="Through")]pub through:i32, #[static_field]#[rename(name="Break")]pub r#break:i32, #[static_field]#[rename(name="Back")]pub back:i32, #[static_field]#[rename(name="Slow")]pub slow:i32, #[static_field]#[rename(name="Door")]pub door:i32, #[static_field]#[rename(name="Ignore")]pub ignore:i32, #[static_field]#[rename(name="IgnoreIceTile")]pub ignore_ice_tile:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_UpdateFlag.md"))]#[::unity2::class(namespace="App",name="AIThink.UpdateFlag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIThink_UpdateFlag{#[static_field]#[rename(name="Active")]pub active:i32, #[static_field]#[rename(name="Value0")]pub value0:i32, #[static_field]#[rename(name="Value1")]pub value1:i32, #[static_field]#[rename(name="Value2")]pub value2:i32, #[static_field]#[rename(name="Value3")]pub value3:i32, #[static_field]#[rename(name="Retry")]pub retry:i32, #[static_field]#[rename(name="MaskUpdate")]pub mask_update:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_InterferenceScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_InterferenceScoreResult{}
+impl::unity2::ClassIdentity for AIThink_InterferenceScoreResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.InterferenceScoreResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_InterferenceScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_TrimasteriesSkills.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_TrimasteriesSkills{pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,pub m_count:i32,pub m_last_engage_turn:i32,}
 impl::unity2::ClassIdentity for AIThink_TrimasteriesSkills{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIThink.TrimasteriesSkills";
@@ -387,14 +332,93 @@ impl::unity2::IlType for AIThink_TrimasteriesSkills{fn il_type()-> &'static::uni
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EntrustAttackTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EntrustAttackTarget{pub eas_result:crate::app::aithink::AIThink_EntrustAttackScoreResult,}
-impl::unity2::ClassIdentity for AIThink_EntrustAttackTarget{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.EntrustAttackTarget";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EngageWaitRangeScore.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EngageWaitRangeScore{pub score:u32,pub x:i32,pub z:i32,}
+impl::unity2::ClassIdentity for AIThink_EngageWaitRangeScore{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.EngageWaitRangeScore";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_EntrustAttackTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AIThink_EngageWaitRangeScore{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_RcFunc.md"))]#[::unity2::class(namespace="App",name="AIThink.RcFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_RcFunc{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_DMPTResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EnchantThink_DMPTResult{pub move_x:i32,pub move_z:i32,pub target_index:i32,pub target_x:i32,pub target_z:i32,}
+impl::unity2::ClassIdentity for AIThink_EnchantThink_DMPTResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.EnchantThink.DMPTResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_EnchantThink_DMPTResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_TrimasteriesSkills_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_TrimasteriesSkills_Kinds{pub value:i32,}
+impl::unity2::ClassIdentity for AIThink_TrimasteriesSkills_Kinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.TrimasteriesSkills.Kinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_TrimasteriesSkills_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AIThink_TrimasteriesSkills_Kinds{pub fn unknown()->Self{Self{value: -1}
+}
+pub fn mad_storm()->Self{Self{value:0}
+}
+pub fn miserable()->Self{Self{value:1}
+}
+pub fn falling_stars()->Self{Self{value:2}
+}
+pub fn max()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_RescueRodTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_RescueRodTarget{pub rrs_result:crate::app::aithink::AIThink_RescueRodScoreResult,}
+impl::unity2::ClassIdentity for AIThink_RescueRodTarget{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.RescueRodTarget";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_RescueRodTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EngageWaitAdditionalAttackImage.md"))]#[::unity2::class(namespace="App",name="AIThink.EngageWaitAdditionalAttackImage")]#[parent(crate::app::mapimagecore_1::MapImageCore_1<u16>)]pub struct AIThink_EngageWaitAdditionalAttackImage{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EntrustAttackScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EntrustAttackScoreResult{}
+impl::unity2::ClassIdentity for AIThink_EntrustAttackScoreResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.EntrustAttackScoreResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_EntrustAttackScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_CGBSResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_CGBSResult{pub value:i32,}
+impl::unity2::ClassIdentity for AIThink_CGBSResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.CGBSResult";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_CGBSResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AIThink_CGBSResult{pub fn no_give()->Self{Self{value:0}
+}
+pub fn cannot_give()->Self{Self{value:1}
+}
+pub fn can_give()->Self{Self{value:2}
+}
 }
 
 
@@ -440,17 +464,14 @@ pub fn max()->Self{Self{value:14}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_CalcUnitScoreFunction.md"))]#[::unity2::class(namespace="App",name="AIThink.EnchantThink.CalcUnitScoreFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_EnchantThink_CalcUnitScoreFunction{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_InterferenceTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_InterferenceTarget{pub is_result:crate::app::aithink::AIThink_InterferenceScoreResult,}
-impl::unity2::ClassIdentity for AIThink_InterferenceTarget{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.InterferenceTarget";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_UncontrollAttackScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_UncontrollAttackScoreResult{}
+impl::unity2::ClassIdentity for AIThink_UncontrollAttackScoreResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.UncontrollAttackScoreResult";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_InterferenceTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AIThink_UncontrollAttackScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -465,14 +486,14 @@ impl::unity2::IlType for AIThink_RescueRodScoreResult{fn il_type()-> &'static::u
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_UncontrollAttackTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_UncontrollAttackTarget{pub uas_result:crate::app::aithink::AIThink_UncontrollAttackScoreResult,}
-impl::unity2::ClassIdentity for AIThink_UncontrollAttackTarget{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.UncontrollAttackTarget";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_WarpRodEvaluationResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_WarpRodEvaluationResult{}
+impl::unity2::ClassIdentity for AIThink_WarpRodEvaluationResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.WarpRodEvaluationResult";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_UncontrollAttackTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AIThink_WarpRodEvaluationResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -498,34 +519,6 @@ impl::unity2::IlType for AIThink_HealRodScoreResult{fn il_type()-> &'static::uni
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AcFunc.md"))]#[::unity2::class(namespace="App",name="AIThink.AcFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AIThink_AcFunc{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_UncontrollAttackScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_UncontrollAttackScoreResult{}
-impl::unity2::ClassIdentity for AIThink_UncontrollAttackScoreResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.UncontrollAttackScoreResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_UncontrollAttackScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_UpdateFlag.md"))]#[::unity2::class(namespace="App",name="AIThink.UpdateFlag")]#[parent(crate::app::bitfield32::BitField32)]pub struct AIThink_UpdateFlag{#[static_field]#[rename(name="Active")]pub active:i32, #[static_field]#[rename(name="Value0")]pub value0:i32, #[static_field]#[rename(name="Value1")]pub value1:i32, #[static_field]#[rename(name="Value2")]pub value2:i32, #[static_field]#[rename(name="Value3")]pub value3:i32, #[static_field]#[rename(name="Retry")]pub retry:i32, #[static_field]#[rename(name="MaskUpdate")]pub mask_update:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EntrustAttackScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EntrustAttackScoreResult{}
-impl::unity2::ClassIdentity for AIThink_EntrustAttackScoreResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.EntrustAttackScoreResult";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AIThink_EntrustAttackScoreResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_OverlapSkills.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_OverlapSkills{pub m_skills: ::unity2::Array<crate::app::skilldata::SkillData>,pub m_count:i32,}
 impl::unity2::ClassIdentity for AIThink_OverlapSkills{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIThink.OverlapSkills";
@@ -537,50 +530,57 @@ impl::unity2::IlType for AIThink_OverlapSkills{fn il_type()-> &'static::unity2::
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EngageWaitAdditionalAttackImage.md"))]#[::unity2::class(namespace="App",name="AIThink.EngageWaitAdditionalAttackImage")]#[parent(crate::app::mapimagecore_1::MapImageCore_1<u16>)]pub struct AIThink_EngageWaitAdditionalAttackImage{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_TrimasteriesSkills_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_TrimasteriesSkills_Kinds{pub value:i32,}
-impl::unity2::ClassIdentity for AIThink_TrimasteriesSkills_Kinds{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.TrimasteriesSkills.Kinds";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_HealRodPositionResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_HealRodPositionResult{}
+impl::unity2::ClassIdentity for AIThink_HealRodPositionResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.HealRodPositionResult";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_TrimasteriesSkills_Kinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AIThink_TrimasteriesSkills_Kinds{pub fn unknown()->Self{Self{value: -1}
-}
-pub fn mad_storm()->Self{Self{value:0}
-}
-pub fn miserable()->Self{Self{value:1}
-}
-pub fn falling_stars()->Self{Self{value:2}
-}
-pub fn max()->Self{Self{value:3}
-}
+impl::unity2::IlType for AIThink_HealRodPositionResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_AttackPositionResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_AttackPositionResult{}
-impl::unity2::ClassIdentity for AIThink_AttackPositionResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.AttackPositionResult";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink.md"))]#[::unity2::class(namespace="App",name="AIThink.EnchantThink")]#[parent(crate::system::object::Object)]pub struct AIThink_EnchantThink{#[offset(16)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_ItemInfos")]pub m_item_infos: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_ItemInfo> , #[offset(32)]#[rename(name="m_ItemInfoCount")]pub m_item_info_count:i32, #[offset(40)]#[rename(name="m_UnitScores")]pub m_unit_scores:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,u8> , #[offset(48)]#[rename(name="m_UnitSurroundings")]pub m_unit_surroundings:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::app::aithink::AIThink_EnchantThink_SurroundingInfo> , #[static_field]#[rename(name="Descs")]pub descs: ::unity2::Array<crate::app::aithink::AIThink_EnchantThink_Desc> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_HealRodScoreImplResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_HealRodScoreImplResult{}
+impl::unity2::ClassIdentity for AIThink_HealRodScoreImplResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.HealRodScoreImplResult";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_AttackPositionResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AIThink_HealRodScoreImplResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_EnchantThink_ItemInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_EnchantThink_ItemInfo{pub item_index:u8,pub kind:u8,}
-impl::unity2::ClassIdentity for AIThink_EnchantThink_ItemInfo{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AIThink.EnchantThink.ItemInfo";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AIThink_Result{pub value:i32,}
+impl::unity2::ClassIdentity for AIThink_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.Result";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for AIThink_EnchantThink_ItemInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for AIThink_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AIThink_Result{pub fn none()->Self{Self{value:0}
+}
+pub fn decide()->Self{Self{value:1}
+}
+pub fn reserve()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aithink/AIThink_UncontrollAttackTarget.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIThink_UncontrollAttackTarget{pub uas_result:crate::app::aithink::AIThink_UncontrollAttackScoreResult,}
+impl::unity2::ClassIdentity for AIThink_UncontrollAttackTarget{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AIThink.UncontrollAttackTarget";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AIThink_UncontrollAttackTarget{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -588,268 +588,163 @@ impl::unity2::IlType for AIThink_EnchantThink_ItemInfo{fn il_type()-> &'static::
 #[cfg(feature = "app-aithink-types")]
 pub use __types::*;
 
-#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreImplResult{#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900580usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
+#[cfg(feature="app-aithink")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AIThink_EnchantThink_CalcUnitScoreFunction_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AIThink_EnchantThink_CalcUnitScoreFunction,think:crate::app::aithink::AIThink_EnchantThink,actor:crate::app::unit::Unit,target:crate::app::unit::Unit,unit_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->u8{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AIThink_EnchantThink_CalcUnitScoreFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AIThink_EnchantThink_CalcUnitScoreFunction,crate::app::aithink::AIThink_EnchantThink,crate::app::unit::Unit,crate::app::unit::Unit,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->u8= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,think,actor,target,unit_item,__mi)}
 }
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900590usize)as*mut u8,();
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
+
+#[cfg(feature="app-aithink")]pub trait IAIThink_EnchantThink_CalcUnitScoreFunctionMethods:IAIThink_EnchantThink_CalcUnitScoreFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_EnchantThink_CalcUnitScoreFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b30d60usize)as*mut u8,();
+(AIThink_EnchantThink_CalcUnitScoreFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005a0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
-}
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005b0usize)as*mut u8,();
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005c0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
-}
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005d0usize)as*mut u8,();
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005e0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005f0usize)as*mut u8,();
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Heal()` overload"]pub fn get_heal(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900600usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
-}
-#[doc="`set_Heal(i32)` overload"]pub fn set_heal(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900610usize)as*mut u8,();
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Damage()` overload"]pub fn get_damage(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900620usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
-}
-#[doc="`set_Damage(i32)` overload"]pub fn set_damage(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900630usize)as*mut u8,();
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900640usize)as*mut u8,();
-(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
+#[doc="`Invoke(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]fn invoke(self,think:impl::core::convert::Into<crate::app::aithink::AIThink_EnchantThink> ,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->u8{unsafe{let __receiver= <AIThink_EnchantThink_CalcUnitScoreFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AIThink_EnchantThink_CalcUnitScoreFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(think), ::core::convert::Into::into(actor), ::core::convert::Into::into(target), ::core::convert::Into::into(unit_item), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreImplResult{pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_EnchantThink_CalcUnitScoreFunction>IAIThink_EnchantThink_CalcUnitScoreFunctionMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_CalcUnitScoreFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_WarpRodEvaluationResult{#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901750usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901760usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901770usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901780usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901790usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017a0usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017b0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017c0usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_WarpX()` overload"]pub fn get_warp_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017d0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_WarpX(i32)` overload"]pub fn set_warp_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017e0usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_WarpZ()` overload"]pub fn get_warp_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017f0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_WarpZ(i32)` overload"]pub fn set_warp_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901800usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveDist()` overload"]pub fn get_move_dist(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901810usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_MoveDist(i32)` overload"]pub fn set_move_dist(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901820usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_EnemyDist()` overload"]pub fn get_enemy_dist(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901830usize)as*mut u8,i32;
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-#[doc="`set_EnemyDist(i32)` overload"]pub fn set_enemy_dist(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901840usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901850usize)as*mut u8,();
-(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_WarpRodEvaluationResult{pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_warp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_warp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_warp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_warp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_move_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_move_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_enemy_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_enemy_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_AttackFlagMethods:IAIThink_AttackFlag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_AttackFlag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb6e0usize)as*mut u8,();
-(AIThink_AttackFlag)__receiver)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_AttackFlag>IAIThink_AttackFlagMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_AttackFlag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_AttackFlag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_CalcUnitScoreFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AIThink_AttackFlag), ::core::stringify!(new),));
- <Self as IAIThink_AttackFlagMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(AIThink_EnchantThink_CalcUnitScoreFunction), ::core::stringify!(new),));
+ <Self as IAIThink_EnchantThink_CalcUnitScoreFunctionMethods> ::ctor(this,object,method);
 this}
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitRangeScore{#[doc="`New(*mutcrate::app::aithink::AIThink_EngageWaitRangeScore)` overload"]pub fn new()->crate::app::aithink::AIThink_EngageWaitRangeScore{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_EngageWaitRangeScore> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2900160usize)as*mut u8,();
-(*mut crate::app::aithink::AIThink_EngageWaitRangeScore)__out_0.as_mut_ptr());
+#[cfg(feature="app-aithink")]impl AIThink_AttackPositionResult{#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb6f0usize)as*mut u8,i32;
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
+}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb700usize)as*mut u8,();
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb710usize)as*mut u8,i32;
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
+}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb720usize)as*mut u8,();
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb730usize)as*mut u8,i32;
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
+}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb740usize)as*mut u8,();
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb750usize)as*mut u8,i32;
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
+}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb760usize)as*mut u8,();
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BlowScore()` overload"]pub fn get_blow_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb770usize)as*mut u8,u32;
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
+}
+#[doc="`set_BlowScore(u32)` overload"]pub fn set_blow_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb780usize)as*mut u8,();
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ChainAttackCount()` overload"]pub fn get_chain_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb790usize)as*mut u8,i32;
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
+}
+#[doc="`set_ChainAttackCount(i32)` overload"]pub fn set_chain_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb7a0usize)as*mut u8,();
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb7b0usize)as*mut u8,();
+(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_AttackPositionResult{pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_blow_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_blow_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_EntrustAttackTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_EntrustAttackTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_EntrustAttackTarget> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29004a0usize)as*mut u8,();
+(*mut crate::app::aithink::AIThink_EntrustAttackTarget)__out_0.as_mut_ptr());
 __out_0.assume_init()}
 }
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitRangeScore{#[doc="`CompareAndSwap(u32, i32, i32)` overload"]pub fn compare_and_swap(&mut self,temp_score:impl::core::convert::Into<u32> ,temp_x:impl::core::convert::Into<i32> ,temp_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28ee560usize)as*mut u8,();
-(*mut AIThink_EngageWaitRangeScore)self as*mut AIThink_EngageWaitRangeScore,(u32)::core::convert::Into::into(temp_score),(i32)::core::convert::Into::into(temp_x),(i32)::core::convert::Into::into(temp_z))}
+#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003a0usize)as*mut u8,crate::app::unit::Unit;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003b0usize)as*mut u8,();
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003c0usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003d0usize)as*mut u8,();
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003e0usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003f0usize)as*mut u8,();
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f59e0usize)as*mut u8,u32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900400usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900410usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900420usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900430usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`get_KillRate()` overload"]pub fn get_kill_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900440usize)as*mut u8,f32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`get_DeadRate()` overload"]pub fn get_dead_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900450usize)as*mut u8,f32;
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900460usize)as*mut u8,();
+(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
 }
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitRangeScore{pub fn compare_and_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_RcFuncMethods:IAIThink_RcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_RcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2900b30usize)as*mut u8,();
-(AIThink_RcFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]fn invoke(self,command:impl::core::convert::Into<i32> ,v0:impl::core::convert::Into<crate::app::aivalue::AIValue> ,v1:impl::core::convert::Into<crate::app::aivalue::AIValue>)->bool{unsafe{let __receiver= <AIThink_RcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2900b50usize)as*mut u8,bool;
-(AIThink_RcFunc)__receiver,(i32)::core::convert::Into::into(command),(crate::app::aivalue::AIValue)::core::convert::Into::into(v0),(crate::app::aivalue::AIValue)::core::convert::Into::into(v1))}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_RcFunc>IAIThink_RcFuncMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_RcFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_RcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIThink_RcFunc), ::core::stringify!(new),));
- <Self as IAIThink_RcFuncMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_InterferenceScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006d0usize)as*mut u8,u32;
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
-}
-#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006e0usize)as*mut u8,();
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006f0usize)as*mut u8,i32;
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
-}
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900700usize)as*mut u8,();
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900710usize)as*mut u8,i32;
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
-}
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900720usize)as*mut u8,();
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900730usize)as*mut u8,i32;
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
-}
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900740usize)as*mut u8,();
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900750usize)as*mut u8,i32;
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900760usize)as*mut u8,();
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900770usize)as*mut u8,i32;
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
-}
-#[doc="`set_ItemIndex(i32)` overload"]pub fn set_item_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900780usize)as*mut u8,();
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900790usize)as*mut u8,();
-(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_InterferenceScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_ActionFuncMethods:IAIThink_ActionFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_ActionFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb380usize)as*mut u8,();
-(AIThink_ActionFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]fn invoke(self,command:impl::core::convert::Into<i32> ,v0:impl::core::convert::Into<crate::app::aivalue::AIValue> ,v1:impl::core::convert::Into<crate::app::aivalue::AIValue>)->crate::app::aithink::AIThink_Result{unsafe{let __receiver= <AIThink_ActionFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb3a0usize)as*mut u8,crate::app::aithink::AIThink_Result;
-(AIThink_ActionFunc)__receiver,(i32)::core::convert::Into::into(command),(crate::app::aivalue::AIValue)::core::convert::Into::into(v0),(crate::app::aivalue::AIValue)::core::convert::Into::into(v1))}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_ActionFunc>IAIThink_ActionFuncMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_ActionFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_ActionFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIThink_ActionFunc), ::core::stringify!(new),));
- <Self as IAIThink_ActionFuncMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 }
 
 #[cfg(feature="app-aithink")]impl AIThink{#[doc="`IsActiveCommand(crate::app::unit::Unit, crate::app::aidata::AIData)` overload"]pub fn is_active_command(unit:impl::core::convert::Into<crate::app::unit::Unit> ,command:impl::core::convert::Into<crate::app::aidata::AIData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x193c7a0usize)as*mut u8,bool;
@@ -2991,60 +2886,81 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_Desc{#[doc="`.ctor(i32, crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)` overload"]pub fn ctor(&mut self,priority:impl::core::convert::Into<i32> ,calc_unit_score:impl::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b311c0usize)as*mut u8,();
-(*mut AIThink_EnchantThink_Desc)self as*mut AIThink_EnchantThink_Desc,(i32)::core::convert::Into::into(priority),(crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)::core::convert::Into::into(calc_unit_score))}
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_ItemInfo{#[doc="`CompareTo(crate::app::aithink::AIThink_EnchantThink_ItemInfo)` overload"]pub fn compare_to(&mut self,other:impl::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_ItemInfo>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b311d0usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_ItemInfo)self as*mut AIThink_EnchantThink_ItemInfo,(crate::app::aithink::AIThink_EnchantThink_ItemInfo)::core::convert::Into::into(other))}
 }
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_Desc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_ItemInfo{pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_RescueRodTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_RescueRodTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_RescueRodTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_RescueRodTarget> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2901040usize)as*mut u8,();
-(*mut crate::app::aithink::AIThink_RescueRodTarget)__out_0.as_mut_ptr());
+#[cfg(feature="app-aithink")]pub trait IAIThink_AttackFlagMethods:IAIThink_AttackFlag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_AttackFlag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb6e0usize)as*mut u8,();
+(AIThink_AttackFlag)__receiver)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_AttackFlag>IAIThink_AttackFlagMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_AttackFlag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_AttackFlag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIThink_AttackFlag), ::core::stringify!(new),));
+ <Self as IAIThink_AttackFlagMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_InterferenceTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_InterferenceTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_InterferenceTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_InterferenceTarget> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29008b0usize)as*mut u8,();
+(*mut crate::app::aithink::AIThink_InterferenceTarget)__out_0.as_mut_ptr());
 __out_0.assume_init()}
 }
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_RescueRodTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f50usize)as*mut u8,crate::app::unit::Unit;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[cfg(feature="app-aithink")]impl AIThink_InterferenceTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007b0usize)as*mut u8,crate::app::unit::Unit;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f60usize)as*mut u8,();
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007c0usize)as*mut u8,();
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
 }
-#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f70usize)as*mut u8,i32;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007d0usize)as*mut u8,i32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f80usize)as*mut u8,();
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget,(i32)::core::convert::Into::into(value))}
+#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007e0usize)as*mut u8,();
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f90usize)as*mut u8,i32;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007f0usize)as*mut u8,i32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fa0usize)as*mut u8,();
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget,(i32)::core::convert::Into::into(value))}
+#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900800usize)as*mut u8,();
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fb0usize)as*mut u8,u32;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900810usize)as*mut u8,u32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fc0usize)as*mut u8,i32;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900820usize)as*mut u8,i32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fd0usize)as*mut u8,i32;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900830usize)as*mut u8,i32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fe0usize)as*mut u8,i32;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900840usize)as*mut u8,i32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ff0usize)as*mut u8,i32;
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900850usize)as*mut u8,i32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901000usize)as*mut u8,();
-(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900860usize)as*mut u8,i32;
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900870usize)as*mut u8,();
+(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
 }
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_RescueRodTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-aithink")]impl AIThink_InterferenceTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
@@ -3055,8 +2971,117 @@ pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_AttackTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_AttackTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_AttackTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_AttackTarget> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28fbaa0usize)as*mut u8,();
+(*mut crate::app::aithink::AIThink_AttackTarget)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_AttackTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb940usize)as*mut u8,crate::app::unit::Unit;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb950usize)as*mut u8,();
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb960usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb970usize)as*mut u8,();
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb980usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb990usize)as*mut u8,();
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9a0usize)as*mut u8,u32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9b0usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9c0usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9d0usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9e0usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9f0usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_KillRate()` overload"]pub fn get_kill_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba00usize)as*mut u8,f32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_DeadRate()` overload"]pub fn get_dead_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba10usize)as*mut u8,f32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_Expectation()` overload"]pub fn get_expectation(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba20usize)as*mut u8,f32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_BlowScore()` overload"]pub fn get_blow_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba30usize)as*mut u8,u32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`get_ChainAttackCount()` overload"]pub fn get_chain_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba40usize)as*mut u8,i32;
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba50usize)as*mut u8,();
+(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_AttackTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_expectation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_blow_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitResult{#[doc="`New(crate::app::unit::Unit, *mutcrate::app::aithink::AIThink_EngageWaitResult)` overload"]pub fn new(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::aithink::AIThink_EngageWaitResult{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_EngageWaitResult> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2900270usize)as*mut u8,();
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(*mut crate::app::aithink::AIThink_EngageWaitResult)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitResult{#[doc="`CompareAndSwap(u32, i32, i32, i32)` overload"]pub fn compare_and_swap(&mut self,temp_score:impl::core::convert::Into<u32> ,temp_x:impl::core::convert::Into<i32> ,temp_z:impl::core::convert::Into<i32> ,temp_item_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900180usize)as*mut u8,();
+(*mut AIThink_EngageWaitResult)self as*mut AIThink_EngageWaitResult,(u32)::core::convert::Into::into(temp_score),(i32)::core::convert::Into::into(temp_x),(i32)::core::convert::Into::into(temp_z),(i32)::core::convert::Into::into(temp_item_index))}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitResult{pub fn compare_and_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_Desc{#[doc="`.ctor(i32, crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)` overload"]pub fn ctor(&mut self,priority:impl::core::convert::Into<i32> ,calc_unit_score:impl::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b311c0usize)as*mut u8,();
+(*mut AIThink_EnchantThink_Desc)self as*mut AIThink_EnchantThink_Desc,(i32)::core::convert::Into::into(priority),(crate::app::aithink::AIThink_EnchantThink_CalcUnitScoreFunction)::core::convert::Into::into(calc_unit_score))}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_Desc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
 #[cfg(feature="app-aithink")]impl AIThink_AttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb7c0usize)as*mut u8,u32;
@@ -3155,6 +3180,805 @@ pub fn set_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodI
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
 }
 
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_SurroundingInfo{#[doc="`get_MorphCount()` overload"]pub fn get_morph_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31290usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`set_MorphCount(i32)` overload"]pub fn set_morph_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b312a0usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_PhysicalAttackCount()` overload"]pub fn get_physical_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31330usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`set_PhysicalAttackCount(i32)` overload"]pub fn set_physical_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31340usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MagicAttackCount()` overload"]pub fn get_magic_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b313d0usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`set_MagicAttackCount(i32)` overload"]pub fn set_magic_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b313e0usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackCount()` overload"]pub fn get_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31470usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`get_ChainAttackCount()` overload"]pub fn get_chain_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31490usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`set_ChainAttackCount(i32)` overload"]pub fn set_chain_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b314a0usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_BreakCount()` overload"]pub fn get_break_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31530usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`set_BreakCount(i32)` overload"]pub fn set_break_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31540usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_SilenceCount()` overload"]pub fn get_silence_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b315d0usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`set_SilenceCount(i32)` overload"]pub fn set_silence_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b315e0usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_FreezeCount()` overload"]pub fn get_freeze_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31670usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+}
+#[doc="`set_FreezeCount(i32)` overload"]pub fn set_freeze_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31680usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Get(u32, i32)` overload"]pub fn get(&mut self,mask:impl::core::convert::Into<u32> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31710usize)as*mut u8,i32;
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(u32)::core::convert::Into::into(mask),(i32)::core::convert::Into::into(shift))}
+}
+#[doc="`Set(u32, i32, i32)` overload"]pub fn set(&mut self,mask:impl::core::convert::Into<u32> ,shift:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31720usize)as*mut u8,();
+(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(u32)::core::convert::Into::into(mask),(i32)::core::convert::Into::into(shift),(i32)::core::convert::Into::into(v))}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_SurroundingInfo{pub fn get_morph_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_morph_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_physical_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_physical_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_magic_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_magic_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_break_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_break_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_silence_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_silence_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_freeze_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_freeze_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-aithink")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AIThink_AcFunc_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AIThink_AcFunc,command:i32,v0:crate::app::aivalue::AIValue,v1:crate::app::aivalue::AIValue,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AIThink_AcFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AIThink_AcFunc,i32,crate::app::aivalue::AIValue,crate::app::aivalue::AIValue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,command,v0,v1,__mi)}
+}
+
+#[cfg(feature="app-aithink")]pub trait IAIThink_AcFuncMethods:IAIThink_AcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_AcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb020usize)as*mut u8,();
+(AIThink_AcFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]fn invoke(self,command:impl::core::convert::Into<i32> ,v0:impl::core::convert::Into<crate::app::aivalue::AIValue> ,v1:impl::core::convert::Into<crate::app::aivalue::AIValue>)->bool{unsafe{let __receiver= <AIThink_AcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AIThink_AcFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(command), ::core::convert::Into::into(v0), ::core::convert::Into::into(v1), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_AcFunc>IAIThink_AcFuncMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_AcFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_AcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIThink_AcFunc), ::core::stringify!(new),));
+ <Self as IAIThink_AcFuncMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-aithink")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AIThink_ActionFunc_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AIThink_ActionFunc,command:i32,v0:crate::app::aivalue::AIValue,v1:crate::app::aivalue::AIValue,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::aithink::AIThink_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AIThink_ActionFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AIThink_ActionFunc,i32,crate::app::aivalue::AIValue,crate::app::aivalue::AIValue, ::unity2::OptionalMethod,)->crate::app::aithink::AIThink_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,command,v0,v1,__mi)}
+}
+
+#[cfg(feature="app-aithink")]pub trait IAIThink_ActionFuncMethods:IAIThink_ActionFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_ActionFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb380usize)as*mut u8,();
+(AIThink_ActionFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]fn invoke(self,command:impl::core::convert::Into<i32> ,v0:impl::core::convert::Into<crate::app::aivalue::AIValue> ,v1:impl::core::convert::Into<crate::app::aivalue::AIValue>)->crate::app::aithink::AIThink_Result{unsafe{let __receiver= <AIThink_ActionFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AIThink_ActionFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(command), ::core::convert::Into::into(v0), ::core::convert::Into::into(v1), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_ActionFunc>IAIThink_ActionFuncMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_ActionFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_ActionFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIThink_ActionFunc), ::core::stringify!(new),));
+ <Self as IAIThink_ActionFuncMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-aithink")]pub trait IAIThink_MoveFlagMethods:IAIThink_MoveFlag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_MoveFlag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2900900usize)as*mut u8,();
+(AIThink_MoveFlag)__receiver)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_MoveFlag>IAIThink_MoveFlagMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_MoveFlag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_MoveFlag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIThink_MoveFlag), ::core::stringify!(new),));
+ <Self as IAIThink_MoveFlagMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-aithink")]pub trait IAIThink_UpdateFlagMethods:IAIThink_UpdateFlag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_UpdateFlag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2901740usize)as*mut u8,();
+(AIThink_UpdateFlag)__receiver)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_UpdateFlag>IAIThink_UpdateFlagMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_UpdateFlag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_UpdateFlag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIThink_UpdateFlag), ::core::stringify!(new),));
+ <Self as IAIThink_UpdateFlagMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_InterferenceScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006d0usize)as*mut u8,u32;
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
+}
+#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006e0usize)as*mut u8,();
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006f0usize)as*mut u8,i32;
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
+}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900700usize)as*mut u8,();
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900710usize)as*mut u8,i32;
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
+}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900720usize)as*mut u8,();
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900730usize)as*mut u8,i32;
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
+}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900740usize)as*mut u8,();
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900750usize)as*mut u8,i32;
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
+}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900760usize)as*mut u8,();
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900770usize)as*mut u8,i32;
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
+}
+#[doc="`set_ItemIndex(i32)` overload"]pub fn set_item_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900780usize)as*mut u8,();
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900790usize)as*mut u8,();
+(*mut AIThink_InterferenceScoreResult)self as*mut AIThink_InterferenceScoreResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_InterferenceScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_TrimasteriesSkills{#[doc="`Prepare(crate::app::unit::Unit)` overload"]pub fn prepare(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901090usize)as*mut u8,();
+(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Add(crate::app::skilldata::SkillData)` overload"]pub fn add(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29012d0usize)as*mut u8,();
+(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29014b0usize)as*mut u8,i32;
+(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
+}
+#[doc="`get_MadStorm()` overload"]pub fn get_mad_storm(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29014c0usize)as*mut u8,crate::app::skilldata::SkillData;
+(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
+}
+#[doc="`get_Miserable()` overload"]pub fn get_miserable(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29014f0usize)as*mut u8,crate::app::skilldata::SkillData;
+(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
+}
+#[doc="`get_FallingStars()` overload"]pub fn get_falling_stars(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901520usize)as*mut u8,crate::app::skilldata::SkillData;
+(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
+}
+#[doc="`GetKind(crate::app::skilldata::SkillData)` overload"]pub fn get_kind(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::app::aithink::AIThink_TrimasteriesSkills_Kinds{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901430usize)as*mut u8,crate::app::aithink::AIThink_TrimasteriesSkills_Kinds;
+(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_TrimasteriesSkills{pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_mad_storm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_miserable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_falling_stars_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitRangeScore{#[doc="`New(*mutcrate::app::aithink::AIThink_EngageWaitRangeScore)` overload"]pub fn new()->crate::app::aithink::AIThink_EngageWaitRangeScore{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_EngageWaitRangeScore> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2900160usize)as*mut u8,();
+(*mut crate::app::aithink::AIThink_EngageWaitRangeScore)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitRangeScore{#[doc="`CompareAndSwap(u32, i32, i32)` overload"]pub fn compare_and_swap(&mut self,temp_score:impl::core::convert::Into<u32> ,temp_x:impl::core::convert::Into<i32> ,temp_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28ee560usize)as*mut u8,();
+(*mut AIThink_EngageWaitRangeScore)self as*mut AIThink_EngageWaitRangeScore,(u32)::core::convert::Into::into(temp_score),(i32)::core::convert::Into::into(temp_x),(i32)::core::convert::Into::into(temp_z))}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitRangeScore{pub fn compare_and_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aithink")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AIThink_RcFunc_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AIThink_RcFunc,command:i32,v0:crate::app::aivalue::AIValue,v1:crate::app::aivalue::AIValue,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AIThink_RcFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AIThink_RcFunc,i32,crate::app::aivalue::AIValue,crate::app::aivalue::AIValue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,command,v0,v1,__mi)}
+}
+
+#[cfg(feature="app-aithink")]pub trait IAIThink_RcFuncMethods:IAIThink_RcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_RcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2900b30usize)as*mut u8,();
+(AIThink_RcFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]fn invoke(self,command:impl::core::convert::Into<i32> ,v0:impl::core::convert::Into<crate::app::aivalue::AIValue> ,v1:impl::core::convert::Into<crate::app::aivalue::AIValue>)->bool{unsafe{let __receiver= <AIThink_RcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AIThink_RcFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(command), ::core::convert::Into::into(v0), ::core::convert::Into::into(v1), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_RcFunc>IAIThink_RcFuncMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_RcFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_RcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIThink_RcFunc), ::core::stringify!(new),));
+ <Self as IAIThink_RcFuncMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_DMPTResult{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b311b0usize)as*mut u8,();
+(*mut AIThink_EnchantThink_DMPTResult)self as*mut AIThink_EnchantThink_DMPTResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_DMPTResult{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_RescueRodTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_RescueRodTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_RescueRodTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_RescueRodTarget> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2901040usize)as*mut u8,();
+(*mut crate::app::aithink::AIThink_RescueRodTarget)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_RescueRodTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f50usize)as*mut u8,crate::app::unit::Unit;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f60usize)as*mut u8,();
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f70usize)as*mut u8,i32;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f80usize)as*mut u8,();
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f90usize)as*mut u8,i32;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fa0usize)as*mut u8,();
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fb0usize)as*mut u8,u32;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fc0usize)as*mut u8,i32;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fd0usize)as*mut u8,i32;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900fe0usize)as*mut u8,i32;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ff0usize)as*mut u8,i32;
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901000usize)as*mut u8,();
+(*mut AIThink_RescueRodTarget)self as*mut AIThink_RescueRodTarget)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_RescueRodTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
+
+#[cfg(feature="app-aithink")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AIThink_EngageWaitAdditionalAttackImage_unity2_raw{use super:: * ;
+pub unsafe fn add(this:AIThink_EngageWaitAdditionalAttackImage,index:i32,v:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AIThink_EngageWaitAdditionalAttackImage as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(AIThink_EngageWaitAdditionalAttackImage,i32,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,v,__mi)}
+}
+
+#[cfg(feature="app-aithink")]pub trait IAIThink_EngageWaitAdditionalAttackImageMethods:IAIThink_EngageWaitAdditionalAttackImage{#[doc="`Add(i32, u16)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AIThink_EngageWaitAdditionalAttackImage_unity2_raw::add(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(v), ::core::option::Option::None)}
+}
+#[doc="`IncRange1(i32, i32)` overload"]fn inc_range1(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ef680usize)as*mut u8,();
+(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IncRange2(i32, i32)` overload"]fn inc_range2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28ef750usize)as*mut u8,();
+(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`SetRange12(i32, i32, u8, u8)` overload"]fn set_range12(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range1:impl::core::convert::Into<u8> ,range2:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2900070usize)as*mut u8,();
+(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u8)::core::convert::Into::into(range1),(u8)::core::convert::Into::into(range2))}
+}
+#[doc="`GetRange12(i32, i32, *mutu8, *mutu8)` overload"]fn get_range12(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(u8,u8){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <u8> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <u8> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x28fffe0usize)as*mut u8,();
+(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(*mut u8)__out_0.as_mut_ptr(),(*mut u8)__out_1.as_mut_ptr());
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2900100usize)as*mut u8,();
+(AIThink_EngageWaitAdditionalAttackImage)__receiver)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl<__T:IAIThink_EngageWaitAdditionalAttackImage>IAIThink_EngageWaitAdditionalAttackImageMethods for __T{}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitAdditionalAttackImage{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn inc_range1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn inc_range2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_range12_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_range12_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EngageWaitAdditionalAttackImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIThink_EngageWaitAdditionalAttackImage), ::core::stringify!(new),));
+ <Self as IAIThink_EngageWaitAdditionalAttackImageMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002a0usize)as*mut u8,u32;
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002b0usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002c0usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002d0usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002e0usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002f0usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900300usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900310usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900320usize)as*mut u8,i32;
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900330usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_KillRate()` overload"]pub fn get_kill_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900340usize)as*mut u8,f32;
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+#[doc="`set_KillRate(f32)` overload"]pub fn set_kill_rate(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900350usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`get_DeadRate()` overload"]pub fn get_dead_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900360usize)as*mut u8,f32;
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+#[doc="`set_DeadRate(f32)` overload"]pub fn set_dead_rate(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900370usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900380usize)as*mut u8,();
+(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_UncontrollAttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901550usize)as*mut u8,u32;
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
+}
+#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901560usize)as*mut u8,();
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901570usize)as*mut u8,i32;
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
+}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901580usize)as*mut u8,();
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901590usize)as*mut u8,i32;
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
+}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015a0usize)as*mut u8,();
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015b0usize)as*mut u8,i32;
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
+}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015c0usize)as*mut u8,();
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015d0usize)as*mut u8,i32;
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
+}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015e0usize)as*mut u8,();
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015f0usize)as*mut u8,();
+(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_UncontrollAttackScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_RescueRodScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900e90usize)as*mut u8,u32;
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
+}
+#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ea0usize)as*mut u8,();
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900eb0usize)as*mut u8,i32;
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
+}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ec0usize)as*mut u8,();
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ed0usize)as*mut u8,i32;
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
+}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ee0usize)as*mut u8,();
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ef0usize)as*mut u8,i32;
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
+}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f00usize)as*mut u8,();
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f10usize)as*mut u8,i32;
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
+}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f20usize)as*mut u8,();
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f30usize)as*mut u8,();
+(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_RescueRodScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_WarpRodEvaluationResult{#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901750usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901760usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901770usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901780usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901790usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017a0usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017b0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017c0usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WarpX()` overload"]pub fn get_warp_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017d0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_WarpX(i32)` overload"]pub fn set_warp_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017e0usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_WarpZ()` overload"]pub fn get_warp_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29017f0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_WarpZ(i32)` overload"]pub fn set_warp_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901800usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveDist()` overload"]pub fn get_move_dist(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901810usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_MoveDist(i32)` overload"]pub fn set_move_dist(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901820usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_EnemyDist()` overload"]pub fn get_enemy_dist(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901830usize)as*mut u8,i32;
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+#[doc="`set_EnemyDist(i32)` overload"]pub fn set_enemy_dist(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901840usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901850usize)as*mut u8,();
+(*mut AIThink_WarpRodEvaluationResult)self as*mut AIThink_WarpRodEvaluationResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_WarpRodEvaluationResult{pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_warp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_warp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_warp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_warp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_move_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_move_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_enemy_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_enemy_dist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_WarpRodTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_WarpRodTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_WarpRodTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_WarpRodTarget> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2901950usize)as*mut u8,();
+(*mut crate::app::aithink::AIThink_WarpRodTarget)__out_0.as_mut_ptr());
+__out_0.assume_init()}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_WarpRodTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901870usize)as*mut u8,crate::app::unit::Unit;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901880usize)as*mut u8,();
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
+}
+#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901890usize)as*mut u8,u32;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018a0usize)as*mut u8,();
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018b0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018c0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018d0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018e0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`get_WarpX()` overload"]pub fn get_warp_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018f0usize)as*mut u8,i32;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`get_WarpZ()` overload"]pub fn get_warp_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901900usize)as*mut u8,i32;
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901910usize)as*mut u8,();
+(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_WarpRodTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_warp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_warp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900650usize)as*mut u8,u32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900660usize)as*mut u8,();
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult,(u32)::core::convert::Into::into(value))}
+}
+#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900670usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`set_ItemIndex(i32)` overload"]pub fn set_item_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900680usize)as*mut u8,();
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81c0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81d0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81e0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81f0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`get_Heal()` overload"]pub fn get_heal(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900690usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`get_Damage()` overload"]pub fn get_damage(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006a0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006b0usize)as*mut u8,();
+(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_OverlapSkills{#[doc="`Prepare()` overload"]pub fn prepare(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900910usize)as*mut u8,();
+(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills)}
+}
+#[doc="`Add(crate::app::skilldata::SkillData)` overload"]pub fn add(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29009d0usize)as*mut u8,();
+(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`GetByRandom()` overload"]pub fn get_by_random(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900a80usize)as*mut u8,crate::app::skilldata::SkillData;
+(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills)}
+}
+#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900b20usize)as*mut u8,i32;
+(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills)}
+}
+}
+
+#[cfg(feature="app-aithink")]impl AIThink_OverlapSkills{pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_by_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
 #[cfg(feature="app-aithink")]impl AIThink_HealRodPositionResult{#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29004f0usize)as*mut u8,i32;
 (*mut AIThink_HealRodPositionResult)self as*mut AIThink_HealRodPositionResult)}
 }
@@ -3193,132 +4017,6 @@ pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitResult{#[doc="`New(crate::app::unit::Unit, *mutcrate::app::aithink::AIThink_EngageWaitResult)` overload"]pub fn new(unit:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::aithink::AIThink_EngageWaitResult{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_EngageWaitResult> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2900270usize)as*mut u8,();
-(crate::app::unit::Unit)::core::convert::Into::into(unit),(*mut crate::app::aithink::AIThink_EngageWaitResult)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitResult{#[doc="`CompareAndSwap(u32, i32, i32, i32)` overload"]pub fn compare_and_swap(&mut self,temp_score:impl::core::convert::Into<u32> ,temp_x:impl::core::convert::Into<i32> ,temp_z:impl::core::convert::Into<i32> ,temp_item_index:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900180usize)as*mut u8,();
-(*mut AIThink_EngageWaitResult)self as*mut AIThink_EngageWaitResult,(u32)::core::convert::Into::into(temp_score),(i32)::core::convert::Into::into(temp_x),(i32)::core::convert::Into::into(temp_z),(i32)::core::convert::Into::into(temp_item_index))}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitResult{pub fn compare_and_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_DMPTResult{#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b311b0usize)as*mut u8,();
-(*mut AIThink_EnchantThink_DMPTResult)self as*mut AIThink_EnchantThink_DMPTResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_DMPTResult{pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_MoveFlagMethods:IAIThink_MoveFlag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_MoveFlag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2900900usize)as*mut u8,();
-(AIThink_MoveFlag)__receiver)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_MoveFlag>IAIThink_MoveFlagMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_MoveFlag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_MoveFlag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIThink_MoveFlag), ::core::stringify!(new),));
- <Self as IAIThink_MoveFlagMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_AttackTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_AttackTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_AttackTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_AttackTarget> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fbaa0usize)as*mut u8,();
-(*mut crate::app::aithink::AIThink_AttackTarget)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_AttackTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb940usize)as*mut u8,crate::app::unit::Unit;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb950usize)as*mut u8,();
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
-}
-#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb960usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb970usize)as*mut u8,();
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb980usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb990usize)as*mut u8,();
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9a0usize)as*mut u8,u32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9b0usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9c0usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9d0usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9e0usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb9f0usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_KillRate()` overload"]pub fn get_kill_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba00usize)as*mut u8,f32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_DeadRate()` overload"]pub fn get_dead_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba10usize)as*mut u8,f32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_Expectation()` overload"]pub fn get_expectation(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba20usize)as*mut u8,f32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_BlowScore()` overload"]pub fn get_blow_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba30usize)as*mut u8,u32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`get_ChainAttackCount()` overload"]pub fn get_chain_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba40usize)as*mut u8,i32;
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fba50usize)as*mut u8,();
-(*mut AIThink_AttackTarget)self as*mut AIThink_AttackTarget)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_AttackTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_expectation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_blow_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
 }
 
 #[cfg(feature="app-aithink")]impl AIThink_EnchantThink{#[doc="`MakeUnitScoreKey(crate::app::unit::Unit, i32)` overload"]pub fn make_unit_score_key(unit:impl::core::convert::Into<crate::app::unit::Unit> ,item_info_index:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fcc70usize)as*mut u8,i32;
@@ -3500,311 +4198,60 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_SurroundingInfo{#[doc="`get_MorphCount()` overload"]pub fn get_morph_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31290usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreImplResult{#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900580usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
 }
-#[doc="`set_MorphCount(i32)` overload"]pub fn set_morph_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b312a0usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900590usize)as*mut u8,();
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`get_PhysicalAttackCount()` overload"]pub fn get_physical_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31330usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005a0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
 }
-#[doc="`set_PhysicalAttackCount(i32)` overload"]pub fn set_physical_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31340usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005b0usize)as*mut u8,();
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`get_MagicAttackCount()` overload"]pub fn get_magic_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b313d0usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005c0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
 }
-#[doc="`set_MagicAttackCount(i32)` overload"]pub fn set_magic_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b313e0usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005d0usize)as*mut u8,();
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`get_AttackCount()` overload"]pub fn get_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31470usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005e0usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
 }
-#[doc="`get_ChainAttackCount()` overload"]pub fn get_chain_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31490usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29005f0usize)as*mut u8,();
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`set_ChainAttackCount(i32)` overload"]pub fn set_chain_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b314a0usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+#[doc="`get_Heal()` overload"]pub fn get_heal(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900600usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
 }
-#[doc="`get_BreakCount()` overload"]pub fn get_break_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31530usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+#[doc="`set_Heal(i32)` overload"]pub fn set_heal(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900610usize)as*mut u8,();
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`set_BreakCount(i32)` overload"]pub fn set_break_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31540usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
+#[doc="`get_Damage()` overload"]pub fn get_damage(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900620usize)as*mut u8,i32;
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
 }
-#[doc="`get_SilenceCount()` overload"]pub fn get_silence_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b315d0usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
+#[doc="`set_Damage(i32)` overload"]pub fn set_damage(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900630usize)as*mut u8,();
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult,(i32)::core::convert::Into::into(value))}
 }
-#[doc="`set_SilenceCount(i32)` overload"]pub fn set_silence_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b315e0usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_FreezeCount()` overload"]pub fn get_freeze_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31670usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo)}
-}
-#[doc="`set_FreezeCount(i32)` overload"]pub fn set_freeze_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31680usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Get(u32, i32)` overload"]pub fn get(&mut self,mask:impl::core::convert::Into<u32> ,shift:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31710usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(u32)::core::convert::Into::into(mask),(i32)::core::convert::Into::into(shift))}
-}
-#[doc="`Set(u32, i32, i32)` overload"]pub fn set(&mut self,mask:impl::core::convert::Into<u32> ,shift:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b31720usize)as*mut u8,();
-(*mut AIThink_EnchantThink_SurroundingInfo)self as*mut AIThink_EnchantThink_SurroundingInfo,(u32)::core::convert::Into::into(mask),(i32)::core::convert::Into::into(shift),(i32)::core::convert::Into::into(v))}
+#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900640usize)as*mut u8,();
+(*mut AIThink_HealRodScoreImplResult)self as*mut AIThink_HealRodScoreImplResult)}
 }
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_SurroundingInfo{pub fn get_morph_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_morph_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_physical_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_physical_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_magic_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_magic_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_break_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_break_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_silence_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_silence_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_freeze_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn set_freeze_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_TrimasteriesSkills{#[doc="`Prepare(crate::app::unit::Unit)` overload"]pub fn prepare(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901090usize)as*mut u8,();
-(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`Add(crate::app::skilldata::SkillData)` overload"]pub fn add(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29012d0usize)as*mut u8,();
-(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
-}
-#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29014b0usize)as*mut u8,i32;
-(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
-}
-#[doc="`get_MadStorm()` overload"]pub fn get_mad_storm(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29014c0usize)as*mut u8,crate::app::skilldata::SkillData;
-(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
-}
-#[doc="`get_Miserable()` overload"]pub fn get_miserable(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29014f0usize)as*mut u8,crate::app::skilldata::SkillData;
-(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
-}
-#[doc="`get_FallingStars()` overload"]pub fn get_falling_stars(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901520usize)as*mut u8,crate::app::skilldata::SkillData;
-(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills)}
-}
-#[doc="`GetKind(crate::app::skilldata::SkillData)` overload"]pub fn get_kind(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::app::aithink::AIThink_TrimasteriesSkills_Kinds{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901430usize)as*mut u8,crate::app::aithink::AIThink_TrimasteriesSkills_Kinds;
-(*mut AIThink_TrimasteriesSkills)self as*mut AIThink_TrimasteriesSkills,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_TrimasteriesSkills{pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_mad_storm_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_miserable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_falling_stars_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_EntrustAttackTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_EntrustAttackTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_EntrustAttackTarget> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29004a0usize)as*mut u8,();
-(*mut crate::app::aithink::AIThink_EntrustAttackTarget)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003a0usize)as*mut u8,crate::app::unit::Unit;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003b0usize)as*mut u8,();
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
-}
-#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003c0usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003d0usize)as*mut u8,();
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003e0usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29003f0usize)as*mut u8,();
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f59e0usize)as*mut u8,u32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900400usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900410usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900420usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900430usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`get_KillRate()` overload"]pub fn get_kill_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900440usize)as*mut u8,f32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`get_DeadRate()` overload"]pub fn get_dead_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900450usize)as*mut u8,f32;
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900460usize)as*mut u8,();
-(*mut AIThink_EntrustAttackTarget)self as*mut AIThink_EntrustAttackTarget)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_EnchantThink_CalcUnitScoreFunctionMethods:IAIThink_EnchantThink_CalcUnitScoreFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_EnchantThink_CalcUnitScoreFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b30d60usize)as*mut u8,();
-(AIThink_EnchantThink_CalcUnitScoreFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::aithink::AIThink_EnchantThink, crate::app::unit::Unit, crate::app::unit::Unit, crate::app::unititem::UnitItem)` overload"]fn invoke(self,think:impl::core::convert::Into<crate::app::aithink::AIThink_EnchantThink> ,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->u8{unsafe{let __receiver= <AIThink_EnchantThink_CalcUnitScoreFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b30d80usize)as*mut u8,u8;
-(AIThink_EnchantThink_CalcUnitScoreFunction)__receiver,(crate::app::aithink::AIThink_EnchantThink)::core::convert::Into::into(think),(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::unit::Unit)::core::convert::Into::into(target),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_EnchantThink_CalcUnitScoreFunction>IAIThink_EnchantThink_CalcUnitScoreFunctionMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_CalcUnitScoreFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_CalcUnitScoreFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIThink_EnchantThink_CalcUnitScoreFunction), ::core::stringify!(new),));
- <Self as IAIThink_EnchantThink_CalcUnitScoreFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_InterferenceTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_InterferenceTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_InterferenceTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_InterferenceTarget> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29008b0usize)as*mut u8,();
-(*mut crate::app::aithink::AIThink_InterferenceTarget)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_InterferenceTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007b0usize)as*mut u8,crate::app::unit::Unit;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007c0usize)as*mut u8,();
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
-}
-#[doc="`get_X()` overload"]pub fn get_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007d0usize)as*mut u8,i32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`set_X(i32)` overload"]pub fn set_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007e0usize)as*mut u8,();
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Z()` overload"]pub fn get_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29007f0usize)as*mut u8,i32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`set_Z(i32)` overload"]pub fn set_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900800usize)as*mut u8,();
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900810usize)as*mut u8,u32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900820usize)as*mut u8,i32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900830usize)as*mut u8,i32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900840usize)as*mut u8,i32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900850usize)as*mut u8,i32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900860usize)as*mut u8,i32;
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900870usize)as*mut u8,();
-(*mut AIThink_InterferenceTarget)self as*mut AIThink_InterferenceTarget)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_InterferenceTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreImplResult{pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_RescueRodScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900e90usize)as*mut u8,u32;
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
-}
-#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ea0usize)as*mut u8,();
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900eb0usize)as*mut u8,i32;
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
-}
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ec0usize)as*mut u8,();
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ed0usize)as*mut u8,i32;
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
-}
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ee0usize)as*mut u8,();
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900ef0usize)as*mut u8,i32;
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
-}
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f00usize)as*mut u8,();
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f10usize)as*mut u8,i32;
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f20usize)as*mut u8,();
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900f30usize)as*mut u8,();
-(*mut AIThink_RescueRodScoreResult)self as*mut AIThink_RescueRodScoreResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_RescueRodScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
 }
 
 #[cfg(feature="app-aithink")]impl AIThink_UncontrollAttackTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_UncontrollAttackTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_UncontrollAttackTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_UncontrollAttackTarget> ::uninit();
@@ -3867,457 +4314,70 @@ pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 }
 
-#[cfg(feature="app-aithink")]impl AIThink_WarpRodTarget{#[doc="`New(*mutcrate::app::aithink::AIThink_WarpRodTarget)` overload"]pub fn new()->crate::app::aithink::AIThink_WarpRodTarget{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aithink::AIThink_WarpRodTarget> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2901950usize)as*mut u8,();
-(*mut crate::app::aithink::AIThink_WarpRodTarget)__out_0.as_mut_ptr());
-__out_0.assume_init()}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_WarpRodTarget{#[doc="`get_Unit()` overload"]pub fn get_unit(&mut self,)->crate::app::unit::Unit{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901870usize)as*mut u8,crate::app::unit::Unit;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`set_Unit(crate::app::unit::Unit)` overload"]pub fn set_unit(&mut self,value:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901880usize)as*mut u8,();
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget,(crate::app::unit::Unit)::core::convert::Into::into(value))}
-}
-#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901890usize)as*mut u8,u32;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018a0usize)as*mut u8,();
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018b0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018c0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018d0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018e0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`get_WarpX()` overload"]pub fn get_warp_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29018f0usize)as*mut u8,i32;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`get_WarpZ()` overload"]pub fn get_warp_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901900usize)as*mut u8,i32;
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901910usize)as*mut u8,();
-(*mut AIThink_WarpRodTarget)self as*mut AIThink_WarpRodTarget)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_WarpRodTarget{pub fn get_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_warp_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_warp_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn new_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900650usize)as*mut u8,u32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900660usize)as*mut u8,();
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ItemIndex()` overload"]pub fn get_item_index(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900670usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`set_ItemIndex(i32)` overload"]pub fn set_item_index(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900680usize)as*mut u8,();
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81c0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81d0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81e0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28f81f0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`get_Heal()` overload"]pub fn get_heal(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900690usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`get_Damage()` overload"]pub fn get_damage(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006a0usize)as*mut u8,i32;
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29006b0usize)as*mut u8,();
-(*mut AIThink_HealRodScoreResult)self as*mut AIThink_HealRodScoreResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_HealRodScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_item_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_damage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_AcFuncMethods:IAIThink_AcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AIThink_AcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb020usize)as*mut u8,();
-(AIThink_AcFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32, crate::app::aivalue::AIValue, crate::app::aivalue::AIValue)` overload"]fn invoke(self,command:impl::core::convert::Into<i32> ,v0:impl::core::convert::Into<crate::app::aivalue::AIValue> ,v1:impl::core::convert::Into<crate::app::aivalue::AIValue>)->bool{unsafe{let __receiver= <AIThink_AcFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fb040usize)as*mut u8,bool;
-(AIThink_AcFunc)__receiver,(i32)::core::convert::Into::into(command),(crate::app::aivalue::AIValue)::core::convert::Into::into(v0),(crate::app::aivalue::AIValue)::core::convert::Into::into(v1))}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_AcFunc>IAIThink_AcFuncMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_AcFunc{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_AcFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIThink_AcFunc), ::core::stringify!(new),));
- <Self as IAIThink_AcFuncMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_UncontrollAttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901550usize)as*mut u8,u32;
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
-}
-#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901560usize)as*mut u8,();
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901570usize)as*mut u8,i32;
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
-}
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901580usize)as*mut u8,();
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2901590usize)as*mut u8,i32;
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
-}
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015a0usize)as*mut u8,();
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015b0usize)as*mut u8,i32;
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
-}
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015c0usize)as*mut u8,();
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015d0usize)as*mut u8,i32;
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015e0usize)as*mut u8,();
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29015f0usize)as*mut u8,();
-(*mut AIThink_UncontrollAttackScoreResult)self as*mut AIThink_UncontrollAttackScoreResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_UncontrollAttackScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_UpdateFlagMethods:IAIThink_UpdateFlag{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_UpdateFlag as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2901740usize)as*mut u8,();
-(AIThink_UpdateFlag)__receiver)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_UpdateFlag>IAIThink_UpdateFlagMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_UpdateFlag{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_UpdateFlag{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIThink_UpdateFlag), ::core::stringify!(new),));
- <Self as IAIThink_UpdateFlagMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002a0usize)as*mut u8,u32;
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-#[doc="`set_Score(u32)` overload"]pub fn set_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002b0usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002c0usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002d0usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002e0usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29002f0usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900300usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900310usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900320usize)as*mut u8,i32;
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900330usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_KillRate()` overload"]pub fn get_kill_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900340usize)as*mut u8,f32;
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-#[doc="`set_KillRate(f32)` overload"]pub fn set_kill_rate(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900350usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`get_DeadRate()` overload"]pub fn get_dead_rate(&mut self,)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900360usize)as*mut u8,f32;
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-#[doc="`set_DeadRate(f32)` overload"]pub fn set_dead_rate(&mut self,value:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900370usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900380usize)as*mut u8,();
-(*mut AIThink_EntrustAttackScoreResult)self as*mut AIThink_EntrustAttackScoreResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EntrustAttackScoreResult{pub fn get_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_kill_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_dead_rate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_OverlapSkills{#[doc="`Prepare()` overload"]pub fn prepare(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900910usize)as*mut u8,();
-(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills)}
-}
-#[doc="`Add(crate::app::skilldata::SkillData)` overload"]pub fn add(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29009d0usize)as*mut u8,();
-(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
-}
-#[doc="`GetByRandom()` overload"]pub fn get_by_random(&mut self,)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900a80usize)as*mut u8,crate::app::skilldata::SkillData;
-(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills)}
-}
-#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2900b20usize)as*mut u8,i32;
-(*mut AIThink_OverlapSkills)self as*mut AIThink_OverlapSkills)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_OverlapSkills{pub fn prepare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_by_random_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-aithink")]pub trait IAIThink_EngageWaitAdditionalAttackImageMethods:IAIThink_EngageWaitAdditionalAttackImage{#[doc="`Add(i32, u16)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fffa0usize)as*mut u8,();
-(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(index),(u16)::core::convert::Into::into(v))}
-}
-#[doc="`IncRange1(i32, i32)` overload"]fn inc_range1(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28ef680usize)as*mut u8,();
-(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`IncRange2(i32, i32)` overload"]fn inc_range2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28ef750usize)as*mut u8,();
-(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`SetRange12(i32, i32, u8, u8)` overload"]fn set_range12(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,range1:impl::core::convert::Into<u8> ,range2:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2900070usize)as*mut u8,();
-(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(u8)::core::convert::Into::into(range1),(u8)::core::convert::Into::into(range2))}
-}
-#[doc="`GetRange12(i32, i32, *mutu8, *mutu8)` overload"]fn get_range12(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(u8,u8){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <u8> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <u8> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28fffe0usize)as*mut u8,();
-(AIThink_EngageWaitAdditionalAttackImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(*mut u8)__out_0.as_mut_ptr(),(*mut u8)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIThink_EngageWaitAdditionalAttackImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2900100usize)as*mut u8,();
-(AIThink_EngageWaitAdditionalAttackImage)__receiver)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl<__T:IAIThink_EngageWaitAdditionalAttackImage>IAIThink_EngageWaitAdditionalAttackImageMethods for __T{}
-
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitAdditionalAttackImage{pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn inc_range1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn inc_range2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_range12_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_range12_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EngageWaitAdditionalAttackImage{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIThink_EngageWaitAdditionalAttackImage), ::core::stringify!(new),));
- <Self as IAIThink_EngageWaitAdditionalAttackImageMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_AttackPositionResult{#[doc="`get_MoveX()` overload"]pub fn get_move_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb6f0usize)as*mut u8,i32;
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
-}
-#[doc="`set_MoveX(i32)` overload"]pub fn set_move_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb700usize)as*mut u8,();
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_MoveZ()` overload"]pub fn get_move_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb710usize)as*mut u8,i32;
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
-}
-#[doc="`set_MoveZ(i32)` overload"]pub fn set_move_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb720usize)as*mut u8,();
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackX()` overload"]pub fn get_attack_x(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb730usize)as*mut u8,i32;
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
-}
-#[doc="`set_AttackX(i32)` overload"]pub fn set_attack_x(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb740usize)as*mut u8,();
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_AttackZ()` overload"]pub fn get_attack_z(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb750usize)as*mut u8,i32;
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
-}
-#[doc="`set_AttackZ(i32)` overload"]pub fn set_attack_z(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb760usize)as*mut u8,();
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_BlowScore()` overload"]pub fn get_blow_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb770usize)as*mut u8,u32;
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
-}
-#[doc="`set_BlowScore(u32)` overload"]pub fn set_blow_score(&mut self,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb780usize)as*mut u8,();
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(u32)::core::convert::Into::into(value))}
-}
-#[doc="`get_ChainAttackCount()` overload"]pub fn get_chain_attack_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb790usize)as*mut u8,i32;
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
-}
-#[doc="`set_ChainAttackCount(i32)` overload"]pub fn set_chain_attack_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb7a0usize)as*mut u8,();
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Clear()` overload"]pub fn clear(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28fb7b0usize)as*mut u8,();
-(*mut AIThink_AttackPositionResult)self as*mut AIThink_AttackPositionResult)}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_AttackPositionResult{pub fn get_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_move_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_move_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_attack_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_attack_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_blow_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_blow_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_chain_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_ItemInfo{#[doc="`CompareTo(crate::app::aithink::AIThink_EnchantThink_ItemInfo)` overload"]pub fn compare_to(&mut self,other:impl::core::convert::Into<crate::app::aithink::AIThink_EnchantThink_ItemInfo>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b311d0usize)as*mut u8,i32;
-(*mut AIThink_EnchantThink_ItemInfo)self as*mut AIThink_EnchantThink_ItemInfo,(crate::app::aithink::AIThink_EnchantThink_ItemInfo)::core::convert::Into::into(other))}
-}
-}
-
-#[cfg(feature="app-aithink")]impl AIThink_EnchantThink_ItemInfo{pub fn compare_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature = "app-aithink")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AIThink_HealRodScoreImplResult;
-    pub use super::AIThink_WarpRodEvaluationResult;
+    pub use super::AIThink_EnchantThink_CalcUnitScoreFunction;
+    pub use super::IAIThink_EnchantThink_CalcUnitScoreFunction;
+    pub use super::IAIThink_EnchantThink_CalcUnitScoreFunctionMethods;
+    pub use super::AIThink_AttackPositionResult;
+    pub use super::AIThink_EntrustAttackTarget;
+    pub use super::AIThink;
+    pub use super::IAIThink;
+    pub use super::IAIThinkMethods;
+    pub use super::AIThink_EnchantThink_ItemInfo;
     pub use super::AIThink_AttackFlag;
     pub use super::IAIThink_AttackFlag;
     pub use super::IAIThink_AttackFlagMethods;
+    pub use super::AIThink_InterferenceTarget;
+    pub use super::AIThink_AttackTarget;
+    pub use super::AIThink_EngageWaitResult;
+    pub use super::AIThink_EnchantThink_Desc;
     pub use super::AIThink_Command;
-    pub use super::AIThink_CGBSResult;
+    pub use super::AIThink_AttackScoreResult;
+    pub use super::AIThink_EnchantThink_SurroundingInfo;
+    pub use super::AIThink_GodSkillTypes;
+    pub use super::AIThink_Think;
+    pub use super::AIThink_AcFunc;
+    pub use super::IAIThink_AcFunc;
+    pub use super::IAIThink_AcFuncMethods;
+    pub use super::AIThink_ActionFunc;
+    pub use super::IAIThink_ActionFunc;
+    pub use super::IAIThink_ActionFuncMethods;
+    pub use super::AIThink_MoveFlag;
+    pub use super::IAIThink_MoveFlag;
+    pub use super::IAIThink_MoveFlagMethods;
+    pub use super::AIThink_UpdateFlag;
+    pub use super::IAIThink_UpdateFlag;
+    pub use super::IAIThink_UpdateFlagMethods;
+    pub use super::AIThink_InterferenceScoreResult;
+    pub use super::AIThink_TrimasteriesSkills;
     pub use super::AIThink_EngageWaitRangeScore;
     pub use super::AIThink_RcFunc;
     pub use super::IAIThink_RcFunc;
     pub use super::IAIThink_RcFuncMethods;
-    pub use super::AIThink_InterferenceScoreResult;
-    pub use super::AIThink_ActionFunc;
-    pub use super::IAIThink_ActionFunc;
-    pub use super::IAIThink_ActionFuncMethods;
-    pub use super::AIThink;
-    pub use super::IAIThink;
-    pub use super::IAIThinkMethods;
-    pub use super::AIThink_EnchantThink_Desc;
-    pub use super::AIThink_GodSkillTypes;
-    pub use super::AIThink_RescueRodTarget;
-    pub use super::AIThink_AttackScoreResult;
-    pub use super::AIThink_HealRodPositionResult;
-    pub use super::AIThink_EngageWaitResult;
     pub use super::AIThink_EnchantThink_DMPTResult;
-    pub use super::AIThink_MoveFlag;
-    pub use super::IAIThink_MoveFlag;
-    pub use super::IAIThink_MoveFlagMethods;
-    pub use super::AIThink_Result;
-    pub use super::AIThink_AttackTarget;
-    pub use super::AIThink_EnchantThink;
-    pub use super::IAIThink_EnchantThink;
-    pub use super::IAIThink_EnchantThinkMethods;
-    pub use super::AIThink_EnchantThink_SurroundingInfo;
-    pub use super::AIThink_Think;
-    pub use super::AIThink_TrimasteriesSkills;
-    pub use super::AIThink_EntrustAttackTarget;
-    pub use super::AIThink_EnchantThink_Kinds;
-    pub use super::AIThink_EnchantThink_CalcUnitScoreFunction;
-    pub use super::IAIThink_EnchantThink_CalcUnitScoreFunction;
-    pub use super::IAIThink_EnchantThink_CalcUnitScoreFunctionMethods;
-    pub use super::AIThink_InterferenceTarget;
-    pub use super::AIThink_RescueRodScoreResult;
-    pub use super::AIThink_UncontrollAttackTarget;
-    pub use super::AIThink_WarpRodTarget;
-    pub use super::AIThink_HealRodScoreResult;
-    pub use super::AIThink_AcFunc;
-    pub use super::IAIThink_AcFunc;
-    pub use super::IAIThink_AcFuncMethods;
-    pub use super::AIThink_UncontrollAttackScoreResult;
-    pub use super::AIThink_UpdateFlag;
-    pub use super::IAIThink_UpdateFlag;
-    pub use super::IAIThink_UpdateFlagMethods;
-    pub use super::AIThink_EntrustAttackScoreResult;
-    pub use super::AIThink_OverlapSkills;
+    pub use super::AIThink_TrimasteriesSkills_Kinds;
+    pub use super::AIThink_RescueRodTarget;
     pub use super::AIThink_EngageWaitAdditionalAttackImage;
     pub use super::IAIThink_EngageWaitAdditionalAttackImage;
     pub use super::IAIThink_EngageWaitAdditionalAttackImageMethods;
-    pub use super::AIThink_TrimasteriesSkills_Kinds;
-    pub use super::AIThink_AttackPositionResult;
-    pub use super::AIThink_EnchantThink_ItemInfo;
+    pub use super::AIThink_EntrustAttackScoreResult;
+    pub use super::AIThink_CGBSResult;
+    pub use super::AIThink_EnchantThink_Kinds;
+    pub use super::AIThink_UncontrollAttackScoreResult;
+    pub use super::AIThink_RescueRodScoreResult;
+    pub use super::AIThink_WarpRodEvaluationResult;
+    pub use super::AIThink_WarpRodTarget;
+    pub use super::AIThink_HealRodScoreResult;
+    pub use super::AIThink_OverlapSkills;
+    pub use super::AIThink_HealRodPositionResult;
+    pub use super::AIThink_EnchantThink;
+    pub use super::IAIThink_EnchantThink;
+    pub use super::IAIThink_EnchantThinkMethods;
+    pub use super::AIThink_HealRodScoreImplResult;
+    pub use super::AIThink_Result;
+    pub use super::AIThink_UncontrollAttackTarget;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::mapimagecore_1::IMapImageCore_1;

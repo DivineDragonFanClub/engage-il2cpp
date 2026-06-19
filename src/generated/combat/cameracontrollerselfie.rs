@@ -26,6 +26,49 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-cameracontrollerselfie-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-cameracontrollerselfie")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CameraControllerSelfie_unity2_raw{use super:: * ;
+pub unsafe fn activate(this:CameraControllerSelfie,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CameraControllerSelfie as::unity2::ClassIdentity> ::NAME,"Activate",));
+let inner:extern "C" fn(CameraControllerSelfie, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn deactivate(this:CameraControllerSelfie,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <CameraControllerSelfie as::unity2::ClassIdentity> ::NAME,"Deactivate",));
+let inner:extern "C" fn(CameraControllerSelfie, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_inverse(this:CameraControllerSelfie,inv_side:bool,inv_camera:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CameraControllerSelfie as::unity2::ClassIdentity> ::NAME,"SetInverse",));
+let inner:extern "C" fn(CameraControllerSelfie,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inv_side,inv_camera,__mi)}
+pub unsafe fn get_camera_targets(this:CameraControllerSelfie,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<i32>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CameraControllerSelfie as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
+let inner:extern "C" fn(CameraControllerSelfie, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-cameracontrollerselfie")]pub trait ICameraControllerSelfieMethods:ICameraControllerSelfie{#[doc="`get_IsSideInverse()` overload"]fn get_is_side_inverse(self,)->bool{unsafe{let __receiver= <CameraControllerSelfie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25b25c0usize)as*mut u8,bool;
 (CameraControllerSelfie)__receiver)}
@@ -47,20 +90,16 @@ pub use __types::*;
 (CameraControllerSelfie)__receiver)}
 }
 #[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerSelfie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2a50usize)as*mut u8,();
-(CameraControllerSelfie)__receiver)}
+__CameraControllerSelfie_unity2_raw::activate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Deactivate()` overload"]fn deactivate(self,)->(){unsafe{let __receiver= <CameraControllerSelfie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2a60usize)as*mut u8,();
-(CameraControllerSelfie)__receiver)}
+__CameraControllerSelfie_unity2_raw::deactivate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetInverse(bool, bool)` overload"]fn set_inverse(self,inv_side:impl::core::convert::Into<bool> ,inv_camera:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerSelfie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2ae0usize)as*mut u8,();
-(CameraControllerSelfie)__receiver,(bool)::core::convert::Into::into(inv_side),(bool)::core::convert::Into::into(inv_camera))}
+__CameraControllerSelfie_unity2_raw::set_inverse(__receiver, ::core::convert::Into::into(inv_side), ::core::convert::Into::into(inv_camera), ::core::option::Option::None)}
 }
 #[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerSelfie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2b00usize)as*mut u8, ::unity2::Array<i32> ;
-(CameraControllerSelfie)__receiver)}
+__CameraControllerSelfie_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerSelfie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2b50usize)as*mut u8,();

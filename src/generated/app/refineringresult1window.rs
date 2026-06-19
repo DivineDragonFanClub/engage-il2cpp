@@ -17,15 +17,33 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult1window/RefineRingResult1Window.md"))]#[::unity2::class(namespace="App",name="RefineRingResult1Window")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineRingResult1Window{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CharacterImageRootAnimator")]pub m_character_image_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_RingParamRootAnimator")]pub m_ring_param_root_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_NewAnimator")]pub m_new_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_CharacterImage")]pub m_character_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_NewObject")]pub m_new_object:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_NewText")]pub m_new_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_RingIconImage")]pub m_ring_icon_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_CharacterNameText")]pub m_character_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_RingParams")]pub m_ring_params: ::unity2::Array<crate::app::refineringresult1window::RefineRingResult1Window_RingParam> , #[offset(104)]#[rename(name="m_SkillRootObject")]pub m_skill_root_object:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_SkillHelpText")]pub m_skill_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult1window/RefineRingResult1Window_RingParam.md"))]#[::unity2::class(namespace="App",name="RefineRingResult1Window.RingParam")]#[parent(crate::system::object::Object)]pub struct RefineRingResult1Window_RingParam{#[offset(16)]#[rename(name="m_TitleText")]pub m_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(24)]#[rename(name="m_ValueText")]pub m_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineringresult1window/RefineRingResult1Window.md"))]#[::unity2::class(namespace="App",name="RefineRingResult1Window")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineRingResult1Window{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_CharacterImageRootAnimator")]pub m_character_image_root_animator:crate::unity_engine::animator::Animator, #[offset(32)]#[rename(name="m_RingParamRootAnimator")]pub m_ring_param_root_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_NewAnimator")]pub m_new_animator:crate::unity_engine::animator::Animator, #[offset(48)]#[rename(name="m_CharacterImage")]pub m_character_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_NewObject")]pub m_new_object:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_NewText")]pub m_new_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_RingIconImage")]pub m_ring_icon_image:crate::unity_engine::ui::image::Image, #[offset(88)]#[rename(name="m_CharacterNameText")]pub m_character_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_RingParams")]pub m_ring_params: ::unity2::Array<crate::app::refineringresult1window::RefineRingResult1Window_RingParam> , #[offset(104)]#[rename(name="m_SkillRootObject")]pub m_skill_root_object:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_SkillHelpText")]pub m_skill_help_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-refineringresult1window-types")]
 pub use __types::*;
+
+#[cfg(feature="app-refineringresult1window")]pub trait IRefineRingResult1Window_RingParamMethods:IRefineRingResult1Window_RingParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingResult1Window_RingParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8880usize)as*mut u8,();
+(RefineRingResult1Window_RingParam)__receiver)}
+}
+}
+
+#[cfg(feature="app-refineringresult1window")]impl<__T:IRefineRingResult1Window_RingParam>IRefineRingResult1Window_RingParamMethods for __T{}
+
+#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window_RingParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window_RingParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineRingResult1Window_RingParam), ::core::stringify!(new),));
+ <Self as IRefineRingResult1Window_RingParamMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2955aa0usize)as*mut u8,();
 )}
@@ -92,33 +110,15 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-refineringresult1window")]pub trait IRefineRingResult1Window_RingParamMethods:IRefineRingResult1Window_RingParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RefineRingResult1Window_RingParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af8880usize)as*mut u8,();
-(RefineRingResult1Window_RingParam)__receiver)}
-}
-}
-
-#[cfg(feature="app-refineringresult1window")]impl<__T:IRefineRingResult1Window_RingParam>IRefineRingResult1Window_RingParamMethods for __T{}
-
-#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window_RingParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-refineringresult1window")]impl RefineRingResult1Window_RingParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefineRingResult1Window_RingParam), ::core::stringify!(new),));
- <Self as IRefineRingResult1Window_RingParamMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-refineringresult1window")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineRingResult1Window;
-    pub use super::IRefineRingResult1Window;
-    pub use super::IRefineRingResult1WindowMethods;
     pub use super::RefineRingResult1Window_RingParam;
     pub use super::IRefineRingResult1Window_RingParam;
     pub use super::IRefineRingResult1Window_RingParamMethods;
+    pub use super::RefineRingResult1Window;
+    pub use super::IRefineRingResult1Window;
+    pub use super::IRefineRingResult1WindowMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

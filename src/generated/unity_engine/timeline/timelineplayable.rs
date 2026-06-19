@@ -18,6 +18,19 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 #[cfg(feature = "unity_engine-timeline-timelineplayable-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-timeline-timelineplayable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TimelinePlayable_unity2_raw{use super:: * ;
+pub unsafe fn prepare_frame(this:TimelinePlayable,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TimelinePlayable as::unity2::ClassIdentity> ::NAME,"PrepareFrame",));
+let inner:extern "C" fn(TimelinePlayable,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,info,__mi)}
+}
+
 #[cfg(feature="unity_engine-timeline-timelineplayable")]impl TimelinePlayable{#[doc="`Create(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>, crate::unity_engine::gameobject::GameObject, bool, bool)` overload"]pub fn create(graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,tracks:impl::core::convert::Into<crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset> > ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,auto_rebalance:impl::core::convert::Into<bool> ,create_outputs:impl::core::convert::Into<bool>)->crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timelineplayable::TimelinePlayable>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35de480usize)as*mut u8,crate::unity_engine::playables::scriptplayable_1::ScriptPlayable_1<crate::unity_engine::timeline::timelineplayable::TimelinePlayable> ;
 (crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::timeline::trackasset::TrackAsset>)::core::convert::Into::into(tracks),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(bool)::core::convert::Into::into(auto_rebalance),(bool)::core::convert::Into::into(create_outputs))}
 }
@@ -50,8 +63,7 @@ pub use __types::*;
 (TimelinePlayable)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(timeline_playable),(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(bool)::core::convert::Into::into(create_outputs))}
 }
 #[doc="`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn prepare_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <TimelinePlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35e3d90usize)as*mut u8,();
-(TimelinePlayable)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+__TimelinePlayable_unity2_raw::prepare_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
 }
 #[doc="`Evaluate(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn evaluate(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <TimelinePlayable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35e3dd0usize)as*mut u8,();

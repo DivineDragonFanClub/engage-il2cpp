@@ -25,33 +25,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_Attributes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleCalculator_Attributes{pub value:i32,}
-impl::unity2::ClassIdentity for BattleCalculator_Attributes{const NAMESPACE: &'static str="App";
-const NAME: &'static str="BattleCalculator.Attributes";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for BattleCalculator_Attributes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl BattleCalculator_Attributes{pub fn none()->Self{Self{value:0}
-}
-pub fn physical()->Self{Self{value:1}
-}
-pub fn magic()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_FuncExp1.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.FuncExp1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BattleCalculator_FuncExp1{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_DetailScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleCalculator_DetailScope{pub m_info:crate::app::battleinfo::BattleInfo,}
-impl::unity2::ClassIdentity for BattleCalculator_DetailScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="BattleCalculator.DetailScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for BattleCalculator_DetailScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator.md"))]#[::unity2::class(namespace="App",name="BattleCalculator")]#[parent(crate::system::object::Object)]pub struct BattleCalculator{#[offset(16)]#[rename(name="m_Mode")]pub m_mode:crate::app::battlecalculator::BattleCalculator_Mode, #[offset(24)]#[rename(name="m_Info")]pub m_info:crate::app::battleinfo::BattleInfo, #[offset(32)]#[rename(name="m_Flag")]pub m_flag:crate::app::battlecalculator::BattleCalculator_FlagField, #[offset(40)]#[rename(name="m_SceneList")]pub m_scene_list:crate::app::battlescenelist::BattleSceneList, #[offset(48)]#[rename(name="m_Orders")]pub m_orders:crate::app::battlecalculator::BattleCalculator_OrderList, #[offset(56)]#[rename(name="m_NextOrderIndex")]pub m_next_order_index:i32, #[offset(64)]#[rename(name="m_EquipSkill")]pub m_equip_skill:crate::app::skilldata::SkillData, #[offset(72)]#[rename(name="m_ChainOffenses")]pub m_chain_offenses:crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide> , #[offset(80)]#[rename(name="m_ChainDefenses")]pub m_chain_defenses:crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide> , #[offset(88)]#[rename(name="m_HitSkillPool")]pub m_hit_skill_pool:crate::app::battlecalculator::BattleCalculator_HitSkillPool, #[offset(96)]#[rename(name="m_CommitSkillUnits")]pub m_commit_skill_units:crate::system::collections::generic::hashset_1::HashSet_1<i32> , #[static_field]#[rename(name="CannonConditions")]pub cannon_conditions: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="DanceConditions")]pub dance_conditions: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="EngageSummon3")]pub engage_summon3: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="EngageSummon5")]pub engage_summon5: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleCalculator_Flags{pub value:i32,}
@@ -84,29 +61,6 @@ pub fn mask_interrupt()->Self{Self{value:7}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_TargetScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleCalculator_TargetScope{pub m_current:crate::app::battleinfoside::BattleInfoSide,pub m_reverse:crate::app::battleinfoside::BattleInfoSide,pub m_is_dump:bool,}
-impl::unity2::ClassIdentity for BattleCalculator_TargetScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="BattleCalculator.TargetScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for BattleCalculator_TargetScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_HitSkillPool.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.HitSkillPool")]#[parent(crate::app::pool::Pool_List_1<crate::app::battlecalculator::BattleCalculator_HitSkill>)]pub struct BattleCalculator_HitSkillPool{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_Order.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.Order")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleCalculator_Order{#[offset(16)]#[rename(name="Side")]pub side:crate::app::battleside::BattleSide_Type,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_FuncExp1.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.FuncExp1")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BattleCalculator_FuncExp1{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_OrderList.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.OrderList")]#[parent(crate::app::pool::Pool_List_1<crate::app::battlecalculator::BattleCalculator_Order>)]pub struct BattleCalculator_OrderList{#[static_field]#[rename(name="MaxOrder")]pub max_order:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_TrainingResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleCalculator_TrainingResult{pub value:i32,}
 impl::unity2::ClassIdentity for BattleCalculator_TrainingResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleCalculator.TrainingResult";
@@ -123,7 +77,34 @@ pub fn lose()->Self{Self{value:1}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_Attributes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleCalculator_Attributes{pub value:i32,}
+impl::unity2::ClassIdentity for BattleCalculator_Attributes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleCalculator.Attributes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BattleCalculator_Attributes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl BattleCalculator_Attributes{pub fn none()->Self{Self{value:0}
+}
+pub fn physical()->Self{Self{value:1}
+}
+pub fn magic()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_OrderList.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.OrderList")]#[parent(crate::app::pool::Pool_List_1<crate::app::battlecalculator::BattleCalculator_Order>)]pub struct BattleCalculator_OrderList{#[static_field]#[rename(name="MaxOrder")]pub max_order:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_FlagField.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battlecalculator::BattleCalculator_Flags>)]pub struct BattleCalculator_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_HitSkill.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.HitSkill")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleCalculator_HitSkill{#[offset(16)]#[rename(name="Side")]pub side:crate::app::battleinfoside::BattleInfoSide, #[offset(24)]#[rename(name="Action")]pub action:crate::app::skilldata::SkillData_Actions, #[offset(32)]#[rename(name="Skill")]pub skill:crate::app::skilldata::SkillData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_FuncExp2.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.FuncExp2")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BattleCalculator_FuncExp2{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleCalculator_Mode{pub value:i32,}
@@ -144,15 +125,6 @@ pub fn class_change()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator.md"))]#[::unity2::class(namespace="App",name="BattleCalculator")]#[parent(crate::system::object::Object)]pub struct BattleCalculator{#[offset(16)]#[rename(name="m_Mode")]pub m_mode:crate::app::battlecalculator::BattleCalculator_Mode, #[offset(24)]#[rename(name="m_Info")]pub m_info:crate::app::battleinfo::BattleInfo, #[offset(32)]#[rename(name="m_Flag")]pub m_flag:crate::app::battlecalculator::BattleCalculator_FlagField, #[offset(40)]#[rename(name="m_SceneList")]pub m_scene_list:crate::app::battlescenelist::BattleSceneList, #[offset(48)]#[rename(name="m_Orders")]pub m_orders:crate::app::battlecalculator::BattleCalculator_OrderList, #[offset(56)]#[rename(name="m_NextOrderIndex")]pub m_next_order_index:i32, #[offset(64)]#[rename(name="m_EquipSkill")]pub m_equip_skill:crate::app::skilldata::SkillData, #[offset(72)]#[rename(name="m_ChainOffenses")]pub m_chain_offenses:crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide> , #[offset(80)]#[rename(name="m_ChainDefenses")]pub m_chain_defenses:crate::system::collections::generic::list_1::List_1<crate::app::battleinfoside::BattleInfoSide> , #[offset(88)]#[rename(name="m_HitSkillPool")]pub m_hit_skill_pool:crate::app::battlecalculator::BattleCalculator_HitSkillPool, #[offset(96)]#[rename(name="m_CommitSkillUnits")]pub m_commit_skill_units:crate::system::collections::generic::hashset_1::HashSet_1<i32> , #[static_field]#[rename(name="CannonConditions")]pub cannon_conditions: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="DanceConditions")]pub dance_conditions: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="EngageSummon3")]pub engage_summon3: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="EngageSummon5")]pub engage_summon5: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_FuncExp2.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.FuncExp2")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BattleCalculator_FuncExp2{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_HitSkill.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.HitSkill")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleCalculator_HitSkill{#[offset(16)]#[rename(name="Side")]pub side:crate::app::battleinfoside::BattleInfoSide, #[offset(24)]#[rename(name="Action")]pub action:crate::app::skilldata::SkillData_Actions, #[offset(32)]#[rename(name="Skill")]pub skill:crate::app::skilldata::SkillData,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_SeparatorScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleCalculator_SeparatorScope{pub m_calc:crate::app::battlecalculator::BattleCalculator,pub m_push:crate::app::battlescene::BattleScene_Kind,pub m_pop:crate::app::battlescene::BattleScene_Kind,pub m_side:crate::app::battleside::BattleSide_Type,pub m_equip_skill:crate::app::skilldata::SkillData,pub m_is_dump:bool,}
 impl::unity2::ClassIdentity for BattleCalculator_SeparatorScope{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleCalculator.SeparatorScope";
@@ -163,84 +135,50 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for BattleCalculator_SeparatorScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_TargetScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleCalculator_TargetScope{pub m_current:crate::app::battleinfoside::BattleInfoSide,pub m_reverse:crate::app::battleinfoside::BattleInfoSide,pub m_is_dump:bool,}
+impl::unity2::ClassIdentity for BattleCalculator_TargetScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleCalculator.TargetScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BattleCalculator_TargetScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_HitSkillPool.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.HitSkillPool")]#[parent(crate::app::pool::Pool_List_1<crate::app::battlecalculator::BattleCalculator_HitSkill>)]pub struct BattleCalculator_HitSkillPool{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_Order.md"))]#[::unity2::class(namespace="App",name="BattleCalculator.Order")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleCalculator_Order{#[offset(16)]#[rename(name="Side")]pub side:crate::app::battleside::BattleSide_Type,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlecalculator/BattleCalculator_DetailScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleCalculator_DetailScope{pub m_info:crate::app::battleinfo::BattleInfo,}
+impl::unity2::ClassIdentity for BattleCalculator_DetailScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleCalculator.DetailScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BattleCalculator_DetailScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
 }
 
 #[cfg(feature = "app-battlecalculator-types")]
 pub use __types::*;
 
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_DetailScope{#[doc="`.ctor(crate::app::battleinfo::BattleInfo)` overload"]pub fn ctor(&mut self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b5790usize)as*mut u8,();
-(*mut BattleCalculator_DetailScope)self as*mut BattleCalculator_DetailScope,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b57d0usize)as*mut u8,();
-(*mut BattleCalculator_DetailScope)self as*mut BattleCalculator_DetailScope)}
-}
-}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_DetailScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_TargetScope{#[doc="`.ctor(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, bool)` overload"]pub fn ctor(&mut self,current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,is_dump:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b7030usize)as*mut u8,();
-(*mut BattleCalculator_TargetScope)self as*mut BattleCalculator_TargetScope,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse),(bool)::core::convert::Into::into(is_dump))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b7170usize)as*mut u8,();
-(*mut BattleCalculator_TargetScope)self as*mut BattleCalculator_TargetScope)}
-}
-}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_TargetScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_HitSkillPoolMethods:IBattleCalculator_HitSkillPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_HitSkillPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6120usize)as*mut u8,();
-(BattleCalculator_HitSkillPool)__receiver)}
-}
-#[doc="`Add(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Actions)` overload"]fn add(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,timing:impl::core::convert::Into<crate::app::skilldata::SkillData_Timings> ,action:impl::core::convert::Into<crate::app::skilldata::SkillData_Actions>)->(){unsafe{let __receiver= <BattleCalculator_HitSkillPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6180usize)as*mut u8,();
-(BattleCalculator_HitSkillPool)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side),(crate::app::skilldata::SkillData_Timings)::core::convert::Into::into(timing),(crate::app::skilldata::SkillData_Actions)::core::convert::Into::into(action))}
-}
-}
-
-#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_HitSkillPool>IBattleCalculator_HitSkillPoolMethods for __T{}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_HitSkillPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_HitSkillPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleCalculator_HitSkillPool), ::core::stringify!(new),));
- <Self as IBattleCalculator_HitSkillPoolMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_OrderMethods:IBattleCalculator_Order{#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <BattleCalculator_Order as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6890usize)as*mut u8,();
-(BattleCalculator_Order)__receiver)}
-}
-#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <BattleCalculator_Order as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b68a0usize)as*mut u8,();
-(BattleCalculator_Order)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_Order as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b68b0usize)as*mut u8,();
-(BattleCalculator_Order)__receiver)}
-}
-}
-
-#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_Order>IBattleCalculator_OrderMethods for __T{}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_Order{pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_Order{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleCalculator_Order), ::core::stringify!(new),));
- <Self as IBattleCalculator_OrderMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-battlecalculator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleCalculator_FuncExp1_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:BattleCalculator_FuncExp1,current:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BattleCalculator_FuncExp1 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(BattleCalculator_FuncExp1,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,current,__mi)}
 }
 
 #[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_FuncExp1Methods:IBattleCalculator_FuncExp1{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BattleCalculator_FuncExp1 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -248,8 +186,7 @@ this}
 (BattleCalculator_FuncExp1)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::battleinfoside::BattleInfoSide)` overload"]fn invoke(self,current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{let __receiver= <BattleCalculator_FuncExp1 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b58a0usize)as*mut u8,i32;
-(BattleCalculator_FuncExp1)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current))}
+__BattleCalculator_FuncExp1_unity2_raw::invoke(__receiver, ::core::convert::Into::into(current), ::core::option::Option::None)}
 }
 }
 
@@ -266,55 +203,17 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_OrderListMethods:IBattleCalculator_OrderList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_OrderList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b68c0usize)as*mut u8,();
-(BattleCalculator_OrderList)__receiver)}
-}
-#[doc="`TryAdd(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type)` overload"]fn try_add(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->(){unsafe{let __receiver= <BattleCalculator_OrderList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6920usize)as*mut u8,();
-(BattleCalculator_OrderList)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
-}
-#[doc="`CanSwap(crate::app::battleside::BattleSide_Type, i32)` overload"]fn can_swap(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BattleCalculator_OrderList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6950usize)as*mut u8,bool;
-(BattleCalculator_OrderList)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side),(i32)::core::convert::Into::into(index))}
-}
-}
-
-#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_OrderList>IBattleCalculator_OrderListMethods for __T{}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_OrderList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn can_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_OrderList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleCalculator_OrderList), ::core::stringify!(new),));
- <Self as IBattleCalculator_OrderListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_FlagFieldMethods:IBattleCalculator_FlagField{#[doc="`ToInt(crate::app::battlecalculator::BattleCalculator_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator_Flags>)->i32{unsafe{let __receiver= <BattleCalculator_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b5810usize)as*mut u8,i32;
-(BattleCalculator_FlagField)__receiver,(crate::app::battlecalculator::BattleCalculator_Flags)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b5820usize)as*mut u8,();
-(BattleCalculator_FlagField)__receiver)}
-}
-}
-
-#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_FlagField>IBattleCalculator_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleCalculator_FlagField), ::core::stringify!(new),));
- <Self as IBattleCalculator_FlagFieldMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-battlecalculator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleCalculator_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:BattleCalculator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleCalculator as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BattleCalculator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-battlecalculator")]impl BattleCalculator{#[doc="`FindIgnoreSkill(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData)` overload"]pub fn find_ignore_skill(target:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::app::skilldata::SkillData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x246de90usize)as*mut u8,crate::app::skilldata::SkillData;
@@ -342,8 +241,7 @@ this}
 (BattleCalculator)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BattleCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2469790usize)as*mut u8,();
-(BattleCalculator)__receiver)}
+__BattleCalculator_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMode()` overload"]fn get_mode(self,)->crate::app::battlecalculator::BattleCalculator_Mode{unsafe{let __receiver= <BattleCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24697a0usize)as*mut u8,crate::app::battlecalculator::BattleCalculator_Mode;
@@ -924,44 +822,114 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_FuncExp2Methods:IBattleCalculator_FuncExp2{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BattleCalculator_FuncExp2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b5c60usize)as*mut u8,();
-(BattleCalculator_FuncExp2)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_OrderListMethods:IBattleCalculator_OrderList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_OrderList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b68c0usize)as*mut u8,();
+(BattleCalculator_OrderList)__receiver)}
 }
-#[doc="`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]fn invoke(self,current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{let __receiver= <BattleCalculator_FuncExp2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b5c80usize)as*mut u8,i32;
-(BattleCalculator_FuncExp2)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse))}
+#[doc="`TryAdd(crate::app::battleinfo::BattleInfo, crate::app::battleside::BattleSide_Type)` overload"]fn try_add(self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->(){unsafe{let __receiver= <BattleCalculator_OrderList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6920usize)as*mut u8,();
+(BattleCalculator_OrderList)__receiver,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
 }
+#[doc="`CanSwap(crate::app::battleside::BattleSide_Type, i32)` overload"]fn can_swap(self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BattleCalculator_OrderList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6950usize)as*mut u8,bool;
+(BattleCalculator_OrderList)__receiver,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side),(i32)::core::convert::Into::into(index))}
 }
-
-#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_FuncExp2>IBattleCalculator_FuncExp2Methods for __T{}
-
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FuncExp2{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FuncExp2{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_OrderList>IBattleCalculator_OrderListMethods for __T{}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_OrderList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn can_swap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_OrderList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(BattleCalculator_FuncExp2), ::core::stringify!(new),));
- <Self as IBattleCalculator_FuncExp2Methods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(BattleCalculator_OrderList), ::core::stringify!(new),));
+ <Self as IBattleCalculator_OrderListMethods> ::ctor(this,);
 this}
 }
 
+#[cfg(feature="app-battlecalculator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleCalculator_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:BattleCalculator_FlagField,value:crate::app::battlecalculator::BattleCalculator_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleCalculator_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(BattleCalculator_FlagField,crate::app::battlecalculator::BattleCalculator_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_FlagFieldMethods:IBattleCalculator_FlagField{#[doc="`ToInt(crate::app::battlecalculator::BattleCalculator_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator_Flags>)->i32{unsafe{let __receiver= <BattleCalculator_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleCalculator_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b5820usize)as*mut u8,();
+(BattleCalculator_FlagField)__receiver)}
+}
+}
+
+#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_FlagField>IBattleCalculator_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleCalculator_FlagField), ::core::stringify!(new),));
+ <Self as IBattleCalculator_FlagFieldMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-battlecalculator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleCalculator_HitSkill_unity2_raw{use super:: * ;
+pub unsafe fn on_enter(this:BattleCalculator_HitSkill,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleCalculator_HitSkill as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_exit(this:BattleCalculator_HitSkill,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleCalculator_HitSkill as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let inner:extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sort_key(this:BattleCalculator_HitSkill,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleCalculator_HitSkill as::unity2::ClassIdentity> ::NAME,"get_SortKey",));
+let inner:extern "C" fn(BattleCalculator_HitSkill, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_HitSkillMethods:IBattleCalculator_HitSkill{#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <BattleCalculator_HitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6060usize)as*mut u8,();
-(BattleCalculator_HitSkill)__receiver)}
+__BattleCalculator_HitSkill_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <BattleCalculator_HitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6070usize)as*mut u8,();
-(BattleCalculator_HitSkill)__receiver)}
+__BattleCalculator_HitSkill_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <BattleCalculator_HitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19b60b0usize)as*mut u8,();
 (BattleCalculator_HitSkill)__receiver)}
 }
 #[doc="`get_SortKey()` overload"]fn get_sort_key(self,)->i32{unsafe{let __receiver= <BattleCalculator_HitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b60f0usize)as*mut u8,i32;
-(BattleCalculator_HitSkill)__receiver)}
+__BattleCalculator_HitSkill_unity2_raw::get_sort_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_HitSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6110usize)as*mut u8,();
@@ -985,6 +953,41 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-battlecalculator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleCalculator_FuncExp2_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:BattleCalculator_FuncExp2,current:crate::app::battleinfoside::BattleInfoSide,reverse:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BattleCalculator_FuncExp2 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(BattleCalculator_FuncExp2,crate::app::battleinfoside::BattleInfoSide,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,current,reverse,__mi)}
+}
+
+#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_FuncExp2Methods:IBattleCalculator_FuncExp2{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BattleCalculator_FuncExp2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b5c60usize)as*mut u8,();
+(BattleCalculator_FuncExp2)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide)` overload"]fn invoke(self,current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->i32{unsafe{let __receiver= <BattleCalculator_FuncExp2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleCalculator_FuncExp2_unity2_raw::invoke(__receiver, ::core::convert::Into::into(current), ::core::convert::Into::into(reverse), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_FuncExp2>IBattleCalculator_FuncExp2Methods for __T{}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FuncExp2{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_FuncExp2{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleCalculator_FuncExp2), ::core::stringify!(new),));
+ <Self as IBattleCalculator_FuncExp2Methods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="app-battlecalculator")]impl BattleCalculator_SeparatorScope{#[doc="`.ctor(crate::app::battlecalculator::BattleCalculator, crate::app::battleside::BattleSide_Type, crate::app::battlescene::BattleScene_Kind, crate::app::battlescene::BattleScene_Kind, bool)` overload"]pub fn ctor(&mut self,calc:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator> ,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type> ,push:impl::core::convert::Into<crate::app::battlescene::BattleScene_Kind> ,pop:impl::core::convert::Into<crate::app::battlescene::BattleScene_Kind> ,is_dump:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b6a70usize)as*mut u8,();
 (*mut BattleCalculator_SeparatorScope)self as*mut BattleCalculator_SeparatorScope,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calc),(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side),(crate::app::battlescene::BattleScene_Kind)::core::convert::Into::into(push),(crate::app::battlescene::BattleScene_Kind)::core::convert::Into::into(pop),(bool)::core::convert::Into::into(is_dump))}
 }
@@ -1005,12 +1008,128 @@ pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn get_side_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_TargetScope{#[doc="`.ctor(crate::app::battleinfoside::BattleInfoSide, crate::app::battleinfoside::BattleInfoSide, bool)` overload"]pub fn ctor(&mut self,current:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,reverse:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,is_dump:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b7030usize)as*mut u8,();
+(*mut BattleCalculator_TargetScope)self as*mut BattleCalculator_TargetScope,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(current),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(reverse),(bool)::core::convert::Into::into(is_dump))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b7170usize)as*mut u8,();
+(*mut BattleCalculator_TargetScope)self as*mut BattleCalculator_TargetScope)}
+}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_TargetScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_HitSkillPoolMethods:IBattleCalculator_HitSkillPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_HitSkillPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6120usize)as*mut u8,();
+(BattleCalculator_HitSkillPool)__receiver)}
+}
+#[doc="`Add(crate::app::battleinfoside::BattleInfoSide, crate::app::skilldata::SkillData_Timings, crate::app::skilldata::SkillData_Actions)` overload"]fn add(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide> ,timing:impl::core::convert::Into<crate::app::skilldata::SkillData_Timings> ,action:impl::core::convert::Into<crate::app::skilldata::SkillData_Actions>)->(){unsafe{let __receiver= <BattleCalculator_HitSkillPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b6180usize)as*mut u8,();
+(BattleCalculator_HitSkillPool)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side),(crate::app::skilldata::SkillData_Timings)::core::convert::Into::into(timing),(crate::app::skilldata::SkillData_Actions)::core::convert::Into::into(action))}
+}
+}
+
+#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_HitSkillPool>IBattleCalculator_HitSkillPoolMethods for __T{}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_HitSkillPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_HitSkillPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleCalculator_HitSkillPool), ::core::stringify!(new),));
+ <Self as IBattleCalculator_HitSkillPoolMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-battlecalculator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleCalculator_Order_unity2_raw{use super:: * ;
+pub unsafe fn on_enter(this:BattleCalculator_Order,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleCalculator_Order as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_exit(this:BattleCalculator_Order,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleCalculator_Order as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let inner:extern "C" fn(BattleCalculator_Order, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-battlecalculator")]pub trait IBattleCalculator_OrderMethods:IBattleCalculator_Order{#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <BattleCalculator_Order as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleCalculator_Order_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <BattleCalculator_Order as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleCalculator_Order_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleCalculator_Order as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b68b0usize)as*mut u8,();
+(BattleCalculator_Order)__receiver)}
+}
+}
+
+#[cfg(feature="app-battlecalculator")]impl<__T:IBattleCalculator_Order>IBattleCalculator_OrderMethods for __T{}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_Order{pub fn on_enter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn on_exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_Order{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleCalculator_Order), ::core::stringify!(new),));
+ <Self as IBattleCalculator_OrderMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_DetailScope{#[doc="`.ctor(crate::app::battleinfo::BattleInfo)` overload"]pub fn ctor(&mut self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b5790usize)as*mut u8,();
+(*mut BattleCalculator_DetailScope)self as*mut BattleCalculator_DetailScope,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b57d0usize)as*mut u8,();
+(*mut BattleCalculator_DetailScope)self as*mut BattleCalculator_DetailScope)}
+}
+}
+
+#[cfg(feature="app-battlecalculator")]impl BattleCalculator_DetailScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
 #[cfg(feature = "app-battlecalculator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleCalculator_Attributes;
-    pub use super::BattleCalculator_DetailScope;
+    pub use super::BattleCalculator_FuncExp1;
+    pub use super::IBattleCalculator_FuncExp1;
+    pub use super::IBattleCalculator_FuncExp1Methods;
+    pub use super::BattleCalculator;
+    pub use super::IBattleCalculator;
+    pub use super::IBattleCalculatorMethods;
     pub use super::BattleCalculator_Flags;
+    pub use super::BattleCalculator_TrainingResult;
+    pub use super::BattleCalculator_Attributes;
+    pub use super::BattleCalculator_OrderList;
+    pub use super::IBattleCalculator_OrderList;
+    pub use super::IBattleCalculator_OrderListMethods;
+    pub use super::BattleCalculator_FlagField;
+    pub use super::IBattleCalculator_FlagField;
+    pub use super::IBattleCalculator_FlagFieldMethods;
+    pub use super::BattleCalculator_HitSkill;
+    pub use super::IBattleCalculator_HitSkill;
+    pub use super::IBattleCalculator_HitSkillMethods;
+    pub use super::BattleCalculator_FuncExp2;
+    pub use super::IBattleCalculator_FuncExp2;
+    pub use super::IBattleCalculator_FuncExp2Methods;
+    pub use super::BattleCalculator_Mode;
+    pub use super::BattleCalculator_SeparatorScope;
     pub use super::BattleCalculator_TargetScope;
     pub use super::BattleCalculator_HitSkillPool;
     pub use super::IBattleCalculator_HitSkillPool;
@@ -1018,27 +1137,7 @@ pub mod prelude {
     pub use super::BattleCalculator_Order;
     pub use super::IBattleCalculator_Order;
     pub use super::IBattleCalculator_OrderMethods;
-    pub use super::BattleCalculator_FuncExp1;
-    pub use super::IBattleCalculator_FuncExp1;
-    pub use super::IBattleCalculator_FuncExp1Methods;
-    pub use super::BattleCalculator_OrderList;
-    pub use super::IBattleCalculator_OrderList;
-    pub use super::IBattleCalculator_OrderListMethods;
-    pub use super::BattleCalculator_TrainingResult;
-    pub use super::BattleCalculator_FlagField;
-    pub use super::IBattleCalculator_FlagField;
-    pub use super::IBattleCalculator_FlagFieldMethods;
-    pub use super::BattleCalculator_Mode;
-    pub use super::BattleCalculator;
-    pub use super::IBattleCalculator;
-    pub use super::IBattleCalculatorMethods;
-    pub use super::BattleCalculator_FuncExp2;
-    pub use super::IBattleCalculator_FuncExp2;
-    pub use super::IBattleCalculator_FuncExp2Methods;
-    pub use super::BattleCalculator_HitSkill;
-    pub use super::IBattleCalculator_HitSkill;
-    pub use super::IBattleCalculator_HitSkillMethods;
-    pub use super::BattleCalculator_SeparatorScope;
+    pub use super::BattleCalculator_DetailScope;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

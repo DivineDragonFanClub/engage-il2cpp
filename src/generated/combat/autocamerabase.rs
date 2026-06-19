@@ -27,10 +27,33 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="combat-autocamerabase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AutoCameraBase_unity2_raw{use super:: * ;
-pub unsafe fn tick(this:AutoCameraBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Tick").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Tick", <AutoCameraBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn tick(this:AutoCameraBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AutoCameraBase as::unity2::ClassIdentity> ::NAME,"Tick",));
 let inner:extern "C" fn(AutoCameraBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn check_usable(this:AutoCameraBase,is_routine:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AutoCameraBase as::unity2::ClassIdentity> ::NAME,"CheckUsable",));
+let inner:extern "C" fn(AutoCameraBase,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_routine,__mi)}
+pub unsafe fn get_camera_targets(this:AutoCameraBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<i32>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <AutoCameraBase as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
+let inner:extern "C" fn(AutoCameraBase, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -54,16 +77,14 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21205d0usize)as*mut
 __AutoCameraBase_unity2_raw::tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x211fbc0usize)as*mut u8,();
-(AutoCameraBase)__receiver,(bool)::core::convert::Into::into(is_routine))}
+__AutoCameraBase_unity2_raw::check_usable(__receiver, ::core::convert::Into::into(is_routine), ::core::option::Option::None)}
 }
 #[doc="`IsSimilarAngle(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn is_similar_angle(self,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x211f4f0usize)as*mut u8,bool;
 (AutoCameraBase)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
 }
 #[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21207f0usize)as*mut u8, ::unity2::Array<i32> ;
-(AutoCameraBase)__receiver)}
+__AutoCameraBase_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AutoCameraBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x211fb90usize)as*mut u8,();

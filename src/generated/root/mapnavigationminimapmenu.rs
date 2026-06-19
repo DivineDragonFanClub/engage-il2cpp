@@ -20,6 +20,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-mapnavigationminimapmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="root-mapnavigationminimapmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapNavigationMiniMapMenu_unity2_raw{use super:: * ;
+pub unsafe fn b_call(this:MapNavigationMiniMapMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <MapNavigationMiniMapMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(MapNavigationMiniMapMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn custom_call(this:MapNavigationMiniMapMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <MapNavigationMiniMapMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let inner:extern "C" fn(MapNavigationMiniMapMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapNavigationMiniMapMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapNavigationMiniMapMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapNavigationMiniMapMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-mapnavigationminimapmenu")]impl MapNavigationMiniMapMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::root::mapnavigationminimapmenu::MapNavigationMiniMapMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df7060usize)as*mut u8,crate::root::mapnavigationminimapmenu::MapNavigationMiniMapMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
 }
@@ -30,16 +63,13 @@ pub use __types::*;
 (MapNavigationMiniMapMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::root::mapnavigationminimapmenucontent::MapNavigationMiniMapMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapNavigationMiniMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6e60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MapNavigationMiniMapMenu)__receiver)}
+__MapNavigationMiniMapMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MapNavigationMiniMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6e70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MapNavigationMiniMapMenu)__receiver)}
+__MapNavigationMiniMapMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapNavigationMiniMapMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df6f90usize)as*mut u8,();
-(MapNavigationMiniMapMenu)__receiver)}
+__MapNavigationMiniMapMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 }
 

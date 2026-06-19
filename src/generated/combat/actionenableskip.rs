@@ -18,13 +18,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actionenableskip-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actionenableskip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionEnableSkip_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionEnableSkip,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionEnableSkip as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionEnableSkip, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enter(this:ActionEnableSkip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ActionEnableSkip as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(ActionEnableSkip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actionenableskip")]pub trait IActionEnableSkipMethods:IActionEnableSkip{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionEnableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4d70usize)as*mut u8, ::unity2::Il2CppString;
-(ActionEnableSkip)__receiver)}
+__ActionEnableSkip_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionEnableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4dc0usize)as*mut u8,();
-(ActionEnableSkip)__receiver)}
+__ActionEnableSkip_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ActionEnableSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc5650usize)as*mut u8,();

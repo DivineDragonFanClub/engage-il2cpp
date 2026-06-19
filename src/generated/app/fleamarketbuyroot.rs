@@ -31,13 +31,25 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-fleamarketbuyroot-types")]
 pub use __types::*;
 
+#[cfg(feature="app-fleamarketbuyroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FleaMarketBuyRoot_ReturnEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:FleaMarketBuyRoot_ReturnEventHandler,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <FleaMarketBuyRoot_ReturnEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(FleaMarketBuyRoot_ReturnEventHandler,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit,__mi)}
+}
+
 #[cfg(feature="app-fleamarketbuyroot")]pub trait IFleaMarketBuyRoot_ReturnEventHandlerMethods:IFleaMarketBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FleaMarketBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62930usize)as*mut u8,();
 (FleaMarketBuyRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <FleaMarketBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62950usize)as*mut u8,();
-(FleaMarketBuyRoot_ReturnEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+__FleaMarketBuyRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
 }
 }
 

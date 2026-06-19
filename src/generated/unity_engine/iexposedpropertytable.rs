@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-iexposedpropertytable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IExposedPropertyTable_unity2_raw{use super:: * ;
-pub unsafe fn get_reference_value(this:IExposedPropertyTable,id:crate::unity_engine::propertyname::PropertyName,id_valid: *mut bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetReferenceValue").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetReferenceValue", <IExposedPropertyTable as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_reference_value(this:IExposedPropertyTable,id:crate::unity_engine::propertyname::PropertyName,id_valid: *mut bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IExposedPropertyTable as::unity2::ClassIdentity> ::NAME,"GetReferenceValue",));
 let inner:extern "C" fn(IExposedPropertyTable,crate::unity_engine::propertyname::PropertyName, *mut bool, ::unity2::OptionalMethod,)->crate::unity_engine::object_2::Object_2= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

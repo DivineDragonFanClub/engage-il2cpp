@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceclasschange/SortieSequenceClassChange.md"))]#[::unity2::class(namespace="App",name="SortieSequenceClassChange")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceclasschange::SortieSequenceClassChange>)]pub struct SortieSequenceClassChange{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Window")]pub m_window:crate::app::classchangeroot::ClassChangeRoot, #[offset(128)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_classChangeJobMenu")]pub m_class_change_job_menu:crate::app::classchangejobmenu::ClassChangeJobMenu,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceclasschange/SortieSequenceClassChange_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSequenceClassChange_Label{pub value:i32,}
 impl::unity2::ClassIdentity for SortieSequenceClassChange_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SortieSequenceClassChange.Label";
@@ -33,9 +36,6 @@ pub fn class_change()->Self{Self{value:1}
 pub fn end()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortiesequenceclasschange/SortieSequenceClassChange.md"))]#[::unity2::class(namespace="App",name="SortieSequenceClassChange")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::sortiesequenceclasschange::SortieSequenceClassChange>)]pub struct SortieSequenceClassChange{#[static_field]#[rename(name="ResNameC")]pub res_name_c: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_Window")]pub m_window:crate::app::classchangeroot::ClassChangeRoot, #[offset(128)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_classChangeJobMenu")]pub m_class_change_job_menu:crate::app::classchangejobmenu::ClassChangeJobMenu,}
 
 }
 
@@ -143,10 +143,10 @@ this}
 #[cfg(feature = "app-sortiesequenceclasschange")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortieSequenceClassChange_Label;
     pub use super::SortieSequenceClassChange;
     pub use super::ISortieSequenceClassChange;
     pub use super::ISortieSequenceClassChangeMethods;
+    pub use super::SortieSequenceClassChange_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

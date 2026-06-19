@@ -20,6 +20,19 @@ use crate::unity_engine::texture::{ITexture,Texture}
 #[cfg(feature = "unity_engine-texture2d-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-texture2d")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Texture2D_unity2_raw{use super:: * ;
+pub unsafe fn get_is_readable(this:Texture2D,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Texture2D as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
+let inner:extern "C" fn(Texture2D, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-texture2d")]impl Texture2D{#[doc="`get_whiteTexture()` overload"]pub fn get_white_texture()->crate::unity_engine::texture2d::Texture2D{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3789ff0usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
 )}
 }
@@ -64,8 +77,7 @@ pub use __types::*;
 (Texture2D)__receiver,(bool)::core::convert::Into::into(high_quality))}
 }
 #[doc="`get_isReadable()` overload"]fn get_is_readable(self,)->bool{unsafe{let __receiver= <Texture2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x378a330usize)as*mut u8,bool;
-(Texture2D)__receiver)}
+__Texture2D_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_vtOnly()` overload"]fn get_vt_only(self,)->bool{unsafe{let __receiver= <Texture2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x378a380usize)as*mut u8,bool;

@@ -27,13 +27,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-photographselectpausemenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-photographselectpausemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:PhotographSelectPauseMenu_UpdateUIObjHandler,category_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,cur_category_idx:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographSelectPauseMenu_UpdateUIObjHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(PhotographSelectPauseMenu_UpdateUIObjHandler,crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,category_list,cur_category_idx,__mi)}
+}
+
 #[cfg(feature="app-photographselectpausemenu")]pub trait IPhotographSelectPauseMenu_UpdateUIObjHandlerMethods:IPhotographSelectPauseMenu_UpdateUIObjHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographSelectPauseMenu_UpdateUIObjHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2264520usize)as*mut u8,();
 (PhotographSelectPauseMenu_UpdateUIObjHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::system::collections::generic::list_1::List_1<::unity2::Il2CppString>, i32)` overload"]fn invoke(self,category_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > ,cur_category_idx:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographSelectPauseMenu_UpdateUIObjHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2264540usize)as*mut u8,();
-(PhotographSelectPauseMenu_UpdateUIObjHandler)__receiver,(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(category_list),(i32)::core::convert::Into::into(cur_category_idx))}
+__PhotographSelectPauseMenu_UpdateUIObjHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(category_list), ::core::convert::Into::into(cur_category_idx), ::core::option::Option::None)}
 }
 }
 
@@ -50,6 +62,39 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-photographselectpausemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectPauseMenu_unity2_raw{use super:: * ;
+pub unsafe fn key_left(this:PhotographSelectPauseMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <PhotographSelectPauseMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(PhotographSelectPauseMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:PhotographSelectPauseMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <PhotographSelectPauseMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(PhotographSelectPauseMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn get_name(this:PhotographSelectPauseMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <PhotographSelectPauseMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(PhotographSelectPauseMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-photographselectpausemenu")]impl PhotographSelectPauseMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,update_ui_obj_handler:impl::core::convert::Into<crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2699a10usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)::core::convert::Into::into(update_ui_obj_handler))}
 }
@@ -60,16 +105,13 @@ this}
 (PhotographSelectPauseMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(crate::app::photographselectpausemenu::PhotographSelectPauseMenu_UpdateUIObjHandler)::core::convert::Into::into(update_ui_obj_handler))}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectPauseMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2699db0usize)as*mut u8,();
-(PhotographSelectPauseMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__PhotographSelectPauseMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectPauseMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x269a180usize)as*mut u8,();
-(PhotographSelectPauseMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__PhotographSelectPauseMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectPauseMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x269a550usize)as*mut u8, ::unity2::Il2CppString;
-(PhotographSelectPauseMenu)__receiver)}
+__PhotographSelectPauseMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 }
 

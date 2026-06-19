@@ -15,72 +15,102 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="system-collections-ilist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IList_unity2_raw{use super:: * ;
-pub unsafe fn get_item(this:IList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Item", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_item(this:IList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"get_Item",));
 let inner:extern "C" fn(IList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,index,__mi)}
-pub unsafe fn set_item(this:IList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_Item", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_item(this:IList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"set_Item",));
 let inner:extern "C" fn(IList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,index,value,__mi)}
-pub unsafe fn add(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Add").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Add", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn add(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"Add",));
 let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn contains(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Contains").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Contains", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn contains(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"Contains",));
 let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn clear(this:IList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Clear").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Clear", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn clear(this:IList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"Clear",));
 let inner:extern "C" fn(IList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_is_read_only(this:IList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_IsReadOnly").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_IsReadOnly", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_is_read_only(this:IList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
 let inner:extern "C" fn(IList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn index_of(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IndexOf").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IndexOf", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn index_of(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"IndexOf",));
 let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn insert(this:IList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Insert").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Insert", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn insert(this:IList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"Insert",));
 let inner:extern "C" fn(IList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,index,value,__mi)}
-pub unsafe fn remove(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Remove").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Remove", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn remove(this:IList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"Remove",));
 let inner:extern "C" fn(IList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn remove_at(this:IList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("RemoveAt").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","RemoveAt", <IList as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn remove_at(this:IList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IList as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
 let inner:extern "C" fn(IList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -29,6 +29,22 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Scrollbar_Axis{pub value:i32,}
+impl::unity2::ClassIdentity for Scrollbar_Axis{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Scrollbar.Axis";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Scrollbar_Axis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Scrollbar_Axis{pub fn horizontal()->Self{Self{value:0}
+}
+pub fn vertical()->Self{Self{value:1}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_ScrollEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Scrollbar.ScrollEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<f32>)]pub struct Scrollbar_ScrollEvent{}
 
 
@@ -54,22 +70,6 @@ pub fn top_to_bottom()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/scrollbar/Scrollbar_Axis.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Scrollbar_Axis{pub value:i32,}
-impl::unity2::ClassIdentity for Scrollbar_Axis{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="Scrollbar.Axis";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Scrollbar_Axis{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Scrollbar_Axis{pub fn horizontal()->Self{Self{value:0}
-}
-pub fn vertical()->Self{Self{value:1}
-}
-}
-
 }
 
 #[cfg(feature = "unity_engine-ui-scrollbar-types")]
@@ -91,6 +91,199 @@ pub use __types::*;
  failed to instantiate", ::core::stringify!(Scrollbar_ScrollEvent), ::core::stringify!(new),));
  <Self as IScrollbar_ScrollEventMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="unity_engine-ui-scrollbar")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Scrollbar_unity2_raw{use super:: * ;
+pub unsafe fn set_value_without_notify(this:Scrollbar,input:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"SetValueWithoutNotify",));
+let inner:extern "C" fn(Scrollbar,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,input,__mi)}
+pub unsafe fn rebuild(this:Scrollbar,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let inner:extern "C" fn(Scrollbar,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,executing,__mi)}
+pub unsafe fn layout_complete(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn graphic_update_complete(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"Update",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_rect_transform_dimensions_change(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_begin_drag(this:Scrollbar,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnBeginDrag",));
+let inner:extern "C" fn(Scrollbar,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_drag(this:Scrollbar,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(53usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",53usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnDrag",));
+let inner:extern "C" fn(Scrollbar,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_down(this:Scrollbar,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnPointerDown",));
+let inner:extern "C" fn(Scrollbar,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_up(this:Scrollbar,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnPointerUp",));
+let inner:extern "C" fn(Scrollbar,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_move(this:Scrollbar,event_data:crate::unity_engine::event_systems::axiseventdata::AxisEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnMove",));
+let inner:extern "C" fn(Scrollbar,crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn find_selectable_on_left(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"FindSelectableOnLeft",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn find_selectable_on_right(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"FindSelectableOnRight",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn find_selectable_on_up(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"FindSelectableOnUp",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn find_selectable_on_down(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"FindSelectableOnDown",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_initialize_potential_drag(this:Scrollbar,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",54usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"OnInitializePotentialDrag",));
+let inner:extern "C" fn(Scrollbar,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:Scrollbar,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <Scrollbar as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
+let inner:extern "C" fn(Scrollbar, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-ui-scrollbar")]pub trait IScrollbarMethods:IScrollbar{#[doc="`get_handleRect()` overload"]fn get_handle_rect(self,)->crate::unity_engine::recttransform::RectTransform{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -122,8 +315,7 @@ this}
 (Scrollbar)__receiver,(f32)::core::convert::Into::into(value))}
 }
 #[doc="`SetValueWithoutNotify(f32)` overload"]fn set_value_without_notify(self,input:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3729b90usize)as*mut u8,();
-(Scrollbar)__receiver,(f32)::core::convert::Into::into(input))}
+__Scrollbar_unity2_raw::set_value_without_notify(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
 }
 #[doc="`get_size()` overload"]fn get_size(self,)->f32{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3729ba0usize)as*mut u8,f32;
@@ -154,28 +346,22 @@ this}
 (Scrollbar)__receiver)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,executing:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3729ca0usize)as*mut u8,();
-(Scrollbar)__receiver,(crate::unity_engine::ui::canvasupdate::CanvasUpdate)::core::convert::Into::into(executing))}
+__Scrollbar_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(executing), ::core::option::Option::None)}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3729cb0usize)as*mut u8,();
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3729cc0usize)as*mut u8,();
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3729cd0usize)as*mut u8,();
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372a000usize)as*mut u8,();
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372a1a0usize)as*mut u8,();
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateCachedReferences()` overload"]fn update_cached_references(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x37292d0usize)as*mut u8,();
@@ -186,8 +372,7 @@ this}
 (Scrollbar)__receiver,(f32)::core::convert::Into::into(input),(bool)::core::convert::Into::into(send_callback))}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372a1c0usize)as*mut u8,();
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_axis()` overload"]fn get_axis(self,)->crate::unity_engine::ui::scrollbar::Scrollbar_Axis{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372a210usize)as*mut u8,crate::unity_engine::ui::scrollbar::Scrollbar_Axis;
@@ -214,16 +399,13 @@ this}
 (Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
 }
 #[doc="`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_begin_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372a670usize)as*mut u8,();
-(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Scrollbar_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372a900usize)as*mut u8,();
-(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Scrollbar_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372a9d0usize)as*mut u8,();
-(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Scrollbar_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`ClickRepeat(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn click_repeat(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372add0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
@@ -234,40 +416,32 @@ this}
 (Scrollbar)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(screen_position),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera))}
 }
 #[doc="`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_up(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372aee0usize)as*mut u8,();
-(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Scrollbar_unity2_raw::on_pointer_up(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b070usize)as*mut u8,();
-(Scrollbar)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data))}
+__Scrollbar_unity2_raw::on_move(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`FindSelectableOnLeft()` overload"]fn find_selectable_on_left(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b560usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::find_selectable_on_left(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FindSelectableOnRight()` overload"]fn find_selectable_on_right(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b640usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::find_selectable_on_right(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FindSelectableOnUp()` overload"]fn find_selectable_on_up(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b720usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::find_selectable_on_up(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FindSelectableOnDown()` overload"]fn find_selectable_on_down(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b800usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::find_selectable_on_down(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnInitializePotentialDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_initialize_potential_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b8e0usize)as*mut u8,();
-(Scrollbar)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Scrollbar_unity2_raw::on_initialize_potential_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`SetDirection(crate::unity_engine::ui::scrollbar::Scrollbar_Direction, bool)` overload"]fn set_direction_2(self,direction:impl::core::convert::Into<crate::unity_engine::ui::scrollbar::Scrollbar_Direction> ,include_rect_layouts:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372b8f0usize)as*mut u8,();
 (Scrollbar)__receiver,(crate::unity_engine::ui::scrollbar::Scrollbar_Direction)::core::convert::Into::into(direction),(bool)::core::convert::Into::into(include_rect_layouts))}
 }
 #[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Scrollbar as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372bae0usize)as*mut u8,crate::unity_engine::transform::Transform;
-(Scrollbar)__receiver)}
+__Scrollbar_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -329,6 +503,7 @@ this}
 #[cfg(feature = "unity_engine-ui-scrollbar")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Scrollbar_Axis;
     pub use super::Scrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEvent;
     pub use super::IScrollbar_ScrollEventMethods;
@@ -336,7 +511,6 @@ pub mod prelude {
     pub use super::IScrollbar;
     pub use super::IScrollbarMethods;
     pub use super::Scrollbar_Direction;
-    pub use super::Scrollbar_Axis;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

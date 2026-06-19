@@ -15,72 +15,102 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="system-collections-idictionary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDictionary_unity2_raw{use super:: * ;
-pub unsafe fn get_item(this:IDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Item", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_item(this:IDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"get_Item",));
 let inner:extern "C" fn(IDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,key,__mi)}
-pub unsafe fn set_item(this:IDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_Item", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_item(this:IDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"set_Item",));
 let inner:extern "C" fn(IDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,key,value,__mi)}
-pub unsafe fn get_keys(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Keys").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Keys", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_keys(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"get_Keys",));
 let inner:extern "C" fn(IDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_values(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Values").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Values", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_values(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"get_Values",));
 let inner:extern "C" fn(IDictionary, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn contains(this:IDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Contains").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Contains", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn contains(this:IDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"Contains",));
 let inner:extern "C" fn(IDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,key,__mi)}
-pub unsafe fn add(this:IDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Add").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Add", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn add(this:IDictionary,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
 let inner:extern "C" fn(IDictionary,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,key,value,__mi)}
-pub unsafe fn get_is_read_only(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_IsReadOnly").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_IsReadOnly", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_is_read_only(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
 let inner:extern "C" fn(IDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_is_fixed_size(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_IsFixedSize").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_IsFixedSize", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_is_fixed_size(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
 let inner:extern "C" fn(IDictionary, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_enumerator(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetEnumerator").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetEnumerator", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_enumerator(this:IDictionary,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
 let inner:extern "C" fn(IDictionary, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn remove(this:IDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Remove").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Remove", <IDictionary as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn remove(this:IDictionary,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IDictionary as::unity2::ClassIdentity> ::NAME,"Remove",));
 let inner:extern "C" fn(IDictionary,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

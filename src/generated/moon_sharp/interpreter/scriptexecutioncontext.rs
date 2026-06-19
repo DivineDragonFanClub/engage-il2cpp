@@ -217,16 +217,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ScriptExecutionContext as::unity2::ClassIdentity> ::NAME,"PerformMessageDecorationBeforeUnwind",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_owner_script{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ScriptExecutionContext as::unity2::ClassIdentity> ::class(),"get_OwnerScript",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ScriptExecutionContext as::unity2::ClassIdentity> ::NAME,"get_OwnerScript",e),}
-}
-}
+pub unsafe fn get_owner_script(this:ScriptExecutionContext,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ScriptExecutionContext as::unity2::ClassIdentity> ::NAME,"get_OwnerScript",));
+let inner:extern "C" fn(ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::script::Script= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-scriptexecutioncontext")]pub trait IScriptExecutionContextMethods:IScriptExecutionContext{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::vm::processor::Processor, crate::moon_sharp::interpreter::callbackfunction::CallbackFunction, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, bool)` overload"]fn ctor(self,p:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::processor::Processor> ,call_back_function:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackfunction::CallbackFunction> ,source_ref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,is_dynamic:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptExecutionContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -310,8 +310,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ScriptExecutionContext)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(message_handler),(crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException)::core::convert::Into::into(exception))}
 }
 #[doc="`get_OwnerScript()` overload"]fn get_owner_script(self,)->crate::moon_sharp::interpreter::script::Script{unsafe{let __receiver= <ScriptExecutionContext as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ScriptExecutionContext_unity2_raw::__lookup_get_owner_script::get_method_info().method_ptr,crate::moon_sharp::interpreter::script::Script;
-(ScriptExecutionContext)__receiver)}
+__ScriptExecutionContext_unity2_raw::get_owner_script(__receiver, ::core::option::Option::None)}
 }
 }
 

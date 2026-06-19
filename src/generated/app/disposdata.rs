@@ -25,6 +25,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_Item.md"))]#[::unity2::class(namespace="App",name="DisposData.Item")]#[parent(crate::system::object::Object)]pub struct DisposData_Item{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DisposData_State{pub value:i32,}
 impl::unity2::ClassIdentity for DisposData_State{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DisposData.State";
@@ -43,7 +46,40 @@ pub fn keep()->Self{Self{value: -1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData.md"))]#[::unity2::class(namespace="App",name="DisposData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::disposdata::DisposData>)]pub struct DisposData{#[static_field]#[rename(name="ITEM_COUNT")]pub item_count:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_AIFlagField.md"))]#[::unity2::class(namespace="App",name="DisposData.AIFlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::disposdata::DisposData_AIFlags>)]pub struct DisposData_AIFlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_FlagField.md"))]#[::unity2::class(namespace="App",name="DisposData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::disposdata::DisposData_Flags>)]pub struct DisposData_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_Directions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DisposData_Directions{pub value:i32,}
+impl::unity2::ClassIdentity for DisposData_Directions{const NAMESPACE: &'static str="App";
+const NAME: &'static str="DisposData.Directions";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for DisposData_Directions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl DisposData_Directions{pub fn none()->Self{Self{value:0}
+}
+pub fn up()->Self{Self{value:1}
+}
+pub fn upper_right()->Self{Self{value:2}
+}
+pub fn right()->Self{Self{value:3}
+}
+pub fn lower_right()->Self{Self{value:4}
+}
+pub fn down()->Self{Self{value:5}
+}
+pub fn lower_left()->Self{Self{value:6}
+}
+pub fn left()->Self{Self{value:7}
+}
+pub fn upper_left()->Self{Self{value:8}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_AIFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DisposData_AIFlags{pub value:i32,}
@@ -74,6 +110,9 @@ pub fn move_break()->Self{Self{value:128}
 pub fn engage_attack_once()->Self{Self{value:256}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData.md"))]#[::unity2::class(namespace="App",name="DisposData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::disposdata::DisposData>)]pub struct DisposData{#[static_field]#[rename(name="ITEM_COUNT")]pub item_count:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DisposData_Flags{pub value:i32,}
@@ -113,49 +152,161 @@ pub fn mask_difficulty()->Self{Self{value:7}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_Item.md"))]#[::unity2::class(namespace="App",name="DisposData.Item")]#[parent(crate::system::object::Object)]pub struct DisposData_Item{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_FlagField.md"))]#[::unity2::class(namespace="App",name="DisposData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::disposdata::DisposData_Flags>)]pub struct DisposData_FlagField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_AIFlagField.md"))]#[::unity2::class(namespace="App",name="DisposData.AIFlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::disposdata::DisposData_AIFlags>)]pub struct DisposData_AIFlagField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/disposdata/DisposData_Directions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DisposData_Directions{pub value:i32,}
-impl::unity2::ClassIdentity for DisposData_Directions{const NAMESPACE: &'static str="App";
-const NAME: &'static str="DisposData.Directions";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for DisposData_Directions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl DisposData_Directions{pub fn none()->Self{Self{value:0}
-}
-pub fn up()->Self{Self{value:1}
-}
-pub fn upper_right()->Self{Self{value:2}
-}
-pub fn right()->Self{Self{value:3}
-}
-pub fn lower_right()->Self{Self{value:4}
-}
-pub fn down()->Self{Self{value:5}
-}
-pub fn lower_left()->Self{Self{value:6}
-}
-pub fn left()->Self{Self{value:7}
-}
-pub fn upper_left()->Self{Self{value:8}
-}
-}
-
 }
 
 #[cfg(feature = "app-disposdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-disposdata")]pub trait IDisposData_ItemMethods:IDisposData_Item{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3dc0usize)as*mut u8, ::unity2::Il2CppString;
+(DisposData_Item)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3dd0usize)as*mut u8,();
+(DisposData_Item)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`get_Drop()` overload"]fn get_drop(self,)->i32{unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3de0usize)as*mut u8,i32;
+(DisposData_Item)__receiver)}
+}
+#[doc="`set_Drop(i32)` overload"]fn set_drop(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3df0usize)as*mut u8,();
+(DisposData_Item)__receiver,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3e00usize)as*mut u8,();
+(DisposData_Item)__receiver)}
+}
+}
+
+#[cfg(feature="app-disposdata")]impl<__T:IDisposData_Item>IDisposData_ItemMethods for __T{}
+
+#[cfg(feature="app-disposdata")]impl DisposData_Item{pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_drop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_drop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-disposdata")]impl DisposData_Item{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisposData_Item), ::core::stringify!(new),));
+ <Self as IDisposData_ItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-disposdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DisposData_AIFlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:DisposData_AIFlagField,value:crate::app::disposdata::DisposData_AIFlags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DisposData_AIFlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(DisposData_AIFlagField,crate::app::disposdata::DisposData_AIFlags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-disposdata")]pub trait IDisposData_AIFlagFieldMethods:IDisposData_AIFlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DisposData_AIFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3c20usize)as*mut u8,();
+(DisposData_AIFlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::disposdata::DisposData_AIFlags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::disposdata::DisposData_AIFlags>)->(){unsafe{let __receiver= <DisposData_AIFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3c80usize)as*mut u8,();
+(DisposData_AIFlagField)__receiver,(crate::app::disposdata::DisposData_AIFlags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::disposdata::DisposData_AIFlags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::disposdata::DisposData_AIFlags>)->i32{unsafe{let __receiver= <DisposData_AIFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DisposData_AIFlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-disposdata")]impl<__T:IDisposData_AIFlagField>IDisposData_AIFlagFieldMethods for __T{}
+
+#[cfg(feature="app-disposdata")]impl DisposData_AIFlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-disposdata")]impl DisposData_AIFlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisposData_AIFlagField), ::core::stringify!(new),));
+ <Self as IDisposData_AIFlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::disposdata::DisposData_AIFlags)` — overload selector"]pub fn new_2(f:crate::app::disposdata::DisposData_AIFlags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisposData_AIFlagField), ::core::stringify!(new_2),));
+ <Self as IDisposData_AIFlagFieldMethods> ::ctor_2(this,f);
+this}
+}
+
+#[cfg(feature="app-disposdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DisposData_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:DisposData_FlagField,value:crate::app::disposdata::DisposData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DisposData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(DisposData_FlagField,crate::app::disposdata::DisposData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-disposdata")]pub trait IDisposData_FlagFieldMethods:IDisposData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DisposData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3cf0usize)as*mut u8,();
+(DisposData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::disposdata::DisposData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::disposdata::DisposData_Flags>)->(){unsafe{let __receiver= <DisposData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3d50usize)as*mut u8,();
+(DisposData_FlagField)__receiver,(crate::app::disposdata::DisposData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::disposdata::DisposData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::disposdata::DisposData_Flags>)->i32{unsafe{let __receiver= <DisposData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DisposData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-disposdata")]impl<__T:IDisposData_FlagField>IDisposData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-disposdata")]impl DisposData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-disposdata")]impl DisposData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisposData_FlagField), ::core::stringify!(new),));
+ <Self as IDisposData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::disposdata::DisposData_Flags)` — overload selector"]pub fn new_2(f:crate::app::disposdata::DisposData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DisposData_FlagField), ::core::stringify!(new_2),));
+ <Self as IDisposData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
+
+#[cfg(feature="app-disposdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DisposData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:DisposData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DisposData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(DisposData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_release(this:DisposData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DisposData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let inner:extern "C" fn(DisposData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-disposdata")]impl DisposData{#[doc="`Load(::unity2::Il2CppString)` overload"]pub fn load(file_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1cfa150usize)as*mut u8,();
 (::unity2::Il2CppString)::core::convert::Into::into(file_name))}
@@ -642,12 +793,10 @@ __f(::core::convert::Into::into(id), ::core::option::Option::Some(__mi_opaque),)
 (DisposData)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <DisposData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfb9c0usize)as*mut u8,();
-(DisposData)__receiver)}
+__DisposData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <DisposData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfbac0usize)as*mut u8,();
-(DisposData)__receiver)}
+__DisposData_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DbgValidateState()` overload"]fn dbg_validate_state(self,)->(){unsafe{let __receiver= <DisposData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfbad0usize)as*mut u8,();
@@ -785,129 +934,25 @@ pub fn dbg_validate_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 this}
 }
 
-#[cfg(feature="app-disposdata")]pub trait IDisposData_ItemMethods:IDisposData_Item{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3dc0usize)as*mut u8, ::unity2::Il2CppString;
-(DisposData_Item)__receiver)}
-}
-#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3dd0usize)as*mut u8,();
-(DisposData_Item)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`get_Drop()` overload"]fn get_drop(self,)->i32{unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3de0usize)as*mut u8,i32;
-(DisposData_Item)__receiver)}
-}
-#[doc="`set_Drop(i32)` overload"]fn set_drop(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3df0usize)as*mut u8,();
-(DisposData_Item)__receiver,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DisposData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3e00usize)as*mut u8,();
-(DisposData_Item)__receiver)}
-}
-}
-
-#[cfg(feature="app-disposdata")]impl<__T:IDisposData_Item>IDisposData_ItemMethods for __T{}
-
-#[cfg(feature="app-disposdata")]impl DisposData_Item{pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_drop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_drop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-disposdata")]impl DisposData_Item{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DisposData_Item), ::core::stringify!(new),));
- <Self as IDisposData_ItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-disposdata")]pub trait IDisposData_FlagFieldMethods:IDisposData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DisposData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3cf0usize)as*mut u8,();
-(DisposData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor(crate::app::disposdata::DisposData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::disposdata::DisposData_Flags>)->(){unsafe{let __receiver= <DisposData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3d50usize)as*mut u8,();
-(DisposData_FlagField)__receiver,(crate::app::disposdata::DisposData_Flags)::core::convert::Into::into(f))}
-}
-#[doc="`ToInt(crate::app::disposdata::DisposData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::disposdata::DisposData_Flags>)->i32{unsafe{let __receiver= <DisposData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3db0usize)as*mut u8,i32;
-(DisposData_FlagField)__receiver,(crate::app::disposdata::DisposData_Flags)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-disposdata")]impl<__T:IDisposData_FlagField>IDisposData_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-disposdata")]impl DisposData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-disposdata")]impl DisposData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DisposData_FlagField), ::core::stringify!(new),));
- <Self as IDisposData_FlagFieldMethods> ::ctor(this,f);
-this}
-#[doc="`.ctor(crate::app::disposdata::DisposData_Flags)` — overload selector"]pub fn new_2(f:crate::app::disposdata::DisposData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DisposData_FlagField), ::core::stringify!(new_2),));
- <Self as IDisposData_FlagFieldMethods> ::ctor_2(this,f);
-this}
-}
-
-#[cfg(feature="app-disposdata")]pub trait IDisposData_AIFlagFieldMethods:IDisposData_AIFlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DisposData_AIFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3c20usize)as*mut u8,();
-(DisposData_AIFlagField)__receiver,(i32)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor(crate::app::disposdata::DisposData_AIFlags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::disposdata::DisposData_AIFlags>)->(){unsafe{let __receiver= <DisposData_AIFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3c80usize)as*mut u8,();
-(DisposData_AIFlagField)__receiver,(crate::app::disposdata::DisposData_AIFlags)::core::convert::Into::into(f))}
-}
-#[doc="`ToInt(crate::app::disposdata::DisposData_AIFlags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::disposdata::DisposData_AIFlags>)->i32{unsafe{let __receiver= <DisposData_AIFlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd3ce0usize)as*mut u8,i32;
-(DisposData_AIFlagField)__receiver,(crate::app::disposdata::DisposData_AIFlags)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-disposdata")]impl<__T:IDisposData_AIFlagField>IDisposData_AIFlagFieldMethods for __T{}
-
-#[cfg(feature="app-disposdata")]impl DisposData_AIFlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-disposdata")]impl DisposData_AIFlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DisposData_AIFlagField), ::core::stringify!(new),));
- <Self as IDisposData_AIFlagFieldMethods> ::ctor(this,f);
-this}
-#[doc="`.ctor(crate::app::disposdata::DisposData_AIFlags)` — overload selector"]pub fn new_2(f:crate::app::disposdata::DisposData_AIFlags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DisposData_AIFlagField), ::core::stringify!(new_2),));
- <Self as IDisposData_AIFlagFieldMethods> ::ctor_2(this,f);
-this}
-}
-
 #[cfg(feature = "app-disposdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DisposData_State;
-    pub use super::DisposData;
-    pub use super::IDisposData;
-    pub use super::IDisposDataMethods;
-    pub use super::DisposData_AIFlags;
-    pub use super::DisposData_Flags;
     pub use super::DisposData_Item;
     pub use super::IDisposData_Item;
     pub use super::IDisposData_ItemMethods;
-    pub use super::DisposData_FlagField;
-    pub use super::IDisposData_FlagField;
-    pub use super::IDisposData_FlagFieldMethods;
+    pub use super::DisposData_State;
     pub use super::DisposData_AIFlagField;
     pub use super::IDisposData_AIFlagField;
     pub use super::IDisposData_AIFlagFieldMethods;
+    pub use super::DisposData_FlagField;
+    pub use super::IDisposData_FlagField;
+    pub use super::IDisposData_FlagFieldMethods;
     pub use super::DisposData_Directions;
+    pub use super::DisposData_AIFlags;
+    pub use super::DisposData;
+    pub use super::IDisposData;
+    pub use super::IDisposDataMethods;
+    pub use super::DisposData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

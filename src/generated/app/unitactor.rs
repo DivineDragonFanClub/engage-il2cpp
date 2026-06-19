@@ -27,10 +27,22 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactor/UnitActor_StatusField.md"))]#[::unity2::class(namespace="App",name="UnitActor.StatusField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::unitactor::UnitActor_Status>)]pub struct UnitActor_StatusField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactor/UnitActor.md"))]#[::unity2::class(namespace="App",name="UnitActor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitActor{#[offset(24)]#[rename(name="m_Models")]pub m_models:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_UnitModel")]pub m_unit_model:crate::app::unitmodel::UnitModel, #[offset(40)]#[rename(name="m_GodModel")]pub m_god_model:crate::app::unitmodel::UnitModel, #[offset(48)]#[rename(name="m_Effect")]pub m_effect:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(64)]#[rename(name="m_Status")]pub m_status:crate::app::unitactor::UnitActor_StatusField, #[offset(72)]#[rename(name="m_Binder")]pub m_binder:crate::app::bindholder::BindHolder, #[offset(80)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="m_Rotation")]pub m_rotation:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(104)]#[rename(name="m_SlopeRotation")]pub m_slope_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(120)]#[rename(name="m_SlopeOffset")]pub m_slope_offset:crate::unity_engine::vector3::Vector3, #[offset(136)]#[rename(name="m_Moving")]pub m_moving:crate::app::interpolatorvector3::InterpolatorVector3, #[static_field]#[rename(name="SHAKE_COUNT")]pub shake_count:i32, #[offset(144)]#[rename(name="m_ShakeCount")]pub m_shake_count:i32, #[offset(148)]#[rename(name="m_ShakeScale")]pub m_shake_scale:f32, #[offset(152)]#[rename(name="m_ShakeOffset")]pub m_shake_offset:crate::unity_engine::vector3::Vector3,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactor/UnitActor_ViewMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitActor_ViewMode{pub value:i32,}
+impl::unity2::ClassIdentity for UnitActor_ViewMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitActor.ViewMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for UnitActor_ViewMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl UnitActor_ViewMode{pub fn none()->Self{Self{value:0}
+}
+pub fn hide()->Self{Self{value:1}
+}
+pub fn show()->Self{Self{value:2}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactor/UnitActor_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitActor_Status{pub value:i32,}
@@ -61,50 +73,15 @@ pub fn has_effect()->Self{Self{value:128}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactor/UnitActor_ViewMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitActor_ViewMode{pub value:i32,}
-impl::unity2::ClassIdentity for UnitActor_ViewMode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="UnitActor.ViewMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for UnitActor_ViewMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl UnitActor_ViewMode{pub fn none()->Self{Self{value:0}
-}
-pub fn hide()->Self{Self{value:1}
-}
-pub fn show()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactor/UnitActor.md"))]#[::unity2::class(namespace="App",name="UnitActor")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitActor{#[offset(24)]#[rename(name="m_Models")]pub m_models:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_UnitModel")]pub m_unit_model:crate::app::unitmodel::UnitModel, #[offset(40)]#[rename(name="m_GodModel")]pub m_god_model:crate::app::unitmodel::UnitModel, #[offset(48)]#[rename(name="m_Effect")]pub m_effect:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(64)]#[rename(name="m_Status")]pub m_status:crate::app::unitactor::UnitActor_StatusField, #[offset(72)]#[rename(name="m_Binder")]pub m_binder:crate::app::bindholder::BindHolder, #[offset(80)]#[rename(name="m_Position")]pub m_position:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="m_Rotation")]pub m_rotation:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(104)]#[rename(name="m_SlopeRotation")]pub m_slope_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(120)]#[rename(name="m_SlopeOffset")]pub m_slope_offset:crate::unity_engine::vector3::Vector3, #[offset(136)]#[rename(name="m_Moving")]pub m_moving:crate::app::interpolatorvector3::InterpolatorVector3, #[static_field]#[rename(name="SHAKE_COUNT")]pub shake_count:i32, #[offset(144)]#[rename(name="m_ShakeCount")]pub m_shake_count:i32, #[offset(148)]#[rename(name="m_ShakeScale")]pub m_shake_scale:f32, #[offset(152)]#[rename(name="m_ShakeOffset")]pub m_shake_offset:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitactor/UnitActor_StatusField.md"))]#[::unity2::class(namespace="App",name="UnitActor.StatusField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::unitactor::UnitActor_Status>)]pub struct UnitActor_StatusField{}
 
 }
 
 #[cfg(feature = "app-unitactor-types")]
 pub use __types::*;
-
-#[cfg(feature="app-unitactor")]pub trait IUnitActor_StatusFieldMethods:IUnitActor_StatusField{#[doc="`ToInt(crate::app::unitactor::UnitActor_Status)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::unitactor::UnitActor_Status>)->i32{unsafe{let __receiver= <UnitActor_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44840usize)as*mut u8,i32;
-(UnitActor_StatusField)__receiver,(crate::app::unitactor::UnitActor_Status)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitActor_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44850usize)as*mut u8,();
-(UnitActor_StatusField)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitactor")]impl<__T:IUnitActor_StatusField>IUnitActor_StatusFieldMethods for __T{}
-
-#[cfg(feature="app-unitactor")]impl UnitActor_StatusField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-unitactor")]impl UnitActor_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitActor_StatusField), ::core::stringify!(new),));
- <Self as IUnitActor_StatusFieldMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-unitactor")]impl UnitActor{#[doc="`GetAssetMode()` overload"]pub fn get_asset_mode()->crate::app::assettable::AssetTable_Modes{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f64770usize)as*mut u8,crate::app::assettable::AssetTable_Modes;
 )}
@@ -663,17 +640,52 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-unitactor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitActor_StatusField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:UnitActor_StatusField,value:crate::app::unitactor::UnitActor_Status,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <UnitActor_StatusField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(UnitActor_StatusField,crate::app::unitactor::UnitActor_Status, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-unitactor")]pub trait IUnitActor_StatusFieldMethods:IUnitActor_StatusField{#[doc="`ToInt(crate::app::unitactor::UnitActor_Status)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::unitactor::UnitActor_Status>)->i32{unsafe{let __receiver= <UnitActor_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__UnitActor_StatusField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitActor_StatusField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b44850usize)as*mut u8,();
+(UnitActor_StatusField)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitactor")]impl<__T:IUnitActor_StatusField>IUnitActor_StatusFieldMethods for __T{}
+
+#[cfg(feature="app-unitactor")]impl UnitActor_StatusField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-unitactor")]impl UnitActor_StatusField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitActor_StatusField), ::core::stringify!(new),));
+ <Self as IUnitActor_StatusFieldMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-unitactor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::UnitActor_StatusField;
-    pub use super::IUnitActor_StatusField;
-    pub use super::IUnitActor_StatusFieldMethods;
+    pub use super::UnitActor_ViewMode;
+    pub use super::UnitActor_Status;
     pub use super::UnitActor;
     pub use super::IUnitActor;
     pub use super::IUnitActorMethods;
-    pub use super::UnitActor_Status;
-    pub use super::UnitActor_ViewMode;
+    pub use super::UnitActor_StatusField;
+    pub use super::IUnitActor_StatusField;
+    pub use super::IUnitActor_StatusFieldMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

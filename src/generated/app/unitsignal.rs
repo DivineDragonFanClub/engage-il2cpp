@@ -440,13 +440,25 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-unitsignal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSignal_Func_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:UnitSignal_Func,signal:crate::app::unitsignal::UnitSignal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <UnitSignal_Func as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(UnitSignal_Func,crate::app::unitsignal::UnitSignal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,signal,__mi)}
+}
+
 #[cfg(feature="app-unitsignal")]pub trait IUnitSignal_FuncMethods:IUnitSignal_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <UnitSignal_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b57d50usize)as*mut u8,();
 (UnitSignal_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::unitsignal::UnitSignal)` overload"]fn invoke(self,signal:impl::core::convert::Into<crate::app::unitsignal::UnitSignal>)->(){unsafe{let __receiver= <UnitSignal_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b57d70usize)as*mut u8,();
-(UnitSignal_Func)__receiver,(crate::app::unitsignal::UnitSignal)::core::convert::Into::into(signal))}
+__UnitSignal_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(signal), ::core::option::Option::None)}
 }
 }
 

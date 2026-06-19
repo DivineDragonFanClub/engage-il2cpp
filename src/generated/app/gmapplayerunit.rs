@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapplayerunit/GmapPlayerUnit.md"))]#[::unity2::class(namespace="App",name="GmapPlayerUnit")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gmapplayerunit::GmapPlayerUnit>)]pub struct GmapPlayerUnit{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(40)]#[rename(name="ShipPrefabPath")]pub ship_prefab_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Ship")]pub m_ship:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="ColliderPrefabPath")]pub collider_prefab_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="TeleportInEffect")]pub teleport_in_effect: ::unity2::Il2CppString, #[offset(72)]#[rename(name="TeleportOutEffect")]pub teleport_out_effect: ::unity2::Il2CppString, #[offset(80)]#[rename(name="m_Rotation")]pub m_rotation:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(96)]#[rename(name="m_GroundObjectNames")]pub m_ground_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(104)]#[rename(name="SeaObjectNames")]pub sea_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(112)]#[rename(name="IgnoreObjectNames")]pub ignore_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="PositionDelta")]pub position_delta:crate::unity_engine::vector3::Vector3,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapplayerunit/GmapPlayerUnit_ModelType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GmapPlayerUnit_ModelType{pub value:i32,}
 impl::unity2::ClassIdentity for GmapPlayerUnit_ModelType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GmapPlayerUnit.ModelType";
@@ -30,13 +33,33 @@ pub fn ship()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmapplayerunit/GmapPlayerUnit.md"))]#[::unity2::class(namespace="App",name="GmapPlayerUnit")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gmapplayerunit::GmapPlayerUnit>)]pub struct GmapPlayerUnit{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(40)]#[rename(name="ShipPrefabPath")]pub ship_prefab_path: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_Ship")]pub m_ship:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="ColliderPrefabPath")]pub collider_prefab_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="TeleportInEffect")]pub teleport_in_effect: ::unity2::Il2CppString, #[offset(72)]#[rename(name="TeleportOutEffect")]pub teleport_out_effect: ::unity2::Il2CppString, #[offset(80)]#[rename(name="m_Rotation")]pub m_rotation:crate::app::interpolatorrotation::InterpolatorRotation, #[offset(96)]#[rename(name="m_GroundObjectNames")]pub m_ground_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(104)]#[rename(name="SeaObjectNames")]pub sea_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(112)]#[rename(name="IgnoreObjectNames")]pub ignore_object_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="PositionDelta")]pub position_delta:crate::unity_engine::vector3::Vector3,}
-
 }
 
 #[cfg(feature = "app-gmapplayerunit-types")]
 pub use __types::*;
+
+#[cfg(feature="app-gmapplayerunit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GmapPlayerUnit_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:GmapPlayerUnit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GmapPlayerUnit as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(GmapPlayerUnit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_tick(this:GmapPlayerUnit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GmapPlayerUnit as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(GmapPlayerUnit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-gmapplayerunit")]impl GmapPlayerUnit{#[doc="`GetAngleLength(f32, f32)` overload"]pub fn get_angle_length(current:impl::core::convert::Into<f32> ,target:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2b38430usize)as*mut u8,f32;
 (f32)::core::convert::Into::into(current),(f32)::core::convert::Into::into(target))}
@@ -56,12 +79,10 @@ pub use __types::*;
 (GmapPlayerUnit)__receiver,(crate::app::gmapplayerunit::GmapPlayerUnit_ModelType)::core::convert::Into::into(value))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37420usize)as*mut u8,();
-(GmapPlayerUnit)__receiver)}
+__GmapPlayerUnit_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37510usize)as*mut u8,();
-(GmapPlayerUnit)__receiver)}
+__GmapPlayerUnit_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateRotation()` overload"]fn update_rotation(self,)->(){unsafe{let __receiver= <GmapPlayerUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2b37990usize)as*mut u8,();
@@ -210,10 +231,10 @@ this}
 #[cfg(feature = "app-gmapplayerunit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GmapPlayerUnit_ModelType;
     pub use super::GmapPlayerUnit;
     pub use super::IGmapPlayerUnit;
     pub use super::IGmapPlayerUnitMethods;
+    pub use super::GmapPlayerUnit_ModelType;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

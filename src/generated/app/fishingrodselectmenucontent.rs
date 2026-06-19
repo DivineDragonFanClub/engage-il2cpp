@@ -26,6 +26,89 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-fishingrodselectmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-fishingrodselectmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FishingRodSelectMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn is_opening(this:FishingRodSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"IsOpening",));
+let inner:extern "C" fn(FishingRodSelectMenuContent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_closing(this:FishingRodSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"IsClosing",));
+let inner:extern "C" fn(FishingRodSelectMenuContent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_closed(this:FishingRodSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"IsClosed",));
+let inner:extern "C" fn(FishingRodSelectMenuContent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn after_build(this:FishingRodSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(FishingRodSelectMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:FishingRodSelectMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(FishingRodSelectMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn get_menu_item_content_max(this:FishingRodSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"GetMenuItemContentMax",));
+let inner:extern "C" fn(FishingRodSelectMenuContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_w(this:FishingRodSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(FishingRodSelectMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:FishingRodSelectMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <FishingRodSelectMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(FishingRodSelectMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-fishingrodselectmenucontent")]impl FishingRodSelectMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2609bb0usize)as*mut u8,();
 )}
 }
@@ -44,36 +127,28 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-fishingrodselectmenucontent")]pub trait IFishingRodSelectMenuContentMethods:IFishingRodSelectMenuContent{#[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26099a0usize)as*mut u8,bool;
-(FishingRodSelectMenuContent)__receiver)}
+__FishingRodSelectMenuContent_unity2_raw::is_opening(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2609a50usize)as*mut u8,bool;
-(FishingRodSelectMenuContent)__receiver)}
+__FishingRodSelectMenuContent_unity2_raw::is_closing(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2609b00usize)as*mut u8,bool;
-(FishingRodSelectMenuContent)__receiver)}
+__FishingRodSelectMenuContent_unity2_raw::is_closed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2609d50usize)as*mut u8,();
-(FishingRodSelectMenuContent)__receiver)}
+__FishingRodSelectMenuContent_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2609d80usize)as*mut u8,f32;
-(FishingRodSelectMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__FishingRodSelectMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2609ef0usize)as*mut u8,i32;
-(FishingRodSelectMenuContent)__receiver)}
+__FishingRodSelectMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2609f10usize)as*mut u8,f32;
-(FishingRodSelectMenuContent)__receiver)}
+__FishingRodSelectMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2609f80usize)as*mut u8,f32;
-(FishingRodSelectMenuContent)__receiver)}
+__FishingRodSelectMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FishingRodSelectMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2609ff0usize)as*mut u8,();

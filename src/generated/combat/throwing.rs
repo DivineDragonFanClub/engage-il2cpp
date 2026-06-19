@@ -26,17 +26,57 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-throwing-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-throwing")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Throwing_unity2_raw{use super:: * ;
+pub unsafe fn on_character_setup(this:Throwing,owner:crate::combat::character::Character,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Throwing as::unity2::ClassIdentity> ::NAME,"OnCharacterSetup",));
+let inner:extern "C" fn(Throwing,crate::combat::character::Character, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,owner,__mi)}
+pub unsafe fn on_enter_attack(this:Throwing,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Throwing as::unity2::ClassIdentity> ::NAME,"OnEnterAttack",));
+let inner:extern "C" fn(Throwing, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_hit_time_predicted(this:Throwing,world_hit_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Throwing as::unity2::ClassIdentity> ::NAME,"OnHitTimePredicted",));
+let inner:extern "C" fn(Throwing,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,world_hit_time,__mi)}
+pub unsafe fn recalc_flying_time(this:Throwing,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Throwing as::unity2::ClassIdentity> ::NAME,"RecalcFlyingTime",));
+let inner:extern "C" fn(Throwing, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-throwing")]pub trait IThrowingMethods:IThrowing{#[doc="`OnCharacterSetup(crate::combat::character::Character)` overload"]fn on_character_setup(self,owner:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <Throwing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea710usize)as*mut u8,();
-(Throwing)__receiver,(crate::combat::character::Character)::core::convert::Into::into(owner))}
+__Throwing_unity2_raw::on_character_setup(__receiver, ::core::convert::Into::into(owner), ::core::option::Option::None)}
 }
 #[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <Throwing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea940usize)as*mut u8,();
-(Throwing)__receiver)}
+__Throwing_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnHitTimePredicted(f32)` overload"]fn on_hit_time_predicted(self,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <Throwing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ea950usize)as*mut u8,();
-(Throwing)__receiver,(f32)::core::convert::Into::into(world_hit_time))}
+__Throwing_unity2_raw::on_hit_time_predicted(__receiver, ::core::convert::Into::into(world_hit_time), ::core::option::Option::None)}
 }
 #[doc="`OnReached()` overload"]fn on_reached(self,)->(){unsafe{let __receiver= <Throwing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21eafa0usize)as*mut u8,();
@@ -71,8 +111,7 @@ pub use __types::*;
 (Throwing)__receiver,(crate::combat::character::Character)::core::convert::Into::into(enemy),(i32)::core::convert::Into::into(knockoff_attack))}
 }
 #[doc="`RecalcFlyingTime()` overload"]fn recalc_flying_time(self,)->(){unsafe{let __receiver= <Throwing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21eba00usize)as*mut u8,();
-(Throwing)__receiver)}
+__Throwing_unity2_raw::recalc_flying_time(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Throwing as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ebc60usize)as*mut u8,();

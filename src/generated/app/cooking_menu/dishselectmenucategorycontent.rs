@@ -21,12 +21,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenuCategoryContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DishSelectMenuCategoryContent{#[offset(24)]#[rename(name="m_CategoryList")]pub m_category_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject> , #[static_field]#[rename(name="s_EnableCategoryList")]pub s_enable_category_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject> , #[static_field]#[rename(name="s_Index")]pub s_index:i32, #[static_field]#[rename(name="s_OldIndex")]pub s_old_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_CategoryObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenuCategoryContent.CategoryObject")]#[parent(crate::system::object::Object)]pub struct DishSelectMenuCategoryContent_CategoryObject{#[offset(16)]#[rename(name="m_Object")]pub m_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Category")]pub m_category:crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_Category.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DishSelectMenuCategoryContent_Category{pub value:i32,}
 impl::unity2::ClassIdentity for DishSelectMenuCategoryContent_Category{const NAMESPACE: &'static str="App.CookingMenu";
 const NAME: &'static str="DishSelectMenuCategoryContent.Category";
@@ -51,6 +45,12 @@ pub fn ソルム()->Self{Self{value:5}
 pub fn その他()->Self{Self{value:6}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenuCategoryContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct DishSelectMenuCategoryContent{#[offset(24)]#[rename(name="m_CategoryList")]pub m_category_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject> , #[static_field]#[rename(name="s_EnableCategoryList")]pub s_enable_category_list:crate::system::collections::generic::list_1::List_1<crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_CategoryObject> , #[static_field]#[rename(name="s_Index")]pub s_index:i32, #[static_field]#[rename(name="s_OldIndex")]pub s_old_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/dishselectmenucategorycontent/DishSelectMenuCategoryContent_CategoryObject.md"))]#[::unity2::class(namespace="App.CookingMenu",name="DishSelectMenuCategoryContent.CategoryObject")]#[parent(crate::system::object::Object)]pub struct DishSelectMenuCategoryContent_CategoryObject{#[offset(16)]#[rename(name="m_Object")]pub m_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Category")]pub m_category:crate::app::cooking_menu::dishselectmenucategorycontent::DishSelectMenuCategoryContent_Category,}
 
 }
 
@@ -165,13 +165,13 @@ this}
 #[cfg(feature = "app-cooking_menu-dishselectmenucategorycontent")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DishSelectMenuCategoryContent_Category;
     pub use super::DishSelectMenuCategoryContent;
     pub use super::IDishSelectMenuCategoryContent;
     pub use super::IDishSelectMenuCategoryContentMethods;
     pub use super::DishSelectMenuCategoryContent_CategoryObject;
     pub use super::IDishSelectMenuCategoryContent_CategoryObject;
     pub use super::IDishSelectMenuCategoryContent_CategoryObjectMethods;
-    pub use super::DishSelectMenuCategoryContent_Category;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

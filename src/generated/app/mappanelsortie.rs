@@ -69,6 +69,19 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mappanelsortie")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelSortie_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:MapPanelSortie,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapPanelSortie as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(MapPanelSortie, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mappanelsortie")]impl MapPanelSortie{#[doc="`SetActive(bool)` overload"]pub fn set_active(is_active:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23559f0usize)as*mut u8,();
 (bool)::core::convert::Into::into(is_active))}
 }
@@ -107,8 +120,7 @@ this}
 (MapPanelSortie)__receiver)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2355f80usize)as*mut u8,();
-(MapPanelSortie)__receiver)}
+__MapPanelSortie_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <MapPanelSortie as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2356020usize)as*mut u8,();

@@ -15,37 +15,52 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-ui-icanvaselement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ICanvasElement_unity2_raw{use super:: * ;
-pub unsafe fn rebuild(this:ICanvasElement,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Rebuild").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Rebuild", <ICanvasElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn rebuild(this:ICanvasElement,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ICanvasElement as::unity2::ClassIdentity> ::NAME,"Rebuild",));
 let inner:extern "C" fn(ICanvasElement,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,executing,__mi)}
-pub unsafe fn get_transform(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_transform").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_transform", <ICanvasElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_transform(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <ICanvasElement as::unity2::ClassIdentity> ::NAME,"get_transform",));
 let inner:extern "C" fn(ICanvasElement, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn layout_complete(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("LayoutComplete").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","LayoutComplete", <ICanvasElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn layout_complete(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <ICanvasElement as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
 let inner:extern "C" fn(ICanvasElement, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn graphic_update_complete(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GraphicUpdateComplete").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GraphicUpdateComplete", <ICanvasElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn graphic_update_complete(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <ICanvasElement as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
 let inner:extern "C" fn(ICanvasElement, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn is_destroyed(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsDestroyed").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsDestroyed", <ICanvasElement as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn is_destroyed(this:ICanvasElement,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ICanvasElement as::unity2::ClassIdentity> ::NAME,"IsDestroyed",));
 let inner:extern "C" fn(ICanvasElement, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

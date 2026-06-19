@@ -19,64 +19,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListDeleteConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListDeleteConfirmDialog")]#[parent(crate::system::object::Object)]pub struct ProfileCardAlbumListDeleteConfirmDialog{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListDeleteConfirmDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListDeleteConfirmDialog")]#[parent(crate::system::object::Object)]pub struct ProfileCardAlbumListDeleteConfirmDialog{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardalbumlistdeleteconfirmdialog/ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardAlbumListDeleteConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler,}
 
 }
 
 #[cfg(feature = "app-profilecardalbumlistdeleteconfirmdialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]pub trait IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods:IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_event_handler:impl::core::convert::Into<crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler>)->(){unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2265b50usize)as*mut u8,();
-(ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2265b90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl<__T:IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem>IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,yes_event_handler:crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods> ::ctor(this,message,yes_event_handler);
-this}
-}
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]pub trait IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods:IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22658e0usize)as*mut u8,();
-(ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2265900usize)as*mut u8,();
-(ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl<__T:IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler>IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler), ::core::stringify!(new),));
- <Self as IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,user_name:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_event_handler:impl::core::convert::Into<crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler>)->crate::app::yesnodialog::YesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2826800usize)as*mut u8,crate::app::yesnodialog::YesNoDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(user_name),(crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
@@ -102,18 +56,88 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]pub trait IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods:IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22658e0usize)as*mut u8,();
+(ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl<__T:IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler>IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods for __T{}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]pub trait IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods:IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_event_handler:impl::core::convert::Into<crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler>)->(){unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2265b50usize)as*mut u8,();
+(ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl<__T:IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem>IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardalbumlistdeleteconfirmdialog")]impl ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,yes_event_handler:crate::app::profilecardalbumlistdeleteconfirmdialog::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods> ::ctor(this,message,yes_event_handler);
+this}
+}
+
 #[cfg(feature = "app-profilecardalbumlistdeleteconfirmdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem;
-    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem;
-    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods;
-    pub use super::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler;
-    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler;
-    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods;
     pub use super::ProfileCardAlbumListDeleteConfirmDialog;
     pub use super::IProfileCardAlbumListDeleteConfirmDialog;
     pub use super::IProfileCardAlbumListDeleteConfirmDialogMethods;
+    pub use super::ProfileCardAlbumListDeleteConfirmDialog_YesEventHandler;
+    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesEventHandler;
+    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesEventHandlerMethods;
+    pub use super::ProfileCardAlbumListDeleteConfirmDialog_YesMenuItem;
+    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesMenuItem;
+    pub use super::IProfileCardAlbumListDeleteConfirmDialog_YesMenuItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;
     pub use crate::app::basicmenuitem::IBasicMenuItem;

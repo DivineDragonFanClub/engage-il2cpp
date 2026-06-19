@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-async_operations-icachable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ICachable_unity2_raw{use super:: * ;
-pub unsafe fn get_key(this:ICachable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Key").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Key", <ICachable as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_key(this:ICachable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ICachable as::unity2::ClassIdentity> ::NAME,"get_Key",));
 let inner:extern "C" fn(ICachable, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_key(this:ICachable,value:crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Key").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_Key", <ICachable as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_key(this:ICachable,value:crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <ICachable as::unity2::ClassIdentity> ::NAME,"set_Key",));
 let inner:extern "C" fn(ICachable,crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]#[::unity2::class(namespace="App",name="BattleInfoSide.BitFieldStatus")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battleinfoside::BattleInfoSide_Status>)]pub struct BattleInfoSide_BitFieldStatus{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfoside/BattleInfoSide.md"))]#[::unity2::class(namespace="App",name="BattleInfoSide")]#[parent(crate::system::object::Object)]pub struct BattleInfoSide{#[offset(16)]#[rename(name="m_Info")]pub m_info:crate::app::battleinfo::BattleInfo, #[offset(24)]#[rename(name="m_SideType")]pub m_side_type:crate::app::battleside::BattleSide_Type, #[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(40)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(48)]#[rename(name="m_SpecifiedItem")]pub m_specified_item:crate::app::unititem::UnitItem, #[offset(56)]#[rename(name="m_X")]pub m_x:i32, #[offset(60)]#[rename(name="m_Z")]pub m_z:i32, #[offset(64)]#[rename(name="m_Terrain")]pub m_terrain:crate::app::terraindata_2::TerrainData_2, #[offset(72)]#[rename(name="m_Overlap")]pub m_overlap:crate::app::terraindata_2::TerrainData_2, #[offset(80)]#[rename(name="m_Status")]pub m_status:crate::app::battleinfoside::BattleInfoSide_BitFieldStatus, #[offset(88)]#[rename(name="m_Detail")]pub m_detail:crate::app::battledetail::BattleDetail, #[offset(96)]#[rename(name="m_Hierarchy")]pub m_hierarchy:crate::app::pool::Pool_Hierarchy_1<crate::app::battledetail::BattleDetail> , #[offset(104)]#[rename(name="m_Support")]pub m_support:crate::app::supportcalculator::SupportCalculator, #[offset(112)]#[rename(name="m_Parent")]pub m_parent:crate::app::battleinfoside::BattleInfoSide, #[offset(120)]#[rename(name="m_Reverse")]pub m_reverse:crate::app::battleinfoside::BattleInfoSide, #[offset(128)]#[rename(name="m_Destroy")]pub m_destroy:crate::app::battledestory::BattleDestory, #[offset(136)]#[rename(name="m_MaskSkill")]pub m_mask_skill:crate::app::skillarray::SkillArray, #[static_field]#[rename(name="ContinueCondition")]pub continue_condition:i32,}
 
 
@@ -104,33 +101,13 @@ pub fn mask_chain()->Self{Self{value:12}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfoside/BattleInfoSide_BitFieldStatus.md"))]#[::unity2::class(namespace="App",name="BattleInfoSide.BitFieldStatus")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battleinfoside::BattleInfoSide_Status>)]pub struct BattleInfoSide_BitFieldStatus{}
+
 }
 
 #[cfg(feature = "app-battleinfoside-types")]
 pub use __types::*;
-
-#[cfg(feature="app-battleinfoside")]pub trait IBattleInfoSide_BitFieldStatusMethods:IBattleInfoSide_BitFieldStatus{#[doc="`ToInt(crate::app::battleinfoside::BattleInfoSide_Status)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide_Status>)->i32{unsafe{let __receiver= <BattleInfoSide_BitFieldStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb090usize)as*mut u8,i32;
-(BattleInfoSide_BitFieldStatus)__receiver,(crate::app::battleinfoside::BattleInfoSide_Status)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleInfoSide_BitFieldStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb0a0usize)as*mut u8,();
-(BattleInfoSide_BitFieldStatus)__receiver)}
-}
-}
-
-#[cfg(feature="app-battleinfoside")]impl<__T:IBattleInfoSide_BitFieldStatus>IBattleInfoSide_BitFieldStatusMethods for __T{}
-
-#[cfg(feature="app-battleinfoside")]impl BattleInfoSide_BitFieldStatus{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battleinfoside")]impl BattleInfoSide_BitFieldStatus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleInfoSide_BitFieldStatus), ::core::stringify!(new),));
- <Self as IBattleInfoSide_BitFieldStatusMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-battleinfoside")]impl BattleInfoSide{#[doc="`op_Implicit(crate::app::battleinfoside::BattleInfoSide)` overload"]pub fn op_implicit(side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->crate::app::battleside::BattleSide_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d000usize)as*mut u8,crate::app::battleside::BattleSide_Type;
 (crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
@@ -840,16 +817,51 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-battleinfoside")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleInfoSide_BitFieldStatus_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:BattleInfoSide_BitFieldStatus,value:crate::app::battleinfoside::BattleInfoSide_Status,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleInfoSide_BitFieldStatus as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(BattleInfoSide_BitFieldStatus,crate::app::battleinfoside::BattleInfoSide_Status, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-battleinfoside")]pub trait IBattleInfoSide_BitFieldStatusMethods:IBattleInfoSide_BitFieldStatus{#[doc="`ToInt(crate::app::battleinfoside::BattleInfoSide_Status)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide_Status>)->i32{unsafe{let __receiver= <BattleInfoSide_BitFieldStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleInfoSide_BitFieldStatus_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleInfoSide_BitFieldStatus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb0a0usize)as*mut u8,();
+(BattleInfoSide_BitFieldStatus)__receiver)}
+}
+}
+
+#[cfg(feature="app-battleinfoside")]impl<__T:IBattleInfoSide_BitFieldStatus>IBattleInfoSide_BitFieldStatusMethods for __T{}
+
+#[cfg(feature="app-battleinfoside")]impl BattleInfoSide_BitFieldStatus{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battleinfoside")]impl BattleInfoSide_BitFieldStatus{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleInfoSide_BitFieldStatus), ::core::stringify!(new),));
+ <Self as IBattleInfoSide_BitFieldStatusMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-battleinfoside")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleInfoSide_BitFieldStatus;
-    pub use super::IBattleInfoSide_BitFieldStatus;
-    pub use super::IBattleInfoSide_BitFieldStatusMethods;
     pub use super::BattleInfoSide;
     pub use super::IBattleInfoSide;
     pub use super::IBattleInfoSideMethods;
     pub use super::BattleInfoSide_Status;
+    pub use super::BattleInfoSide_BitFieldStatus;
+    pub use super::IBattleInfoSide_BitFieldStatus;
+    pub use super::IBattleInfoSide_BitFieldStatusMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

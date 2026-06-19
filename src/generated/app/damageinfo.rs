@@ -13,77 +13,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/damageinfo/DamageInfo_InfoWindow.md"))]#[::unity2::class(namespace="App",name="DamageInfo.InfoWindow")]#[parent(crate::system::object::Object)]pub struct DamageInfo_InfoWindow{#[offset(16)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(24)]#[rename(name="m_Info")]pub m_info:crate::app::damageinfo::DamageInfo_Info, #[offset(32)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_WindowImage")]pub m_window_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::app::uniticon::UnitIcon, #[offset(56)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_UnitNameText")]pub m_unit_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_DamageText")]pub m_damage_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/damageinfo/DamageInfo_InfoComparer.md"))]#[::unity2::class(namespace="App",name="DamageInfo.InfoComparer")]#[parent(crate::system::object::Object)]pub struct DamageInfo_InfoComparer{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/damageinfo/DamageInfo_Info.md"))]#[::unity2::class(namespace="App",name="DamageInfo.Info")]#[parent(crate::system::object::Object)]pub struct DamageInfo_Info{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/damageinfo/DamageInfo.md"))]#[::unity2::class(namespace="App",name="DamageInfo")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::damageinfo::DamageInfo>)]pub struct DamageInfo{#[static_field]#[rename(name="InfoWindowMax")]pub info_window_max:i32, #[offset(114)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(120)]#[rename(name="m_LayoutPrefab")]pub m_layout_prefab:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_InfoList")]pub m_info_list:crate::system::collections::generic::list_1::List_1<crate::app::damageinfo::DamageInfo_Info> , #[offset(136)]#[rename(name="m_InfoWindowArray")]pub m_info_window_array: ::unity2::Array<crate::app::damageinfo::DamageInfo_InfoWindow> , #[offset(144)]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo, #[offset(152)]#[rename(name="m_BattleCalculator")]pub m_battle_calculator:crate::app::battlecalculator::BattleCalculator, #[offset(160)]#[rename(name="m_PreDefenceUnit")]pub m_pre_defence_unit:crate::app::unit::Unit,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/damageinfo/DamageInfo_InfoComparer.md"))]#[::unity2::class(namespace="App",name="DamageInfo.InfoComparer")]#[parent(crate::system::object::Object)]pub struct DamageInfo_InfoComparer{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/damageinfo/DamageInfo_InfoWindow.md"))]#[::unity2::class(namespace="App",name="DamageInfo.InfoWindow")]#[parent(crate::system::object::Object)]pub struct DamageInfo_InfoWindow{#[offset(16)]#[rename(name="m_IsShow")]pub m_is_show:bool, #[offset(24)]#[rename(name="m_Info")]pub m_info:crate::app::damageinfo::DamageInfo_Info, #[offset(32)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_WindowImage")]pub m_window_image:crate::unity_engine::ui::image::Image, #[offset(48)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::app::uniticon::UnitIcon, #[offset(56)]#[rename(name="m_SkillIconImage")]pub m_skill_icon_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_UnitNameText")]pub m_unit_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(72)]#[rename(name="m_SkillNameText")]pub m_skill_name_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_DamageText")]pub m_damage_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
 }
 
 #[cfg(feature = "app-damageinfo-types")]
 pub use __types::*;
-
-#[cfg(feature="app-damageinfo")]pub trait IDamageInfo_InfoWindowMethods:IDamageInfo_InfoWindow{#[doc="`IsShow()` overload"]fn is_show(self,)->bool{unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19ceec0usize)as*mut u8,bool;
-(DamageInfo_InfoWindow)__receiver)}
-}
-#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cef70usize)as*mut u8,();
-(DamageInfo_InfoWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
-}
-#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cf230usize)as*mut u8,();
-(DamageInfo_InfoWindow)__receiver)}
-}
-#[doc="`SetInfo(crate::app::damageinfo::DamageInfo_Info)` overload"]fn set_info(self,info:impl::core::convert::Into<crate::app::damageinfo::DamageInfo_Info>)->(){unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cf2e0usize)as*mut u8,();
-(DamageInfo_InfoWindow)__receiver,(crate::app::damageinfo::DamageInfo_Info)::core::convert::Into::into(info))}
-}
-}
-
-#[cfg(feature="app-damageinfo")]impl<__T:IDamageInfo_InfoWindow>IDamageInfo_InfoWindowMethods for __T{}
-
-#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoWindow{pub fn is_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DamageInfo_InfoWindow), ::core::stringify!(new),));
- <Self as IDamageInfo_InfoWindowMethods> ::ctor(this,root_object);
-this}
-}
-
-#[cfg(feature="app-damageinfo")]pub trait IDamageInfo_InfoComparerMethods:IDamageInfo_InfoComparer{#[doc="`Compare(crate::app::damageinfo::DamageInfo_Info, crate::app::damageinfo::DamageInfo_Info)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::damageinfo::DamageInfo_Info> ,b:impl::core::convert::Into<crate::app::damageinfo::DamageInfo_Info>)->i32{unsafe{let __receiver= <DamageInfo_InfoComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19ceea0usize)as*mut u8,i32;
-(DamageInfo_InfoComparer)__receiver,(crate::app::damageinfo::DamageInfo_Info)::core::convert::Into::into(a),(crate::app::damageinfo::DamageInfo_Info)::core::convert::Into::into(b))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DamageInfo_InfoComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19ceeb0usize)as*mut u8,();
-(DamageInfo_InfoComparer)__receiver)}
-}
-}
-
-#[cfg(feature="app-damageinfo")]impl<__T:IDamageInfo_InfoComparer>IDamageInfo_InfoComparerMethods for __T{}
-
-#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DamageInfo_InfoComparer), ::core::stringify!(new),));
- <Self as IDamageInfo_InfoComparerMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-damageinfo")]pub trait IDamageInfo_InfoMethods:IDamageInfo_Info{#[doc="`get_Unit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <DamageInfo_Info as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19cee30usize)as*mut u8,crate::app::unit::Unit;
@@ -133,6 +77,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-damageinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DamageInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_global_asset_path(this:DamageInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <DamageInfo as::unity2::ClassIdentity> ::NAME,"get_GlobalAssetPath",));
+let inner:extern "C" fn(DamageInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:DamageInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DamageInfo as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(DamageInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-damageinfo")]impl DamageInfo{#[doc="`SetUnit(crate::app::unit::Unit)` overload"]pub fn set_unit(unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x29f6000usize)as*mut u8,();
 (crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
@@ -148,8 +115,7 @@ this}
 }
 
 #[cfg(feature="app-damageinfo")]pub trait IDamageInfoMethods:IDamageInfo{#[doc="`get_GlobalAssetPath()` overload"]fn get_global_asset_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DamageInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29f4f50usize)as*mut u8, ::unity2::Il2CppString;
-(DamageInfo)__receiver)}
+__DamageInfo_unity2_raw::get_global_asset_path(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LoadLayoutPrefab()` overload"]fn load_layout_prefab(self,)->(){unsafe{let __receiver= <DamageInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29f4fa0usize)as*mut u8,();
@@ -168,8 +134,7 @@ this}
 (DamageInfo)__receiver)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <DamageInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29f5470usize)as*mut u8,();
-(DamageInfo)__receiver)}
+__DamageInfo_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DamageInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29f5530usize)as*mut u8,();
@@ -224,21 +189,89 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-damageinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DamageInfo_InfoComparer_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:DamageInfo_InfoComparer,a:crate::app::damageinfo::DamageInfo_Info,b:crate::app::damageinfo::DamageInfo_Info,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DamageInfo_InfoComparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(DamageInfo_InfoComparer,crate::app::damageinfo::DamageInfo_Info,crate::app::damageinfo::DamageInfo_Info, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
+#[cfg(feature="app-damageinfo")]pub trait IDamageInfo_InfoComparerMethods:IDamageInfo_InfoComparer{#[doc="`Compare(crate::app::damageinfo::DamageInfo_Info, crate::app::damageinfo::DamageInfo_Info)` overload"]fn compare(self,a:impl::core::convert::Into<crate::app::damageinfo::DamageInfo_Info> ,b:impl::core::convert::Into<crate::app::damageinfo::DamageInfo_Info>)->i32{unsafe{let __receiver= <DamageInfo_InfoComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DamageInfo_InfoComparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DamageInfo_InfoComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19ceeb0usize)as*mut u8,();
+(DamageInfo_InfoComparer)__receiver)}
+}
+}
+
+#[cfg(feature="app-damageinfo")]impl<__T:IDamageInfo_InfoComparer>IDamageInfo_InfoComparerMethods for __T{}
+
+#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DamageInfo_InfoComparer), ::core::stringify!(new),));
+ <Self as IDamageInfo_InfoComparerMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-damageinfo")]pub trait IDamageInfo_InfoWindowMethods:IDamageInfo_InfoWindow{#[doc="`IsShow()` overload"]fn is_show(self,)->bool{unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19ceec0usize)as*mut u8,bool;
+(DamageInfo_InfoWindow)__receiver)}
+}
+#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cef70usize)as*mut u8,();
+(DamageInfo_InfoWindow)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root_object))}
+}
+#[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cf230usize)as*mut u8,();
+(DamageInfo_InfoWindow)__receiver)}
+}
+#[doc="`SetInfo(crate::app::damageinfo::DamageInfo_Info)` overload"]fn set_info(self,info:impl::core::convert::Into<crate::app::damageinfo::DamageInfo_Info>)->(){unsafe{let __receiver= <DamageInfo_InfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cf2e0usize)as*mut u8,();
+(DamageInfo_InfoWindow)__receiver,(crate::app::damageinfo::DamageInfo_Info)::core::convert::Into::into(info))}
+}
+}
+
+#[cfg(feature="app-damageinfo")]impl<__T:IDamageInfo_InfoWindow>IDamageInfo_InfoWindowMethods for __T{}
+
+#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoWindow{pub fn is_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-damageinfo")]impl DamageInfo_InfoWindow{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root_object:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DamageInfo_InfoWindow), ::core::stringify!(new),));
+ <Self as IDamageInfo_InfoWindowMethods> ::ctor(this,root_object);
+this}
+}
+
 #[cfg(feature = "app-damageinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DamageInfo_InfoWindow;
-    pub use super::IDamageInfo_InfoWindow;
-    pub use super::IDamageInfo_InfoWindowMethods;
-    pub use super::DamageInfo_InfoComparer;
-    pub use super::IDamageInfo_InfoComparer;
-    pub use super::IDamageInfo_InfoComparerMethods;
     pub use super::DamageInfo_Info;
     pub use super::IDamageInfo_Info;
     pub use super::IDamageInfo_InfoMethods;
     pub use super::DamageInfo;
     pub use super::IDamageInfo;
     pub use super::IDamageInfoMethods;
+    pub use super::DamageInfo_InfoComparer;
+    pub use super::IDamageInfo_InfoComparer;
+    pub use super::IDamageInfo_InfoComparerMethods;
+    pub use super::DamageInfo_InfoWindow;
+    pub use super::IDamageInfo_InfoWindow;
+    pub use super::IDamageInfo_InfoWindowMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -77,16 +77,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <PropertyTableAssigner as::unity2::ClassIdentity> ::NAME,"SetSubassignerForType",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<PropertyTableAssigner as::unity2::ClassIdentity> ::class(),"MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <PropertyTableAssigner as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",e),}
-}
-}
+pub unsafe fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(this:PropertyTableAssigner,obj:crate::system::object::Object,data:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PropertyTableAssigner as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked",));
+let inner:extern "C" fn(PropertyTableAssigner,crate::system::object::Object,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,data,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-propertytableassigner")]pub trait IPropertyTableAssignerMethods:IPropertyTableAssigner{#[doc="`.ctor(::unity2::SystemType, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,expected_missing_properties:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <PropertyTableAssigner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -114,8 +114,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (PropertyTableAssigner)__receiver,(::unity2::SystemType)::core::convert::Into::into(property_type),(crate::moon_sharp::interpreter::interop::ipropertytableassigner_interface::IPropertyTableAssigner_Interface)::core::convert::Into::into(assigner))}
 }
 #[doc="`MoonSharp.Interpreter.Interop.IPropertyTableAssigner.AssignObjectUnchecked(crate::system::object::Object, crate::moon_sharp::interpreter::table::Table)` overload"]fn moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(self,obj:impl::core::convert::Into<crate::system::object::Object> ,data:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <PropertyTableAssigner as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__PropertyTableAssigner_unity2_raw::__lookup_moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked::get_method_info().method_ptr,();
-(PropertyTableAssigner)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(data))}
+__PropertyTableAssigner_unity2_raw::moon_sharp_interpreter_interop_i_property_table_assigner_assign_object_unchecked(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(data), ::core::option::Option::None)}
 }
 }
 

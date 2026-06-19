@@ -59,26 +59,26 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <UnityAssetsScriptLoader as::unity2::ClassIdentity> ::NAME,"GetFileName",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_load_file{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<UnityAssetsScriptLoader as::unity2::ClassIdentity> ::class(),"LoadFile",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <UnityAssetsScriptLoader as::unity2::ClassIdentity> ::NAME,"LoadFile",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_script_file_exists{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<UnityAssetsScriptLoader as::unity2::ClassIdentity> ::class(),"ScriptFileExists",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <UnityAssetsScriptLoader as::unity2::ClassIdentity> ::NAME,"ScriptFileExists",e),}
-}
-}
+pub unsafe fn load_file(this:UnityAssetsScriptLoader,file: ::unity2::Il2CppString,global_context:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <UnityAssetsScriptLoader as::unity2::ClassIdentity> ::NAME,"LoadFile",));
+let inner:extern "C" fn(UnityAssetsScriptLoader, ::unity2::Il2CppString,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,file,global_context,__mi)}
+pub unsafe fn script_file_exists(this:UnityAssetsScriptLoader,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <UnityAssetsScriptLoader as::unity2::ClassIdentity> ::NAME,"ScriptFileExists",));
+let inner:extern "C" fn(UnityAssetsScriptLoader, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,file,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_loaded_scripts{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<UnityAssetsScriptLoader as::unity2::ClassIdentity> ::class(),"GetLoadedScripts",0,param_types,false,)}
@@ -108,12 +108,10 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (UnityAssetsScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(filename))}
 }
 #[doc="`LoadFile(::unity2::Il2CppString, crate::moon_sharp::interpreter::table::Table)` overload"]fn load_file(self,file:impl::core::convert::Into< ::unity2::Il2CppString> ,global_context:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->crate::system::object::Object{unsafe{let __receiver= <UnityAssetsScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__UnityAssetsScriptLoader_unity2_raw::__lookup_load_file::get_method_info().method_ptr,crate::system::object::Object;
-(UnityAssetsScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file),(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(global_context))}
+__UnityAssetsScriptLoader_unity2_raw::load_file(__receiver, ::core::convert::Into::into(file), ::core::convert::Into::into(global_context), ::core::option::Option::None)}
 }
 #[doc="`ScriptFileExists(::unity2::Il2CppString)` overload"]fn script_file_exists(self,file:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <UnityAssetsScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__UnityAssetsScriptLoader_unity2_raw::__lookup_script_file_exists::get_method_info().method_ptr,bool;
-(UnityAssetsScriptLoader)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file))}
+__UnityAssetsScriptLoader_unity2_raw::script_file_exists(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)}
 }
 #[doc="`GetLoadedScripts()` overload"]fn get_loaded_scripts(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <UnityAssetsScriptLoader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__UnityAssetsScriptLoader_unity2_raw::__lookup_get_loaded_scripts::get_method_info().method_ptr, ::unity2::Array< ::unity2::Il2CppString> ;

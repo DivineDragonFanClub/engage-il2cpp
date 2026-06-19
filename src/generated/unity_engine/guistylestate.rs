@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-guistylestate-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-guistylestate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUIStyleState_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:GUIStyleState,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <GUIStyleState as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(GUIStyleState, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-guistylestate")]impl GUIStyleState{#[doc="`Init()` overload"]pub fn init()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c50520usize)as*mut u8, ::unity2::IntPtr;
 )}
 }
@@ -41,8 +54,7 @@ pub use __types::*;
 (GUIStyleState)__receiver,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(source_style),(::unity2::IntPtr)::core::convert::Into::into(source))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <GUIStyleState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c50650usize)as*mut u8,();
-(GUIStyleState)__receiver)}
+__GUIStyleState_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_textColor_Injected(*mutcrate::unity_engine::color::Color)` overload"]fn set_text_color_injected(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <GUIStyleState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::color::Color> ::uninit();

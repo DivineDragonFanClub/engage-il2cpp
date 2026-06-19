@@ -18,6 +18,139 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-compression-gzipstream-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-compression-gzipstream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GZipStream_unity2_raw{use super:: * ;
+pub unsafe fn get_can_read(this:GZipStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
+let inner:extern "C" fn(GZipStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_write(this:GZipStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
+let inner:extern "C" fn(GZipStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_seek(this:GZipStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"get_CanSeek",));
+let inner:extern "C" fn(GZipStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_length(this:GZipStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"get_Length",));
+let inner:extern "C" fn(GZipStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_position(this:GZipStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"get_Position",));
+let inner:extern "C" fn(GZipStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_position(this:GZipStream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"set_Position",));
+let inner:extern "C" fn(GZipStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn flush(this:GZipStream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"Flush",));
+let inner:extern "C" fn(GZipStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn seek(this:GZipStream,offset:i64,origin:crate::system::io::seekorigin::SeekOrigin,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"Seek",));
+let inner:extern "C" fn(GZipStream,i64,crate::system::io::seekorigin::SeekOrigin, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,offset,origin,__mi)}
+pub unsafe fn set_length(this:GZipStream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"SetLength",));
+let inner:extern "C" fn(GZipStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn read_byte(this:GZipStream,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"ReadByte",));
+let inner:extern "C" fn(GZipStream, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read(this:GZipStream,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(GZipStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,offset,count,__mi)}
+pub unsafe fn write(this:GZipStream,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(GZipStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,offset,count,__mi)}
+pub unsafe fn dispose(this:GZipStream,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GZipStream as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(GZipStream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+}
+
 #[cfg(feature="system-io-compression-gzipstream")]impl GZipStream{#[doc="`ThrowStreamClosedException()` overload"]pub fn throw_stream_closed_exception()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34a1d90usize)as*mut u8,();
 )}
 }
@@ -36,56 +169,43 @@ pub use __types::*;
 (GZipStream)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(stream),(crate::system::io::compression::compressionlevel::CompressionLevel)::core::convert::Into::into(compression_level),(bool)::core::convert::Into::into(leave_open))}
 }
 #[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1770usize)as*mut u8,bool;
-(GZipStream)__receiver)}
+__GZipStream_unity2_raw::get_can_read(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1790usize)as*mut u8,bool;
-(GZipStream)__receiver)}
+__GZipStream_unity2_raw::get_can_write(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a17b0usize)as*mut u8,bool;
-(GZipStream)__receiver)}
+__GZipStream_unity2_raw::get_can_seek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a17d0usize)as*mut u8,i64;
-(GZipStream)__receiver)}
+__GZipStream_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1830usize)as*mut u8,i64;
-(GZipStream)__receiver)}
+__GZipStream_unity2_raw::get_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1890usize)as*mut u8,();
-(GZipStream)__receiver,(i64)::core::convert::Into::into(value))}
+__GZipStream_unity2_raw::set_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a18f0usize)as*mut u8,();
-(GZipStream)__receiver)}
+__GZipStream_unity2_raw::flush(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1940usize)as*mut u8,i64;
-(GZipStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
+__GZipStream_unity2_raw::seek(__receiver, ::core::convert::Into::into(offset), ::core::convert::Into::into(origin), ::core::option::Option::None)}
 }
 #[doc="`SetLength(i64)` overload"]fn set_length(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a19a0usize)as*mut u8,();
-(GZipStream)__receiver,(i64)::core::convert::Into::into(value))}
+__GZipStream_unity2_raw::set_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1a00usize)as*mut u8,i32;
-(GZipStream)__receiver)}
+__GZipStream_unity2_raw::read_byte(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1b50usize)as*mut u8,i32;
-(GZipStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+__GZipStream_unity2_raw::read(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1c50usize)as*mut u8,();
-(GZipStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+__GZipStream_unity2_raw::write(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1c80usize)as*mut u8,();
-(GZipStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+__GZipStream_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`CheckDeflateStream()` overload"]fn check_deflate_stream(self,)->(){unsafe{let __receiver= <GZipStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34a1920usize)as*mut u8,();

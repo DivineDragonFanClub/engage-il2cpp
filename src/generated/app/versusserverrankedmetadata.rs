@@ -18,13 +18,55 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-versusserverrankedmetadata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-versusserverrankedmetadata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VersusServerRankedMetaData_unity2_raw{use super:: * ;
+pub unsafe fn clear(this:VersusServerRankedMetaData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VersusServerRankedMetaData as::unity2::ClassIdentity> ::NAME,"Clear",));
+let inner:extern "C" fn(VersusServerRankedMetaData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn copy_from(this:VersusServerRankedMetaData,meta_data:crate::app::versusservermetadata::VersusServerMetaData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <VersusServerRankedMetaData as::unity2::ClassIdentity> ::NAME,"CopyFrom",));
+let inner:extern "C" fn(VersusServerRankedMetaData,crate::app::versusservermetadata::VersusServerMetaData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,meta_data,__mi)}
+pub unsafe fn serialize(this:VersusServerRankedMetaData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <VersusServerRankedMetaData as::unity2::ClassIdentity> ::NAME,"Serialize",));
+let inner:extern "C" fn(VersusServerRankedMetaData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn deserialize(this:VersusServerRankedMetaData,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <VersusServerRankedMetaData as::unity2::ClassIdentity> ::NAME,"Deserialize",));
+let inner:extern "C" fn(VersusServerRankedMetaData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-versusserverrankedmetadata")]pub trait IVersusServerRankedMetaDataMethods:IVersusServerRankedMetaData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6220usize)as*mut u8,();
 (VersusServerRankedMetaData)__receiver)}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b88b0usize)as*mut u8,();
-(VersusServerRankedMetaData)__receiver)}
+__VersusServerRankedMetaData_unity2_raw::clear(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetOwner(u64, ::unity2::Il2CppString, u64)` overload"]fn set_owner(self,principal_id:impl::core::convert::Into<u64> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,save_id:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b89b0usize)as*mut u8,();
@@ -43,20 +85,17 @@ pub use __types::*;
 (VersusServerRankedMetaData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(language))}
 }
 #[doc="`CopyFrom(crate::app::versusservermetadata::VersusServerMetaData)` overload"]fn copy_from(self,meta_data:impl::core::convert::Into<crate::app::versusservermetadata::VersusServerMetaData>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8a30usize)as*mut u8,();
-(VersusServerRankedMetaData)__receiver,(crate::app::versusservermetadata::VersusServerMetaData)::core::convert::Into::into(meta_data))}
+__VersusServerRankedMetaData_unity2_raw::copy_from(__receiver, ::core::convert::Into::into(meta_data), ::core::option::Option::None)}
 }
 #[doc="`GetOwnerName()` overload"]fn get_owner_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8b60usize)as*mut u8, ::unity2::Il2CppString;
 (VersusServerRankedMetaData)__receiver)}
 }
 #[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8b90usize)as*mut u8,();
-(VersusServerRankedMetaData)__receiver)}
+__VersusServerRankedMetaData_unity2_raw::serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b8da0usize)as*mut u8,bool;
-(VersusServerRankedMetaData)__receiver)}
+__VersusServerRankedMetaData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dump(::unity2::Il2CppString)` overload"]fn dump(self,opt:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <VersusServerRankedMetaData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b97b0usize)as*mut u8,();

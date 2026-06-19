@@ -100,6 +100,99 @@ pub fn patch()->Self{Self{value:30}
 #[cfg(feature = "app-mapsequence-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequence_unity2_raw{use super:: * ;
+pub unsafe fn get_loading_mode(this:MapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::loadingmanager::LoadingManager_Modes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"get_LoadingMode",));
+let inner:extern "C" fn(MapSequence, ::unity2::OptionalMethod,)->crate::app::loadingmanager::LoadingManager_Modes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_create(this:MapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_shutdown(this:MapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(MapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_persistent(this:MapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let inner:extern "C" fn(MapSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_log(this:MapSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"GetDebugLog",));
+let inner:extern "C" fn(MapSequence, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_version(this:MapSequence,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let inner:extern "C" fn(MapSequence, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_serialize(this:MapSequence,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let inner:extern "C" fn(MapSequence,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn on_deserialize(this:MapSequence,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <MapSequence as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let inner:extern "C" fn(MapSequence,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,version,__mi)}
+}
+
 #[cfg(feature="app-mapsequence")]impl MapSequence{#[doc="`GetGrowMode(crate::app::growmode::GrowMode)` overload"]pub fn get_grow_mode(grow:impl::core::convert::Into<crate::app::growmode::GrowMode>)->crate::app::growmode::GrowMode{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2363870usize)as*mut u8,crate::app::growmode::GrowMode;
 (crate::app::growmode::GrowMode)::core::convert::Into::into(grow))}
 }
@@ -112,20 +205,16 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-mapsequence")]pub trait IMapSequenceMethods:IMapSequence{#[doc="`get_LoadingMode()` overload"]fn get_loading_mode(self,)->crate::app::loadingmanager::LoadingManager_Modes{unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2362690usize)as*mut u8,crate::app::loadingmanager::LoadingManager_Modes;
-(MapSequence)__receiver)}
+__MapSequence_unity2_raw::get_loading_mode(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23626a0usize)as*mut u8,();
-(MapSequence)__receiver)}
+__MapSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2362ec0usize)as*mut u8,();
-(MapSequence)__receiver)}
+__MapSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23632e0usize)as*mut u8,();
-(MapSequence)__receiver)}
+__MapSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanAutoSave()` overload"]fn can_auto_save(self,)->bool{unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2363350usize)as*mut u8,bool;
@@ -553,24 +642,19 @@ __f(__receiver, ::core::convert::Into::into(name), ::core::option::Option::Some(
 (MapSequence)__receiver)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2370b70usize)as*mut u8,();
-(MapSequence)__receiver)}
+__MapSequence_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugLog()` overload"]fn get_debug_log(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2370c70usize)as*mut u8, ::unity2::Il2CppString;
-(MapSequence)__receiver)}
+__MapSequence_unity2_raw::get_debug_log(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2370d40usize)as*mut u8,i32;
-(MapSequence)__receiver)}
+__MapSequence_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2370d50usize)as*mut u8,();
-(MapSequence)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__MapSequence_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2371130usize)as*mut u8,();
-(MapSequence)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+__MapSequence_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
 }
 #[doc="`TimerStart()` overload"]fn timer_start(self,)->(){unsafe{let __receiver= <MapSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23715e0usize)as*mut u8,();

@@ -25,6 +25,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-arraylist-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-arraylist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ArrayList_ArrayListEnumeratorSimple_unity2_raw{use super:: * ;
+pub unsafe fn clone(this:ArrayList_ArrayListEnumeratorSimple,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ArrayList_ArrayListEnumeratorSimple as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn move_next(this:ArrayList_ArrayListEnumeratorSimple,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ArrayList_ArrayListEnumeratorSimple as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let inner:extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_current(this:ArrayList_ArrayListEnumeratorSimple,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ArrayList_ArrayListEnumeratorSimple as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let inner:extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset(this:ArrayList_ArrayListEnumeratorSimple,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ArrayList_ArrayListEnumeratorSimple as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(ArrayList_ArrayListEnumeratorSimple, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-collections-arraylist")]impl ArrayList_ArrayListEnumeratorSimple{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34cd4d0usize)as*mut u8,();
 )}
 }
@@ -35,20 +78,16 @@ pub use __types::*;
 (ArrayList_ArrayListEnumeratorSimple)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(list))}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd100usize)as*mut u8,crate::system::object::Object;
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+__ArrayList_ArrayListEnumeratorSimple_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd110usize)as*mut u8,bool;
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+__ArrayList_ArrayListEnumeratorSimple_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd300usize)as*mut u8,crate::system::object::Object;
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+__ArrayList_ArrayListEnumeratorSimple_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <ArrayList_ArrayListEnumeratorSimple as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd3f0usize)as*mut u8,();
-(ArrayList_ArrayListEnumeratorSimple)__receiver)}
+__ArrayList_ArrayListEnumeratorSimple_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -67,6 +106,249 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
  failed to instantiate", ::core::stringify!(ArrayList_ArrayListEnumeratorSimple), ::core::stringify!(new),));
  <Self as IArrayList_ArrayListEnumeratorSimpleMethods> ::ctor(this,list);
 this}
+}
+
+#[cfg(feature="system-collections-arraylist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ArrayList_unity2_raw{use super:: * ;
+pub unsafe fn set_capacity(this:ArrayList,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"set_Capacity",));
+let inner:extern "C" fn(ArrayList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_count(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sync_root(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_item(this:ArrayList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let inner:extern "C" fn(ArrayList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn set_item(this:ArrayList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let inner:extern "C" fn(ArrayList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn add(this:ArrayList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(ArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn add_range(this:ArrayList,c:crate::system::collections::icollection::ICollection,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"AddRange",));
+let inner:extern "C" fn(ArrayList,crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,c,__mi)}
+pub unsafe fn clear(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"Clear",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clone(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn contains(this:ArrayList,item:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"Contains",));
+let inner:extern "C" fn(ArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,item,__mi)}
+pub unsafe fn copy_to(this:ArrayList,array: ::unity2::IlInstance,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(ArrayList, ::unity2::IlInstance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,__mi)}
+pub unsafe fn copy_to_2(this:ArrayList,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(ArrayList, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,array_index,__mi)}
+pub unsafe fn copy_to_3(this:ArrayList,index:i32,array: ::unity2::IlInstance,array_index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(ArrayList,i32, ::unity2::IlInstance,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,array,array_index,count,__mi)}
+pub unsafe fn get_enumerator(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn index_of(this:ArrayList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"IndexOf",));
+let inner:extern "C" fn(ArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn insert(this:ArrayList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"Insert",));
+let inner:extern "C" fn(ArrayList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn insert_range(this:ArrayList,index:i32,c:crate::system::collections::icollection::ICollection,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"InsertRange",));
+let inner:extern "C" fn(ArrayList,i32,crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,c,__mi)}
+pub unsafe fn remove(this:ArrayList,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(ArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn remove_at(this:ArrayList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
+let inner:extern "C" fn(ArrayList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn remove_range(this:ArrayList,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"RemoveRange",));
+let inner:extern "C" fn(ArrayList,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,count,__mi)}
+pub unsafe fn to_array(this:ArrayList,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"ToArray",));
+let inner:extern "C" fn(ArrayList, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_array_2(this:ArrayList,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::IlInstance{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <ArrayList as::unity2::ClassIdentity> ::NAME,"ToArray",));
+let inner:extern "C" fn(ArrayList, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::IlInstance= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
 }
 
 #[cfg(feature="system-collections-arraylist")]impl ArrayList{#[doc="`ReadOnly(crate::system::collections::arraylist::ArrayList)` overload"]pub fn read_only(list:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList>)->crate::system::collections::arraylist::ArrayList{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3400620usize)as*mut u8,crate::system::collections::arraylist::ArrayList;
@@ -90,104 +372,80 @@ this}
 (ArrayList)__receiver,(crate::system::collections::icollection::ICollection)::core::convert::Into::into(c))}
 }
 #[doc="`set_Capacity(i32)` overload"]fn set_capacity(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ff900usize)as*mut u8,();
-(ArrayList)__receiver,(i32)::core::convert::Into::into(value))}
+__ArrayList_unity2_raw::set_capacity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffa40usize)as*mut u8,i32;
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffa50usize)as*mut u8,bool;
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffa60usize)as*mut u8,bool;
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffa70usize)as*mut u8,crate::system::object::Object;
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffb00usize)as*mut u8,crate::system::object::Object;
-(ArrayList)__receiver,(i32)::core::convert::Into::into(index))}
+__ArrayList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`set_Item(i32, crate::system::object::Object)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffbb0usize)as*mut u8,();
-(ArrayList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(value))}
+__ArrayList_unity2_raw::set_item(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Add(crate::system::object::Object)` overload"]fn add(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffcb0usize)as*mut u8,i32;
-(ArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__ArrayList_unity2_raw::add(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`AddRange(crate::system::collections::icollection::ICollection)` overload"]fn add_range(self,c:impl::core::convert::Into<crate::system::collections::icollection::ICollection>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffe00usize)as*mut u8,();
-(ArrayList)__receiver,(crate::system::collections::icollection::ICollection)::core::convert::Into::into(c))}
+__ArrayList_unity2_raw::add_range(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffe20usize)as*mut u8,();
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::clear(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffe70usize)as*mut u8,crate::system::object::Object;
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,item:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33fff00usize)as*mut u8,bool;
-(ArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(item))}
+__ArrayList_unity2_raw::contains(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(::unity2::IlInstance)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33fffe0usize)as*mut u8,();
-(ArrayList)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array))}
+__ArrayList_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to_2(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400000usize)as*mut u8,();
-(ArrayList)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+__ArrayList_unity2_raw::copy_to_2(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(i32, ::unity2::IlInstance, i32, i32)` overload"]fn copy_to_3(self,index:impl::core::convert::Into<i32> ,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34000a0usize)as*mut u8,();
-(ArrayList)__receiver,(i32)::core::convert::Into::into(index),(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index),(i32)::core::convert::Into::into(count))}
+__ArrayList_unity2_raw::copy_to_3(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`EnsureCapacity(i32)` overload"]fn ensure_capacity(self,min:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33ffdb0usize)as*mut u8,();
 (ArrayList)__receiver,(i32)::core::convert::Into::into(min))}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400170usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IndexOf(crate::system::object::Object)` overload"]fn index_of(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34001e0usize)as*mut u8,i32;
-(ArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__ArrayList_unity2_raw::index_of(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Insert(i32, crate::system::object::Object)` overload"]fn insert(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400200usize)as*mut u8,();
-(ArrayList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(value))}
+__ArrayList_unity2_raw::insert(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`InsertRange(i32, crate::system::collections::icollection::ICollection)` overload"]fn insert_range(self,index:impl::core::convert::Into<i32> ,c:impl::core::convert::Into<crate::system::collections::icollection::ICollection>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400380usize)as*mut u8,();
-(ArrayList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::collections::icollection::ICollection)::core::convert::Into::into(c))}
+__ArrayList_unity2_raw::insert_range(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(c), ::core::option::Option::None)}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34006d0usize)as*mut u8,();
-(ArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__ArrayList_unity2_raw::remove(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400720usize)as*mut u8,();
-(ArrayList)__receiver,(i32)::core::convert::Into::into(index))}
+__ArrayList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`RemoveRange(i32, i32)` overload"]fn remove_range(self,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400810usize)as*mut u8,();
-(ArrayList)__receiver,(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__ArrayList_unity2_raw::remove_range(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ToArray()` overload"]fn to_array(self,)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400990usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(ArrayList)__receiver)}
+__ArrayList_unity2_raw::to_array(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToArray(::unity2::SystemType)` overload"]fn to_array_2(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::IlInstance{unsafe{let __receiver= <ArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3400a10usize)as*mut u8, ::unity2::IlInstance;
-(ArrayList)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__ArrayList_unity2_raw::to_array_2(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 }
 
@@ -242,101 +500,311 @@ this}
 this}
 }
 
+#[cfg(feature="system-collections-arraylist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ArrayList_ReadOnlyArrayList_unity2_raw{use super:: * ;
+pub unsafe fn get_count(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_item(this:ArrayList_ReadOnlyArrayList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn set_item(this:ArrayList_ReadOnlyArrayList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn get_sync_root(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn add(this:ArrayList_ReadOnlyArrayList,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn add_range(this:ArrayList_ReadOnlyArrayList,c:crate::system::collections::icollection::ICollection,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"AddRange",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,c,__mi)}
+pub unsafe fn set_capacity(this:ArrayList_ReadOnlyArrayList,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"set_Capacity",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn clear(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"Clear",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clone(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn contains(this:ArrayList_ReadOnlyArrayList,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"Contains",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn copy_to(this:ArrayList_ReadOnlyArrayList,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,index,__mi)}
+pub unsafe fn copy_to_2(this:ArrayList_ReadOnlyArrayList,index:i32,array: ::unity2::IlInstance,array_index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32, ::unity2::IlInstance,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,array,array_index,count,__mi)}
+pub unsafe fn get_enumerator(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn index_of(this:ArrayList_ReadOnlyArrayList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"IndexOf",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn insert(this:ArrayList_ReadOnlyArrayList,index:i32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"Insert",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,obj,__mi)}
+pub unsafe fn insert_range(this:ArrayList_ReadOnlyArrayList,index:i32,c:crate::system::collections::icollection::ICollection,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"InsertRange",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32,crate::system::collections::icollection::ICollection, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,c,__mi)}
+pub unsafe fn remove(this:ArrayList_ReadOnlyArrayList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn remove_at(this:ArrayList_ReadOnlyArrayList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn remove_range(this:ArrayList_ReadOnlyArrayList,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"RemoveRange",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,count,__mi)}
+pub unsafe fn to_array(this:ArrayList_ReadOnlyArrayList,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"ToArray",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_array_2(this:ArrayList_ReadOnlyArrayList,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::IlInstance{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <ArrayList_ReadOnlyArrayList as::unity2::ClassIdentity> ::NAME,"ToArray",));
+let inner:extern "C" fn(ArrayList_ReadOnlyArrayList, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::IlInstance= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+}
+
 #[cfg(feature="system-collections-arraylist")]pub trait IArrayList_ReadOnlyArrayListMethods:IArrayList_ReadOnlyArrayList{#[doc="`.ctor(crate::system::collections::arraylist::ArrayList)` overload"]fn ctor(self,l:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd550usize)as*mut u8,();
 (ArrayList_ReadOnlyArrayList)__receiver,(crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(l))}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd5d0usize)as*mut u8,i32;
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd5f0usize)as*mut u8,bool;
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd600usize)as*mut u8,bool;
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd620usize)as*mut u8,crate::system::object::Object;
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(index))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`set_Item(i32, crate::system::object::Object)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd640usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(value))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::set_item(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd6a0usize)as*mut u8,crate::system::object::Object;
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Add(crate::system::object::Object)` overload"]fn add(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd6c0usize)as*mut u8,i32;
-(ArrayList_ReadOnlyArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::add(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`AddRange(crate::system::collections::icollection::ICollection)` overload"]fn add_range(self,c:impl::core::convert::Into<crate::system::collections::icollection::ICollection>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd720usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(crate::system::collections::icollection::ICollection)::core::convert::Into::into(c))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::add_range(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)}
 }
 #[doc="`set_Capacity(i32)` overload"]fn set_capacity(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd780usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(value))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::set_capacity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd7e0usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::clear(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd840usize)as*mut u8,crate::system::object::Object;
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd980usize)as*mut u8,bool;
-(ArrayList_ReadOnlyArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::contains(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd9a0usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(i32, ::unity2::IlInstance, i32, i32)` overload"]fn copy_to_2(self,index:impl::core::convert::Into<i32> ,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd9c0usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(index),(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index),(i32)::core::convert::Into::into(count))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::copy_to_2(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cd9e0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IndexOf(crate::system::object::Object)` overload"]fn index_of(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cda00usize)as*mut u8,i32;
-(ArrayList_ReadOnlyArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::index_of(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Insert(i32, crate::system::object::Object)` overload"]fn insert(self,index:impl::core::convert::Into<i32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cda20usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::insert(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`InsertRange(i32, crate::system::collections::icollection::ICollection)` overload"]fn insert_range(self,index:impl::core::convert::Into<i32> ,c:impl::core::convert::Into<crate::system::collections::icollection::ICollection>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cda80usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::collections::icollection::ICollection)::core::convert::Into::into(c))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::insert_range(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(c), ::core::option::Option::None)}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdae0usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::remove(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdb40usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(index))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`RemoveRange(i32, i32)` overload"]fn remove_range(self,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdba0usize)as*mut u8,();
-(ArrayList_ReadOnlyArrayList)__receiver,(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::remove_range(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ToArray()` overload"]fn to_array(self,)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdc00usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(ArrayList_ReadOnlyArrayList)__receiver)}
+__ArrayList_ReadOnlyArrayList_unity2_raw::to_array(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToArray(::unity2::SystemType)` overload"]fn to_array_2(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::IlInstance{unsafe{let __receiver= <ArrayList_ReadOnlyArrayList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34cdc20usize)as*mut u8, ::unity2::IlInstance;
-(ArrayList_ReadOnlyArrayList)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__ArrayList_ReadOnlyArrayList_unity2_raw::to_array_2(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 }
 

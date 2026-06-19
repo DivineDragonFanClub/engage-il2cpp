@@ -22,6 +22,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-encountequipdata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-encountequipdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EncountEquipData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:EncountEquipData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <EncountEquipData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(EncountEquipData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:EncountEquipData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <EncountEquipData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(EncountEquipData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-encountequipdata")]impl EncountEquipData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dac40usize)as*mut u8,();
 )}
 }
@@ -44,12 +67,10 @@ pub use __types::*;
 (EncountEquipData)__receiver,(u8)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22dc910usize)as*mut u8,();
-(EncountEquipData)__receiver)}
+__EncountEquipData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22dca10usize)as*mut u8, ::unity2::Il2CppString;
-(EncountEquipData)__receiver)}
+__EncountEquipData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetKindCount(crate::app::itemdata::ItemData_Kinds)` overload"]fn get_kind_count(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->i32{unsafe{let __receiver= <EncountEquipData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22dca20usize)as*mut u8,i32;

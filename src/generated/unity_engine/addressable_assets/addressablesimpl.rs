@@ -11,13 +11,13 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl_LoadResourceLocationKeysOp.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AddressablesImpl.LoadResourceLocationKeysOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> >)]pub struct AddressablesImpl_LoadResourceLocationKeysOp{#[offset(136)]#[rename(name="m_Key")]pub m_key:crate::system::collections::ienumerable::IEnumerable, #[offset(144)]#[rename(name="m_MergeMode")]pub m_merge_mode:crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode, #[offset(152)]#[rename(name="m_locations")]pub m_locations:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , #[offset(160)]#[rename(name="m_Addressables")]pub m_addressables:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, #[offset(168)]#[rename(name="m_ResourceType")]pub m_resource_type: ::unity2::SystemType,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl_ResourceLocatorInfo.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AddressablesImpl.ResourceLocatorInfo")]#[parent(crate::system::object::Object)]pub struct AddressablesImpl_ResourceLocatorInfo{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AddressablesImpl")]#[parent(crate::system::object::Object)]pub struct AddressablesImpl{#[offset(16)]#[rename(name="m_ResourceManager")]pub m_resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager, #[offset(24)]#[rename(name="m_InstanceProvider")]pub m_instance_provider:crate::unity_engine::resource_management::resource_providers::iinstanceprovider_interface::IInstanceProvider_Interface, #[offset(32)]#[rename(name="m_CatalogRequestsTimeout")]pub m_catalog_requests_timeout:i32, #[static_field]#[rename(name="kCacheDataFolder")]pub k_cache_data_folder: ::unity2::Il2CppString, #[offset(40)]#[rename(name="SceneProvider")]pub scene_provider:crate::unity_engine::resource_management::resource_providers::isceneprovider_interface::ISceneProvider_Interface, #[offset(48)]#[rename(name="m_ResourceLocators")]pub m_resource_locators:crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl_ResourceLocatorInfo> , #[offset(56)]#[rename(name="m_InitializationOperation")]pub m_initialization_operation:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> , #[offset(80)]#[rename(name="m_ActiveCheckUpdateOperation")]pub m_active_check_update_operation:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> > , #[offset(104)]#[rename(name="m_ActiveUpdateOperation")]pub m_active_update_operation:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::list_1::List_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> > , #[offset(128)]#[rename(name="m_OnHandleCompleteAction")]pub m_on_handle_complete_action:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , #[offset(136)]#[rename(name="m_OnSceneHandleCompleteAction")]pub m_on_scene_handle_complete_action:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , #[offset(144)]#[rename(name="m_OnHandleDestroyedAction")]pub m_on_handle_destroyed_action:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , #[offset(152)]#[rename(name="m_resultToHandle")]pub m_result_to_handle:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::system::object::Object,crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , #[offset(160)]#[rename(name="m_SceneInstances")]pub m_scene_instances:crate::system::collections::generic::hashset_1::HashSet_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , #[offset(168)]#[rename(name="hasStartedInitialization")]pub has_started_initialization:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl_ResourceLocatorInfo.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AddressablesImpl.ResourceLocatorInfo")]#[parent(crate::system::object::Object)]pub struct AddressablesImpl_ResourceLocatorInfo{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl_LoadResourceLocationKeysOp.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AddressablesImpl.LoadResourceLocationKeysOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> >)]pub struct AddressablesImpl_LoadResourceLocationKeysOp{#[offset(136)]#[rename(name="m_Key")]pub m_key:crate::system::collections::ienumerable::IEnumerable, #[offset(144)]#[rename(name="m_MergeMode")]pub m_merge_mode:crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode, #[offset(152)]#[rename(name="m_locations")]pub m_locations:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , #[offset(160)]#[rename(name="m_Addressables")]pub m_addressables:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, #[offset(168)]#[rename(name="m_ResourceType")]pub m_resource_type: ::unity2::SystemType,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/addressable_assets/addressablesimpl/AddressablesImpl_LoadResourceLocationKeyOp.md"))]#[::unity2::class(namespace="UnityEngine.AddressableAssets",name="AddressablesImpl.LoadResourceLocationKeyOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> >)]pub struct AddressablesImpl_LoadResourceLocationKeyOp{#[offset(136)]#[rename(name="m_Keys")]pub m_keys: ::unity2::IlInstance, #[offset(144)]#[rename(name="m_locations")]pub m_locations:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , #[offset(152)]#[rename(name="m_Addressables")]pub m_addressables:crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, #[offset(160)]#[rename(name="m_ResourceType")]pub m_resource_type: ::unity2::SystemType,}
@@ -27,42 +27,100 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 #[cfg(feature = "unity_engine-addressable_assets-addressablesimpl-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]pub trait IAddressablesImpl_LoadResourceLocationKeysOpMethods:IAddressablesImpl_LoadResourceLocationKeysOp{#[doc="`get_DebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbe8e0usize)as*mut u8, ::unity2::Il2CppString;
-(AddressablesImpl_LoadResourceLocationKeysOp)__receiver)}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]pub trait IAddressablesImpl_ResourceLocatorInfoMethods:IAddressablesImpl_ResourceLocatorInfo{#[doc="`get_Locator()` overload"]fn get_locator(self,)->crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeab0usize)as*mut u8,crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator;
+(AddressablesImpl_ResourceLocatorInfo)__receiver)}
 }
-#[doc="`Init(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, ::unity2::SystemType, crate::system::collections::ienumerable::IEnumerable, crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode)` overload"]fn init(self,aa:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl> ,t:impl::core::convert::Into< ::unity2::SystemType> ,key:impl::core::convert::Into<crate::system::collections::ienumerable::IEnumerable> ,merge_mode:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode>)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dad8d0usize)as*mut u8,();
-(AddressablesImpl_LoadResourceLocationKeysOp)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa),(::unity2::SystemType)::core::convert::Into::into(t),(crate::system::collections::ienumerable::IEnumerable)::core::convert::Into::into(key),(crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode)::core::convert::Into::into(merge_mode))}
+#[doc="`set_Locator(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)` overload"]fn set_locator(self,value:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeac0usize)as*mut u8,();
+(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)::core::convert::Into::into(value))}
 }
-#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbe930usize)as*mut u8,();
-(AddressablesImpl_LoadResourceLocationKeysOp)__receiver)}
+#[doc="`get_LocalHash()` overload"]fn get_local_hash(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbead0usize)as*mut u8, ::unity2::Il2CppString;
+(AddressablesImpl_ResourceLocatorInfo)__receiver)}
 }
-#[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbea20usize)as*mut u8,bool;
-(AddressablesImpl_LoadResourceLocationKeysOp)__receiver)}
+#[doc="`set_LocalHash(::unity2::Il2CppString)` overload"]fn set_local_hash(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeae0usize)as*mut u8,();
+(AddressablesImpl_ResourceLocatorInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dad870usize)as*mut u8,();
-(AddressablesImpl_LoadResourceLocationKeysOp)__receiver)}
+#[doc="`get_CatalogLocation()` overload"]fn get_catalog_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeaf0usize)as*mut u8,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation;
+(AddressablesImpl_ResourceLocatorInfo)__receiver)}
+}
+#[doc="`set_CatalogLocation(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn set_catalog_location(self,value:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb00usize)as*mut u8,();
+(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(value))}
+}
+#[doc="`get_ContentUpdateAvailable()` overload"]fn get_content_update_available(self,)->bool{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb10usize)as*mut u8,bool;
+(AddressablesImpl_ResourceLocatorInfo)__receiver)}
+}
+#[doc="`set_ContentUpdateAvailable(bool)` overload"]fn set_content_update_available(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb20usize)as*mut u8,();
+(AddressablesImpl_ResourceLocatorInfo)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn ctor(self,loc:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> ,local_hash:impl::core::convert::Into< ::unity2::Il2CppString> ,remote_catalog_location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dab000usize)as*mut u8,();
+(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)::core::convert::Into::into(loc),(::unity2::Il2CppString)::core::convert::Into::into(local_hash),(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(remote_catalog_location))}
+}
+#[doc="`get_HashLocation()` overload"]fn get_hash_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3810usize)as*mut u8,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation;
+(AddressablesImpl_ResourceLocatorInfo)__receiver)}
+}
+#[doc="`get_CanUpdateContent()` overload"]fn get_can_update_content(self,)->bool{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3650usize)as*mut u8,bool;
+(AddressablesImpl_ResourceLocatorInfo)__receiver)}
+}
+#[doc="`UpdateContent(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn update_content(self,locator:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> ,hash:impl::core::convert::Into< ::unity2::Il2CppString> ,loc:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbdbd0usize)as*mut u8,();
+(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)::core::convert::Into::into(locator),(::unity2::Il2CppString)::core::convert::Into::into(hash),(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(loc))}
 }
 }
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl<__T:IAddressablesImpl_LoadResourceLocationKeysOp>IAddressablesImpl_LoadResourceLocationKeysOpMethods for __T{}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl<__T:IAddressablesImpl_ResourceLocatorInfo>IAddressablesImpl_ResourceLocatorInfoMethods for __T{}
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_LoadResourceLocationKeysOp{pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_ResourceLocatorInfo{pub fn get_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_local_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_local_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_catalog_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_catalog_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_content_update_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_content_update_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_hash_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_can_update_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn update_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
 }
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_LoadResourceLocationKeysOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_ResourceLocatorInfo{#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` — overload selector"]pub fn new(loc:crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,local_hash: ::unity2::Il2CppString,remote_catalog_location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AddressablesImpl_LoadResourceLocationKeysOp), ::core::stringify!(new),));
- <Self as IAddressablesImpl_LoadResourceLocationKeysOpMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(AddressablesImpl_ResourceLocatorInfo), ::core::stringify!(new),));
+ <Self as IAddressablesImpl_ResourceLocatorInfoMethods> ::ctor(this,loc,local_hash,remote_catalog_location);
 this}
+}
+
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AddressablesImpl_unity2_raw{use super:: * ;
+pub unsafe fn equals(this:AddressablesImpl,x:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,y:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AddressablesImpl as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(AddressablesImpl,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+pub unsafe fn get_hash_code(this:AddressablesImpl,loc:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AddressablesImpl as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(AddressablesImpl,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,loc,__mi)}
 }
 
 #[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl{#[doc="`GatherDependenciesFromLocations(crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]pub fn gather_dependencies_from_locations(locations:impl::core::convert::Into<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> >)->crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dae420usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ;
@@ -652,12 +710,10 @@ __f(__receiver, ::core::convert::Into::into(handle), ::core::option::Option::Som
 (AddressablesImpl)__receiver,(crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString>)::core::convert::Into::into(catalog_ids),(bool)::core::convert::Into::into(auto_release_handle))}
 }
 #[doc="`Equals(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn equals(self,x:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,y:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->bool{unsafe{let __receiver= <AddressablesImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db0b70usize)as*mut u8,bool;
-(AddressablesImpl)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(x),(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(y))}
+__AddressablesImpl_unity2_raw::equals(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn get_hash_code(self,loc:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->i32{unsafe{let __receiver= <AddressablesImpl as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db0e40usize)as*mut u8,i32;
-(AddressablesImpl)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(loc))}
+__AddressablesImpl_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(loc), ::core::option::Option::None)}
 }
 }
 
@@ -761,94 +817,119 @@ pub fn get_hash_code_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self
 this}
 }
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]pub trait IAddressablesImpl_ResourceLocatorInfoMethods:IAddressablesImpl_ResourceLocatorInfo{#[doc="`get_Locator()` overload"]fn get_locator(self,)->crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeab0usize)as*mut u8,crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator;
-(AddressablesImpl_ResourceLocatorInfo)__receiver)}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AddressablesImpl_LoadResourceLocationKeysOp_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:AddressablesImpl_LoadResourceLocationKeysOp,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::ClassIdentity> ::NAME,"get_DebugName",));
+let inner:extern "C" fn(AddressablesImpl_LoadResourceLocationKeysOp, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn execute(this:AddressablesImpl_LoadResourceLocationKeysOp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(AddressablesImpl_LoadResourceLocationKeysOp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn invoke_wait_for_completion(this:AddressablesImpl_LoadResourceLocationKeysOp,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let inner:extern "C" fn(AddressablesImpl_LoadResourceLocationKeysOp, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`set_Locator(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)` overload"]fn set_locator(self,value:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeac0usize)as*mut u8,();
-(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)::core::convert::Into::into(value))}
+
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]pub trait IAddressablesImpl_LoadResourceLocationKeysOpMethods:IAddressablesImpl_LoadResourceLocationKeysOp{#[doc="`get_DebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AddressablesImpl_LoadResourceLocationKeysOp_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
-#[doc="`get_LocalHash()` overload"]fn get_local_hash(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbead0usize)as*mut u8, ::unity2::Il2CppString;
-(AddressablesImpl_ResourceLocatorInfo)__receiver)}
+#[doc="`Init(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, ::unity2::SystemType, crate::system::collections::ienumerable::IEnumerable, crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode)` overload"]fn init(self,aa:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl> ,t:impl::core::convert::Into< ::unity2::SystemType> ,key:impl::core::convert::Into<crate::system::collections::ienumerable::IEnumerable> ,merge_mode:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode>)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dad8d0usize)as*mut u8,();
+(AddressablesImpl_LoadResourceLocationKeysOp)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa),(::unity2::SystemType)::core::convert::Into::into(t),(crate::system::collections::ienumerable::IEnumerable)::core::convert::Into::into(key),(crate::unity_engine::addressable_assets::addressables::Addressables_MergeMode)::core::convert::Into::into(merge_mode))}
 }
-#[doc="`set_LocalHash(::unity2::Il2CppString)` overload"]fn set_local_hash(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeae0usize)as*mut u8,();
-(AddressablesImpl_ResourceLocatorInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AddressablesImpl_LoadResourceLocationKeysOp_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
-#[doc="`get_CatalogLocation()` overload"]fn get_catalog_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeaf0usize)as*mut u8,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation;
-(AddressablesImpl_ResourceLocatorInfo)__receiver)}
+#[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AddressablesImpl_LoadResourceLocationKeysOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
 }
-#[doc="`set_CatalogLocation(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn set_catalog_location(self,value:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb00usize)as*mut u8,();
-(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(value))}
-}
-#[doc="`get_ContentUpdateAvailable()` overload"]fn get_content_update_available(self,)->bool{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb10usize)as*mut u8,bool;
-(AddressablesImpl_ResourceLocatorInfo)__receiver)}
-}
-#[doc="`set_ContentUpdateAvailable(bool)` overload"]fn set_content_update_available(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbeb20usize)as*mut u8,();
-(AddressablesImpl_ResourceLocatorInfo)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn ctor(self,loc:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> ,local_hash:impl::core::convert::Into< ::unity2::Il2CppString> ,remote_catalog_location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dab000usize)as*mut u8,();
-(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)::core::convert::Into::into(loc),(::unity2::Il2CppString)::core::convert::Into::into(local_hash),(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(remote_catalog_location))}
-}
-#[doc="`get_HashLocation()` overload"]fn get_hash_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3810usize)as*mut u8,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation;
-(AddressablesImpl_ResourceLocatorInfo)__receiver)}
-}
-#[doc="`get_CanUpdateContent()` overload"]fn get_can_update_content(self,)->bool{unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db3650usize)as*mut u8,bool;
-(AddressablesImpl_ResourceLocatorInfo)__receiver)}
-}
-#[doc="`UpdateContent(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn update_content(self,locator:impl::core::convert::Into<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> ,hash:impl::core::convert::Into< ::unity2::Il2CppString> ,loc:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->(){unsafe{let __receiver= <AddressablesImpl_ResourceLocatorInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbdbd0usize)as*mut u8,();
-(AddressablesImpl_ResourceLocatorInfo)__receiver,(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator)::core::convert::Into::into(locator),(::unity2::Il2CppString)::core::convert::Into::into(hash),(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(loc))}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeysOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2dad870usize)as*mut u8,();
+(AddressablesImpl_LoadResourceLocationKeysOp)__receiver)}
 }
 }
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl<__T:IAddressablesImpl_ResourceLocatorInfo>IAddressablesImpl_ResourceLocatorInfoMethods for __T{}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl<__T:IAddressablesImpl_LoadResourceLocationKeysOp>IAddressablesImpl_LoadResourceLocationKeysOpMethods for __T{}
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_ResourceLocatorInfo{pub fn get_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_locator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_local_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_local_hash_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_catalog_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_catalog_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_content_update_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_content_update_available_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_hash_location_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_can_update_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn update_content_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_LoadResourceLocationKeysOp{pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
 }
 
-#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_ResourceLocatorInfo{#[doc="`.ctor(crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` — overload selector"]pub fn new(loc:crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator,local_hash: ::unity2::Il2CppString,remote_catalog_location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]impl AddressablesImpl_LoadResourceLocationKeysOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(AddressablesImpl_ResourceLocatorInfo), ::core::stringify!(new),));
- <Self as IAddressablesImpl_ResourceLocatorInfoMethods> ::ctor(this,loc,local_hash,remote_catalog_location);
+ failed to instantiate", ::core::stringify!(AddressablesImpl_LoadResourceLocationKeysOp), ::core::stringify!(new),));
+ <Self as IAddressablesImpl_LoadResourceLocationKeysOpMethods> ::ctor(this,);
 this}
 }
 
+#[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AddressablesImpl_LoadResourceLocationKeyOp_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:AddressablesImpl_LoadResourceLocationKeyOp,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::ClassIdentity> ::NAME,"get_DebugName",));
+let inner:extern "C" fn(AddressablesImpl_LoadResourceLocationKeyOp, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn invoke_wait_for_completion(this:AddressablesImpl_LoadResourceLocationKeyOp,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let inner:extern "C" fn(AddressablesImpl_LoadResourceLocationKeyOp, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn execute(this:AddressablesImpl_LoadResourceLocationKeyOp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(AddressablesImpl_LoadResourceLocationKeyOp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-addressablesimpl")]pub trait IAddressablesImpl_LoadResourceLocationKeyOpMethods:IAddressablesImpl_LoadResourceLocationKeyOp{#[doc="`get_DebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbe750usize)as*mut u8, ::unity2::Il2CppString;
-(AddressablesImpl_LoadResourceLocationKeyOp)__receiver)}
+__AddressablesImpl_LoadResourceLocationKeyOp_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Init(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, ::unity2::SystemType, crate::system::object::Object)` overload"]fn init(self,aa:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl> ,t:impl::core::convert::Into< ::unity2::SystemType> ,keys:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dadb20usize)as*mut u8,();
 (AddressablesImpl_LoadResourceLocationKeyOp)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa),(::unity2::SystemType)::core::convert::Into::into(t),(crate::system::object::Object)::core::convert::Into::into(keys))}
 }
 #[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbe760usize)as*mut u8,bool;
-(AddressablesImpl_LoadResourceLocationKeyOp)__receiver)}
+__AddressablesImpl_LoadResourceLocationKeyOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbe7f0usize)as*mut u8,();
-(AddressablesImpl_LoadResourceLocationKeyOp)__receiver)}
+__AddressablesImpl_LoadResourceLocationKeyOp_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AddressablesImpl_LoadResourceLocationKeyOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dadac0usize)as*mut u8,();
@@ -875,15 +956,15 @@ this}
 #[cfg(feature = "unity_engine-addressable_assets-addressablesimpl")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AddressablesImpl_LoadResourceLocationKeysOp;
-    pub use super::IAddressablesImpl_LoadResourceLocationKeysOp;
-    pub use super::IAddressablesImpl_LoadResourceLocationKeysOpMethods;
-    pub use super::AddressablesImpl;
-    pub use super::IAddressablesImpl;
-    pub use super::IAddressablesImplMethods;
     pub use super::AddressablesImpl_ResourceLocatorInfo;
     pub use super::IAddressablesImpl_ResourceLocatorInfo;
     pub use super::IAddressablesImpl_ResourceLocatorInfoMethods;
+    pub use super::AddressablesImpl;
+    pub use super::IAddressablesImpl;
+    pub use super::IAddressablesImplMethods;
+    pub use super::AddressablesImpl_LoadResourceLocationKeysOp;
+    pub use super::IAddressablesImpl_LoadResourceLocationKeysOp;
+    pub use super::IAddressablesImpl_LoadResourceLocationKeysOpMethods;
     pub use super::AddressablesImpl_LoadResourceLocationKeyOp;
     pub use super::IAddressablesImpl_LoadResourceLocationKeyOp;
     pub use super::IAddressablesImpl_LoadResourceLocationKeyOpMethods;

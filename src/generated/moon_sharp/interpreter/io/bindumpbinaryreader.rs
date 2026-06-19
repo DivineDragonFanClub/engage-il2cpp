@@ -29,36 +29,36 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <BinDumpBinaryReader as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_int32{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<BinDumpBinaryReader as::unity2::ClassIdentity> ::class(),"ReadInt32",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinDumpBinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt32",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_u_int32{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<BinDumpBinaryReader as::unity2::ClassIdentity> ::class(),"ReadUInt32",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinDumpBinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt32",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_read_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<BinDumpBinaryReader as::unity2::ClassIdentity> ::class(),"ReadString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <BinDumpBinaryReader as::unity2::ClassIdentity> ::NAME,"ReadString",e),}
-}
-}
+pub unsafe fn read_int32(this:BinDumpBinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <BinDumpBinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt32",));
+let inner:extern "C" fn(BinDumpBinaryReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_u_int32(this:BinDumpBinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <BinDumpBinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt32",));
+let inner:extern "C" fn(BinDumpBinaryReader, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_string(this:BinDumpBinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <BinDumpBinaryReader as::unity2::ClassIdentity> ::NAME,"ReadString",));
+let inner:extern "C" fn(BinDumpBinaryReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-io-bindumpbinaryreader")]pub trait IBinDumpBinaryReaderMethods:IBinDumpBinaryReader{#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor(self,s:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <BinDumpBinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -66,16 +66,13 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (BinDumpBinaryReader)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(s))}
 }
 #[doc="`ReadInt32()` overload"]fn read_int32(self,)->i32{unsafe{let __receiver= <BinDumpBinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinDumpBinaryReader_unity2_raw::__lookup_read_int32::get_method_info().method_ptr,i32;
-(BinDumpBinaryReader)__receiver)}
+__BinDumpBinaryReader_unity2_raw::read_int32(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadUInt32()` overload"]fn read_u_int32(self,)->u32{unsafe{let __receiver= <BinDumpBinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinDumpBinaryReader_unity2_raw::__lookup_read_u_int32::get_method_info().method_ptr,u32;
-(BinDumpBinaryReader)__receiver)}
+__BinDumpBinaryReader_unity2_raw::read_u_int32(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadString()` overload"]fn read_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BinDumpBinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__BinDumpBinaryReader_unity2_raw::__lookup_read_string::get_method_info().method_ptr, ::unity2::Il2CppString;
-(BinDumpBinaryReader)__receiver)}
+__BinDumpBinaryReader_unity2_raw::read_string(__receiver, ::core::option::Option::None)}
 }
 }
 

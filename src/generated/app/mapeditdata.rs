@@ -9,33 +9,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditdata/MapEditData_UnitInfo.md"))]#[::unity2::class(namespace="App",name="MapEditData.UnitInfo")]#[parent(crate::system::object::Object)]pub struct MapEditData_UnitInfo{#[offset(16)]#[rename(name="pid")]pub pid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="pos")]pub pos:crate::app::mappos::MapPos, #[offset(32)]#[rename(name="aiType")]pub ai_type:crate::app::unitai::UnitAI_VersusTypes,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditdata/MapEditData.md"))]#[::unity2::class(namespace="App",name="MapEditData")]#[parent(crate::system::object::Object)]pub struct MapEditData{#[static_field]#[rename(name="Version")]pub version:i32, #[static_field]#[rename(name="MaxStream")]pub max_stream:i32, #[offset(16)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Stream")]pub m_stream:crate::app::stream_2::Stream_2, #[offset(40)]#[rename(name="m_SortieUnitInfoList")]pub m_sortie_unit_info_list:crate::system::collections::generic::list_1::List_1<crate::app::mapeditdata::MapEditData_UnitInfo> , #[offset(48)]#[rename(name="m_SortieGidList")]pub m_sortie_gid_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_SortieLinkGodDict")]pub m_sortie_link_god_dict:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeditdata/MapEditData_UnitInfo.md"))]#[::unity2::class(namespace="App",name="MapEditData.UnitInfo")]#[parent(crate::system::object::Object)]pub struct MapEditData_UnitInfo{#[offset(16)]#[rename(name="pid")]pub pid: ::unity2::Il2CppString, #[offset(24)]#[rename(name="pos")]pub pos:crate::app::mappos::MapPos, #[offset(32)]#[rename(name="aiType")]pub ai_type:crate::app::unitai::UnitAI_VersusTypes,}
 
 }
 
 #[cfg(feature = "app-mapeditdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapeditdata")]pub trait IMapEditData_UnitInfoMethods:IMapEditData_UnitInfo{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,ai_type:impl::core::convert::Into<crate::app::unitai::UnitAI_VersusTypes>)->(){unsafe{let __receiver= <MapEditData_UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3600usize)as*mut u8,();
-(MapEditData_UnitInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unitai::UnitAI_VersusTypes)::core::convert::Into::into(ai_type))}
-}
-}
-
-#[cfg(feature="app-mapeditdata")]impl<__T:IMapEditData_UnitInfo>IMapEditData_UnitInfoMethods for __T{}
-
-#[cfg(feature="app-mapeditdata")]impl MapEditData_UnitInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapeditdata")]impl MapEditData_UnitInfo{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,x:i32,z:i32,ai_type:crate::app::unitai::UnitAI_VersusTypes)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEditData_UnitInfo), ::core::stringify!(new),));
- <Self as IMapEditData_UnitInfoMethods> ::ctor(this,pid,x,z,ai_type);
-this}
-}
 
 #[cfg(feature="app-mapeditdata")]impl MapEditData{#[doc="`SerializeForMapHistoryReplay(crate::app::stream_2::Stream_2)` overload"]pub fn serialize_for_map_history_replay(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1db0960usize)as*mut u8,();
 (crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
@@ -220,15 +202,33 @@ pub fn try_get_sortie_god_method_info()-> & 'static::unity2::il2cpp::MethodInfo{
 this}
 }
 
+#[cfg(feature="app-mapeditdata")]pub trait IMapEditData_UnitInfoMethods:IMapEditData_UnitInfo{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` overload"]fn ctor(self,pid:impl::core::convert::Into< ::unity2::Il2CppString> ,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,ai_type:impl::core::convert::Into<crate::app::unitai::UnitAI_VersusTypes>)->(){unsafe{let __receiver= <MapEditData_UnitInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3600usize)as*mut u8,();
+(MapEditData_UnitInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(pid),(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unitai::UnitAI_VersusTypes)::core::convert::Into::into(ai_type))}
+}
+}
+
+#[cfg(feature="app-mapeditdata")]impl<__T:IMapEditData_UnitInfo>IMapEditData_UnitInfoMethods for __T{}
+
+#[cfg(feature="app-mapeditdata")]impl MapEditData_UnitInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapeditdata")]impl MapEditData_UnitInfo{#[doc="`.ctor(::unity2::Il2CppString, i32, i32, crate::app::unitai::UnitAI_VersusTypes)` — overload selector"]pub fn new(pid: ::unity2::Il2CppString,x:i32,z:i32,ai_type:crate::app::unitai::UnitAI_VersusTypes)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEditData_UnitInfo), ::core::stringify!(new),));
+ <Self as IMapEditData_UnitInfoMethods> ::ctor(this,pid,x,z,ai_type);
+this}
+}
+
 #[cfg(feature = "app-mapeditdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapEditData_UnitInfo;
-    pub use super::IMapEditData_UnitInfo;
-    pub use super::IMapEditData_UnitInfoMethods;
     pub use super::MapEditData;
     pub use super::IMapEditData;
     pub use super::IMapEditDataMethods;
+    pub use super::MapEditData_UnitInfo;
+    pub use super::IMapEditData_UnitInfo;
+    pub use super::IMapEditData_UnitInfoMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

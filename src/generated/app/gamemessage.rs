@@ -15,15 +15,116 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemessage/GameMessage.md"))]#[::unity2::class(namespace="App",name="GameMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct GameMessage{#[offset(112)]#[rename(name="m_content")]pub m_content:crate::app::gamemessagecontent::GameMessageContent, #[offset(120)]#[rename(name="m_status")]pub m_status:crate::app::gamemessage::GameMessage_Status, #[offset(128)]#[rename(name="m_mess")]pub m_mess: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_expandedMess")]pub m_expanded_mess: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_tickCount")]pub m_tick_count:i32, #[offset(148)]#[rename(name="m_endFrame")]pub m_end_frame:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemessage/GameMessage_Status.md"))]#[::unity2::class(namespace="App",name="GameMessage.Status")]#[parent(crate::app::bitfield32::BitField32)]pub struct GameMessage_Status{#[static_field]#[rename(name="SkipDisable")]pub skip_disable:i32, #[static_field]#[rename(name="KeyWait")]pub key_wait:i32, #[static_field]#[rename(name="SystemWait")]pub system_wait:i32, #[static_field]#[rename(name="SystemWaitEnd")]pub system_wait_end:i32, #[static_field]#[rename(name="Warning")]pub warning:i32, #[static_field]#[rename(name="FatalError")]pub fatal_error:i32, #[static_field]#[rename(name="WindowOpened")]pub window_opened:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamemessage/GameMessage.md"))]#[::unity2::class(namespace="App",name="GameMessage")]#[parent(crate::app::procinst::ProcInst)]pub struct GameMessage{#[offset(112)]#[rename(name="m_content")]pub m_content:crate::app::gamemessagecontent::GameMessageContent, #[offset(120)]#[rename(name="m_status")]pub m_status:crate::app::gamemessage::GameMessage_Status, #[offset(128)]#[rename(name="m_mess")]pub m_mess: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_expandedMess")]pub m_expanded_mess: ::unity2::Il2CppString, #[offset(144)]#[rename(name="m_tickCount")]pub m_tick_count:i32, #[offset(148)]#[rename(name="m_endFrame")]pub m_end_frame:i32,}
 
 }
 
 #[cfg(feature = "app-gamemessage-types")]
 pub use __types::*;
+
+#[cfg(feature="app-gamemessage")]pub trait IGameMessage_StatusMethods:IGameMessage_Status{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameMessage_Status as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66570usize)as*mut u8,();
+(GameMessage_Status)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamemessage")]impl<__T:IGameMessage_Status>IGameMessage_StatusMethods for __T{}
+
+#[cfg(feature="app-gamemessage")]impl GameMessage_Status{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-gamemessage")]impl GameMessage_Status{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameMessage_Status), ::core::stringify!(new),));
+ <Self as IGameMessage_StatusMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gamemessage")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameMessage_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn open_window(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"OpenWindow",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn wait_open_window(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"WaitOpenWindow",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn close_window(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"CloseWindow",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn wait_close_window(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"WaitCloseWindow",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn tick(this:GameMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <GameMessage as::unity2::ClassIdentity> ::NAME,"Tick",));
+let inner:extern "C" fn(GameMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-gamemessage")]impl GameMessage{#[doc="`CreateCommon(crate::app::procinst::ProcInst, ::unity2::Il2CppString, bool, i32)` overload"]pub fn create_common(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,mess:impl::core::convert::Into< ::unity2::Il2CppString> ,is_bind:impl::core::convert::Into<bool> ,status:impl::core::convert::Into<i32>)->crate::app::gamemessage::GameMessage{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x227ebd0usize)as*mut u8,crate::app::gamemessage::GameMessage;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(mess),(bool)::core::convert::Into::into(is_bind),(i32)::core::convert::Into::into(status))}
@@ -72,12 +173,10 @@ pub use __types::*;
 (GameMessage)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227dd90usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227df70usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetStatus()` overload"]fn get_status(self,)->crate::app::gamemessage::GameMessage_Status{unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x227e170usize)as*mut u8,crate::app::gamemessage::GameMessage_Status;
@@ -92,28 +191,22 @@ pub use __types::*;
 (GameMessage)__receiver)}
 }
 #[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227e1a0usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenWindow()` overload"]fn open_window(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227e500usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::open_window(__receiver, ::core::option::Option::None)}
 }
 #[doc="`WaitOpenWindow()` overload"]fn wait_open_window(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227e620usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::wait_open_window(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CloseWindow()` overload"]fn close_window(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227e710usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::close_window(__receiver, ::core::option::Option::None)}
 }
 #[doc="`WaitCloseWindow()` overload"]fn wait_close_window(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227e830usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::wait_close_window(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Tick()` overload"]fn tick(self,)->(){unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x227e910usize)as*mut u8,();
-(GameMessage)__receiver)}
+__GameMessage_unity2_raw::tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetShadowOff()` overload"]fn set_shadow_off(self,)->crate::app::gamemessage::GameMessage{unsafe{let __receiver= <GameMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x227fc50usize)as*mut u8,crate::app::gamemessage::GameMessage;
@@ -163,33 +256,15 @@ pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
-#[cfg(feature="app-gamemessage")]pub trait IGameMessage_StatusMethods:IGameMessage_Status{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameMessage_Status as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66570usize)as*mut u8,();
-(GameMessage_Status)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamemessage")]impl<__T:IGameMessage_Status>IGameMessage_StatusMethods for __T{}
-
-#[cfg(feature="app-gamemessage")]impl GameMessage_Status{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-gamemessage")]impl GameMessage_Status{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameMessage_Status), ::core::stringify!(new),));
- <Self as IGameMessage_StatusMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-gamemessage")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameMessage;
-    pub use super::IGameMessage;
-    pub use super::IGameMessageMethods;
     pub use super::GameMessage_Status;
     pub use super::IGameMessage_Status;
     pub use super::IGameMessage_StatusMethods;
+    pub use super::GameMessage;
+    pub use super::IGameMessage;
+    pub use super::IGameMessageMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::procinst::IProcInst;

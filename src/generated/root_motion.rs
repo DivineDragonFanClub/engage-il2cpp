@@ -14,7 +14,7 @@
  #[cfg(feature="root_motion-axistools")]pub use axistools::{IAxisToolsMethods}
 ;
  #[cfg(any(feature="root_motion-baker-types"))]pub mod baker;
- #[cfg(feature="root_motion-baker-types")]pub use baker::{Baker_Mode,Baker,IBaker}
+ #[cfg(feature="root_motion-baker-types")]pub use baker::{Baker,IBaker,Baker_Mode}
 ;
  #[cfg(feature="root_motion-baker")]pub use baker::{IBakerMethods}
 ;
@@ -42,10 +42,10 @@
  #[cfg(feature="root_motion-bipedlimborientations")]pub use bipedlimborientations::{IBipedLimbOrientations_LimbOrientationMethods,IBipedLimbOrientationsMethods}
 ;
  #[cfg(any(feature="root_motion-bipednaming-types"))]pub mod bipednaming;
- #[cfg(feature="root_motion-bipednaming-types")]pub use bipednaming::{BipedNaming_BoneSide,BipedNaming,IBipedNaming,BipedNaming_BoneType}
+ #[cfg(feature="root_motion-bipednaming-types")]pub use bipednaming::{BipedNaming,IBipedNaming,BipedNaming_BoneType,BipedNaming_BoneSide}
 ;
  #[cfg(any(feature="root_motion-bipedreferences-types"))]pub mod bipedreferences;
- #[cfg(feature="root_motion-bipedreferences-types")]pub use bipedreferences::{BipedReferences,IBipedReferences,BipedReferences_AutoDetectParams}
+ #[cfg(feature="root_motion-bipedreferences-types")]pub use bipedreferences::{BipedReferences_AutoDetectParams,BipedReferences,IBipedReferences}
 ;
  #[cfg(feature="root_motion-bipedreferences")]pub use bipedreferences::{IBipedReferencesMethods}
 ;

@@ -17,40 +17,140 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographeditdisposmenu/PhotographEditDisposMenu_UpdateUIObjHandler.md"))]#[::unity2::class(namespace="App",name="PhotographEditDisposMenu.UpdateUIObjHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographEditDisposMenu_UpdateUIObjHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographeditdisposmenu/PhotographEditDisposMenu.md"))]#[::unity2::class(namespace="App",name="PhotographEditDisposMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct PhotographEditDisposMenu{#[static_field]#[rename(name="s_SelectIdx")]pub s_select_idx:i32, #[offset(200)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(208)]#[rename(name="m_UnitPauseData")]pub m_unit_pause_data:crate::app::photographpausedata::PhotographPauseData, #[offset(216)]#[rename(name="m_GodPauseData")]pub m_god_pause_data:crate::app::photographpausedata::PhotographPauseData, #[offset(224)]#[rename(name="m_WeaponDataList")]pub m_weapon_data_list: ::unity2::Array<crate::app::itemdata::ItemData> , #[offset(232)]#[rename(name="m_UpdateUIObjHandler")]pub m_update_ui_obj_handler:crate::app::photographeditdisposmenu::PhotographEditDisposMenu_UpdateUIObjHandler, #[offset(240)]#[rename(name="m_ReturnHandler")]pub m_return_handler:crate::app::photographeditdisposmenu::PhotographEditDisposMenu_ReturnHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographeditdisposmenu/PhotographEditDisposMenu_ReturnHandler.md"))]#[::unity2::class(namespace="App",name="PhotographEditDisposMenu.ReturnHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographEditDisposMenu_ReturnHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographeditdisposmenu/PhotographEditDisposMenu_UpdateUIObjHandler.md"))]#[::unity2::class(namespace="App",name="PhotographEditDisposMenu.UpdateUIObjHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographEditDisposMenu_UpdateUIObjHandler{}
 
 }
 
 #[cfg(feature = "app-photographeditdisposmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-photographeditdisposmenu")]pub trait IPhotographEditDisposMenu_UpdateUIObjHandlerMethods:IPhotographEditDisposMenu_UpdateUIObjHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographEditDisposMenu_UpdateUIObjHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22620c0usize)as*mut u8,();
-(PhotographEditDisposMenu_UpdateUIObjHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(bool, bool, i32, i32)` overload"]fn invoke(self,is_arrow_active:impl::core::convert::Into<bool> ,is_mascot:impl::core::convert::Into<bool> ,pause_no:impl::core::convert::Into<i32> ,pause_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographEditDisposMenu_UpdateUIObjHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22620e0usize)as*mut u8,();
-(PhotographEditDisposMenu_UpdateUIObjHandler)__receiver,(bool)::core::convert::Into::into(is_arrow_active),(bool)::core::convert::Into::into(is_mascot),(i32)::core::convert::Into::into(pause_no),(i32)::core::convert::Into::into(pause_count))}
-}
-}
-
-#[cfg(feature="app-photographeditdisposmenu")]impl<__T:IPhotographEditDisposMenu_UpdateUIObjHandler>IPhotographEditDisposMenu_UpdateUIObjHandlerMethods for __T{}
-
-#[cfg(feature="app-photographeditdisposmenu")]impl PhotographEditDisposMenu_UpdateUIObjHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-photographeditdisposmenu")]impl PhotographEditDisposMenu_UpdateUIObjHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(PhotographEditDisposMenu_UpdateUIObjHandler), ::core::stringify!(new),));
- <Self as IPhotographEditDisposMenu_UpdateUIObjHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-photographeditdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographEditDisposMenu_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:PhotographEditDisposMenu,is_first_build:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(PhotographEditDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_first_build,__mi)}
+pub unsafe fn key_left(this:PhotographEditDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(PhotographEditDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:PhotographEditDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(PhotographEditDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_up(this:PhotographEditDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyUp",));
+let inner:extern "C" fn(PhotographEditDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_down(this:PhotographEditDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyDown",));
+let inner:extern "C" fn(PhotographEditDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn l_call(this:PhotographEditDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",54usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"LCall",));
+let inner:extern "C" fn(PhotographEditDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn r_call(this:PhotographEditDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",55usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"RCall",));
+let inner:extern "C" fn(PhotographEditDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn x_call(this:PhotographEditDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
+let inner:extern "C" fn(PhotographEditDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn plus_call(this:PhotographEditDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(56usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",56usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"PlusCall",));
+let inner:extern "C" fn(PhotographEditDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:PhotographEditDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(PhotographEditDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:PhotographEditDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(PhotographEditDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:PhotographEditDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <PhotographEditDisposMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(PhotographEditDisposMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-photographeditdisposmenu")]impl PhotographEditDisposMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographeditdisposmenu::PhotographEditDisposMenu_UpdateUIObjHandler, crate::app::photographeditdisposmenu::PhotographEditDisposMenu_ReturnHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,update_ui_obj_handler:impl::core::convert::Into<crate::app::photographeditdisposmenu::PhotographEditDisposMenu_UpdateUIObjHandler> ,return_handler:impl::core::convert::Into<crate::app::photographeditdisposmenu::PhotographEditDisposMenu_ReturnHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2690d10usize)as*mut u8,();
@@ -74,52 +174,40 @@ this}
 (PhotographEditDisposMenu)__receiver)}
 }
 #[doc="`OnBuild(bool)` overload"]fn on_build(self,is_first_build:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2691da0usize)as*mut u8,();
-(PhotographEditDisposMenu)__receiver,(bool)::core::convert::Into::into(is_first_build))}
+__PhotographEditDisposMenu_unity2_raw::on_build(__receiver, ::core::convert::Into::into(is_first_build), ::core::option::Option::None)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2691db0usize)as*mut u8,();
-(PhotographEditDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__PhotographEditDisposMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2691de0usize)as*mut u8,();
-(PhotographEditDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__PhotographEditDisposMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2691e10usize)as*mut u8,();
-(PhotographEditDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__PhotographEditDisposMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2692370usize)as*mut u8,();
-(PhotographEditDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__PhotographEditDisposMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`LCall()` overload"]fn l_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26928f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographEditDisposMenu)__receiver)}
+__PhotographEditDisposMenu_unity2_raw::l_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RCall()` overload"]fn r_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2692a90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographEditDisposMenu)__receiver)}
+__PhotographEditDisposMenu_unity2_raw::r_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2692c30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographEditDisposMenu)__receiver)}
+__PhotographEditDisposMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2692c60usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographEditDisposMenu)__receiver)}
+__PhotographEditDisposMenu_unity2_raw::plus_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2692cf0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographEditDisposMenu)__receiver)}
+__PhotographEditDisposMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2692ea0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographEditDisposMenu)__receiver)}
+__PhotographEditDisposMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographEditDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2692f30usize)as*mut u8, ::unity2::Il2CppString;
-(PhotographEditDisposMenu)__receiver)}
+__PhotographEditDisposMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -151,13 +239,25 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-photographeditdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographEditDisposMenu_ReturnHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:PhotographEditDisposMenu_ReturnHandler,label:crate::app::photographsequence::PhotographSequence_Label,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographEditDisposMenu_ReturnHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(PhotographEditDisposMenu_ReturnHandler,crate::app::photographsequence::PhotographSequence_Label, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,label,__mi)}
+}
+
 #[cfg(feature="app-photographeditdisposmenu")]pub trait IPhotographEditDisposMenu_ReturnHandlerMethods:IPhotographEditDisposMenu_ReturnHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographEditDisposMenu_ReturnHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2261da0usize)as*mut u8,();
 (PhotographEditDisposMenu_ReturnHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::photographsequence::PhotographSequence_Label)` overload"]fn invoke(self,label:impl::core::convert::Into<crate::app::photographsequence::PhotographSequence_Label>)->(){unsafe{let __receiver= <PhotographEditDisposMenu_ReturnHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2261dc0usize)as*mut u8,();
-(PhotographEditDisposMenu_ReturnHandler)__receiver,(crate::app::photographsequence::PhotographSequence_Label)::core::convert::Into::into(label))}
+__PhotographEditDisposMenu_ReturnHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(label), ::core::option::Option::None)}
 }
 }
 
@@ -174,18 +274,53 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-photographeditdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:PhotographEditDisposMenu_UpdateUIObjHandler,is_arrow_active:bool,is_mascot:bool,pause_no:i32,pause_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographEditDisposMenu_UpdateUIObjHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(PhotographEditDisposMenu_UpdateUIObjHandler,bool,bool,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_arrow_active,is_mascot,pause_no,pause_count,__mi)}
+}
+
+#[cfg(feature="app-photographeditdisposmenu")]pub trait IPhotographEditDisposMenu_UpdateUIObjHandlerMethods:IPhotographEditDisposMenu_UpdateUIObjHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographEditDisposMenu_UpdateUIObjHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22620c0usize)as*mut u8,();
+(PhotographEditDisposMenu_UpdateUIObjHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(bool, bool, i32, i32)` overload"]fn invoke(self,is_arrow_active:impl::core::convert::Into<bool> ,is_mascot:impl::core::convert::Into<bool> ,pause_no:impl::core::convert::Into<i32> ,pause_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <PhotographEditDisposMenu_UpdateUIObjHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographEditDisposMenu_UpdateUIObjHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(is_arrow_active), ::core::convert::Into::into(is_mascot), ::core::convert::Into::into(pause_no), ::core::convert::Into::into(pause_count), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-photographeditdisposmenu")]impl<__T:IPhotographEditDisposMenu_UpdateUIObjHandler>IPhotographEditDisposMenu_UpdateUIObjHandlerMethods for __T{}
+
+#[cfg(feature="app-photographeditdisposmenu")]impl PhotographEditDisposMenu_UpdateUIObjHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-photographeditdisposmenu")]impl PhotographEditDisposMenu_UpdateUIObjHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographEditDisposMenu_UpdateUIObjHandler), ::core::stringify!(new),));
+ <Self as IPhotographEditDisposMenu_UpdateUIObjHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-photographeditdisposmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PhotographEditDisposMenu_UpdateUIObjHandler;
-    pub use super::IPhotographEditDisposMenu_UpdateUIObjHandler;
-    pub use super::IPhotographEditDisposMenu_UpdateUIObjHandlerMethods;
     pub use super::PhotographEditDisposMenu;
     pub use super::IPhotographEditDisposMenu;
     pub use super::IPhotographEditDisposMenuMethods;
     pub use super::PhotographEditDisposMenu_ReturnHandler;
     pub use super::IPhotographEditDisposMenu_ReturnHandler;
     pub use super::IPhotographEditDisposMenu_ReturnHandlerMethods;
+    pub use super::PhotographEditDisposMenu_UpdateUIObjHandler;
+    pub use super::IPhotographEditDisposMenu_UpdateUIObjHandler;
+    pub use super::IPhotographEditDisposMenu_UpdateUIObjHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

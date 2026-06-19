@@ -20,17 +20,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actionwaittime-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actionwaittime")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionWaitTime_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionWaitTime,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionWaitTime as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionWaitTime, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:ActionWaitTime,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ActionWaitTime as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(ActionWaitTime, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actionwaittime")]pub trait IActionWaitTimeMethods:IActionWaitTime{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9bd0usize)as*mut u8, ::unity2::Il2CppString;
-(ActionWaitTime)__receiver)}
+__ActionWaitTime_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::combat::character::Character, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,seconds:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9c20usize)as*mut u8,();
 (ActionWaitTime)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(f32)::core::convert::Into::into(seconds))}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9c90usize)as*mut u8,();
-(ActionWaitTime)__receiver)}
+__ActionWaitTime_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 }
 

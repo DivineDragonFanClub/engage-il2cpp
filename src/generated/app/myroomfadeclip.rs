@@ -22,13 +22,34 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "app-myroomfadeclip-types")]
 pub use __types::*;
 
+#[cfg(feature="app-myroomfadeclip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomFadeClip_unity2_raw{use super:: * ;
+pub unsafe fn get_clip_caps(this:MyRoomFadeClip,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MyRoomFadeClip as::unity2::ClassIdentity> ::NAME,"get_clipCaps",));
+let inner:extern "C" fn(MyRoomFadeClip, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_playable(this:MyRoomFadeClip,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MyRoomFadeClip as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
+let inner:extern "C" fn(MyRoomFadeClip,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,owner,__mi)}
+}
+
 #[cfg(feature="app-myroomfadeclip")]pub trait IMyRoomFadeClipMethods:IMyRoomFadeClip{#[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <MyRoomFadeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238ff60usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
-(MyRoomFadeClip)__receiver)}
+__MyRoomFadeClip_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <MyRoomFadeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238ff70usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(MyRoomFadeClip)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(owner))}
+__MyRoomFadeClip_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomFadeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2390030usize)as*mut u8,();

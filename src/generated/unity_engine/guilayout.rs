@@ -11,65 +11,45 @@ use crate::unity_engine::gui::{GUI_Scope,IGUI_Scope}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout.ScrollViewScope")]#[parent(crate::unity_engine::gui::GUI_Scope)]pub struct GUILayout_ScrollViewScope{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout_LayoutedWindow.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout.LayoutedWindow")]#[parent(crate::system::object::Object)]pub struct GUILayout_LayoutedWindow{#[offset(16)]#[rename(name="m_Func")]pub m_func:crate::unity_engine::gui::GUI_WindowFunction, #[offset(24)]#[rename(name="m_ScreenRect")]pub m_screen_rect:crate::unity_engine::rect::Rect, #[offset(40)]#[rename(name="m_Options")]pub m_options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> , #[offset(48)]#[rename(name="m_Style")]pub m_style:crate::unity_engine::guistyle::GUIStyle,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout")]#[parent(crate::system::object::Object)]pub struct GUILayout{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout_AreaScope.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout.AreaScope")]#[parent(crate::unity_engine::gui::GUI_Scope)]pub struct GUILayout_AreaScope{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout_LayoutedWindow.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout.LayoutedWindow")]#[parent(crate::system::object::Object)]pub struct GUILayout_LayoutedWindow{#[offset(16)]#[rename(name="m_Func")]pub m_func:crate::unity_engine::gui::GUI_WindowFunction, #[offset(24)]#[rename(name="m_ScreenRect")]pub m_screen_rect:crate::unity_engine::rect::Rect, #[offset(40)]#[rename(name="m_Options")]pub m_options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> , #[offset(48)]#[rename(name="m_Style")]pub m_style:crate::unity_engine::guistyle::GUIStyle,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout_ScrollViewScope.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout.ScrollViewScope")]#[parent(crate::unity_engine::gui::GUI_Scope)]pub struct GUILayout_ScrollViewScope{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout_HorizontalScope.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout.HorizontalScope")]#[parent(crate::unity_engine::gui::GUI_Scope)]pub struct GUILayout_HorizontalScope{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/guilayout/GUILayout_AreaScope.md"))]#[::unity2::class(namespace="UnityEngine",name="GUILayout.AreaScope")]#[parent(crate::unity_engine::gui::GUI_Scope)]pub struct GUILayout_AreaScope{}
 
 }
 
 #[cfg(feature = "unity_engine-guilayout-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-guilayout")]pub trait IGUILayout_ScrollViewScopeMethods:IGUILayout_ScrollViewScope{#[doc="`get_scrollPosition()` overload"]fn get_scroll_position(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c980usize)as*mut u8,crate::unity_engine::vector2::Vector2;
-(GUILayout_ScrollViewScope)__receiver)}
+#[cfg(feature="unity_engine-guilayout")]pub trait IGUILayout_LayoutedWindowMethods:IGUILayout_LayoutedWindow{#[doc="`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` overload"]fn ctor(self,f:impl::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction> ,screen_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,content:impl::core::convert::Into<crate::unity_engine::guicontent::GUIContent> ,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> > ,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{let __receiver= <GUILayout_LayoutedWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c7e0usize)as*mut u8,();
+(GUILayout_LayoutedWindow)__receiver,(crate::unity_engine::gui::GUI_WindowFunction)::core::convert::Into::into(f),(crate::unity_engine::rect::Rect)::core::convert::Into::into(screen_rect),(crate::unity_engine::guicontent::GUIContent)::core::convert::Into::into(content),(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options),(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
 }
-#[doc="`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]fn set_scroll_position(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c990usize)as*mut u8,();
-(GUILayout_ScrollViewScope)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
-}
-#[doc="`get_handleScrollWheel()` overload"]fn get_handle_scroll_wheel(self,)->bool{unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c9a0usize)as*mut u8,bool;
-(GUILayout_ScrollViewScope)__receiver)}
-}
-#[doc="`set_handleScrollWheel(bool)` overload"]fn set_handle_scroll_wheel(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c9b0usize)as*mut u8,();
-(GUILayout_ScrollViewScope)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]fn ctor(self,scroll_position:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,always_show_horizontal:impl::core::convert::Into<bool> ,always_show_vertical:impl::core::convert::Into<bool> ,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> >)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c9c0usize)as*mut u8,();
-(GUILayout_ScrollViewScope)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(scroll_position),(bool)::core::convert::Into::into(always_show_horizontal),(bool)::core::convert::Into::into(always_show_vertical),(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))}
-}
-#[doc="`CloseScope()` overload"]fn close_scope(self,)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3ca40usize)as*mut u8,();
-(GUILayout_ScrollViewScope)__receiver)}
+#[doc="`DoWindow(i32)` overload"]fn do_window(self,window_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUILayout_LayoutedWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c880usize)as*mut u8,();
+(GUILayout_LayoutedWindow)__receiver,(i32)::core::convert::Into::into(window_id))}
 }
 }
 
-#[cfg(feature="unity_engine-guilayout")]impl<__T:IGUILayout_ScrollViewScope>IGUILayout_ScrollViewScopeMethods for __T{}
+#[cfg(feature="unity_engine-guilayout")]impl<__T:IGUILayout_LayoutedWindow>IGUILayout_LayoutedWindowMethods for __T{}
 
-#[cfg(feature="unity_engine-guilayout")]impl GUILayout_ScrollViewScope{pub fn get_scroll_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_scroll_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_handle_scroll_wheel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_handle_scroll_wheel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn close_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature="unity_engine-guilayout")]impl GUILayout_LayoutedWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn do_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="unity_engine-guilayout")]impl GUILayout_ScrollViewScope{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]pub fn new(scroll_position:crate::unity_engine::vector2::Vector2,always_show_horizontal:bool,always_show_vertical:bool,options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="unity_engine-guilayout")]impl GUILayout_LayoutedWindow{#[doc="`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` — overload selector"]pub fn new(f:crate::unity_engine::gui::GUI_WindowFunction,screen_rect:crate::unity_engine::rect::Rect,content:crate::unity_engine::guicontent::GUIContent,options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> ,style:crate::unity_engine::guistyle::GUIStyle)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GUILayout_ScrollViewScope), ::core::stringify!(new),));
- <Self as IGUILayout_ScrollViewScopeMethods> ::ctor(this,scroll_position,always_show_horizontal,always_show_vertical,options);
+ failed to instantiate", ::core::stringify!(GUILayout_LayoutedWindow), ::core::stringify!(new),));
+ <Self as IGUILayout_LayoutedWindowMethods> ::ctor(this,f,screen_rect,content,options,style);
 this}
 }
 
@@ -149,50 +129,72 @@ pub fn width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 pub fn height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
 }
 
-#[cfg(feature="unity_engine-guilayout")]pub trait IGUILayout_AreaScopeMethods:IGUILayout_AreaScope{#[doc="`.ctor(crate::unity_engine::rect::Rect)` overload"]fn ctor(self,screen_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->(){unsafe{let __receiver= <GUILayout_AreaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c740usize)as*mut u8,();
-(GUILayout_AreaScope)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(screen_rect))}
+#[cfg(feature="unity_engine-guilayout")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUILayout_ScrollViewScope_unity2_raw{use super:: * ;
+pub unsafe fn close_scope(this:GUILayout_ScrollViewScope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GUILayout_ScrollViewScope as::unity2::ClassIdentity> ::NAME,"CloseScope",));
+let inner:extern "C" fn(GUILayout_ScrollViewScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`CloseScope()` overload"]fn close_scope(self,)->(){unsafe{let __receiver= <GUILayout_AreaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c790usize)as*mut u8,();
-(GUILayout_AreaScope)__receiver)}
+
+#[cfg(feature="unity_engine-guilayout")]pub trait IGUILayout_ScrollViewScopeMethods:IGUILayout_ScrollViewScope{#[doc="`get_scrollPosition()` overload"]fn get_scroll_position(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c980usize)as*mut u8,crate::unity_engine::vector2::Vector2;
+(GUILayout_ScrollViewScope)__receiver)}
+}
+#[doc="`set_scrollPosition(crate::unity_engine::vector2::Vector2)` overload"]fn set_scroll_position(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c990usize)as*mut u8,();
+(GUILayout_ScrollViewScope)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+}
+#[doc="`get_handleScrollWheel()` overload"]fn get_handle_scroll_wheel(self,)->bool{unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c9a0usize)as*mut u8,bool;
+(GUILayout_ScrollViewScope)__receiver)}
+}
+#[doc="`set_handleScrollWheel(bool)` overload"]fn set_handle_scroll_wheel(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c9b0usize)as*mut u8,();
+(GUILayout_ScrollViewScope)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]fn ctor(self,scroll_position:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,always_show_horizontal:impl::core::convert::Into<bool> ,always_show_vertical:impl::core::convert::Into<bool> ,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> >)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c9c0usize)as*mut u8,();
+(GUILayout_ScrollViewScope)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(scroll_position),(bool)::core::convert::Into::into(always_show_horizontal),(bool)::core::convert::Into::into(always_show_vertical),(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))}
+}
+#[doc="`CloseScope()` overload"]fn close_scope(self,)->(){unsafe{let __receiver= <GUILayout_ScrollViewScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GUILayout_ScrollViewScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="unity_engine-guilayout")]impl<__T:IGUILayout_AreaScope>IGUILayout_AreaScopeMethods for __T{}
+#[cfg(feature="unity_engine-guilayout")]impl<__T:IGUILayout_ScrollViewScope>IGUILayout_ScrollViewScopeMethods for __T{}
 
-#[cfg(feature="unity_engine-guilayout")]impl GUILayout_AreaScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn close_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="unity_engine-guilayout")]impl GUILayout_ScrollViewScope{pub fn get_scroll_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_scroll_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_handle_scroll_wheel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_handle_scroll_wheel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn close_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="unity_engine-guilayout")]impl GUILayout_AreaScope{#[doc="`.ctor(crate::unity_engine::rect::Rect)` — overload selector"]pub fn new(screen_rect:crate::unity_engine::rect::Rect)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="unity_engine-guilayout")]impl GUILayout_ScrollViewScope{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, bool, bool, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` — overload selector"]pub fn new(scroll_position:crate::unity_engine::vector2::Vector2,always_show_horizontal:bool,always_show_vertical:bool,options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(GUILayout_AreaScope), ::core::stringify!(new),));
- <Self as IGUILayout_AreaScopeMethods> ::ctor(this,screen_rect);
+ failed to instantiate", ::core::stringify!(GUILayout_ScrollViewScope), ::core::stringify!(new),));
+ <Self as IGUILayout_ScrollViewScopeMethods> ::ctor(this,scroll_position,always_show_horizontal,always_show_vertical,options);
 this}
 }
 
-#[cfg(feature="unity_engine-guilayout")]pub trait IGUILayout_LayoutedWindowMethods:IGUILayout_LayoutedWindow{#[doc="`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` overload"]fn ctor(self,f:impl::core::convert::Into<crate::unity_engine::gui::GUI_WindowFunction> ,screen_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,content:impl::core::convert::Into<crate::unity_engine::guicontent::GUIContent> ,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> > ,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{let __receiver= <GUILayout_LayoutedWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c7e0usize)as*mut u8,();
-(GUILayout_LayoutedWindow)__receiver,(crate::unity_engine::gui::GUI_WindowFunction)::core::convert::Into::into(f),(crate::unity_engine::rect::Rect)::core::convert::Into::into(screen_rect),(crate::unity_engine::guicontent::GUIContent)::core::convert::Into::into(content),(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options),(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
-}
-#[doc="`DoWindow(i32)` overload"]fn do_window(self,window_id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUILayout_LayoutedWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c880usize)as*mut u8,();
-(GUILayout_LayoutedWindow)__receiver,(i32)::core::convert::Into::into(window_id))}
-}
-}
-
-#[cfg(feature="unity_engine-guilayout")]impl<__T:IGUILayout_LayoutedWindow>IGUILayout_LayoutedWindowMethods for __T{}
-
-#[cfg(feature="unity_engine-guilayout")]impl GUILayout_LayoutedWindow{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn do_window_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-guilayout")]impl GUILayout_LayoutedWindow{#[doc="`.ctor(crate::unity_engine::gui::GUI_WindowFunction, crate::unity_engine::rect::Rect, crate::unity_engine::guicontent::GUIContent, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>, crate::unity_engine::guistyle::GUIStyle)` — overload selector"]pub fn new(f:crate::unity_engine::gui::GUI_WindowFunction,screen_rect:crate::unity_engine::rect::Rect,content:crate::unity_engine::guicontent::GUIContent,options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> ,style:crate::unity_engine::guistyle::GUIStyle)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GUILayout_LayoutedWindow), ::core::stringify!(new),));
- <Self as IGUILayout_LayoutedWindowMethods> ::ctor(this,f,screen_rect,content,options,style);
-this}
+#[cfg(feature="unity_engine-guilayout")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUILayout_HorizontalScope_unity2_raw{use super:: * ;
+pub unsafe fn close_scope(this:GUILayout_HorizontalScope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GUILayout_HorizontalScope as::unity2::ClassIdentity> ::NAME,"CloseScope",));
+let inner:extern "C" fn(GUILayout_HorizontalScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-guilayout")]pub trait IGUILayout_HorizontalScopeMethods:IGUILayout_HorizontalScope{#[doc="`.ctor(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]fn ctor(self,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> >)->(){unsafe{let __receiver= <GUILayout_HorizontalScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -200,8 +202,7 @@ this}
 (GUILayout_HorizontalScope)__receiver,(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))}
 }
 #[doc="`CloseScope()` overload"]fn close_scope(self,)->(){unsafe{let __receiver= <GUILayout_HorizontalScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c7d0usize)as*mut u8,();
-(GUILayout_HorizontalScope)__receiver)}
+__GUILayout_HorizontalScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -218,23 +219,58 @@ pub fn close_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="unity_engine-guilayout")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUILayout_AreaScope_unity2_raw{use super:: * ;
+pub unsafe fn close_scope(this:GUILayout_AreaScope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GUILayout_AreaScope as::unity2::ClassIdentity> ::NAME,"CloseScope",));
+let inner:extern "C" fn(GUILayout_AreaScope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="unity_engine-guilayout")]pub trait IGUILayout_AreaScopeMethods:IGUILayout_AreaScope{#[doc="`.ctor(crate::unity_engine::rect::Rect)` overload"]fn ctor(self,screen_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->(){unsafe{let __receiver= <GUILayout_AreaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c740usize)as*mut u8,();
+(GUILayout_AreaScope)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(screen_rect))}
+}
+#[doc="`CloseScope()` overload"]fn close_scope(self,)->(){unsafe{let __receiver= <GUILayout_AreaScope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GUILayout_AreaScope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="unity_engine-guilayout")]impl<__T:IGUILayout_AreaScope>IGUILayout_AreaScopeMethods for __T{}
+
+#[cfg(feature="unity_engine-guilayout")]impl GUILayout_AreaScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn close_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-guilayout")]impl GUILayout_AreaScope{#[doc="`.ctor(crate::unity_engine::rect::Rect)` — overload selector"]pub fn new(screen_rect:crate::unity_engine::rect::Rect)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUILayout_AreaScope), ::core::stringify!(new),));
+ <Self as IGUILayout_AreaScopeMethods> ::ctor(this,screen_rect);
+this}
+}
+
 #[cfg(feature = "unity_engine-guilayout")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUILayout_ScrollViewScope;
-    pub use super::IGUILayout_ScrollViewScope;
-    pub use super::IGUILayout_ScrollViewScopeMethods;
-    pub use super::GUILayout;
-    pub use super::IGUILayout;
-    pub use super::GUILayout_AreaScope;
-    pub use super::IGUILayout_AreaScope;
-    pub use super::IGUILayout_AreaScopeMethods;
     pub use super::GUILayout_LayoutedWindow;
     pub use super::IGUILayout_LayoutedWindow;
     pub use super::IGUILayout_LayoutedWindowMethods;
+    pub use super::GUILayout;
+    pub use super::IGUILayout;
+    pub use super::GUILayout_ScrollViewScope;
+    pub use super::IGUILayout_ScrollViewScope;
+    pub use super::IGUILayout_ScrollViewScopeMethods;
     pub use super::GUILayout_HorizontalScope;
     pub use super::IGUILayout_HorizontalScope;
     pub use super::IGUILayout_HorizontalScopeMethods;
+    pub use super::GUILayout_AreaScope;
+    pub use super::IGUILayout_AreaScope;
+    pub use super::IGUILayout_AreaScopeMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::gui::IGUI_Scope;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

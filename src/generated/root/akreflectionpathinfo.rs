@@ -16,6 +16,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akreflectionpathinfo-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akreflectionpathinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkReflectionPathInfo_unity2_raw{use super:: * ;
+pub unsafe fn set_c_ptr(this:AkReflectionPathInfo,c_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkReflectionPathInfo as::unity2::ClassIdentity> ::NAME,"setCPtr",));
+let inner:extern "C" fn(AkReflectionPathInfo, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,c_ptr,__mi)}
+pub unsafe fn finalize(this:AkReflectionPathInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AkReflectionPathInfo as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AkReflectionPathInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:AkReflectionPathInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkReflectionPathInfo as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(AkReflectionPathInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-akreflectionpathinfo")]impl AkReflectionPathInfo{#[doc="`getCPtr(crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akreflectionpathinfo::AkReflectionPathInfo>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f309d0usize)as*mut u8, ::unity2::IntPtr;
 (crate::root::akreflectionpathinfo::AkReflectionPathInfo)::core::convert::Into::into(obj))}
 }
@@ -29,16 +62,13 @@ pub use __types::*;
 (AkReflectionPathInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
 }
 #[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30a30usize)as*mut u8,();
-(AkReflectionPathInfo)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+__AkReflectionPathInfo_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30a60usize)as*mut u8,();
-(AkReflectionPathInfo)__receiver)}
+__AkReflectionPathInfo_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30ad0usize)as*mut u8,();
-(AkReflectionPathInfo)__receiver)}
+__AkReflectionPathInfo_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_imageSource(crate::unity_engine::vector3::Vector3)` overload"]fn set_image_source(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <AkReflectionPathInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f30c60usize)as*mut u8,();

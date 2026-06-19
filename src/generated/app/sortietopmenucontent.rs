@@ -26,6 +26,69 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-sortietopmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-sortietopmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortieTopMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn set_color(this:SortieTopMenuContent,color:crate::unity_engine::color::Color,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <SortieTopMenuContent as::unity2::ClassIdentity> ::NAME,"SetColor",));
+let inner:extern "C" fn(SortieTopMenuContent,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,color,__mi)}
+pub unsafe fn get_menu_item_content_max(this:SortieTopMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortieTopMenuContent as::unity2::ClassIdentity> ::NAME,"GetMenuItemContentMax",));
+let inner:extern "C" fn(SortieTopMenuContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_w(this:SortieTopMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SortieTopMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(SortieTopMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:SortieTopMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <SortieTopMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(SortieTopMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_menu_item_content(this:SortieTopMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortieTopMenuContent as::unity2::ClassIdentity> ::NAME,"BuildMenuItemContent",));
+let inner:extern "C" fn(SortieTopMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn open_anime(this:SortieTopMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <SortieTopMenuContent as::unity2::ClassIdentity> ::NAME,"OpenAnime",));
+let inner:extern "C" fn(SortieTopMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-sortietopmenucontent")]impl SortieTopMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24eda10usize)as*mut u8,();
 )}
 }
@@ -52,28 +115,22 @@ pub use __types::*;
 (SortieTopMenuContent)__receiver)}
 }
 #[doc="`SetColor(crate::unity_engine::color::Color)` overload"]fn set_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed890usize)as*mut u8,();
-(SortieTopMenuContent)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color))}
+__SortieTopMenuContent_unity2_raw::set_color(__receiver, ::core::convert::Into::into(color), ::core::option::Option::None)}
 }
 #[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed8a0usize)as*mut u8,i32;
-(SortieTopMenuContent)__receiver)}
+__SortieTopMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed940usize)as*mut u8,f32;
-(SortieTopMenuContent)__receiver)}
+__SortieTopMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ed9a0usize)as*mut u8,f32;
-(SortieTopMenuContent)__receiver)}
+__SortieTopMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24edbf0usize)as*mut u8,();
-(SortieTopMenuContent)__receiver)}
+__SortieTopMenuContent_unity2_raw::build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenAnime()` overload"]fn open_anime(self,)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24edd70usize)as*mut u8,();
-(SortieTopMenuContent)__receiver)}
+__SortieTopMenuContent_unity2_raw::open_anime(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieTopMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24edde0usize)as*mut u8,();

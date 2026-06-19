@@ -22,6 +22,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-hubmovedata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-hubmovedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubMoveData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:HubMoveData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubMoveData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(HubMoveData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:HubMoveData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubMoveData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(HubMoveData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-hubmovedata")]impl HubMoveData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28bf780usize)as*mut u8,();
 )}
 }
@@ -100,12 +123,10 @@ pub use __types::*;
 (HubMoveData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28bf950usize)as*mut u8,();
-(HubMoveData)__receiver)}
+__HubMoveData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28bfa30usize)as*mut u8, ::unity2::Il2CppString;
-(HubMoveData)__receiver)}
+__HubMoveData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMoveData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28bfa40usize)as*mut u8,();

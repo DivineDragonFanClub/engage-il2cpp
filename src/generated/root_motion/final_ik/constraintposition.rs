@@ -18,9 +18,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root_motion-final_ik-constraintposition-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-constraintposition")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConstraintPosition_unity2_raw{use super:: * ;
+pub unsafe fn update_constraint(this:ConstraintPosition,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ConstraintPosition as::unity2::ClassIdentity> ::NAME,"UpdateConstraint",));
+let inner:extern "C" fn(ConstraintPosition, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-constraintposition")]pub trait IConstraintPositionMethods:IConstraintPosition{#[doc="`UpdateConstraint()` overload"]fn update_constraint(self,)->(){unsafe{let __receiver= <ConstraintPosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x253ccb0usize)as*mut u8,();
-(ConstraintPosition)__receiver)}
+__ConstraintPosition_unity2_raw::update_constraint(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConstraintPosition as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x253cdd0usize)as*mut u8,();

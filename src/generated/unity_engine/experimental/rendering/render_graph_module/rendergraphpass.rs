@@ -17,23 +17,32 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphpass")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RenderGraphPass_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:RenderGraphPass,render_graph_context:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Execute").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Execute", <RenderGraphPass as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn execute(this:RenderGraphPass,render_graph_context:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"Execute",));
 let inner:extern "C" fn(RenderGraphPass,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphcontext::RenderGraphContext, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,render_graph_context,__mi)}
-pub unsafe fn release(this:RenderGraphPass,pool:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Release").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Release", <RenderGraphPass as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn release(this:RenderGraphPass,pool:crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"Release",));
 let inner:extern "C" fn(RenderGraphPass,crate::unity_engine::experimental::rendering::render_graph_module::rendergraphobjectpool::RenderGraphObjectPool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,pool,__mi)}
-pub unsafe fn has_render_func(this:RenderGraphPass,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("HasRenderFunc").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","HasRenderFunc", <RenderGraphPass as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn has_render_func(this:RenderGraphPass,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RenderGraphPass as::unity2::ClassIdentity> ::NAME,"HasRenderFunc",));
 let inner:extern "C" fn(RenderGraphPass, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

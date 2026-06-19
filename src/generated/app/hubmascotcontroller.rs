@@ -21,6 +21,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotcontroller/HubMascotController.md"))]#[::unity2::class(namespace="App",name="HubMascotController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubMascotController{#[offset(40)]#[rename(name="FollowSpeed1")]pub follow_speed1:f32, #[offset(44)]#[rename(name="FollowSpeed2")]pub follow_speed2:f32, #[offset(48)]#[rename(name="SpeedRate")]pub speed_rate:f32, #[offset(64)]#[rename(name="overlapColliders")]pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider> , #[offset(72)]#[rename(name="results")]pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> , #[offset(80)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(88)]#[rename(name="m_speed")]pub m_speed:f32, #[offset(92)]#[rename(name="m_angle")]pub m_angle:f32, #[offset(96)]#[rename(name="m_lastAngle")]pub m_last_angle:f32, #[offset(100)]#[rename(name="m_reactionCounter")]pub m_reaction_counter:f32, #[offset(104)]#[rename(name="m_moveDelay")]pub m_move_delay:f32, #[offset(108)]#[rename(name="m_distanceTime")]pub m_distance_time:f32, #[offset(112)]#[rename(name="m_keepAway")]pub m_keep_away:bool, #[offset(113)]#[rename(name="m_reactionFirst")]pub m_reaction_first:bool, #[offset(116)]#[rename(name="m_findLast")]pub m_find_last:crate::unity_engine::vector3::Vector3, #[offset(128)]#[rename(name="m_agent")]pub m_agent:crate::unity_engine::ai::navmeshagent::NavMeshAgent, #[offset(136)]#[rename(name="m_path")]pub m_path:crate::unity_engine::ai::navmeshpath::NavMeshPath, #[offset(144)]#[rename(name="ObjectCollisionLayerMask")]pub object_collision_layer_mask:i32, #[offset(148)]#[rename(name="GroundCollisionLayerMask")]pub ground_collision_layer_mask:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotcontroller/HubMascotController_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubMascotController_Mode{pub value:i32,}
 impl::unity2::ClassIdentity for HubMascotController_Mode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubMascotController.Mode";
@@ -39,9 +42,6 @@ pub fn follow()->Self{Self{value:2}
 pub fn lost()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotcontroller/HubMascotController.md"))]#[::unity2::class(namespace="App",name="HubMascotController")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct HubMascotController{#[offset(40)]#[rename(name="FollowSpeed1")]pub follow_speed1:f32, #[offset(44)]#[rename(name="FollowSpeed2")]pub follow_speed2:f32, #[offset(48)]#[rename(name="SpeedRate")]pub speed_rate:f32, #[offset(64)]#[rename(name="overlapColliders")]pub overlap_colliders: ::unity2::Array<crate::unity_engine::collider::Collider> , #[offset(72)]#[rename(name="results")]pub results: ::unity2::Array<crate::unity_engine::raycasthit::RaycastHit> , #[offset(80)]#[rename(name="m_animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(88)]#[rename(name="m_speed")]pub m_speed:f32, #[offset(92)]#[rename(name="m_angle")]pub m_angle:f32, #[offset(96)]#[rename(name="m_lastAngle")]pub m_last_angle:f32, #[offset(100)]#[rename(name="m_reactionCounter")]pub m_reaction_counter:f32, #[offset(104)]#[rename(name="m_moveDelay")]pub m_move_delay:f32, #[offset(108)]#[rename(name="m_distanceTime")]pub m_distance_time:f32, #[offset(112)]#[rename(name="m_keepAway")]pub m_keep_away:bool, #[offset(113)]#[rename(name="m_reactionFirst")]pub m_reaction_first:bool, #[offset(116)]#[rename(name="m_findLast")]pub m_find_last:crate::unity_engine::vector3::Vector3, #[offset(128)]#[rename(name="m_agent")]pub m_agent:crate::unity_engine::ai::navmeshagent::NavMeshAgent, #[offset(136)]#[rename(name="m_path")]pub m_path:crate::unity_engine::ai::navmeshpath::NavMeshPath, #[offset(144)]#[rename(name="ObjectCollisionLayerMask")]pub object_collision_layer_mask:i32, #[offset(148)]#[rename(name="GroundCollisionLayerMask")]pub ground_collision_layer_mask:i32,}
 
 }
 
@@ -149,10 +149,10 @@ this}
 #[cfg(feature = "app-hubmascotcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubMascotController_Mode;
     pub use super::HubMascotController;
     pub use super::IHubMascotController;
     pub use super::IHubMascotControllerMethods;
+    pub use super::HubMascotController_Mode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

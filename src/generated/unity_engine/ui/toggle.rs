@@ -29,6 +29,12 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Toggle")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Toggle{#[offset(248)]#[rename(name="toggleTransition")]pub toggle_transition:crate::unity_engine::ui::toggle::Toggle_ToggleTransition, #[offset(256)]#[rename(name="graphic")]pub graphic:crate::unity_engine::ui::graphic::Graphic, #[offset(264)]#[rename(name="m_Group")]pub m_group:crate::unity_engine::ui::togglegroup::ToggleGroup, #[offset(272)]#[rename(name="onValueChanged")]pub on_value_changed:crate::unity_engine::ui::toggle::Toggle_ToggleEvent, #[offset(280)]#[rename(name="m_IsOn")]pub m_is_on:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Toggle.ToggleEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<bool>)]pub struct Toggle_ToggleEvent{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle_ToggleTransition.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Toggle_ToggleTransition{pub value:i32,}
 impl::unity2::ClassIdentity for Toggle_ToggleTransition{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="Toggle.ToggleTransition";
@@ -44,16 +50,123 @@ pub fn fade()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Toggle")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct Toggle{#[offset(248)]#[rename(name="toggleTransition")]pub toggle_transition:crate::unity_engine::ui::toggle::Toggle_ToggleTransition, #[offset(256)]#[rename(name="graphic")]pub graphic:crate::unity_engine::ui::graphic::Graphic, #[offset(264)]#[rename(name="m_Group")]pub m_group:crate::unity_engine::ui::togglegroup::ToggleGroup, #[offset(272)]#[rename(name="onValueChanged")]pub on_value_changed:crate::unity_engine::ui::toggle::Toggle_ToggleEvent, #[offset(280)]#[rename(name="m_IsOn")]pub m_is_on:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/toggle/Toggle_ToggleEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Toggle.ToggleEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<bool>)]pub struct Toggle_ToggleEvent{}
-
 }
 
 #[cfg(feature = "unity_engine-ui-toggle-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-toggle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Toggle_unity2_raw{use super:: * ;
+pub unsafe fn rebuild(this:Toggle,executing:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let inner:extern "C" fn(Toggle,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,executing,__mi)}
+pub unsafe fn layout_complete(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn graphic_update_complete(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_destroy(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_did_apply_animation_properties(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_pointer_click(this:Toggle,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
+let inner:extern "C" fn(Toggle,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_submit(this:Toggle,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
+let inner:extern "C" fn(Toggle,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:Toggle,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <Toggle as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
+let inner:extern "C" fn(Toggle, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="unity_engine-ui-toggle")]pub trait IToggleMethods:IToggle{#[doc="`get_group()` overload"]fn get_group(self,)->crate::unity_engine::ui::togglegroup::ToggleGroup{unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07c90usize)as*mut u8,crate::unity_engine::ui::togglegroup::ToggleGroup;
@@ -68,32 +181,25 @@ pub use __types::*;
 (Toggle)__receiver)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,executing:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08190usize)as*mut u8,();
-(Toggle)__receiver,(crate::unity_engine::ui::canvasupdate::CanvasUpdate)::core::convert::Into::into(executing))}
+__Toggle_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(executing), ::core::option::Option::None)}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c081a0usize)as*mut u8,();
-(Toggle)__receiver)}
+__Toggle_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c081b0usize)as*mut u8,();
-(Toggle)__receiver)}
+__Toggle_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c081c0usize)as*mut u8,();
-(Toggle)__receiver)}
+__Toggle_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08640usize)as*mut u8,();
-(Toggle)__receiver)}
+__Toggle_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08710usize)as*mut u8,();
-(Toggle)__receiver)}
+__Toggle_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08740usize)as*mut u8,();
-(Toggle)__receiver)}
+__Toggle_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetToggleGroup(crate::unity_engine::ui::togglegroup::ToggleGroup, bool)` overload"]fn set_toggle_group(self,new_group:impl::core::convert::Into<crate::unity_engine::ui::togglegroup::ToggleGroup> ,set_member_value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07d60usize)as*mut u8,();
@@ -120,24 +226,20 @@ pub use __types::*;
 (Toggle)__receiver,(bool)::core::convert::Into::into(instant))}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08ed0usize)as*mut u8,();
-(Toggle)__receiver)}
+__Toggle_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InternalToggle()` overload"]fn internal_toggle(self,)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c08f90usize)as*mut u8,();
 (Toggle)__receiver)}
 }
 #[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09000usize)as*mut u8,();
-(Toggle)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Toggle_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c09070usize)as*mut u8,();
-(Toggle)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__Toggle_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <Toggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c090e0usize)as*mut u8,crate::unity_engine::transform::Transform;
-(Toggle)__receiver)}
+__Toggle_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -194,13 +296,13 @@ this}
 #[cfg(feature = "unity_engine-ui-toggle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Toggle_ToggleTransition;
     pub use super::Toggle;
     pub use super::IToggle;
     pub use super::IToggleMethods;
     pub use super::Toggle_ToggleEvent;
     pub use super::IToggle_ToggleEvent;
     pub use super::IToggle_ToggleEventMethods;
+    pub use super::Toggle_ToggleTransition;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

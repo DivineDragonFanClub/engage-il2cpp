@@ -30,9 +30,21 @@ use crate::unity_engine::ui::toggle::{IToggle,Toggle}
 #[cfg(feature = "unity_engine-rendering-ui-uifoldout-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-ui-uifoldout")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UIFoldout_unity2_raw{use super:: * ;
+pub unsafe fn start(this:UIFoldout,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <UIFoldout as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(UIFoldout, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-ui-uifoldout")]pub trait IUIFoldoutMethods:IUIFoldout{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <UIFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4480usize)as*mut u8,();
-(UIFoldout)__receiver)}
+__UIFoldout_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnValidate()` overload"]fn on_validate(self,)->(){unsafe{let __receiver= <UIFoldout as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e4570usize)as*mut u8,();

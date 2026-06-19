@@ -18,45 +18,129 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-debugeditmenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-debugeditmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugEditMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn on_tick(this:DebugEditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(DebugEditMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_skip(this:DebugEditMenuItem,v:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",72usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"IsSkip",));
+let inner:extern "C" fn(DebugEditMenuItem,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,v,__mi)}
+pub unsafe fn get_value(this:DebugEditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",73usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"get_Value",));
+let inner:extern "C" fn(DebugEditMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_value(this:DebugEditMenuItem,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",74usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"set_Value",));
+let inner:extern "C" fn(DebugEditMenuItem,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_min_value(this:DebugEditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(75usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",75usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"get_MinValue",));
+let inner:extern "C" fn(DebugEditMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_max_value(this:DebugEditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(76usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",76usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"get_MaxValue",));
+let inner:extern "C" fn(DebugEditMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_step(this:DebugEditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",77usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"get_Step",));
+let inner:extern "C" fn(DebugEditMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_fast(this:DebugEditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",78usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"get_Fast",));
+let inner:extern "C" fn(DebugEditMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_loop(this:DebugEditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <DebugEditMenuItem as::unity2::ClassIdentity> ::NAME,"get_IsLoop",));
+let inner:extern "C" fn(DebugEditMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-debugeditmenuitem")]pub trait IDebugEditMenuItemMethods:IDebugEditMenuItem{#[doc="`TickValue()` overload"]fn tick_value(self,)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a034e0usize)as*mut u8,bool;
 (DebugEditMenuItem)__receiver)}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04210usize)as*mut u8,();
-(DebugEditMenuItem)__receiver)}
+__DebugEditMenuItem_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsSkip(i32)` overload"]fn is_skip(self,v:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04220usize)as*mut u8,bool;
-(DebugEditMenuItem)__receiver,(i32)::core::convert::Into::into(v))}
+__DebugEditMenuItem_unity2_raw::is_skip(__receiver, ::core::convert::Into::into(v), ::core::option::Option::None)}
 }
 #[doc="`get_Value()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04230usize)as*mut u8,i32;
-(DebugEditMenuItem)__receiver)}
+__DebugEditMenuItem_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Value(i32)` overload"]fn set_value(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04240usize)as*mut u8,();
-(DebugEditMenuItem)__receiver,(i32)::core::convert::Into::into(value))}
+__DebugEditMenuItem_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_MinValue()` overload"]fn get_min_value(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04250usize)as*mut u8,i32;
-(DebugEditMenuItem)__receiver)}
+__DebugEditMenuItem_unity2_raw::get_min_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_MaxValue()` overload"]fn get_max_value(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04260usize)as*mut u8,i32;
-(DebugEditMenuItem)__receiver)}
+__DebugEditMenuItem_unity2_raw::get_max_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Step()` overload"]fn get_step(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04270usize)as*mut u8,i32;
-(DebugEditMenuItem)__receiver)}
+__DebugEditMenuItem_unity2_raw::get_step(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Fast()` overload"]fn get_fast(self,)->i32{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04280usize)as*mut u8,i32;
-(DebugEditMenuItem)__receiver)}
+__DebugEditMenuItem_unity2_raw::get_fast(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsLoop()` overload"]fn get_is_loop(self,)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04290usize)as*mut u8,bool;
-(DebugEditMenuItem)__receiver)}
+__DebugEditMenuItem_unity2_raw::get_is_loop(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanIncrement(i32)` overload"]fn can_increment(self,value:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <DebugEditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a04180usize)as*mut u8,bool;

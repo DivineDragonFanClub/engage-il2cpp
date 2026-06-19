@@ -25,23 +25,42 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="combat-characterlying")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterLying_unity2_raw{use super:: * ;
-pub unsafe fn my_start(this:CharacterLying,die_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MyStart").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","MyStart", <CharacterLying as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn my_start(this:CharacterLying,die_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CharacterLying as::unity2::ClassIdentity> ::NAME,"MyStart",));
 let inner:extern "C" fn(CharacterLying,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,die_hash,__mi)}
-pub unsafe fn make_my_dead_pose(this:CharacterLying,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MakeMyDeadPose").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","MakeMyDeadPose", <CharacterLying as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn make_my_dead_pose(this:CharacterLying,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CharacterLying as::unity2::ClassIdentity> ::NAME,"MakeMyDeadPose",));
 let inner:extern "C" fn(CharacterLying, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn my_late_update(this:CharacterLying,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MyLateUpdate").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","MyLateUpdate", <CharacterLying as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn my_update(this:CharacterLying,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CharacterLying as::unity2::ClassIdentity> ::NAME,"MyUpdate",));
+let inner:extern "C" fn(CharacterLying, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn my_late_update(this:CharacterLying,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CharacterLying as::unity2::ClassIdentity> ::NAME,"MyLateUpdate",));
 let inner:extern "C" fn(CharacterLying, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -79,8 +98,7 @@ __CharacterLying_unity2_raw::my_start(__receiver, ::core::convert::Into::into(di
 __CharacterLying_unity2_raw::make_my_dead_pose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MyUpdate()` overload"]fn my_update(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27ecd50usize)as*mut u8,();
-(CharacterLying)__receiver)}
+__CharacterLying_unity2_raw::my_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MyLateUpdate()` overload"]fn my_late_update(self,)->(){unsafe{let __receiver= <CharacterLying as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __CharacterLying_unity2_raw::my_late_update(__receiver, ::core::option::Option::None)}

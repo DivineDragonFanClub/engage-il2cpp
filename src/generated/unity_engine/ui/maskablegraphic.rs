@@ -25,15 +25,156 @@ use crate::unity_engine::ui::graphic::{Graphic,IGraphic}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/maskablegraphic/MaskableGraphic.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="MaskableGraphic")]#[parent(crate::unity_engine::ui::graphic::Graphic)]pub struct MaskableGraphic{#[offset(153)]#[rename(name="m_ShouldRecalculateStencil")]pub m_should_recalculate_stencil:bool, #[offset(160)]#[rename(name="m_MaskMaterial")]pub m_mask_material:crate::unity_engine::material::Material, #[offset(168)]#[rename(name="m_ParentMask")]pub m_parent_mask:crate::unity_engine::ui::rectmask2d::RectMask2D, #[offset(176)]#[rename(name="m_Maskable")]pub m_maskable:bool, #[offset(177)]#[rename(name="m_IsMaskingGraphic")]pub m_is_masking_graphic:bool, #[offset(178)]#[rename(name="m_IncludeForMasking")]pub m_include_for_masking:bool, #[offset(184)]#[rename(name="m_OnCullStateChanged")]pub m_on_cull_state_changed:crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent, #[offset(192)]#[rename(name="m_ShouldRecalculate")]pub m_should_recalculate:bool, #[offset(196)]#[rename(name="m_StencilValue")]pub m_stencil_value:i32, #[offset(200)]#[rename(name="m_Corners")]pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/maskablegraphic/MaskableGraphic_CullStateChangedEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="MaskableGraphic.CullStateChangedEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<bool>)]pub struct MaskableGraphic_CullStateChangedEvent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/maskablegraphic/MaskableGraphic.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="MaskableGraphic")]#[parent(crate::unity_engine::ui::graphic::Graphic)]pub struct MaskableGraphic{#[offset(153)]#[rename(name="m_ShouldRecalculateStencil")]pub m_should_recalculate_stencil:bool, #[offset(160)]#[rename(name="m_MaskMaterial")]pub m_mask_material:crate::unity_engine::material::Material, #[offset(168)]#[rename(name="m_ParentMask")]pub m_parent_mask:crate::unity_engine::ui::rectmask2d::RectMask2D, #[offset(176)]#[rename(name="m_Maskable")]pub m_maskable:bool, #[offset(177)]#[rename(name="m_IsMaskingGraphic")]pub m_is_masking_graphic:bool, #[offset(178)]#[rename(name="m_IncludeForMasking")]pub m_include_for_masking:bool, #[offset(184)]#[rename(name="m_OnCullStateChanged")]pub m_on_cull_state_changed:crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent, #[offset(192)]#[rename(name="m_ShouldRecalculate")]pub m_should_recalculate:bool, #[offset(196)]#[rename(name="m_StencilValue")]pub m_stencil_value:i32, #[offset(200)]#[rename(name="m_Corners")]pub m_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-maskablegraphic-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-maskablegraphic")]pub trait IMaskableGraphic_CullStateChangedEventMethods:IMaskableGraphic_CullStateChangedEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaskableGraphic_CullStateChangedEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0de90usize)as*mut u8,();
+(MaskableGraphic_CullStateChangedEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-maskablegraphic")]impl<__T:IMaskableGraphic_CullStateChangedEvent>IMaskableGraphic_CullStateChangedEventMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-maskablegraphic")]impl MaskableGraphic_CullStateChangedEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-maskablegraphic")]impl MaskableGraphic_CullStateChangedEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaskableGraphic_CullStateChangedEvent), ::core::stringify!(new),));
+ <Self as IMaskableGraphic_CullStateChangedEventMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-ui-maskablegraphic")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaskableGraphic_unity2_raw{use super:: * ;
+pub unsafe fn get_modified_material(this:MaskableGraphic,base_material:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"GetModifiedMaterial",));
+let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,base_material,__mi)}
+pub unsafe fn cull(this:MaskableGraphic,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"Cull",));
+let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip_rect,valid_rect,__mi)}
+pub unsafe fn set_clip_rect(this:MaskableGraphic,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(60usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",60usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"SetClipRect",));
+let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip_rect,valid_rect,__mi)}
+pub unsafe fn set_clip_softness(this:MaskableGraphic,clip_softness:crate::unity_engine::vector2::Vector2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(61usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",61usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"SetClipSoftness",));
+let inner:extern "C" fn(MaskableGraphic,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip_softness,__mi)}
+pub unsafe fn on_enable(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_transform_parent_changed(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn parent_mask_state_changed(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(62usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",62usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"ParentMaskStateChanged",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_canvas_hierarchy_changed(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn recalculate_clipping(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"RecalculateClipping",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn recalculate_masking(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"RecalculateMasking",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_ui_i_clippable_get_game_object(this:MaskableGraphic,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <MaskableGraphic as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.IClippable.get_gameObject",));
+let inner:extern "C" fn(MaskableGraphic, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="unity_engine-ui-maskablegraphic")]pub trait IMaskableGraphicMethods:IMaskableGraphic{#[doc="`get_onCullStateChanged()` overload"]fn get_on_cull_state_changed(self,)->crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371c250usize)as*mut u8,crate::unity_engine::ui::maskablegraphic::MaskableGraphic_CullStateChangedEvent;
@@ -60,44 +201,35 @@ pub use __types::*;
 (MaskableGraphic)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]fn get_modified_material(self,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371c2d0usize)as*mut u8,crate::unity_engine::material::Material;
-(MaskableGraphic)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(base_material))}
+__MaskableGraphic_unity2_raw::get_modified_material(__receiver, ::core::convert::Into::into(base_material), ::core::option::Option::None)}
 }
 #[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371c400usize)as*mut u8,();
-(MaskableGraphic)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(clip_rect),(bool)::core::convert::Into::into(valid_rect))}
+__MaskableGraphic_unity2_raw::cull(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
 }
 #[doc="`UpdateCull(bool)` overload"]fn update_cull(self,cull:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371c850usize)as*mut u8,();
 (MaskableGraphic)__receiver,(bool)::core::convert::Into::into(cull))}
 }
 #[doc="`SetClipRect(crate::unity_engine::rect::Rect, bool)` overload"]fn set_clip_rect(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371c930usize)as*mut u8,();
-(MaskableGraphic)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(clip_rect),(bool)::core::convert::Into::into(valid_rect))}
+__MaskableGraphic_unity2_raw::set_clip_rect(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
 }
 #[doc="`SetClipSoftness(crate::unity_engine::vector2::Vector2)` overload"]fn set_clip_softness(self,clip_softness:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371c9b0usize)as*mut u8,();
-(MaskableGraphic)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(clip_softness))}
+__MaskableGraphic_unity2_raw::set_clip_softness(__receiver, ::core::convert::Into::into(clip_softness), ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371c9f0usize)as*mut u8,();
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371cbc0usize)as*mut u8,();
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371cca0usize)as*mut u8,();
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ParentMaskStateChanged()` overload"]fn parent_mask_state_changed(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371cd00usize)as*mut u8,();
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::parent_mask_state_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371cd10usize)as*mut u8,();
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_rootCanvasRect()` overload"]fn get_root_canvas_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371c460usize)as*mut u8,crate::unity_engine::rect::Rect;
@@ -108,20 +240,17 @@ pub use __types::*;
 (MaskableGraphic)__receiver)}
 }
 #[doc="`RecalculateClipping()` overload"]fn recalculate_clipping(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371d050usize)as*mut u8,();
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RecalculateMasking()` overload"]fn recalculate_masking(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371d060usize)as*mut u8,();
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::recalculate_masking(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371d100usize)as*mut u8,();
 (MaskableGraphic)__receiver)}
 }
 #[doc="`UnityEngine.UI.IClippable.get_gameObject()` overload"]fn unity_engine_ui_i_clippable_get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MaskableGraphic as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x371d1f0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(MaskableGraphic)__receiver)}
+__MaskableGraphic_unity2_raw::unity_engine_ui_i_clippable_get_game_object(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -158,33 +287,15 @@ pub fn unity_engine_ui_i_clippable_get_game_object_method_info()-> & 'static::un
 this}
 }
 
-#[cfg(feature="unity_engine-ui-maskablegraphic")]pub trait IMaskableGraphic_CullStateChangedEventMethods:IMaskableGraphic_CullStateChangedEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MaskableGraphic_CullStateChangedEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0de90usize)as*mut u8,();
-(MaskableGraphic_CullStateChangedEvent)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-ui-maskablegraphic")]impl<__T:IMaskableGraphic_CullStateChangedEvent>IMaskableGraphic_CullStateChangedEventMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-maskablegraphic")]impl MaskableGraphic_CullStateChangedEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-ui-maskablegraphic")]impl MaskableGraphic_CullStateChangedEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MaskableGraphic_CullStateChangedEvent), ::core::stringify!(new),));
- <Self as IMaskableGraphic_CullStateChangedEventMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "unity_engine-ui-maskablegraphic")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MaskableGraphic;
-    pub use super::IMaskableGraphic;
-    pub use super::IMaskableGraphicMethods;
     pub use super::MaskableGraphic_CullStateChangedEvent;
     pub use super::IMaskableGraphic_CullStateChangedEvent;
     pub use super::IMaskableGraphic_CullStateChangedEventMethods;
+    pub use super::MaskableGraphic;
+    pub use super::IMaskableGraphic;
+    pub use super::IMaskableGraphicMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

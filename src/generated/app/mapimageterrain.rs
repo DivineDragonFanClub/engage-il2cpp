@@ -19,6 +19,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapimageterrain-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapimageterrain")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapImageTerrain_unity2_raw{use super:: * ;
+pub unsafe fn get_hash_code(this:MapImageTerrain,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <MapImageTerrain as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(MapImageTerrain, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapimageterrain")]pub trait IMapImageTerrainMethods:IMapImageTerrain{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20640a0usize)as*mut u8,();
 (MapImageTerrain)__receiver)}
@@ -60,8 +73,7 @@ pub use __types::*;
 (MapImageTerrain)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MapImageTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2064fa0usize)as*mut u8,i32;
-(MapImageTerrain)__receiver)}
+__MapImageTerrain_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 }
 

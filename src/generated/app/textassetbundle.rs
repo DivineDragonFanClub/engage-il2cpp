@@ -18,17 +18,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-textassetbundle-types")]
 pub use __types::*;
 
+#[cfg(feature="app-textassetbundle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextAssetBundle_unity2_raw{use super:: * ;
+pub unsafe fn on_load(this:TextAssetBundle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TextAssetBundle as::unity2::ClassIdentity> ::NAME,"OnLoad",));
+let inner:extern "C" fn(TextAssetBundle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_unload(this:TextAssetBundle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TextAssetBundle as::unity2::ClassIdentity> ::NAME,"OnUnload",));
+let inner:extern "C" fn(TextAssetBundle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-textassetbundle")]pub trait ITextAssetBundleMethods:ITextAssetBundle{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8ae0usize)as*mut u8,();
 (TextAssetBundle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
 }
 #[doc="`OnLoad()` overload"]fn on_load(self,)->(){unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8b40usize)as*mut u8,();
-(TextAssetBundle)__receiver)}
+__TextAssetBundle_unity2_raw::on_load(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUnload()` overload"]fn on_unload(self,)->(){unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8bb0usize)as*mut u8,();
-(TextAssetBundle)__receiver)}
+__TextAssetBundle_unity2_raw::on_unload(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Bytes()` overload"]fn get_bytes(self,)-> ::unity2::Array<u8>{unsafe{let __receiver= <TextAssetBundle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21e8bc0usize)as*mut u8, ::unity2::Array<u8> ;

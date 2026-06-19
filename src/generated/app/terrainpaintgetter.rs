@@ -24,9 +24,21 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-terrainpaintgetter-types")]
 pub use __types::*;
 
+#[cfg(feature="app-terrainpaintgetter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TerrainPaintGetter_unity2_raw{use super:: * ;
+pub unsafe fn get(this:TerrainPaintGetter,x:f32,y:f32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TerrainPaintGetter as::unity2::ClassIdentity> ::NAME,"Get",));
+let inner:extern "C" fn(TerrainPaintGetter,f32,f32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+}
+
 #[cfg(feature="app-terrainpaintgetter")]pub trait ITerrainPaintGetterMethods:ITerrainPaintGetter{#[doc="`Get(f32, f32)` overload"]fn get(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21e71a0usize)as*mut u8, ::unity2::Il2CppString;
-(TerrainPaintGetter)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
+__TerrainPaintGetter_unity2_raw::get(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
 }
 #[doc="`Get(crate::unity_engine::vector2::Vector2)` overload"]fn get_2(self,pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainPaintGetter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21e7320usize)as*mut u8, ::unity2::Il2CppString;

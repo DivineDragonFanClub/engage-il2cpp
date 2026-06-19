@@ -15,30 +15,42 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-timeline-ipropertycollector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPropertyCollector_unity2_raw{use super:: * ;
-pub unsafe fn push_active_game_object(this:IPropertyCollector,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PushActiveGameObject").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PushActiveGameObject", <IPropertyCollector as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn push_active_game_object(this:IPropertyCollector,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"PushActiveGameObject",));
 let inner:extern "C" fn(IPropertyCollector,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,game_object,__mi)}
-pub unsafe fn pop_active_game_object(this:IPropertyCollector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PopActiveGameObject").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PopActiveGameObject", <IPropertyCollector as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn pop_active_game_object(this:IPropertyCollector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"PopActiveGameObject",));
 let inner:extern "C" fn(IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn add_from_clip(this:IPropertyCollector,clip:crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("AddFromClip").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","AddFromClip", <IPropertyCollector as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn add_from_clip(this:IPropertyCollector,clip:crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"AddFromClip",));
 let inner:extern "C" fn(IPropertyCollector,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,clip,__mi)}
-pub unsafe fn add_object_properties(this:IPropertyCollector,obj:crate::unity_engine::object_2::Object_2,clip:crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("AddObjectProperties").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","AddObjectProperties", <IPropertyCollector as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn add_object_properties(this:IPropertyCollector,obj:crate::unity_engine::object_2::Object_2,clip:crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IPropertyCollector as::unity2::ClassIdentity> ::NAME,"AddObjectProperties",));
 let inner:extern "C" fn(IPropertyCollector,crate::unity_engine::object_2::Object_2,crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

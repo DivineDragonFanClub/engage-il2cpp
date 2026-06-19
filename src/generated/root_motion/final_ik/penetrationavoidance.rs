@@ -19,34 +19,51 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/penetrationavoidance/PenetrationAvoidance_Avoider_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="PenetrationAvoidance.Avoider.EffectorLink")]#[parent(crate::system::object::Object)]pub struct PenetrationAvoidance_Avoider_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/penetrationavoidance/PenetrationAvoidance.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="PenetrationAvoidance")]#[parent(crate::root_motion::final_ik::offsetmodifier::OffsetModifier)]pub struct PenetrationAvoidance{#[offset(48)]#[rename(name="avoiders")]pub avoiders: ::unity2::Array<crate::root_motion::final_ik::penetrationavoidance::PenetrationAvoidance_Avoider> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/penetrationavoidance/PenetrationAvoidance_Avoider.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="PenetrationAvoidance.Avoider")]#[parent(crate::system::object::Object)]pub struct PenetrationAvoidance_Avoider{#[offset(16)]#[rename(name="raycastFrom")]pub raycast_from: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(24)]#[rename(name="raycastTo")]pub raycast_to:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="raycastRadius")]pub raycast_radius:f32, #[offset(40)]#[rename(name="effectors")]pub effectors: ::unity2::Array<crate::root_motion::final_ik::penetrationavoidance::PenetrationAvoidance_Avoider_EffectorLink> , #[offset(48)]#[rename(name="smoothTimeIn")]pub smooth_time_in:f32, #[offset(52)]#[rename(name="smoothTimeOut")]pub smooth_time_out:f32, #[offset(56)]#[rename(name="layers")]pub layers:crate::unity_engine::layermask::LayerMask, #[offset(60)]#[rename(name="offset")]pub offset:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="offsetTarget")]pub offset_target:crate::unity_engine::vector3::Vector3, #[offset(84)]#[rename(name="offsetV")]pub offset_v:crate::unity_engine::vector3::Vector3,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/penetrationavoidance/PenetrationAvoidance.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="PenetrationAvoidance")]#[parent(crate::root_motion::final_ik::offsetmodifier::OffsetModifier)]pub struct PenetrationAvoidance{#[offset(48)]#[rename(name="avoiders")]pub avoiders: ::unity2::Array<crate::root_motion::final_ik::penetrationavoidance::PenetrationAvoidance_Avoider> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/penetrationavoidance/PenetrationAvoidance_Avoider_EffectorLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="PenetrationAvoidance.Avoider.EffectorLink")]#[parent(crate::system::object::Object)]pub struct PenetrationAvoidance_Avoider_EffectorLink{#[offset(16)]#[rename(name="effector")]pub effector:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(20)]#[rename(name="weight")]pub weight:f32,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-penetrationavoidance-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]pub trait IPenetrationAvoidance_Avoider_EffectorLinkMethods:IPenetrationAvoidance_Avoider_EffectorLink{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PenetrationAvoidance_Avoider_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b78f70usize)as*mut u8,();
-(PenetrationAvoidance_Avoider_EffectorLink)__receiver)}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PenetrationAvoidance_unity2_raw{use super:: * ;
+pub unsafe fn on_modify_offset(this:PenetrationAvoidance,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <PenetrationAvoidance as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
+let inner:extern "C" fn(PenetrationAvoidance, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]pub trait IPenetrationAvoidanceMethods:IPenetrationAvoidance{#[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <PenetrationAvoidance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PenetrationAvoidance_unity2_raw::on_modify_offset(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PenetrationAvoidance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25910usize)as*mut u8,();
+(PenetrationAvoidance)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl<__T:IPenetrationAvoidance_Avoider_EffectorLink>IPenetrationAvoidance_Avoider_EffectorLinkMethods for __T{}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl<__T:IPenetrationAvoidance>IPenetrationAvoidanceMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance_Avoider_EffectorLink{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance{pub fn on_modify_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance_Avoider_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(PenetrationAvoidance_Avoider_EffectorLink), ::core::stringify!(new),));
- <Self as IPenetrationAvoidance_Avoider_EffectorLinkMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(PenetrationAvoidance), ::core::stringify!(new),));
+ <Self as IPenetrationAvoidanceMethods> ::ctor(this,);
 this}
 }
 
@@ -83,41 +100,36 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]pub trait IPenetrationAvoidanceMethods:IPenetrationAvoidance{#[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <PenetrationAvoidance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25890usize)as*mut u8,();
-(PenetrationAvoidance)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PenetrationAvoidance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f25910usize)as*mut u8,();
-(PenetrationAvoidance)__receiver)}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]pub trait IPenetrationAvoidance_Avoider_EffectorLinkMethods:IPenetrationAvoidance_Avoider_EffectorLink{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PenetrationAvoidance_Avoider_EffectorLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b78f70usize)as*mut u8,();
+(PenetrationAvoidance_Avoider_EffectorLink)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl<__T:IPenetrationAvoidance>IPenetrationAvoidanceMethods for __T{}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl<__T:IPenetrationAvoidance_Avoider_EffectorLink>IPenetrationAvoidance_Avoider_EffectorLinkMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance{pub fn on_modify_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance_Avoider_EffectorLink{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-penetrationavoidance")]impl PenetrationAvoidance_Avoider_EffectorLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(PenetrationAvoidance), ::core::stringify!(new),));
- <Self as IPenetrationAvoidanceMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(PenetrationAvoidance_Avoider_EffectorLink), ::core::stringify!(new),));
+ <Self as IPenetrationAvoidance_Avoider_EffectorLinkMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "root_motion-final_ik-penetrationavoidance")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PenetrationAvoidance_Avoider_EffectorLink;
-    pub use super::IPenetrationAvoidance_Avoider_EffectorLink;
-    pub use super::IPenetrationAvoidance_Avoider_EffectorLinkMethods;
-    pub use super::PenetrationAvoidance_Avoider;
-    pub use super::IPenetrationAvoidance_Avoider;
-    pub use super::IPenetrationAvoidance_AvoiderMethods;
     pub use super::PenetrationAvoidance;
     pub use super::IPenetrationAvoidance;
     pub use super::IPenetrationAvoidanceMethods;
+    pub use super::PenetrationAvoidance_Avoider;
+    pub use super::IPenetrationAvoidance_Avoider;
+    pub use super::IPenetrationAvoidance_AvoiderMethods;
+    pub use super::PenetrationAvoidance_Avoider_EffectorLink;
+    pub use super::IPenetrationAvoidance_Avoider_EffectorLink;
+    pub use super::IPenetrationAvoidance_Avoider_EffectorLinkMethods;
     pub use crate::root_motion::final_ik::offsetmodifier::IOffsetModifier;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

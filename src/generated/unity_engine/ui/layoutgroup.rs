@@ -27,23 +27,162 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-ui-layoutgroup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LayoutGroup_unity2_raw{use super:: * ;
-pub unsafe fn calculate_layout_input_vertical(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CalculateLayoutInputVertical").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CalculateLayoutInputVertical", <LayoutGroup as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn calculate_layout_input_horizontal(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
 let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_layout_horizontal(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetLayoutHorizontal").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetLayoutHorizontal", <LayoutGroup as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn calculate_layout_input_vertical(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
 let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_layout_vertical(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetLayoutVertical").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetLayoutVertical", <LayoutGroup as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_min_width(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_width(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_width(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_height(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_height(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_height(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_layout_priority(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_layout_horizontal(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutHorizontal",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_layout_vertical(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"SetLayoutVertical",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_did_apply_animation_properties(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_rect_transform_dimensions_change(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_transform_children_changed(this:LayoutGroup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <LayoutGroup as::unity2::ClassIdentity> ::NAME,"OnTransformChildrenChanged",));
 let inner:extern "C" fn(LayoutGroup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -75,39 +214,31 @@ inner(this,__mi)}
 (LayoutGroup)__receiver)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c001c0usize)as*mut u8,();
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __LayoutGroup_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00530usize)as*mut u8,f32;
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00550usize)as*mut u8,f32;
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00570usize)as*mut u8,f32;
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00590usize)as*mut u8,f32;
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c005a0usize)as*mut u8,f32;
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c005b0usize)as*mut u8,f32;
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c005c0usize)as*mut u8,i32;
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetLayoutHorizontal()` overload"]fn set_layout_horizontal(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __LayoutGroup_unity2_raw::set_layout_horizontal(__receiver, ::core::option::Option::None)}
@@ -120,16 +251,13 @@ __LayoutGroup_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option
 (LayoutGroup)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00710usize)as*mut u8,();
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00880usize)as*mut u8,();
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00910usize)as*mut u8,();
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetTotalMinSize(i32)` overload"]fn get_total_min_size(self,axis:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c00540usize)as*mut u8,f32;
@@ -176,12 +304,10 @@ __LayoutGroup_unity2_raw::set_layout_vertical(__receiver, ::core::option::Option
 (LayoutGroup)__receiver)}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c010f0usize)as*mut u8,();
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTransformChildrenChanged()` overload"]fn on_transform_children_changed(self,)->(){unsafe{let __receiver= <LayoutGroup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c01130usize)as*mut u8,();
-(LayoutGroup)__receiver)}
+__LayoutGroup_unity2_raw::on_transform_children_changed(__receiver, ::core::option::Option::None)}
 }
 fn set_property<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(self,current_value:impl::core::convert::Into< *mut M0> ,new_value:impl::core::convert::Into<M0>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<LayoutGroup as::unity2::ClassIdentity> ::class(),"SetProperty",2,)}
 );

@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procdescwaittrue-types")]
 pub use __types::*;
 
+#[cfg(feature="app-procdescwaittrue")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescWaitTrue_unity2_raw{use super:: * ;
+pub unsafe fn is_wait(this:ProcDescWaitTrue,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ProcDescWaitTrue as::unity2::ClassIdentity> ::NAME,"IsWait",));
+let inner:extern "C" fn(ProcDescWaitTrue,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+}
+
 #[cfg(feature="app-procdescwaittrue")]pub trait IProcDescWaitTrueMethods:IProcDescWaitTrue{#[doc="`.ctor(crate::app::procboolfunction::ProcBoolFunction)` overload"]fn ctor(self,function:impl::core::convert::Into<crate::app::procboolfunction::ProcBoolFunction>)->(){unsafe{let __receiver= <ProcDescWaitTrue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281b8f0usize)as*mut u8,();
 (ProcDescWaitTrue)__receiver,(crate::app::procboolfunction::ProcBoolFunction)::core::convert::Into::into(function))}
 }
 #[doc="`IsWait(crate::app::procinst::ProcInst)` overload"]fn is_wait(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->bool{unsafe{let __receiver= <ProcDescWaitTrue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281dca0usize)as*mut u8,bool;
-(ProcDescWaitTrue)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+__ProcDescWaitTrue_unity2_raw::is_wait(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 }
 

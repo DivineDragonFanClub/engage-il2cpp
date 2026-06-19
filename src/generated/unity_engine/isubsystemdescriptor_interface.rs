@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-isubsystemdescriptor_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ISubsystemDescriptor_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_id(this:ISubsystemDescriptor_Interface,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_id").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_id", <ISubsystemDescriptor_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_id(this:ISubsystemDescriptor_Interface,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ISubsystemDescriptor_Interface as::unity2::ClassIdentity> ::NAME,"get_id",));
 let inner:extern "C" fn(ISubsystemDescriptor_Interface, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

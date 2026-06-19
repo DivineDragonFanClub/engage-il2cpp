@@ -20,17 +20,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-interpolatorvector3-types")]
 pub use __types::*;
 
+#[cfg(feature="app-interpolatorvector3")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InterpolatorVector3_unity2_raw{use super:: * ;
+pub unsafe fn get_value(this:InterpolatorVector3,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InterpolatorVector3 as::unity2::ClassIdentity> ::NAME,"get_Value",));
+let inner:extern "C" fn(InterpolatorVector3, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_equal(this:InterpolatorVector3,a:crate::unity_engine::vector3::Vector3,b:crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InterpolatorVector3 as::unity2::ClassIdentity> ::NAME,"IsEqual",));
+let inner:extern "C" fn(InterpolatorVector3,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="app-interpolatorvector3")]pub trait IInterpolatorVector3Methods:IInterpolatorVector3{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorVector3 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2795590usize)as*mut u8,();
 (InterpolatorVector3)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
 }
 #[doc="`get_Value()` overload"]fn get_value(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <InterpolatorVector3 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2795600usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(InterpolatorVector3)__receiver)}
+__InterpolatorVector3_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsEqual(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn is_equal(self,a:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,b:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <InterpolatorVector3 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27956d0usize)as*mut u8,bool;
-(InterpolatorVector3)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(a),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(b))}
+__InterpolatorVector3_unity2_raw::is_equal(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 }
 

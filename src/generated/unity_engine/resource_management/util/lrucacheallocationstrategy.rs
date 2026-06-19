@@ -47,26 +47,26 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <LRUCacheAllocationStrategy as::unity2::ClassIdentity> ::NAME,"ReleasePool",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_new{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LRUCacheAllocationStrategy as::unity2::ClassIdentity> ::class(),"New",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LRUCacheAllocationStrategy as::unity2::ClassIdentity> ::NAME,"New",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_release{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LRUCacheAllocationStrategy as::unity2::ClassIdentity> ::class(),"Release",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LRUCacheAllocationStrategy as::unity2::ClassIdentity> ::NAME,"Release",e),}
-}
-}
+pub unsafe fn new(this:LRUCacheAllocationStrategy,r#type: ::unity2::SystemType,type_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <LRUCacheAllocationStrategy as::unity2::ClassIdentity> ::NAME,"New",));
+let inner:extern "C" fn(LRUCacheAllocationStrategy, ::unity2::SystemType,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,type_hash,__mi)}
+pub unsafe fn release(this:LRUCacheAllocationStrategy,type_hash:i32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <LRUCacheAllocationStrategy as::unity2::ClassIdentity> ::NAME,"Release",));
+let inner:extern "C" fn(LRUCacheAllocationStrategy,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,type_hash,obj,__mi)}
 }
 
 #[cfg(feature="unity_engine-resource_management-util-lrucacheallocationstrategy")]pub trait ILRUCacheAllocationStrategyMethods:ILRUCacheAllocationStrategy{#[doc="`.ctor(i32, i32, i32, i32)` overload"]fn ctor(self,pool_max_size:impl::core::convert::Into<i32> ,pool_capacity:impl::core::convert::Into<i32> ,pool_cache_max_size:impl::core::convert::Into<i32> ,initial_pool_cache_capacity:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LRUCacheAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -82,12 +82,10 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (LRUCacheAllocationStrategy)__receiver,(crate::system::collections::generic::list_1::List_1<crate::system::object::Object>)::core::convert::Into::into(pool))}
 }
 #[doc="`New(::unity2::SystemType, i32)` overload"]fn new(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,type_hash:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <LRUCacheAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LRUCacheAllocationStrategy_unity2_raw::__lookup_new::get_method_info().method_ptr,crate::system::object::Object;
-(LRUCacheAllocationStrategy)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(type_hash))}
+__LRUCacheAllocationStrategy_unity2_raw::new(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(type_hash), ::core::option::Option::None)}
 }
 #[doc="`Release(i32, crate::system::object::Object)` overload"]fn release(self,type_hash:impl::core::convert::Into<i32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <LRUCacheAllocationStrategy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LRUCacheAllocationStrategy_unity2_raw::__lookup_release::get_method_info().method_ptr,();
-(LRUCacheAllocationStrategy)__receiver,(i32)::core::convert::Into::into(type_hash),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__LRUCacheAllocationStrategy_unity2_raw::release(__receiver, ::core::convert::Into::into(type_hash), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 }
 

@@ -23,6 +23,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]#[::unity2::class(namespace="App",name="MapInfoGaugeMainLocatorRoot")]#[parent(crate::app::mapinfobase::MapInfoBase)]pub struct MapInfoGaugeMainLocatorRoot{#[offset(32)]#[rename(name="m_MainLocatorRoot")]pub m_main_locator_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_SubLocatorRoots")]pub m_sub_locator_roots: ::unity2::Array<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot> , #[offset(48)]#[rename(name="m_SubLocatorRoot")]pub m_sub_locator_root:crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot_OnMapStatus.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoGaugeMainLocatorRoot_OnMapStatus{pub value:i32,}
 impl::unity2::ClassIdentity for MapInfoGaugeMainLocatorRoot_OnMapStatus{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapInfoGaugeMainLocatorRoot.OnMapStatus";
@@ -43,9 +46,6 @@ pub fn size5x5()->Self{Self{value:3}
 pub fn num()->Self{Self{value:4}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfogaugemainlocatorroot/MapInfoGaugeMainLocatorRoot.md"))]#[::unity2::class(namespace="App",name="MapInfoGaugeMainLocatorRoot")]#[parent(crate::app::mapinfobase::MapInfoBase)]pub struct MapInfoGaugeMainLocatorRoot{#[offset(32)]#[rename(name="m_MainLocatorRoot")]pub m_main_locator_root:crate::unity_engine::gameobject::GameObject, #[offset(40)]#[rename(name="m_SubLocatorRoots")]pub m_sub_locator_roots: ::unity2::Array<crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot> , #[offset(48)]#[rename(name="m_SubLocatorRoot")]pub m_sub_locator_root:crate::root::mapinfogaugesublocatorroot::MapInfoGaugeSubLocatorRoot,}
 
 }
 
@@ -148,10 +148,10 @@ this}
 #[cfg(feature = "app-mapinfogaugemainlocatorroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapInfoGaugeMainLocatorRoot_OnMapStatus;
     pub use super::MapInfoGaugeMainLocatorRoot;
     pub use super::IMapInfoGaugeMainLocatorRoot;
     pub use super::IMapInfoGaugeMainLocatorRootMethods;
+    pub use super::MapInfoGaugeMainLocatorRoot_OnMapStatus;
     pub use crate::app::mapinfobase::IMapInfoBase;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

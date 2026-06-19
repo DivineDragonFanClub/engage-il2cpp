@@ -18,21 +18,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akreflectionpathinfoarray-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akreflectionpathinfoarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkReflectionPathInfoArray_unity2_raw{use super:: * ;
+pub unsafe fn get_structure_size(this:AkReflectionPathInfoArray,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkReflectionPathInfoArray as::unity2::ClassIdentity> ::NAME,"get_StructureSize",));
+let inner:extern "C" fn(AkReflectionPathInfoArray, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_new_reference_from_int_ptr(this:AkReflectionPathInfoArray,address: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akreflectionpathinfo::AkReflectionPathInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AkReflectionPathInfoArray as::unity2::ClassIdentity> ::NAME,"CreateNewReferenceFromIntPtr",));
+let inner:extern "C" fn(AkReflectionPathInfoArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->crate::root::akreflectionpathinfo::AkReflectionPathInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,__mi)}
+pub unsafe fn clone_into_reference_from_int_ptr(this:AkReflectionPathInfoArray,address: ::unity2::IntPtr,other:crate::root::akreflectionpathinfo::AkReflectionPathInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AkReflectionPathInfoArray as::unity2::ClassIdentity> ::NAME,"CloneIntoReferenceFromIntPtr",));
+let inner:extern "C" fn(AkReflectionPathInfoArray, ::unity2::IntPtr,crate::root::akreflectionpathinfo::AkReflectionPathInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,other,__mi)}
+}
+
 #[cfg(feature="root-akreflectionpathinfoarray")]pub trait IAkReflectionPathInfoArrayMethods:IAkReflectionPathInfoArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f314b0usize)as*mut u8,();
 (AkReflectionPathInfoArray)__receiver,(i32)::core::convert::Into::into(count))}
 }
 #[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31510usize)as*mut u8,i32;
-(AkReflectionPathInfoArray)__receiver)}
+__AkReflectionPathInfoArray_unity2_raw::get_structure_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akreflectionpathinfo::AkReflectionPathInfo{unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f31580usize)as*mut u8,crate::root::akreflectionpathinfo::AkReflectionPathInfo;
-(AkReflectionPathInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+__AkReflectionPathInfoArray_unity2_raw::create_new_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::option::Option::None)}
 }
 #[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akreflectionpathinfo::AkReflectionPathInfo)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akreflectionpathinfo::AkReflectionPathInfo>)->(){unsafe{let __receiver= <AkReflectionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f315f0usize)as*mut u8,();
-(AkReflectionPathInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address),(crate::root::akreflectionpathinfo::AkReflectionPathInfo)::core::convert::Into::into(other))}
+__AkReflectionPathInfoArray_unity2_raw::clone_into_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::convert::Into::into(other), ::core::option::Option::None)}
 }
 }
 

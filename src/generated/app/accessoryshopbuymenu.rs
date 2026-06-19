@@ -17,32 +17,79 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyMenu_SelectEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyMenu_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_ChangeKindEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenu.ChangeKindEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyMenu_ChangeKindEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct AccessoryShopBuyMenu{#[offset(200)]#[rename(name="m_AccessoryShopContentArray")]pub m_accessory_shop_content_array: ::unity2::Array<crate::app::accessoryshopcontent::AccessoryShopContent> , #[offset(208)]#[rename(name="m_Kind")]pub m_kind:crate::app::accessorydata::AccessoryData_Kinds, #[offset(216)]#[rename(name="m_Selects")]pub m_selects: ::unity2::Array<crate::app::basicmenuselect::BasicMenuSelect> , #[offset(224)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler, #[offset(232)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_DecideEventHandler, #[offset(240)]#[rename(name="m_RequestCloseEventHandler")]pub m_request_close_event_handler:crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_RequestCloseEventHandler, #[offset(248)]#[rename(name="m_ChangeKindEventHandler")]pub m_change_kind_event_handler:crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_ChangeKindEventHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenu.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyMenu_SelectEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_RequestCloseEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenu.RequestCloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyMenu_RequestCloseEventHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessoryshopbuymenu/AccessoryShopBuyMenu_ChangeKindEventHandler.md"))]#[::unity2::class(namespace="App",name="AccessoryShopBuyMenu.ChangeKindEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct AccessoryShopBuyMenu_ChangeKindEventHandler{}
 
 }
 
 #[cfg(feature = "app-accessoryshopbuymenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-accessoryshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopBuyMenu_SelectEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopBuyMenu_SelectEventHandler,accessory_data:crate::app::accessorydata::AccessoryData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopBuyMenu_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopBuyMenu_SelectEventHandler,crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,accessory_data,__mi)}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]pub trait IAccessoryShopBuyMenu_SelectEventHandlerMethods:IAccessoryShopBuyMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2902eb0usize)as*mut u8,();
+(AccessoryShopBuyMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AccessoryShopBuyMenu_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(accessory_data), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]impl<__T:IAccessoryShopBuyMenu_SelectEventHandler>IAccessoryShopBuyMenu_SelectEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyMenu_SelectEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopBuyMenu_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopBuyMenu_DecideEventHandler,accessory_data:crate::app::accessorydata::AccessoryData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopBuyMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopBuyMenu_DecideEventHandler,crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,accessory_data,__mi)}
+}
+
 #[cfg(feature="app-accessoryshopbuymenu")]pub trait IAccessoryShopBuyMenu_DecideEventHandlerMethods:IAccessoryShopBuyMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2902880usize)as*mut u8,();
 (AccessoryShopBuyMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29028a0usize)as*mut u8,();
-(AccessoryShopBuyMenu_DecideEventHandler)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
+__AccessoryShopBuyMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(accessory_data), ::core::option::Option::None)}
 }
 }
 
@@ -57,6 +104,84 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
  failed to instantiate", ::core::stringify!(AccessoryShopBuyMenu_DecideEventHandler), ::core::stringify!(new),));
  <Self as IAccessoryShopBuyMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
 this}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopBuyMenu_ChangeKindEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopBuyMenu_ChangeKindEventHandler,accessory_data:crate::app::accessorydata::AccessoryData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopBuyMenu_ChangeKindEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopBuyMenu_ChangeKindEventHandler,crate::app::accessorydata::AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,accessory_data,__mi)}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]pub trait IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods:IAccessoryShopBuyMenu_ChangeKindEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_ChangeKindEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29024c0usize)as*mut u8,();
+(AccessoryShopBuyMenu_ChangeKindEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_ChangeKindEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AccessoryShopBuyMenu_ChangeKindEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(accessory_data), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]impl<__T:IAccessoryShopBuyMenu_ChangeKindEventHandler>IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods for __T{}
+
+#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_ChangeKindEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_ChangeKindEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AccessoryShopBuyMenu_ChangeKindEventHandler), ::core::stringify!(new),));
+ <Self as IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-accessoryshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopBuyMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:AccessoryShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <AccessoryShopBuyMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(AccessoryShopBuyMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_left(this:AccessoryShopBuyMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <AccessoryShopBuyMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(AccessoryShopBuyMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:AccessoryShopBuyMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <AccessoryShopBuyMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(AccessoryShopBuyMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn b_call(this:AccessoryShopBuyMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <AccessoryShopBuyMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(AccessoryShopBuyMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_DecideEventHandler, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_RequestCloseEventHandler, crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_ChangeKindEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,select_event_handler:impl::core::convert::Into<crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_RequestCloseEventHandler> ,change_kind_event_handler:impl::core::convert::Into<crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu_ChangeKindEventHandler>)->crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b8e10usize)as*mut u8,crate::app::accessoryshopbuymenu::AccessoryShopBuyMenu;
@@ -83,8 +208,7 @@ this}
 (AccessoryShopBuyMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AccessoryShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27ba320usize)as*mut u8, ::unity2::Il2CppString;
-(AccessoryShopBuyMenu)__receiver)}
+__AccessoryShopBuyMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`EnableMenu()` overload"]fn enable_menu(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27ba370usize)as*mut u8,();
@@ -111,20 +235,17 @@ this}
 (AccessoryShopBuyMenu)__receiver)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27ba5c0usize)as*mut u8,();
-(AccessoryShopBuyMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__AccessoryShopBuyMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27ba9e0usize)as*mut u8,();
-(AccessoryShopBuyMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__AccessoryShopBuyMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`OnDoneToBuy()` overload"]fn on_done_to_buy(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27bae10usize)as*mut u8,();
 (AccessoryShopBuyMenu)__receiver)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AccessoryShopBuyMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27bae20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(AccessoryShopBuyMenu)__receiver)}
+__AccessoryShopBuyMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -156,27 +277,17 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-accessoryshopbuymenu")]pub trait IAccessoryShopBuyMenu_SelectEventHandlerMethods:IAccessoryShopBuyMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2902eb0usize)as*mut u8,();
-(AccessoryShopBuyMenu_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2902ed0usize)as*mut u8,();
-(AccessoryShopBuyMenu_SelectEventHandler)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
-}
-}
-
-#[cfg(feature="app-accessoryshopbuymenu")]impl<__T:IAccessoryShopBuyMenu_SelectEventHandler>IAccessoryShopBuyMenu_SelectEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_SelectEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopBuyMenu_SelectEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopBuyMenu_SelectEventHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-accessoryshopbuymenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryShopBuyMenu_RequestCloseEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AccessoryShopBuyMenu_RequestCloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AccessoryShopBuyMenu_RequestCloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AccessoryShopBuyMenu_RequestCloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-accessoryshopbuymenu")]pub trait IAccessoryShopBuyMenu_RequestCloseEventHandlerMethods:IAccessoryShopBuyMenu_RequestCloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -184,8 +295,7 @@ this}
 (AccessoryShopBuyMenu_RequestCloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_RequestCloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2902c60usize)as*mut u8,();
-(AccessoryShopBuyMenu_RequestCloseEventHandler)__receiver)}
+__AccessoryShopBuyMenu_RequestCloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -202,47 +312,24 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-accessoryshopbuymenu")]pub trait IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods:IAccessoryShopBuyMenu_ChangeKindEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_ChangeKindEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29024c0usize)as*mut u8,();
-(AccessoryShopBuyMenu_ChangeKindEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::accessorydata::AccessoryData)` overload"]fn invoke(self,accessory_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <AccessoryShopBuyMenu_ChangeKindEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29024e0usize)as*mut u8,();
-(AccessoryShopBuyMenu_ChangeKindEventHandler)__receiver,(crate::app::accessorydata::AccessoryData)::core::convert::Into::into(accessory_data))}
-}
-}
-
-#[cfg(feature="app-accessoryshopbuymenu")]impl<__T:IAccessoryShopBuyMenu_ChangeKindEventHandler>IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods for __T{}
-
-#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_ChangeKindEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-accessoryshopbuymenu")]impl AccessoryShopBuyMenu_ChangeKindEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AccessoryShopBuyMenu_ChangeKindEventHandler), ::core::stringify!(new),));
- <Self as IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-accessoryshopbuymenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryShopBuyMenu_DecideEventHandler;
-    pub use super::IAccessoryShopBuyMenu_DecideEventHandler;
-    pub use super::IAccessoryShopBuyMenu_DecideEventHandlerMethods;
-    pub use super::AccessoryShopBuyMenu;
-    pub use super::IAccessoryShopBuyMenu;
-    pub use super::IAccessoryShopBuyMenuMethods;
     pub use super::AccessoryShopBuyMenu_SelectEventHandler;
     pub use super::IAccessoryShopBuyMenu_SelectEventHandler;
     pub use super::IAccessoryShopBuyMenu_SelectEventHandlerMethods;
-    pub use super::AccessoryShopBuyMenu_RequestCloseEventHandler;
-    pub use super::IAccessoryShopBuyMenu_RequestCloseEventHandler;
-    pub use super::IAccessoryShopBuyMenu_RequestCloseEventHandlerMethods;
+    pub use super::AccessoryShopBuyMenu_DecideEventHandler;
+    pub use super::IAccessoryShopBuyMenu_DecideEventHandler;
+    pub use super::IAccessoryShopBuyMenu_DecideEventHandlerMethods;
     pub use super::AccessoryShopBuyMenu_ChangeKindEventHandler;
     pub use super::IAccessoryShopBuyMenu_ChangeKindEventHandler;
     pub use super::IAccessoryShopBuyMenu_ChangeKindEventHandlerMethods;
+    pub use super::AccessoryShopBuyMenu;
+    pub use super::IAccessoryShopBuyMenu;
+    pub use super::IAccessoryShopBuyMenuMethods;
+    pub use super::AccessoryShopBuyMenu_RequestCloseEventHandler;
+    pub use super::IAccessoryShopBuyMenu_RequestCloseEventHandler;
+    pub use super::IAccessoryShopBuyMenu_RequestCloseEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

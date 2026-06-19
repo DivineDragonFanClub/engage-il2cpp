@@ -15,51 +15,72 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-iuserdatadescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IUserDataDescriptor_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:IUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Name").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Name", <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_name(this:IUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",));
 let inner:extern "C" fn(IUserDataDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_type(this:IUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Type").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Type", <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_type(this:IUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"get_Type",));
 let inner:extern "C" fn(IUserDataDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn index(this:IUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Index").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Index", <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn index(this:IUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"Index",));
 let inner:extern "C" fn(IUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,script,obj,index,is_direct_indexing,__mi)}
-pub unsafe fn set_index(this:IUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetIndex").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetIndex", <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_index(this:IUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,index:crate::moon_sharp::interpreter::dynvalue::DynValue,value:crate::moon_sharp::interpreter::dynvalue::DynValue,is_direct_indexing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"SetIndex",));
 let inner:extern "C" fn(IUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue,crate::moon_sharp::interpreter::dynvalue::DynValue,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,script,obj,index,value,is_direct_indexing,__mi)}
-pub unsafe fn as_string(this:IUserDataDescriptor,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("AsString").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","AsString", <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn as_string(this:IUserDataDescriptor,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"AsString",));
 let inner:extern "C" fn(IUserDataDescriptor,crate::system::object::Object, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,obj,__mi)}
-pub unsafe fn meta_index(this:IUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,metaname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MetaIndex").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","MetaIndex", <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn meta_index(this:IUserDataDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,metaname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"MetaIndex",));
 let inner:extern "C" fn(IUserDataDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,script,obj,metaname,__mi)}
-pub unsafe fn is_type_compatible(this:IUserDataDescriptor,r#type: ::unity2::SystemType,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsTypeCompatible").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsTypeCompatible", <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn is_type_compatible(this:IUserDataDescriptor,r#type: ::unity2::SystemType,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IUserDataDescriptor as::unity2::ClassIdentity> ::NAME,"IsTypeCompatible",));
 let inner:extern "C" fn(IUserDataDescriptor, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

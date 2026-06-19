@@ -26,6 +26,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopdatabase_1/ShopDataBase_1.md"))]#[::unity2::class(namespace="App",name="ShopDataBase`1")]#[parent(crate::app::structdataarray_1::StructDataArray_1<T0>)]#[parent(crate::app::structtemplate_1::StructTemplate_1<T0>)]#[parent(crate::app::structbase::StructBase)]#[parent(crate::system::object::Object)]pub struct ShopDataBase_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="Infinity")]pub infinity:i32, #[static_field]#[rename(name="m_RandomGiftList")]pub m_random_gift_list:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopdatabase_1/ShopDataBase_1_GetStockAddedKeyFunc.md"))]#[::unity2::class(namespace="App",name="ShopDataBase`1.GetStockAddedKeyFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct ShopDataBase_1_GetStockAddedKeyFunc<T0: ::unity2::ClassIdentity>{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopdatabase_1/ShopDataBase_1_AttributeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ShopDataBase_1_AttributeType<T0: ::unity2::ClassIdentity>{pub value:i32,pub _phantom: ::core::marker::PhantomData<(T0)>,}
 impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for ShopDataBase_1_AttributeType<T0>{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ShopDataBase`1.AttributeType";
@@ -40,9 +43,6 @@ impl<T0: ::unity2::ClassIdentity>ShopDataBase_1_AttributeType<T0>{pub fn none()-
 pub fn random_gift()->Self{Self{value:1,_phantom: ::core::marker::PhantomData}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopdatabase_1/ShopDataBase_1_GetStockAddedKeyFunc.md"))]#[::unity2::class(namespace="App",name="ShopDataBase`1.GetStockAddedKeyFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct ShopDataBase_1_GetStockAddedKeyFunc<T0: ::unity2::ClassIdentity>{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopdatabase_1/ShopDataBase_1_GetStockKeyFunc.md"))]#[::unity2::class(namespace="App",name="ShopDataBase`1.GetStockKeyFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct ShopDataBase_1_GetStockKeyFunc<T0: ::unity2::ClassIdentity>{}
@@ -108,10 +108,10 @@ pub mod prelude {
     pub use super::ShopDataBase_1;
     pub use super::IShopDataBase_1;
     pub use super::IShopDataBase_1Methods;
-    pub use super::ShopDataBase_1_AttributeType;
     pub use super::ShopDataBase_1_GetStockAddedKeyFunc;
     pub use super::IShopDataBase_1_GetStockAddedKeyFunc;
     pub use super::IShopDataBase_1_GetStockAddedKeyFuncMethods;
+    pub use super::ShopDataBase_1_AttributeType;
     pub use super::ShopDataBase_1_GetStockKeyFunc;
     pub use super::IShopDataBase_1_GetStockKeyFunc;
     pub use super::IShopDataBase_1_GetStockKeyFuncMethods;

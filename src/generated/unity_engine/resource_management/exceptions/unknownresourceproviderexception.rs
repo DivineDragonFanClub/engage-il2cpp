@@ -69,26 +69,26 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_message{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),"get_Message",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"get_Message",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<UnknownResourceProviderException as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"ToString",e),}
-}
-}
+pub unsafe fn get_message(this:UnknownResourceProviderException,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"get_Message",));
+let inner:extern "C" fn(UnknownResourceProviderException, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:UnknownResourceProviderException,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <UnknownResourceProviderException as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(UnknownResourceProviderException, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-resource_management-exceptions-unknownresourceproviderexception")]pub trait IUnknownResourceProviderExceptionMethods:IUnknownResourceProviderException{#[doc="`get_Location()` overload"]fn get_location(self,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -112,12 +112,10 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (UnknownResourceProviderException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
 }
 #[doc="`get_Message()` overload"]fn get_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_get_message::get_method_info().method_ptr, ::unity2::Il2CppString;
-(UnknownResourceProviderException)__receiver)}
+__UnknownResourceProviderException_unity2_raw::get_message(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnknownResourceProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__UnknownResourceProviderException_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
-(UnknownResourceProviderException)__receiver)}
+__UnknownResourceProviderException_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 

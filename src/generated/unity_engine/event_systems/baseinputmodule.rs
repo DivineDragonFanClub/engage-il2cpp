@@ -27,10 +27,113 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-event_systems-baseinputmodule")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseInputModule_unity2_raw{use super:: * ;
-pub unsafe fn process(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Process").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Process", <BaseInputModule as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_enable(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"OnEnable",));
 let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn process(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"Process",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_axis_event_data(this:BaseInputModule,x:f32,y:f32,move_dead_zone:f32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::event_systems::axiseventdata::AxisEventData{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"GetAxisEventData",));
+let inner:extern "C" fn(BaseInputModule,f32,f32,f32, ::unity2::OptionalMethod,)->crate::unity_engine::event_systems::axiseventdata::AxisEventData= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,move_dead_zone,__mi)}
+pub unsafe fn get_base_event_data(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::event_systems::baseeventdata::BaseEventData{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"GetBaseEventData",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->crate::unity_engine::event_systems::baseeventdata::BaseEventData= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_pointer_over_game_object(this:BaseInputModule,pointer_id:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"IsPointerOverGameObject",));
+let inner:extern "C" fn(BaseInputModule,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,pointer_id,__mi)}
+pub unsafe fn should_activate_module(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"ShouldActivateModule",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn deactivate_module(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"DeactivateModule",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn activate_module(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"ActivateModule",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_module(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"UpdateModule",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_module_supported(this:BaseInputModule,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <BaseInputModule as::unity2::ClassIdentity> ::NAME,"IsModuleSupported",));
+let inner:extern "C" fn(BaseInputModule, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -67,12 +170,10 @@ inner(this,__mi)}
 (BaseInputModule)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a7d0usize)as*mut u8,();
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317a9e0usize)as*mut u8,();
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Process()` overload"]fn process(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __BaseInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)}
@@ -82,36 +183,28 @@ __BaseInputModule_unity2_raw::process(__receiver, ::core::option::Option::None)}
 (BaseInputModule)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(current_pointer_data),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(new_enter_target))}
 }
 #[doc="`GetAxisEventData(f32, f32, f32)` overload"]fn get_axis_event_data(self,x:impl::core::convert::Into<f32> ,y:impl::core::convert::Into<f32> ,move_dead_zone:impl::core::convert::Into<f32>)->crate::unity_engine::event_systems::axiseventdata::AxisEventData{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b480usize)as*mut u8,crate::unity_engine::event_systems::axiseventdata::AxisEventData;
-(BaseInputModule)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(move_dead_zone))}
+__BaseInputModule_unity2_raw::get_axis_event_data(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::convert::Into::into(move_dead_zone), ::core::option::Option::None)}
 }
 #[doc="`GetBaseEventData()` overload"]fn get_base_event_data(self,)->crate::unity_engine::event_systems::baseeventdata::BaseEventData{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b5c0usize)as*mut u8,crate::unity_engine::event_systems::baseeventdata::BaseEventData;
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::get_base_event_data(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsPointerOverGameObject(i32)` overload"]fn is_pointer_over_game_object(self,pointer_id:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b670usize)as*mut u8,bool;
-(BaseInputModule)__receiver,(i32)::core::convert::Into::into(pointer_id))}
+__BaseInputModule_unity2_raw::is_pointer_over_game_object(__receiver, ::core::convert::Into::into(pointer_id), ::core::option::Option::None)}
 }
 #[doc="`ShouldActivateModule()` overload"]fn should_activate_module(self,)->bool{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b680usize)as*mut u8,bool;
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::should_activate_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DeactivateModule()` overload"]fn deactivate_module(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b6d0usize)as*mut u8,();
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::deactivate_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ActivateModule()` overload"]fn activate_module(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b6e0usize)as*mut u8,();
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::activate_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateModule()` overload"]fn update_module(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b6f0usize)as*mut u8,();
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::update_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsModuleSupported()` overload"]fn is_module_supported(self,)->bool{unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b700usize)as*mut u8,bool;
-(BaseInputModule)__receiver)}
+__BaseInputModule_unity2_raw::is_module_supported(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseInputModule as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317b710usize)as*mut u8,();

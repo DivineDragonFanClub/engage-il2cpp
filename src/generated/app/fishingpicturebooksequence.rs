@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))]#[::unity2::class(namespace="App",name="FishingPictureBookSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingPictureBookSequence{#[static_field]#[rename(name="cTextureAtlasPath")]pub c_texture_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureGold")]pub c_result_texture_gold: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureSilver")]pub c_result_texture_silver: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureBronze")]pub c_result_texture_bronze: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpicturebooksequence/FishingPictureBookSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FishingPictureBookSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for FishingPictureBookSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="FishingPictureBookSequence.Label";
@@ -41,10 +38,26 @@ pub fn exit()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingpicturebooksequence/FishingPictureBookSequence.md"))]#[::unity2::class(namespace="App",name="FishingPictureBookSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingPictureBookSequence{#[static_field]#[rename(name="cTextureAtlasPath")]pub c_texture_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureGold")]pub c_result_texture_gold: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureSilver")]pub c_result_texture_silver: ::unity2::Il2CppString, #[static_field]#[rename(name="cResultTextureBronze")]pub c_result_texture_bronze: ::unity2::Il2CppString,}
+
 }
 
 #[cfg(feature = "app-fishingpicturebooksequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-fishingpicturebooksequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FishingPictureBookSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_shutdown(this:FishingPictureBookSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <FishingPictureBookSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(FishingPictureBookSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-fishingpicturebooksequence")]impl FishingPictureBookSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2604680usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -52,8 +65,7 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-fishingpicturebooksequence")]pub trait IFishingPictureBookSequenceMethods:IFishingPictureBookSequence{#[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26040d0usize)as*mut u8,();
-(FishingPictureBookSequence)__receiver)}
+__FishingPictureBookSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LoadResource()` overload"]fn load_resource(self,)->(){unsafe{let __receiver= <FishingPictureBookSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2604140usize)as*mut u8,();
@@ -108,10 +120,10 @@ this}
 #[cfg(feature = "app-fishingpicturebooksequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FishingPictureBookSequence_Label;
     pub use super::FishingPictureBookSequence;
     pub use super::IFishingPictureBookSequence;
     pub use super::IFishingPictureBookSequenceMethods;
-    pub use super::FishingPictureBookSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

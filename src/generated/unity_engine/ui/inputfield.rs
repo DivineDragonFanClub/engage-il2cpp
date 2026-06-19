@@ -57,6 +57,67 @@ pub fn email_address()->Self{Self{value:5}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_OnChangeEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="InputField.OnChangeEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct InputField_OnChangeEvent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_OnValidateInput.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="InputField.OnValidateInput")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InputField_OnValidateInput{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_LineType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputField_LineType{pub value:i32,}
+impl::unity2::ClassIdentity for InputField_LineType{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="InputField.LineType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for InputField_LineType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl InputField_LineType{pub fn single_line()->Self{Self{value:0}
+}
+pub fn multi_line_submit()->Self{Self{value:1}
+}
+pub fn multi_line_newline()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_EditState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputField_EditState{pub value:i32,}
+impl::unity2::ClassIdentity for InputField_EditState{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="InputField.EditState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for InputField_EditState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl InputField_EditState{pub fn r#continue()->Self{Self{value:0}
+}
+pub fn finish()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_InputType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputField_InputType{pub value:i32,}
+impl::unity2::ClassIdentity for InputField_InputType{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="InputField.InputType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for InputField_InputType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl InputField_InputType{pub fn standard()->Self{Self{value:0}
+}
+pub fn auto_correct()->Self{Self{value:1}
+}
+pub fn password()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_SubmitEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="InputField.SubmitEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct InputField_SubmitEvent{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_ContentType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputField_ContentType{pub value:i32,}
 impl::unity2::ClassIdentity for InputField_ContentType{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="InputField.ContentType";
@@ -89,73 +150,65 @@ pub fn custom()->Self{Self{value:9}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_EditState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputField_EditState{pub value:i32,}
-impl::unity2::ClassIdentity for InputField_EditState{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="InputField.EditState";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for InputField_EditState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl InputField_EditState{pub fn r#continue()->Self{Self{value:0}
-}
-pub fn finish()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_SubmitEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="InputField.SubmitEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct InputField_SubmitEvent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_OnValidateInput.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="InputField.OnValidateInput")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InputField_OnValidateInput{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_InputType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputField_InputType{pub value:i32,}
-impl::unity2::ClassIdentity for InputField_InputType{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="InputField.InputType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for InputField_InputType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl InputField_InputType{pub fn standard()->Self{Self{value:0}
-}
-pub fn auto_correct()->Self{Self{value:1}
-}
-pub fn password()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_OnChangeEvent.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="InputField.OnChangeEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct InputField_OnChangeEvent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField_LineType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InputField_LineType{pub value:i32,}
-impl::unity2::ClassIdentity for InputField_LineType{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="InputField.LineType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for InputField_LineType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl InputField_LineType{pub fn single_line()->Self{Self{value:0}
-}
-pub fn multi_line_submit()->Self{Self{value:1}
-}
-pub fn multi_line_newline()->Self{Self{value:2}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/inputfield/InputField.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="InputField")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct InputField{#[offset(248)]#[rename(name="m_Keyboard")]pub m_keyboard:crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard, #[static_field]#[rename(name="kSeparators")]pub k_separators: ::unity2::Array<u16> , #[offset(256)]#[rename(name="m_TextComponent")]pub m_text_component:crate::unity_engine::ui::text::Text, #[offset(264)]#[rename(name="m_Placeholder")]pub m_placeholder:crate::unity_engine::ui::graphic::Graphic, #[offset(272)]#[rename(name="m_ContentType")]pub m_content_type:crate::unity_engine::ui::inputfield::InputField_ContentType, #[offset(276)]#[rename(name="m_InputType")]pub m_input_type:crate::unity_engine::ui::inputfield::InputField_InputType, #[offset(280)]#[rename(name="m_AsteriskChar")]pub m_asterisk_char:u16, #[offset(284)]#[rename(name="m_KeyboardType")]pub m_keyboard_type:crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType, #[offset(288)]#[rename(name="m_LineType")]pub m_line_type:crate::unity_engine::ui::inputfield::InputField_LineType, #[offset(292)]#[rename(name="m_HideMobileInput")]pub m_hide_mobile_input:bool, #[offset(296)]#[rename(name="m_CharacterValidation")]pub m_character_validation:crate::unity_engine::ui::inputfield::InputField_CharacterValidation, #[offset(300)]#[rename(name="m_CharacterLimit")]pub m_character_limit:i32, #[offset(304)]#[rename(name="m_OnEndEdit")]pub m_on_end_edit:crate::unity_engine::ui::inputfield::InputField_SubmitEvent, #[offset(312)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::unity_engine::ui::inputfield::InputField_OnChangeEvent, #[offset(320)]#[rename(name="m_OnValidateInput")]pub m_on_validate_input:crate::unity_engine::ui::inputfield::InputField_OnValidateInput, #[offset(328)]#[rename(name="m_CaretColor")]pub m_caret_color:crate::unity_engine::color::Color, #[offset(344)]#[rename(name="m_CustomCaretColor")]pub m_custom_caret_color:bool, #[offset(348)]#[rename(name="m_SelectionColor")]pub m_selection_color:crate::unity_engine::color::Color, #[offset(368)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(376)]#[rename(name="m_CaretBlinkRate")]pub m_caret_blink_rate:f32, #[offset(380)]#[rename(name="m_CaretWidth")]pub m_caret_width:i32, #[offset(384)]#[rename(name="m_ReadOnly")]pub m_read_only:bool, #[offset(385)]#[rename(name="m_ShouldActivateOnSelect")]pub m_should_activate_on_select:bool, #[offset(388)]#[rename(name="m_CaretPosition")]pub m_caret_position:i32, #[offset(392)]#[rename(name="m_CaretSelectPosition")]pub m_caret_select_position:i32, #[offset(400)]#[rename(name="caretRectTrans")]pub caret_rect_trans:crate::unity_engine::recttransform::RectTransform, #[offset(408)]#[rename(name="m_CursorVerts")]pub m_cursor_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex> , #[offset(416)]#[rename(name="m_InputTextCache")]pub m_input_text_cache:crate::unity_engine::textgenerator::TextGenerator, #[offset(424)]#[rename(name="m_CachedInputRenderer")]pub m_cached_input_renderer:crate::unity_engine::canvasrenderer::CanvasRenderer, #[offset(432)]#[rename(name="m_PreventFontCallback")]pub m_prevent_font_callback:bool, #[offset(440)]#[rename(name="m_Mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(448)]#[rename(name="m_AllowInput")]pub m_allow_input:bool, #[offset(449)]#[rename(name="m_ShouldActivateNextUpdate")]pub m_should_activate_next_update:bool, #[offset(450)]#[rename(name="m_UpdateDrag")]pub m_update_drag:bool, #[offset(451)]#[rename(name="m_DragPositionOutOfBounds")]pub m_drag_position_out_of_bounds:bool, #[static_field]#[rename(name="kHScrollSpeed")]pub k_h_scroll_speed:f32, #[static_field]#[rename(name="kVScrollSpeed")]pub k_v_scroll_speed:f32, #[offset(452)]#[rename(name="m_CaretVisible")]pub m_caret_visible:bool, #[offset(456)]#[rename(name="m_BlinkCoroutine")]pub m_blink_coroutine:crate::unity_engine::coroutine::Coroutine, #[offset(464)]#[rename(name="m_BlinkStartTime")]pub m_blink_start_time:f32, #[offset(468)]#[rename(name="m_DrawStart")]pub m_draw_start:i32, #[offset(472)]#[rename(name="m_DrawEnd")]pub m_draw_end:i32, #[offset(480)]#[rename(name="m_DragCoroutine")]pub m_drag_coroutine:crate::unity_engine::coroutine::Coroutine, #[offset(488)]#[rename(name="m_OriginalText")]pub m_original_text: ::unity2::Il2CppString, #[offset(496)]#[rename(name="m_WasCanceled")]pub m_was_canceled:bool, #[offset(497)]#[rename(name="m_HasDoneFocusTransition")]pub m_has_done_focus_transition:bool, #[offset(504)]#[rename(name="m_WaitForSecondsRealtime")]pub m_wait_for_seconds_realtime:crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime, #[offset(512)]#[rename(name="m_TouchKeyboardAllowsInPlaceEditing")]pub m_touch_keyboard_allows_in_place_editing:bool, #[static_field]#[rename(name="kEmailSpecialCharacters")]pub k_email_special_characters: ::unity2::Il2CppString, #[offset(520)]#[rename(name="m_ProcessingEvent")]pub m_processing_event:crate::unity_engine::event::Event, #[static_field]#[rename(name="k_MaxTextLength")]pub k_max_text_length:i32,}
 
 }
 
 #[cfg(feature = "unity_engine-ui-inputfield-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-inputfield")]pub trait IInputField_OnChangeEventMethods:IInputField_OnChangeEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InputField_OnChangeEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0cd80usize)as*mut u8,();
+(InputField_OnChangeEvent)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-inputfield")]impl<__T:IInputField_OnChangeEvent>IInputField_OnChangeEventMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnChangeEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnChangeEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InputField_OnChangeEvent), ::core::stringify!(new),));
+ <Self as IInputField_OnChangeEventMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-ui-inputfield")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InputField_OnValidateInput_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:InputField_OnValidateInput,text: ::unity2::Il2CppString,char_index:i32,added_char:u16,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <InputField_OnValidateInput as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(InputField_OnValidateInput, ::unity2::Il2CppString,i32,u16, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,text,char_index,added_char,__mi)}
+}
+
+#[cfg(feature="unity_engine-ui-inputfield")]pub trait IInputField_OnValidateInputMethods:IInputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0cde0usize)as*mut u8,();
+(InputField_OnValidateInput)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString, i32, u16)` overload"]fn invoke(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,char_index:impl::core::convert::Into<i32> ,added_char:impl::core::convert::Into<u16>)->u16{unsafe{let __receiver= <InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__InputField_OnValidateInput_unity2_raw::invoke(__receiver, ::core::convert::Into::into(text), ::core::convert::Into::into(char_index), ::core::convert::Into::into(added_char), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="unity_engine-ui-inputfield")]impl<__T:IInputField_OnValidateInput>IInputField_OnValidateInputMethods for __T{}
+
+#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnValidateInput{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InputField_OnValidateInput), ::core::stringify!(new),));
+ <Self as IInputField_OnValidateInputMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="unity_engine-ui-inputfield")]pub trait IInputField_SubmitEventMethods:IInputField_SubmitEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InputField_SubmitEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0d2a0usize)as*mut u8,();
@@ -175,45 +228,307 @@ pub use __types::*;
 this}
 }
 
-#[cfg(feature="unity_engine-ui-inputfield")]pub trait IInputField_OnValidateInputMethods:IInputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0cde0usize)as*mut u8,();
-(InputField_OnValidateInput)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString, i32, u16)` overload"]fn invoke(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,char_index:impl::core::convert::Into<i32> ,added_char:impl::core::convert::Into<u16>)->u16{unsafe{let __receiver= <InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0ce00usize)as*mut u8,u16;
-(InputField_OnValidateInput)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(i32)::core::convert::Into::into(char_index),(u16)::core::convert::Into::into(added_char))}
-}
-}
-
-#[cfg(feature="unity_engine-ui-inputfield")]impl<__T:IInputField_OnValidateInput>IInputField_OnValidateInputMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnValidateInput{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InputField_OnValidateInput), ::core::stringify!(new),));
- <Self as IInputField_OnValidateInputMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="unity_engine-ui-inputfield")]pub trait IInputField_OnChangeEventMethods:IInputField_OnChangeEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InputField_OnChangeEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c0cd80usize)as*mut u8,();
-(InputField_OnChangeEvent)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-ui-inputfield")]impl<__T:IInputField_OnChangeEvent>IInputField_OnChangeEventMethods for __T{}
-
-#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnChangeEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-ui-inputfield")]impl InputField_OnChangeEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InputField_OnChangeEvent), ::core::stringify!(new),));
- <Self as IInputField_OnChangeEventMethods> ::ctor(this,);
-this}
+#[cfg(feature="unity_engine-ui-inputfield")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InputField_unity2_raw{use super:: * ;
+pub unsafe fn set_should_activate_on_select(this:InputField,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"set_shouldActivateOnSelect",));
+let inner:extern "C" fn(InputField,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_should_activate_on_select(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(60usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",60usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_shouldActivateOnSelect",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn late_update(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(61usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",61usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"LateUpdate",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_begin_drag(this:InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(62usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",62usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnBeginDrag",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_drag(this:InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnDrag",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_end_drag(this:InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnEndDrag",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_down(this:InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnPointerDown",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_update_selected(this:InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(65usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",65usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnUpdateSelected",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn append(this:InputField,input: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(66usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",66usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"Append",));
+let inner:extern "C" fn(InputField, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,input,__mi)}
+pub unsafe fn append_2(this:InputField,input:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(67usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",67usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"Append",));
+let inner:extern "C" fn(InputField,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,input,__mi)}
+pub unsafe fn rebuild(this:InputField,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let inner:extern "C" fn(InputField,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,update,__mi)}
+pub unsafe fn layout_complete(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(69usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",69usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn graphic_update_complete(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",70usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_click(this:InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(71usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",71usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_deselect(this:InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_submit(this:InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",72usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
+let inner:extern "C" fn(InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn do_state_transition(this:InputField,state:crate::unity_engine::ui::selectable::Selectable_SelectionState,instant:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"DoStateTransition",));
+let inner:extern "C" fn(InputField,crate::unity_engine::ui::selectable::Selectable_SelectionState,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,instant,__mi)}
+pub unsafe fn calculate_layout_input_horizontal(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",73usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate_layout_input_vertical(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",74usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_width(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(75usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",75usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_width(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(76usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",76usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_width(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",77usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_height(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",78usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_height(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_height(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(80usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",80usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_layout_priority(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(81usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",81usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:InputField,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <InputField as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
+let inner:extern "C" fn(InputField, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-ui-inputfield")]impl InputField{#[doc="`get_clipboard()` overload"]pub fn get_clipboard()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bf7970usize)as*mut u8, ::unity2::Il2CppString;
@@ -262,12 +577,10 @@ this}
 (InputField)__receiver)}
 }
 #[doc="`set_shouldActivateOnSelect(bool)` overload"]fn set_should_activate_on_select(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf5050usize)as*mut u8,();
-(InputField)__receiver,(bool)::core::convert::Into::into(value))}
+__InputField_unity2_raw::set_should_activate_on_select(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_shouldActivateOnSelect()` overload"]fn get_should_activate_on_select(self,)->bool{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf5060usize)as*mut u8,bool;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_should_activate_on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf50a0usize)as*mut u8, ::unity2::Il2CppString;
@@ -504,12 +817,10 @@ __out_0.assume_init()}
 (InputField)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf6e70usize)as*mut u8,();
-(InputField)__receiver)}
+__InputField_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf70e0usize)as*mut u8,();
-(InputField)__receiver)}
+__InputField_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CaretBlink()` overload"]fn caret_blink(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf7590usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
@@ -560,8 +871,7 @@ __out_0.assume_init()}
 (InputField)__receiver)}
 }
 #[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf7b50usize)as*mut u8,();
-(InputField)__receiver)}
+__InputField_unity2_raw::late_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ScreenToLocal(crate::unity_engine::vector2::Vector2)` overload"]fn screen_to_local(self,screen:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf9110usize)as*mut u8,crate::unity_engine::vector2::Vector2;
@@ -580,24 +890,20 @@ __out_0.assume_init()}
 (InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
 }
 #[doc="`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_begin_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf9a40usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf9a70usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`MouseDragOutsideRect(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn mouse_drag_outside_rect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf9cd0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
 (InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
 }
 #[doc="`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_end_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf9d60usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_end_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf9d90usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`KeyPressed(crate::unity_engine::event::Event)` overload"]fn key_pressed(self,evt:impl::core::convert::Into<crate::unity_engine::event::Event>)->crate::unity_engine::ui::inputfield::InputField_EditState{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf9f80usize)as*mut u8,crate::unity_engine::ui::inputfield::InputField_EditState;
@@ -612,8 +918,7 @@ __out_0.assume_init()}
 (InputField)__receiver,(crate::unity_engine::event::Event)::core::convert::Into::into(e))}
 }
 #[doc="`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_update_selected(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfafb0usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_update_selected(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`GetSelectedString()` overload"]fn get_selected_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfa950usize)as*mut u8, ::unity2::Il2CppString;
@@ -696,12 +1001,10 @@ __out_0.assume_init()}
 (InputField)__receiver)}
 }
 #[doc="`Append(::unity2::Il2CppString)` overload"]fn append(self,input:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfc2a0usize)as*mut u8,();
-(InputField)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(input))}
+__InputField_unity2_raw::append(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
 }
 #[doc="`Append(u16)` overload"]fn append_2(self,input:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfc360usize)as*mut u8,();
-(InputField)__receiver,(u16)::core::convert::Into::into(input))}
+__InputField_unity2_raw::append_2(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
 }
 #[doc="`UpdateLabel()` overload"]fn update_label(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf54e0usize)as*mut u8,();
@@ -724,16 +1027,13 @@ __out_0.assume_init()}
 (InputField)__receiver)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,update:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfd7b0usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::ui::canvasupdate::CanvasUpdate)::core::convert::Into::into(update))}
+__InputField_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfdc40usize)as*mut u8,();
-(InputField)__receiver)}
+__InputField_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfdc50usize)as*mut u8,();
-(InputField)__receiver)}
+__InputField_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bfd7c0usize)as*mut u8,();
@@ -772,24 +1072,20 @@ __out_0.assume_init()}
 (InputField)__receiver)}
 }
 #[doc="`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_select(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff000usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_select(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff050usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`DeactivateInputField()` overload"]fn deactivate_input_field(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf7350usize)as*mut u8,();
 (InputField)__receiver)}
 }
 #[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff060usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_deselect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff090usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__InputField_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`EnforceContentType()` overload"]fn enforce_content_type(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf65f0usize)as*mut u8,();
@@ -808,48 +1104,37 @@ __out_0.assume_init()}
 (InputField)__receiver)}
 }
 #[doc="`DoStateTransition(crate::unity_engine::ui::selectable::Selectable_SelectionState, bool)` overload"]fn do_state_transition(self,state:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable_SelectionState> ,instant:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff0f0usize)as*mut u8,();
-(InputField)__receiver,(crate::unity_engine::ui::selectable::Selectable_SelectionState)::core::convert::Into::into(state),(bool)::core::convert::Into::into(instant))}
+__InputField_unity2_raw::do_state_transition(__receiver, ::core::convert::Into::into(state), ::core::convert::Into::into(instant), ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff130usize)as*mut u8,();
-(InputField)__receiver)}
+__InputField_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff140usize)as*mut u8,();
-(InputField)__receiver)}
+__InputField_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff150usize)as*mut u8,f32;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff160usize)as*mut u8,f32;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff2c0usize)as*mut u8,f32;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff2d0usize)as*mut u8,f32;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff2e0usize)as*mut u8,f32;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff460usize)as*mut u8,f32;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff470usize)as*mut u8,i32;
-(InputField)__receiver)}
+__InputField_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bff520usize)as*mut u8,crate::unity_engine::transform::Transform;
-(InputField)__receiver)}
+__InputField_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -1027,19 +1312,19 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::InputField_CharacterValidation;
-    pub use super::InputField_ContentType;
-    pub use super::InputField_EditState;
-    pub use super::InputField_SubmitEvent;
-    pub use super::IInputField_SubmitEvent;
-    pub use super::IInputField_SubmitEventMethods;
-    pub use super::InputField_OnValidateInput;
-    pub use super::IInputField_OnValidateInput;
-    pub use super::IInputField_OnValidateInputMethods;
-    pub use super::InputField_InputType;
     pub use super::InputField_OnChangeEvent;
     pub use super::IInputField_OnChangeEvent;
     pub use super::IInputField_OnChangeEventMethods;
+    pub use super::InputField_OnValidateInput;
+    pub use super::IInputField_OnValidateInput;
+    pub use super::IInputField_OnValidateInputMethods;
     pub use super::InputField_LineType;
+    pub use super::InputField_EditState;
+    pub use super::InputField_InputType;
+    pub use super::InputField_SubmitEvent;
+    pub use super::IInputField_SubmitEvent;
+    pub use super::IInputField_SubmitEventMethods;
+    pub use super::InputField_ContentType;
     pub use super::InputField;
     pub use super::IInputField;
     pub use super::IInputFieldMethods;

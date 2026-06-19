@@ -27,37 +27,52 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="combat-basetransitioncameracontroller")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseTransitionCameraController_unity2_raw{use super:: * ;
-pub unsafe fn get_transition_time_start(this:BaseTransitionCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_TransitionTimeStart").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_TransitionTimeStart", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_transition_time_start(this:BaseTransitionCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,"get_TransitionTimeStart",));
 let inner:extern "C" fn(BaseTransitionCameraController, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_transition_time_return(this:BaseTransitionCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_TransitionTimeReturn").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_TransitionTimeReturn", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_transition_time_return(this:BaseTransitionCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,"get_TransitionTimeReturn",));
 let inner:extern "C" fn(BaseTransitionCameraController, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn start_transition(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("StartTransition").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","StartTransition", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn start_transition(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,"StartTransition",));
 let inner:extern "C" fn(BaseTransitionCameraController,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,next_cam,__mi)}
-pub unsafe fn change_taget(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ChangeTaget").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ChangeTaget", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn change_taget(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,"ChangeTaget",));
 let inner:extern "C" fn(BaseTransitionCameraController,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,next_cam,__mi)}
-pub unsafe fn return_transition(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ReturnTransition").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ReturnTransition", <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn return_transition(this:BaseTransitionCameraController,next_cam:crate::combat::basecameracontroller::BaseCameraController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BaseTransitionCameraController as::unity2::ClassIdentity> ::NAME,"ReturnTransition",));
 let inner:extern "C" fn(BaseTransitionCameraController,crate::combat::basecameracontroller::BaseCameraController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

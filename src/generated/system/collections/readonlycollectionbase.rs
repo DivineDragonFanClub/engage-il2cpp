@@ -16,29 +16,77 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-readonlycollectionbase-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-readonlycollectionbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ReadOnlyCollectionBase_unity2_raw{use super:: * ;
+pub unsafe fn get_count(this:ReadOnlyCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ReadOnlyCollectionBase as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn system_collections_i_collection_get_is_synchronized(this:ReadOnlyCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ReadOnlyCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_IsSynchronized",));
+let inner:extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn system_collections_i_collection_get_sync_root(this:ReadOnlyCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ReadOnlyCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.get_SyncRoot",));
+let inner:extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn system_collections_i_collection_copy_to(this:ReadOnlyCollectionBase,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ReadOnlyCollectionBase as::unity2::ClassIdentity> ::NAME,"System.Collections.ICollection.CopyTo",));
+let inner:extern "C" fn(ReadOnlyCollectionBase, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,index,__mi)}
+pub unsafe fn get_enumerator(this:ReadOnlyCollectionBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ReadOnlyCollectionBase as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(ReadOnlyCollectionBase, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-collections-readonlycollectionbase")]pub trait IReadOnlyCollectionBaseMethods:IReadOnlyCollectionBase{#[doc="`get_InnerList()` overload"]fn get_inner_list(self,)->crate::system::collections::arraylist::ArrayList{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae48d0usize)as*mut u8,crate::system::collections::arraylist::ArrayList;
 (ReadOnlyCollectionBase)__receiver)}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4960usize)as*mut u8,i32;
-(ReadOnlyCollectionBase)__receiver)}
+__ReadOnlyCollectionBase_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`System.Collections.ICollection.get_IsSynchronized()` overload"]fn system_collections_i_collection_get_is_synchronized(self,)->bool{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae49e0usize)as*mut u8,bool;
-(ReadOnlyCollectionBase)__receiver)}
+__ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`System.Collections.ICollection.get_SyncRoot()` overload"]fn system_collections_i_collection_get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4a60usize)as*mut u8,crate::system::object::Object;
-(ReadOnlyCollectionBase)__receiver)}
+__ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_get_sync_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`System.Collections.ICollection.CopyTo(::unity2::IlInstance, i32)` overload"]fn system_collections_i_collection_copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4ae0usize)as*mut u8,();
-(ReadOnlyCollectionBase)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+__ReadOnlyCollectionBase_unity2_raw::system_collections_i_collection_copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4b80usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(ReadOnlyCollectionBase)__receiver)}
+__ReadOnlyCollectionBase_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ReadOnlyCollectionBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ae4c00usize)as*mut u8,();

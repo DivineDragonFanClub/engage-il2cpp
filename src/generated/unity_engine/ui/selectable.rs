@@ -43,6 +43,9 @@ pub fn animation()->Self{Self{value:3}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/selectable/Selectable.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Selectable")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct Selectable{#[static_field]#[rename(name="s_Selectables")]pub s_selectables: ::unity2::Array<crate::unity_engine::ui::selectable::Selectable> , #[static_field]#[rename(name="s_SelectableCount")]pub s_selectable_count:i32, #[offset(24)]#[rename(name="m_EnableCalled")]pub m_enable_called:bool, #[offset(32)]#[rename(name="m_Navigation")]pub m_navigation:crate::unity_engine::ui::navigation::Navigation, #[offset(72)]#[rename(name="m_Transition")]pub m_transition:crate::unity_engine::ui::selectable::Selectable_Transition, #[offset(76)]#[rename(name="m_Colors")]pub m_colors:crate::unity_engine::ui::colorblock::ColorBlock, #[offset(168)]#[rename(name="m_SpriteState")]pub m_sprite_state:crate::unity_engine::ui::spritestate::SpriteState, #[offset(200)]#[rename(name="m_AnimationTriggers")]pub m_animation_triggers:crate::unity_engine::ui::animationtriggers::AnimationTriggers, #[offset(208)]#[rename(name="m_Interactable")]pub m_interactable:bool, #[offset(216)]#[rename(name="m_TargetGraphic")]pub m_target_graphic:crate::unity_engine::ui::graphic::Graphic, #[offset(224)]#[rename(name="m_GroupsAllowInteraction")]pub m_groups_allow_interaction:bool, #[offset(228)]#[rename(name="m_CurrentIndex")]pub m_current_index:i32, #[offset(240)]#[rename(name="m_CanvasGroupCache")]pub m_canvas_group_cache:crate::system::collections::generic::list_1::List_1<crate::unity_engine::canvasgroup::CanvasGroup> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/selectable/Selectable_SelectionState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Selectable_SelectionState{pub value:i32,}
 impl::unity2::ClassIdentity for Selectable_SelectionState{const NAMESPACE: &'static str="UnityEngine.UI";
 const NAME: &'static str="Selectable.SelectionState";
@@ -64,13 +67,223 @@ pub fn disabled()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/selectable/Selectable.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Selectable")]#[parent(crate::unity_engine::event_systems::uibehaviour::UIBehaviour)]pub struct Selectable{#[static_field]#[rename(name="s_Selectables")]pub s_selectables: ::unity2::Array<crate::unity_engine::ui::selectable::Selectable> , #[static_field]#[rename(name="s_SelectableCount")]pub s_selectable_count:i32, #[offset(24)]#[rename(name="m_EnableCalled")]pub m_enable_called:bool, #[offset(32)]#[rename(name="m_Navigation")]pub m_navigation:crate::unity_engine::ui::navigation::Navigation, #[offset(72)]#[rename(name="m_Transition")]pub m_transition:crate::unity_engine::ui::selectable::Selectable_Transition, #[offset(76)]#[rename(name="m_Colors")]pub m_colors:crate::unity_engine::ui::colorblock::ColorBlock, #[offset(168)]#[rename(name="m_SpriteState")]pub m_sprite_state:crate::unity_engine::ui::spritestate::SpriteState, #[offset(200)]#[rename(name="m_AnimationTriggers")]pub m_animation_triggers:crate::unity_engine::ui::animationtriggers::AnimationTriggers, #[offset(208)]#[rename(name="m_Interactable")]pub m_interactable:bool, #[offset(216)]#[rename(name="m_TargetGraphic")]pub m_target_graphic:crate::unity_engine::ui::graphic::Graphic, #[offset(224)]#[rename(name="m_GroupsAllowInteraction")]pub m_groups_allow_interaction:bool, #[offset(228)]#[rename(name="m_CurrentIndex")]pub m_current_index:i32, #[offset(240)]#[rename(name="m_CanvasGroupCache")]pub m_canvas_group_cache:crate::system::collections::generic::list_1::List_1<crate::unity_engine::canvasgroup::CanvasGroup> ,}
-
 }
 
 #[cfg(feature = "unity_engine-ui-selectable-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-selectable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Selectable_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_canvas_group_changed(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnCanvasGroupChanged",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_interactable(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"IsInteractable",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_did_apply_animation_properties(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_transform_parent_changed(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn instant_clear_state(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"InstantClearState",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn do_state_transition(this:Selectable,state:crate::unity_engine::ui::selectable::Selectable_SelectionState,instant:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"DoStateTransition",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::ui::selectable::Selectable_SelectionState,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,instant,__mi)}
+pub unsafe fn find_selectable_on_left(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"FindSelectableOnLeft",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn find_selectable_on_right(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"FindSelectableOnRight",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn find_selectable_on_up(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"FindSelectableOnUp",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn find_selectable_on_down(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"FindSelectableOnDown",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->crate::unity_engine::ui::selectable::Selectable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_move(this:Selectable,event_data:crate::unity_engine::event_systems::axiseventdata::AxisEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnMove",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::event_systems::axiseventdata::AxisEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_down(this:Selectable,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnPointerDown",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_up(this:Selectable,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnPointerUp",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_enter(this:Selectable,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnPointerEnter",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_exit(this:Selectable,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnPointerExit",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_select(this:Selectable,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_deselect(this:Selectable,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(Selectable,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn select(this:Selectable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <Selectable as::unity2::ClassIdentity> ::NAME,"Select",));
+let inner:extern "C" fn(Selectable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="unity_engine-ui-selectable")]impl Selectable{#[doc="`get_allSelectablesArray()` overload"]pub fn get_all_selectables_array()-> ::unity2::Array<crate::unity_engine::ui::selectable::Selectable>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x372baf0usize)as*mut u8, ::unity2::Array<crate::unity_engine::ui::selectable::Selectable> ;
 )}
@@ -189,48 +402,39 @@ pub use __types::*;
 (Selectable)__receiver)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372c7b0usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCanvasGroupChanged()` overload"]fn on_canvas_group_changed(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372c870usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::on_canvas_group_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsInteractable()` overload"]fn is_interactable(self,)->bool{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372ca90usize)as*mut u8,bool;
-(Selectable)__receiver)}
+__Selectable_unity2_raw::is_interactable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372cab0usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3729d10usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372cba0usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSetProperty()` overload"]fn on_set_property(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372bec0usize)as*mut u8,();
 (Selectable)__receiver)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372a030usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_currentSelectionState()` overload"]fn get_current_selection_state(self,)->crate::unity_engine::ui::selectable::Selectable_SelectionState{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372cb20usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable_SelectionState;
 (Selectable)__receiver)}
 }
 #[doc="`InstantClearState()` overload"]fn instant_clear_state(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372cbe0usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::instant_clear_state(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DoStateTransition(crate::unity_engine::ui::selectable::Selectable_SelectionState, bool)` overload"]fn do_state_transition(self,state:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable_SelectionState> ,instant:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372d230usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::ui::selectable::Selectable_SelectionState)::core::convert::Into::into(state),(bool)::core::convert::Into::into(instant))}
+__Selectable_unity2_raw::do_state_transition(__receiver, ::core::convert::Into::into(state), ::core::convert::Into::into(instant), ::core::option::Option::None)}
 }
 #[doc="`FindSelectable(crate::unity_engine::vector3::Vector3)` overload"]fn find_selectable(self,dir:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372d4b0usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
@@ -241,24 +445,19 @@ pub use __types::*;
 (Selectable)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data),(crate::unity_engine::ui::selectable::Selectable)::core::convert::Into::into(sel))}
 }
 #[doc="`FindSelectableOnLeft()` overload"]fn find_selectable_on_left(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b590usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Selectable)__receiver)}
+__Selectable_unity2_raw::find_selectable_on_left(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FindSelectableOnRight()` overload"]fn find_selectable_on_right(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b670usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Selectable)__receiver)}
+__Selectable_unity2_raw::find_selectable_on_right(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FindSelectableOnUp()` overload"]fn find_selectable_on_up(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b750usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Selectable)__receiver)}
+__Selectable_unity2_raw::find_selectable_on_up(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FindSelectableOnDown()` overload"]fn find_selectable_on_down(self,)->crate::unity_engine::ui::selectable::Selectable{unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b830usize)as*mut u8,crate::unity_engine::ui::selectable::Selectable;
-(Selectable)__receiver)}
+__Selectable_unity2_raw::find_selectable_on_down(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnMove(crate::unity_engine::event_systems::axiseventdata::AxisEventData)` overload"]fn on_move(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::axiseventdata::AxisEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372b400usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::event_systems::axiseventdata::AxisEventData)::core::convert::Into::into(event_data))}
+__Selectable_unity2_raw::on_move(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`StartColorTween(crate::unity_engine::color::Color, bool)` overload"]fn start_color_tween(self,target_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,instant:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x372cd30usize)as*mut u8,();
@@ -285,32 +484,25 @@ pub use __types::*;
 (Selectable)__receiver)}
 }
 #[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372ab60usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Selectable_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerUp(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_up(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372afb0usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Selectable_unity2_raw::on_pointer_up(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerEnter(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_enter(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372dc80usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Selectable_unity2_raw::on_pointer_enter(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerExit(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_exit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372dd30usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__Selectable_unity2_raw::on_pointer_exit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_select(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372dde0usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__Selectable_unity2_raw::on_select(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372de90usize)as*mut u8,();
-(Selectable)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__Selectable_unity2_raw::on_deselect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`Select()` overload"]fn select(self,)->(){unsafe{let __receiver= <Selectable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372df40usize)as*mut u8,();
-(Selectable)__receiver)}
+__Selectable_unity2_raw::select(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -390,10 +582,10 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Selectable_Transition;
-    pub use super::Selectable_SelectionState;
     pub use super::Selectable;
     pub use super::ISelectable;
     pub use super::ISelectableMethods;
+    pub use super::Selectable_SelectionState;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

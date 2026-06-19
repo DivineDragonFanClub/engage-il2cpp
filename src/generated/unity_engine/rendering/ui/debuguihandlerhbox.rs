@@ -26,17 +26,47 @@ use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWid
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlerhbox-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlerhbox")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUIHandlerHBox_unity2_raw{use super:: * ;
+pub unsafe fn set_widget(this:DebugUIHandlerHBox,widget:crate::unity_engine::rendering::debugui::DebugUI_Widget,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugUIHandlerHBox as::unity2::ClassIdentity> ::NAME,"SetWidget",));
+let inner:extern "C" fn(DebugUIHandlerHBox,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,widget,__mi)}
+pub unsafe fn on_selection(this:DebugUIHandlerHBox,from_next:bool,previous:crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DebugUIHandlerHBox as::unity2::ClassIdentity> ::NAME,"OnSelection",));
+let inner:extern "C" fn(DebugUIHandlerHBox,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,from_next,previous,__mi)}
+pub unsafe fn next(this:DebugUIHandlerHBox,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugUIHandlerHBox as::unity2::ClassIdentity> ::NAME,"Next",));
+let inner:extern "C" fn(DebugUIHandlerHBox, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-ui-debuguihandlerhbox")]pub trait IDebugUIHandlerHBoxMethods:IDebugUIHandlerHBox{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerHBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3c70usize)as*mut u8,();
-(DebugUIHandlerHBox)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+__DebugUIHandlerHBox_unity2_raw::set_widget(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)}
 }
 #[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerHBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3cf0usize)as*mut u8,bool;
-(DebugUIHandlerHBox)__receiver,(bool)::core::convert::Into::into(from_next),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(previous))}
+__DebugUIHandlerHBox_unity2_raw::on_selection(__receiver, ::core::convert::Into::into(from_next), ::core::convert::Into::into(previous), ::core::option::Option::None)}
 }
 #[doc="`Next()` overload"]fn next(self,)->crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget{unsafe{let __receiver= <DebugUIHandlerHBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3dc0usize)as*mut u8,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget;
-(DebugUIHandlerHBox)__receiver)}
+__DebugUIHandlerHBox_unity2_raw::next(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerHBox as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30a3e90usize)as*mut u8,();

@@ -56,6 +56,19 @@ pub fn exit()->Self{Self{value:8}
 #[cfg(feature = "app-dragonridegamesequence-types")]
 pub use __types::*;
 
+#[cfg(feature="app-dragonridegamesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRideGameSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_shutdown(this:DragonRideGameSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <DragonRideGameSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(DragonRideGameSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-dragonridegamesequence")]impl DragonRideGameSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad0200usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -218,8 +231,7 @@ pub use __types::*;
 (DragonRideGameSequence)__receiver)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <DragonRideGameSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad0190usize)as*mut u8,();
-(DragonRideGameSequence)__receiver)}
+__DragonRideGameSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideGameSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad16b0usize)as*mut u8,();

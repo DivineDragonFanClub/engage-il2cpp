@@ -35,22 +35,7 @@ use crate::unity_engine::ui::selectable::{ISelectable,Selectable}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_InputType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_InputField_InputType{pub value:i32,}
-impl::unity2::ClassIdentity for TMP_InputField_InputType{const NAMESPACE: &'static str="TMPro";
-const NAME: &'static str="TMP_InputField.InputType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TMP_InputField_InputType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TMP_InputField_InputType{pub fn standard()->Self{Self{value:0}
-}
-pub fn auto_correct()->Self{Self{value:1}
-}
-pub fn password()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.TextSelectionEvent")]#[parent(crate::unity_engine::events::unityevent_3::UnityEvent_3< ::unity2::Il2CppString,i32,i32>)]pub struct TMP_InputField_TextSelectionEvent{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_LineType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_InputField_LineType{pub value:i32,}
@@ -69,40 +54,6 @@ pub fn multi_line_submit()->Self{Self{value:1}
 pub fn multi_line_newline()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.OnChangeEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct TMP_InputField_OnChangeEvent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct TMP_InputField{#[offset(248)]#[rename(name="m_SoftKeyboard")]pub m_soft_keyboard:crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard, #[static_field]#[rename(name="kSeparators")]pub k_separators: ::unity2::Array<u16> , #[offset(256)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(264)]#[rename(name="m_TextViewport")]pub m_text_viewport:crate::unity_engine::recttransform::RectTransform, #[offset(272)]#[rename(name="m_TextComponentRectMask")]pub m_text_component_rect_mask:crate::unity_engine::ui::rectmask2d::RectMask2D, #[offset(280)]#[rename(name="m_TextViewportRectMask")]pub m_text_viewport_rect_mask:crate::unity_engine::ui::rectmask2d::RectMask2D, #[offset(288)]#[rename(name="m_CachedViewportRect")]pub m_cached_viewport_rect:crate::unity_engine::rect::Rect, #[offset(304)]#[rename(name="m_TextComponent")]pub m_text_component:crate::tm_pro::tmp_text::TMP_Text, #[offset(312)]#[rename(name="m_TextComponentRectTransform")]pub m_text_component_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(320)]#[rename(name="m_Placeholder")]pub m_placeholder:crate::unity_engine::ui::graphic::Graphic, #[offset(328)]#[rename(name="m_VerticalScrollbar")]pub m_vertical_scrollbar:crate::unity_engine::ui::scrollbar::Scrollbar, #[offset(336)]#[rename(name="m_VerticalScrollbarEventHandler")]pub m_vertical_scrollbar_event_handler:crate::tm_pro::tmp_scrollbareventhandler::TMP_ScrollbarEventHandler, #[offset(344)]#[rename(name="m_IsDrivenByLayoutComponents")]pub m_is_driven_by_layout_components:bool, #[offset(352)]#[rename(name="m_LayoutGroup")]pub m_layout_group:crate::unity_engine::ui::layoutgroup::LayoutGroup, #[offset(360)]#[rename(name="m_IScrollHandlerParent")]pub m_i_scroll_handler_parent:crate::unity_engine::event_systems::iscrollhandler::IScrollHandler, #[offset(368)]#[rename(name="m_ScrollPosition")]pub m_scroll_position:f32, #[offset(372)]#[rename(name="m_ScrollSensitivity")]pub m_scroll_sensitivity:f32, #[offset(376)]#[rename(name="m_ContentType")]pub m_content_type:crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType, #[offset(380)]#[rename(name="m_InputType")]pub m_input_type:crate::tm_pro::tmp_inputfield::TMP_InputField_InputType, #[offset(384)]#[rename(name="m_AsteriskChar")]pub m_asterisk_char:u16, #[offset(388)]#[rename(name="m_KeyboardType")]pub m_keyboard_type:crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType, #[offset(392)]#[rename(name="m_LineType")]pub m_line_type:crate::tm_pro::tmp_inputfield::TMP_InputField_LineType, #[offset(396)]#[rename(name="m_HideMobileInput")]pub m_hide_mobile_input:bool, #[offset(397)]#[rename(name="m_HideSoftKeyboard")]pub m_hide_soft_keyboard:bool, #[offset(400)]#[rename(name="m_CharacterValidation")]pub m_character_validation:crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation, #[offset(408)]#[rename(name="m_RegexValue")]pub m_regex_value: ::unity2::Il2CppString, #[offset(416)]#[rename(name="m_GlobalPointSize")]pub m_global_point_size:f32, #[offset(420)]#[rename(name="m_CharacterLimit")]pub m_character_limit:i32, #[offset(424)]#[rename(name="m_OnEndEdit")]pub m_on_end_edit:crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent, #[offset(432)]#[rename(name="m_OnSubmit")]pub m_on_submit:crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent, #[offset(440)]#[rename(name="m_OnSelect")]pub m_on_select:crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent, #[offset(448)]#[rename(name="m_OnDeselect")]pub m_on_deselect:crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent, #[offset(456)]#[rename(name="m_OnTextSelection")]pub m_on_text_selection:crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent, #[offset(464)]#[rename(name="m_OnEndTextSelection")]pub m_on_end_text_selection:crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent, #[offset(472)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent, #[offset(480)]#[rename(name="m_OnTouchScreenKeyboardStatusChanged")]pub m_on_touch_screen_keyboard_status_changed:crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent, #[offset(488)]#[rename(name="m_OnValidateInput")]pub m_on_validate_input:crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput, #[offset(496)]#[rename(name="m_CaretColor")]pub m_caret_color:crate::unity_engine::color::Color, #[offset(512)]#[rename(name="m_CustomCaretColor")]pub m_custom_caret_color:bool, #[offset(516)]#[rename(name="m_SelectionColor")]pub m_selection_color:crate::unity_engine::color::Color, #[offset(536)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(544)]#[rename(name="m_CaretBlinkRate")]pub m_caret_blink_rate:f32, #[offset(548)]#[rename(name="m_CaretWidth")]pub m_caret_width:i32, #[offset(552)]#[rename(name="m_ReadOnly")]pub m_read_only:bool, #[offset(553)]#[rename(name="m_RichText")]pub m_rich_text:bool, #[offset(556)]#[rename(name="m_StringPosition")]pub m_string_position:i32, #[offset(560)]#[rename(name="m_StringSelectPosition")]pub m_string_select_position:i32, #[offset(564)]#[rename(name="m_CaretPosition")]pub m_caret_position:i32, #[offset(568)]#[rename(name="m_CaretSelectPosition")]pub m_caret_select_position:i32, #[offset(576)]#[rename(name="caretRectTrans")]pub caret_rect_trans:crate::unity_engine::recttransform::RectTransform, #[offset(584)]#[rename(name="m_CursorVerts")]pub m_cursor_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex> , #[offset(592)]#[rename(name="m_CachedInputRenderer")]pub m_cached_input_renderer:crate::unity_engine::canvasrenderer::CanvasRenderer, #[offset(600)]#[rename(name="m_LastPosition")]pub m_last_position:crate::unity_engine::vector2::Vector2, #[offset(608)]#[rename(name="m_Mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(616)]#[rename(name="m_AllowInput")]pub m_allow_input:bool, #[offset(617)]#[rename(name="m_ShouldActivateNextUpdate")]pub m_should_activate_next_update:bool, #[offset(618)]#[rename(name="m_UpdateDrag")]pub m_update_drag:bool, #[offset(619)]#[rename(name="m_DragPositionOutOfBounds")]pub m_drag_position_out_of_bounds:bool, #[static_field]#[rename(name="kHScrollSpeed")]pub k_h_scroll_speed:f32, #[static_field]#[rename(name="kVScrollSpeed")]pub k_v_scroll_speed:f32, #[offset(620)]#[rename(name="m_CaretVisible")]pub m_caret_visible:bool, #[offset(624)]#[rename(name="m_BlinkCoroutine")]pub m_blink_coroutine:crate::unity_engine::coroutine::Coroutine, #[offset(632)]#[rename(name="m_BlinkStartTime")]pub m_blink_start_time:f32, #[offset(640)]#[rename(name="m_DragCoroutine")]pub m_drag_coroutine:crate::unity_engine::coroutine::Coroutine, #[offset(648)]#[rename(name="m_OriginalText")]pub m_original_text: ::unity2::Il2CppString, #[offset(656)]#[rename(name="m_WasCanceled")]pub m_was_canceled:bool, #[offset(657)]#[rename(name="m_HasDoneFocusTransition")]pub m_has_done_focus_transition:bool, #[offset(664)]#[rename(name="m_WaitForSecondsRealtime")]pub m_wait_for_seconds_realtime:crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime, #[offset(672)]#[rename(name="m_PreventCallback")]pub m_prevent_callback:bool, #[offset(673)]#[rename(name="m_TouchKeyboardAllowsInPlaceEditing")]pub m_touch_keyboard_allows_in_place_editing:bool, #[offset(674)]#[rename(name="m_IsTextComponentUpdateRequired")]pub m_is_text_component_update_required:bool, #[offset(675)]#[rename(name="m_isLastKeyBackspace")]pub m_is_last_key_backspace:bool, #[offset(676)]#[rename(name="m_PointerDownClickStartTime")]pub m_pointer_down_click_start_time:f32, #[offset(680)]#[rename(name="m_KeyDownStartTime")]pub m_key_down_start_time:f32, #[offset(684)]#[rename(name="m_DoubleClickDelay")]pub m_double_click_delay:f32, #[static_field]#[rename(name="kEmailSpecialCharacters")]pub k_email_special_characters: ::unity2::Il2CppString, #[offset(688)]#[rename(name="m_IsCompositionActive")]pub m_is_composition_active:bool, #[offset(689)]#[rename(name="m_ShouldUpdateIMEWindowPosition")]pub m_should_update_ime_window_position:bool, #[offset(692)]#[rename(name="m_PreviousIMEInsertionLine")]pub m_previous_ime_insertion_line:i32, #[offset(696)]#[rename(name="m_GlobalFontAsset")]pub m_global_font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset, #[offset(704)]#[rename(name="m_OnFocusSelectAll")]pub m_on_focus_select_all:bool, #[offset(705)]#[rename(name="m_isSelectAll")]pub m_is_select_all:bool, #[offset(706)]#[rename(name="m_ResetOnDeActivation")]pub m_reset_on_de_activation:bool, #[offset(707)]#[rename(name="m_SelectionStillActive")]pub m_selection_still_active:bool, #[offset(708)]#[rename(name="m_ReleaseSelection")]pub m_release_selection:bool, #[offset(712)]#[rename(name="m_PreviouslySelectedObject")]pub m_previously_selected_object:crate::unity_engine::gameobject::GameObject, #[offset(720)]#[rename(name="m_RestoreOriginalTextOnEscape")]pub m_restore_original_text_on_escape:bool, #[offset(721)]#[rename(name="m_isRichTextEditingAllowed")]pub m_is_rich_text_editing_allowed:bool, #[offset(724)]#[rename(name="m_LineLimit")]pub m_line_limit:i32, #[offset(728)]#[rename(name="m_InputValidator")]pub m_input_validator:crate::tm_pro::tmp_inputvalidator::TMP_InputValidator, #[offset(736)]#[rename(name="m_isSelected")]pub m_is_selected:bool, #[offset(737)]#[rename(name="m_IsStringPositionDirty")]pub m_is_string_position_dirty:bool, #[offset(738)]#[rename(name="m_IsCaretPositionDirty")]pub m_is_caret_position_dirty:bool, #[offset(739)]#[rename(name="m_forceRectTransformAdjustment")]pub m_force_rect_transform_adjustment:bool, #[offset(744)]#[rename(name="m_ProcessingEvent")]pub m_processing_event:crate::unity_engine::event::Event,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_OnValidateInput.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.OnValidateInput")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TMP_InputField_OnValidateInput{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_SubmitEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.SubmitEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct TMP_InputField_SubmitEvent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_EditState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_InputField_EditState{pub value:i32,}
-impl::unity2::ClassIdentity for TMP_InputField_EditState{const NAMESPACE: &'static str="TMPro";
-const NAME: &'static str="TMP_InputField.EditState";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TMP_InputField_EditState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TMP_InputField_EditState{pub fn r#continue()->Self{Self{value:0}
-}
-pub fn finish()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_TextSelectionEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.TextSelectionEvent")]#[parent(crate::unity_engine::events::unityevent_3::UnityEvent_3< ::unity2::Il2CppString,i32,i32>)]pub struct TMP_InputField_TextSelectionEvent{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_TouchScreenKeyboardEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.TouchScreenKeyboardEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard_Status>)]pub struct TMP_InputField_TouchScreenKeyboardEvent{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_CharacterValidation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_InputField_CharacterValidation{pub value:i32,}
@@ -135,7 +86,7 @@ pub fn custom_validator()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.SelectionEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct TMP_InputField_SelectionEvent{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_TouchScreenKeyboardEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.TouchScreenKeyboardEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard_Status>)]pub struct TMP_InputField_TouchScreenKeyboardEvent{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_ContentType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_InputField_ContentType{pub value:i32,}
@@ -169,10 +120,148 @@ pub fn custom()->Self{Self{value:9}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_OnValidateInput.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.OnValidateInput")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct TMP_InputField_OnValidateInput{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_EditState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_InputField_EditState{pub value:i32,}
+impl::unity2::ClassIdentity for TMP_InputField_EditState{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_InputField.EditState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TMP_InputField_EditState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TMP_InputField_EditState{pub fn r#continue()->Self{Self{value:0}
+}
+pub fn finish()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_SubmitEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.SubmitEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct TMP_InputField_SubmitEvent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_OnChangeEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.OnChangeEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct TMP_InputField_OnChangeEvent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField")]#[parent(crate::unity_engine::ui::selectable::Selectable)]pub struct TMP_InputField{#[offset(248)]#[rename(name="m_SoftKeyboard")]pub m_soft_keyboard:crate::unity_engine::touchscreenkeyboard::TouchScreenKeyboard, #[static_field]#[rename(name="kSeparators")]pub k_separators: ::unity2::Array<u16> , #[offset(256)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(264)]#[rename(name="m_TextViewport")]pub m_text_viewport:crate::unity_engine::recttransform::RectTransform, #[offset(272)]#[rename(name="m_TextComponentRectMask")]pub m_text_component_rect_mask:crate::unity_engine::ui::rectmask2d::RectMask2D, #[offset(280)]#[rename(name="m_TextViewportRectMask")]pub m_text_viewport_rect_mask:crate::unity_engine::ui::rectmask2d::RectMask2D, #[offset(288)]#[rename(name="m_CachedViewportRect")]pub m_cached_viewport_rect:crate::unity_engine::rect::Rect, #[offset(304)]#[rename(name="m_TextComponent")]pub m_text_component:crate::tm_pro::tmp_text::TMP_Text, #[offset(312)]#[rename(name="m_TextComponentRectTransform")]pub m_text_component_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(320)]#[rename(name="m_Placeholder")]pub m_placeholder:crate::unity_engine::ui::graphic::Graphic, #[offset(328)]#[rename(name="m_VerticalScrollbar")]pub m_vertical_scrollbar:crate::unity_engine::ui::scrollbar::Scrollbar, #[offset(336)]#[rename(name="m_VerticalScrollbarEventHandler")]pub m_vertical_scrollbar_event_handler:crate::tm_pro::tmp_scrollbareventhandler::TMP_ScrollbarEventHandler, #[offset(344)]#[rename(name="m_IsDrivenByLayoutComponents")]pub m_is_driven_by_layout_components:bool, #[offset(352)]#[rename(name="m_LayoutGroup")]pub m_layout_group:crate::unity_engine::ui::layoutgroup::LayoutGroup, #[offset(360)]#[rename(name="m_IScrollHandlerParent")]pub m_i_scroll_handler_parent:crate::unity_engine::event_systems::iscrollhandler::IScrollHandler, #[offset(368)]#[rename(name="m_ScrollPosition")]pub m_scroll_position:f32, #[offset(372)]#[rename(name="m_ScrollSensitivity")]pub m_scroll_sensitivity:f32, #[offset(376)]#[rename(name="m_ContentType")]pub m_content_type:crate::tm_pro::tmp_inputfield::TMP_InputField_ContentType, #[offset(380)]#[rename(name="m_InputType")]pub m_input_type:crate::tm_pro::tmp_inputfield::TMP_InputField_InputType, #[offset(384)]#[rename(name="m_AsteriskChar")]pub m_asterisk_char:u16, #[offset(388)]#[rename(name="m_KeyboardType")]pub m_keyboard_type:crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType, #[offset(392)]#[rename(name="m_LineType")]pub m_line_type:crate::tm_pro::tmp_inputfield::TMP_InputField_LineType, #[offset(396)]#[rename(name="m_HideMobileInput")]pub m_hide_mobile_input:bool, #[offset(397)]#[rename(name="m_HideSoftKeyboard")]pub m_hide_soft_keyboard:bool, #[offset(400)]#[rename(name="m_CharacterValidation")]pub m_character_validation:crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation, #[offset(408)]#[rename(name="m_RegexValue")]pub m_regex_value: ::unity2::Il2CppString, #[offset(416)]#[rename(name="m_GlobalPointSize")]pub m_global_point_size:f32, #[offset(420)]#[rename(name="m_CharacterLimit")]pub m_character_limit:i32, #[offset(424)]#[rename(name="m_OnEndEdit")]pub m_on_end_edit:crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent, #[offset(432)]#[rename(name="m_OnSubmit")]pub m_on_submit:crate::tm_pro::tmp_inputfield::TMP_InputField_SubmitEvent, #[offset(440)]#[rename(name="m_OnSelect")]pub m_on_select:crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent, #[offset(448)]#[rename(name="m_OnDeselect")]pub m_on_deselect:crate::tm_pro::tmp_inputfield::TMP_InputField_SelectionEvent, #[offset(456)]#[rename(name="m_OnTextSelection")]pub m_on_text_selection:crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent, #[offset(464)]#[rename(name="m_OnEndTextSelection")]pub m_on_end_text_selection:crate::tm_pro::tmp_inputfield::TMP_InputField_TextSelectionEvent, #[offset(472)]#[rename(name="m_OnValueChanged")]pub m_on_value_changed:crate::tm_pro::tmp_inputfield::TMP_InputField_OnChangeEvent, #[offset(480)]#[rename(name="m_OnTouchScreenKeyboardStatusChanged")]pub m_on_touch_screen_keyboard_status_changed:crate::tm_pro::tmp_inputfield::TMP_InputField_TouchScreenKeyboardEvent, #[offset(488)]#[rename(name="m_OnValidateInput")]pub m_on_validate_input:crate::tm_pro::tmp_inputfield::TMP_InputField_OnValidateInput, #[offset(496)]#[rename(name="m_CaretColor")]pub m_caret_color:crate::unity_engine::color::Color, #[offset(512)]#[rename(name="m_CustomCaretColor")]pub m_custom_caret_color:bool, #[offset(516)]#[rename(name="m_SelectionColor")]pub m_selection_color:crate::unity_engine::color::Color, #[offset(536)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(544)]#[rename(name="m_CaretBlinkRate")]pub m_caret_blink_rate:f32, #[offset(548)]#[rename(name="m_CaretWidth")]pub m_caret_width:i32, #[offset(552)]#[rename(name="m_ReadOnly")]pub m_read_only:bool, #[offset(553)]#[rename(name="m_RichText")]pub m_rich_text:bool, #[offset(556)]#[rename(name="m_StringPosition")]pub m_string_position:i32, #[offset(560)]#[rename(name="m_StringSelectPosition")]pub m_string_select_position:i32, #[offset(564)]#[rename(name="m_CaretPosition")]pub m_caret_position:i32, #[offset(568)]#[rename(name="m_CaretSelectPosition")]pub m_caret_select_position:i32, #[offset(576)]#[rename(name="caretRectTrans")]pub caret_rect_trans:crate::unity_engine::recttransform::RectTransform, #[offset(584)]#[rename(name="m_CursorVerts")]pub m_cursor_verts: ::unity2::Array<crate::unity_engine::uivertex::UIVertex> , #[offset(592)]#[rename(name="m_CachedInputRenderer")]pub m_cached_input_renderer:crate::unity_engine::canvasrenderer::CanvasRenderer, #[offset(600)]#[rename(name="m_LastPosition")]pub m_last_position:crate::unity_engine::vector2::Vector2, #[offset(608)]#[rename(name="m_Mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(616)]#[rename(name="m_AllowInput")]pub m_allow_input:bool, #[offset(617)]#[rename(name="m_ShouldActivateNextUpdate")]pub m_should_activate_next_update:bool, #[offset(618)]#[rename(name="m_UpdateDrag")]pub m_update_drag:bool, #[offset(619)]#[rename(name="m_DragPositionOutOfBounds")]pub m_drag_position_out_of_bounds:bool, #[static_field]#[rename(name="kHScrollSpeed")]pub k_h_scroll_speed:f32, #[static_field]#[rename(name="kVScrollSpeed")]pub k_v_scroll_speed:f32, #[offset(620)]#[rename(name="m_CaretVisible")]pub m_caret_visible:bool, #[offset(624)]#[rename(name="m_BlinkCoroutine")]pub m_blink_coroutine:crate::unity_engine::coroutine::Coroutine, #[offset(632)]#[rename(name="m_BlinkStartTime")]pub m_blink_start_time:f32, #[offset(640)]#[rename(name="m_DragCoroutine")]pub m_drag_coroutine:crate::unity_engine::coroutine::Coroutine, #[offset(648)]#[rename(name="m_OriginalText")]pub m_original_text: ::unity2::Il2CppString, #[offset(656)]#[rename(name="m_WasCanceled")]pub m_was_canceled:bool, #[offset(657)]#[rename(name="m_HasDoneFocusTransition")]pub m_has_done_focus_transition:bool, #[offset(664)]#[rename(name="m_WaitForSecondsRealtime")]pub m_wait_for_seconds_realtime:crate::unity_engine::waitforsecondsrealtime::WaitForSecondsRealtime, #[offset(672)]#[rename(name="m_PreventCallback")]pub m_prevent_callback:bool, #[offset(673)]#[rename(name="m_TouchKeyboardAllowsInPlaceEditing")]pub m_touch_keyboard_allows_in_place_editing:bool, #[offset(674)]#[rename(name="m_IsTextComponentUpdateRequired")]pub m_is_text_component_update_required:bool, #[offset(675)]#[rename(name="m_isLastKeyBackspace")]pub m_is_last_key_backspace:bool, #[offset(676)]#[rename(name="m_PointerDownClickStartTime")]pub m_pointer_down_click_start_time:f32, #[offset(680)]#[rename(name="m_KeyDownStartTime")]pub m_key_down_start_time:f32, #[offset(684)]#[rename(name="m_DoubleClickDelay")]pub m_double_click_delay:f32, #[static_field]#[rename(name="kEmailSpecialCharacters")]pub k_email_special_characters: ::unity2::Il2CppString, #[offset(688)]#[rename(name="m_IsCompositionActive")]pub m_is_composition_active:bool, #[offset(689)]#[rename(name="m_ShouldUpdateIMEWindowPosition")]pub m_should_update_ime_window_position:bool, #[offset(692)]#[rename(name="m_PreviousIMEInsertionLine")]pub m_previous_ime_insertion_line:i32, #[offset(696)]#[rename(name="m_GlobalFontAsset")]pub m_global_font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset, #[offset(704)]#[rename(name="m_OnFocusSelectAll")]pub m_on_focus_select_all:bool, #[offset(705)]#[rename(name="m_isSelectAll")]pub m_is_select_all:bool, #[offset(706)]#[rename(name="m_ResetOnDeActivation")]pub m_reset_on_de_activation:bool, #[offset(707)]#[rename(name="m_SelectionStillActive")]pub m_selection_still_active:bool, #[offset(708)]#[rename(name="m_ReleaseSelection")]pub m_release_selection:bool, #[offset(712)]#[rename(name="m_PreviouslySelectedObject")]pub m_previously_selected_object:crate::unity_engine::gameobject::GameObject, #[offset(720)]#[rename(name="m_RestoreOriginalTextOnEscape")]pub m_restore_original_text_on_escape:bool, #[offset(721)]#[rename(name="m_isRichTextEditingAllowed")]pub m_is_rich_text_editing_allowed:bool, #[offset(724)]#[rename(name="m_LineLimit")]pub m_line_limit:i32, #[offset(728)]#[rename(name="m_InputValidator")]pub m_input_validator:crate::tm_pro::tmp_inputvalidator::TMP_InputValidator, #[offset(736)]#[rename(name="m_isSelected")]pub m_is_selected:bool, #[offset(737)]#[rename(name="m_IsStringPositionDirty")]pub m_is_string_position_dirty:bool, #[offset(738)]#[rename(name="m_IsCaretPositionDirty")]pub m_is_caret_position_dirty:bool, #[offset(739)]#[rename(name="m_forceRectTransformAdjustment")]pub m_force_rect_transform_adjustment:bool, #[offset(744)]#[rename(name="m_ProcessingEvent")]pub m_processing_event:crate::unity_engine::event::Event,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_SelectionEvent.md"))]#[::unity2::class(namespace="TMPro",name="TMP_InputField.SelectionEvent")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1< ::unity2::Il2CppString>)]pub struct TMP_InputField_SelectionEvent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_inputfield/TMP_InputField_InputType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_InputField_InputType{pub value:i32,}
+impl::unity2::ClassIdentity for TMP_InputField_InputType{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_InputField.InputType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TMP_InputField_InputType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TMP_InputField_InputType{pub fn standard()->Self{Self{value:0}
+}
+pub fn auto_correct()->Self{Self{value:1}
+}
+pub fn password()->Self{Self{value:2}
+}
+}
+
 }
 
 #[cfg(feature = "tm_pro-tmp_inputfield-types")]
 pub use __types::*;
+
+#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_TextSelectionEventMethods:ITMP_InputField_TextSelectionEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_TextSelectionEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea95a0usize)as*mut u8,();
+(TMP_InputField_TextSelectionEvent)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_TextSelectionEvent>ITMP_InputField_TextSelectionEventMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TextSelectionEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TextSelectionEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_InputField_TextSelectionEvent), ::core::stringify!(new),));
+ <Self as ITMP_InputField_TextSelectionEventMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_TouchScreenKeyboardEventMethods:ITMP_InputField_TouchScreenKeyboardEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_TouchScreenKeyboardEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea9600usize)as*mut u8,();
+(TMP_InputField_TouchScreenKeyboardEvent)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_TouchScreenKeyboardEvent>ITMP_InputField_TouchScreenKeyboardEventMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TouchScreenKeyboardEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TouchScreenKeyboardEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_InputField_TouchScreenKeyboardEvent), ::core::stringify!(new),));
+ <Self as ITMP_InputField_TouchScreenKeyboardEventMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_InputField_OnValidateInput_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:TMP_InputField_OnValidateInput,text: ::unity2::Il2CppString,char_index:i32,added_char:u16,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TMP_InputField_OnValidateInput as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(TMP_InputField_OnValidateInput, ::unity2::Il2CppString,i32,u16, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,text,char_index,added_char,__mi)}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_OnValidateInputMethods:ITMP_InputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TMP_InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea9020usize)as*mut u8,();
+(TMP_InputField_OnValidateInput)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString, i32, u16)` overload"]fn invoke(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,char_index:impl::core::convert::Into<i32> ,added_char:impl::core::convert::Into<u16>)->u16{unsafe{let __receiver= <TMP_InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__TMP_InputField_OnValidateInput_unity2_raw::invoke(__receiver, ::core::convert::Into::into(text), ::core::convert::Into::into(char_index), ::core::convert::Into::into(added_char), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_OnValidateInput>ITMP_InputField_OnValidateInputMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_OnValidateInput{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_InputField_OnValidateInput), ::core::stringify!(new),));
+ <Self as ITMP_InputField_OnValidateInputMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_SubmitEventMethods:ITMP_InputField_SubmitEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_SubmitEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea9540usize)as*mut u8,();
+(TMP_InputField_SubmitEvent)__receiver)}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_SubmitEvent>ITMP_InputField_SubmitEventMethods for __T{}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_SubmitEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_SubmitEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(TMP_InputField_SubmitEvent), ::core::stringify!(new),));
+ <Self as ITMP_InputField_SubmitEventMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_OnChangeEventMethods:ITMP_InputField_OnChangeEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_OnChangeEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea8fc0usize)as*mut u8,();
@@ -190,6 +279,309 @@ pub use __types::*;
  failed to instantiate", ::core::stringify!(TMP_InputField_OnChangeEvent), ::core::stringify!(new),));
  <Self as ITMP_InputField_OnChangeEventMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="tm_pro-tmp_inputfield")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_InputField_unity2_raw{use super:: * ;
+pub unsafe fn on_enable(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn late_update(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(60usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",60usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"LateUpdate",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_begin_drag(this:TMP_InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(61usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",61usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnBeginDrag",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_drag(this:TMP_InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(62usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",62usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnDrag",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_end_drag(this:TMP_InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnEndDrag",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_down(this:TMP_InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnPointerDown",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn is_valid_char(this:TMP_InputField,c:u16,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"IsValidChar",));
+let inner:extern "C" fn(TMP_InputField,u16, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,c,__mi)}
+pub unsafe fn on_update_selected(this:TMP_InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(65usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",65usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnUpdateSelected",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_scroll(this:TMP_InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(66usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",66usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnScroll",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn append(this:TMP_InputField,input: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(67usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",67usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"Append",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,input,__mi)}
+pub unsafe fn append_2(this:TMP_InputField,input:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"Append",));
+let inner:extern "C" fn(TMP_InputField,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,input,__mi)}
+pub unsafe fn rebuild(this:TMP_InputField,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(69usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",69usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,update,__mi)}
+pub unsafe fn layout_complete(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",70usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"LayoutComplete",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn graphic_update_complete(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(71usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",71usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"GraphicUpdateComplete",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:TMP_InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_pointer_click(this:TMP_InputField,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",72usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnPointerClick",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::pointereventdata::PointerEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_deselect(this:TMP_InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn on_submit(this:TMP_InputField,event_data:crate::unity_engine::event_systems::baseeventdata::BaseEventData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",73usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"OnSubmit",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::event_systems::baseeventdata::BaseEventData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_data,__mi)}
+pub unsafe fn do_state_transition(this:TMP_InputField,state:crate::unity_engine::ui::selectable::Selectable_SelectionState,instant:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"DoStateTransition",));
+let inner:extern "C" fn(TMP_InputField,crate::unity_engine::ui::selectable::Selectable_SelectionState,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,instant,__mi)}
+pub unsafe fn calculate_layout_input_horizontal(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",74usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate_layout_input_vertical(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(75usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",75usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_width(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(76usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",76usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_width(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",77usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_width(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",78usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_height(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_height(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(80usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",80usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_height(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(81usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",81usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_layout_priority(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(82usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",82usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_ui_i_canvas_element_get_transform(this:TMP_InputField,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(46usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",46usize,__vt.len(), <TMP_InputField as::unity2::ClassIdentity> ::NAME,"UnityEngine.UI.ICanvasElement.get_transform",));
+let inner:extern "C" fn(TMP_InputField, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField{#[doc="`get_clipboard()` overload"]pub fn get_clipboard()-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a8690usize)as*mut u8, ::unity2::Il2CppString;
@@ -656,12 +1048,10 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33a66a0usize)as*mut u8,();
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33a72f0usize)as*mut u8,();
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ON_TEXT_CHANGED(crate::unity_engine::object_2::Object_2)` overload"]fn on_text_changed(self,obj:impl::core::convert::Into<crate::unity_engine::object_2::Object_2>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33a78c0usize)as*mut u8,();
@@ -712,52 +1102,44 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver)}
 }
 #[doc="`LateUpdate()` overload"]fn late_update(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33a8b00usize)as*mut u8,();
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::late_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MayDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn may_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->bool{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33aa2c0usize)as*mut u8,bool;
 (TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
 }
 #[doc="`OnBeginDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_begin_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33aa470usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_begin_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33aa4a0usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`MouseDragOutsideRect(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn mouse_drag_outside_rect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33aa860usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
 (TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
 }
 #[doc="`OnEndDrag(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_end_drag(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33aa8f0usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_end_drag(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerDown(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_down(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33aa920usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_pointer_down(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`KeyPressed(crate::unity_engine::event::Event)` overload"]fn key_pressed(self,evt:impl::core::convert::Into<crate::unity_engine::event::Event>)->crate::tm_pro::tmp_inputfield::TMP_InputField_EditState{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33ab110usize)as*mut u8,crate::tm_pro::tmp_inputfield::TMP_InputField_EditState;
 (TMP_InputField)__receiver,(crate::unity_engine::event::Event)::core::convert::Into::into(evt))}
 }
 #[doc="`IsValidChar(u16)` overload"]fn is_valid_char(self,c:impl::core::convert::Into<u16>)->bool{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ad000usize)as*mut u8,bool;
-(TMP_InputField)__receiver,(u16)::core::convert::Into::into(c))}
+__TMP_InputField_unity2_raw::is_valid_char(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)}
 }
 #[doc="`ProcessEvent(crate::unity_engine::event::Event)` overload"]fn process_event(self,e:impl::core::convert::Into<crate::unity_engine::event::Event>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33ad020usize)as*mut u8,();
 (TMP_InputField)__receiver,(crate::unity_engine::event::Event)::core::convert::Into::into(e))}
 }
 #[doc="`OnUpdateSelected(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_update_selected(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ad030usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_update_selected(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnScroll(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_scroll(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33ad2a0usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_scroll(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`GetScrollPositionRelativeToViewport()` overload"]fn get_scroll_position_relative_to_viewport(self,)->f32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33ad460usize)as*mut u8,f32;
@@ -844,12 +1226,10 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver)}
 }
 #[doc="`Append(::unity2::Il2CppString)` overload"]fn append(self,input:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33af000usize)as*mut u8,();
-(TMP_InputField)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(input))}
+__TMP_InputField_unity2_raw::append(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
 }
 #[doc="`Append(u16)` overload"]fn append_2(self,input:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33af0c0usize)as*mut u8,();
-(TMP_InputField)__receiver,(u16)::core::convert::Into::into(input))}
+__TMP_InputField_unity2_raw::append_2(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
 }
 #[doc="`Insert(u16)` overload"]fn insert(self,c:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33af390usize)as*mut u8,();
@@ -940,16 +1320,13 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,update:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33af910usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::ui::canvasupdate::CanvasUpdate)::core::convert::Into::into(update))}
+__TMP_InputField_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)}
 }
 #[doc="`LayoutComplete()` overload"]fn layout_complete(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33af9e0usize)as*mut u8,();
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::layout_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GraphicUpdateComplete()` overload"]fn graphic_update_complete(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33af9f0usize)as*mut u8,();
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::graphic_update_complete(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33af920usize)as*mut u8,();
@@ -992,12 +1369,10 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver)}
 }
 #[doc="`OnSelect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_select(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b14e0usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_select(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnPointerClick(crate::unity_engine::event_systems::pointereventdata::PointerEventData)` overload"]fn on_pointer_click(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::pointereventdata::PointerEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1550usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::pointereventdata::PointerEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_pointer_click(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnControlClick()` overload"]fn on_control_click(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1560usize)as*mut u8,();
@@ -1012,12 +1387,10 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver,(bool)::core::convert::Into::into(clear_selection))}
 }
 #[doc="`OnDeselect(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_deselect(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1570usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_deselect(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`OnSubmit(crate::unity_engine::event_systems::baseeventdata::BaseEventData)` overload"]fn on_submit(self,event_data:impl::core::convert::Into<crate::unity_engine::event_systems::baseeventdata::BaseEventData>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b15f0usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::event_systems::baseeventdata::BaseEventData)::core::convert::Into::into(event_data))}
+__TMP_InputField_unity2_raw::on_submit(__receiver, ::core::convert::Into::into(event_data), ::core::option::Option::None)}
 }
 #[doc="`EnforceContentType()` overload"]fn enforce_content_type(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33a56c0usize)as*mut u8,();
@@ -1044,44 +1417,34 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver,(crate::tm_pro::tmp_inputfield::TMP_InputField_CharacterValidation)::core::convert::Into::into(character_validation))}
 }
 #[doc="`DoStateTransition(crate::unity_engine::ui::selectable::Selectable_SelectionState, bool)` overload"]fn do_state_transition(self,state:impl::core::convert::Into<crate::unity_engine::ui::selectable::Selectable_SelectionState> ,instant:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b16a0usize)as*mut u8,();
-(TMP_InputField)__receiver,(crate::unity_engine::ui::selectable::Selectable_SelectionState)::core::convert::Into::into(state),(bool)::core::convert::Into::into(instant))}
+__TMP_InputField_unity2_raw::do_state_transition(__receiver, ::core::convert::Into::into(state), ::core::convert::Into::into(instant), ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b16e0usize)as*mut u8,();
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b16f0usize)as*mut u8,();
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1700usize)as*mut u8,f32;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1710usize)as*mut u8,f32;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1870usize)as*mut u8,f32;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1880usize)as*mut u8,f32;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1890usize)as*mut u8,f32;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b19f0usize)as*mut u8,f32;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1a00usize)as*mut u8,i32;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetGlobalPointSize(f32)` overload"]fn set_global_point_size(self,point_size:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33a5250usize)as*mut u8,();
@@ -1092,8 +1455,7 @@ __out_0.assume_init()}
 (TMP_InputField)__receiver,(crate::tm_pro::tmp_fontasset::TMP_FontAsset)::core::convert::Into::into(font_asset))}
 }
 #[doc="`UnityEngine.UI.ICanvasElement.get_transform()` overload"]fn unity_engine_ui_i_canvas_element_get_transform(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <TMP_InputField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33b1ab0usize)as*mut u8,crate::unity_engine::transform::Transform;
-(TMP_InputField)__receiver)}
+__TMP_InputField_unity2_raw::unity_engine_ui_i_canvas_element_get_transform(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -1333,83 +1695,6 @@ pub fn unity_engine_ui_i_canvas_element_get_transform_method_info()-> & 'static:
 this}
 }
 
-#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_OnValidateInputMethods:ITMP_InputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <TMP_InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea9020usize)as*mut u8,();
-(TMP_InputField_OnValidateInput)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString, i32, u16)` overload"]fn invoke(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,char_index:impl::core::convert::Into<i32> ,added_char:impl::core::convert::Into<u16>)->u16{unsafe{let __receiver= <TMP_InputField_OnValidateInput as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea9040usize)as*mut u8,u16;
-(TMP_InputField_OnValidateInput)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text),(i32)::core::convert::Into::into(char_index),(u16)::core::convert::Into::into(added_char))}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_OnValidateInput>ITMP_InputField_OnValidateInputMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_OnValidateInput{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_OnValidateInput{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_InputField_OnValidateInput), ::core::stringify!(new),));
- <Self as ITMP_InputField_OnValidateInputMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_SubmitEventMethods:ITMP_InputField_SubmitEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_SubmitEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea9540usize)as*mut u8,();
-(TMP_InputField_SubmitEvent)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_SubmitEvent>ITMP_InputField_SubmitEventMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_SubmitEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_SubmitEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_InputField_SubmitEvent), ::core::stringify!(new),));
- <Self as ITMP_InputField_SubmitEventMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_TextSelectionEventMethods:ITMP_InputField_TextSelectionEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_TextSelectionEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea95a0usize)as*mut u8,();
-(TMP_InputField_TextSelectionEvent)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_TextSelectionEvent>ITMP_InputField_TextSelectionEventMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TextSelectionEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TextSelectionEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_InputField_TextSelectionEvent), ::core::stringify!(new),));
- <Self as ITMP_InputField_TextSelectionEventMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_TouchScreenKeyboardEventMethods:ITMP_InputField_TouchScreenKeyboardEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_TouchScreenKeyboardEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea9600usize)as*mut u8,();
-(TMP_InputField_TouchScreenKeyboardEvent)__receiver)}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl<__T:ITMP_InputField_TouchScreenKeyboardEvent>ITMP_InputField_TouchScreenKeyboardEventMethods for __T{}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TouchScreenKeyboardEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="tm_pro-tmp_inputfield")]impl TMP_InputField_TouchScreenKeyboardEvent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(TMP_InputField_TouchScreenKeyboardEvent), ::core::stringify!(new),));
- <Self as ITMP_InputField_TouchScreenKeyboardEventMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="tm_pro-tmp_inputfield")]pub trait ITMP_InputField_SelectionEventMethods:ITMP_InputField_SelectionEvent{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TMP_InputField_SelectionEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ea94e0usize)as*mut u8,();
 (TMP_InputField_SelectionEvent)__receiver)}
@@ -1431,32 +1716,32 @@ this}
 #[cfg(feature = "tm_pro-tmp_inputfield")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_InputField_InputType;
+    pub use super::TMP_InputField_TextSelectionEvent;
+    pub use super::ITMP_InputField_TextSelectionEvent;
+    pub use super::ITMP_InputField_TextSelectionEventMethods;
     pub use super::TMP_InputField_LineType;
+    pub use super::TMP_InputField_CharacterValidation;
+    pub use super::TMP_InputField_TouchScreenKeyboardEvent;
+    pub use super::ITMP_InputField_TouchScreenKeyboardEvent;
+    pub use super::ITMP_InputField_TouchScreenKeyboardEventMethods;
+    pub use super::TMP_InputField_ContentType;
+    pub use super::TMP_InputField_OnValidateInput;
+    pub use super::ITMP_InputField_OnValidateInput;
+    pub use super::ITMP_InputField_OnValidateInputMethods;
+    pub use super::TMP_InputField_EditState;
+    pub use super::TMP_InputField_SubmitEvent;
+    pub use super::ITMP_InputField_SubmitEvent;
+    pub use super::ITMP_InputField_SubmitEventMethods;
     pub use super::TMP_InputField_OnChangeEvent;
     pub use super::ITMP_InputField_OnChangeEvent;
     pub use super::ITMP_InputField_OnChangeEventMethods;
     pub use super::TMP_InputField;
     pub use super::ITMP_InputField;
     pub use super::ITMP_InputFieldMethods;
-    pub use super::TMP_InputField_OnValidateInput;
-    pub use super::ITMP_InputField_OnValidateInput;
-    pub use super::ITMP_InputField_OnValidateInputMethods;
-    pub use super::TMP_InputField_SubmitEvent;
-    pub use super::ITMP_InputField_SubmitEvent;
-    pub use super::ITMP_InputField_SubmitEventMethods;
-    pub use super::TMP_InputField_EditState;
-    pub use super::TMP_InputField_TextSelectionEvent;
-    pub use super::ITMP_InputField_TextSelectionEvent;
-    pub use super::ITMP_InputField_TextSelectionEventMethods;
-    pub use super::TMP_InputField_TouchScreenKeyboardEvent;
-    pub use super::ITMP_InputField_TouchScreenKeyboardEvent;
-    pub use super::ITMP_InputField_TouchScreenKeyboardEventMethods;
-    pub use super::TMP_InputField_CharacterValidation;
     pub use super::TMP_InputField_SelectionEvent;
     pub use super::ITMP_InputField_SelectionEvent;
     pub use super::ITMP_InputField_SelectionEventMethods;
-    pub use super::TMP_InputField_ContentType;
+    pub use super::TMP_InputField_InputType;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorydata/AccessoryData.md"))]#[::unity2::class(namespace="App",name="AccessoryData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::accessorydata::AccessoryData>)]pub struct AccessoryData{#[offset(168)]#[rename(name="FlagName")]pub flag_name: ::unity2::Il2CppString,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorydata/AccessoryData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AccessoryData_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for AccessoryData_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AccessoryData.Kinds";
@@ -39,9 +42,6 @@ pub fn back()->Self{Self{value:3}
 pub fn num()->Self{Self{value:4}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorydata/AccessoryData.md"))]#[::unity2::class(namespace="App",name="AccessoryData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::accessorydata::AccessoryData>)]pub struct AccessoryData{#[offset(168)]#[rename(name="FlagName")]pub flag_name: ::unity2::Il2CppString,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/accessorydata/AccessoryData_Masks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AccessoryData_Masks{pub value:i32,}
@@ -67,6 +67,39 @@ pub fn back()->Self{Self{value:8}
 
 #[cfg(feature = "app-accessorydata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-accessorydata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AccessoryData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:AccessoryData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AccessoryData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_completed(this:AccessoryData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AccessoryData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
+let inner:extern "C" fn(AccessoryData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:AccessoryData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AccessoryData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(AccessoryData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-accessorydata")]impl AccessoryData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27b4ab0usize)as*mut u8,();
 )}
@@ -254,16 +287,13 @@ pub use __types::*;
 (AccessoryData)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <AccessoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27b4e00usize)as*mut u8,();
-(AccessoryData)__receiver)}
+__AccessoryData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <AccessoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27b4ed0usize)as*mut u8,();
-(AccessoryData)__receiver)}
+__AccessoryData_unity2_raw::on_completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AccessoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27b4f70usize)as*mut u8, ::unity2::Il2CppString;
-(AccessoryData)__receiver)}
+__AccessoryData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanEquip(crate::app::unit::Unit)` overload"]fn can_equip(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <AccessoryData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27b5400usize)as*mut u8,bool;
@@ -346,10 +376,10 @@ this}
 #[cfg(feature = "app-accessorydata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AccessoryData_Kinds;
     pub use super::AccessoryData;
     pub use super::IAccessoryData;
     pub use super::IAccessoryDataMethods;
+    pub use super::AccessoryData_Kinds;
     pub use super::AccessoryData_Masks;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;

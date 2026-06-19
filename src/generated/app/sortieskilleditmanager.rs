@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieskilleditmanager/SortieSkillEditManager.md"))]#[::unity2::class(namespace="App",name="SortieSkillEditManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortieskilleditmanager::SortieSkillEditManager>)]pub struct SortieSkillEditManager{#[offset(32)]#[rename(name="m_EquipSkillMenu")]pub m_equip_skill_menu:crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu, #[offset(40)]#[rename(name="m_PoolSkillMenu")]pub m_pool_skill_menu:crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu, #[offset(48)]#[rename(name="m_SkillInfo")]pub m_skill_info:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_SkillInfoRoot")]pub m_skill_info_root:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_Mode")]pub m_mode:crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieskilleditmanager/SortieSkillEditManager_Modes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SortieSkillEditManager_Modes{pub value:i32,}
 impl::unity2::ClassIdentity for SortieSkillEditManager_Modes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SortieSkillEditManager.Modes";
@@ -32,6 +29,9 @@ impl SortieSkillEditManager_Modes{pub fn none()->Self{Self{value:0}
 pub fn trade()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieskilleditmanager/SortieSkillEditManager.md"))]#[::unity2::class(namespace="App",name="SortieSkillEditManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::sortieskilleditmanager::SortieSkillEditManager>)]pub struct SortieSkillEditManager{#[offset(32)]#[rename(name="m_EquipSkillMenu")]pub m_equip_skill_menu:crate::app::skilleditequipskillmenu::SkillEditEquipSkillMenu, #[offset(40)]#[rename(name="m_PoolSkillMenu")]pub m_pool_skill_menu:crate::app::skilleditpoolskillmenu::SkillEditPoolSkillMenu, #[offset(48)]#[rename(name="m_SkillInfo")]pub m_skill_info:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_SkillInfoRoot")]pub m_skill_info_root:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_Mode")]pub m_mode:crate::app::sortieskilleditmanager::SortieSkillEditManager_Modes,}
 
 }
 
@@ -144,10 +144,10 @@ this}
 #[cfg(feature = "app-sortieskilleditmanager")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SortieSkillEditManager_Modes;
     pub use super::SortieSkillEditManager;
     pub use super::ISortieSkillEditManager;
     pub use super::ISortieSkillEditManagerMethods;
-    pub use super::SortieSkillEditManager_Modes;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

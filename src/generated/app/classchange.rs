@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchange/ClassChange_ChangeJobData.md"))]#[::unity2::class(namespace="App",name="ClassChange.ChangeJobData")]#[parent(crate::system::object::Object)]pub struct ClassChange_ChangeJobData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchange/ClassChange_ChangeJobData_ProofTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ClassChange_ChangeJobData_ProofTypes{pub value:i32,}
 impl::unity2::ClassIdentity for ClassChange_ChangeJobData_ProofTypes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ClassChange.ChangeJobData.ProofTypes";
@@ -34,6 +31,9 @@ pub fn enchant()->Self{Self{value:2}
 pub fn gunner()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchange/ClassChange_ChangeJobData.md"))]#[::unity2::class(namespace="App",name="ClassChange.ChangeJobData")]#[parent(crate::system::object::Object)]pub struct ClassChange_ChangeJobData{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/classchange/ClassChange.md"))]#[::unity2::class(namespace="App",name="ClassChange")]#[parent(crate::system::object::Object)]pub struct ClassChange{}
@@ -272,10 +272,10 @@ this}
 #[cfg(feature = "app-classchange")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ClassChange_ChangeJobData_ProofTypes;
     pub use super::ClassChange_ChangeJobData;
     pub use super::IClassChange_ChangeJobData;
     pub use super::IClassChange_ChangeJobDataMethods;
-    pub use super::ClassChange_ChangeJobData_ProofTypes;
     pub use super::ClassChange;
     pub use super::IClassChange;
     pub use super::IClassChangeMethods;

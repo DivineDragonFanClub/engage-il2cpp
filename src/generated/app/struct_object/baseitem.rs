@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-struct_object-baseitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-struct_object-baseitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseItem_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:BaseItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BaseItem as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(BaseItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn add_piece(this:BaseItem,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BaseItem as::unity2::ClassIdentity> ::NAME,"AddPiece",));
+let inner:extern "C" fn(BaseItem,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+}
+
 #[cfg(feature="app-struct_object-baseitem")]pub trait IBaseItemMethods:IBaseItem{#[doc="`get_DictionaryKey()` overload"]fn get_dictionary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2452de0usize)as*mut u8, ::unity2::Il2CppString;
 (BaseItem)__receiver)}
@@ -27,12 +50,10 @@ pub use __types::*;
 (BaseItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e00usize)as*mut u8, ::unity2::Il2CppString;
-(BaseItem)__receiver)}
+__BaseItem_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AddPiece(crate::system::object::Object)` overload"]fn add_piece(self,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e50usize)as*mut u8,();
-(BaseItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__BaseItem_unity2_raw::add_piece(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2452e60usize)as*mut u8,();

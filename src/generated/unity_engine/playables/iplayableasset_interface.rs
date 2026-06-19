@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-playables-iplayableasset_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayableAsset_Interface_unity2_raw{use super:: * ;
-pub unsafe fn create_playable(this:IPlayableAsset_Interface,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreatePlayable").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CreatePlayable", <IPlayableAsset_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn create_playable(this:IPlayableAsset_Interface,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IPlayableAsset_Interface as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
 let inner:extern "C" fn(IPlayableAsset_Interface,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,graph,owner,__mi)}
-pub unsafe fn get_duration(this:IPlayableAsset_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_duration").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_duration", <IPlayableAsset_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_duration(this:IPlayableAsset_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IPlayableAsset_Interface as::unity2::ClassIdentity> ::NAME,"get_duration",));
 let inner:extern "C" fn(IPlayableAsset_Interface, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

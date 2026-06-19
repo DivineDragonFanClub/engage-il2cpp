@@ -15,16 +15,32 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="system-io-filesysteminfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileSystemInfo_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:FileSystemInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Name").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Name", <FileSystemInfo as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_full_name(this:FileSystemInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FileSystemInfo as::unity2::ClassIdentity> ::NAME,"get_FullName",));
 let inner:extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_exists(this:FileSystemInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Exists").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Exists", <FileSystemInfo as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_name(this:FileSystemInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FileSystemInfo as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_exists(this:FileSystemInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <FileSystemInfo as::unity2::ClassIdentity> ::NAME,"get_Exists",));
 let inner:extern "C" fn(FileSystemInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -36,8 +52,7 @@ inner(this,__mi)}
 (FileSystemInfo)__receiver)}
 }
 #[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileSystemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3812320usize)as*mut u8, ::unity2::Il2CppString;
-(FileSystemInfo)__receiver)}
+__FileSystemInfo_unity2_raw::get_full_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FileSystemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __FileSystemInfo_unity2_raw::get_name(__receiver, ::core::option::Option::None)}

@@ -20,6 +20,739 @@ use crate::system::reflection::typeinfo::{ITypeInfo,TypeInfo}
 #[cfg(feature = "system-runtimetype-types")]
 pub use __types::*;
 
+#[cfg(feature="system-runtimetype")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeType_unity2_raw{use super:: * ;
+pub unsafe fn get_methods(this:RuntimeType,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetMethods",));
+let inner:extern "C" fn(RuntimeType,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,binding_attr,__mi)}
+pub unsafe fn get_constructors(this:RuntimeType,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetConstructors",));
+let inner:extern "C" fn(RuntimeType,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,binding_attr,__mi)}
+pub unsafe fn get_properties(this:RuntimeType,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(56usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",56usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetProperties",));
+let inner:extern "C" fn(RuntimeType,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,binding_attr,__mi)}
+pub unsafe fn get_events(this:RuntimeType,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetEvents",));
+let inner:extern "C" fn(RuntimeType,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,binding_attr,__mi)}
+pub unsafe fn get_fields(this:RuntimeType,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetFields",));
+let inner:extern "C" fn(RuntimeType,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,binding_attr,__mi)}
+pub unsafe fn get_nested_types(this:RuntimeType,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetNestedTypes",));
+let inner:extern "C" fn(RuntimeType,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,binding_attr,__mi)}
+pub unsafe fn get_method_impl(this:RuntimeType,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,call_conv:crate::system::reflection::callingconventions::CallingConventions,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetMethodImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,binding_attr,binder,call_conv,types,modifiers,__mi)}
+pub unsafe fn get_constructor_impl(this:RuntimeType,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,call_convention:crate::system::reflection::callingconventions::CallingConventions,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::constructorinfo::ConstructorInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetConstructorImpl",));
+let inner:extern "C" fn(RuntimeType,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder,crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::constructorinfo::ConstructorInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,binding_attr,binder,call_convention,types,modifiers,__mi)}
+pub unsafe fn get_property_impl(this:RuntimeType,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,binder:crate::system::reflection::binder::Binder,return_type: ::unity2::SystemType,types: ::unity2::Array< ::unity2::SystemType> ,modifiers: ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",55usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetPropertyImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags,crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array< ::unity2::SystemType> , ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> , ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,binding_attr,binder,return_type,types,modifiers,__mi)}
+pub unsafe fn get_event(this:RuntimeType,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::eventinfo::EventInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetEvent",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::eventinfo::EventInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,binding_attr,__mi)}
+pub unsafe fn get_field(this:RuntimeType,name: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::fieldinfo::FieldInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetField",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)->crate::system::reflection::fieldinfo::FieldInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,binding_attr,__mi)}
+pub unsafe fn get_interface(this:RuntimeType,fullname: ::unity2::Il2CppString,ignore_case:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetInterface",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fullname,ignore_case,__mi)}
+pub unsafe fn get_nested_type(this:RuntimeType,fullname: ::unity2::Il2CppString,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetNestedType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Il2CppString,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fullname,binding_attr,__mi)}
+pub unsafe fn get_member(this:RuntimeType,name: ::unity2::Il2CppString,r#type:crate::system::reflection::membertypes::MemberTypes,binding_attr:crate::system::reflection::bindingflags::BindingFlags,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::memberinfo::MemberInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(62usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",62usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetMember",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Il2CppString,crate::system::reflection::membertypes::MemberTypes,crate::system::reflection::bindingflags::BindingFlags, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::memberinfo::MemberInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,r#type,binding_attr,__mi)}
+pub unsafe fn get_module(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_Module",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_assembly(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_Assembly",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_instance_of_type(this:RuntimeType,o:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(118usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",118usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsInstanceOfType",));
+let inner:extern "C" fn(RuntimeType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o,__mi)}
+pub unsafe fn is_subclass_of(this:RuntimeType,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(117usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",117usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsSubclassOf",));
+let inner:extern "C" fn(RuntimeType, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn is_assignable_from(this:RuntimeType,c: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(119usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",119usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsAssignableFrom",));
+let inner:extern "C" fn(RuntimeType, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,c,__mi)}
+pub unsafe fn is_equivalent_to(this:RuntimeType,other: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(120usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",120usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsEquivalentTo",));
+let inner:extern "C" fn(RuntimeType, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,other,__mi)}
+pub unsafe fn get_base_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_BaseType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_underlying_system_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(116usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",116usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_UnderlyingSystemType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_attribute_flags_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::typeattributes::TypeAttributes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(98usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",98usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetAttributeFlagsImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::reflection::typeattributes::TypeAttributes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_contextful_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(105usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",105usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsContextfulImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_by_ref_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(100usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",100usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsByRefImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_primitive_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(102usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",102usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsPrimitiveImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_pointer_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(101usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",101usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsPointerImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_com_object_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(103usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",103usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsCOMObjectImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_value_type_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(97usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",97usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsValueTypeImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_enum(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_IsEnum",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn has_element_type_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(110usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",110usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"HasElementTypeImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_generic_parameter_attributes(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::genericparameterattributes::GenericParameterAttributes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_GenericParameterAttributes",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::reflection::genericparameterattributes::GenericParameterAttributes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_sz_array(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(82usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",82usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_IsSzArray",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_array_impl(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(99usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",99usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsArrayImpl",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_array_rank(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetArrayRank",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_element_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(107usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",107usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetElementType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_enum_names(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(111usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",111usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetEnumNames",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_enum_values(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::IlInstance{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(112usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",112usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetEnumValues",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::IlInstance= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_enum_underlying_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(113usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",113usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetEnumUnderlyingType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_enum_defined(this:RuntimeType,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(114usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",114usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsEnumDefined",));
+let inner:extern "C" fn(RuntimeType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_enum_name(this:RuntimeType,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(115usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",115usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetEnumName",));
+let inner:extern "C" fn(RuntimeType,crate::system::object::Object, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_generic_arguments(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(108usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",108usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetGenericArguments",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn make_generic_type(this:RuntimeType,instantiation: ::unity2::Array< ::unity2::SystemType> ,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(104usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",104usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"MakeGenericType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::Array< ::unity2::SystemType> , ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,instantiation,__mi)}
+pub unsafe fn get_is_generic_type_definition(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(84usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",84usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_IsGenericTypeDefinition",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_generic_parameter(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(86usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",86usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_IsGenericParameter",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_generic_parameter_position(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(87usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",87usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_GenericParameterPosition",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_generic_type_definition(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(109usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",109usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetGenericTypeDefinition",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_generic_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(83usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",83usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_IsGenericType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_constructed_generic_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(85usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",85usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_IsConstructedGenericType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn equals(this:RuntimeType,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(RuntimeType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn clone(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(128usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",128usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_custom_attributes(this:RuntimeType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let inner:extern "C" fn(RuntimeType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inherit,__mi)}
+pub unsafe fn get_custom_attributes_2(this:RuntimeType,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let inner:extern "C" fn(RuntimeType, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn is_defined(this:RuntimeType,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"IsDefined",));
+let inner:extern "C" fn(RuntimeType, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn get_custom_attributes_data(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetCustomAttributesData",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn format_type_name(this:RuntimeType,serialization:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(121usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",121usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"FormatTypeName",));
+let inner:extern "C" fn(RuntimeType,bool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,serialization,__mi)}
+pub unsafe fn get_member_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_MemberType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_reflected_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_ReflectedType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_metadata_token(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_MetadataToken",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn make_array_type_2(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"MakeArrayType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn make_by_ref_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"MakeByRefType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn make_pointer_type_2(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"MakePointerType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_contains_generic_parameters(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(88usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",88usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_ContainsGenericParameters",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_generic_parameter_constraints(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(89usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",89usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetGenericParameterConstraints",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_declaring_method(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_DeclaringMethod",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->crate::system::reflection::methodbase::MethodBase= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_interfaces(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(48usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",48usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetInterfaces",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_assembly_qualified_name(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_AssemblyQualifiedName",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_declaring_type(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_DeclaringType",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_namespace(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_Namespace",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_hash_code(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_full_name_2(this:RuntimeType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <RuntimeType as::unity2::ClassIdentity> ::NAME,"get_FullName",));
+let inner:extern "C" fn(RuntimeType, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-runtimetype")]impl RuntimeType{#[doc="`ThrowIfTypeNeverValidGenericArgument(crate::system::runtimetype::RuntimeType)` overload"]pub fn throw_if_type_never_valid_generic_argument(r#type:impl::core::convert::Into<crate::system::runtimetype::RuntimeType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2fd7bc0usize)as*mut u8,();
 (crate::system::runtimetype::RuntimeType)::core::convert::Into::into(r#type))}
 }
@@ -85,252 +818,193 @@ let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit()
 (RuntimeType)__receiver)}
 }
 #[doc="`GetMethods(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_methods(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdae50usize)as*mut u8, ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> ;
-(RuntimeType)__receiver,(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_methods(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetConstructors(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_constructors(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdaee0usize)as*mut u8, ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> ;
-(RuntimeType)__receiver,(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_constructors(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetProperties(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_properties(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdaf80usize)as*mut u8, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> ;
-(RuntimeType)__receiver,(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_properties(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetEvents(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_events(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdb010usize)as*mut u8, ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> ;
-(RuntimeType)__receiver,(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_events(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetFields(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_fields(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdb0a0usize)as*mut u8, ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> ;
-(RuntimeType)__receiver,(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_fields(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetNestedTypes(crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_nested_types(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdb130usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
-(RuntimeType)__receiver,(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_nested_types(__receiver, ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetMethodImpl(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_method_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,call_conv:impl::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdb1c0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr),(crate::system::reflection::binder::Binder)::core::convert::Into::into(binder),(crate::system::reflection::callingconventions::CallingConventions)::core::convert::Into::into(call_conv),(::unity2::Array< ::unity2::SystemType>)::core::convert::Into::into(types),(::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)::core::convert::Into::into(modifiers))}
+__RuntimeType_unity2_raw::get_method_impl(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(call_conv), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
 }
 #[doc="`GetConstructorImpl(crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, crate::system::reflection::callingconventions::CallingConventions, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_constructor_impl(self,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,call_convention:impl::core::convert::Into<crate::system::reflection::callingconventions::CallingConventions> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::constructorinfo::ConstructorInfo{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdb430usize)as*mut u8,crate::system::reflection::constructorinfo::ConstructorInfo;
-(RuntimeType)__receiver,(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr),(crate::system::reflection::binder::Binder)::core::convert::Into::into(binder),(crate::system::reflection::callingconventions::CallingConventions)::core::convert::Into::into(call_convention),(::unity2::Array< ::unity2::SystemType>)::core::convert::Into::into(types),(::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)::core::convert::Into::into(modifiers))}
+__RuntimeType_unity2_raw::get_constructor_impl(__receiver, ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(call_convention), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
 }
 #[doc="`GetPropertyImpl(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags, crate::system::reflection::binder::Binder, ::unity2::SystemType, ::unity2::Array<::unity2::SystemType>, ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)` overload"]fn get_property_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,binder:impl::core::convert::Into<crate::system::reflection::binder::Binder> ,return_type:impl::core::convert::Into< ::unity2::SystemType> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> > ,modifiers:impl::core::convert::Into< ::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier> >)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdb620usize)as*mut u8,crate::system::reflection::propertyinfo::PropertyInfo;
-(RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr),(crate::system::reflection::binder::Binder)::core::convert::Into::into(binder),(::unity2::SystemType)::core::convert::Into::into(return_type),(::unity2::Array< ::unity2::SystemType>)::core::convert::Into::into(types),(::unity2::Array<crate::system::reflection::parametermodifier::ParameterModifier>)::core::convert::Into::into(modifiers))}
+__RuntimeType_unity2_raw::get_property_impl(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::convert::Into::into(binder), ::core::convert::Into::into(return_type), ::core::convert::Into::into(types), ::core::convert::Into::into(modifiers), ::core::option::Option::None)}
 }
 #[doc="`GetEvent(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_event(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)->crate::system::reflection::eventinfo::EventInfo{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdb880usize)as*mut u8,crate::system::reflection::eventinfo::EventInfo;
-(RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_event(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetField(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_field(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)->crate::system::reflection::fieldinfo::FieldInfo{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdba70usize)as*mut u8,crate::system::reflection::fieldinfo::FieldInfo;
-(RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_field(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetInterface(::unity2::Il2CppString, bool)` overload"]fn get_interface(self,fullname:impl::core::convert::Into< ::unity2::Il2CppString> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdbd70usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(fullname),(bool)::core::convert::Into::into(ignore_case))}
+__RuntimeType_unity2_raw::get_interface(__receiver, ::core::convert::Into::into(fullname), ::core::convert::Into::into(ignore_case), ::core::option::Option::None)}
 }
 #[doc="`GetNestedType(::unity2::Il2CppString, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_nested_type(self,fullname:impl::core::convert::Into< ::unity2::Il2CppString> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdc110usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(fullname),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_nested_type(__receiver, ::core::convert::Into::into(fullname), ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`GetMember(::unity2::Il2CppString, crate::system::reflection::membertypes::MemberTypes, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_member(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,r#type:impl::core::convert::Into<crate::system::reflection::membertypes::MemberTypes> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::Array<crate::system::reflection::memberinfo::MemberInfo>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdc370usize)as*mut u8, ::unity2::Array<crate::system::reflection::memberinfo::MemberInfo> ;
-(RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::membertypes::MemberTypes)::core::convert::Into::into(r#type),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
+__RuntimeType_unity2_raw::get_member(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(r#type), ::core::convert::Into::into(binding_attr), ::core::option::Option::None)}
 }
 #[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdc860usize)as*mut u8,crate::system::reflection::module::Module;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRuntimeModule()` overload"]fn get_runtime_module(self,)->crate::system::reflection::runtimemodule::RuntimeModule{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd43c0usize)as*mut u8,crate::system::reflection::runtimemodule::RuntimeModule;
 (RuntimeType)__receiver)}
 }
 #[doc="`get_Assembly()` overload"]fn get_assembly(self,)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdc870usize)as*mut u8,crate::system::reflection::assembly::Assembly;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_assembly(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRuntimeAssembly()` overload"]fn get_runtime_assembly(self,)->crate::system::reflection::runtimeassembly::RuntimeAssembly{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdc880usize)as*mut u8,crate::system::reflection::runtimeassembly::RuntimeAssembly;
 (RuntimeType)__receiver)}
 }
 #[doc="`IsInstanceOfType(crate::system::object::Object)` overload"]fn is_instance_of_type(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdc8c0usize)as*mut u8,bool;
-(RuntimeType)__receiver,(crate::system::object::Object)::core::convert::Into::into(o))}
+__RuntimeType_unity2_raw::is_instance_of_type(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)}
 }
 #[doc="`IsSubclassOf(::unity2::SystemType)` overload"]fn is_subclass_of(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdc8d0usize)as*mut u8,bool;
-(RuntimeType)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__RuntimeType_unity2_raw::is_subclass_of(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`IsAssignableFrom(::unity2::SystemType)` overload"]fn is_assignable_from(self,c:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcaa0usize)as*mut u8,bool;
-(RuntimeType)__receiver,(::unity2::SystemType)::core::convert::Into::into(c))}
+__RuntimeType_unity2_raw::is_assignable_from(__receiver, ::core::convert::Into::into(c), ::core::option::Option::None)}
 }
 #[doc="`IsEquivalentTo(::unity2::SystemType)` overload"]fn is_equivalent_to(self,other:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcbb0usize)as*mut u8,bool;
-(RuntimeType)__receiver,(::unity2::SystemType)::core::convert::Into::into(other))}
+__RuntimeType_unity2_raw::is_equivalent_to(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)}
 }
 #[doc="`get_BaseType()` overload"]fn get_base_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcc90usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_base_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_UnderlyingSystemType()` overload"]fn get_underlying_system_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcca0usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_underlying_system_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetAttributeFlagsImpl()` overload"]fn get_attribute_flags_impl(self,)->crate::system::reflection::typeattributes::TypeAttributes{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdccb0usize)as*mut u8,crate::system::reflection::typeattributes::TypeAttributes;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_attribute_flags_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsContextfulImpl()` overload"]fn is_contextful_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdccc0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::is_contextful_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsByRefImpl()` overload"]fn is_by_ref_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdccd0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::is_by_ref_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsPrimitiveImpl()` overload"]fn is_primitive_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcce0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::is_primitive_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsPointerImpl()` overload"]fn is_pointer_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdccf0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::is_pointer_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsCOMObjectImpl()` overload"]fn is_com_object_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcd00usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::is_com_object_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsValueTypeImpl()` overload"]fn is_value_type_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcd10usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::is_value_type_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsEnum()` overload"]fn get_is_enum(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdce50usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_is_enum(__receiver, ::core::option::Option::None)}
 }
 #[doc="`HasElementTypeImpl()` overload"]fn has_element_type_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcee0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::has_element_type_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_GenericParameterAttributes()` overload"]fn get_generic_parameter_attributes(self,)->crate::system::reflection::genericparameterattributes::GenericParameterAttributes{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcef0usize)as*mut u8,crate::system::reflection::genericparameterattributes::GenericParameterAttributes;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_generic_parameter_attributes(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSzArray()` overload"]fn get_is_sz_array(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcfc0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_is_sz_array(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsArrayImpl()` overload"]fn is_array_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcfd0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::is_array_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetArrayRank()` overload"]fn get_array_rank(self,)->i32{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdcfe0usize)as*mut u8,i32;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_array_rank(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetElementType()` overload"]fn get_element_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdd070usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_element_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetEnumNames()` overload"]fn get_enum_names(self,)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdd080usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_enum_names(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetEnumValues()` overload"]fn get_enum_values(self,)-> ::unity2::IlInstance{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdd1b0usize)as*mut u8, ::unity2::IlInstance;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_enum_values(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetEnumUnderlyingType()` overload"]fn get_enum_underlying_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdd380usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_enum_underlying_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsEnumDefined(crate::system::object::Object)` overload"]fn is_enum_defined(self,value:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdd460usize)as*mut u8,bool;
-(RuntimeType)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__RuntimeType_unity2_raw::is_enum_defined(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`GetEnumName(crate::system::object::Object)` overload"]fn get_enum_name(self,value:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdd970usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimeType)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__RuntimeType_unity2_raw::get_enum_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`GetGenericArgumentsInternal()` overload"]fn get_generic_arguments_internal(self,)-> ::unity2::Array<crate::system::runtimetype::RuntimeType>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fddb90usize)as*mut u8, ::unity2::Array<crate::system::runtimetype::RuntimeType> ;
 (RuntimeType)__receiver)}
 }
 #[doc="`GetGenericArguments()` overload"]fn get_generic_arguments(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fddc20usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_generic_arguments(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MakeGenericType(::unity2::Array<::unity2::SystemType>)` overload"]fn make_generic_type(self,instantiation:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> >)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fddcc0usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver,(::unity2::Array< ::unity2::SystemType>)::core::convert::Into::into(instantiation))}
+__RuntimeType_unity2_raw::make_generic_type(__receiver, ::core::convert::Into::into(instantiation), ::core::option::Option::None)}
 }
 #[doc="`get_IsGenericTypeDefinition()` overload"]fn get_is_generic_type_definition(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fde1b0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_is_generic_type_definition(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsGenericParameter()` overload"]fn get_is_generic_parameter(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fde1c0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_is_generic_parameter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_GenericParameterPosition()` overload"]fn get_generic_parameter_position(self,)->i32{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fde1d0usize)as*mut u8,i32;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_generic_parameter_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetGenericTypeDefinition()` overload"]fn get_generic_type_definition(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fde270usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_generic_type_definition(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsGenericType()` overload"]fn get_is_generic_type(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fde300usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_is_generic_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsConstructedGenericType()` overload"]fn get_is_constructed_generic_type(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fde310usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_is_constructed_generic_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdf530usize)as*mut u8,bool;
-(RuntimeType)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__RuntimeType_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdf540usize)as*mut u8,crate::system::object::Object;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdf5c0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(RuntimeType)__receiver,(bool)::core::convert::Into::into(inherit))}
+__RuntimeType_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdf670usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(RuntimeType)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__RuntimeType_unity2_raw::get_custom_attributes_2(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdf820usize)as*mut u8,bool;
-(RuntimeType)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__RuntimeType_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributesData()` overload"]fn get_custom_attributes_data(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdf9d0usize)as*mut u8,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::reflection::customattributedata::CustomAttributeData> ;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_custom_attributes_data(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FormatTypeName(bool)` overload"]fn format_type_name(self,serialization:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdf9e0usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimeType)__receiver,(bool)::core::convert::Into::into(serialization))}
+__RuntimeType_unity2_raw::format_type_name(__receiver, ::core::convert::Into::into(serialization), ::core::option::Option::None)}
 }
 #[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdfbd0usize)as*mut u8,crate::system::reflection::membertypes::MemberTypes;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_member_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdfc30usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_reflected_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_MetadataToken()` overload"]fn get_metadata_token(self,)->i32{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdfc40usize)as*mut u8,i32;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_metadata_token(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateInstanceCheckThis()` overload"]fn create_instance_check_this(self,)->(){unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fdfc50usize)as*mut u8,();
@@ -364,28 +1038,23 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2fe1280usize)as*mut
 (RuntimeType)__receiver,(i32)::core::convert::Into::into(rank))}
 }
 #[doc="`MakeArrayType()` overload"]fn make_array_type_2(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2060usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::make_array_type_2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`make_byref_type()` overload"]fn make_byref_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe20c0usize)as*mut u8, ::unity2::SystemType;
 (RuntimeType)__receiver)}
 }
 #[doc="`MakeByRefType()` overload"]fn make_by_ref_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe20d0usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::make_by_ref_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MakePointerType()` overload"]fn make_pointer_type_2(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2160usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::make_pointer_type_2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ContainsGenericParameters()` overload"]fn get_contains_generic_parameters(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe21d0usize)as*mut u8,bool;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_contains_generic_parameters(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetGenericParameterConstraints()` overload"]fn get_generic_parameter_constraints(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe22f0usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_generic_parameter_constraints(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMethodsByName_native(::unity2::IntPtr, crate::system::reflection::bindingflags::BindingFlags, bool)` overload"]fn get_methods_by_name_native(self,name_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags> ,ignore_case:impl::core::convert::Into<bool>)-> ::unity2::IntPtr{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2540usize)as*mut u8, ::unity2::IntPtr;
@@ -412,16 +1081,14 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2fe1280usize)as*mut
 (RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr),(bool)::core::convert::Into::into(icase),(crate::system::runtimetype::RuntimeType)::core::convert::Into::into(reflected_type))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe27a0usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsGenericCOMObjectImpl()` overload"]fn is_generic_com_object_impl(self,)->bool{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe0870usize)as*mut u8,bool;
 (RuntimeType)__receiver)}
 }
 #[doc="`get_DeclaringMethod()` overload"]fn get_declaring_method(self,)->crate::system::reflection::methodbase::MethodBase{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe27c0usize)as*mut u8,crate::system::reflection::methodbase::MethodBase;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_declaring_method(__receiver, ::core::option::Option::None)}
 }
 #[doc="`getFullName(bool, bool)` overload"]fn get_full_name(self,full_name:impl::core::convert::Into<bool> ,assembly_qualified:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe27b0usize)as*mut u8, ::unity2::Il2CppString;
@@ -448,8 +1115,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2fe1280usize)as*mut
 (RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr),(crate::system::runtimetype::RuntimeType)::core::convert::Into::into(reflected_type))}
 }
 #[doc="`GetInterfaces()` overload"]fn get_interfaces(self,)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe27f0usize)as*mut u8, ::unity2::Array< ::unity2::SystemType> ;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_interfaces(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetNestedTypes_native(::unity2::IntPtr, crate::system::reflection::bindingflags::BindingFlags)` overload"]fn get_nested_types_native(self,name:impl::core::convert::Into< ::unity2::IntPtr> ,binding_attr:impl::core::convert::Into<crate::system::reflection::bindingflags::BindingFlags>)-> ::unity2::IntPtr{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2800usize)as*mut u8, ::unity2::IntPtr;
@@ -460,28 +1126,22 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2fe1280usize)as*mut
 (RuntimeType)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(display_name),(crate::system::reflection::bindingflags::BindingFlags)::core::convert::Into::into(binding_attr))}
 }
 #[doc="`get_AssemblyQualifiedName()` overload"]fn get_assembly_qualified_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2810usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_assembly_qualified_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2820usize)as*mut u8, ::unity2::SystemType;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_declaring_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2830usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Namespace()` overload"]fn get_namespace(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2840usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_namespace(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2850usize)as*mut u8,i32;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_FullName()` overload"]fn get_full_name_2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimeType as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fe2930usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimeType)__receiver)}
+__RuntimeType_unity2_raw::get_full_name_2(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -22,29 +22,77 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-doorinspector-types")]
 pub use __types::*;
 
+#[cfg(feature="app-doorinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DoorInspector_unity2_raw{use super:: * ;
+pub unsafe fn get_label(this:DoorInspector,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <DoorInspector as::unity2::ClassIdentity> ::NAME,"GetLabel",));
+let inner:extern "C" fn(DoorInspector, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_range(this:DoorInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <DoorInspector as::unity2::ClassIdentity> ::NAME,"GetRange",));
+let inner:extern "C" fn(DoorInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_color(this:DoorInspector,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <DoorInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
+let inner:extern "C" fn(DoorInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn can_breakable(this:DoorInspector,force:crate::app::force::Force_Type,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <DoorInspector as::unity2::ClassIdentity> ::NAME,"CanBreakable",));
+let inner:extern "C" fn(DoorInspector,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,force,__mi)}
+pub unsafe fn pre_call(this:DoorInspector,super_:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <DoorInspector as::unity2::ClassIdentity> ::NAME,"PreCall",));
+let inner:extern "C" fn(DoorInspector,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,super_,__mi)}
+}
+
 #[cfg(feature="app-doorinspector")]pub trait IDoorInspectorMethods:IDoorInspector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc220usize)as*mut u8,();
 (DoorInspector)__receiver)}
 }
 #[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc230usize)as*mut u8, ::unity2::Il2CppString;
-(DoorInspector)__receiver)}
+__DoorInspector_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc280usize)as*mut u8,i32;
-(DoorInspector)__receiver)}
+__DoorInspector_unity2_raw::get_range(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc290usize)as*mut u8,crate::unity_engine::color::Color;
-(DoorInspector)__receiver)}
+__DoorInspector_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanBreakable(crate::app::force::Force_Type)` overload"]fn can_breakable(self,force:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc2d0usize)as*mut u8,bool;
-(DoorInspector)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force))}
+__DoorInspector_unity2_raw::can_breakable(__receiver, ::core::convert::Into::into(force), ::core::option::Option::None)}
 }
 #[doc="`PreCall(crate::app::procinst::ProcInst)` overload"]fn pre_call(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <DoorInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cfc9b0usize)as*mut u8,();
-(DoorInspector)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+__DoorInspector_unity2_raw::pre_call(__receiver, ::core::convert::Into::into(super_), ::core::option::Option::None)}
 }
 }
 

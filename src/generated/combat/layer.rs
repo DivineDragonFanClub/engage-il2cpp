@@ -9,10 +9,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/layer/Layer.md"))]#[::unity2::class(namespace="Combat",name="Layer")]#[parent(crate::system::object::Object)]pub struct Layer{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/layer/Layer_Mask.md"))]#[::unity2::class(namespace="Combat",name="Layer.Mask")]#[parent(crate::system::object::Object)]pub struct Layer_Mask{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/layer/Layer.md"))]#[::unity2::class(namespace="Combat",name="Layer")]#[parent(crate::system::object::Object)]pub struct Layer{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/layer/Layer_Shift.md"))]#[::unity2::class(namespace="Combat",name="Layer.Shift")]#[parent(crate::system::object::Object)]pub struct Layer_Shift{#[static_field]#[rename(name="contact")]pub contact:i32,}
@@ -21,18 +21,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "combat-layer-types")]
 pub use __types::*;
-
-#[cfg(feature="combat-layer")]impl Layer{#[doc="`CollidesTo(crate::unity_engine::collider::Collider, i32)` overload"]pub fn collides_to(c:impl::core::convert::Into<crate::unity_engine::collider::Collider> ,mask:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1be05e0usize)as*mut u8,bool;
-(crate::unity_engine::collider::Collider)::core::convert::Into::into(c),(i32)::core::convert::Into::into(mask))}
-}
-#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1be0620usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="combat-layer")]impl Layer{pub fn collides_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
 
 #[cfg(feature="combat-layer")]impl Layer_Mask{#[doc="`get_Ground()` overload"]pub fn get_ground()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6590usize)as*mut u8,i32;
 )}
@@ -80,6 +68,18 @@ pub fn set_camera_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 pub fn get_hideable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
 pub fn set_hideable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
 pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+}
+
+#[cfg(feature="combat-layer")]impl Layer{#[doc="`CollidesTo(crate::unity_engine::collider::Collider, i32)` overload"]pub fn collides_to(c:impl::core::convert::Into<crate::unity_engine::collider::Collider> ,mask:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1be05e0usize)as*mut u8,bool;
+(crate::unity_engine::collider::Collider)::core::convert::Into::into(c),(i32)::core::convert::Into::into(mask))}
+}
+#[doc="`Initialize()` overload"]pub fn initialize()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1be0620usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="combat-layer")]impl Layer{pub fn collides_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
 #[cfg(feature="combat-layer")]impl Layer_Shift{#[doc="`get_Renderer()` overload"]pub fn get_renderer()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fd6cf0usize)as*mut u8,i32;
@@ -157,10 +157,10 @@ pub fn initialize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 #[cfg(feature = "combat-layer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Layer;
-    pub use super::ILayer;
     pub use super::Layer_Mask;
     pub use super::ILayer_Mask;
+    pub use super::Layer;
+    pub use super::ILayer;
     pub use super::Layer_Shift;
     pub use super::ILayer_Shift;
     pub use crate::system::object::IObject;

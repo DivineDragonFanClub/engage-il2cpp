@@ -18,13 +18,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-specialized-casesensitivestringdictionary-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CaseSensitiveStringDictionary_unity2_raw{use super:: * ;
+pub unsafe fn add(this:CaseSensitiveStringDictionary,key: ::unity2::Il2CppString,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CaseSensitiveStringDictionary as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(CaseSensitiveStringDictionary, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,value,__mi)}
+}
+
 #[cfg(feature="system-collections-specialized-casesensitivestringdictionary")]pub trait ICaseSensitiveStringDictionaryMethods:ICaseSensitiveStringDictionary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CaseSensitiveStringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x354c680usize)as*mut u8,();
 (CaseSensitiveStringDictionary)__receiver)}
 }
 #[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add(self,key:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CaseSensitiveStringDictionary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x354c690usize)as*mut u8,();
-(CaseSensitiveStringDictionary)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(key),(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__CaseSensitiveStringDictionary_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 

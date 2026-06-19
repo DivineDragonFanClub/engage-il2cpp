@@ -20,6 +20,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedHandler.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="NetworkInterfaceWrapper.NetworkConnectedHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct NetworkInterfaceWrapper_NetworkConnectedHandler{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="NetworkInterfaceWrapper")]#[parent(crate::system::object::Object)]pub struct NetworkInterfaceWrapper{#[static_field]#[rename(name="_networkConnected")]pub network_connected:crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper_NetworkConnectedResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct NetworkInterfaceWrapper_NetworkConnectedResult{pub value:i32,}
 impl::unity2::ClassIdentity for NetworkInterfaceWrapper_NetworkConnectedResult{const NAMESPACE: &'static str="UnityEngine.Switch";
 const NAME: &'static str="NetworkInterfaceWrapper.NetworkConnectedResult";
@@ -37,21 +40,30 @@ pub fn accepted()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/networkinterfacewrapper/NetworkInterfaceWrapper.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="NetworkInterfaceWrapper")]#[parent(crate::system::object::Object)]pub struct NetworkInterfaceWrapper{#[static_field]#[rename(name="_networkConnected")]pub network_connected:crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedHandler,}
-
 }
 
 #[cfg(feature = "unity_engine-switch-networkinterfacewrapper-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-switch-networkinterfacewrapper")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:NetworkInterfaceWrapper_NetworkConnectedHandler,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(NetworkInterfaceWrapper_NetworkConnectedHandler, ::unity2::OptionalMethod,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="unity_engine-switch-networkinterfacewrapper")]pub trait INetworkInterfaceWrapper_NetworkConnectedHandlerMethods:INetworkInterfaceWrapper_NetworkConnectedHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f41d90usize)as*mut u8,();
 (NetworkInterfaceWrapper_NetworkConnectedHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult{unsafe{let __receiver= <NetworkInterfaceWrapper_NetworkConnectedHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f40c80usize)as*mut u8,crate::unity_engine::switch::networkinterfacewrapper::NetworkInterfaceWrapper_NetworkConnectedResult;
-(NetworkInterfaceWrapper_NetworkConnectedHandler)__receiver)}
+__NetworkInterfaceWrapper_NetworkConnectedHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -142,9 +154,9 @@ pub mod prelude {
     pub use super::NetworkInterfaceWrapper_NetworkConnectedHandler;
     pub use super::INetworkInterfaceWrapper_NetworkConnectedHandler;
     pub use super::INetworkInterfaceWrapper_NetworkConnectedHandlerMethods;
-    pub use super::NetworkInterfaceWrapper_NetworkConnectedResult;
     pub use super::NetworkInterfaceWrapper;
     pub use super::INetworkInterfaceWrapper;
+    pub use super::NetworkInterfaceWrapper_NetworkConnectedResult;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

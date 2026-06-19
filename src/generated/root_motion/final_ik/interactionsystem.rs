@@ -21,18 +21,88 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionsystem/InteractionSystem.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionSystem")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InteractionSystem{#[offset(24)]#[rename(name="targetTag")]pub target_tag: ::unity2::Il2CppString, #[offset(32)]#[rename(name="fadeInTime")]pub fade_in_time:f32, #[offset(36)]#[rename(name="speed")]pub speed:f32, #[offset(40)]#[rename(name="resetToDefaultsSpeed")]pub reset_to_defaults_speed:f32, #[offset(48)]#[rename(name="characterCollider")]pub character_collider:crate::unity_engine::collider::Collider, #[offset(56)]#[rename(name="FPSCamera")]pub fps_camera:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="camRaycastLayers")]pub cam_raycast_layers:crate::unity_engine::layermask::LayerMask, #[offset(68)]#[rename(name="camRaycastDistance")]pub cam_raycast_distance:f32, #[offset(80)]#[rename(name="inContact")]pub in_contact:crate::system::collections::generic::list_1::List_1<crate::root_motion::final_ik::interactiontrigger::InteractionTrigger> , #[offset(88)]#[rename(name="bestRangeIndexes")]pub best_range_indexes:crate::system::collections::generic::list_1::List_1<i32> , #[offset(96)]#[rename(name="OnInteractionStart")]pub on_interaction_start:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(104)]#[rename(name="OnInteractionPause")]pub on_interaction_pause:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(112)]#[rename(name="OnInteractionPickUp")]pub on_interaction_pick_up:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(120)]#[rename(name="OnInteractionResume")]pub on_interaction_resume:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(128)]#[rename(name="OnInteractionStop")]pub on_interaction_stop:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(136)]#[rename(name="OnInteractionEvent")]pub on_interaction_event:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionEventDelegate, #[offset(144)]#[rename(name="raycastHit")]pub raycast_hit:crate::unity_engine::raycasthit::RaycastHit, #[offset(192)]#[rename(name="fullBody")]pub full_body:crate::root_motion::final_ik::fullbodybipedik::FullBodyBipedIK, #[offset(200)]#[rename(name="lookAt")]pub look_at:crate::root_motion::final_ik::interactionlookat::InteractionLookAt, #[offset(208)]#[rename(name="interactionEffectors")]pub interaction_effectors: ::unity2::Array<crate::root_motion::final_ik::interactioneffector::InteractionEffector> , #[offset(224)]#[rename(name="lastCollider")]pub last_collider:crate::unity_engine::collider::Collider, #[offset(232)]#[rename(name="c")]pub c:crate::unity_engine::collider::Collider,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionsystem/InteractionSystem_InteractionEventDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionSystem.InteractionEventDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InteractionSystem_InteractionEventDelegate{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionsystem/InteractionSystem_InteractionDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionSystem.InteractionDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct InteractionSystem_InteractionDelegate{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactionsystem/InteractionSystem.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionSystem")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InteractionSystem{#[offset(24)]#[rename(name="targetTag")]pub target_tag: ::unity2::Il2CppString, #[offset(32)]#[rename(name="fadeInTime")]pub fade_in_time:f32, #[offset(36)]#[rename(name="speed")]pub speed:f32, #[offset(40)]#[rename(name="resetToDefaultsSpeed")]pub reset_to_defaults_speed:f32, #[offset(48)]#[rename(name="characterCollider")]pub character_collider:crate::unity_engine::collider::Collider, #[offset(56)]#[rename(name="FPSCamera")]pub fps_camera:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="camRaycastLayers")]pub cam_raycast_layers:crate::unity_engine::layermask::LayerMask, #[offset(68)]#[rename(name="camRaycastDistance")]pub cam_raycast_distance:f32, #[offset(80)]#[rename(name="inContact")]pub in_contact:crate::system::collections::generic::list_1::List_1<crate::root_motion::final_ik::interactiontrigger::InteractionTrigger> , #[offset(88)]#[rename(name="bestRangeIndexes")]pub best_range_indexes:crate::system::collections::generic::list_1::List_1<i32> , #[offset(96)]#[rename(name="OnInteractionStart")]pub on_interaction_start:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(104)]#[rename(name="OnInteractionPause")]pub on_interaction_pause:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(112)]#[rename(name="OnInteractionPickUp")]pub on_interaction_pick_up:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(120)]#[rename(name="OnInteractionResume")]pub on_interaction_resume:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(128)]#[rename(name="OnInteractionStop")]pub on_interaction_stop:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionDelegate, #[offset(136)]#[rename(name="OnInteractionEvent")]pub on_interaction_event:crate::root_motion::final_ik::interactionsystem::InteractionSystem_InteractionEventDelegate, #[offset(144)]#[rename(name="raycastHit")]pub raycast_hit:crate::unity_engine::raycasthit::RaycastHit, #[offset(192)]#[rename(name="fullBody")]pub full_body:crate::root_motion::final_ik::fullbodybipedik::FullBodyBipedIK, #[offset(200)]#[rename(name="lookAt")]pub look_at:crate::root_motion::final_ik::interactionlookat::InteractionLookAt, #[offset(208)]#[rename(name="interactionEffectors")]pub interaction_effectors: ::unity2::Array<crate::root_motion::final_ik::interactioneffector::InteractionEffector> , #[offset(224)]#[rename(name="lastCollider")]pub last_collider:crate::unity_engine::collider::Collider, #[offset(232)]#[rename(name="c")]pub c:crate::unity_engine::collider::Collider,}
+
 }
 
 #[cfg(feature = "root_motion-final_ik-interactionsystem-types")]
 pub use __types::*;
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InteractionSystem_InteractionEventDelegate_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:InteractionSystem_InteractionEventDelegate,effector_type:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector,interaction_object:crate::root_motion::final_ik::interactionobject::InteractionObject,interaction_event:crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <InteractionSystem_InteractionEventDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(InteractionSystem_InteractionEventDelegate,crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector,crate::root_motion::final_ik::interactionobject::InteractionObject,crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,effector_type,interaction_object,interaction_event,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]pub trait IInteractionSystem_InteractionEventDelegateMethods:IInteractionSystem_InteractionEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InteractionSystem_InteractionEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7bf0usize)as*mut u8,();
+(InteractionSystem_InteractionEventDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, crate::root_motion::final_ik::interactionobject::InteractionObject, crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent)` overload"]fn invoke(self,effector_type:impl::core::convert::Into<crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector> ,interaction_object:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject> ,interaction_event:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent>)->(){unsafe{let __receiver= <InteractionSystem_InteractionEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__InteractionSystem_InteractionEventDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(effector_type), ::core::convert::Into::into(interaction_object), ::core::convert::Into::into(interaction_event), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]impl<__T:IInteractionSystem_InteractionEventDelegate>IInteractionSystem_InteractionEventDelegateMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionEventDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InteractionSystem_InteractionEventDelegate), ::core::stringify!(new),));
+ <Self as IInteractionSystem_InteractionEventDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InteractionSystem_InteractionDelegate_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:InteractionSystem_InteractionDelegate,effector_type:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector,interaction_object:crate::root_motion::final_ik::interactionobject::InteractionObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <InteractionSystem_InteractionDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(InteractionSystem_InteractionDelegate,crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector,crate::root_motion::final_ik::interactionobject::InteractionObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,effector_type,interaction_object,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]pub trait IInteractionSystem_InteractionDelegateMethods:IInteractionSystem_InteractionDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InteractionSystem_InteractionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc78b0usize)as*mut u8,();
+(InteractionSystem_InteractionDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, crate::root_motion::final_ik::interactionobject::InteractionObject)` overload"]fn invoke(self,effector_type:impl::core::convert::Into<crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector> ,interaction_object:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject>)->(){unsafe{let __receiver= <InteractionSystem_InteractionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__InteractionSystem_InteractionDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(effector_type), ::core::convert::Into::into(interaction_object), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]impl<__T:IInteractionSystem_InteractionDelegate>IInteractionSystem_InteractionDelegateMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InteractionSystem_InteractionDelegate), ::core::stringify!(new),));
+ <Self as IInteractionSystem_InteractionDelegateMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="root_motion-final_ik-interactionsystem")]pub trait IInteractionSystemMethods:IInteractionSystem{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <InteractionSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x291bd10usize)as*mut u8,();
@@ -356,64 +426,18 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-interactionsystem")]pub trait IInteractionSystem_InteractionEventDelegateMethods:IInteractionSystem_InteractionEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InteractionSystem_InteractionEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7bf0usize)as*mut u8,();
-(InteractionSystem_InteractionEventDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, crate::root_motion::final_ik::interactionobject::InteractionObject, crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent)` overload"]fn invoke(self,effector_type:impl::core::convert::Into<crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector> ,interaction_object:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject> ,interaction_event:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent>)->(){unsafe{let __receiver= <InteractionSystem_InteractionEventDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7c10usize)as*mut u8,();
-(InteractionSystem_InteractionEventDelegate)__receiver,(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector)::core::convert::Into::into(effector_type),(crate::root_motion::final_ik::interactionobject::InteractionObject)::core::convert::Into::into(interaction_object),(crate::root_motion::final_ik::interactionobject::InteractionObject_InteractionEvent)::core::convert::Into::into(interaction_event))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-interactionsystem")]impl<__T:IInteractionSystem_InteractionEventDelegate>IInteractionSystem_InteractionEventDelegateMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionEventDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionEventDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InteractionSystem_InteractionEventDelegate), ::core::stringify!(new),));
- <Self as IInteractionSystem_InteractionEventDelegateMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-interactionsystem")]pub trait IInteractionSystem_InteractionDelegateMethods:IInteractionSystem_InteractionDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <InteractionSystem_InteractionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc78b0usize)as*mut u8,();
-(InteractionSystem_InteractionDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, crate::root_motion::final_ik::interactionobject::InteractionObject)` overload"]fn invoke(self,effector_type:impl::core::convert::Into<crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector> ,interaction_object:impl::core::convert::Into<crate::root_motion::final_ik::interactionobject::InteractionObject>)->(){unsafe{let __receiver= <InteractionSystem_InteractionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc78d0usize)as*mut u8,();
-(InteractionSystem_InteractionDelegate)__receiver,(crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector)::core::convert::Into::into(effector_type),(crate::root_motion::final_ik::interactionobject::InteractionObject)::core::convert::Into::into(interaction_object))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-interactionsystem")]impl<__T:IInteractionSystem_InteractionDelegate>IInteractionSystem_InteractionDelegateMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-interactionsystem")]impl InteractionSystem_InteractionDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InteractionSystem_InteractionDelegate), ::core::stringify!(new),));
- <Self as IInteractionSystem_InteractionDelegateMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-interactionsystem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::InteractionSystem;
-    pub use super::IInteractionSystem;
-    pub use super::IInteractionSystemMethods;
     pub use super::InteractionSystem_InteractionEventDelegate;
     pub use super::IInteractionSystem_InteractionEventDelegate;
     pub use super::IInteractionSystem_InteractionEventDelegateMethods;
     pub use super::InteractionSystem_InteractionDelegate;
     pub use super::IInteractionSystem_InteractionDelegate;
     pub use super::IInteractionSystem_InteractionDelegateMethods;
+    pub use super::InteractionSystem;
+    pub use super::IInteractionSystem;
+    pub use super::IInteractionSystemMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

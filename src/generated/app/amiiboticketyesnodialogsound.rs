@@ -24,6 +24,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-amiiboticketyesnodialogsound-types")]
 pub use __types::*;
 
+#[cfg(feature="app-amiiboticketyesnodialogsound")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AmiiboTicketYesNoDialogSound_unity2_raw{use super:: * ;
+pub unsafe fn on_close(this:AmiiboTicketYesNoDialogSound,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <AmiiboTicketYesNoDialogSound as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(AmiiboTicketYesNoDialogSound, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-amiiboticketyesnodialogsound")]impl AmiiboTicketYesNoDialogSound{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString, i32, crate::system::action::Action)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,music_name:impl::core::convert::Into< ::unity2::Il2CppString> ,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,ticket_num:impl::core::convert::Into<i32> ,yes_event_handler:impl::core::convert::Into<crate::system::action::Action>)->crate::app::exchangeyesnodialog::ExchangeYesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c8a440usize)as*mut u8,crate::app::exchangeyesnodialog::ExchangeYesNoDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(music_name),(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(ticket_num),(crate::system::action::Action)::core::convert::Into::into(yes_event_handler))}
 }
@@ -34,8 +47,7 @@ pub use __types::*;
 (AmiiboTicketYesNoDialogSound)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::exchangedialogcontent::ExchangeDialogContent)::core::convert::Into::into(menu_content),(::unity2::Il2CppString)::core::convert::Into::into(top_message),(::unity2::Il2CppString)::core::convert::Into::into(get_item_title),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam)::core::convert::Into::into(get_item_param),(::unity2::Il2CppString)::core::convert::Into::into(cost_item_title),(crate::system::collections::generic::list_1::List_1<crate::app::exchangeyesnodialog::ExchangeYesNoDialog_ItemParam>)::core::convert::Into::into(cost_item_param_list),(crate::app::exchangeyesnodialog::ExchangeYesNoDialog_MoneyParam)::core::convert::Into::into(cost_money_param))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <AmiiboTicketYesNoDialogSound as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c8bfd0usize)as*mut u8,();
-(AmiiboTicketYesNoDialogSound)__receiver)}
+__AmiiboTicketYesNoDialogSound_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 }
 

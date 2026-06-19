@@ -27,49 +27,7 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_FillMethod.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_FillMethod{pub value:i32,}
-impl::unity2::ClassIdentity for Image_FillMethod{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="Image.FillMethod";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Image_FillMethod{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Image_FillMethod{pub fn horizontal()->Self{Self{value:0}
-}
-pub fn vertical()->Self{Self{value:1}
-}
-pub fn radial90()->Self{Self{value:2}
-}
-pub fn radial180()->Self{Self{value:3}
-}
-pub fn radial360()->Self{Self{value:4}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image.md"))]#[::unity2::class(namespace="UnityEngine.UI",name="Image")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct Image{#[static_field]#[rename(name="s_ETC1DefaultUI")]pub s_etc1_default_ui:crate::unity_engine::material::Material, #[offset(208)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(216)]#[rename(name="m_OverrideSprite")]pub m_override_sprite:crate::unity_engine::sprite::Sprite, #[offset(224)]#[rename(name="m_Type")]pub m_type:crate::unity_engine::ui::image::Image_Type, #[offset(228)]#[rename(name="m_PreserveAspect")]pub m_preserve_aspect:bool, #[offset(229)]#[rename(name="m_FillCenter")]pub m_fill_center:bool, #[offset(232)]#[rename(name="m_FillMethod")]pub m_fill_method:crate::unity_engine::ui::image::Image_FillMethod, #[offset(236)]#[rename(name="m_FillAmount")]pub m_fill_amount:f32, #[offset(240)]#[rename(name="m_FillClockwise")]pub m_fill_clockwise:bool, #[offset(244)]#[rename(name="m_FillOrigin")]pub m_fill_origin:i32, #[offset(248)]#[rename(name="m_AlphaHitTestMinimumThreshold")]pub m_alpha_hit_test_minimum_threshold:f32, #[offset(252)]#[rename(name="m_Tracked")]pub m_tracked:bool, #[offset(253)]#[rename(name="m_UseSpriteMesh")]pub m_use_sprite_mesh:bool, #[offset(256)]#[rename(name="m_PixelsPerUnitMultiplier")]pub m_pixels_per_unit_multiplier:f32, #[offset(260)]#[rename(name="m_CachedReferencePixelsPerUnit")]pub m_cached_reference_pixels_per_unit:f32, #[static_field]#[rename(name="s_VertScratch")]pub s_vert_scratch: ::unity2::Array<crate::unity_engine::vector2::Vector2> , #[static_field]#[rename(name="s_UVScratch")]pub s_uv_scratch: ::unity2::Array<crate::unity_engine::vector2::Vector2> , #[static_field]#[rename(name="s_Xy")]pub s_xy: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="s_Uv")]pub s_uv: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[static_field]#[rename(name="m_TrackedTexturelessImages")]pub m_tracked_textureless_images:crate::system::collections::generic::list_1::List_1<crate::unity_engine::ui::image::Image> , #[static_field]#[rename(name="s_Initialized")]pub s_initialized:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Type{pub value:i32,}
-impl::unity2::ClassIdentity for Image_Type{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="Image.Type";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Image_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Image_Type{pub fn simple()->Self{Self{value:0}
-}
-pub fn sliced()->Self{Self{value:1}
-}
-pub fn tiled()->Self{Self{value:2}
-}
-pub fn filled()->Self{Self{value:3}
-}
-}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Origin180.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Origin180{pub value:i32,}
@@ -92,38 +50,24 @@ pub fn right()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Origin360.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Origin360{pub value:i32,}
-impl::unity2::ClassIdentity for Image_Origin360{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="Image.Origin360";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_FillMethod.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_FillMethod{pub value:i32,}
+impl::unity2::ClassIdentity for Image_FillMethod{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.FillMethod";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for Image_Origin360{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for Image_FillMethod{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl Image_Origin360{pub fn bottom()->Self{Self{value:0}
+impl Image_FillMethod{pub fn horizontal()->Self{Self{value:0}
 }
-pub fn right()->Self{Self{value:1}
+pub fn vertical()->Self{Self{value:1}
 }
-pub fn top()->Self{Self{value:2}
+pub fn radial90()->Self{Self{value:2}
 }
-pub fn left()->Self{Self{value:3}
+pub fn radial180()->Self{Self{value:3}
 }
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_OriginHorizontal.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_OriginHorizontal{pub value:i32,}
-impl::unity2::ClassIdentity for Image_OriginHorizontal{const NAMESPACE: &'static str="UnityEngine.UI";
-const NAME: &'static str="Image.OriginHorizontal";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Image_OriginHorizontal{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Image_OriginHorizontal{pub fn left()->Self{Self{value:0}
-}
-pub fn right()->Self{Self{value:1}
+pub fn radial360()->Self{Self{value:4}
 }
 }
 
@@ -163,10 +107,289 @@ pub fn bottom_right()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_OriginHorizontal.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_OriginHorizontal{pub value:i32,}
+impl::unity2::ClassIdentity for Image_OriginHorizontal{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.OriginHorizontal";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_OriginHorizontal{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_OriginHorizontal{pub fn left()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Origin360.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Origin360{pub value:i32,}
+impl::unity2::ClassIdentity for Image_Origin360{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.Origin360";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_Origin360{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_Origin360{pub fn bottom()->Self{Self{value:0}
+}
+pub fn right()->Self{Self{value:1}
+}
+pub fn top()->Self{Self{value:2}
+}
+pub fn left()->Self{Self{value:3}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/image/Image_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Image_Type{pub value:i32,}
+impl::unity2::ClassIdentity for Image_Type{const NAMESPACE: &'static str="UnityEngine.UI";
+const NAME: &'static str="Image.Type";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Image_Type{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Image_Type{pub fn simple()->Self{Self{value:0}
+}
+pub fn sliced()->Self{Self{value:1}
+}
+pub fn tiled()->Self{Self{value:2}
+}
+pub fn filled()->Self{Self{value:3}
+}
+}
+
 }
 
 #[cfg(feature = "unity_engine-ui-image-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-ui-image")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Image_unity2_raw{use super:: * ;
+pub unsafe fn get_main_texture(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_mainTexture",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_material(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_material",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_material(this:Image,value:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"set_material",));
+let inner:extern "C" fn(Image,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn on_before_serialize(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",77usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"OnBeforeSerialize",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_after_deserialize(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",78usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"OnAfterDeserialize",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_native_size(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"SetNativeSize",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_populate_mesh(this:Image,to_fill:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
+let inner:extern "C" fn(Image,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,to_fill,__mi)}
+pub unsafe fn on_enable(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_material(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"UpdateMaterial",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_canvas_hierarchy_changed(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate_layout_input_horizontal(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate_layout_input_vertical(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(80usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",80usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_width(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(81usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",81usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_width(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(82usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",82usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_width(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(83usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",83usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_height(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(84usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",84usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_height(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(85usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",85usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_height(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(86usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",86usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_layout_priority(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(87usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",87usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_raycast_location_valid(this:Image,screen_point:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(88usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",88usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"IsRaycastLocationValid",));
+let inner:extern "C" fn(Image,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,screen_point,event_camera,__mi)}
+pub unsafe fn on_did_apply_animation_properties(this:Image,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Image as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let inner:extern "C" fn(Image, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="unity_engine-ui-image")]impl Image{#[doc="`get_defaultETC1GraphicMaterial()` overload"]pub fn get_default_etc1_graphic_material()->crate::unity_engine::material::Material{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3bedbd0usize)as*mut u8,crate::unity_engine::material::Material;
 )}
@@ -306,8 +529,7 @@ pub use __types::*;
 (Image)__receiver)}
 }
 #[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedce0usize)as*mut u8,crate::unity_engine::texture::Texture;
-(Image)__receiver)}
+__Image_unity2_raw::get_main_texture(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_hasBorder()` overload"]fn get_has_border(self,)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bedf30usize)as*mut u8,bool;
@@ -330,20 +552,16 @@ pub use __types::*;
 (Image)__receiver)}
 }
 #[doc="`get_material()` overload"]fn get_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee320usize)as*mut u8,crate::unity_engine::material::Material;
-(Image)__receiver)}
+__Image_unity2_raw::get_material(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_material(crate::unity_engine::material::Material)` overload"]fn set_material(self,value:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee540usize)as*mut u8,();
-(Image)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
+__Image_unity2_raw::set_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`OnBeforeSerialize()` overload"]fn on_before_serialize(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee550usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::on_before_serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnAfterDeserialize()` overload"]fn on_after_deserialize(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bee560usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::on_after_deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PreserveSpriteAspectRatio(*mutcrate::unity_engine::rect::Rect, crate::unity_engine::vector2::Vector2)` overload"]fn preserve_sprite_aspect_ratio(self,sprite_size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rect::Rect> ::uninit();
@@ -356,32 +574,26 @@ __out_0.assume_init()}
 (Image)__receiver,(bool)::core::convert::Into::into(should_preserve_aspect))}
 }
 #[doc="`SetNativeSize()` overload"]fn set_native_size(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3beeba0usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::set_native_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,to_fill:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3beee00usize)as*mut u8,();
-(Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill))}
+__Image_unity2_raw::on_populate_mesh(__receiver, ::core::convert::Into::into(to_fill), ::core::option::Option::None)}
 }
 #[doc="`TrackSprite()` overload"]fn track_sprite(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bed2d0usize)as*mut u8,();
 (Image)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2590usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf25c0usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateMaterial()` overload"]fn update_material(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2750usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::update_material(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf2910usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GenerateSimpleSprite(crate::unity_engine::ui::vertexhelper::VertexHelper, bool)` overload"]fn generate_simple_sprite(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper> ,l_preserve_aspect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3beefb0usize)as*mut u8,();
@@ -408,52 +620,41 @@ __out_0.assume_init()}
 (Image)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill),(bool)::core::convert::Into::into(preserve_aspect))}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36c0usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36d0usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36e0usize)as*mut u8,f32;
-(Image)__receiver)}
+__Image_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf36f0usize)as*mut u8,f32;
-(Image)__receiver)}
+__Image_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf38e0usize)as*mut u8,f32;
-(Image)__receiver)}
+__Image_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf38f0usize)as*mut u8,f32;
-(Image)__receiver)}
+__Image_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3900usize)as*mut u8,f32;
-(Image)__receiver)}
+__Image_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3af0usize)as*mut u8,f32;
-(Image)__receiver)}
+__Image_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3b00usize)as*mut u8,i32;
-(Image)__receiver)}
+__Image_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,screen_point:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf3b10usize)as*mut u8,bool;
-(Image)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(screen_point),(crate::unity_engine::camera::Camera)::core::convert::Into::into(event_camera))}
+__Image_unity2_raw::is_raycast_location_valid(__receiver, ::core::convert::Into::into(screen_point), ::core::convert::Into::into(event_camera), ::core::option::Option::None)}
 }
 #[doc="`MapCoordinate(crate::unity_engine::vector2::Vector2, crate::unity_engine::rect::Rect)` overload"]fn map_coordinate(self,local:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,rect:impl::core::convert::Into<crate::unity_engine::rect::Rect>)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf4050usize)as*mut u8,crate::unity_engine::vector2::Vector2;
 (Image)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(local),(crate::unity_engine::rect::Rect)::core::convert::Into::into(rect))}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <Image as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3bf47a0usize)as*mut u8,();
-(Image)__receiver)}
+__Image_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -544,16 +745,16 @@ this}
 #[cfg(feature = "unity_engine-ui-image")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Image_FillMethod;
     pub use super::Image;
     pub use super::IImage;
     pub use super::IImageMethods;
-    pub use super::Image_Type;
     pub use super::Image_Origin180;
-    pub use super::Image_Origin360;
-    pub use super::Image_OriginHorizontal;
+    pub use super::Image_FillMethod;
     pub use super::Image_OriginVertical;
     pub use super::Image_Origin90;
+    pub use super::Image_OriginHorizontal;
+    pub use super::Image_Origin360;
+    pub use super::Image_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

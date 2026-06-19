@@ -16,6 +16,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-identifier-types")]
 pub use __types::*;
 
+#[cfg(feature="app-identifier")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Identifier_unity2_raw{use super:: * ;
+pub unsafe fn equals(this:Identifier,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <Identifier as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(Identifier,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn get_hash_code(this:Identifier,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <Identifier as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(Identifier, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-identifier")]impl Identifier{#[doc="`DummyDeserialize(crate::app::stream_2::Stream_2)` overload"]pub fn dummy_deserialize(stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x290da50usize)as*mut u8,();
 (crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
@@ -56,12 +79,10 @@ pub use __types::*;
 (Identifier)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290dc50usize)as*mut u8,bool;
-(Identifier)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__Identifier_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290dd20usize)as*mut u8,i32;
-(Identifier)__receiver)}
+__Identifier_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MakeUserId(u32, u32)` overload"]fn make_user_id(self,v0:impl::core::convert::Into<u32> ,v1:impl::core::convert::Into<u32>)->u64{unsafe{let __receiver= <Identifier as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x290de00usize)as*mut u8,u64;

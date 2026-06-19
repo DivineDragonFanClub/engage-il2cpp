@@ -40,6 +40,29 @@ pub fn end()->Self{Self{value:2}
 #[cfg(feature = "app-turneffect-types")]
 pub use __types::*;
 
+#[cfg(feature="app-turneffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TurnEffect_unity2_raw{use super:: * ;
+pub unsafe fn get_can_wait_skip(this:TurnEffect,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TurnEffect as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
+let inner:extern "C" fn(TurnEffect, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn execute(this:TurnEffect,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <TurnEffect as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(TurnEffect, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-turneffect")]impl TurnEffect{pub fn create_bind<M0: ::unity2::IlType+ ::core::marker::Copy+ ::unity2::ClassIdentity>(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){static OPEN: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{::unity2::lookup::method_info_on_class(<TurnEffect as::unity2::ClassIdentity> ::class(),"CreateBind",1,)}
 );
  #[allow(clippy::type_complexity)]static CACHE: ::std::sync::OnceLock< ::std::sync::Mutex< ::std::collections::HashMap<usize, & 'static::unity2::il2cpp::MethodInfo> , > , > = ::std::sync::OnceLock::new();
@@ -67,8 +90,7 @@ __f(::core::convert::Into::into(super_), ::core::option::Option::Some(__mi_opaqu
 (TurnEffect)__receiver)}
 }
 #[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ace70usize)as*mut u8,bool;
-(TurnEffect)__receiver)}
+__TurnEffect_unity2_raw::get_can_wait_skip(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Search()` overload"]fn search(self,)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22ace80usize)as*mut u8,();
@@ -87,8 +109,7 @@ __f(::core::convert::Into::into(super_), ::core::option::Option::Some(__mi_opaqu
 (TurnEffect)__receiver,(i32)::core::convert::Into::into(heal))}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ad0f0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(TurnEffect)__receiver)}
+__TurnEffect_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`TryWaitTime(f32)` overload"]fn try_wait_time(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TurnEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22ad170usize)as*mut u8,();

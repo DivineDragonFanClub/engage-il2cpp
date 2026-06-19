@@ -31,16 +31,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <RemoteProviderException as::unity2::ClassIdentity> ::NAME,"get_WebRequestResult",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<RemoteProviderException as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <RemoteProviderException as::unity2::ClassIdentity> ::NAME,"ToString",e),}
-}
-}
+pub unsafe fn to_string(this:RemoteProviderException,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <RemoteProviderException as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(RemoteProviderException, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-resource_management-exceptions-remoteproviderexception")]pub trait IRemoteProviderExceptionMethods:IRemoteProviderException{#[doc="`get_WebRequestResult()` overload"]fn get_web_request_result(self,)->crate::unity_engine::resource_management::util::unitywebrequestresult::UnityWebRequestResult{unsafe{let __receiver= <RemoteProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -48,8 +48,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (RemoteProviderException)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RemoteProviderException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__RemoteProviderException_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
-(RemoteProviderException)__receiver)}
+__RemoteProviderException_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 

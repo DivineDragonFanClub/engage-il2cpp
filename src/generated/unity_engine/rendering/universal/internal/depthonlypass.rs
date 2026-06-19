@@ -18,6 +18,39 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptabl
 #[cfg(feature = "unity_engine-rendering-universal-internal-depthonlypass-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-universal-internal-depthonlypass")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DepthOnlyPass_unity2_raw{use super:: * ;
+pub unsafe fn on_camera_setup(this:DepthOnlyPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DepthOnlyPass as::unity2::ClassIdentity> ::NAME,"OnCameraSetup",));
+let inner:extern "C" fn(DepthOnlyPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cmd,rendering_data,__mi)}
+pub unsafe fn execute(this:DepthOnlyPass,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <DepthOnlyPass as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(DepthOnlyPass,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,context,rendering_data,__mi)}
+pub unsafe fn on_camera_cleanup(this:DepthOnlyPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DepthOnlyPass as::unity2::ClassIdentity> ::NAME,"OnCameraCleanup",));
+let inner:extern "C" fn(DepthOnlyPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cmd,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-universal-internal-depthonlypass")]pub trait IDepthOnlyPassMethods:IDepthOnlyPass{#[doc="`get_depthAttachmentHandle()` overload"]fn get_depth_attachment_handle(self,)->crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle{unsafe{let __receiver= <DepthOnlyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee7d50usize)as*mut u8,crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle;
 (DepthOnlyPass)__receiver)}
@@ -44,19 +77,16 @@ pub use __types::*;
 }
 #[doc="`OnCameraSetup(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn on_camera_setup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <DepthOnlyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee8150usize)as*mut u8,();
-(DepthOnlyPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__DepthOnlyPass_unity2_raw::on_camera_setup(__receiver, ::core::convert::Into::into(cmd),__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <DepthOnlyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee8270usize)as*mut u8,();
-(DepthOnlyPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__DepthOnlyPass_unity2_raw::execute(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn on_camera_cleanup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <DepthOnlyPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ee84b0usize)as*mut u8,();
-(DepthOnlyPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd))}
+__DepthOnlyPass_unity2_raw::on_camera_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
 }
 }
 

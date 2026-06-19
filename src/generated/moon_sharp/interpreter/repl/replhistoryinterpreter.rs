@@ -29,16 +29,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ReplHistoryInterpreter as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_evaluate{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ReplHistoryInterpreter as::unity2::ClassIdentity> ::class(),"Evaluate",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ReplHistoryInterpreter as::unity2::ClassIdentity> ::NAME,"Evaluate",e),}
-}
-}
+pub unsafe fn evaluate(this:ReplHistoryInterpreter,input: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ReplHistoryInterpreter as::unity2::ClassIdentity> ::NAME,"Evaluate",));
+let inner:extern "C" fn(ReplHistoryInterpreter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,input,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_history_prev{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<ReplHistoryInterpreter as::unity2::ClassIdentity> ::class(),"HistoryPrev",0,param_types,false,)}
@@ -66,8 +66,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ReplHistoryInterpreter)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(i32)::core::convert::Into::into(history_size))}
 }
 #[doc="`Evaluate(::unity2::Il2CppString)` overload"]fn evaluate(self,input:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <ReplHistoryInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ReplHistoryInterpreter_unity2_raw::__lookup_evaluate::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(ReplHistoryInterpreter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(input))}
+__ReplHistoryInterpreter_unity2_raw::evaluate(__receiver, ::core::convert::Into::into(input), ::core::option::Option::None)}
 }
 #[doc="`HistoryPrev()` overload"]fn history_prev(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ReplHistoryInterpreter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ReplHistoryInterpreter_unity2_raw::__lookup_history_prev::get_method_info().method_ptr, ::unity2::Il2CppString;

@@ -17,37 +17,27 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/funcitem/FuncItem_Func.md"))]#[::unity2::class(namespace="App",name="FuncItem.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FuncItem_Func{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/funcitem/FuncItem.md"))]#[::unity2::class(namespace="App",name="FuncItem")]#[parent(crate::app::stringitem::StringItem)]pub struct FuncItem{#[offset(48)]#[rename(name="m_Func")]pub m_func:crate::app::funcitem::FuncItem_Func,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/funcitem/FuncItem_Func.md"))]#[::unity2::class(namespace="App",name="FuncItem.Func")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FuncItem_Func{}
 
 }
 
 #[cfg(feature = "app-funcitem-types")]
 pub use __types::*;
 
-#[cfg(feature="app-funcitem")]pub trait IFuncItem_FuncMethods:IFuncItem_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FuncItem_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66190usize)as*mut u8,();
-(FuncItem_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::menuitem::MenuItem)` overload"]fn invoke(self,item:impl::core::convert::Into<crate::app::menuitem::MenuItem>)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FuncItem_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e661b0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(FuncItem_Func)__receiver,(crate::app::menuitem::MenuItem)::core::convert::Into::into(item))}
-}
-}
-
-#[cfg(feature="app-funcitem")]impl<__T:IFuncItem_Func>IFuncItem_FuncMethods for __T{}
-
-#[cfg(feature="app-funcitem")]impl FuncItem_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-funcitem")]impl FuncItem_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FuncItem_Func), ::core::stringify!(new),));
- <Self as IFuncItem_FuncMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-funcitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FuncItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:FuncItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <FuncItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(FuncItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-funcitem")]pub trait IFuncItemMethods:IFuncItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::funcitem::FuncItem_Func)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,func:impl::core::convert::Into<crate::app::funcitem::FuncItem_Func>)->(){unsafe{let __receiver= <FuncItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -55,8 +45,7 @@ this}
 (FuncItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::funcitem::FuncItem_Func)::core::convert::Into::into(func))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FuncItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22767e0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(FuncItem)__receiver)}
+__FuncItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -73,15 +62,50 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-funcitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FuncItem_Func_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:FuncItem_Func,item:crate::app::menuitem::MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <FuncItem_Func as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(FuncItem_Func,crate::app::menuitem::MenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,item,__mi)}
+}
+
+#[cfg(feature="app-funcitem")]pub trait IFuncItem_FuncMethods:IFuncItem_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FuncItem_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e66190usize)as*mut u8,();
+(FuncItem_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::menuitem::MenuItem)` overload"]fn invoke(self,item:impl::core::convert::Into<crate::app::menuitem::MenuItem>)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <FuncItem_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__FuncItem_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(item), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-funcitem")]impl<__T:IFuncItem_Func>IFuncItem_FuncMethods for __T{}
+
+#[cfg(feature="app-funcitem")]impl FuncItem_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-funcitem")]impl FuncItem_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FuncItem_Func), ::core::stringify!(new),));
+ <Self as IFuncItem_FuncMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-funcitem")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FuncItem_Func;
-    pub use super::IFuncItem_Func;
-    pub use super::IFuncItem_FuncMethods;
     pub use super::FuncItem;
     pub use super::IFuncItem;
     pub use super::IFuncItemMethods;
+    pub use super::FuncItem_Func;
+    pub use super::IFuncItem_Func;
+    pub use super::IFuncItem_FuncMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::stringitem::IStringItem;
     pub use crate::system::delegate::IDelegate;

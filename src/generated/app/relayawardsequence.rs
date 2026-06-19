@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayawardsequence/RelayAwardSequence.md"))]#[::unity2::class(namespace="App",name="RelayAwardSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayawardsequence::RelayAwardSequence>)]pub struct RelayAwardSequence{#[offset(120)]#[rename(name="m_EnteredBattle")]pub m_entered_battle:crate::app::relayuserdata::RelayUserData_EnteredBattle, #[offset(128)]#[rename(name="m_Raids")]pub m_raids: ::unity2::Array< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_GainItem")]pub m_gain_item:crate::app::itemdata::ItemData, #[offset(144)]#[rename(name="m_IsAwarded")]pub m_is_awarded:bool, #[offset(148)]#[rename(name="m_PrevMasterProofCount")]pub m_prev_master_proof_count:i32, #[offset(152)]#[rename(name="m_PrevChangeProofCount")]pub m_prev_change_proof_count:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayawardsequence/RelayAwardSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayAwardSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for RelayAwardSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RelayAwardSequence.Label";
@@ -32,13 +35,33 @@ pub fn end()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayawardsequence/RelayAwardSequence.md"))]#[::unity2::class(namespace="App",name="RelayAwardSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayawardsequence::RelayAwardSequence>)]pub struct RelayAwardSequence{#[offset(120)]#[rename(name="m_EnteredBattle")]pub m_entered_battle:crate::app::relayuserdata::RelayUserData_EnteredBattle, #[offset(128)]#[rename(name="m_Raids")]pub m_raids: ::unity2::Array< ::unity2::Il2CppString> , #[offset(136)]#[rename(name="m_GainItem")]pub m_gain_item:crate::app::itemdata::ItemData, #[offset(144)]#[rename(name="m_IsAwarded")]pub m_is_awarded:bool, #[offset(148)]#[rename(name="m_PrevMasterProofCount")]pub m_prev_master_proof_count:i32, #[offset(152)]#[rename(name="m_PrevChangeProofCount")]pub m_prev_change_proof_count:i32,}
-
 }
 
 #[cfg(feature = "app-relayawardsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-relayawardsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayAwardSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:RelayAwardSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <RelayAwardSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(RelayAwardSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:RelayAwardSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RelayAwardSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(RelayAwardSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-relayawardsequence")]impl RelayAwardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22cfcf0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -52,12 +75,10 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-relayawardsequence")]pub trait IRelayAwardSequenceMethods:IRelayAwardSequence{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf080usize)as*mut u8,();
-(RelayAwardSequence)__receiver)}
+__RelayAwardSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf3a0usize)as*mut u8,();
-(RelayAwardSequence)__receiver)}
+__RelayAwardSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`TeamAward()` overload"]fn team_award(self,)->(){unsafe{let __receiver= <RelayAwardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22cf4b0usize)as*mut u8,();
@@ -125,10 +146,10 @@ this}
 #[cfg(feature = "app-relayawardsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayAwardSequence_Label;
     pub use super::RelayAwardSequence;
     pub use super::IRelayAwardSequence;
     pub use super::IRelayAwardSequenceMethods;
+    pub use super::RelayAwardSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -48,6 +48,19 @@ pub fn keyboard()->Self{Self{value:6}
 #[cfg(feature = "app-pad-types")]
 pub use __types::*;
 
+#[cfg(feature="app-pad")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Pad_unity2_raw{use super:: * ;
+pub unsafe fn on_update(this:Pad,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Pad as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(Pad, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-pad")]impl Pad{#[doc="`IsButton(crate::nn::hid::npadbutton::NpadButton)` overload"]pub fn is_button(buttons:impl::core::convert::Into<crate::nn::hid::npadbutton::NpadButton>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f22f60usize)as*mut u8,bool;
 (crate::nn::hid::npadbutton::NpadButton)::core::convert::Into::into(buttons))}
 }
@@ -157,8 +170,7 @@ let mut __out_0= ::core::mem::MaybeUninit:: <crate::nn::hid::npadstate::NpadStat
 __out_0.assume_init()}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <Pad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f22b00usize)as*mut u8,();
-(Pad)__receiver)}
+__Pad_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateDebugPad()` overload"]fn update_debug_pad(self,)->(){unsafe{let __receiver= <Pad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f22db0usize)as*mut u8,();

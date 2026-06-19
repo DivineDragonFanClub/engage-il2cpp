@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-rendering-volumestack-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-volumestack")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VolumeStack_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:VolumeStack,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VolumeStack as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(VolumeStack, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-volumestack")]pub trait IVolumeStackMethods:IVolumeStack{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VolumeStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6f90usize)as*mut u8,();
 (VolumeStack)__receiver)}
@@ -50,8 +63,7 @@ __f(__receiver, ::core::option::Option::Some(__mi_opaque),)}
 (VolumeStack)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <VolumeStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e7340usize)as*mut u8,();
-(VolumeStack)__receiver)}
+__VolumeStack_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 }
 

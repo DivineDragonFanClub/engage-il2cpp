@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartsequence/MuscleStartSequence.md"))]#[::unity2::class(namespace="App",name="MuscleStartSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MuscleStartSequence{#[offset(112)]#[rename(name="m_SelectedType")]pub m_selected_type:i32, #[offset(116)]#[rename(name="m_SelectedLevel")]pub m_selected_level:i32, #[offset(120)]#[rename(name="m_AssistDeside")]pub m_assist_deside:i32, #[offset(124)]#[rename(name="m_IsCreateGameSequence")]pub m_is_create_game_sequence:bool, #[offset(125)]#[rename(name="m_IsCotinueExercise")]pub m_is_cotinue_exercise:bool, #[offset(128)]#[rename(name="m_TalkerChara")]pub m_talker_chara:crate::combat::character::Character, #[offset(136)]#[rename(name="m_AnnouceDifficult")]pub m_annouce_difficult:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(144)]#[rename(name="m_IsAnnounceVoiceOnce")]pub m_is_announce_voice_once:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartsequence/MuscleStartSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MuscleStartSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MuscleStartSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MuscleStartSequence.Label";
@@ -48,6 +45,9 @@ pub fn play_repeat()->Self{Self{value:8}
 pub fn exit()->Self{Self{value:9}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/musclestartsequence/MuscleStartSequence.md"))]#[::unity2::class(namespace="App",name="MuscleStartSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct MuscleStartSequence{#[offset(112)]#[rename(name="m_SelectedType")]pub m_selected_type:i32, #[offset(116)]#[rename(name="m_SelectedLevel")]pub m_selected_level:i32, #[offset(120)]#[rename(name="m_AssistDeside")]pub m_assist_deside:i32, #[offset(124)]#[rename(name="m_IsCreateGameSequence")]pub m_is_create_game_sequence:bool, #[offset(125)]#[rename(name="m_IsCotinueExercise")]pub m_is_cotinue_exercise:bool, #[offset(128)]#[rename(name="m_TalkerChara")]pub m_talker_chara:crate::combat::character::Character, #[offset(136)]#[rename(name="m_AnnouceDifficult")]pub m_annouce_difficult:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(144)]#[rename(name="m_IsAnnounceVoiceOnce")]pub m_is_announce_voice_once:bool,}
 
 }
 
@@ -186,10 +186,10 @@ this}
 #[cfg(feature = "app-musclestartsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MuscleStartSequence_Label;
     pub use super::MuscleStartSequence;
     pub use super::IMuscleStartSequence;
     pub use super::IMuscleStartSequenceMethods;
-    pub use super::MuscleStartSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

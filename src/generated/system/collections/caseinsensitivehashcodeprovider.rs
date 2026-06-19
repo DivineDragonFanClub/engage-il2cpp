@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-caseinsensitivehashcodeprovider-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CaseInsensitiveHashCodeProvider_unity2_raw{use super:: * ;
+pub unsafe fn get_hash_code(this:CaseInsensitiveHashCodeProvider,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CaseInsensitiveHashCodeProvider as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(CaseInsensitiveHashCodeProvider,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+}
+
 #[cfg(feature="system-collections-caseinsensitivehashcodeprovider")]impl CaseInsensitiveHashCodeProvider{#[doc="`get_Default()` overload"]pub fn get_default()->crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a1330usize)as*mut u8,crate::system::collections::caseinsensitivehashcodeprovider::CaseInsensitiveHashCodeProvider;
 )}
 }
@@ -26,8 +39,7 @@ pub use __types::*;
 (CaseInsensitiveHashCodeProvider)__receiver)}
 }
 #[doc="`GetHashCode(crate::system::object::Object)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CaseInsensitiveHashCodeProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33a13c0usize)as*mut u8,i32;
-(CaseInsensitiveHashCodeProvider)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CaseInsensitiveHashCodeProvider_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 }
 

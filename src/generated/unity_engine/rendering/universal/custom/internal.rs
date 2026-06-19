@@ -31,7 +31,7 @@
  #[cfg(feature="unity_engine-rendering-universal-custom-internal-customlightocclusionpass")]pub use customlightocclusionpass::{ICustomLightOcclusionPassMethods}
 ;
  #[cfg(any(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass-types"))]pub mod custommixedresolutionpass;
- #[cfg(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass-types")]pub use custommixedresolutionpass::{CustomMixedResolutionPass_CompositeType,CustomMixedResolutionPass,ICustomMixedResolutionPass,CustomMixedResolutionPass_DownsampleType}
+ #[cfg(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass-types")]pub use custommixedresolutionpass::{CustomMixedResolutionPass_DownsampleType,CustomMixedResolutionPass,ICustomMixedResolutionPass,CustomMixedResolutionPass_CompositeType}
 ;
  #[cfg(feature="unity_engine-rendering-universal-custom-internal-custommixedresolutionpass")]pub use custommixedresolutionpass::{ICustomMixedResolutionPassMethods}
 ;

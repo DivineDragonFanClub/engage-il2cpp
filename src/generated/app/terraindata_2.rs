@@ -19,6 +19,24 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terraindata_2/TerrainData_Commands.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TerrainData_Commands{pub value:i32,}
+impl::unity2::ClassIdentity for TerrainData_Commands{const NAMESPACE: &'static str="App";
+const NAME: &'static str="TerrainData.Commands";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TerrainData_Commands{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TerrainData_Commands{pub fn none()->Self{Self{value:0}
+}
+pub fn torch_on()->Self{Self{value:1}
+}
+pub fn torch_off()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terraindata_2/TerrainData_Prohibitions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TerrainData_Prohibitions{pub value:i32,}
 impl::unity2::ClassIdentity for TerrainData_Prohibitions{const NAMESPACE: &'static str="App";
 const NAME: &'static str="TerrainData.Prohibitions";
@@ -35,24 +53,6 @@ pub fn all()->Self{Self{value:1}
 pub fn ground()->Self{Self{value:2}
 }
 pub fn near()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/terraindata_2/TerrainData_Commands.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TerrainData_Commands{pub value:i32,}
-impl::unity2::ClassIdentity for TerrainData_Commands{const NAMESPACE: &'static str="App";
-const NAME: &'static str="TerrainData.Commands";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TerrainData_Commands{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TerrainData_Commands{pub fn none()->Self{Self{value:0}
-}
-pub fn torch_on()->Self{Self{value:1}
-}
-pub fn torch_off()->Self{Self{value:2}
 }
 }
 
@@ -155,6 +155,39 @@ pub fn help_spot()->Self{Self{value: -2147483648}
 
 #[cfg(feature = "app-terraindata_2-types")]
 pub use __types::*;
+
+#[cfg(feature="app-terraindata_2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TerrainData_2_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:TerrainData_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TerrainData_2 as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(TerrainData_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_completed(this:TerrainData_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TerrainData_2 as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
+let inner:extern "C" fn(TerrainData_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:TerrainData_2,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TerrainData_2 as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(TerrainData_2, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-terraindata_2")]impl TerrainData_2{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21e2ce0usize)as*mut u8,();
 )}
@@ -610,16 +643,13 @@ pub use __types::*;
 (TerrainData_2)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <TerrainData_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3a50usize)as*mut u8,();
-(TerrainData_2)__receiver)}
+__TerrainData_2_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <TerrainData_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3ac0usize)as*mut u8,();
-(TerrainData_2)__receiver)}
+__TerrainData_2_unity2_raw::on_completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TerrainData_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3c30usize)as*mut u8, ::unity2::Il2CppString;
-(TerrainData_2)__receiver)}
+__TerrainData_2_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TerrainData_2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21e3c40usize)as*mut u8,();
@@ -758,8 +788,8 @@ this}
 #[cfg(feature = "app-terraindata_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TerrainData_Prohibitions;
     pub use super::TerrainData_Commands;
+    pub use super::TerrainData_Prohibitions;
     pub use super::TerrainData_2;
     pub use super::ITerrainData_2;
     pub use super::ITerrainData_2Methods;

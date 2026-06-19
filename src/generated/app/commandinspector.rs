@@ -22,21 +22,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-commandinspector-types")]
 pub use __types::*;
 
+#[cfg(feature="app-commandinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CommandInspector_unity2_raw{use super:: * ;
+pub unsafe fn get_label(this:CommandInspector,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <CommandInspector as::unity2::ClassIdentity> ::NAME,"GetLabel",));
+let inner:extern "C" fn(CommandInspector, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_range(this:CommandInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <CommandInspector as::unity2::ClassIdentity> ::NAME,"GetRange",));
+let inner:extern "C" fn(CommandInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_color(this:CommandInspector,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <CommandInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
+let inner:extern "C" fn(CommandInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-commandinspector")]pub trait ICommandInspectorMethods:ICommandInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x252f560usize)as*mut u8,();
 (CommandInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
 }
 #[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x252f6b0usize)as*mut u8, ::unity2::Il2CppString;
-(CommandInspector)__receiver)}
+__CommandInspector_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x252f700usize)as*mut u8,i32;
-(CommandInspector)__receiver)}
+__CommandInspector_unity2_raw::get_range(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <CommandInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x252f710usize)as*mut u8,crate::unity_engine::color::Color;
-(CommandInspector)__receiver)}
+__CommandInspector_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
 }
 }
 

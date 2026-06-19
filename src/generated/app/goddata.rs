@@ -25,6 +25,60 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData.md"))]#[::unity2::class(namespace="App",name="GodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::goddata::GodData>)]pub struct GodData{#[offset(328)]#[rename(name="m_EngageHauntUnit")]pub m_engage_haunt_unit:crate::app::unit::Unit, #[static_field]#[rename(name="s_LinkDics")]pub s_link_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::goddata::GodData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_FlagField.md"))]#[::unity2::class(namespace="App",name="GodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::goddata::GodData_Flags>)]pub struct GodData_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_RelianceLevel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_RelianceLevel{pub value:i32,}
+impl::unity2::ClassIdentity for GodData_RelianceLevel{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GodData.RelianceLevel";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GodData_RelianceLevel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GodData_RelianceLevel{pub fn d()->Self{Self{value:0}
+}
+pub fn c()->Self{Self{value:1}
+}
+pub fn b()->Self{Self{value:2}
+}
+pub fn a()->Self{Self{value:3}
+}
+pub fn s()->Self{Self{value:4}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_Flags{pub value:i32,}
+impl::unity2::ClassIdentity for GodData_Flags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GodData.Flags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GodData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GodData_Flags{pub fn no_add_exp()->Self{Self{value:1}
+}
+pub fn enable_ring_list()->Self{Self{value:2}
+}
+pub fn unit_icon_darkness()->Self{Self{value:4}
+}
+pub fn gauge_darkness()->Self{Self{value:8}
+}
+pub fn only_engage_weapon()->Self{Self{value:16}
+}
+pub fn armlet()->Self{Self{value:32}
+}
+pub fn hero()->Self{Self{value: -2147483648}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_AIEngageAttackTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_AIEngageAttackTypes{pub value:i32,}
 impl::unity2::ClassIdentity for GodData_AIEngageAttackTypes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GodData.AIEngageAttackTypes";
@@ -56,96 +110,52 @@ pub fn summon()->Self{Self{value:9}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_FlagField.md"))]#[::unity2::class(namespace="App",name="GodData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::goddata::GodData_Flags>)]pub struct GodData_FlagField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_Flags{pub value:i32,}
-impl::unity2::ClassIdentity for GodData_Flags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GodData.Flags";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GodData_Flags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GodData_Flags{pub fn no_add_exp()->Self{Self{value:1}
-}
-pub fn enable_ring_list()->Self{Self{value:2}
-}
-pub fn unit_icon_darkness()->Self{Self{value:4}
-}
-pub fn gauge_darkness()->Self{Self{value:8}
-}
-pub fn only_engage_weapon()->Self{Self{value:16}
-}
-pub fn armlet()->Self{Self{value:32}
-}
-pub fn hero()->Self{Self{value: -2147483648}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData.md"))]#[::unity2::class(namespace="App",name="GodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::goddata::GodData>)]pub struct GodData{#[offset(328)]#[rename(name="m_EngageHauntUnit")]pub m_engage_haunt_unit:crate::app::unit::Unit, #[static_field]#[rename(name="s_LinkDics")]pub s_link_dics:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::goddata::GodData> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/goddata/GodData_RelianceLevel.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GodData_RelianceLevel{pub value:i32,}
-impl::unity2::ClassIdentity for GodData_RelianceLevel{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GodData.RelianceLevel";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GodData_RelianceLevel{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GodData_RelianceLevel{pub fn d()->Self{Self{value:0}
-}
-pub fn c()->Self{Self{value:1}
-}
-pub fn b()->Self{Self{value:2}
-}
-pub fn a()->Self{Self{value:3}
-}
-pub fn s()->Self{Self{value:4}
-}
-}
-
 }
 
 #[cfg(feature = "app-goddata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-goddata")]pub trait IGodData_FlagFieldMethods:IGodData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6510usize)as*mut u8,();
-(GodData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor(crate::app::goddata::GodData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::goddata::GodData_Flags>)->(){unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6570usize)as*mut u8,();
-(GodData_FlagField)__receiver,(crate::app::goddata::GodData_Flags)::core::convert::Into::into(f))}
-}
-#[doc="`ToInt(crate::app::goddata::GodData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::goddata::GodData_Flags>)->i32{unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd65d0usize)as*mut u8,i32;
-(GodData_FlagField)__receiver,(crate::app::goddata::GodData_Flags)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-goddata")]impl<__T:IGodData_FlagField>IGodData_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-goddata")]impl GodData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-goddata")]impl GodData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodData_FlagField), ::core::stringify!(new),));
- <Self as IGodData_FlagFieldMethods> ::ctor(this,f);
-this}
-#[doc="`.ctor(crate::app::goddata::GodData_Flags)` — overload selector"]pub fn new_2(f:crate::app::goddata::GodData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GodData_FlagField), ::core::stringify!(new_2),));
- <Self as IGodData_FlagFieldMethods> ::ctor_2(this,f);
-this}
+#[cfg(feature="app-goddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:GodData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GodData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(GodData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_completed(this:GodData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GodData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
+let inner:extern "C" fn(GodData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_release(this:GodData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GodData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let inner:extern "C" fn(GodData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:GodData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GodData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(GodData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-goddata")]impl GodData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x232d780usize)as*mut u8,();
@@ -543,20 +553,16 @@ this}
 (GodData)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x232e3b0usize)as*mut u8,();
-(GodData)__receiver)}
+__GodData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x232e590usize)as*mut u8,();
-(GodData)__receiver)}
+__GodData_unity2_raw::on_completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x232e6b0usize)as*mut u8,();
-(GodData)__receiver)}
+__GodData_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x232e750usize)as*mut u8, ::unity2::Il2CppString;
-(GodData)__receiver)}
+__GodData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetGender()` overload"]fn get_gender(self,)->crate::app::gender::Gender{unsafe{let __receiver= <GodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x232e760usize)as*mut u8,crate::app::gender::Gender;
@@ -714,18 +720,63 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-goddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodData_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:GodData_FlagField,value:crate::app::goddata::GodData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GodData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(GodData_FlagField,crate::app::goddata::GodData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-goddata")]pub trait IGodData_FlagFieldMethods:IGodData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6510usize)as*mut u8,();
+(GodData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::goddata::GodData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::goddata::GodData_Flags>)->(){unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cd6570usize)as*mut u8,();
+(GodData_FlagField)__receiver,(crate::app::goddata::GodData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::goddata::GodData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::goddata::GodData_Flags>)->i32{unsafe{let __receiver= <GodData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GodData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-goddata")]impl<__T:IGodData_FlagField>IGodData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-goddata")]impl GodData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-goddata")]impl GodData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodData_FlagField), ::core::stringify!(new),));
+ <Self as IGodData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::goddata::GodData_Flags)` — overload selector"]pub fn new_2(f:crate::app::goddata::GodData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GodData_FlagField), ::core::stringify!(new_2),));
+ <Self as IGodData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
+
 #[cfg(feature = "app-goddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GodData_AIEngageAttackTypes;
-    pub use super::GodData_FlagField;
-    pub use super::IGodData_FlagField;
-    pub use super::IGodData_FlagFieldMethods;
-    pub use super::GodData_Flags;
     pub use super::GodData;
     pub use super::IGodData;
     pub use super::IGodDataMethods;
+    pub use super::GodData_FlagField;
+    pub use super::IGodData_FlagField;
+    pub use super::IGodData_FlagFieldMethods;
     pub use super::GodData_RelianceLevel;
+    pub use super::GodData_Flags;
+    pub use super::GodData_AIEngageAttackTypes;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

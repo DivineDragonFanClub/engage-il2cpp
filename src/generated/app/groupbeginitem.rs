@@ -20,6 +20,79 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-groupbeginitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-groupbeginitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GroupBeginItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:GroupBeginItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GroupBeginItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(GroupBeginItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_help(this:GroupBeginItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GroupBeginItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
+let inner:extern "C" fn(GroupBeginItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_kind(this:GroupBeginItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Kind{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GroupBeginItem as::unity2::ClassIdentity> ::NAME,"GetKind",));
+let inner:extern "C" fn(GroupBeginItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Kind= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_font_color(this:GroupBeginItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <GroupBeginItem as::unity2::ClassIdentity> ::NAME,"GetFontColor",));
+let inner:extern "C" fn(GroupBeginItem, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:GroupBeginItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GroupBeginItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(GroupBeginItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn left_call(this:GroupBeginItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <GroupBeginItem as::unity2::ClassIdentity> ::NAME,"LeftCall",));
+let inner:extern "C" fn(GroupBeginItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn right_call(this:GroupBeginItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <GroupBeginItem as::unity2::ClassIdentity> ::NAME,"RightCall",));
+let inner:extern "C" fn(GroupBeginItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-groupbeginitem")]impl GroupBeginItem{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2978170usize)as*mut u8,();
 )}
 }
@@ -34,32 +107,25 @@ pub use __types::*;
 (GroupBeginItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(english),(crate::app::menuitem::MenuItem_State)::core::convert::Into::into(state))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2977f20usize)as*mut u8, ::unity2::Il2CppString;
-(GroupBeginItem)__receiver)}
+__GroupBeginItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2977fa0usize)as*mut u8, ::unity2::Il2CppString;
-(GroupBeginItem)__receiver)}
+__GroupBeginItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::menuitem::MenuItem_Kind{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2978010usize)as*mut u8,crate::app::menuitem::MenuItem_Kind;
-(GroupBeginItem)__receiver)}
+__GroupBeginItem_unity2_raw::get_kind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetFontColor()` overload"]fn get_font_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2978020usize)as*mut u8,crate::unity_engine::color::Color;
-(GroupBeginItem)__receiver)}
+__GroupBeginItem_unity2_raw::get_font_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2978090usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(GroupBeginItem)__receiver)}
+__GroupBeginItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LeftCall()` overload"]fn left_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29780f0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(GroupBeginItem)__receiver)}
+__GroupBeginItem_unity2_raw::left_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RightCall()` overload"]fn right_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2978130usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(GroupBeginItem)__receiver)}
+__GroupBeginItem_unity2_raw::right_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ChangeState(crate::app::menuitem::MenuItem_State)` overload"]fn change_state(self,state:impl::core::convert::Into<crate::app::menuitem::MenuItem_State>)->(){unsafe{let __receiver= <GroupBeginItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x29780d0usize)as*mut u8,();

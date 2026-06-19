@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesc/ProcDesc.md"))]#[::unity2::class(namespace="App",name="ProcDesc")]#[parent(crate::system::object::Object)]pub struct ProcDesc{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::procdesc::ProcDesc_Type,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesc/ProcDesc_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProcDesc_Type{pub value:i32,}
 impl::unity2::ClassIdentity for ProcDesc_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProcDesc.Type";
@@ -91,30 +88,63 @@ pub fn pop()->Self{Self{value:8}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procdesc/ProcDesc.md"))]#[::unity2::class(namespace="App",name="ProcDesc")]#[parent(crate::system::object::Object)]pub struct ProcDesc{#[offset(16)]#[rename(name="m_Type")]pub m_type:crate::app::procdesc::ProcDesc_Type,}
+
 }
 
 #[cfg(feature = "app-procdesc-types")]
 pub use __types::*;
+
+#[cfg(feature="app-procdesc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDesc_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:ProcDesc,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProcDesc as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(ProcDesc,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+pub unsafe fn get_label(this:ProcDesc,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ProcDesc as::unity2::ClassIdentity> ::NAME,"get_Label",));
+let inner:extern "C" fn(ProcDesc, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_persistent(this:ProcDesc,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procvoidmethod::ProcVoidMethod{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ProcDesc as::unity2::ClassIdentity> ::NAME,"get_Persistent",));
+let inner:extern "C" fn(ProcDesc, ::unity2::OptionalMethod,)->crate::app::procvoidmethod::ProcVoidMethod= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-procdesc")]pub trait IProcDescMethods:IProcDesc{#[doc="`.ctor(crate::app::procdesc::ProcDesc_Type)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::procdesc::ProcDesc_Type>)->(){unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd20usize)as*mut u8,();
 (ProcDesc)__receiver,(crate::app::procdesc::ProcDesc_Type)::core::convert::Into::into(r#type))}
 }
 #[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd50usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
-(ProcDesc)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+__ProcDesc_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 #[doc="`get_DescType()` overload"]fn get_desc_type(self,)->crate::app::procdesc::ProcDesc_Type{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd60usize)as*mut u8,crate::app::procdesc::ProcDesc_Type;
 (ProcDesc)__receiver)}
 }
 #[doc="`get_Label()` overload"]fn get_label(self,)->i32{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd70usize)as*mut u8,i32;
-(ProcDesc)__receiver)}
+__ProcDesc_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Persistent()` overload"]fn get_persistent(self,)->crate::app::procvoidmethod::ProcVoidMethod{unsafe{let __receiver= <ProcDesc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281cd80usize)as*mut u8,crate::app::procvoidmethod::ProcVoidMethod;
-(ProcDesc)__receiver)}
+__ProcDesc_unity2_raw::get_persistent(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -137,11 +167,11 @@ this}
 #[cfg(feature = "app-procdesc")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProcDesc_Type;
+    pub use super::ProcDesc_Result;
     pub use super::ProcDesc;
     pub use super::IProcDesc;
     pub use super::IProcDescMethods;
-    pub use super::ProcDesc_Type;
-    pub use super::ProcDesc_Result;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -11,15 +11,26 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/singletonpool_2/SingletonPool_2.md"))]#[::unity2::class(namespace="App",name="SingletonPool`2")]#[parent(crate::app::singletonclass_1::SingletonClass_1<T0>)]#[parent(crate::system::object::Object)]pub struct SingletonPool_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{#[static_field]#[rename(name="OnlineInstanceID")]pub online_instance_id:i32, #[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<T1> , #[rename(name="m_Sort")]pub m_sort:crate::system::collections::generic::list_1::List_1<T1> , #[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::linkedlist_1::LinkedList_1<T1> , #[rename(name="m_Used")]pub m_used:crate::system::collections::generic::linkedlist_1::LinkedList_1<T1> , #[rename(name="m_Compare")]pub m_compare:crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T1> , #[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,T1> , #[rename(name="m_InstanceIDs")]pub m_instance_i_ds:crate::system::collections::generic::queue_1::Queue_1<i32> , #[rename(name="m_IsOnline")]pub m_is_online:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/singletonpool_2/SingletonPool_2_Comparer.md"))]#[::unity2::class(namespace="App",name="SingletonPool`2.Comparer")]#[parent(crate::system::object::Object)]pub struct SingletonPool_2_Comparer<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/singletonpool_2/SingletonPool_2.md"))]#[::unity2::class(namespace="App",name="SingletonPool`2")]#[parent(crate::app::singletonclass_1::SingletonClass_1<T0>)]#[parent(crate::system::object::Object)]pub struct SingletonPool_2<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>{#[static_field]#[rename(name="OnlineInstanceID")]pub online_instance_id:i32, #[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<T1> , #[rename(name="m_Sort")]pub m_sort:crate::system::collections::generic::list_1::List_1<T1> , #[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::linkedlist_1::LinkedList_1<T1> , #[rename(name="m_Used")]pub m_used:crate::system::collections::generic::linkedlist_1::LinkedList_1<T1> , #[rename(name="m_Compare")]pub m_compare:crate::system::collections::generic::icomparer_1_interface::IComparer_1_Interface<T1> , #[rename(name="m_Dictionary")]pub m_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,T1> , #[rename(name="m_InstanceIDs")]pub m_instance_i_ds:crate::system::collections::generic::queue_1::Queue_1<i32> , #[rename(name="m_IsOnline")]pub m_is_online:bool,}
 
 }
 
 #[cfg(feature = "app-singletonpool_2-types")]
 pub use __types::*;
+
+#[cfg(feature="app-singletonpool_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>SingletonPool_2_Comparer<T0,T1>{#[doc="`Compare(T1, T1)` overload"]#[method(name="Compare",args=2)]pub fn compare(self,x:T1,y:T1)->i32;
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+}
+
+#[cfg(feature="app-singletonpool_2")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>SingletonPool_2_Comparer<T0,T1>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SingletonPool_2_Comparer), ::core::stringify!(new),));
+ <Self as ISingletonPool_2_ComparerMethods<T0,T1> > ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-singletonpool_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>SingletonPool_2<T0,T1>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,capacity:i32)->();
  #[doc="`CreateImpl(i32)` overload"]#[method(name="CreateImpl",args=1)]pub fn create_impl(self,instance_id:i32)->T1;
@@ -52,26 +63,15 @@ pub use __types::*;
 this}
 }
 
-#[cfg(feature="app-singletonpool_2")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>SingletonPool_2_Comparer<T0,T1>{#[doc="`Compare(T1, T1)` overload"]#[method(name="Compare",args=2)]pub fn compare(self,x:T1,y:T1)->i32;
- #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
-}
-
-#[cfg(feature="app-singletonpool_2")]impl<T0: ::unity2::ClassIdentity,T1: ::unity2::ClassIdentity>SingletonPool_2_Comparer<T0,T1>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SingletonPool_2_Comparer), ::core::stringify!(new),));
- <Self as ISingletonPool_2_ComparerMethods<T0,T1> > ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-singletonpool_2")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SingletonPool_2;
-    pub use super::ISingletonPool_2;
-    pub use super::ISingletonPool_2Methods;
     pub use super::SingletonPool_2_Comparer;
     pub use super::ISingletonPool_2_Comparer;
     pub use super::ISingletonPool_2_ComparerMethods;
+    pub use super::SingletonPool_2;
+    pub use super::ISingletonPool_2;
+    pub use super::ISingletonPool_2Methods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-singletonclass_1")] pub use crate::app::singletonclass_1::ISingletonClass_1Methods;

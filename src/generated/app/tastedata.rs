@@ -117,6 +117,19 @@ pub fn g()->Self{Self{value:8}
 #[cfg(feature = "app-tastedata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-tastedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TasteData_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:TasteData_FlagField,value:crate::app::tastedata::TasteData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TasteData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(TasteData_FlagField,crate::app::tastedata::TasteData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="app-tastedata")]pub trait ITasteData_FlagFieldMethods:ITasteData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TasteData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21ff710usize)as*mut u8,();
 (TasteData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
@@ -126,8 +139,7 @@ pub use __types::*;
 (TasteData_FlagField)__receiver,(crate::app::tastedata::TasteData_Flags)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::tastedata::TasteData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::tastedata::TasteData_Flags>)->i32{unsafe{let __receiver= <TasteData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21ff7d0usize)as*mut u8,i32;
-(TasteData_FlagField)__receiver,(crate::app::tastedata::TasteData_Flags)::core::convert::Into::into(value))}
+__TasteData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 
@@ -148,6 +160,19 @@ this}
  failed to instantiate", ::core::stringify!(TasteData_FlagField), ::core::stringify!(new_2),));
  <Self as ITasteData_FlagFieldMethods> ::ctor_2(this,f);
 this}
+}
+
+#[cfg(feature="app-tastedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TasteData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:TasteData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TasteData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(TasteData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-tastedata")]impl TasteData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21deea0usize)as*mut u8,();
@@ -248,8 +273,7 @@ this}
 (TasteData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21df0b0usize)as*mut u8, ::unity2::Il2CppString;
-(TasteData)__receiver)}
+__TasteData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsConditional()` overload"]fn is_conditional(self,)->bool{unsafe{let __receiver= <TasteData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21df130usize)as*mut u8,bool;

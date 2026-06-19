@@ -17,40 +17,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structdata_1/StructData_1.md"))]#[::unity2::class(namespace="App",name="StructData`1")]#[parent(crate::app::structtemplate_1::StructTemplate_1<T0>)]#[parent(crate::app::structbase::StructBase)]#[parent(crate::system::object::Object)]pub struct StructData_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_list")]pub s_list:crate::app::structlist_1::StructList_1<T0> , #[static_field]#[rename(name="s_loaded")]pub s_loaded:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structdata_1/StructData_1_EachFuncBool.md"))]#[::unity2::class(namespace="App",name="StructData`1.EachFuncBool")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct StructData_1_EachFuncBool<T0: ::unity2::ClassIdentity>{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structdata_1/StructData_1_EachFuncVoid.md"))]#[::unity2::class(namespace="App",name="StructData`1.EachFuncVoid")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]#[parent(crate::system::delegate::Delegate)]#[parent(crate::system::object::Object)]pub struct StructData_1_EachFuncVoid<T0: ::unity2::ClassIdentity>{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/structdata_1/StructData_1.md"))]#[::unity2::class(namespace="App",name="StructData`1")]#[parent(crate::app::structtemplate_1::StructTemplate_1<T0>)]#[parent(crate::app::structbase::StructBase)]#[parent(crate::system::object::Object)]pub struct StructData_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="s_list")]pub s_list:crate::app::structlist_1::StructList_1<T0> , #[static_field]#[rename(name="s_loaded")]pub s_loaded:bool,}
-
 }
 
 #[cfg(feature = "app-structdata_1-types")]
 pub use __types::*;
-
-#[cfg(feature="app-structdata_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncBool<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
- #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,data:T0)->bool;
-}
-
-#[cfg(feature="app-structdata_1")]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncBool<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(StructData_1_EachFuncBool), ::core::stringify!(new),));
- <Self as IStructData_1_EachFuncBoolMethods<T0> > ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-structdata_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncVoid<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
- #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,data:T0)->();
-}
-
-#[cfg(feature="app-structdata_1")]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncVoid<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(StructData_1_EachFuncVoid), ::core::stringify!(new),));
- <Self as IStructData_1_EachFuncVoidMethods<T0> > ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-structdata_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>StructData_1<T0>{#[doc="`AddPublicLabel(T0)` overload"]#[method(name="AddPublicLabel",args=1)]pub fn add_public_label(instance:T0)->();
  #[doc="`get_PublicNames()` overload"]#[method(name="get_PublicNames",args=0)]pub fn get_public_names()-> ::unity2::Array< ::unity2::Il2CppString> ;
@@ -84,18 +62,40 @@ this}
 this}
 }
 
+#[cfg(feature="app-structdata_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncBool<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,data:T0)->bool;
+}
+
+#[cfg(feature="app-structdata_1")]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncBool<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructData_1_EachFuncBool), ::core::stringify!(new),));
+ <Self as IStructData_1_EachFuncBoolMethods<T0> > ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-structdata_1")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncVoid<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]#[method(name=".ctor",args=2)]pub fn ctor(self,object:crate::system::object::Object,method: ::unity2::IntPtr)->();
+ #[doc="`Invoke(T0)` overload"]#[method(name="Invoke",args=1)]pub fn invoke(self,data:T0)->();
+}
+
+#[cfg(feature="app-structdata_1")]impl<T0: ::unity2::ClassIdentity>StructData_1_EachFuncVoid<T0>{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(StructData_1_EachFuncVoid), ::core::stringify!(new),));
+ <Self as IStructData_1_EachFuncVoidMethods<T0> > ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-structdata_1")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::StructData_1;
+    pub use super::IStructData_1;
+    pub use super::IStructData_1Methods;
     pub use super::StructData_1_EachFuncBool;
     pub use super::IStructData_1_EachFuncBool;
     pub use super::IStructData_1_EachFuncBoolMethods;
     pub use super::StructData_1_EachFuncVoid;
     pub use super::IStructData_1_EachFuncVoid;
     pub use super::IStructData_1_EachFuncVoidMethods;
-    pub use super::StructData_1;
-    pub use super::IStructData_1;
-    pub use super::IStructData_1Methods;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structtemplate_1::IStructTemplate_1;
     pub use crate::system::delegate::IDelegate;

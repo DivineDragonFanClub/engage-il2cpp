@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-iwireabledescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IWireableDescriptor_unity2_raw{use super:: * ;
-pub unsafe fn prepare_for_wiring(this:IWireableDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareForWiring").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareForWiring", <IWireableDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn prepare_for_wiring(this:IWireableDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IWireableDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
 let inner:extern "C" fn(IWireableDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

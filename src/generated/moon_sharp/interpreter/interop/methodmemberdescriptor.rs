@@ -109,36 +109,36 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <MethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"CheckMethodIsCompatible",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_execute{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<MethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"Execute",4,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <MethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Execute",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<MethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <MethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_prepare_for_wiring{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<MethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"PrepareForWiring",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <MethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",e),}
-}
-}
+pub unsafe fn execute(this:MethodMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <MethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(MethodMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,context,args,__mi)}
+pub unsafe fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(this:MethodMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize",));
+let inner:extern "C" fn(MethodMemberDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn prepare_for_wiring(this:MethodMemberDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <MethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
+let inner:extern "C" fn(MethodMemberDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-methodmemberdescriptor")]impl MethodMemberDescriptor{#[doc="`TryCreateIfVisible(crate::system::reflection::methodbase::MethodBase, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode, bool)` overload"]pub fn try_create_if_visible(method_base:impl::core::convert::Into<crate::system::reflection::methodbase::MethodBase> ,access_mode:impl::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode> ,force_visibility:impl::core::convert::Into<bool>)->crate::moon_sharp::interpreter::interop::methodmemberdescriptor::MethodMemberDescriptor{unsafe{::unity2::il2cpp_call!(__MethodMemberDescriptor_unity2_raw::__lookup_try_create_if_visible::get_method_info().method_ptr,crate::moon_sharp::interpreter::interop::methodmemberdescriptor::MethodMemberDescriptor;
@@ -178,16 +178,13 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (MethodMemberDescriptor)__receiver,(crate::system::reflection::methodbase::MethodBase)::core::convert::Into::into(method_base),(crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)::core::convert::Into::into(access_mode))}
 }
 #[doc="`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]fn execute(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <MethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__MethodMemberDescriptor_unity2_raw::__lookup_execute::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(MethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj),(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(context),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
+__MethodMemberDescriptor_unity2_raw::execute(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(context), ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`MoonSharp.Interpreter.Interop.BasicDescriptors.IOptimizableDescriptor.Optimize()` overload"]fn moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(self,)->(){unsafe{let __receiver= <MethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__MethodMemberDescriptor_unity2_raw::__lookup_moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize::get_method_info().method_ptr,();
-(MethodMemberDescriptor)__receiver)}
+__MethodMemberDescriptor_unity2_raw::moon_sharp_interpreter_interop_basic_descriptors_i_optimizable_descriptor_optimize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <MethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__MethodMemberDescriptor_unity2_raw::__lookup_prepare_for_wiring::get_method_info().method_ptr,();
-(MethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(t))}
+__MethodMemberDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 }
 

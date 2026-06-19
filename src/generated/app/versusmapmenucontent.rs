@@ -26,6 +26,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-versusmapmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-versusmapmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VersusMapMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn calc_w(this:VersusMapMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <VersusMapMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(VersusMapMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:VersusMapMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <VersusMapMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(VersusMapMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_destroy(this:VersusMapMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <VersusMapMenuContent as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(VersusMapMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-versusmapmenucontent")]impl VersusMapMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26b0190usize)as*mut u8,();
 )}
 }
@@ -41,12 +74,10 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-versusmapmenucontent")]pub trait IVersusMapMenuContentMethods:IVersusMapMenuContent{#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0680usize)as*mut u8,f32;
-(VersusMapMenuContent)__receiver)}
+__VersusMapMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b06f0usize)as*mut u8,f32;
-(VersusMapMenuContent)__receiver)}
+__VersusMapMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b04c0usize)as*mut u8,();
@@ -61,8 +92,7 @@ pub use __types::*;
 (VersusMapMenuContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b0830usize)as*mut u8,();
-(VersusMapMenuContent)__receiver)}
+__VersusMapMenuContent_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusMapMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b08b0usize)as*mut u8,();

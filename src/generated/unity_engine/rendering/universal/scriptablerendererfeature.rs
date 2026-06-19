@@ -21,20 +21,46 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-rendering-universal-scriptablerendererfeature")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptableRendererFeature_unity2_raw{use super:: * ;
-pub unsafe fn create(this:ScriptableRendererFeature,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Create").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Create", <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn create(this:ScriptableRendererFeature,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Create",));
 let inner:extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn add_render_passes(this:ScriptableRendererFeature,renderer:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("AddRenderPasses").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","AddRenderPasses", <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn add_render_passes(this:ScriptableRendererFeature,renderer:crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"AddRenderPasses",));
 let inner:extern "C" fn(ScriptableRendererFeature,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,renderer,rendering_data,__mi)}
+pub unsafe fn dispose(this:ScriptableRendererFeature,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(ScriptableRendererFeature, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose_2(this:ScriptableRendererFeature,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ScriptableRendererFeature as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(ScriptableRendererFeature,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-scriptablerendererfeature")]pub trait IScriptableRendererFeatureMethods:IScriptableRendererFeature{#[doc="`get_isActive()` overload"]fn get_is_active(self,)->bool{unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -62,12 +88,10 @@ __out_0.assume_init()}
 (ScriptableRendererFeature)__receiver,(bool)::core::convert::Into::into(active))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed1c30usize)as*mut u8,();
-(ScriptableRendererFeature)__receiver)}
+__ScriptableRendererFeature_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ed6860usize)as*mut u8,();
-(ScriptableRendererFeature)__receiver,(bool)::core::convert::Into::into(disposing))}
+__ScriptableRendererFeature_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptableRendererFeature as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ecec10usize)as*mut u8,();

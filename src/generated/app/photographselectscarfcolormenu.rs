@@ -20,6 +20,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-photographselectscarfcolormenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-photographselectscarfcolormenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectScarfColorMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:PhotographSelectScarfColorMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <PhotographSelectScarfColorMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(PhotographSelectScarfColorMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-photographselectscarfcolormenu")]impl PhotographSelectScarfColorMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x269b2f0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager))}
 }
@@ -30,8 +43,7 @@ pub use __types::*;
 (PhotographSelectScarfColorMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectScarfColorMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x269b930usize)as*mut u8, ::unity2::Il2CppString;
-(PhotographSelectScarfColorMenu)__receiver)}
+__PhotographSelectScarfColorMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 }
 

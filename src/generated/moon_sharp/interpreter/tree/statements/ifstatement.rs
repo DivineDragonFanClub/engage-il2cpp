@@ -13,46 +13,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement_IfBlock.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree.Statements",name="IfStatement.IfBlock")]#[parent(crate::system::object::Object)]pub struct IfStatement_IfBlock{#[offset(16)]#[rename(name="Exp")]pub exp:crate::moon_sharp::interpreter::tree::expression::Expression, #[offset(24)]#[rename(name="Block")]pub block:crate::moon_sharp::interpreter::tree::statement::Statement, #[offset(32)]#[rename(name="StackFrame")]pub stack_frame:crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock, #[offset(40)]#[rename(name="Source")]pub source:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree.Statements",name="IfStatement")]#[parent(crate::moon_sharp::interpreter::tree::statement::Statement)]pub struct IfStatement{#[offset(32)]#[rename(name="m_Ifs")]pub m_ifs:crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock> , #[offset(40)]#[rename(name="m_Else")]pub m_else:crate::moon_sharp::interpreter::tree::statements::ifstatement::IfStatement_IfBlock, #[offset(48)]#[rename(name="m_End")]pub m_end:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/tree/statements/ifstatement/IfStatement_IfBlock.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Tree.Statements",name="IfStatement.IfBlock")]#[parent(crate::system::object::Object)]pub struct IfStatement_IfBlock{#[offset(16)]#[rename(name="Exp")]pub exp:crate::moon_sharp::interpreter::tree::expression::Expression, #[offset(24)]#[rename(name="Block")]pub block:crate::moon_sharp::interpreter::tree::statement::Statement, #[offset(32)]#[rename(name="StackFrame")]pub stack_frame:crate::moon_sharp::interpreter::execution::runtimescopeblock::RuntimeScopeBlock, #[offset(40)]#[rename(name="Source")]pub source:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement-types")]
 pub use __types::*;
-
-#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IfStatement_IfBlock_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<IfStatement_IfBlock as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <IfStatement_IfBlock as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]pub trait IIfStatement_IfBlockMethods:IIfStatement_IfBlock{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IfStatement_IfBlock as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__IfStatement_IfBlock_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(IfStatement_IfBlock)__receiver)}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]impl<__T:IIfStatement_IfBlock>IIfStatement_IfBlockMethods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]impl IfStatement_IfBlock{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]impl IfStatement_IfBlock{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IfStatement_IfBlock), ::core::stringify!(new),));
- <Self as IIfStatement_IfBlockMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IfStatement_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
@@ -85,16 +54,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <IfStatement as::unity2::ClassIdentity> ::NAME,"CreateElseBlock",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<IfStatement as::unity2::ClassIdentity> ::class(),"Compile",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <IfStatement as::unity2::ClassIdentity> ::NAME,"Compile",e),}
-}
-}
+pub unsafe fn compile(this:IfStatement,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IfStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
+let inner:extern "C" fn(IfStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]pub trait IIfStatementMethods:IIfStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>)->(){unsafe{let __receiver= <IfStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -110,8 +79,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (IfStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <IfStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__IfStatement_unity2_raw::__lookup_compile::get_method_info().method_ptr,();
-(IfStatement)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+__IfStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
 }
 }
 
@@ -130,15 +98,46 @@ pub fn compile_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
+#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IfStatement_IfBlock_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<IfStatement_IfBlock as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <IfStatement_IfBlock as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]pub trait IIfStatement_IfBlockMethods:IIfStatement_IfBlock{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IfStatement_IfBlock as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__IfStatement_IfBlock_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(IfStatement_IfBlock)__receiver)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]impl<__T:IIfStatement_IfBlock>IIfStatement_IfBlockMethods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]impl IfStatement_IfBlock{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-tree-statements-ifstatement")]impl IfStatement_IfBlock{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IfStatement_IfBlock), ::core::stringify!(new),));
+ <Self as IIfStatement_IfBlockMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "moon_sharp-interpreter-tree-statements-ifstatement")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IfStatement_IfBlock;
-    pub use super::IIfStatement_IfBlock;
-    pub use super::IIfStatement_IfBlockMethods;
     pub use super::IfStatement;
     pub use super::IIfStatement;
     pub use super::IIfStatementMethods;
+    pub use super::IfStatement_IfBlock;
+    pub use super::IIfStatement_IfBlock;
+    pub use super::IIfStatement_IfBlockMethods;
     pub use crate::moon_sharp::interpreter::tree::nodebase::INodeBase;
     pub use crate::moon_sharp::interpreter::tree::statement::IStatement;
     pub use crate::system::object::IObject;

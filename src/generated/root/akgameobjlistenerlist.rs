@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akgameobjlistenerlist-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akgameobjlistenerlist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkGameObjListenerList_unity2_raw{use super:: * ;
+pub unsafe fn add(this:AkGameObjListenerList,listener:crate::root::akaudiolistener::AkAudioListener,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkGameObjListenerList as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(AkGameObjListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,listener,__mi)}
+pub unsafe fn remove(this:AkGameObjListenerList,listener:crate::root::akaudiolistener::AkAudioListener,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkGameObjListenerList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(AkGameObjListenerList,crate::root::akaudiolistener::AkAudioListener, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,listener,__mi)}
+}
+
 #[cfg(feature="root-akgameobjlistenerlist")]pub trait IAkGameObjListenerListMethods:IAkGameObjListenerList{#[doc="`SetUseDefaultListeners(bool)` overload"]fn set_use_default_listeners(self,use_default:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkGameObjListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f310usize)as*mut u8,();
 (AkGameObjListenerList)__receiver,(bool)::core::convert::Into::into(use_default))}
@@ -27,12 +50,10 @@ pub use __types::*;
 (AkGameObjListenerList)__receiver,(crate::root::akgameobj::AkGameObj)::core::convert::Into::into(ak_game_obj))}
 }
 #[doc="`Add(crate::root::akaudiolistener::AkAudioListener)` overload"]fn add(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkGameObjListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f4e0usize)as*mut u8,bool;
-(AkGameObjListenerList)__receiver,(crate::root::akaudiolistener::AkAudioListener)::core::convert::Into::into(listener))}
+__AkGameObjListenerList_unity2_raw::add(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)}
 }
 #[doc="`Remove(crate::root::akaudiolistener::AkAudioListener)` overload"]fn remove(self,listener:impl::core::convert::Into<crate::root::akaudiolistener::AkAudioListener>)->bool{unsafe{let __receiver= <AkGameObjListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1f5d0usize)as*mut u8,bool;
-(AkGameObjListenerList)__receiver,(crate::root::akaudiolistener::AkAudioListener)::core::convert::Into::into(listener))}
+__AkGameObjListenerList_unity2_raw::remove(__receiver, ::core::convert::Into::into(listener), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkGameObjListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1ea60usize)as*mut u8,();

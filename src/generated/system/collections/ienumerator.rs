@@ -15,23 +15,32 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="system-collections-ienumerator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IEnumerator_unity2_raw{use super:: * ;
-pub unsafe fn move_next(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("MoveNext").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","MoveNext", <IEnumerator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn move_next(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
 let inner:extern "C" fn(IEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_current(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Current").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Current", <IEnumerator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_current(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
 let inner:extern "C" fn(IEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn reset(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Reset").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Reset", <IEnumerator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn reset(this:IEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
 let inner:extern "C" fn(IEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

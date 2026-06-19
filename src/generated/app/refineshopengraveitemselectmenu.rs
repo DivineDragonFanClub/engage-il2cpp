@@ -22,6 +22,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-refineshopengraveitemselectmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refineshopengraveitemselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopEngraveItemSelectMenu_unity2_raw{use super:: * ;
+pub unsafe fn rebuild_menu_item(this:RefineShopEngraveItemSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <RefineShopEngraveItemSelectMenu as::unity2::ClassIdentity> ::NAME,"RebuildMenuItem",));
+let inner:extern "C" fn(RefineShopEngraveItemSelectMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshopengraveitemselectmenu")]impl RefineShopEngraveItemSelectMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::unity_engine::gameobject::GameObject, crate::app::unit::Unit, i32, crate::app::itemdata::ItemData_Kinds, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler, crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,default_unit:impl::core::convert::Into<crate::app::unit::Unit> ,default_item_index:impl::core::convert::Into<i32> ,default_item_kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds> ,select_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler>)->crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x295d9c0usize)as*mut u8,crate::app::refineshopengraveitemselectmenu::RefineShopEngraveItemSelectMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(menu_object),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(default_item_kind),(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
 }
@@ -38,8 +51,7 @@ pub use __types::*;
 (RefineShopEngraveItemSelectMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::refineshoprefinebasemenucontent::RefineShopRefineBaseMenuContent)::core::convert::Into::into(menu_content),(crate::app::unit::Unit)::core::convert::Into::into(default_unit),(i32)::core::convert::Into::into(default_item_index),(crate::app::itemdata::ItemData_Kinds)::core::convert::Into::into(kind),(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler),(crate::app::refineshoprefinebasemenu::RefineShopRefineBaseMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
 }
 #[doc="`RebuildMenuItem()` overload"]fn rebuild_menu_item(self,)->(){unsafe{let __receiver= <RefineShopEngraveItemSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x295e860usize)as*mut u8,();
-(RefineShopEngraveItemSelectMenu)__receiver)}
+__RefineShopEngraveItemSelectMenu_unity2_raw::rebuild_menu_item(__receiver, ::core::option::Option::None)}
 }
 }
 

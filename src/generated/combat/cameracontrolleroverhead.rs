@@ -26,17 +26,47 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-cameracontrolleroverhead-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-cameracontrolleroverhead")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CameraControllerOverHead_unity2_raw{use super:: * ;
+pub unsafe fn check_usable(this:CameraControllerOverHead,is_routine:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CameraControllerOverHead as::unity2::ClassIdentity> ::NAME,"CheckUsable",));
+let inner:extern "C" fn(CameraControllerOverHead,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_routine,__mi)}
+pub unsafe fn activate(this:CameraControllerOverHead,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CameraControllerOverHead as::unity2::ClassIdentity> ::NAME,"Activate",));
+let inner:extern "C" fn(CameraControllerOverHead, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_camera_targets(this:CameraControllerOverHead,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<i32>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CameraControllerOverHead as::unity2::ClassIdentity> ::NAME,"GetCameraTargets",));
+let inner:extern "C" fn(CameraControllerOverHead, ::unity2::OptionalMethod,)-> ::unity2::Array<i32> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-cameracontrolleroverhead")]pub trait ICameraControllerOverHeadMethods:ICameraControllerOverHead{#[doc="`CheckUsable(bool)` overload"]fn check_usable(self,is_routine:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2410usize)as*mut u8,();
-(CameraControllerOverHead)__receiver,(bool)::core::convert::Into::into(is_routine))}
+__CameraControllerOverHead_unity2_raw::check_usable(__receiver, ::core::convert::Into::into(is_routine), ::core::option::Option::None)}
 }
 #[doc="`Activate()` overload"]fn activate(self,)->(){unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2510usize)as*mut u8,();
-(CameraControllerOverHead)__receiver)}
+__CameraControllerOverHead_unity2_raw::activate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCameraTargets()` overload"]fn get_camera_targets(self,)-> ::unity2::Array<i32>{unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25b2540usize)as*mut u8, ::unity2::Array<i32> ;
-(CameraControllerOverHead)__receiver)}
+__CameraControllerOverHead_unity2_raw::get_camera_targets(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraControllerOverHead as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25b25b0usize)as*mut u8,();

@@ -21,6 +21,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetmenu/RefreshUnitSetMenu.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefreshUnitSetMenu{#[offset(200)]#[rename(name="m_SelectFacilityEventHandler")]pub m_select_facility_event_handler:crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SelectFacilityEventHandler, #[offset(208)]#[rename(name="m_SetUnitEventHandler")]pub m_set_unit_event_handler:crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SetUnitEventHandler, #[offset(216)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshunitsetmenu::RefreshUnitSetMenu_DecideEventHandler, #[offset(224)]#[rename(name="m_DecideMenu")]pub m_decide_menu:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu, #[offset(232)]#[rename(name="m_FacilityIndex")]pub m_facility_index:i32, #[offset(240)]#[rename(name="m_Unit")]pub m_unit:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Array<crate::app::unit::Unit> > ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetmenu/RefreshUnitSetMenu_Result2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefreshUnitSetMenu_Result2{pub value:i32,}
 impl::unity2::ClassIdentity for RefreshUnitSetMenu_Result2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RefreshUnitSetMenu.Result2";
@@ -41,13 +44,10 @@ pub fn cancel()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SelectFacilityEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetMenu.SelectFacilityEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetMenu_SelectFacilityEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetmenu/RefreshUnitSetMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetMenu_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetmenu/RefreshUnitSetMenu.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefreshUnitSetMenu{#[offset(200)]#[rename(name="m_SelectFacilityEventHandler")]pub m_select_facility_event_handler:crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SelectFacilityEventHandler, #[offset(208)]#[rename(name="m_SetUnitEventHandler")]pub m_set_unit_event_handler:crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SetUnitEventHandler, #[offset(216)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::refreshunitsetmenu::RefreshUnitSetMenu_DecideEventHandler, #[offset(224)]#[rename(name="m_DecideMenu")]pub m_decide_menu:crate::app::refreshunitsetdecidemenu::RefreshUnitSetDecideMenu, #[offset(232)]#[rename(name="m_FacilityIndex")]pub m_facility_index:i32, #[offset(240)]#[rename(name="m_Unit")]pub m_unit:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Array<crate::app::unit::Unit> > ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SelectFacilityEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetMenu.SelectFacilityEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetMenu_SelectFacilityEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refreshunitsetmenu/RefreshUnitSetMenu_SetUnitEventHandler.md"))]#[::unity2::class(namespace="App",name="RefreshUnitSetMenu.SetUnitEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefreshUnitSetMenu_SetUnitEventHandler{}
@@ -57,50 +57,87 @@ pub fn cancel()->Self{Self{value:3}
 #[cfg(feature = "app-refreshunitsetmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-refreshunitsetmenu")]pub trait IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods:IRefreshUnitSetMenu_SelectFacilityEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_SelectFacilityEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b030b0usize)as*mut u8,();
-(RefreshUnitSetMenu_SelectFacilityEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::hubfacilitydata::HubFacilityData)` overload"]fn invoke(self,facility_data:impl::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_SelectFacilityEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b030d0usize)as*mut u8,();
-(RefreshUnitSetMenu_SelectFacilityEventHandler)__receiver,(crate::app::hubfacilitydata::HubFacilityData)::core::convert::Into::into(facility_data))}
-}
-}
-
-#[cfg(feature="app-refreshunitsetmenu")]impl<__T:IRefreshUnitSetMenu_SelectFacilityEventHandler>IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods for __T{}
-
-#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_SelectFacilityEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_SelectFacilityEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefreshUnitSetMenu_SelectFacilityEventHandler), ::core::stringify!(new),));
- <Self as IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="app-refreshunitsetmenu")]pub trait IRefreshUnitSetMenu_DecideEventHandlerMethods:IRefreshUnitSetMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02d30usize)as*mut u8,();
-(RefreshUnitSetMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2, i32, crate::app::hubfacilitydata::HubFacilityData)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2> ,unit_index:impl::core::convert::Into<i32> ,facility_data:impl::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02d50usize)as*mut u8,();
-(RefreshUnitSetMenu_DecideEventHandler)__receiver,(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2)::core::convert::Into::into(result),(i32)::core::convert::Into::into(unit_index),(crate::app::hubfacilitydata::HubFacilityData)::core::convert::Into::into(facility_data))}
-}
-}
-
-#[cfg(feature="app-refreshunitsetmenu")]impl<__T:IRefreshUnitSetMenu_DecideEventHandler>IRefreshUnitSetMenu_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefreshUnitSetMenu_DecideEventHandler), ::core::stringify!(new),));
- <Self as IRefreshUnitSetMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-refreshunitsetmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefreshUnitSetMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:RefreshUnitSetMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RefreshUnitSetMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_up(this:RefreshUnitSetMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"KeyUp",));
+let inner:extern "C" fn(RefreshUnitSetMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_down(this:RefreshUnitSetMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"KeyDown",));
+let inner:extern "C" fn(RefreshUnitSetMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_left(this:RefreshUnitSetMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(RefreshUnitSetMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:RefreshUnitSetMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(RefreshUnitSetMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn l_call(this:RefreshUnitSetMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",54usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"LCall",));
+let inner:extern "C" fn(RefreshUnitSetMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RefreshUnitSetMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RefreshUnitSetMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:RefreshUnitSetMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefreshUnitSetMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(RefreshUnitSetMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent, crate::system::collections::generic::dictionary_2::Dictionary_2<::unity2::Il2CppString,::unity2::Array<crate::app::unit::Unit>>, crate::app::hubfacilitydata::HubFacilityData, crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SelectFacilityEventHandler, crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SetUnitEventHandler, crate::app::refreshunitsetmenu::RefreshUnitSetMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent> ,unit_array_dic:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Array<crate::app::unit::Unit> > > ,initial_facility_data:impl::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData> ,select_facility_event_handler:impl::core::convert::Into<crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SelectFacilityEventHandler> ,set_unit_event_handler:impl::core::convert::Into<crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SetUnitEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refreshunitsetmenu::RefreshUnitSetMenu_DecideEventHandler>)->crate::app::refreshunitsetmenu::RefreshUnitSetMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22bf540usize)as*mut u8,crate::app::refreshunitsetmenu::RefreshUnitSetMenu;
@@ -119,8 +156,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22c49f0usize)as*mut
 (RefreshUnitSetMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::refreshunitsetmenucontent::RefreshUnitSetMenuContent)::core::convert::Into::into(menu_content),(i32)::core::convert::Into::into(initial_select_index),(crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Array<crate::app::unit::Unit> >)::core::convert::Into::into(unit_array_dic),(crate::app::hubfacilitydata::HubFacilityData)::core::convert::Into::into(initial_facility_data),(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SelectFacilityEventHandler)::core::convert::Into::into(select_facility_event_handler),(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_SetUnitEventHandler)::core::convert::Into::into(set_unit_event_handler),(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c56a0usize)as*mut u8, ::unity2::Il2CppString;
-(RefreshUnitSetMenu)__receiver)}
+__RefreshUnitSetMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetFacilityData()` overload"]fn get_facility_data(self,)->crate::app::hubfacilitydata::HubFacilityData{unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22c56f0usize)as*mut u8,crate::app::hubfacilitydata::HubFacilityData;
@@ -187,32 +223,25 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x22c49f0usize)as*mut
 (RefreshUnitSetMenu)__receiver)}
 }
 #[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6030usize)as*mut u8,();
-(RefreshUnitSetMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefreshUnitSetMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6060usize)as*mut u8,();
-(RefreshUnitSetMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefreshUnitSetMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6090usize)as*mut u8,();
-(RefreshUnitSetMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefreshUnitSetMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6130usize)as*mut u8,();
-(RefreshUnitSetMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefreshUnitSetMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`LCall()` overload"]fn l_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6240usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefreshUnitSetMenu)__receiver)}
+__RefreshUnitSetMenu_unity2_raw::l_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c6260usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefreshUnitSetMenu)__receiver)}
+__RefreshUnitSetMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RefreshUnitSetMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22c62b0usize)as*mut u8,();
-(RefreshUnitSetMenu)__receiver)}
+__RefreshUnitSetMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -254,13 +283,95 @@ pub fn on_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
+#[cfg(feature="app-refreshunitsetmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefreshUnitSetMenu_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefreshUnitSetMenu_DecideEventHandler,result:crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2,unit_index:i32,facility_data:crate::app::hubfacilitydata::HubFacilityData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefreshUnitSetMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefreshUnitSetMenu_DecideEventHandler,crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2,i32,crate::app::hubfacilitydata::HubFacilityData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,unit_index,facility_data,__mi)}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]pub trait IRefreshUnitSetMenu_DecideEventHandlerMethods:IRefreshUnitSetMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b02d30usize)as*mut u8,();
+(RefreshUnitSetMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2, i32, crate::app::hubfacilitydata::HubFacilityData)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::refreshunitsetmenu::RefreshUnitSetMenu_Result2> ,unit_index:impl::core::convert::Into<i32> ,facility_data:impl::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RefreshUnitSetMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::convert::Into::into(unit_index), ::core::convert::Into::into(facility_data), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]impl<__T:IRefreshUnitSetMenu_DecideEventHandler>IRefreshUnitSetMenu_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSetMenu_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSetMenu_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefreshUnitSetMenu_SelectFacilityEventHandler,facility_data:crate::app::hubfacilitydata::HubFacilityData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefreshUnitSetMenu_SelectFacilityEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefreshUnitSetMenu_SelectFacilityEventHandler,crate::app::hubfacilitydata::HubFacilityData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,facility_data,__mi)}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]pub trait IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods:IRefreshUnitSetMenu_SelectFacilityEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_SelectFacilityEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b030b0usize)as*mut u8,();
+(RefreshUnitSetMenu_SelectFacilityEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::hubfacilitydata::HubFacilityData)` overload"]fn invoke(self,facility_data:impl::core::convert::Into<crate::app::hubfacilitydata::HubFacilityData>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_SelectFacilityEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RefreshUnitSetMenu_SelectFacilityEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(facility_data), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]impl<__T:IRefreshUnitSetMenu_SelectFacilityEventHandler>IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_SelectFacilityEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]impl RefreshUnitSetMenu_SelectFacilityEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefreshUnitSetMenu_SelectFacilityEventHandler), ::core::stringify!(new),));
+ <Self as IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-refreshunitsetmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefreshUnitSetMenu_SetUnitEventHandler,unit_index:i32,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefreshUnitSetMenu_SetUnitEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefreshUnitSetMenu_SetUnitEventHandler,i32,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit_index,unit,__mi)}
+}
+
 #[cfg(feature="app-refreshunitsetmenu")]pub trait IRefreshUnitSetMenu_SetUnitEventHandlerMethods:IRefreshUnitSetMenu_SetUnitEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_SetUnitEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b03470usize)as*mut u8,();
 (RefreshUnitSetMenu_SetUnitEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(i32, crate::app::unit::Unit)` overload"]fn invoke(self,unit_index:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <RefreshUnitSetMenu_SetUnitEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b03490usize)as*mut u8,();
-(RefreshUnitSetMenu_SetUnitEventHandler)__receiver,(i32)::core::convert::Into::into(unit_index),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+__RefreshUnitSetMenu_SetUnitEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit_index), ::core::convert::Into::into(unit), ::core::option::Option::None)}
 }
 }
 
@@ -280,16 +391,16 @@ this}
 #[cfg(feature = "app-refreshunitsetmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefreshUnitSetMenu_Result2;
-    pub use super::RefreshUnitSetMenu_SelectFacilityEventHandler;
-    pub use super::IRefreshUnitSetMenu_SelectFacilityEventHandler;
-    pub use super::IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods;
-    pub use super::RefreshUnitSetMenu_DecideEventHandler;
-    pub use super::IRefreshUnitSetMenu_DecideEventHandler;
-    pub use super::IRefreshUnitSetMenu_DecideEventHandlerMethods;
     pub use super::RefreshUnitSetMenu;
     pub use super::IRefreshUnitSetMenu;
     pub use super::IRefreshUnitSetMenuMethods;
+    pub use super::RefreshUnitSetMenu_Result2;
+    pub use super::RefreshUnitSetMenu_DecideEventHandler;
+    pub use super::IRefreshUnitSetMenu_DecideEventHandler;
+    pub use super::IRefreshUnitSetMenu_DecideEventHandlerMethods;
+    pub use super::RefreshUnitSetMenu_SelectFacilityEventHandler;
+    pub use super::IRefreshUnitSetMenu_SelectFacilityEventHandler;
+    pub use super::IRefreshUnitSetMenu_SelectFacilityEventHandlerMethods;
     pub use super::RefreshUnitSetMenu_SetUnitEventHandler;
     pub use super::IRefreshUnitSetMenu_SetUnitEventHandler;
     pub use super::IRefreshUnitSetMenu_SetUnitEventHandlerMethods;

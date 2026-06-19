@@ -20,18 +20,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actiondamage-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actiondamage")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionDamage_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionDamage,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionDamage as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionDamage, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_abort_by_interrupt(this:ActionDamage,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ActionDamage as::unity2::ClassIdentity> ::NAME,"get_AbortByInterrupt",));
+let inner:extern "C" fn(ActionDamage, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:ActionDamage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ActionDamage as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(ActionDamage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actiondamage")]impl ActionDamage{#[doc="`ResolveAll(crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"]pub fn resolve_all(phase:impl::core::convert::Into<crate::combat::phase::Phase> ,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4130usize)as*mut u8,i32;
 (crate::combat::phase::Phase)::core::convert::Into::into(phase),(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
 }
 }
 
 #[cfg(feature="combat-actiondamage")]pub trait IActionDamageMethods:IActionDamage{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc40d0usize)as*mut u8, ::unity2::Il2CppString;
-(ActionDamage)__receiver)}
+__ActionDamage_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_AbortByInterrupt()` overload"]fn get_abort_by_interrupt(self,)->bool{unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4120usize)as*mut u8,bool;
-(ActionDamage)__receiver)}
+__ActionDamage_unity2_raw::get_abort_by_interrupt(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::combat::character::Character, crate::combat::character::Character, crate::combat::phase::Phase, crate::unity_engine::animationevent::AnimationEvent)` overload"]fn ctor(self,attacker:impl::core::convert::Into<crate::combat::character::Character> ,damager:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc1940usize)as*mut u8,();
@@ -42,8 +73,7 @@ pub use __types::*;
 (ActionDamage)__receiver)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4360usize)as*mut u8,();
-(ActionDamage)__receiver)}
+__ActionDamage_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 }
 

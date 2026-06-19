@@ -22,13 +22,34 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-rendering-universal-splittoning-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-universal-splittoning")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SplitToning_unity2_raw{use super:: * ;
+pub unsafe fn is_active(this:SplitToning,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SplitToning as::unity2::ClassIdentity> ::NAME,"IsActive",));
+let inner:extern "C" fn(SplitToning, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_tile_compatible(this:SplitToning,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SplitToning as::unity2::ClassIdentity> ::NAME,"IsTileCompatible",));
+let inner:extern "C" fn(SplitToning, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-universal-splittoning")]pub trait ISplitToningMethods:ISplitToning{#[doc="`IsActive()` overload"]fn is_active(self,)->bool{unsafe{let __receiver= <SplitToning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2edda60usize)as*mut u8,bool;
-(SplitToning)__receiver)}
+__SplitToning_unity2_raw::is_active(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsTileCompatible()` overload"]fn is_tile_compatible(self,)->bool{unsafe{let __receiver= <SplitToning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2eddaf0usize)as*mut u8,bool;
-(SplitToning)__receiver)}
+__SplitToning_unity2_raw::is_tile_compatible(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SplitToning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2eddb00usize)as*mut u8,();

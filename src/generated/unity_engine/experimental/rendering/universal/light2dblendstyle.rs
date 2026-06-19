@@ -13,37 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_BlendMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Light2DBlendStyle_BlendMode{pub value:i32,}
-impl::unity2::ClassIdentity for Light2DBlendStyle_BlendMode{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
-const NAME: &'static str="Light2DBlendStyle.BlendMode";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Light2DBlendStyle_BlendMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Light2DBlendStyle_BlendMode{pub fn additive()->Self{Self{value:0}
-}
-pub fn multiply()->Self{Self{value:1}
-}
-pub fn subtractive()->Self{Self{value:2}
-}
-pub fn custom()->Self{Self{value:99}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_MaskChannelFilter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Light2DBlendStyle_MaskChannelFilter{}
-impl::unity2::ClassIdentity for Light2DBlendStyle_MaskChannelFilter{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
-const NAME: &'static str="Light2DBlendStyle.MaskChannelFilter";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Light2DBlendStyle_MaskChannelFilter{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_BlendFactors.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Light2DBlendStyle_BlendFactors{pub multiplicative:f32,pub additive:f32,}
 impl::unity2::ClassIdentity for Light2DBlendStyle_BlendFactors{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
 const NAME: &'static str="Light2DBlendStyle.BlendFactors";
@@ -55,14 +24,14 @@ impl::unity2::IlType for Light2DBlendStyle_BlendFactors{fn il_type()-> &'static:
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Light2DBlendStyle{pub name: ::unity2::Il2CppString,pub mask_texture_channel:crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_TextureChannel,pub render_texture_scale:f32,pub blend_mode:crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_BlendMode,pub custom_blend_factors:crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_BlendFactors,pub render_target_handle:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,}
-impl::unity2::ClassIdentity for Light2DBlendStyle{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
-const NAME: &'static str="Light2DBlendStyle";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_MaskChannelFilter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Light2DBlendStyle_MaskChannelFilter{}
+impl::unity2::ClassIdentity for Light2DBlendStyle_MaskChannelFilter{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
+const NAME: &'static str="Light2DBlendStyle.MaskChannelFilter";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for Light2DBlendStyle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for Light2DBlendStyle_MaskChannelFilter{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -93,6 +62,37 @@ pub fn one_minus_b()->Self{Self{value:7}
 }
 pub fn one_minus_a()->Self{Self{value:8}
 }
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle_BlendMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Light2DBlendStyle_BlendMode{pub value:i32,}
+impl::unity2::ClassIdentity for Light2DBlendStyle_BlendMode{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
+const NAME: &'static str="Light2DBlendStyle.BlendMode";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Light2DBlendStyle_BlendMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Light2DBlendStyle_BlendMode{pub fn additive()->Self{Self{value:0}
+}
+pub fn multiply()->Self{Self{value:1}
+}
+pub fn subtractive()->Self{Self{value:2}
+}
+pub fn custom()->Self{Self{value:99}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/light2dblendstyle/Light2DBlendStyle.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Light2DBlendStyle{pub name: ::unity2::Il2CppString,pub mask_texture_channel:crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_TextureChannel,pub render_texture_scale:f32,pub blend_mode:crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_BlendMode,pub custom_blend_factors:crate::unity_engine::experimental::rendering::universal::light2dblendstyle::Light2DBlendStyle_BlendFactors,pub render_target_handle:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle,}
+impl::unity2::ClassIdentity for Light2DBlendStyle{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
+const NAME: &'static str="Light2DBlendStyle";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Light2DBlendStyle{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -155,11 +155,11 @@ pub fn set_has_render_target_method_info()-> & 'static::unity2::il2cpp::MethodIn
 #[cfg(feature = "unity_engine-experimental-rendering-universal-light2dblendstyle")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Light2DBlendStyle_BlendMode;
-    pub use super::Light2DBlendStyle_MaskChannelFilter;
     pub use super::Light2DBlendStyle_BlendFactors;
-    pub use super::Light2DBlendStyle;
+    pub use super::Light2DBlendStyle_MaskChannelFilter;
     pub use super::Light2DBlendStyle_TextureChannel;
+    pub use super::Light2DBlendStyle_BlendMode;
+    pub use super::Light2DBlendStyle;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

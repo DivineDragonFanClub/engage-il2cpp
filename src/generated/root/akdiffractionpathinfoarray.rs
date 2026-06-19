@@ -18,21 +18,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akdiffractionpathinfoarray-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akdiffractionpathinfoarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkDiffractionPathInfoArray_unity2_raw{use super:: * ;
+pub unsafe fn get_structure_size(this:AkDiffractionPathInfoArray,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkDiffractionPathInfoArray as::unity2::ClassIdentity> ::NAME,"get_StructureSize",));
+let inner:extern "C" fn(AkDiffractionPathInfoArray, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_new_reference_from_int_ptr(this:AkDiffractionPathInfoArray,address: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akdiffractionpathinfo::AkDiffractionPathInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AkDiffractionPathInfoArray as::unity2::ClassIdentity> ::NAME,"CreateNewReferenceFromIntPtr",));
+let inner:extern "C" fn(AkDiffractionPathInfoArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->crate::root::akdiffractionpathinfo::AkDiffractionPathInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,__mi)}
+pub unsafe fn clone_into_reference_from_int_ptr(this:AkDiffractionPathInfoArray,address: ::unity2::IntPtr,other:crate::root::akdiffractionpathinfo::AkDiffractionPathInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AkDiffractionPathInfoArray as::unity2::ClassIdentity> ::NAME,"CloneIntoReferenceFromIntPtr",));
+let inner:extern "C" fn(AkDiffractionPathInfoArray, ::unity2::IntPtr,crate::root::akdiffractionpathinfo::AkDiffractionPathInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,other,__mi)}
+}
+
 #[cfg(feature="root-akdiffractionpathinfoarray")]pub trait IAkDiffractionPathInfoArrayMethods:IAkDiffractionPathInfoArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkDiffractionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18330usize)as*mut u8,();
 (AkDiffractionPathInfoArray)__receiver,(i32)::core::convert::Into::into(count))}
 }
 #[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkDiffractionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18390usize)as*mut u8,i32;
-(AkDiffractionPathInfoArray)__receiver)}
+__AkDiffractionPathInfoArray_unity2_raw::get_structure_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akdiffractionpathinfo::AkDiffractionPathInfo{unsafe{let __receiver= <AkDiffractionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18400usize)as*mut u8,crate::root::akdiffractionpathinfo::AkDiffractionPathInfo;
-(AkDiffractionPathInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+__AkDiffractionPathInfoArray_unity2_raw::create_new_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::option::Option::None)}
 }
 #[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akdiffractionpathinfo::AkDiffractionPathInfo)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akdiffractionpathinfo::AkDiffractionPathInfo>)->(){unsafe{let __receiver= <AkDiffractionPathInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18470usize)as*mut u8,();
-(AkDiffractionPathInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address),(crate::root::akdiffractionpathinfo::AkDiffractionPathInfo)::core::convert::Into::into(other))}
+__AkDiffractionPathInfoArray_unity2_raw::clone_into_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::convert::Into::into(other), ::core::option::Option::None)}
 }
 }
 

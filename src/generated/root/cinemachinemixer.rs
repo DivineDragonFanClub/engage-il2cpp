@@ -25,13 +25,25 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 #[cfg(feature = "root-cinemachinemixer-types")]
 pub use __types::*;
 
+#[cfg(feature="root-cinemachinemixer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CinemachineMixer_MasterDirectorDelegate_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:CinemachineMixer_MasterDirectorDelegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playabledirector::PlayableDirector{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <CinemachineMixer_MasterDirectorDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(CinemachineMixer_MasterDirectorDelegate, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playabledirector::PlayableDirector= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-cinemachinemixer")]pub trait ICinemachineMixer_MasterDirectorDelegateMethods:ICinemachineMixer_MasterDirectorDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CinemachineMixer_MasterDirectorDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3312760usize)as*mut u8,();
 (CinemachineMixer_MasterDirectorDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->crate::unity_engine::playables::playabledirector::PlayableDirector{unsafe{let __receiver= <CinemachineMixer_MasterDirectorDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3312780usize)as*mut u8,crate::unity_engine::playables::playabledirector::PlayableDirector;
-(CinemachineMixer_MasterDirectorDelegate)__receiver)}
+__CinemachineMixer_MasterDirectorDelegate_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -48,17 +60,47 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="root-cinemachinemixer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CinemachineMixer_unity2_raw{use super:: * ;
+pub unsafe fn on_playable_destroy(this:CinemachineMixer,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <CinemachineMixer as::unity2::ClassIdentity> ::NAME,"OnPlayableDestroy",));
+let inner:extern "C" fn(CinemachineMixer,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,__mi)}
+pub unsafe fn prepare_frame(this:CinemachineMixer,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <CinemachineMixer as::unity2::ClassIdentity> ::NAME,"PrepareFrame",));
+let inner:extern "C" fn(CinemachineMixer,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,info,__mi)}
+pub unsafe fn process_frame(this:CinemachineMixer,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <CinemachineMixer as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
+let inner:extern "C" fn(CinemachineMixer,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,info,player_data,__mi)}
+}
+
 #[cfg(feature="root-cinemachinemixer")]pub trait ICinemachineMixerMethods:ICinemachineMixer{#[doc="`OnPlayableDestroy(crate::unity_engine::playables::playable::Playable)` overload"]fn on_playable_destroy(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable>)->(){unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3887450usize)as*mut u8,();
-(CinemachineMixer)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
+__CinemachineMixer_unity2_raw::on_playable_destroy(__receiver, ::core::convert::Into::into(playable), ::core::option::Option::None)}
 }
 #[doc="`PrepareFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData)` overload"]fn prepare_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x38874f0usize)as*mut u8,();
-(CinemachineMixer)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info))}
+__CinemachineMixer_unity2_raw::prepare_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::option::Option::None)}
 }
 #[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,info:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3887500usize)as*mut u8,();
-(CinemachineMixer)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(info),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+__CinemachineMixer_unity2_raw::process_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(info), ::core::convert::Into::into(player_data), ::core::option::Option::None)}
 }
 #[doc="`GetDeltaTime(f32)` overload"]fn get_delta_time(self,delta_time:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <CinemachineMixer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3887c80usize)as*mut u8,f32;

@@ -22,13 +22,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-battletalkinspector-types")]
 pub use __types::*;
 
+#[cfg(feature="app-battletalkinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleTalkInspector_unity2_raw{use super:: * ;
+pub unsafe fn is_terminated(this:BattleTalkInspector,arg1:i32,arg2:i32,arg3:i32,arg4:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BattleTalkInspector as::unity2::ClassIdentity> ::NAME,"IsTerminated",));
+let inner:extern "C" fn(BattleTalkInspector,i32,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg1,arg2,arg3,arg4,__mi)}
+}
+
 #[cfg(feature="app-battletalkinspector")]pub trait IBattleTalkInspectorMethods:IBattleTalkInspector{#[doc="`.ctor(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)` overload"]fn ctor(self,args:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> >)->(){unsafe{let __receiver= <BattleTalkInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e93b30usize)as*mut u8,();
 (BattleTalkInspector)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue>)::core::convert::Into::into(args))}
 }
 #[doc="`IsTerminated(i32, i32, i32, i32)` overload"]fn is_terminated(self,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BattleTalkInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e93b40usize)as*mut u8,bool;
-(BattleTalkInspector)__receiver,(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
+__BattleTalkInspector_unity2_raw::is_terminated(__receiver, ::core::convert::Into::into(arg1), ::core::convert::Into::into(arg2), ::core::convert::Into::into(arg3), ::core::convert::Into::into(arg4), ::core::option::Option::None)}
 }
 }
 

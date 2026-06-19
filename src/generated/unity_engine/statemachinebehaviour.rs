@@ -20,61 +20,190 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-statemachinebehaviour-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-statemachinebehaviour")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StateMachineBehaviour_unity2_raw{use super:: * ;
+pub unsafe fn on_state_enter(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateEnter",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,__mi)}
+pub unsafe fn on_state_update(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateUpdate",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,__mi)}
+pub unsafe fn on_state_exit(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateExit",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,__mi)}
+pub unsafe fn on_state_move(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateMove",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,__mi)}
+pub unsafe fn on_state_ik(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateIK",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,__mi)}
+pub unsafe fn on_state_machine_enter(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_machine_path_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateMachineEnter",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_machine_path_hash,__mi)}
+pub unsafe fn on_state_machine_exit(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_machine_path_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateMachineExit",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_machine_path_hash,__mi)}
+pub unsafe fn on_state_enter_2(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,controller:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateEnter",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32,crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,controller,__mi)}
+pub unsafe fn on_state_update_2(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,controller:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateUpdate",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32,crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,controller,__mi)}
+pub unsafe fn on_state_exit_2(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,controller:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateExit",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32,crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,controller,__mi)}
+pub unsafe fn on_state_move_2(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,controller:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateMove",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32,crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,controller,__mi)}
+pub unsafe fn on_state_ik_2(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,controller:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateIK",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32,crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,controller,__mi)}
+pub unsafe fn on_state_machine_enter_2(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_machine_path_hash:i32,controller:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateMachineEnter",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,i32,crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_machine_path_hash,controller,__mi)}
+pub unsafe fn on_state_machine_exit_2(this:StateMachineBehaviour,animator:crate::unity_engine::animator::Animator,state_machine_path_hash:i32,controller:crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <StateMachineBehaviour as::unity2::ClassIdentity> ::NAME,"OnStateMachineExit",));
+let inner:extern "C" fn(StateMachineBehaviour,crate::unity_engine::animator::Animator,i32,crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_machine_path_hash,controller,__mi)}
+}
+
 #[cfg(feature="unity_engine-statemachinebehaviour")]pub trait IStateMachineBehaviourMethods:IStateMachineBehaviour{#[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbb90usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+__StateMachineBehaviour_unity2_raw::on_state_enter(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_update(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbba0usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+__StateMachineBehaviour_unity2_raw::on_state_update(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbbb0usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+__StateMachineBehaviour_unity2_raw::on_state_exit(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`OnStateMove(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_move(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbbc0usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+__StateMachineBehaviour_unity2_raw::on_state_move(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`OnStateIK(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_ik(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbbd0usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+__StateMachineBehaviour_unity2_raw::on_state_ik(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`OnStateMachineEnter(crate::unity_engine::animator::Animator, i32)` overload"]fn on_state_machine_enter(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_machine_path_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbbe0usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(i32)::core::convert::Into::into(state_machine_path_hash))}
+__StateMachineBehaviour_unity2_raw::on_state_machine_enter(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_machine_path_hash), ::core::option::Option::None)}
 }
 #[doc="`OnStateMachineExit(crate::unity_engine::animator::Animator, i32)` overload"]fn on_state_machine_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_machine_path_hash:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbbf0usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(i32)::core::convert::Into::into(state_machine_path_hash))}
+__StateMachineBehaviour_unity2_raw::on_state_machine_exit(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_machine_path_hash), ::core::option::Option::None)}
 }
 #[doc="`OnStateEnter(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_enter_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc00usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+__StateMachineBehaviour_unity2_raw::on_state_enter_2(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::convert::Into::into(controller), ::core::option::Option::None)}
 }
 #[doc="`OnStateUpdate(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_update_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc10usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+__StateMachineBehaviour_unity2_raw::on_state_update_2(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::convert::Into::into(controller), ::core::option::Option::None)}
 }
 #[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_exit_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc20usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+__StateMachineBehaviour_unity2_raw::on_state_exit_2(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::convert::Into::into(controller), ::core::option::Option::None)}
 }
 #[doc="`OnStateMove(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_move_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc30usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+__StateMachineBehaviour_unity2_raw::on_state_move_2(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::convert::Into::into(controller), ::core::option::Option::None)}
 }
 #[doc="`OnStateIK(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_ik_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc40usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+__StateMachineBehaviour_unity2_raw::on_state_ik_2(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::convert::Into::into(controller), ::core::option::Option::None)}
 }
 #[doc="`OnStateMachineEnter(crate::unity_engine::animator::Animator, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_machine_enter_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_machine_path_hash:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc50usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(i32)::core::convert::Into::into(state_machine_path_hash),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+__StateMachineBehaviour_unity2_raw::on_state_machine_enter_2(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_machine_path_hash), ::core::convert::Into::into(controller), ::core::option::Option::None)}
 }
 #[doc="`OnStateMachineExit(crate::unity_engine::animator::Animator, i32, crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)` overload"]fn on_state_machine_exit_2(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_machine_path_hash:impl::core::convert::Into<i32> ,controller:impl::core::convert::Into<crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable>)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc60usize)as*mut u8,();
-(StateMachineBehaviour)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(i32)::core::convert::Into::into(state_machine_path_hash),(crate::unity_engine::animations::animatorcontrollerplayable::AnimatorControllerPlayable)::core::convert::Into::into(controller))}
+__StateMachineBehaviour_unity2_raw::on_state_machine_exit_2(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_machine_path_hash), ::core::convert::Into::into(controller), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StateMachineBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbc70usize)as*mut u8,();

@@ -22,22 +22,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeventclip/MyRoomEventClip.md"))]#[::unity2::class(namespace="App",name="MyRoomEventClip")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct MyRoomEventClip{#[offset(24)]#[rename(name="eventType")]pub event_type:crate::app::myroomeventclip::MyRoomEventClip_EventClipType, #[offset(28)]#[rename(name="eventLayer")]pub event_layer:crate::app::myroomeventclip::MyRoomEventClip_EventClipLayer, #[offset(32)]#[rename(name="eventName")]pub event_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="isOut")]pub is_out:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeventclip/MyRoomEventClip_EventClipLayer.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomEventClip_EventClipLayer{pub value:i32,}
-impl::unity2::ClassIdentity for MyRoomEventClip_EventClipLayer{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MyRoomEventClip.EventClipLayer";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MyRoomEventClip_EventClipLayer{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MyRoomEventClip_EventClipLayer{pub fn background()->Self{Self{value:0}
-}
-pub fn foreground()->Self{Self{value:1}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeventclip/MyRoomEventClip_EventClipType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomEventClip_EventClipType{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomEventClip_EventClipType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomEventClip.EventClipType";
@@ -53,18 +37,55 @@ pub fn sound()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomeventclip/MyRoomEventClip_EventClipLayer.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomEventClip_EventClipLayer{pub value:i32,}
+impl::unity2::ClassIdentity for MyRoomEventClip_EventClipLayer{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MyRoomEventClip.EventClipLayer";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MyRoomEventClip_EventClipLayer{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MyRoomEventClip_EventClipLayer{pub fn background()->Self{Self{value:0}
+}
+pub fn foreground()->Self{Self{value:1}
+}
+}
+
 }
 
 #[cfg(feature = "app-myroomeventclip-types")]
 pub use __types::*;
 
+#[cfg(feature="app-myroomeventclip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomEventClip_unity2_raw{use super:: * ;
+pub unsafe fn get_clip_caps(this:MyRoomEventClip,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MyRoomEventClip as::unity2::ClassIdentity> ::NAME,"get_clipCaps",));
+let inner:extern "C" fn(MyRoomEventClip, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_playable(this:MyRoomEventClip,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,owner:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MyRoomEventClip as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
+let inner:extern "C" fn(MyRoomEventClip,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,owner,__mi)}
+}
+
 #[cfg(feature="app-myroomeventclip")]pub trait IMyRoomEventClipMethods:IMyRoomEventClip{#[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <MyRoomEventClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238ecf0usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
-(MyRoomEventClip)__receiver)}
+__MyRoomEventClip_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,owner:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <MyRoomEventClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238ed00usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(MyRoomEventClip)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(owner))}
+__MyRoomEventClip_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(owner), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomEventClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x238ee20usize)as*mut u8,();
@@ -92,8 +113,8 @@ pub mod prelude {
     pub use super::MyRoomEventClip;
     pub use super::IMyRoomEventClip;
     pub use super::IMyRoomEventClipMethods;
-    pub use super::MyRoomEventClip_EventClipLayer;
     pub use super::MyRoomEventClip_EventClipType;
+    pub use super::MyRoomEventClip_EventClipLayer;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

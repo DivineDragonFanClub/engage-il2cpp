@@ -16,9 +16,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapbackup-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapbackup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapBackup_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:MapBackup,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapBackup as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(MapBackup, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapbackup")]pub trait IMapBackupMethods:IMapBackup{#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <MapBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f01d90usize)as*mut u8,();
-(MapBackup)__receiver)}
+__MapBackup_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapBackup as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f01da0usize)as*mut u8,();

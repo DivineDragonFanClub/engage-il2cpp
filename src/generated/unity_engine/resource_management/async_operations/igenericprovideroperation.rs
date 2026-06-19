@@ -15,72 +15,102 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-async_operations-igenericprovideroperation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IGenericProviderOperation_unity2_raw{use super:: * ;
-pub unsafe fn init(this:IGenericProviderOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Init").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Init", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn init(this:IGenericProviderOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"Init",));
 let inner:extern "C" fn(IGenericProviderOperation,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,rm,provider,location,dep_op,__mi)}
-pub unsafe fn init_2(this:IGenericProviderOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,release_dependencies_on_failure:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Init").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Init", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn init_2(this:IGenericProviderOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,provider:crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,release_dependencies_on_failure:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"Init",));
 let inner:extern "C" fn(IGenericProviderOperation,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_providers::iresourceprovider::IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > ,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,rm,provider,location,dep_op,release_dependencies_on_failure,__mi)}
-pub unsafe fn get_provide_handle_version(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ProvideHandleVersion").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_ProvideHandleVersion", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_provide_handle_version(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_ProvideHandleVersion",));
 let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_location(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Location").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Location", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_location(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_Location",));
 let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_dependency_count(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_DependencyCount").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_DependencyCount", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_dependency_count(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_DependencyCount",));
 let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_dependencies(this:IGenericProviderOperation,dst_list:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetDependencies").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetDependencies", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_dependencies(this:IGenericProviderOperation,dst_list:crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"GetDependencies",));
 let inner:extern "C" fn(IGenericProviderOperation,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,dst_list,__mi)}
-pub unsafe fn set_progress_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetProgressCallback").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetProgressCallback", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_progress_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetProgressCallback",));
 let inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<f32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,callback,__mi)}
-pub unsafe fn get_requested_type(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_RequestedType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_RequestedType", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_requested_type(this:IGenericProviderOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"get_RequestedType",));
 let inner:extern "C" fn(IGenericProviderOperation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_download_progress_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetDownloadProgressCallback").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetDownloadProgressCallback", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_download_progress_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetDownloadProgressCallback",));
 let inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,callback,__mi)}
-pub unsafe fn set_wait_for_completion_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<bool> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetWaitForCompletionCallback").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetWaitForCompletionCallback", <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_wait_for_completion_callback(this:IGenericProviderOperation,callback:crate::system::func_1::Func_1<bool> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IGenericProviderOperation as::unity2::ClassIdentity> ::NAME,"SetWaitForCompletionCallback",));
 let inner:extern "C" fn(IGenericProviderOperation,crate::system::func_1::Func_1<bool> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

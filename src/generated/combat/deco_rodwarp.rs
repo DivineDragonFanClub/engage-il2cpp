@@ -20,22 +20,52 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-deco_rodwarp-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-deco_rodwarp")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Deco_RodWarp_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:Deco_RodWarp,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Deco_RodWarp as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(Deco_RodWarp, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enter(this:Deco_RodWarp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Deco_RodWarp as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(Deco_RodWarp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_hit_passed(this:Deco_RodWarp,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Deco_RodWarp as::unity2::ClassIdentity> ::NAME,"OnHitPassed",));
+let inner:extern "C" fn(Deco_RodWarp,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ev,__mi)}
+}
+
 #[cfg(feature="combat-deco_rodwarp")]impl Deco_RodWarp{#[doc="`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"]pub fn is_available(that:impl::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8b50usize)as*mut u8,bool;
 (crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(that))}
 }
 }
 
 #[cfg(feature="combat-deco_rodwarp")]pub trait IDeco_RodWarpMethods:IDeco_RodWarp{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Deco_RodWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8b00usize)as*mut u8, ::unity2::Il2CppString;
-(Deco_RodWarp)__receiver)}
+__Deco_RodWarp_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <Deco_RodWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8bf0usize)as*mut u8,();
-(Deco_RodWarp)__receiver)}
+__Deco_RodWarp_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_hit_passed(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Deco_RodWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8de0usize)as*mut u8,();
-(Deco_RodWarp)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+__Deco_RodWarp_unity2_raw::on_hit_passed(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
 }
 #[doc="`UpdateAlpha()` overload"]fn update_alpha(self,)->(){unsafe{let __receiver= <Deco_RodWarp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8ed0usize)as*mut u8,();

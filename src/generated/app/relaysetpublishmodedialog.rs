@@ -17,10 +17,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="RelaySetPublishModeDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RelaySetPublishModeDialog_YesMenuItem{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog.md"))]#[::unity2::class(namespace="App",name="RelaySetPublishModeDialog")]#[parent(crate::system::object::Object)]pub struct RelaySetPublishModeDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="RelaySetPublishModeDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RelaySetPublishModeDialog_YesMenuItem{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaysetpublishmodedialog/RelaySetPublishModeDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="RelaySetPublishModeDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct RelaySetPublishModeDialog_NoMenuItem{}
@@ -29,39 +29,6 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-relaysetpublishmodedialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-relaysetpublishmodedialog")]pub trait IRelaySetPublishModeDialog_YesMenuItemMethods:IRelaySetPublishModeDialog_YesMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bdf0usize)as*mut u8,();
-(RelaySetPublishModeDialog_YesMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0be80usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RelaySetPublishModeDialog_YesMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0be90usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RelaySetPublishModeDialog_YesMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bec0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RelaySetPublishModeDialog_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-relaysetpublishmodedialog")]impl<__T:IRelaySetPublishModeDialog_YesMenuItem>IRelaySetPublishModeDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-relaysetpublishmodedialog")]impl RelaySetPublishModeDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-relaysetpublishmodedialog")]impl RelaySetPublishModeDialog_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelaySetPublishModeDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as IRelaySetPublishModeDialog_YesMenuItemMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-relaysetpublishmodedialog")]impl RelaySetPublishModeDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2009f50usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -87,21 +54,114 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-relaysetpublishmodedialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelaySetPublishModeDialog_YesMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:RelaySetPublishModeDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RelaySetPublishModeDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(RelaySetPublishModeDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:RelaySetPublishModeDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RelaySetPublishModeDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RelaySetPublishModeDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RelaySetPublishModeDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RelaySetPublishModeDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RelaySetPublishModeDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-relaysetpublishmodedialog")]pub trait IRelaySetPublishModeDialog_YesMenuItemMethods:IRelaySetPublishModeDialog_YesMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bdf0usize)as*mut u8,();
+(RelaySetPublishModeDialog_YesMenuItem)__receiver)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RelaySetPublishModeDialog_YesMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RelaySetPublishModeDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelaySetPublishModeDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RelaySetPublishModeDialog_YesMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-relaysetpublishmodedialog")]impl<__T:IRelaySetPublishModeDialog_YesMenuItem>IRelaySetPublishModeDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-relaysetpublishmodedialog")]impl RelaySetPublishModeDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-relaysetpublishmodedialog")]impl RelaySetPublishModeDialog_YesMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelaySetPublishModeDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IRelaySetPublishModeDialog_YesMenuItemMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-relaysetpublishmodedialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelaySetPublishModeDialog_NoMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:RelaySetPublishModeDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RelaySetPublishModeDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(RelaySetPublishModeDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:RelaySetPublishModeDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RelaySetPublishModeDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RelaySetPublishModeDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RelaySetPublishModeDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RelaySetPublishModeDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RelaySetPublishModeDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-relaysetpublishmodedialog")]pub trait IRelaySetPublishModeDialog_NoMenuItemMethods:IRelaySetPublishModeDialog_NoMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelaySetPublishModeDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bd10usize)as*mut u8,();
 (RelaySetPublishModeDialog_NoMenuItem)__receiver)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RelaySetPublishModeDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bda0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RelaySetPublishModeDialog_NoMenuItem)__receiver)}
+__RelaySetPublishModeDialog_NoMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelaySetPublishModeDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bdb0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RelaySetPublishModeDialog_NoMenuItem)__receiver)}
+__RelaySetPublishModeDialog_NoMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RelaySetPublishModeDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0bde0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RelaySetPublishModeDialog_NoMenuItem)__receiver)}
+__RelaySetPublishModeDialog_NoMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -123,12 +183,12 @@ this}
 #[cfg(feature = "app-relaysetpublishmodedialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelaySetPublishModeDialog_YesMenuItem;
-    pub use super::IRelaySetPublishModeDialog_YesMenuItem;
-    pub use super::IRelaySetPublishModeDialog_YesMenuItemMethods;
     pub use super::RelaySetPublishModeDialog;
     pub use super::IRelaySetPublishModeDialog;
     pub use super::IRelaySetPublishModeDialogMethods;
+    pub use super::RelaySetPublishModeDialog_YesMenuItem;
+    pub use super::IRelaySetPublishModeDialog_YesMenuItem;
+    pub use super::IRelaySetPublishModeDialog_YesMenuItemMethods;
     pub use super::RelaySetPublishModeDialog_NoMenuItem;
     pub use super::IRelaySetPublishModeDialog_NoMenuItem;
     pub use super::IRelaySetPublishModeDialog_NoMenuItemMethods;

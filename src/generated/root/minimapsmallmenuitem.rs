@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-minimapsmallmenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="root-minimapsmallmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MiniMapSmallMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn on_select(this:MiniMapSmallMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MiniMapSmallMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(MiniMapSmallMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-minimapsmallmenuitem")]pub trait IMiniMapSmallMenuItemMethods:IMiniMapSmallMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MiniMapSmallMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x277a710usize)as*mut u8,();
 (MiniMapSmallMenuItem)__receiver)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MiniMapSmallMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x277a7c0usize)as*mut u8,();
-(MiniMapSmallMenuItem)__receiver)}
+__MiniMapSmallMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 }
 

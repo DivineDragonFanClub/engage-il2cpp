@@ -18,6 +18,29 @@ use crate::unity_engine::customyieldinstruction::{CustomYieldInstruction,ICustom
 #[cfg(feature = "unity_engine-waitforsecondsrealtime-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-waitforsecondsrealtime")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WaitForSecondsRealtime_unity2_raw{use super:: * ;
+pub unsafe fn get_keep_waiting(this:WaitForSecondsRealtime,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <WaitForSecondsRealtime as::unity2::ClassIdentity> ::NAME,"get_keepWaiting",));
+let inner:extern "C" fn(WaitForSecondsRealtime, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset(this:WaitForSecondsRealtime,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <WaitForSecondsRealtime as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(WaitForSecondsRealtime, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-waitforsecondsrealtime")]pub trait IWaitForSecondsRealtimeMethods:IWaitForSecondsRealtime{#[doc="`get_waitTime()` overload"]fn get_wait_time(self,)->f32{unsafe{let __receiver= <WaitForSecondsRealtime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x379ab90usize)as*mut u8,f32;
 (WaitForSecondsRealtime)__receiver)}
@@ -27,16 +50,14 @@ pub use __types::*;
 (WaitForSecondsRealtime)__receiver,(f32)::core::convert::Into::into(value))}
 }
 #[doc="`get_keepWaiting()` overload"]fn get_keep_waiting(self,)->bool{unsafe{let __receiver= <WaitForSecondsRealtime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379abb0usize)as*mut u8,bool;
-(WaitForSecondsRealtime)__receiver)}
+__WaitForSecondsRealtime_unity2_raw::get_keep_waiting(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(f32)` overload"]fn ctor(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <WaitForSecondsRealtime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x379ac50usize)as*mut u8,();
 (WaitForSecondsRealtime)__receiver,(f32)::core::convert::Into::into(time))}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <WaitForSecondsRealtime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379ac90usize)as*mut u8,();
-(WaitForSecondsRealtime)__receiver)}
+__WaitForSecondsRealtime_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 }
 

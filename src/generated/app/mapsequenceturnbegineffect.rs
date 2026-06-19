@@ -13,7 +13,19 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillTurn.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcSkillTurn")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcSkillTurn{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcEngageSkill.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcEngageSkill")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcEngageSkill{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainDamage.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcTerrainDamage")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcTerrainDamage{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcFullBulletAttack.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcFullBulletAttack")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcFullBulletAttack{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceTurnBeginEffect{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillHeal.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcSkillHeal")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcSkillHeal{}
@@ -21,101 +33,26 @@ use crate::system::object::{IObject,Object}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainHeal.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcTerrainHeal")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcTerrainHeal{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcSkillTurn.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcSkillTurn")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcSkillTurn{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcTerrainDamage.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcTerrainDamage")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcTerrainDamage{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect")]#[parent(crate::app::procinst::ProcInst)]pub struct MapSequenceTurnBeginEffect{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequenceturnbegineffect/MapSequenceTurnBeginEffect_ProcEngageSkill.md"))]#[::unity2::class(namespace="App",name="MapSequenceTurnBeginEffect.ProcEngageSkill")]#[parent(crate::app::turneffect::TurnEffect)]pub struct MapSequenceTurnBeginEffect_ProcEngageSkill{}
-
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods:IMapSequenceTurnBeginEffect_ProcFullBulletAttack{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcFullBulletAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b7c0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(MapSequenceTurnBeginEffect_ProcFullBulletAttack)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcFullBulletAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b840usize)as*mut u8,();
-(MapSequenceTurnBeginEffect_ProcFullBulletAttack)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcFullBulletAttack>IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods for __T{}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcFullBulletAttack{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcFullBulletAttack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcFullBulletAttack), ::core::stringify!(new),));
- <Self as IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcSkillHealMethods:IMapSequenceTurnBeginEffect_ProcSkillHeal{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcSkillHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b850usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(MapSequenceTurnBeginEffect_ProcSkillHeal)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcSkillHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b8d0usize)as*mut u8,();
-(MapSequenceTurnBeginEffect_ProcSkillHeal)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcSkillHeal>IMapSequenceTurnBeginEffect_ProcSkillHealMethods for __T{}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcSkillHeal{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcSkillHeal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcSkillHeal), ::core::stringify!(new),));
- <Self as IMapSequenceTurnBeginEffect_ProcSkillHealMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcTerrainHeal{#[doc="`GetHeal(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]pub fn get_heal(unit:impl::core::convert::Into<crate::app::unit::Unit> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bb40usize)as*mut u8,i32;
-(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
-}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcTerrainHealMethods:IMapSequenceTurnBeginEffect_ProcTerrainHeal{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcTerrainHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bbd0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(MapSequenceTurnBeginEffect_ProcTerrainHeal)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcTerrainHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc50usize)as*mut u8,();
-(MapSequenceTurnBeginEffect_ProcTerrainHeal)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcTerrainHeal>IMapSequenceTurnBeginEffect_ProcTerrainHealMethods for __T{}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcTerrainHeal{pub fn get_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcTerrainHeal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainHeal), ::core::stringify!(new),));
- <Self as IMapSequenceTurnBeginEffect_ProcTerrainHealMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-mapsequenceturnbegineffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:MapSequenceTurnBeginEffect_ProcSkillTurn,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceTurnBeginEffect_ProcSkillTurn as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect_ProcSkillTurn, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcSkillTurnMethods:IMapSequenceTurnBeginEffect_ProcSkillTurn{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcSkillTurn as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b8e0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(MapSequenceTurnBeginEffect_ProcSkillTurn)__receiver)}
+__MapSequenceTurnBeginEffect_ProcSkillTurn_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcSkillTurn as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b960usize)as*mut u8,();
@@ -136,14 +73,61 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapsequenceturnbegineffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:MapSequenceTurnBeginEffect_ProcEngageSkill,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceTurnBeginEffect_ProcEngageSkill as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect_ProcEngageSkill, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcEngageSkillMethods:IMapSequenceTurnBeginEffect_ProcEngageSkill{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcEngageSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapSequenceTurnBeginEffect_ProcEngageSkill_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcEngageSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b7b0usize)as*mut u8,();
+(MapSequenceTurnBeginEffect_ProcEngageSkill)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcEngageSkill>IMapSequenceTurnBeginEffect_ProcEngageSkillMethods for __T{}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcEngageSkill{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcEngageSkill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcEngageSkill), ::core::stringify!(new),));
+ <Self as IMapSequenceTurnBeginEffect_ProcEngageSkillMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:MapSequenceTurnBeginEffect_ProcTerrainDamage,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceTurnBeginEffect_ProcTerrainDamage as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect_ProcTerrainDamage, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcTerrainDamage{#[doc="`GetDamage(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]pub fn get_damage(unit:impl::core::convert::Into<crate::app::unit::Unit> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b970usize)as*mut u8,i32;
 (crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
 }
 }
 
 #[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods:IMapSequenceTurnBeginEffect_ProcTerrainDamage{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcTerrainDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bab0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(MapSequenceTurnBeginEffect_ProcTerrainDamage)__receiver)}
+__MapSequenceTurnBeginEffect_ProcTerrainDamage_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcTerrainDamage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bb30usize)as*mut u8,();
@@ -165,18 +149,74 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapsequenceturnbegineffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:MapSequenceTurnBeginEffect_ProcFullBulletAttack,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceTurnBeginEffect_ProcFullBulletAttack as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect_ProcFullBulletAttack, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods:IMapSequenceTurnBeginEffect_ProcFullBulletAttack{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcFullBulletAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapSequenceTurnBeginEffect_ProcFullBulletAttack_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcFullBulletAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b840usize)as*mut u8,();
+(MapSequenceTurnBeginEffect_ProcFullBulletAttack)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcFullBulletAttack>IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods for __T{}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcFullBulletAttack{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcFullBulletAttack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcFullBulletAttack), ::core::stringify!(new),));
+ <Self as IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTurnBeginEffect_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MapSequenceTurnBeginEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceTurnBeginEffect as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapSequenceTurnBeginEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceTurnBeginEffect as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f413a0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
 #[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffectMethods:IMapSequenceTurnBeginEffect{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41370usize)as*mut u8,();
-(MapSequenceTurnBeginEffect)__receiver)}
+__MapSequenceTurnBeginEffect_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f41390usize)as*mut u8,();
-(MapSequenceTurnBeginEffect)__receiver)}
+__MapSequenceTurnBeginEffect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`TerrainUpdate()` overload"]fn terrain_update(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f418a0usize)as*mut u8,();
@@ -209,53 +249,106 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcEngageSkillMethods:IMapSequenceTurnBeginEffect_ProcEngageSkill{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcEngageSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b730usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(MapSequenceTurnBeginEffect_ProcEngageSkill)__receiver)}
+#[cfg(feature="app-mapsequenceturnbegineffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:MapSequenceTurnBeginEffect_ProcSkillHeal,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceTurnBeginEffect_ProcSkillHeal as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect_ProcSkillHeal, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcEngageSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b7b0usize)as*mut u8,();
-(MapSequenceTurnBeginEffect_ProcEngageSkill)__receiver)}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcSkillHealMethods:IMapSequenceTurnBeginEffect_ProcSkillHeal{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcSkillHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapSequenceTurnBeginEffect_ProcSkillHeal_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcSkillHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3b8d0usize)as*mut u8,();
+(MapSequenceTurnBeginEffect_ProcSkillHeal)__receiver)}
 }
 }
 
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcEngageSkill>IMapSequenceTurnBeginEffect_ProcEngageSkillMethods for __T{}
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcSkillHeal>IMapSequenceTurnBeginEffect_ProcSkillHealMethods for __T{}
 
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcEngageSkill{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcSkillHeal{pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcEngageSkill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcSkillHeal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcEngageSkill), ::core::stringify!(new),));
- <Self as IMapSequenceTurnBeginEffect_ProcEngageSkillMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcSkillHeal), ::core::stringify!(new),));
+ <Self as IMapSequenceTurnBeginEffect_ProcSkillHealMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:MapSequenceTurnBeginEffect_ProcTerrainHeal,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapSequenceTurnBeginEffect_ProcTerrainHeal as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(MapSequenceTurnBeginEffect_ProcTerrainHeal, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcTerrainHeal{#[doc="`GetHeal(crate::app::unit::Unit, crate::app::terraindata_2::TerrainData_2)` overload"]pub fn get_heal(unit:impl::core::convert::Into<crate::app::unit::Unit> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bb40usize)as*mut u8,i32;
+(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
+}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]pub trait IMapSequenceTurnBeginEffect_ProcTerrainHealMethods:IMapSequenceTurnBeginEffect_ProcTerrainHeal{#[doc="`Execute()` overload"]fn execute(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcTerrainHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapSequenceTurnBeginEffect_ProcTerrainHeal_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTurnBeginEffect_ProcTerrainHeal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bc50usize)as*mut u8,();
+(MapSequenceTurnBeginEffect_ProcTerrainHeal)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl<__T:IMapSequenceTurnBeginEffect_ProcTerrainHeal>IMapSequenceTurnBeginEffect_ProcTerrainHealMethods for __T{}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcTerrainHeal{pub fn get_heal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapsequenceturnbegineffect")]impl MapSequenceTurnBeginEffect_ProcTerrainHeal{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSequenceTurnBeginEffect_ProcTerrainHeal), ::core::stringify!(new),));
+ <Self as IMapSequenceTurnBeginEffect_ProcTerrainHealMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-mapsequenceturnbegineffect")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceTurnBeginEffect_ProcSkillTurn;
+    pub use super::IMapSequenceTurnBeginEffect_ProcSkillTurn;
+    pub use super::IMapSequenceTurnBeginEffect_ProcSkillTurnMethods;
+    pub use super::MapSequenceTurnBeginEffect_ProcEngageSkill;
+    pub use super::IMapSequenceTurnBeginEffect_ProcEngageSkill;
+    pub use super::IMapSequenceTurnBeginEffect_ProcEngageSkillMethods;
+    pub use super::MapSequenceTurnBeginEffect_ProcTerrainDamage;
+    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainDamage;
+    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods;
     pub use super::MapSequenceTurnBeginEffect_ProcFullBulletAttack;
     pub use super::IMapSequenceTurnBeginEffect_ProcFullBulletAttack;
     pub use super::IMapSequenceTurnBeginEffect_ProcFullBulletAttackMethods;
+    pub use super::MapSequenceTurnBeginEffect;
+    pub use super::IMapSequenceTurnBeginEffect;
+    pub use super::IMapSequenceTurnBeginEffectMethods;
     pub use super::MapSequenceTurnBeginEffect_ProcSkillHeal;
     pub use super::IMapSequenceTurnBeginEffect_ProcSkillHeal;
     pub use super::IMapSequenceTurnBeginEffect_ProcSkillHealMethods;
     pub use super::MapSequenceTurnBeginEffect_ProcTerrainHeal;
     pub use super::IMapSequenceTurnBeginEffect_ProcTerrainHeal;
     pub use super::IMapSequenceTurnBeginEffect_ProcTerrainHealMethods;
-    pub use super::MapSequenceTurnBeginEffect_ProcSkillTurn;
-    pub use super::IMapSequenceTurnBeginEffect_ProcSkillTurn;
-    pub use super::IMapSequenceTurnBeginEffect_ProcSkillTurnMethods;
-    pub use super::MapSequenceTurnBeginEffect_ProcTerrainDamage;
-    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainDamage;
-    pub use super::IMapSequenceTurnBeginEffect_ProcTerrainDamageMethods;
-    pub use super::MapSequenceTurnBeginEffect;
-    pub use super::IMapSequenceTurnBeginEffect;
-    pub use super::IMapSequenceTurnBeginEffectMethods;
-    pub use super::MapSequenceTurnBeginEffect_ProcEngageSkill;
-    pub use super::IMapSequenceTurnBeginEffect_ProcEngageSkill;
-    pub use super::IMapSequenceTurnBeginEffect_ProcEngageSkillMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::turneffect::ITurnEffect;
     pub use crate::system::object::IObject;

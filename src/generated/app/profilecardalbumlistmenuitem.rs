@@ -18,25 +18,64 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-profilecardalbumlistmenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-profilecardalbumlistmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardAlbumListMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn on_select(this:ProfileCardAlbumListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ProfileCardAlbumListMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(ProfileCardAlbumListMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build_menu_item_content(this:ProfileCardAlbumListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ProfileCardAlbumListMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(ProfileCardAlbumListMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:ProfileCardAlbumListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ProfileCardAlbumListMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(ProfileCardAlbumListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn plus_call(this:ProfileCardAlbumListMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <ProfileCardAlbumListMenuItem as::unity2::ClassIdentity> ::NAME,"PlusCall",));
+let inner:extern "C" fn(ProfileCardAlbumListMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-profilecardalbumlistmenuitem")]pub trait IProfileCardAlbumListMenuItemMethods:IProfileCardAlbumListMenuItem{#[doc="`.ctor(crate::app::profilecard::ProfileCard, crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)` overload"]fn ctor(self,profile:impl::core::convert::Into<crate::app::profilecard::ProfileCard> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2308620usize)as*mut u8,();
 (ProfileCardAlbumListMenuItem)__receiver,(crate::app::profilecard::ProfileCard)::core::convert::Into::into(profile),(crate::app::profilecardalbumlistmenu::ProfileCardAlbumListMenu_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2308690usize)as*mut u8,();
-(ProfileCardAlbumListMenuItem)__receiver)}
+__ProfileCardAlbumListMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2308730usize)as*mut u8,();
-(ProfileCardAlbumListMenuItem)__receiver)}
+__ProfileCardAlbumListMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2308740usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardAlbumListMenuItem)__receiver)}
+__ProfileCardAlbumListMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardAlbumListMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23087a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardAlbumListMenuItem)__receiver)}
+__ProfileCardAlbumListMenuItem_unity2_raw::plus_call(__receiver, ::core::option::Option::None)}
 }
 }
 

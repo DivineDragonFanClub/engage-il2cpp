@@ -26,6 +26,79 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-ui-rectmask2d-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-ui-rectmask2d")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RectMask2D_unity2_raw{use super:: * ;
+pub unsafe fn on_enable(this:RectMask2D,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RectMask2D as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(RectMask2D, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:RectMask2D,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <RectMask2D as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(RectMask2D, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_raycast_location_valid(this:RectMask2D,sp:crate::unity_engine::vector2::Vector2,event_camera:crate::unity_engine::camera::Camera,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <RectMask2D as::unity2::ClassIdentity> ::NAME,"IsRaycastLocationValid",));
+let inner:extern "C" fn(RectMask2D,crate::unity_engine::vector2::Vector2,crate::unity_engine::camera::Camera, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,sp,event_camera,__mi)}
+pub unsafe fn perform_clipping(this:RectMask2D,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <RectMask2D as::unity2::ClassIdentity> ::NAME,"PerformClipping",));
+let inner:extern "C" fn(RectMask2D, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_clip_softness(this:RectMask2D,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <RectMask2D as::unity2::ClassIdentity> ::NAME,"UpdateClipSoftness",));
+let inner:extern "C" fn(RectMask2D, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_transform_parent_changed(this:RectMask2D,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RectMask2D as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let inner:extern "C" fn(RectMask2D, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_canvas_hierarchy_changed(this:RectMask2D,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <RectMask2D as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
+let inner:extern "C" fn(RectMask2D, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-ui-rectmask2d")]pub trait IRectMask2DMethods:IRectMask2D{#[doc="`get_padding()` overload"]fn get_padding(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3722710usize)as*mut u8,crate::unity_engine::vector4::Vector4;
 (RectMask2D)__receiver)}
@@ -59,28 +132,23 @@ pub use __types::*;
 (RectMask2D)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3722ee0usize)as*mut u8,();
-(RectMask2D)__receiver)}
+__RectMask2D_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3722f20usize)as*mut u8,();
-(RectMask2D)__receiver)}
+__RectMask2D_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsRaycastLocationValid(crate::unity_engine::vector2::Vector2, crate::unity_engine::camera::Camera)` overload"]fn is_raycast_location_valid(self,sp:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,event_camera:impl::core::convert::Into<crate::unity_engine::camera::Camera>)->bool{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3722fe0usize)as*mut u8,bool;
-(RectMask2D)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(sp),(crate::unity_engine::camera::Camera)::core::convert::Into::into(event_camera))}
+__RectMask2D_unity2_raw::is_raycast_location_valid(__receiver, ::core::convert::Into::into(sp), ::core::convert::Into::into(event_camera), ::core::option::Option::None)}
 }
 #[doc="`get_rootCanvasRect()` overload"]fn get_root_canvas_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3723120usize)as*mut u8,crate::unity_engine::rect::Rect;
 (RectMask2D)__receiver)}
 }
 #[doc="`PerformClipping()` overload"]fn perform_clipping(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3723330usize)as*mut u8,();
-(RectMask2D)__receiver)}
+__RectMask2D_unity2_raw::perform_clipping(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateClipSoftness()` overload"]fn update_clip_softness(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3723ae0usize)as*mut u8,();
-(RectMask2D)__receiver)}
+__RectMask2D_unity2_raw::update_clip_softness(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AddClippable(crate::unity_engine::ui::iclippable::IClippable)` overload"]fn add_clippable(self,clippable:impl::core::convert::Into<crate::unity_engine::ui::iclippable::IClippable>)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371cf20usize)as*mut u8,();
@@ -91,12 +159,10 @@ pub use __types::*;
 (RectMask2D)__receiver,(crate::unity_engine::ui::iclippable::IClippable)::core::convert::Into::into(clippable))}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3723de0usize)as*mut u8,();
-(RectMask2D)__receiver)}
+__RectMask2D_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <RectMask2D as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3723e10usize)as*mut u8,();
-(RectMask2D)__receiver)}
+__RectMask2D_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)}
 }
 }
 

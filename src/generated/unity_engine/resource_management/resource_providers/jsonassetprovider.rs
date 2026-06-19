@@ -21,16 +21,16 @@ use crate::unity_engine::resource_management::resource_providers::textdataprovid
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __JsonAssetProvider_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_convert{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<JsonAssetProvider as::unity2::ClassIdentity> ::class(),"Convert",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <JsonAssetProvider as::unity2::ClassIdentity> ::NAME,"Convert",e),}
-}
-}
+pub unsafe fn convert(this:JsonAssetProvider,r#type: ::unity2::SystemType,text: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <JsonAssetProvider as::unity2::ClassIdentity> ::NAME,"Convert",));
+let inner:extern "C" fn(JsonAssetProvider, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,text,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<JsonAssetProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -44,8 +44,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-jsonassetprovider")]pub trait IJsonAssetProviderMethods:IJsonAssetProvider{#[doc="`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn convert(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::object::Object{unsafe{let __receiver= <JsonAssetProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__JsonAssetProvider_unity2_raw::__lookup_convert::get_method_info().method_ptr,crate::system::object::Object;
-(JsonAssetProvider)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+__JsonAssetProvider_unity2_raw::convert(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(text), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <JsonAssetProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__JsonAssetProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

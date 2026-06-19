@@ -21,6 +21,44 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Categorys.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Categorys{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Categorys{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Categorys";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_Categorys{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_Categorys{pub fn none()->Self{Self{value:0}
+}
+pub fn person()->Self{Self{value:1}
+}
+pub fn job()->Self{Self{value:2}
+}
+pub fn item()->Self{Self{value:3}
+}
+pub fn equip()->Self{Self{value:4}
+}
+pub fn god()->Self{Self{value:5}
+}
+pub fn ring()->Self{Self{value:6}
+}
+pub fn hub()->Self{Self{value:7}
+}
+pub fn support()->Self{Self{value:8}
+}
+pub fn battle()->Self{Self{value:9}
+}
+pub fn private()->Self{Self{value:10}
+}
+pub fn inheritance()->Self{Self{value:11}
+}
+pub fn command()->Self{Self{value:12}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Flags{pub value:i64,}
 impl::unity2::ClassIdentity for SkillData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SkillData.Flags";
@@ -159,56 +197,22 @@ pub fn ignore_mask()->Self{Self{value:127168}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Stands.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Stands{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Stands{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Stands";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Frequencies.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Frequencies{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Frequencies{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Frequencies";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for SkillData_Stands{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for SkillData_Frequencies{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl SkillData_Stands{pub fn none()->Self{Self{value:0}
+impl SkillData_Frequencies{pub fn every()->Self{Self{value:1}
 }
-pub fn offence()->Self{Self{value:1}
+pub fn first()->Self{Self{value:2}
 }
-pub fn defence()->Self{Self{value:2}
+pub fn last()->Self{Self{value:4}
 }
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Phase.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Phase{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Phase{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Phase";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_Phase{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Phase{pub fn current()->Self{Self{value:0}
-}
-pub fn other()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_AroundTargets.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_AroundTargets{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_AroundTargets{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.AroundTargets";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_AroundTargets{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_AroundTargets{pub fn none()->Self{Self{value:0}
-}
-pub fn friend()->Self{Self{value:1}
-}
-pub fn enemy()->Self{Self{value:2}
-}
-pub fn both()->Self{Self{value:3}
+pub fn mask()->Self{Self{value:7}
 }
 }
 
@@ -233,23 +237,111 @@ pub fn not_move()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_CycleMasks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_CycleMasks{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_CycleMasks{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.CycleMasks";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Works.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Works{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Works{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Works";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for SkillData_CycleMasks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for SkillData_Works{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl SkillData_CycleMasks{pub fn none()->Self{Self{value:0}
+impl SkillData_Works{pub fn none()->Self{Self{value:0}
 }
-pub fn full()->Self{Self{value:1048575}
+pub fn item_heal_scale()->Self{Self{value:1}
+}
+pub fn job_grow_change()->Self{Self{value:2}
+}
+pub fn total_grow_change()->Self{Self{value:3}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Func.md"))]#[::unity2::class(namespace="App",name="SkillData.Func")]#[parent(crate::system::object::Object)]pub struct SkillData_Func{#[offset(16)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Operation")]pub operation:crate::app::skilldata::SkillData_Operations, #[offset(32)]#[rename(name="SetCommand")]pub set_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(40)]#[rename(name="GetCommand")]pub get_command:crate::app::calculatorcommand::CalculatorCommand,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Stands.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Stands{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Stands{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Stands";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_Stands{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_Stands{pub fn none()->Self{Self{value:0}
+}
+pub fn offence()->Self{Self{value:1}
+}
+pub fn defence()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData.md"))]#[::unity2::class(namespace="App",name="SkillData")]#[parent(crate::app::structcalculatordata_1::StructCalculatorData_1<crate::app::skilldata::SkillData>)]pub struct SkillData{#[static_field]#[rename(name="PhaseCycle")]pub phase_cycle:i32, #[offset(568)]#[rename(name="GiveSkills")]pub give_skills:crate::app::skillarray::SkillArray, #[offset(576)]#[rename(name="RemoveSkills")]pub remove_skills:crate::app::skillarray::SkillArray, #[offset(584)]#[rename(name="SyncSkills")]pub sync_skills:crate::app::skillarray::SkillArray, #[offset(592)]#[rename(name="RebirthSkill")]pub rebirth_skill:crate::app::skilldata::SkillData, #[offset(600)]#[rename(name="EngageSkill")]pub engage_skill:crate::app::skilldata::SkillData, #[offset(608)]#[rename(name="ChangeSkills")]pub change_skills: ::unity2::Array<crate::app::skilldata::SkillData> , #[offset(616)]#[rename(name="LowSkill")]pub low_skill:crate::app::skilldata::SkillData, #[offset(624)]#[rename(name="HighSkill")]pub high_skill:crate::app::skilldata::SkillData, #[offset(632)]#[rename(name="RootCommandSkill")]pub root_command_skill:crate::app::skilldata::SkillData, #[offset(640)]#[rename(name="TimingMask")]pub timing_mask:crate::app::skilldata::SkillData_TimingMasks, #[offset(644)]#[rename(name="CycleMask")]pub cycle_mask:crate::app::skilldata::SkillData_CycleMasks, #[offset(648)]#[rename(name="SortKey")]pub sort_key:i32, #[offset(656)]#[rename(name="m_ActFuncs")]pub m_act_funcs:crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData_Func> , #[offset(664)]#[rename(name="m_AroundFuncs")]pub m_around_funcs:crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData_Func> , #[offset(672)]#[rename(name="m_StyleSkills")]pub m_style_skills: ::unity2::Array<crate::app::skilldata::SkillData> , #[offset(680)]#[rename(name="m_WeaponLevelMask")]pub m_weapon_level_mask:crate::app::weaponmask::WeaponMask, #[offset(688)]#[rename(name="m_ConditionCommand")]pub m_condition_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(696)]#[rename(name="m_GiveConditionCommand")]pub m_give_condition_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(704)]#[rename(name="m_AroundConditionCommand")]pub m_around_condition_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(712)]#[rename(name="m_SyncConditionCommands")]pub m_sync_condition_commands: ::unity2::Array<crate::app::calculatorcommand::CalculatorCommand> , #[offset(720)]#[rename(name="m_EquipItems")]pub m_equip_items:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> , #[offset(728)]#[rename(name="m_DefaultEquipItem")]pub m_default_equip_item:crate::app::itemdata::ItemData, #[offset(736)]#[rename(name="m_PrefixlessSid")]pub m_prefixless_sid: ::unity2::Il2CppString, #[static_field]#[rename(name="CommandMask")]pub command_mask:i32, #[static_field]#[rename(name="s_EfficacySkills")]pub s_efficacy_skills:crate::app::skillarray::SkillArray, #[static_field]#[rename(name="s_HeroSkill")]pub s_hero_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_StunSkill")]pub s_stun_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_DanceSkill")]pub s_dance_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_MorphSkill")]pub s_morph_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_PoisonSkill")]pub s_poison_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_LeaderSkill")]pub s_leader_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_FangCurseSkill")]pub s_fang_curse_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_EnchantSkill")]pub s_enchant_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_EnchantmentSkill")]pub s_enchantment_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_ImmortalSkill")]pub s_immortal_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_TransporterSkill")]pub s_transporter_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_FullBulletSkill")]pub s_full_bullet_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_ChainAttackGuardSkill")]pub s_chain_attack_guard_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_NotTerrainDamageSkill")]pub s_not_terrain_damage_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_GazeDiagonallySkill")]pub s_gaze_diagonally_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_MultiChangeSkill")]pub s_multi_change_skill:crate::app::skilldata::SkillData,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Cycles.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Cycles{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Cycles{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Cycles";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_Cycles{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_Cycles{pub fn none()->Self{Self{value:0}
+}
+pub fn map()->Self{Self{value:1}
+}
+pub fn phase_before()->Self{Self{value:2}
+}
+pub fn phase_after()->Self{Self{value:3}
+}
+pub fn fixed()->Self{Self{value:4}
+}
+pub fn engaged()->Self{Self{value:5}
+}
+pub fn battled()->Self{Self{value:6}
+}
+pub fn battled_of()->Self{Self{value:7}
+}
+pub fn battled_df()->Self{Self{value:8}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_IconKinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_IconKinds{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_IconKinds{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.IconKinds";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_IconKinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_IconKinds{pub fn none()->Self{Self{value:0}
+}
+pub fn efficacy()->Self{Self{value:1}
+}
+pub fn category()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Actions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Actions{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Actions{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Actions";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_Actions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_Actions{pub fn none()->Self{Self{value:0}
+}
+pub fn offence()->Self{Self{value:1}
+}
+pub fn defence()->Self{Self{value:2}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_States{pub value:i32,}
@@ -330,99 +422,25 @@ pub fn dance()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_AroundCenters.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_AroundCenters{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_AroundCenters{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.AroundCenters";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Func.md"))]#[::unity2::class(namespace="App",name="SkillData.Func")]#[parent(crate::system::object::Object)]pub struct SkillData_Func{#[offset(16)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Operation")]pub operation:crate::app::skilldata::SkillData_Operations, #[offset(32)]#[rename(name="SetCommand")]pub set_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(40)]#[rename(name="GetCommand")]pub get_command:crate::app::calculatorcommand::CalculatorCommand,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Layers.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Layers{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Layers{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Layers";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for SkillData_AroundCenters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for SkillData_Layers{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl SkillData_AroundCenters{pub fn none()->Self{Self{value:0}
+impl SkillData_Layers{pub fn a()->Self{Self{value:1}
 }
-pub fn self_()->Self{Self{value:1}
+pub fn b()->Self{Self{value:2}
 }
-pub fn target()->Self{Self{value:2}
+pub fn c()->Self{Self{value:4}
 }
-pub fn link()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Works.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Works{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Works{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Works";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_Works{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Works{pub fn none()->Self{Self{value:0}
-}
-pub fn item_heal_scale()->Self{Self{value:1}
-}
-pub fn job_grow_change()->Self{Self{value:2}
-}
-pub fn total_grow_change()->Self{Self{value:3}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Cycles.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Cycles{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Cycles{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Cycles";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_Cycles{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Cycles{pub fn none()->Self{Self{value:0}
-}
-pub fn map()->Self{Self{value:1}
-}
-pub fn phase_before()->Self{Self{value:2}
-}
-pub fn phase_after()->Self{Self{value:3}
-}
-pub fn fixed()->Self{Self{value:4}
-}
-pub fn engaged()->Self{Self{value:5}
-}
-pub fn battled()->Self{Self{value:6}
-}
-pub fn battled_of()->Self{Self{value:7}
-}
-pub fn battled_df()->Self{Self{value:8}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData.md"))]#[::unity2::class(namespace="App",name="SkillData")]#[parent(crate::app::structcalculatordata_1::StructCalculatorData_1<crate::app::skilldata::SkillData>)]pub struct SkillData{#[static_field]#[rename(name="PhaseCycle")]pub phase_cycle:i32, #[offset(568)]#[rename(name="GiveSkills")]pub give_skills:crate::app::skillarray::SkillArray, #[offset(576)]#[rename(name="RemoveSkills")]pub remove_skills:crate::app::skillarray::SkillArray, #[offset(584)]#[rename(name="SyncSkills")]pub sync_skills:crate::app::skillarray::SkillArray, #[offset(592)]#[rename(name="RebirthSkill")]pub rebirth_skill:crate::app::skilldata::SkillData, #[offset(600)]#[rename(name="EngageSkill")]pub engage_skill:crate::app::skilldata::SkillData, #[offset(608)]#[rename(name="ChangeSkills")]pub change_skills: ::unity2::Array<crate::app::skilldata::SkillData> , #[offset(616)]#[rename(name="LowSkill")]pub low_skill:crate::app::skilldata::SkillData, #[offset(624)]#[rename(name="HighSkill")]pub high_skill:crate::app::skilldata::SkillData, #[offset(632)]#[rename(name="RootCommandSkill")]pub root_command_skill:crate::app::skilldata::SkillData, #[offset(640)]#[rename(name="TimingMask")]pub timing_mask:crate::app::skilldata::SkillData_TimingMasks, #[offset(644)]#[rename(name="CycleMask")]pub cycle_mask:crate::app::skilldata::SkillData_CycleMasks, #[offset(648)]#[rename(name="SortKey")]pub sort_key:i32, #[offset(656)]#[rename(name="m_ActFuncs")]pub m_act_funcs:crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData_Func> , #[offset(664)]#[rename(name="m_AroundFuncs")]pub m_around_funcs:crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData_Func> , #[offset(672)]#[rename(name="m_StyleSkills")]pub m_style_skills: ::unity2::Array<crate::app::skilldata::SkillData> , #[offset(680)]#[rename(name="m_WeaponLevelMask")]pub m_weapon_level_mask:crate::app::weaponmask::WeaponMask, #[offset(688)]#[rename(name="m_ConditionCommand")]pub m_condition_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(696)]#[rename(name="m_GiveConditionCommand")]pub m_give_condition_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(704)]#[rename(name="m_AroundConditionCommand")]pub m_around_condition_command:crate::app::calculatorcommand::CalculatorCommand, #[offset(712)]#[rename(name="m_SyncConditionCommands")]pub m_sync_condition_commands: ::unity2::Array<crate::app::calculatorcommand::CalculatorCommand> , #[offset(720)]#[rename(name="m_EquipItems")]pub m_equip_items:crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> , #[offset(728)]#[rename(name="m_DefaultEquipItem")]pub m_default_equip_item:crate::app::itemdata::ItemData, #[offset(736)]#[rename(name="m_PrefixlessSid")]pub m_prefixless_sid: ::unity2::Il2CppString, #[static_field]#[rename(name="CommandMask")]pub command_mask:i32, #[static_field]#[rename(name="s_EfficacySkills")]pub s_efficacy_skills:crate::app::skillarray::SkillArray, #[static_field]#[rename(name="s_HeroSkill")]pub s_hero_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_StunSkill")]pub s_stun_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_DanceSkill")]pub s_dance_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_MorphSkill")]pub s_morph_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_PoisonSkill")]pub s_poison_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_LeaderSkill")]pub s_leader_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_FangCurseSkill")]pub s_fang_curse_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_EnchantSkill")]pub s_enchant_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_EnchantmentSkill")]pub s_enchantment_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_ImmortalSkill")]pub s_immortal_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_TransporterSkill")]pub s_transporter_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_FullBulletSkill")]pub s_full_bullet_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_ChainAttackGuardSkill")]pub s_chain_attack_guard_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_NotTerrainDamageSkill")]pub s_not_terrain_damage_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_GazeDiagonallySkill")]pub s_gaze_diagonally_skill:crate::app::skilldata::SkillData, #[static_field]#[rename(name="s_MultiChangeSkill")]pub s_multi_change_skill:crate::app::skilldata::SkillData,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Operations.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Operations{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Operations{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Operations";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_Operations{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Operations{pub fn none()->Self{Self{value:0}
-}
-pub fn equal()->Self{Self{value:1}
-}
-pub fn add()->Self{Self{value:2}
-}
-pub fn sub()->Self{Self{value:3}
-}
-pub fn mul()->Self{Self{value:4}
-}
-pub fn div()->Self{Self{value:5}
+pub fn d()->Self{Self{value:8}
 }
 }
 
@@ -497,6 +515,74 @@ pub fn nemesis()->Self{Self{value:262144}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_CycleMasks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_CycleMasks{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_CycleMasks{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.CycleMasks";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_CycleMasks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_CycleMasks{pub fn none()->Self{Self{value:0}
+}
+pub fn full()->Self{Self{value:1048575}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Phase.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Phase{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Phase{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Phase";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_Phase{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_Phase{pub fn current()->Self{Self{value:0}
+}
+pub fn other()->Self{Self{value:1}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_TimingMasks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_TimingMasks{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_TimingMasks{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.TimingMasks";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_TimingMasks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_TimingMasks{pub fn none()->Self{Self{value:0}
+}
+pub fn full()->Self{Self{value:1048575}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_AroundTargets.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_AroundTargets{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_AroundTargets{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.AroundTargets";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SkillData_AroundTargets{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SkillData_AroundTargets{pub fn none()->Self{Self{value:0}
+}
+pub fn friend()->Self{Self{value:1}
+}
+pub fn enemy()->Self{Self{value:2}
+}
+pub fn both()->Self{Self{value:3}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Targets.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Targets{pub value:i32,}
 impl::unity2::ClassIdentity for SkillData_Targets{const NAMESPACE: &'static str="App";
 const NAME: &'static str="SkillData.Targets";
@@ -525,56 +611,46 @@ pub fn overlap()->Self{Self{value:7}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_TimingMasks.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_TimingMasks{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_TimingMasks{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.TimingMasks";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_AroundCenters.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_AroundCenters{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_AroundCenters{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.AroundCenters";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for SkillData_TimingMasks{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for SkillData_AroundCenters{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl SkillData_TimingMasks{pub fn none()->Self{Self{value:0}
+impl SkillData_AroundCenters{pub fn none()->Self{Self{value:0}
 }
-pub fn full()->Self{Self{value:1048575}
+pub fn self_()->Self{Self{value:1}
+}
+pub fn target()->Self{Self{value:2}
+}
+pub fn link()->Self{Self{value:3}
 }
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_IconKinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_IconKinds{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_IconKinds{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.IconKinds";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Operations.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Operations{pub value:i32,}
+impl::unity2::ClassIdentity for SkillData_Operations{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SkillData.Operations";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for SkillData_IconKinds{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for SkillData_Operations{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl SkillData_IconKinds{pub fn none()->Self{Self{value:0}
+impl SkillData_Operations{pub fn none()->Self{Self{value:0}
 }
-pub fn efficacy()->Self{Self{value:1}
+pub fn equal()->Self{Self{value:1}
 }
-pub fn category()->Self{Self{value:2}
+pub fn add()->Self{Self{value:2}
 }
+pub fn sub()->Self{Self{value:3}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Frequencies.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Frequencies{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Frequencies{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Frequencies";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
+pub fn mul()->Self{Self{value:4}
 }
-impl::unity2::IlType for SkillData_Frequencies{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Frequencies{pub fn every()->Self{Self{value:1}
-}
-pub fn first()->Self{Self{value:2}
-}
-pub fn last()->Self{Self{value:4}
-}
-pub fn mask()->Self{Self{value:7}
+pub fn div()->Self{Self{value:5}
 }
 }
 
@@ -646,103 +722,72 @@ pub fn phase_start()->Self{Self{value:27}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Categorys.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Categorys{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Categorys{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Categorys";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_Categorys{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Categorys{pub fn none()->Self{Self{value:0}
-}
-pub fn person()->Self{Self{value:1}
-}
-pub fn job()->Self{Self{value:2}
-}
-pub fn item()->Self{Self{value:3}
-}
-pub fn equip()->Self{Self{value:4}
-}
-pub fn god()->Self{Self{value:5}
-}
-pub fn ring()->Self{Self{value:6}
-}
-pub fn hub()->Self{Self{value:7}
-}
-pub fn support()->Self{Self{value:8}
-}
-pub fn battle()->Self{Self{value:9}
-}
-pub fn private()->Self{Self{value:10}
-}
-pub fn inheritance()->Self{Self{value:11}
-}
-pub fn command()->Self{Self{value:12}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Actions.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Actions{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Actions{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Actions";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_Actions{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Actions{pub fn none()->Self{Self{value:0}
-}
-pub fn offence()->Self{Self{value:1}
-}
-pub fn defence()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/skilldata/SkillData_Layers.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SkillData_Layers{pub value:i32,}
-impl::unity2::ClassIdentity for SkillData_Layers{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SkillData.Layers";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SkillData_Layers{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SkillData_Layers{pub fn a()->Self{Self{value:1}
-}
-pub fn b()->Self{Self{value:2}
-}
-pub fn c()->Self{Self{value:4}
-}
-pub fn d()->Self{Self{value:8}
-}
-}
-
 }
 
 #[cfg(feature = "app-skilldata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-skilldata")]pub trait ISkillData_FuncMethods:ISkillData_Func{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillData_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e3b0usize)as*mut u8,();
-(SkillData_Func)__receiver)}
-}
-}
-
-#[cfg(feature="app-skilldata")]impl<__T:ISkillData_Func>ISkillData_FuncMethods for __T{}
-
-#[cfg(feature="app-skilldata")]impl SkillData_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-skilldata")]impl SkillData_Func{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SkillData_Func), ::core::stringify!(new),));
- <Self as ISkillData_FuncMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-skilldata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SkillData_unity2_raw{use super:: * ;
+pub unsafe fn get_calculator(this:SkillData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::calculatormanager::CalculatorManager{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SkillData as::unity2::ClassIdentity> ::NAME,"get_Calculator",));
+let inner:extern "C" fn(SkillData, ::unity2::OptionalMethod,)->crate::app::calculatormanager::CalculatorManager= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:SkillData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SkillData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(SkillData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_completed(this:SkillData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SkillData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
+let inner:extern "C" fn(SkillData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_completed_end(this:SkillData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SkillData as::unity2::ClassIdentity> ::NAME,"OnCompletedEnd",));
+let inner:extern "C" fn(SkillData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_release(this:SkillData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SkillData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let inner:extern "C" fn(SkillData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:SkillData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SkillData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(SkillData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-skilldata")]impl SkillData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2489800usize)as*mut u8,();
@@ -1513,32 +1558,27 @@ this}
 (SkillData)__receiver)}
 }
 #[doc="`get_Calculator()` overload"]fn get_calculator(self,)->crate::app::calculatormanager::CalculatorManager{unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x248a630usize)as*mut u8,crate::app::calculatormanager::CalculatorManager;
-(SkillData)__receiver)}
+__SkillData_unity2_raw::get_calculator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateFunc(::unity2::Il2CppString, i32, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn create_func(self,header:impl::core::convert::Into< ::unity2::Il2CppString> ,index:impl::core::convert::Into<i32> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,operation:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::skilldata::SkillData_Func{unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x248a800usize)as*mut u8,crate::app::skilldata::SkillData_Func;
 (SkillData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(header),(i32)::core::convert::Into::into(index),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(operation),(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x248aa90usize)as*mut u8,();
-(SkillData)__receiver)}
+__SkillData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcChangeSkills()` overload"]fn calc_change_skills(self,)-> ::unity2::Array<crate::app::skilldata::SkillData>{unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x248aee0usize)as*mut u8, ::unity2::Array<crate::app::skilldata::SkillData> ;
 (SkillData)__receiver)}
 }
 #[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x248b110usize)as*mut u8,();
-(SkillData)__receiver)}
+__SkillData_unity2_raw::on_completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCompletedEnd()` overload"]fn on_completed_end(self,)->(){unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x248d260usize)as*mut u8,();
-(SkillData)__receiver)}
+__SkillData_unity2_raw::on_completed_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x248d660usize)as*mut u8,();
-(SkillData)__receiver)}
+__SkillData_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetStyleSkill(crate::app::battlestyle::BattleStyle_Types)` overload"]fn get_style_skill(self,r#type:impl::core::convert::Into<crate::app::battlestyle::BattleStyle_Types>)->crate::app::skilldata::SkillData{unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x248d920usize)as*mut u8,crate::app::skilldata::SkillData;
@@ -1573,8 +1613,7 @@ this}
 (SkillData)__receiver)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x248e0f0usize)as*mut u8, ::unity2::Il2CppString;
-(SkillData)__receiver)}
+__SkillData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsCommandSkill()` overload"]fn is_command_skill(self,)->bool{unsafe{let __receiver= <SkillData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x248e2c0usize)as*mut u8,bool;
@@ -2089,37 +2128,55 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-skilldata")]pub trait ISkillData_FuncMethods:ISkillData_Func{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillData_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6e3b0usize)as*mut u8,();
+(SkillData_Func)__receiver)}
+}
+}
+
+#[cfg(feature="app-skilldata")]impl<__T:ISkillData_Func>ISkillData_FuncMethods for __T{}
+
+#[cfg(feature="app-skilldata")]impl SkillData_Func{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-skilldata")]impl SkillData_Func{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SkillData_Func), ::core::stringify!(new),));
+ <Self as ISkillData_FuncMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-skilldata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::SkillData_Categorys;
     pub use super::SkillData_Flags;
-    pub use super::SkillData_Stands;
-    pub use super::SkillData_Phase;
-    pub use super::SkillData_AroundTargets;
+    pub use super::SkillData_Frequencies;
     pub use super::SkillData_Zocs;
-    pub use super::SkillData_CycleMasks;
-    pub use super::SkillData_Func;
-    pub use super::ISkillData_Func;
-    pub use super::ISkillData_FuncMethods;
-    pub use super::SkillData_States;
-    pub use super::SkillData_GiveTargets;
-    pub use super::SkillData_AroundCenters;
     pub use super::SkillData_Works;
-    pub use super::SkillData_Cycles;
+    pub use super::SkillData_Stands;
     pub use super::SkillData;
     pub use super::ISkillData;
     pub use super::ISkillDataMethods;
-    pub use super::SkillData_Operations;
+    pub use super::SkillData_Cycles;
+    pub use super::SkillData_IconKinds;
+    pub use super::SkillData_Actions;
+    pub use super::SkillData_States;
+    pub use super::SkillData_GiveTargets;
+    pub use super::SkillData_Func;
+    pub use super::ISkillData_Func;
+    pub use super::ISkillData_FuncMethods;
+    pub use super::SkillData_Layers;
     pub use super::SkillData_PrivateFlags;
     pub use super::SkillData_Attrs;
-    pub use super::SkillData_Targets;
+    pub use super::SkillData_CycleMasks;
+    pub use super::SkillData_Phase;
     pub use super::SkillData_TimingMasks;
-    pub use super::SkillData_IconKinds;
-    pub use super::SkillData_Frequencies;
+    pub use super::SkillData_AroundTargets;
+    pub use super::SkillData_Targets;
+    pub use super::SkillData_AroundCenters;
+    pub use super::SkillData_Operations;
     pub use super::SkillData_Timings;
-    pub use super::SkillData_Categorys;
-    pub use super::SkillData_Actions;
-    pub use super::SkillData_Layers;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structcalculatordata_1::IStructCalculatorData_1;
     pub use crate::app::structdata_1::IStructData_1;

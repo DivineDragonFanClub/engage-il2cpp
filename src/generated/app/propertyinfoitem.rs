@@ -20,21 +20,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-propertyinfoitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-propertyinfoitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PropertyInfoItem_unity2_raw{use super:: * ;
+pub unsafe fn get_value_type(this:PropertyInfoItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",74usize,__vt.len(), <PropertyInfoItem as::unity2::ClassIdentity> ::NAME,"GetValueType",));
+let inner:extern "C" fn(PropertyInfoItem, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value(this:PropertyInfoItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",72usize,__vt.len(), <PropertyInfoItem as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(PropertyInfoItem, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_value(this:PropertyInfoItem,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",73usize,__vt.len(), <PropertyInfoItem as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(PropertyInfoItem,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="app-propertyinfoitem")]pub trait IPropertyInfoItemMethods:IPropertyInfoItem{#[doc="`.ctor(crate::system::object::Object, crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn ctor(self,obj:impl::core::convert::Into<crate::system::object::Object> ,info:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->(){unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08150usize)as*mut u8,();
 (PropertyInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(info))}
 }
 #[doc="`GetValueType()` overload"]fn get_value_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c081c0usize)as*mut u8, ::unity2::SystemType;
-(PropertyInfoItem)__receiver)}
+__PropertyInfoItem_unity2_raw::get_value_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetValue()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c081e0usize)as*mut u8,crate::system::object::Object;
-(PropertyInfoItem)__receiver)}
+__PropertyInfoItem_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetValue(crate::system::object::Object)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <PropertyInfoItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c08230usize)as*mut u8,();
-(PropertyInfoItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__PropertyInfoItem_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 

@@ -16,6 +16,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-trackedreference-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-trackedreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TrackedReference_unity2_raw{use super:: * ;
+pub unsafe fn equals(this:TrackedReference,o:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <TrackedReference as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(TrackedReference,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o,__mi)}
+pub unsafe fn get_hash_code(this:TrackedReference,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <TrackedReference as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(TrackedReference, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-trackedreference")]impl TrackedReference{#[doc="`op_Equality(crate::unity_engine::trackedreference::TrackedReference, crate::unity_engine::trackedreference::TrackedReference)` overload"]pub fn op_equality(x:impl::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference> ,y:impl::core::convert::Into<crate::unity_engine::trackedreference::TrackedReference>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378f5f0usize)as*mut u8,bool;
 (crate::unity_engine::trackedreference::TrackedReference)::core::convert::Into::into(x),(crate::unity_engine::trackedreference::TrackedReference)::core::convert::Into::into(y))}
 }
@@ -32,12 +55,10 @@ pub use __types::*;
 (TrackedReference)__receiver)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <TrackedReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x378f700usize)as*mut u8,bool;
-(TrackedReference)__receiver,(crate::system::object::Object)::core::convert::Into::into(o))}
+__TrackedReference_unity2_raw::equals(__receiver, ::core::convert::Into::into(o), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <TrackedReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x378f800usize)as*mut u8,i32;
-(TrackedReference)__receiver)}
+__TrackedReference_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 }
 

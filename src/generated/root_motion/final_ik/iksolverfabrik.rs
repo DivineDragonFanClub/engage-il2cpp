@@ -20,6 +20,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root_motion-final_ik-iksolverfabrik-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-iksolverfabrik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverFABRIK_unity2_raw{use super:: * ;
+pub unsafe fn get_ik_position(this:IKSolverFABRIK,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKSolverFABRIK as::unity2::ClassIdentity> ::NAME,"GetIKPosition",));
+let inner:extern "C" fn(IKSolverFABRIK, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_initiate(this:IKSolverFABRIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IKSolverFABRIK as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
+let inner:extern "C" fn(IKSolverFABRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:IKSolverFABRIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IKSolverFABRIK as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(IKSolverFABRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_bone_length_can_be_zero(this:IKSolverFABRIK,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IKSolverFABRIK as::unity2::ClassIdentity> ::NAME,"get_boneLengthCanBeZero",));
+let inner:extern "C" fn(IKSolverFABRIK, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-iksolverfabrik")]pub trait IIKSolverFABRIKMethods:IIKSolverFABRIK{#[doc="`SolveForward(crate::unity_engine::vector3::Vector3)` overload"]fn solve_forward(self,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverFABRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c29a50usize)as*mut u8,();
 (IKSolverFABRIK)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position))}
@@ -29,20 +72,16 @@ pub use __types::*;
 (IKSolverFABRIK)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position))}
 }
 #[doc="`GetIKPosition()` overload"]fn get_ik_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverFABRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c2a1c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverFABRIK)__receiver)}
+__IKSolverFABRIK_unity2_raw::get_ik_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnInitiate()` overload"]fn on_initiate(self,)->(){unsafe{let __receiver= <IKSolverFABRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c2a260usize)as*mut u8,();
-(IKSolverFABRIK)__receiver)}
+__IKSolverFABRIK_unity2_raw::on_initiate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <IKSolverFABRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c2a700usize)as*mut u8,();
-(IKSolverFABRIK)__receiver)}
+__IKSolverFABRIK_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_boneLengthCanBeZero()` overload"]fn get_bone_length_can_be_zero(self,)->bool{unsafe{let __receiver= <IKSolverFABRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c2aa00usize)as*mut u8,bool;
-(IKSolverFABRIK)__receiver)}
+__IKSolverFABRIK_unity2_raw::get_bone_length_can_be_zero(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SolveJoint(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn solve_joint(self,pos1:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,pos2:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,length:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverFABRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c2aa10usize)as*mut u8,crate::unity_engine::vector3::Vector3;

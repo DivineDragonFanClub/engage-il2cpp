@@ -18,6 +18,49 @@ use crate::unity_engine::timeline::runtimeelement::{IRuntimeElement,RuntimeEleme
 #[cfg(feature = "unity_engine-timeline-infiniteruntimeclip-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-timeline-infiniteruntimeclip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InfiniteRuntimeClip_unity2_raw{use super:: * ;
+pub unsafe fn get_interval_start(this:InfiniteRuntimeClip,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <InfiniteRuntimeClip as::unity2::ClassIdentity> ::NAME,"get_intervalStart",));
+let inner:extern "C" fn(InfiniteRuntimeClip, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_interval_end(this:InfiniteRuntimeClip,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <InfiniteRuntimeClip as::unity2::ClassIdentity> ::NAME,"get_intervalEnd",));
+let inner:extern "C" fn(InfiniteRuntimeClip, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_enable(this:InfiniteRuntimeClip,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <InfiniteRuntimeClip as::unity2::ClassIdentity> ::NAME,"set_enable",));
+let inner:extern "C" fn(InfiniteRuntimeClip,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn evaluate_at(this:InfiniteRuntimeClip,local_time:f64,frame_data:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <InfiniteRuntimeClip as::unity2::ClassIdentity> ::NAME,"EvaluateAt",));
+let inner:extern "C" fn(InfiniteRuntimeClip,f64,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,local_time,frame_data,__mi)}
+}
+
 #[cfg(feature="unity_engine-timeline-infiniteruntimeclip")]impl InfiniteRuntimeClip{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d7040usize)as*mut u8,();
 )}
 }
@@ -28,20 +71,16 @@ pub use __types::*;
 (InfiniteRuntimeClip)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable))}
 }
 #[doc="`get_intervalStart()` overload"]fn get_interval_start(self,)->i64{unsafe{let __receiver= <InfiniteRuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d6ec0usize)as*mut u8,i64;
-(InfiniteRuntimeClip)__receiver)}
+__InfiniteRuntimeClip_unity2_raw::get_interval_start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_intervalEnd()` overload"]fn get_interval_end(self,)->i64{unsafe{let __receiver= <InfiniteRuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d6ed0usize)as*mut u8,i64;
-(InfiniteRuntimeClip)__receiver)}
+__InfiniteRuntimeClip_unity2_raw::get_interval_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_enable(bool)` overload"]fn set_enable(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InfiniteRuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d6f40usize)as*mut u8,();
-(InfiniteRuntimeClip)__receiver,(bool)::core::convert::Into::into(value))}
+__InfiniteRuntimeClip_unity2_raw::set_enable(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`EvaluateAt(f64, crate::unity_engine::playables::framedata::FrameData)` overload"]fn evaluate_at(self,local_time:impl::core::convert::Into<f64> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData>)->(){unsafe{let __receiver= <InfiniteRuntimeClip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d6fd0usize)as*mut u8,();
-(InfiniteRuntimeClip)__receiver,(f64)::core::convert::Into::into(local_time),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(frame_data))}
+__InfiniteRuntimeClip_unity2_raw::evaluate_at(__receiver, ::core::convert::Into::into(local_time), ::core::convert::Into::into(frame_data), ::core::option::Option::None)}
 }
 }
 

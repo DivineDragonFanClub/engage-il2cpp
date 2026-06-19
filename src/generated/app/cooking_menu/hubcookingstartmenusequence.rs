@@ -19,10 +19,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))]#[::unity2::class(namespace="App.CookingMenu",name="HubCookingStartMenuSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct HubCookingStartMenuSequence{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, #[offset(120)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::system::action::Action, #[offset(128)]#[rename(name="m_SelectUnitList")]pub m_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(136)]#[rename(name="m_SelectFood")]pub m_select_food:crate::app::fooddata::FoodData, #[offset(144)]#[rename(name="m_SelectFoodstuffList")]pub m_select_foodstuff_list:crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> , #[offset(152)]#[rename(name="m_AllContent")]pub m_all_content:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App.CookingMenu",name="HubCookingStartMenuSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct HubCookingStartMenuSequence_DecideEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence.md"))]#[::unity2::class(namespace="App.CookingMenu",name="HubCookingStartMenuSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct HubCookingStartMenuSequence{#[offset(112)]#[rename(name="m_DecideCallback")]pub m_decide_callback:crate::app::cooking_menu::hubcookingstartmenusequence::HubCookingStartMenuSequence_DecideEventHandler, #[offset(120)]#[rename(name="m_EndCallback")]pub m_end_callback:crate::system::action::Action, #[offset(128)]#[rename(name="m_SelectUnitList")]pub m_select_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> , #[offset(136)]#[rename(name="m_SelectFood")]pub m_select_food:crate::app::fooddata::FoodData, #[offset(144)]#[rename(name="m_SelectFoodstuffList")]pub m_select_foodstuff_list:crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> , #[offset(152)]#[rename(name="m_AllContent")]pub m_all_content:crate::app::cooking_menu::dishallmenucontent::DishAllMenuContent,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cooking_menu/hubcookingstartmenusequence/HubCookingStartMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubCookingStartMenuSequence_Label{pub value:i32,}
@@ -52,6 +52,41 @@ pub fn end()->Self{Self{value:5}
 
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubCookingStartMenuSequence_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:HubCookingStartMenuSequence_DecideEventHandler,units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ,food:crate::app::fooddata::FoodData,foodstuffs:crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> ,add_action:crate::system::action::Action,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <HubCookingStartMenuSequence_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(HubCookingStartMenuSequence_DecideEventHandler,crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ,crate::app::fooddata::FoodData,crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> ,crate::system::action::Action, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,units,food,foodstuffs,add_action,__mi)}
+}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]pub trait IHubCookingStartMenuSequence_DecideEventHandlerMethods:IHubCookingStartMenuSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <HubCookingStartMenuSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce4d30usize)as*mut u8,();
+(HubCookingStartMenuSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::fooddata::FoodData, crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>, crate::system::action::Action)` overload"]fn invoke(self,units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,food:impl::core::convert::Into<crate::app::fooddata::FoodData> ,foodstuffs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> > ,add_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <HubCookingStartMenuSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HubCookingStartMenuSequence_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(units), ::core::convert::Into::into(food), ::core::convert::Into::into(foodstuffs), ::core::convert::Into::into(add_action), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl<__T:IHubCookingStartMenuSequence_DecideEventHandler>IHubCookingStartMenuSequence_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubCookingStartMenuSequence_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IHubCookingStartMenuSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence{#[doc="`LoadResources()` overload"]pub fn load_resources()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d80570usize)as*mut u8,();
 )}
@@ -153,38 +188,15 @@ pub fn get_cook_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]pub trait IHubCookingStartMenuSequence_DecideEventHandlerMethods:IHubCookingStartMenuSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <HubCookingStartMenuSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce4d30usize)as*mut u8,();
-(HubCookingStartMenuSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>, crate::app::fooddata::FoodData, crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>, crate::system::action::Action)` overload"]fn invoke(self,units:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> > ,food:impl::core::convert::Into<crate::app::fooddata::FoodData> ,foodstuffs:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData> > ,add_action:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <HubCookingStartMenuSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce4d50usize)as*mut u8,();
-(HubCookingStartMenuSequence_DecideEventHandler)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)::core::convert::Into::into(units),(crate::app::fooddata::FoodData)::core::convert::Into::into(food),(crate::system::collections::generic::list_1::List_1<crate::app::foodstuffdata::FoodstuffData>)::core::convert::Into::into(foodstuffs),(crate::system::action::Action)::core::convert::Into::into(add_action))}
-}
-}
-
-#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl<__T:IHubCookingStartMenuSequence_DecideEventHandler>IHubCookingStartMenuSequence_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-cooking_menu-hubcookingstartmenusequence")]impl HubCookingStartMenuSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubCookingStartMenuSequence_DecideEventHandler), ::core::stringify!(new),));
- <Self as IHubCookingStartMenuSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-cooking_menu-hubcookingstartmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubCookingStartMenuSequence;
-    pub use super::IHubCookingStartMenuSequence;
-    pub use super::IHubCookingStartMenuSequenceMethods;
     pub use super::HubCookingStartMenuSequence_DecideEventHandler;
     pub use super::IHubCookingStartMenuSequence_DecideEventHandler;
     pub use super::IHubCookingStartMenuSequence_DecideEventHandlerMethods;
+    pub use super::HubCookingStartMenuSequence;
+    pub use super::IHubCookingStartMenuSequence;
+    pub use super::IHubCookingStartMenuSequenceMethods;
     pub use super::HubCookingStartMenuSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

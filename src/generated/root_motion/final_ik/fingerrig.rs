@@ -26,6 +26,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-fingerrig-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-fingerrig")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FingerRig_unity2_raw{use super:: * ;
+pub unsafe fn initiate_solver(this:FingerRig,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FingerRig as::unity2::ClassIdentity> ::NAME,"InitiateSolver",));
+let inner:extern "C" fn(FingerRig, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_solver(this:FingerRig,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FingerRig as::unity2::ClassIdentity> ::NAME,"UpdateSolver",));
+let inner:extern "C" fn(FingerRig, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn fix_transforms(this:FingerRig,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FingerRig as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
+let inner:extern "C" fn(FingerRig, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-fingerrig")]pub trait IFingerRigMethods:IFingerRig{#[doc="`get_initiated()` overload"]fn get_initiated(self,)->bool{unsafe{let __receiver= <FingerRig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26ebac0usize)as*mut u8,bool;
 (FingerRig)__receiver)}
@@ -60,8 +93,7 @@ let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engin
 __out_0.assume_init()}
 }
 #[doc="`InitiateSolver()` overload"]fn initiate_solver(self,)->(){unsafe{let __receiver= <FingerRig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec220usize)as*mut u8,();
-(FingerRig)__receiver)}
+__FingerRig_unity2_raw::initiate_solver(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateFingerSolvers()` overload"]fn update_finger_solvers(self,)->(){unsafe{let __receiver= <FingerRig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec2e0usize)as*mut u8,();
@@ -76,12 +108,10 @@ __out_0.assume_init()}
 (FingerRig)__receiver)}
 }
 #[doc="`UpdateSolver()` overload"]fn update_solver(self,)->(){unsafe{let __receiver= <FingerRig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec440usize)as*mut u8,();
-(FingerRig)__receiver)}
+__FingerRig_unity2_raw::update_solver(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <FingerRig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec4b0usize)as*mut u8,();
-(FingerRig)__receiver)}
+__FingerRig_unity2_raw::fix_transforms(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FingerRig as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26ec530usize)as*mut u8,();

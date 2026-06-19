@@ -19,16 +19,16 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HardwiredMethodMemberDescriptor_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_execute{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<HardwiredMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"Execute",4,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <HardwiredMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Execute",e),}
-}
-}
+pub unsafe fn execute(this:HardwiredMethodMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <HardwiredMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(HardwiredMethodMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,context,args,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_calc_args_count{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<HardwiredMethodMemberDescriptor as::unity2::ClassIdentity> ::class(),"CalcArgsCount",1,param_types,false,)}
@@ -39,9 +39,12 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <HardwiredMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"CalcArgsCount",e),}
 }
 }
-pub unsafe fn invoke(this:HardwiredMethodMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,pars: ::unity2::Array<crate::system::object::Object> ,argscount:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Invoke").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Invoke", <HardwiredMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn invoke(this:HardwiredMethodMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,pars: ::unity2::Array<crate::system::object::Object> ,argscount:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <HardwiredMethodMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Invoke",));
 let inner:extern "C" fn(HardwiredMethodMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::Array<crate::system::object::Object> ,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -59,8 +62,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-standard_descriptors-hardwired_descriptors-hardwiredmethodmemberdescriptor")]pub trait IHardwiredMethodMemberDescriptorMethods:IHardwiredMethodMemberDescriptor{#[doc="`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]fn execute(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <HardwiredMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__HardwiredMethodMemberDescriptor_unity2_raw::__lookup_execute::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(HardwiredMethodMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj),(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(context),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
+__HardwiredMethodMemberDescriptor_unity2_raw::execute(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(context), ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`CalcArgsCount(::unity2::Array<crate::system::object::Object>)` overload"]fn calc_args_count(self,pars:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->i32{unsafe{let __receiver= <HardwiredMethodMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__HardwiredMethodMemberDescriptor_unity2_raw::__lookup_calc_args_count::get_method_info().method_ptr,i32;

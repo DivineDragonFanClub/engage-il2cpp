@@ -15,30 +15,42 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-iplayereditorconnectionnative")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayerEditorConnectionNative_unity2_raw{use super:: * ;
-pub unsafe fn initialize(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Initialize").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Initialize", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn initialize(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,"Initialize",));
 let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn disconnect_all(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("DisconnectAll").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","DisconnectAll", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn disconnect_all(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,"DisconnectAll",));
 let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn poll(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Poll").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Poll", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn poll(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,"Poll",));
 let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn is_connected(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsConnected").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsConnected", <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn is_connected(this:IPlayerEditorConnectionNative,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IPlayerEditorConnectionNative as::unity2::ClassIdentity> ::NAME,"IsConnected",));
 let inner:extern "C" fn(IPlayerEditorConnectionNative, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

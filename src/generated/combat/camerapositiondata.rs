@@ -21,7 +21,7 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData.md"))]#[::unity2::class(namespace="Combat",name="CameraPositionData")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CameraPositionData{#[offset(24)]#[rename(name="ShakeSetting")]pub shake_setting:crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, #[offset(128)]#[rename(name="m_DrawCount")]pub m_draw_count:crate::app::gameparam::GameParam_Holder,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]#[::unity2::class(namespace="Combat",name="CameraPositionData.CameraShakeSettings")]#[parent(crate::system::object::Object)]pub struct CameraPositionData_CameraShakeSettings{#[offset(16)]#[rename(name="ShakeDuration")]pub shake_duration:i32, #[offset(20)]#[rename(name="ShakeRadius")]pub shake_radius:f32, #[offset(24)]#[rename(name="ArmorStepDuraton")]pub armor_step_duraton:i32, #[offset(28)]#[rename(name="ArmorStepMagnitude")]pub armor_step_magnitude:f32, #[offset(32)]#[rename(name="ScaleCurveDistance")]pub scale_curve_distance:crate::unity_engine::animationcurve::AnimationCurve,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData_TargetJoint.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CameraPositionData_TargetJoint{pub value:i32,}
@@ -46,12 +46,30 @@ pub fn look_at_loc_human()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData_CameraShakeSettings.md"))]#[::unity2::class(namespace="Combat",name="CameraPositionData.CameraShakeSettings")]#[parent(crate::system::object::Object)]pub struct CameraPositionData_CameraShakeSettings{#[offset(16)]#[rename(name="ShakeDuration")]pub shake_duration:i32, #[offset(20)]#[rename(name="ShakeRadius")]pub shake_radius:f32, #[offset(24)]#[rename(name="ArmorStepDuraton")]pub armor_step_duraton:i32, #[offset(28)]#[rename(name="ArmorStepMagnitude")]pub armor_step_magnitude:f32, #[offset(32)]#[rename(name="ScaleCurveDistance")]pub scale_curve_distance:crate::unity_engine::animationcurve::AnimationCurve,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/camerapositiondata/CameraPositionData.md"))]#[::unity2::class(namespace="Combat",name="CameraPositionData")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct CameraPositionData{#[offset(24)]#[rename(name="ShakeSetting")]pub shake_setting:crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, #[offset(128)]#[rename(name="m_DrawCount")]pub m_draw_count:crate::app::gameparam::GameParam_Holder,}
 
 }
 
 #[cfg(feature = "combat-camerapositiondata-types")]
 pub use __types::*;
+
+#[cfg(feature="combat-camerapositiondata")]pub trait ICameraPositionData_CameraShakeSettingsMethods:ICameraPositionData_CameraShakeSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraPositionData_CameraShakeSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd8e0usize)as*mut u8,();
+(CameraPositionData_CameraShakeSettings)__receiver)}
+}
+}
+
+#[cfg(feature="combat-camerapositiondata")]impl<__T:ICameraPositionData_CameraShakeSettings>ICameraPositionData_CameraShakeSettingsMethods for __T{}
+
+#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData_CameraShakeSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData_CameraShakeSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(CameraPositionData_CameraShakeSettings), ::core::stringify!(new),));
+ <Self as ICameraPositionData_CameraShakeSettingsMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="combat-camerapositiondata")]pub trait ICameraPositionDataMethods:ICameraPositionData{#[doc="`get_IsReverse()` overload"]fn get_is_reverse(self,)->bool{unsafe{let __receiver= <CameraPositionData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25b99a0usize)as*mut u8,bool;
@@ -261,34 +279,16 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="combat-camerapositiondata")]pub trait ICameraPositionData_CameraShakeSettingsMethods:ICameraPositionData_CameraShakeSettings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CameraPositionData_CameraShakeSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bd8e0usize)as*mut u8,();
-(CameraPositionData_CameraShakeSettings)__receiver)}
-}
-}
-
-#[cfg(feature="combat-camerapositiondata")]impl<__T:ICameraPositionData_CameraShakeSettings>ICameraPositionData_CameraShakeSettingsMethods for __T{}
-
-#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData_CameraShakeSettings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="combat-camerapositiondata")]impl CameraPositionData_CameraShakeSettings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(CameraPositionData_CameraShakeSettings), ::core::stringify!(new),));
- <Self as ICameraPositionData_CameraShakeSettingsMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "combat-camerapositiondata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CameraPositionData;
-    pub use super::ICameraPositionData;
-    pub use super::ICameraPositionDataMethods;
-    pub use super::CameraPositionData_TargetJoint;
     pub use super::CameraPositionData_CameraShakeSettings;
     pub use super::ICameraPositionData_CameraShakeSettings;
     pub use super::ICameraPositionData_CameraShakeSettingsMethods;
+    pub use super::CameraPositionData_TargetJoint;
+    pub use super::CameraPositionData;
+    pub use super::ICameraPositionData;
+    pub use super::ICameraPositionDataMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -42,26 +42,26 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <TextDataProvider as::unity2::ClassIdentity> ::NAME,"set_IgnoreFailures",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_convert{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),"Convert",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Convert",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_provide{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),"Provide",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Provide",e),}
-}
-}
+pub unsafe fn convert(this:TextDataProvider,r#type: ::unity2::SystemType,text: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Convert",));
+let inner:extern "C" fn(TextDataProvider, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,text,__mi)}
+pub unsafe fn provide(this:TextDataProvider,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <TextDataProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
+let inner:extern "C" fn(TextDataProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,provide_handle,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -83,12 +83,10 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (TextDataProvider)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`Convert(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn convert(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::object::Object{unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_convert::get_method_info().method_ptr,crate::system::object::Object;
-(TextDataProvider)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(text))}
+__TextDataProvider_unity2_raw::convert(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(text), ::core::option::Option::None)}
 }
 #[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provide_handle:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_provide::get_method_info().method_ptr,();
-(TextDataProvider)__receiver,(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(provide_handle))}
+__TextDataProvider_unity2_raw::provide(__receiver, ::core::convert::Into::into(provide_handle), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextDataProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__TextDataProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
@@ -163,16 +161,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <TextDataProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"ConvertText",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_send_web_request{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider_InternalOp as::unity2::ClassIdentity> ::class(),"SendWebRequest",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <TextDataProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"SendWebRequest",e),}
-}
-}
+pub unsafe fn send_web_request(this:TextDataProvider_InternalOp,path: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TextDataProvider_InternalOp as::unity2::ClassIdentity> ::NAME,"SendWebRequest",));
+let inner:extern "C" fn(TextDataProvider_InternalOp, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,path,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<TextDataProvider_InternalOp as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -206,8 +204,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (TextDataProvider_InternalOp)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
 }
 #[doc="`SendWebRequest(::unity2::Il2CppString)` overload"]fn send_web_request(self,path:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TextDataProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__TextDataProvider_InternalOp_unity2_raw::__lookup_send_web_request::get_method_info().method_ptr,();
-(TextDataProvider_InternalOp)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path))}
+__TextDataProvider_InternalOp_unity2_raw::send_web_request(__receiver, ::core::convert::Into::into(path), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextDataProvider_InternalOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__TextDataProvider_InternalOp_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

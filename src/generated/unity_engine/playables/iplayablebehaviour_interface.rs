@@ -15,58 +15,82 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-playables-iplayablebehaviour_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayableBehaviour_Interface_unity2_raw{use super:: * ;
-pub unsafe fn on_graph_start(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnGraphStart").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnGraphStart", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_graph_start(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnGraphStart",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,playable,__mi)}
-pub unsafe fn on_graph_stop(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnGraphStop").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnGraphStop", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_graph_stop(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnGraphStop",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,playable,__mi)}
-pub unsafe fn on_playable_create(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnPlayableCreate").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnPlayableCreate", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_playable_create(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnPlayableCreate",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,playable,__mi)}
-pub unsafe fn on_playable_destroy(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnPlayableDestroy").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnPlayableDestroy", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_playable_destroy(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnPlayableDestroy",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,playable,__mi)}
-pub unsafe fn on_behaviour_play(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnBehaviourPlay").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnBehaviourPlay", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_behaviour_play(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnBehaviourPlay",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,playable,info,__mi)}
-pub unsafe fn on_behaviour_pause(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnBehaviourPause").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnBehaviourPause", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_behaviour_pause(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"OnBehaviourPause",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,playable,info,__mi)}
-pub unsafe fn prepare_frame(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PrepareFrame").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PrepareFrame", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn prepare_frame(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"PrepareFrame",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,playable,info,__mi)}
-pub unsafe fn process_frame(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessFrame").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessFrame", <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_frame(this:IPlayableBehaviour_Interface,playable:crate::unity_engine::playables::playable::Playable,info:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IPlayableBehaviour_Interface as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
 let inner:extern "C" fn(IPlayableBehaviour_Interface,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

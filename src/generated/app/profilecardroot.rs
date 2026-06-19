@@ -23,6 +23,18 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot.AchievementInfo")]#[parent(crate::system::object::Object)]pub struct ProfileCardRoot_AchievementInfo{#[offset(16)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Caption")]pub m_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Count")]pub m_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_BgImage")]pub m_bg_image:crate::unity_engine::ui::image::Image,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot.SortieCountInfo")]#[parent(crate::system::object::Object)]pub struct ProfileCardRoot_SortieCountInfo{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::app::uniticon::UnitIcon, #[offset(32)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_SortieCount")]pub m_sortie_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_BgImage")]pub m_bg_image:crate::unity_engine::ui::image::Image,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ProfileCardRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(48)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_BgImage")]pub m_bg_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_FrontPage")]pub m_front_page:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_UserName")]pub m_user_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_Hyphen")]pub m_hyphen:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_Title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_TitleBgImage")]pub m_title_bg_image:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_Photo")]pub m_photo:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_CharacterStamp")]pub m_character_stamp:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_Comment")]pub m_comment:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_CommentBgImage")]pub m_comment_bg_image:crate::unity_engine::ui::image::Image, #[offset(136)]#[rename(name="m_PlayerInfoCaption")]pub m_player_info_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_PlayerInfoCaptionBgImage")]pub m_player_info_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(152)]#[rename(name="m_PlayTimeCaption")]pub m_play_time_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_PlayTime")]pub m_play_time:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_PlayTimeBgImage")]pub m_play_time_bg_image:crate::unity_engine::ui::image::Image, #[offset(176)]#[rename(name="m_BirthdayCaption")]pub m_birthday_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_Birthday")]pub m_birthday:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_BirthdayBgImane")]pub m_birthday_bg_imane:crate::unity_engine::ui::image::Image, #[offset(200)]#[rename(name="m_DifficultyCaption")]pub m_difficulty_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_DifficultyBgImage")]pub m_difficulty_bg_image:crate::unity_engine::ui::image::Image, #[offset(224)]#[rename(name="m_ModeCaption")]pub m_mode_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(232)]#[rename(name="m_Mode")]pub m_mode:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_ModeBgImage")]pub m_mode_bg_image:crate::unity_engine::ui::image::Image, #[offset(248)]#[rename(name="m_FavoriteCharacterCaption")]pub m_favorite_character_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_FavoriteCharacter")]pub m_favorite_character:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_FavoriteCharacterBgImage")]pub m_favorite_character_bg_image:crate::unity_engine::ui::image::Image, #[offset(272)]#[rename(name="m_FavoriteMapCaption")]pub m_favorite_map_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_FavoriteMap")]pub m_favorite_map:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_FavoriteMapBgImage")]pub m_favorite_map_bg_image:crate::unity_engine::ui::image::Image, #[offset(296)]#[rename(name="m_RelayCaption")]pub m_relay_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_RelayCaptionBgImage")]pub m_relay_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(312)]#[rename(name="m_RelayPlayCountCaption")]pub m_relay_play_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(320)]#[rename(name="m_RelayPlayCount")]pub m_relay_play_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(328)]#[rename(name="m_RelayPlayCountBgImage")]pub m_relay_play_count_bg_image:crate::unity_engine::ui::image::Image, #[offset(336)]#[rename(name="m_VersusCaption")]pub m_versus_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(344)]#[rename(name="m_VersusCaptionBgImage")]pub m_versus_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(352)]#[rename(name="m_VersusMapThemeCaption")]pub m_versus_map_theme_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(360)]#[rename(name="m_VersusMapTheme")]pub m_versus_map_theme:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(368)]#[rename(name="m_VersusMapThemeBgImage")]pub m_versus_map_theme_bg_image:crate::unity_engine::ui::image::Image, #[offset(376)]#[rename(name="m_VersusPlayCountCaption")]pub m_versus_play_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(384)]#[rename(name="m_VersusPlayCount")]pub m_versus_play_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(392)]#[rename(name="m_VersusPlayCountBgImage")]pub m_versus_play_count_bg_image:crate::unity_engine::ui::image::Image, #[offset(400)]#[rename(name="m_VersusRateCaption")]pub m_versus_rate_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(408)]#[rename(name="m_VersusRate")]pub m_versus_rate:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(416)]#[rename(name="m_VersusRateBgImage")]pub m_versus_rate_bg_image:crate::unity_engine::ui::image::Image, #[offset(424)]#[rename(name="m_InfoLineImage")]pub m_info_line_image: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(432)]#[rename(name="m_FrontStampRoot")]pub m_front_stamp_root:crate::unity_engine::gameobject::GameObject, #[offset(440)]#[rename(name="m_FrontStampOrigin")]pub m_front_stamp_origin:crate::unity_engine::gameobject::GameObject, #[offset(448)]#[rename(name="m_BackPage")]pub m_back_page:crate::unity_engine::gameobject::GameObject, #[offset(456)]#[rename(name="m_SortieCountCaption")]pub m_sortie_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(464)]#[rename(name="m_SortieCountCaptionBgImage")]pub m_sortie_count_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(472)]#[rename(name="m_SortieCount")]pub m_sortie_count: ::unity2::Array<crate::app::profilecardroot::ProfileCardRoot_SortieCountInfo> , #[offset(480)]#[rename(name="m_AchievementCaption")]pub m_achievement_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(488)]#[rename(name="m_AchievementCaptionBgImage")]pub m_achievement_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(496)]#[rename(name="m_Achievement")]pub m_achievement: ::unity2::Array<crate::app::profilecardroot::ProfileCardRoot_AchievementInfo> , #[offset(504)]#[rename(name="m_BackStampRoot")]pub m_back_stamp_root:crate::unity_engine::gameobject::GameObject, #[offset(512)]#[rename(name="m_BackStampOrigin")]pub m_back_stamp_origin:crate::unity_engine::gameobject::GameObject, #[offset(520)]#[rename(name="m_BgHighlightAnimator")]pub m_bg_highlight_animator:crate::unity_engine::animator::Animator, #[offset(528)]#[rename(name="m_FrameHighlightAnimator")]pub m_frame_highlight_animator:crate::unity_engine::animator::Animator, #[offset(536)]#[rename(name="m_TextDecoHighlightAnimator")]pub m_text_deco_highlight_animator:crate::unity_engine::animator::Animator, #[offset(544)]#[rename(name="m_TextHighlightAnimator")]pub m_text_highlight_animator:crate::unity_engine::animator::Animator, #[offset(552)]#[rename(name="m_TitleHightlightAnimator")]pub m_title_hightlight_animator:crate::unity_engine::animator::Animator, #[offset(560)]#[rename(name="m_PhotoHighlightAnimator")]pub m_photo_highlight_animator:crate::unity_engine::animator::Animator, #[offset(568)]#[rename(name="m_CharaStampHighlightAnimator")]pub m_chara_stamp_highlight_animator:crate::unity_engine::animator::Animator, #[offset(576)]#[rename(name="m_CommentHighlightAnimator")]pub m_comment_highlight_animator:crate::unity_engine::animator::Animator, #[offset(584)]#[rename(name="m_FavoriteCharacterHighlightAnimator")]pub m_favorite_character_highlight_animator:crate::unity_engine::animator::Animator, #[offset(592)]#[rename(name="m_FavoriteRelayMapHighlightAnimator")]pub m_favorite_relay_map_highlight_animator:crate::unity_engine::animator::Animator, #[offset(600)]#[rename(name="m_OpenPositionY")]pub m_open_position_y:f32, #[offset(604)]#[rename(name="m_SmallPosition")]pub m_small_position:crate::unity_engine::vector2::Vector2, #[offset(612)]#[rename(name="m_SmallScale")]pub m_small_scale:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="m_CharacterStampEmptyImageName")]pub m_character_stamp_empty_image_name: ::unity2::Il2CppString, #[offset(620)]#[rename(name="m_IsFront")]pub m_is_front:bool, #[offset(632)]#[rename(name="m_IsEFIGS")]pub m_is_efigs:bool, #[offset(633)]#[rename(name="m_StampIsVisible")]pub m_stamp_is_visible:bool, #[offset(640)]#[rename(name="m_BgData")]pub m_bg_data:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(648)]#[rename(name="m_BgDataLoading")]pub m_bg_data_loading:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(656)]#[rename(name="m_FrameData")]pub m_frame_data:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(664)]#[rename(name="m_FrameDataLoading")]pub m_frame_data_loading:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(680)]#[rename(name="m_PhotoTexture2d")]pub m_photo_texture2d:crate::unity_engine::texture2d::Texture2D, #[offset(688)]#[rename(name="m_PhotoSprite")]pub m_photo_sprite:crate::unity_engine::sprite::Sprite, #[offset(696)]#[rename(name="m_StartHandler")]pub m_start_handler:crate::app::profilecardroot::ProfileCardRoot_StartHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot.StartHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardRoot_StartHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot_RectInfo.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ProfileCardRoot_RectInfo{pub pos:crate::unity_engine::vector2::Vector2,pub harf_size:crate::unity_engine::vector2::Vector2,pub x_axis:crate::unity_engine::vector2::Vector2,pub y_axis:crate::unity_engine::vector2::Vector2,}
 impl::unity2::ClassIdentity for ProfileCardRoot_RectInfo{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardRoot.RectInfo";
@@ -33,66 +45,58 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for ProfileCardRoot_RectInfo{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot_StartHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot.StartHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardRoot_StartHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ProfileCardRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_RectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(32)]#[rename(name="m_Animator")]pub m_animator:crate::unity_engine::animator::Animator, #[offset(40)]#[rename(name="m_CanvasGroup")]pub m_canvas_group:crate::unity_engine::canvasgroup::CanvasGroup, #[offset(48)]#[rename(name="m_FrameImage")]pub m_frame_image:crate::unity_engine::ui::image::Image, #[offset(56)]#[rename(name="m_BgImage")]pub m_bg_image:crate::unity_engine::ui::image::Image, #[offset(64)]#[rename(name="m_FrontPage")]pub m_front_page:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_UserName")]pub m_user_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_Hyphen")]pub m_hyphen:crate::unity_engine::gameobject::GameObject, #[offset(88)]#[rename(name="m_Title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(96)]#[rename(name="m_TitleBgImage")]pub m_title_bg_image:crate::unity_engine::ui::image::Image, #[offset(104)]#[rename(name="m_Photo")]pub m_photo:crate::unity_engine::ui::image::Image, #[offset(112)]#[rename(name="m_CharacterStamp")]pub m_character_stamp:crate::unity_engine::ui::image::Image, #[offset(120)]#[rename(name="m_Comment")]pub m_comment:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(128)]#[rename(name="m_CommentBgImage")]pub m_comment_bg_image:crate::unity_engine::ui::image::Image, #[offset(136)]#[rename(name="m_PlayerInfoCaption")]pub m_player_info_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_PlayerInfoCaptionBgImage")]pub m_player_info_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(152)]#[rename(name="m_PlayTimeCaption")]pub m_play_time_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_PlayTime")]pub m_play_time:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_PlayTimeBgImage")]pub m_play_time_bg_image:crate::unity_engine::ui::image::Image, #[offset(176)]#[rename(name="m_BirthdayCaption")]pub m_birthday_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(184)]#[rename(name="m_Birthday")]pub m_birthday:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(192)]#[rename(name="m_BirthdayBgImane")]pub m_birthday_bg_imane:crate::unity_engine::ui::image::Image, #[offset(200)]#[rename(name="m_DifficultyCaption")]pub m_difficulty_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(208)]#[rename(name="m_Difficulty")]pub m_difficulty:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(216)]#[rename(name="m_DifficultyBgImage")]pub m_difficulty_bg_image:crate::unity_engine::ui::image::Image, #[offset(224)]#[rename(name="m_ModeCaption")]pub m_mode_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(232)]#[rename(name="m_Mode")]pub m_mode:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(240)]#[rename(name="m_ModeBgImage")]pub m_mode_bg_image:crate::unity_engine::ui::image::Image, #[offset(248)]#[rename(name="m_FavoriteCharacterCaption")]pub m_favorite_character_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_FavoriteCharacter")]pub m_favorite_character:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_FavoriteCharacterBgImage")]pub m_favorite_character_bg_image:crate::unity_engine::ui::image::Image, #[offset(272)]#[rename(name="m_FavoriteMapCaption")]pub m_favorite_map_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(280)]#[rename(name="m_FavoriteMap")]pub m_favorite_map:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(288)]#[rename(name="m_FavoriteMapBgImage")]pub m_favorite_map_bg_image:crate::unity_engine::ui::image::Image, #[offset(296)]#[rename(name="m_RelayCaption")]pub m_relay_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(304)]#[rename(name="m_RelayCaptionBgImage")]pub m_relay_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(312)]#[rename(name="m_RelayPlayCountCaption")]pub m_relay_play_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(320)]#[rename(name="m_RelayPlayCount")]pub m_relay_play_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(328)]#[rename(name="m_RelayPlayCountBgImage")]pub m_relay_play_count_bg_image:crate::unity_engine::ui::image::Image, #[offset(336)]#[rename(name="m_VersusCaption")]pub m_versus_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(344)]#[rename(name="m_VersusCaptionBgImage")]pub m_versus_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(352)]#[rename(name="m_VersusMapThemeCaption")]pub m_versus_map_theme_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(360)]#[rename(name="m_VersusMapTheme")]pub m_versus_map_theme:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(368)]#[rename(name="m_VersusMapThemeBgImage")]pub m_versus_map_theme_bg_image:crate::unity_engine::ui::image::Image, #[offset(376)]#[rename(name="m_VersusPlayCountCaption")]pub m_versus_play_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(384)]#[rename(name="m_VersusPlayCount")]pub m_versus_play_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(392)]#[rename(name="m_VersusPlayCountBgImage")]pub m_versus_play_count_bg_image:crate::unity_engine::ui::image::Image, #[offset(400)]#[rename(name="m_VersusRateCaption")]pub m_versus_rate_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(408)]#[rename(name="m_VersusRate")]pub m_versus_rate:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(416)]#[rename(name="m_VersusRateBgImage")]pub m_versus_rate_bg_image:crate::unity_engine::ui::image::Image, #[offset(424)]#[rename(name="m_InfoLineImage")]pub m_info_line_image: ::unity2::Array<crate::unity_engine::ui::image::Image> , #[offset(432)]#[rename(name="m_FrontStampRoot")]pub m_front_stamp_root:crate::unity_engine::gameobject::GameObject, #[offset(440)]#[rename(name="m_FrontStampOrigin")]pub m_front_stamp_origin:crate::unity_engine::gameobject::GameObject, #[offset(448)]#[rename(name="m_BackPage")]pub m_back_page:crate::unity_engine::gameobject::GameObject, #[offset(456)]#[rename(name="m_SortieCountCaption")]pub m_sortie_count_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(464)]#[rename(name="m_SortieCountCaptionBgImage")]pub m_sortie_count_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(472)]#[rename(name="m_SortieCount")]pub m_sortie_count: ::unity2::Array<crate::app::profilecardroot::ProfileCardRoot_SortieCountInfo> , #[offset(480)]#[rename(name="m_AchievementCaption")]pub m_achievement_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(488)]#[rename(name="m_AchievementCaptionBgImage")]pub m_achievement_caption_bg_image:crate::unity_engine::ui::image::Image, #[offset(496)]#[rename(name="m_Achievement")]pub m_achievement: ::unity2::Array<crate::app::profilecardroot::ProfileCardRoot_AchievementInfo> , #[offset(504)]#[rename(name="m_BackStampRoot")]pub m_back_stamp_root:crate::unity_engine::gameobject::GameObject, #[offset(512)]#[rename(name="m_BackStampOrigin")]pub m_back_stamp_origin:crate::unity_engine::gameobject::GameObject, #[offset(520)]#[rename(name="m_BgHighlightAnimator")]pub m_bg_highlight_animator:crate::unity_engine::animator::Animator, #[offset(528)]#[rename(name="m_FrameHighlightAnimator")]pub m_frame_highlight_animator:crate::unity_engine::animator::Animator, #[offset(536)]#[rename(name="m_TextDecoHighlightAnimator")]pub m_text_deco_highlight_animator:crate::unity_engine::animator::Animator, #[offset(544)]#[rename(name="m_TextHighlightAnimator")]pub m_text_highlight_animator:crate::unity_engine::animator::Animator, #[offset(552)]#[rename(name="m_TitleHightlightAnimator")]pub m_title_hightlight_animator:crate::unity_engine::animator::Animator, #[offset(560)]#[rename(name="m_PhotoHighlightAnimator")]pub m_photo_highlight_animator:crate::unity_engine::animator::Animator, #[offset(568)]#[rename(name="m_CharaStampHighlightAnimator")]pub m_chara_stamp_highlight_animator:crate::unity_engine::animator::Animator, #[offset(576)]#[rename(name="m_CommentHighlightAnimator")]pub m_comment_highlight_animator:crate::unity_engine::animator::Animator, #[offset(584)]#[rename(name="m_FavoriteCharacterHighlightAnimator")]pub m_favorite_character_highlight_animator:crate::unity_engine::animator::Animator, #[offset(592)]#[rename(name="m_FavoriteRelayMapHighlightAnimator")]pub m_favorite_relay_map_highlight_animator:crate::unity_engine::animator::Animator, #[offset(600)]#[rename(name="m_OpenPositionY")]pub m_open_position_y:f32, #[offset(604)]#[rename(name="m_SmallPosition")]pub m_small_position:crate::unity_engine::vector2::Vector2, #[offset(612)]#[rename(name="m_SmallScale")]pub m_small_scale:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="m_CharacterStampEmptyImageName")]pub m_character_stamp_empty_image_name: ::unity2::Il2CppString, #[offset(620)]#[rename(name="m_IsFront")]pub m_is_front:bool, #[offset(632)]#[rename(name="m_IsEFIGS")]pub m_is_efigs:bool, #[offset(633)]#[rename(name="m_StampIsVisible")]pub m_stamp_is_visible:bool, #[offset(640)]#[rename(name="m_BgData")]pub m_bg_data:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(648)]#[rename(name="m_BgDataLoading")]pub m_bg_data_loading:crate::app::profilecardbgdata::ProfileCardBgData, #[offset(656)]#[rename(name="m_FrameData")]pub m_frame_data:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(664)]#[rename(name="m_FrameDataLoading")]pub m_frame_data_loading:crate::app::profilecardframedata::ProfileCardFrameData, #[offset(680)]#[rename(name="m_PhotoTexture2d")]pub m_photo_texture2d:crate::unity_engine::texture2d::Texture2D, #[offset(688)]#[rename(name="m_PhotoSprite")]pub m_photo_sprite:crate::unity_engine::sprite::Sprite, #[offset(696)]#[rename(name="m_StartHandler")]pub m_start_handler:crate::app::profilecardroot::ProfileCardRoot_StartHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot_AchievementInfo.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot.AchievementInfo")]#[parent(crate::system::object::Object)]pub struct ProfileCardRoot_AchievementInfo{#[offset(16)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Caption")]pub m_caption:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_Count")]pub m_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_BgImage")]pub m_bg_image:crate::unity_engine::ui::image::Image,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardroot/ProfileCardRoot_SortieCountInfo.md"))]#[::unity2::class(namespace="App",name="ProfileCardRoot.SortieCountInfo")]#[parent(crate::system::object::Object)]pub struct ProfileCardRoot_SortieCountInfo{#[offset(16)]#[rename(name="m_RootObject")]pub m_root_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_UnitIcon")]pub m_unit_icon:crate::app::uniticon::UnitIcon, #[offset(32)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_SortieCount")]pub m_sortie_count:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_BgImage")]pub m_bg_image:crate::unity_engine::ui::image::Image,}
-
 }
 
 #[cfg(feature = "app-profilecardroot-types")]
 pub use __types::*;
 
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_RectInfo{#[doc="`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]pub fn get_abs_dot(v1:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a410usize)as*mut u8,f32;
-(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v1),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v2))}
-}
-#[doc="`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]pub fn is_overlap(rect1:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo> ,rect2:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a430usize)as*mut u8,bool;
-(crate::app::profilecardroot::ProfileCardRoot_RectInfo)::core::convert::Into::into(rect1),(crate::app::profilecardroot::ProfileCardRoot_RectInfo)::core::convert::Into::into(rect2))}
-}
-#[doc="`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]pub fn get_distance(pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,rect:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a590usize)as*mut u8,f32;
-(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos),(crate::app::profilecardroot::ProfileCardRoot_RectInfo)::core::convert::Into::into(rect))}
+#[cfg(feature="app-profilecardroot")]pub trait IProfileCardRoot_AchievementInfoMethods:IProfileCardRoot_AchievementInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardRoot_AchievementInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226a3d0usize)as*mut u8,();
+(ProfileCardRoot_AchievementInfo)__receiver)}
 }
 }
 
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_RectInfo{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]pub fn ctor(&mut self,pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,harf_size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,x_axis:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,y_axis:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a3e0usize)as*mut u8,();
-(*mut ProfileCardRoot_RectInfo)self as*mut ProfileCardRoot_RectInfo,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(harf_size),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(x_axis),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(y_axis))}
-}
+#[cfg(feature="app-profilecardroot")]impl<__T:IProfileCardRoot_AchievementInfo>IProfileCardRoot_AchievementInfoMethods for __T{}
+
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_AchievementInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_RectInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_abs_dot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_overlap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-profilecardroot")]pub trait IProfileCardRoot_StartHandlerMethods:IProfileCardRoot_StartHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardRoot_StartHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226a680usize)as*mut u8,();
-(ProfileCardRoot_StartHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardRoot_StartHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226a6a0usize)as*mut u8,();
-(ProfileCardRoot_StartHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardroot")]impl<__T:IProfileCardRoot_StartHandler>IProfileCardRoot_StartHandlerMethods for __T{}
-
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_StartHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_StartHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_AchievementInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(ProfileCardRoot_StartHandler), ::core::stringify!(new),));
- <Self as IProfileCardRoot_StartHandlerMethods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(ProfileCardRoot_AchievementInfo), ::core::stringify!(new),));
+ <Self as IProfileCardRoot_AchievementInfoMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="app-profilecardroot")]pub trait IProfileCardRoot_SortieCountInfoMethods:IProfileCardRoot_SortieCountInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardRoot_SortieCountInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226a670usize)as*mut u8,();
+(ProfileCardRoot_SortieCountInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-profilecardroot")]impl<__T:IProfileCardRoot_SortieCountInfo>IProfileCardRoot_SortieCountInfoMethods for __T{}
+
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_SortieCountInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_SortieCountInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardRoot_SortieCountInfo), ::core::stringify!(new),));
+ <Self as IProfileCardRoot_SortieCountInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-profilecardroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardRoot_unity2_raw{use super:: * ;
+pub unsafe fn open(this:ProfileCardRoot,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProfileCardRoot as::unity2::ClassIdentity> ::NAME,"Open",));
+let inner:extern "C" fn(ProfileCardRoot, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-profilecardroot")]impl ProfileCardRoot{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23235b0usize)as*mut u8,();
@@ -261,8 +265,7 @@ this}
 (ProfileCardRoot)__receiver)}
 }
 #[doc="`Open()` overload"]fn open(self,)->(){unsafe{let __receiver= <ProfileCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2322e00usize)as*mut u8,();
-(ProfileCardRoot)__receiver)}
+__ProfileCardRoot_unity2_raw::open(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SwitchPages()` overload"]fn switch_pages(self,)->(){unsafe{let __receiver= <ProfileCardRoot as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x230c180usize)as*mut u8,();
@@ -439,58 +442,79 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-profilecardroot")]pub trait IProfileCardRoot_AchievementInfoMethods:IProfileCardRoot_AchievementInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardRoot_AchievementInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226a3d0usize)as*mut u8,();
-(ProfileCardRoot_AchievementInfo)__receiver)}
+#[cfg(feature="app-profilecardroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardRoot_StartHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:ProfileCardRoot_StartHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ProfileCardRoot_StartHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(ProfileCardRoot_StartHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-profilecardroot")]pub trait IProfileCardRoot_StartHandlerMethods:IProfileCardRoot_StartHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardRoot_StartHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226a680usize)as*mut u8,();
+(ProfileCardRoot_StartHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardRoot_StartHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProfileCardRoot_StartHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-profilecardroot")]impl<__T:IProfileCardRoot_AchievementInfo>IProfileCardRoot_AchievementInfoMethods for __T{}
+#[cfg(feature="app-profilecardroot")]impl<__T:IProfileCardRoot_StartHandler>IProfileCardRoot_StartHandlerMethods for __T{}
 
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_AchievementInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_StartHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_AchievementInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_StartHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(ProfileCardRoot_AchievementInfo), ::core::stringify!(new),));
- <Self as IProfileCardRoot_AchievementInfoMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(ProfileCardRoot_StartHandler), ::core::stringify!(new),));
+ <Self as IProfileCardRoot_StartHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
-#[cfg(feature="app-profilecardroot")]pub trait IProfileCardRoot_SortieCountInfoMethods:IProfileCardRoot_SortieCountInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardRoot_SortieCountInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226a670usize)as*mut u8,();
-(ProfileCardRoot_SortieCountInfo)__receiver)}
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_RectInfo{#[doc="`GetAbsDot(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]pub fn get_abs_dot(v1:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,v2:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a410usize)as*mut u8,f32;
+(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v1),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(v2))}
+}
+#[doc="`IsOverlap(crate::app::profilecardroot::ProfileCardRoot_RectInfo, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]pub fn is_overlap(rect1:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo> ,rect2:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a430usize)as*mut u8,bool;
+(crate::app::profilecardroot::ProfileCardRoot_RectInfo)::core::convert::Into::into(rect1),(crate::app::profilecardroot::ProfileCardRoot_RectInfo)::core::convert::Into::into(rect2))}
+}
+#[doc="`GetDistance(crate::unity_engine::vector2::Vector2, crate::app::profilecardroot::ProfileCardRoot_RectInfo)` overload"]pub fn get_distance(pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,rect:impl::core::convert::Into<crate::app::profilecardroot::ProfileCardRoot_RectInfo>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a590usize)as*mut u8,f32;
+(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos),(crate::app::profilecardroot::ProfileCardRoot_RectInfo)::core::convert::Into::into(rect))}
 }
 }
 
-#[cfg(feature="app-profilecardroot")]impl<__T:IProfileCardRoot_SortieCountInfo>IProfileCardRoot_SortieCountInfoMethods for __T{}
-
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_SortieCountInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_RectInfo{#[doc="`.ctor(crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2, crate::unity_engine::vector2::Vector2)` overload"]pub fn ctor(&mut self,pos:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,harf_size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,x_axis:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,y_axis:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x226a3e0usize)as*mut u8,();
+(*mut ProfileCardRoot_RectInfo)self as*mut ProfileCardRoot_RectInfo,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(pos),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(harf_size),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(x_axis),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(y_axis))}
+}
 }
 
-#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_SortieCountInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardRoot_SortieCountInfo), ::core::stringify!(new),));
- <Self as IProfileCardRoot_SortieCountInfoMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-profilecardroot")]impl ProfileCardRoot_RectInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_abs_dot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_overlap_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_distance_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
 #[cfg(feature = "app-profilecardroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardRoot_RectInfo;
-    pub use super::ProfileCardRoot_StartHandler;
-    pub use super::IProfileCardRoot_StartHandler;
-    pub use super::IProfileCardRoot_StartHandlerMethods;
-    pub use super::ProfileCardRoot;
-    pub use super::IProfileCardRoot;
-    pub use super::IProfileCardRootMethods;
     pub use super::ProfileCardRoot_AchievementInfo;
     pub use super::IProfileCardRoot_AchievementInfo;
     pub use super::IProfileCardRoot_AchievementInfoMethods;
     pub use super::ProfileCardRoot_SortieCountInfo;
     pub use super::IProfileCardRoot_SortieCountInfo;
     pub use super::IProfileCardRoot_SortieCountInfoMethods;
+    pub use super::ProfileCardRoot;
+    pub use super::IProfileCardRoot;
+    pub use super::IProfileCardRootMethods;
+    pub use super::ProfileCardRoot_StartHandler;
+    pub use super::IProfileCardRoot_StartHandler;
+    pub use super::IProfileCardRoot_StartHandlerMethods;
+    pub use super::ProfileCardRoot_RectInfo;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

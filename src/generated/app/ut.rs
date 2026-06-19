@@ -15,41 +15,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ut/Ut_GameObjectFunction.md"))]#[::unity2::class(namespace="App",name="Ut.GameObjectFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Ut_GameObjectFunction{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ut/Ut_EnumList.md"))]#[::unity2::class(namespace="App",name="Ut.EnumList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::system::object::Object>)]pub struct Ut_EnumList{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ut/Ut.md"))]#[::unity2::class(namespace="App",name="Ut")]#[parent(crate::system::object::Object)]pub struct Ut{#[static_field]#[rename(name="FNV_OFFSET_BASIS_32")]pub fnv_offset_basis_32:u32, #[static_field]#[rename(name="FNV_PRIME_32")]pub fnv_prime_32:u32, #[static_field]#[rename(name="s_ValueToString")]pub s_value_to_string: ::unity2::Array< ::unity2::Il2CppString> ,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ut/Ut_GameObjectFunction.md"))]#[::unity2::class(namespace="App",name="Ut.GameObjectFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Ut_GameObjectFunction{}
+
 }
 
 #[cfg(feature = "app-ut-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ut")]pub trait IUt_GameObjectFunctionMethods:IUt_GameObjectFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Ut_GameObjectFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5c850usize)as*mut u8,();
-(Ut_GameObjectFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]fn invoke(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <Ut_GameObjectFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5c870usize)as*mut u8,();
-(Ut_GameObjectFunction)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
-}
-}
-
-#[cfg(feature="app-ut")]impl<__T:IUt_GameObjectFunction>IUt_GameObjectFunctionMethods for __T{}
-
-#[cfg(feature="app-ut")]impl Ut_GameObjectFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ut")]impl Ut_GameObjectFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Ut_GameObjectFunction), ::core::stringify!(new),));
- <Self as IUt_GameObjectFunctionMethods> ::ctor(this,object,method);
-this}
-}
 
 #[cfg(feature="app-ut")]pub trait IUt_EnumListMethods:IUt_EnumList{#[doc="`.ctor(::unity2::SystemType)` overload"]fn ctor(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <Ut_EnumList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5c3e0usize)as*mut u8,();
@@ -674,18 +651,53 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-ut")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Ut_GameObjectFunction_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:Ut_GameObjectFunction,go:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Ut_GameObjectFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(Ut_GameObjectFunction,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,go,__mi)}
+}
+
+#[cfg(feature="app-ut")]pub trait IUt_GameObjectFunctionMethods:IUt_GameObjectFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Ut_GameObjectFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5c850usize)as*mut u8,();
+(Ut_GameObjectFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::unity_engine::gameobject::GameObject)` overload"]fn invoke(self,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <Ut_GameObjectFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__Ut_GameObjectFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(go), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-ut")]impl<__T:IUt_GameObjectFunction>IUt_GameObjectFunctionMethods for __T{}
+
+#[cfg(feature="app-ut")]impl Ut_GameObjectFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ut")]impl Ut_GameObjectFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Ut_GameObjectFunction), ::core::stringify!(new),));
+ <Self as IUt_GameObjectFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-ut")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Ut_GameObjectFunction;
-    pub use super::IUt_GameObjectFunction;
-    pub use super::IUt_GameObjectFunctionMethods;
     pub use super::Ut_EnumList;
     pub use super::IUt_EnumList;
     pub use super::IUt_EnumListMethods;
     pub use super::Ut;
     pub use super::IUt;
     pub use super::IUtMethods;
+    pub use super::Ut_GameObjectFunction;
+    pub use super::IUt_GameObjectFunction;
+    pub use super::IUt_GameObjectFunctionMethods;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

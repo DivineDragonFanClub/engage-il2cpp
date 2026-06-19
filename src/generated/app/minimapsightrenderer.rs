@@ -30,6 +30,19 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "app-minimapsightrenderer-types")]
 pub use __types::*;
 
+#[cfg(feature="app-minimapsightrenderer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MiniMapSightRenderer_unity2_raw{use super:: * ;
+pub unsafe fn update_geometry(this:MiniMapSightRenderer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <MiniMapSightRenderer as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let inner:extern "C" fn(MiniMapSightRenderer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-minimapsightrenderer")]pub trait IMiniMapSightRendererMethods:IMiniMapSightRenderer{#[doc="`get_Texture()` overload"]fn get_texture(self,)->crate::unity_engine::texture2d::Texture2D{unsafe{let __receiver= <MiniMapSightRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2779890usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
 (MiniMapSightRenderer)__receiver)}
@@ -59,8 +72,7 @@ pub use __types::*;
 (MiniMapSightRenderer)__receiver)}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <MiniMapSightRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2779d20usize)as*mut u8,();
-(MiniMapSightRenderer)__receiver)}
+__MiniMapSightRenderer_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MiniMapSightRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2779e40usize)as*mut u8,();

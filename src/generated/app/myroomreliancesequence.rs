@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomreliancesequence::MyRoomRelianceSequence>)]pub struct MyRoomRelianceSequence{#[offset(144)]#[rename(name="m_mainContent")]pub m_main_content:crate::unity_engine::gameobject::GameObject,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MyRoomRelianceSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MyRoomRelianceSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MyRoomRelianceSequence.Label";
@@ -38,13 +41,23 @@ pub fn end()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomreliancesequence/MyRoomRelianceSequence.md"))]#[::unity2::class(namespace="App",name="MyRoomRelianceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::myroomreliancesequence::MyRoomRelianceSequence>)]pub struct MyRoomRelianceSequence{#[offset(144)]#[rename(name="m_mainContent")]pub m_main_content:crate::unity_engine::gameobject::GameObject,}
-
 }
 
 #[cfg(feature = "app-myroomreliancesequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-myroomreliancesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomRelianceSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_dispose(this:MyRoomRelianceSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MyRoomRelianceSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MyRoomRelianceSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-myroomreliancesequence")]impl MyRoomRelianceSequence{#[doc="`get_IsGodReliance()` overload"]pub fn get_is_god_reliance()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2396050usize)as*mut u8,bool;
 )}
@@ -107,8 +120,7 @@ pub use __types::*;
 (MyRoomRelianceSequence)__receiver)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2396ff0usize)as*mut u8,();
-(MyRoomRelianceSequence)__receiver)}
+__MyRoomRelianceSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MyRoomRelianceSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2396370usize)as*mut u8,();
@@ -148,10 +160,10 @@ this}
 #[cfg(feature = "app-myroomreliancesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MyRoomRelianceSequence_Label;
     pub use super::MyRoomRelianceSequence;
     pub use super::IMyRoomRelianceSequence;
     pub use super::IMyRoomRelianceSequenceMethods;
+    pub use super::MyRoomRelianceSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

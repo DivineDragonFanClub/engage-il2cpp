@@ -30,6 +30,169 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "unity_engine-ui-text-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-ui-text")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Text_unity2_raw{use super:: * ;
+pub unsafe fn get_main_texture(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_mainTexture",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_text(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",74usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_text",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_text(this:Text,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(75usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",75usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"set_text",));
+let inner:extern "C" fn(Text, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn on_enable(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_geometry(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_populate_mesh(this:Text,to_fill:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"OnPopulateMesh",));
+let inner:extern "C" fn(Text,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,to_fill,__mi)}
+pub unsafe fn calculate_layout_input_horizontal(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(76usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",76usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate_layout_input_vertical(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",77usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_width(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",78usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_width(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_width(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(80usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",80usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_height(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(81usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",81usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_height(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(82usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",82usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_height(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(83usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",83usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_layout_priority(this:Text,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(84usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",84usize,__vt.len(), <Text as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
+let inner:extern "C" fn(Text, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-ui-text")]impl Text{#[doc="`GetTextAnchorPivot(crate::unity_engine::textanchor::TextAnchor)` overload"]pub fn get_text_anchor_pivot(anchor:impl::core::convert::Into<crate::unity_engine::textanchor::TextAnchor>)->crate::unity_engine::vector2::Vector2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c06ec0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
 (crate::unity_engine::textanchor::TextAnchor)::core::convert::Into::into(anchor))}
 }
@@ -51,8 +214,7 @@ pub use __types::*;
 (Text)__receiver)}
 }
 #[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c05e80usize)as*mut u8,crate::unity_engine::texture::Texture;
-(Text)__receiver)}
+__Text_unity2_raw::get_main_texture(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FontTextureChanged()` overload"]fn font_texture_changed(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06050usize)as*mut u8,();
@@ -67,12 +229,10 @@ pub use __types::*;
 (Text)__receiver,(crate::unity_engine::font::Font)::core::convert::Into::into(value))}
 }
 #[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06340usize)as*mut u8, ::unity2::Il2CppString;
-(Text)__receiver)}
+__Text_unity2_raw::get_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06350usize)as*mut u8,();
-(Text)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__Text_unity2_raw::set_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_supportRichText()` overload"]fn get_support_rich_text(self,)->bool{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06440usize)as*mut u8,bool;
@@ -167,16 +327,13 @@ pub use __types::*;
 (Text)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06a60usize)as*mut u8,();
-(Text)__receiver)}
+__Text_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06b60usize)as*mut u8,();
-(Text)__receiver)}
+__Text_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06be0usize)as*mut u8,();
-(Text)__receiver)}
+__Text_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AssignDefaultFont()` overload"]fn assign_default_font(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06c80usize)as*mut u8,();
@@ -187,44 +344,34 @@ pub use __types::*;
 (Text)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(extents))}
 }
 #[doc="`OnPopulateMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn on_populate_mesh(self,to_fill:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c06f10usize)as*mut u8,();
-(Text)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(to_fill))}
+__Text_unity2_raw::on_populate_mesh(__receiver, ::core::convert::Into::into(to_fill), ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputHorizontal()` overload"]fn calculate_layout_input_horizontal(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c079d0usize)as*mut u8,();
-(Text)__receiver)}
+__Text_unity2_raw::calculate_layout_input_horizontal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateLayoutInputVertical()` overload"]fn calculate_layout_input_vertical(self,)->(){unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c079e0usize)as*mut u8,();
-(Text)__receiver)}
+__Text_unity2_raw::calculate_layout_input_vertical(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c079f0usize)as*mut u8,f32;
-(Text)__receiver)}
+__Text_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07a00usize)as*mut u8,f32;
-(Text)__receiver)}
+__Text_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07b10usize)as*mut u8,f32;
-(Text)__receiver)}
+__Text_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07b20usize)as*mut u8,f32;
-(Text)__receiver)}
+__Text_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07b30usize)as*mut u8,f32;
-(Text)__receiver)}
+__Text_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07c60usize)as*mut u8,f32;
-(Text)__receiver)}
+__Text_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c07c70usize)as*mut u8,i32;
-(Text)__receiver)}
+__Text_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
 }
 }
 

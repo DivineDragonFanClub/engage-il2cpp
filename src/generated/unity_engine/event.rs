@@ -16,6 +16,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-event-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-event")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Event_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:Event,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <Event as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(Event, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_hash_code(this:Event,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <Event as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(Event, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn equals(this:Event,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <Event as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(Event,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn to_string(this:Event,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <Event as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(Event, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-event")]impl Event{#[doc="`Internal_Create(i32)` overload"]pub fn internal_create(display_index:impl::core::convert::Into<i32>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c37c20usize)as*mut u8, ::unity2::IntPtr;
 (i32)::core::convert::Into::into(display_index))}
 }
@@ -93,8 +136,7 @@ pub use __types::*;
 (Event)__receiver,(i32)::core::convert::Into::into(display_index))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c37fb0usize)as*mut u8,();
-(Event)__receiver)}
+__Event_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_shift()` overload"]fn get_shift(self,)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38090usize)as*mut u8,bool;
@@ -125,16 +167,13 @@ pub use __types::*;
 (Event)__receiver)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c38380usize)as*mut u8,i32;
-(Event)__receiver)}
+__Event_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c384e0usize)as*mut u8,bool;
-(Event)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__Event_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c387c0usize)as*mut u8, ::unity2::Il2CppString;
-(Event)__receiver)}
+__Event_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Use()` overload"]fn r#use(self,)->(){unsafe{let __receiver= <Event as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c39230usize)as*mut u8,();

@@ -15,43 +15,10 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Footstep.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Footstep")]#[parent(crate::system::object::Object)]pub struct IKSolverVR_Footstep{#[offset(16)]#[rename(name="stepSpeed")]pub step_speed:f32, #[offset(20)]#[rename(name="characterSpaceOffset")]pub character_space_offset:crate::unity_engine::vector3::Vector3, #[offset(32)]#[rename(name="position")]pub position:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="rotation")]pub rotation:crate::unity_engine::quaternion::Quaternion, #[offset(60)]#[rename(name="stepToRootRot")]pub step_to_root_rot:crate::unity_engine::quaternion::Quaternion, #[offset(76)]#[rename(name="isSupportLeg")]pub is_support_leg:bool, #[offset(77)]#[rename(name="relaxFlag")]pub relax_flag:bool, #[offset(84)]#[rename(name="stepFrom")]pub step_from:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="stepTo")]pub step_to_field:crate::unity_engine::vector3::Vector3, #[offset(108)]#[rename(name="stepFromRot")]pub step_from_rot:crate::unity_engine::quaternion::Quaternion, #[offset(124)]#[rename(name="stepToRot")]pub step_to_rot:crate::unity_engine::quaternion::Quaternion, #[offset(140)]#[rename(name="footRelativeToRoot")]pub foot_relative_to_root:crate::unity_engine::quaternion::Quaternion, #[offset(156)]#[rename(name="supportLegW")]pub support_leg_w:f32, #[offset(160)]#[rename(name="supportLegWV")]pub support_leg_wv:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_VirtualBone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.VirtualBone")]#[parent(crate::system::object::Object)]pub struct IKSolverVR_VirtualBone{#[offset(16)]#[rename(name="readPosition")]pub read_position:crate::unity_engine::vector3::Vector3, #[offset(28)]#[rename(name="readRotation")]pub read_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(44)]#[rename(name="solverPosition")]pub solver_position:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="solverRotation")]pub solver_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(72)]#[rename(name="length")]pub length:f32, #[offset(76)]#[rename(name="sqrMag")]pub sqr_mag:f32, #[offset(80)]#[rename(name="axis")]pub axis:crate::unity_engine::vector3::Vector3,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Locomotion.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Locomotion")]#[parent(crate::system::object::Object)]pub struct IKSolverVR_Locomotion{#[offset(16)]#[rename(name="weight")]pub weight:f32, #[offset(20)]#[rename(name="footDistance")]pub foot_distance:f32, #[offset(24)]#[rename(name="stepThreshold")]pub step_threshold:f32, #[offset(28)]#[rename(name="angleThreshold")]pub angle_threshold:f32, #[offset(32)]#[rename(name="comAngleMlp")]pub com_angle_mlp:f32, #[offset(36)]#[rename(name="maxVelocity")]pub max_velocity:f32, #[offset(40)]#[rename(name="velocityFactor")]pub velocity_factor:f32, #[offset(44)]#[rename(name="maxLegStretch")]pub max_leg_stretch:f32, #[offset(48)]#[rename(name="rootSpeed")]pub root_speed:f32, #[offset(52)]#[rename(name="stepSpeed")]pub step_speed:f32, #[offset(56)]#[rename(name="stepHeight")]pub step_height:crate::unity_engine::animationcurve::AnimationCurve, #[offset(64)]#[rename(name="maxBodyYOffset")]pub max_body_y_offset:f32, #[offset(72)]#[rename(name="heelHeight")]pub heel_height:crate::unity_engine::animationcurve::AnimationCurve, #[offset(80)]#[rename(name="relaxLegTwistMinAngle")]pub relax_leg_twist_min_angle:f32, #[offset(84)]#[rename(name="relaxLegTwistSpeed")]pub relax_leg_twist_speed:f32, #[offset(88)]#[rename(name="stepInterpolation")]pub step_interpolation:crate::root_motion::interpolationmode::InterpolationMode, #[offset(92)]#[rename(name="offset")]pub offset:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="blockingEnabled")]pub blocking_enabled:bool, #[offset(108)]#[rename(name="blockingLayers")]pub blocking_layers:crate::unity_engine::layermask::LayerMask, #[offset(112)]#[rename(name="raycastRadius")]pub raycast_radius:f32, #[offset(116)]#[rename(name="raycastHeight")]pub raycast_height:f32, #[offset(120)]#[rename(name="onLeftFootstep")]pub on_left_footstep:crate::unity_engine::events::unityevent::UnityEvent, #[offset(128)]#[rename(name="onRightFootstep")]pub on_right_footstep:crate::unity_engine::events::unityevent::UnityEvent, #[offset(152)]#[rename(name="footsteps")]pub footsteps: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Footstep> , #[offset(160)]#[rename(name="lastComPosition")]pub last_com_position:crate::unity_engine::vector3::Vector3, #[offset(172)]#[rename(name="comVelocity")]pub com_velocity:crate::unity_engine::vector3::Vector3, #[offset(184)]#[rename(name="leftFootIndex")]pub left_foot_index:i32, #[offset(188)]#[rename(name="rightFootIndex")]pub right_foot_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Spine.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Spine")]#[parent(crate::root_motion::final_ik::iksolvervr::IKSolverVR_BodyPart)]pub struct IKSolverVR_Spine{#[offset(72)]#[rename(name="headTarget")]pub head_target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="pelvisTarget")]pub pelvis_target:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="positionWeight")]pub position_weight:f32, #[offset(92)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(96)]#[rename(name="pelvisPositionWeight")]pub pelvis_position_weight:f32, #[offset(100)]#[rename(name="pelvisRotationWeight")]pub pelvis_rotation_weight:f32, #[offset(104)]#[rename(name="chestGoal")]pub chest_goal:crate::unity_engine::transform::Transform, #[offset(112)]#[rename(name="chestGoalWeight")]pub chest_goal_weight:f32, #[offset(116)]#[rename(name="minHeadHeight")]pub min_head_height:f32, #[offset(120)]#[rename(name="bodyPosStiffness")]pub body_pos_stiffness:f32, #[offset(124)]#[rename(name="bodyRotStiffness")]pub body_rot_stiffness:f32, #[offset(128)]#[rename(name="neckStiffness")]pub neck_stiffness:f32, #[offset(132)]#[rename(name="rotateChestByHands")]pub rotate_chest_by_hands:f32, #[offset(136)]#[rename(name="chestClampWeight")]pub chest_clamp_weight:f32, #[offset(140)]#[rename(name="headClampWeight")]pub head_clamp_weight:f32, #[offset(144)]#[rename(name="moveBodyBackWhenCrouching")]pub move_body_back_when_crouching:f32, #[offset(148)]#[rename(name="maintainPelvisPosition")]pub maintain_pelvis_position:f32, #[offset(152)]#[rename(name="maxRootAngle")]pub max_root_angle:f32, #[offset(156)]#[rename(name="rootHeadingOffset")]pub root_heading_offset:f32, #[offset(160)]#[rename(name="IKPositionHead")]pub ik_position_head:crate::unity_engine::vector3::Vector3, #[offset(172)]#[rename(name="IKRotationHead")]pub ik_rotation_head:crate::unity_engine::quaternion::Quaternion, #[offset(188)]#[rename(name="IKPositionPelvis")]pub ik_position_pelvis:crate::unity_engine::vector3::Vector3, #[offset(200)]#[rename(name="IKRotationPelvis")]pub ik_rotation_pelvis:crate::unity_engine::quaternion::Quaternion, #[offset(216)]#[rename(name="goalPositionChest")]pub goal_position_chest:crate::unity_engine::vector3::Vector3, #[offset(228)]#[rename(name="pelvisPositionOffset")]pub pelvis_position_offset:crate::unity_engine::vector3::Vector3, #[offset(240)]#[rename(name="chestPositionOffset")]pub chest_position_offset:crate::unity_engine::vector3::Vector3, #[offset(252)]#[rename(name="headPositionOffset")]pub head_position_offset:crate::unity_engine::vector3::Vector3, #[offset(264)]#[rename(name="pelvisRotationOffset")]pub pelvis_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(280)]#[rename(name="chestRotationOffset")]pub chest_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(296)]#[rename(name="headRotationOffset")]pub head_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(312)]#[rename(name="faceDirection")]pub face_direction:crate::unity_engine::vector3::Vector3, #[offset(324)]#[rename(name="locomotionHeadPositionOffset")]pub locomotion_head_position_offset:crate::unity_engine::vector3::Vector3, #[offset(336)]#[rename(name="headPosition")]pub head_position:crate::unity_engine::vector3::Vector3, #[offset(380)]#[rename(name="headRotation")]pub head_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(396)]#[rename(name="pelvisRotation")]pub pelvis_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(412)]#[rename(name="anchorRelativeToPelvis")]pub anchor_relative_to_pelvis:crate::unity_engine::quaternion::Quaternion, #[offset(428)]#[rename(name="pelvisRelativeRotation")]pub pelvis_relative_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(444)]#[rename(name="chestRelativeRotation")]pub chest_relative_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(460)]#[rename(name="headDeltaPosition")]pub head_delta_position:crate::unity_engine::vector3::Vector3, #[offset(472)]#[rename(name="pelvisDeltaRotation")]pub pelvis_delta_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(488)]#[rename(name="chestTargetRotation")]pub chest_target_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(504)]#[rename(name="pelvisIndex")]pub pelvis_index:i32, #[offset(508)]#[rename(name="spineIndex")]pub spine_index:i32, #[offset(512)]#[rename(name="chestIndex")]pub chest_index:i32, #[offset(516)]#[rename(name="neckIndex")]pub neck_index:i32, #[offset(520)]#[rename(name="headIndex")]pub head_index:i32, #[offset(524)]#[rename(name="length")]pub length:f32, #[offset(528)]#[rename(name="hasChest")]pub has_chest:bool, #[offset(529)]#[rename(name="hasNeck")]pub has_neck:bool, #[offset(530)]#[rename(name="hasLegs")]pub has_legs:bool, #[offset(532)]#[rename(name="headHeight")]pub head_height:f32, #[offset(536)]#[rename(name="sizeMlp")]pub size_mlp:f32, #[offset(540)]#[rename(name="chestForward")]pub chest_forward:crate::unity_engine::vector3::Vector3,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_RotationOffset.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct IKSolverVR_RotationOffset{pub value:i32,}
-impl::unity2::ClassIdentity for IKSolverVR_RotationOffset{const NAMESPACE: &'static str="RootMotion.FinalIK";
-const NAME: &'static str="IKSolverVR.RotationOffset";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for IKSolverVR_RotationOffset{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl IKSolverVR_RotationOffset{pub fn pelvis()->Self{Self{value:0}
-}
-pub fn chest()->Self{Self{value:1}
-}
-pub fn head()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_BodyPart.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.BodyPart")]#[parent(crate::system::object::Object)]pub struct IKSolverVR_BodyPart{#[offset(24)]#[rename(name="bones")]pub bones: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone> , #[offset(32)]#[rename(name="initiated")]pub initiated:bool, #[offset(36)]#[rename(name="rootPosition")]pub root_position:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="rootRotation")]pub root_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(64)]#[rename(name="index")]pub index:i32, #[offset(68)]#[rename(name="LOD")]pub lod_field:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Leg.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Leg")]#[parent(crate::root_motion::final_ik::iksolvervr::IKSolverVR_BodyPart)]pub struct IKSolverVR_Leg{#[offset(72)]#[rename(name="target")]pub target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="bendGoal")]pub bend_goal:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="positionWeight")]pub position_weight:f32, #[offset(92)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(96)]#[rename(name="bendGoalWeight")]pub bend_goal_weight:f32, #[offset(100)]#[rename(name="swivelOffset")]pub swivel_offset:f32, #[offset(104)]#[rename(name="bendToTargetWeight")]pub bend_to_target_weight:f32, #[offset(108)]#[rename(name="legLengthMlp")]pub leg_length_mlp:f32, #[offset(112)]#[rename(name="stretchCurve")]pub stretch_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(120)]#[rename(name="IKPosition")]pub ik_position:crate::unity_engine::vector3::Vector3, #[offset(132)]#[rename(name="IKRotation")]pub ik_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(148)]#[rename(name="footPositionOffset")]pub foot_position_offset:crate::unity_engine::vector3::Vector3, #[offset(160)]#[rename(name="heelPositionOffset")]pub heel_position_offset:crate::unity_engine::vector3::Vector3, #[offset(172)]#[rename(name="footRotationOffset")]pub foot_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(188)]#[rename(name="currentMag")]pub current_mag:f32, #[offset(192)]#[rename(name="useAnimatedBendNormal")]pub use_animated_bend_normal:bool, #[offset(240)]#[rename(name="footPosition")]pub foot_position:crate::unity_engine::vector3::Vector3, #[offset(252)]#[rename(name="footRotation")]pub foot_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(268)]#[rename(name="bendNormal")]pub bend_normal:crate::unity_engine::vector3::Vector3, #[offset(280)]#[rename(name="calfRelToThigh")]pub calf_rel_to_thigh:crate::unity_engine::quaternion::Quaternion, #[offset(296)]#[rename(name="thighRelToFoot")]pub thigh_rel_to_foot:crate::unity_engine::quaternion::Quaternion, #[offset(312)]#[rename(name="bendNormalRelToPelvis")]pub bend_normal_rel_to_pelvis:crate::unity_engine::vector3::Vector3, #[offset(324)]#[rename(name="bendNormalRelToTarget")]pub bend_normal_rel_to_target:crate::unity_engine::vector3::Vector3,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Arm.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Arm")]#[parent(crate::root_motion::final_ik::iksolvervr::IKSolverVR_BodyPart)]pub struct IKSolverVR_Arm{#[offset(72)]#[rename(name="target")]pub target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="bendGoal")]pub bend_goal:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="positionWeight")]pub position_weight:f32, #[offset(92)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(96)]#[rename(name="shoulderRotationMode")]pub shoulder_rotation_mode:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm_ShoulderRotationMode, #[offset(100)]#[rename(name="shoulderRotationWeight")]pub shoulder_rotation_weight:f32, #[offset(104)]#[rename(name="shoulderTwistWeight")]pub shoulder_twist_weight:f32, #[offset(108)]#[rename(name="bendGoalWeight")]pub bend_goal_weight:f32, #[offset(112)]#[rename(name="swivelOffset")]pub swivel_offset:f32, #[offset(116)]#[rename(name="wristToPalmAxis")]pub wrist_to_palm_axis:crate::unity_engine::vector3::Vector3, #[offset(128)]#[rename(name="palmToThumbAxis")]pub palm_to_thumb_axis:crate::unity_engine::vector3::Vector3, #[offset(140)]#[rename(name="armLengthMlp")]pub arm_length_mlp:f32, #[offset(144)]#[rename(name="stretchCurve")]pub stretch_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(152)]#[rename(name="IKPosition")]pub ik_position:crate::unity_engine::vector3::Vector3, #[offset(164)]#[rename(name="IKRotation")]pub ik_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(180)]#[rename(name="bendDirection")]pub bend_direction:crate::unity_engine::vector3::Vector3, #[offset(192)]#[rename(name="handPositionOffset")]pub hand_position_offset:crate::unity_engine::vector3::Vector3, #[offset(232)]#[rename(name="hasShoulder")]pub has_shoulder:bool, #[offset(236)]#[rename(name="chestForwardAxis")]pub chest_forward_axis:crate::unity_engine::vector3::Vector3, #[offset(248)]#[rename(name="chestUpAxis")]pub chest_up_axis:crate::unity_engine::vector3::Vector3, #[offset(260)]#[rename(name="chestRotation")]pub chest_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(276)]#[rename(name="chestForward")]pub chest_forward:crate::unity_engine::vector3::Vector3, #[offset(288)]#[rename(name="chestUp")]pub chest_up:crate::unity_engine::vector3::Vector3, #[offset(300)]#[rename(name="forearmRelToUpperArm")]pub forearm_rel_to_upper_arm:crate::unity_engine::quaternion::Quaternion, #[offset(316)]#[rename(name="upperArmBendAxis")]pub upper_arm_bend_axis:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="yawOffsetAngle")]pub yaw_offset_angle:f32, #[static_field]#[rename(name="pitchOffsetAngle")]pub pitch_offset_angle:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver)]pub struct IKSolverVR{#[offset(88)]#[rename(name="solverTransforms")]pub solver_transforms: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(96)]#[rename(name="hasChest")]pub has_chest:bool, #[offset(97)]#[rename(name="hasNeck")]pub has_neck:bool, #[offset(98)]#[rename(name="hasShoulders")]pub has_shoulders:bool, #[offset(99)]#[rename(name="hasToes")]pub has_toes:bool, #[offset(100)]#[rename(name="hasLegs")]pub has_legs:bool, #[offset(104)]#[rename(name="readPositions")]pub read_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(112)]#[rename(name="readRotations")]pub read_rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> , #[offset(120)]#[rename(name="solvedPositions")]pub solved_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(128)]#[rename(name="solvedRotations")]pub solved_rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> , #[offset(136)]#[rename(name="defaultLocalRotations")]pub default_local_rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> , #[offset(144)]#[rename(name="defaultLocalPositions")]pub default_local_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(152)]#[rename(name="rootV")]pub root_v:crate::unity_engine::vector3::Vector3, #[offset(164)]#[rename(name="rootVelocity")]pub root_velocity:crate::unity_engine::vector3::Vector3, #[offset(176)]#[rename(name="bodyOffset")]pub body_offset:crate::unity_engine::vector3::Vector3, #[offset(188)]#[rename(name="supportLegIndex")]pub support_leg_index:i32, #[offset(192)]#[rename(name="lastLOD")]pub last_lod:i32, #[offset(196)]#[rename(name="LOD")]pub lod:i32, #[offset(200)]#[rename(name="scale")]pub scale:f32, #[offset(204)]#[rename(name="plantFeet")]pub plant_feet:bool, #[offset(216)]#[rename(name="spine")]pub spine:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine, #[offset(224)]#[rename(name="leftArm")]pub left_arm:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, #[offset(232)]#[rename(name="rightArm")]pub right_arm:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, #[offset(240)]#[rename(name="leftLeg")]pub left_leg:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, #[offset(248)]#[rename(name="rightLeg")]pub right_leg:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, #[offset(256)]#[rename(name="locomotion")]pub locomotion:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Locomotion, #[offset(264)]#[rename(name="legs")]pub legs: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg> , #[offset(272)]#[rename(name="arms")]pub arms: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> , #[offset(280)]#[rename(name="headPosition")]pub head_position:crate::unity_engine::vector3::Vector3, #[offset(292)]#[rename(name="headDeltaPosition")]pub head_delta_position:crate::unity_engine::vector3::Vector3, #[offset(304)]#[rename(name="raycastOriginPelvis")]pub raycast_origin_pelvis:crate::unity_engine::vector3::Vector3, #[offset(316)]#[rename(name="lastOffset")]pub last_offset:crate::unity_engine::vector3::Vector3, #[offset(328)]#[rename(name="debugPos1")]pub debug_pos1:crate::unity_engine::vector3::Vector3, #[offset(340)]#[rename(name="debugPos2")]pub debug_pos2:crate::unity_engine::vector3::Vector3, #[offset(352)]#[rename(name="debugPos3")]pub debug_pos3:crate::unity_engine::vector3::Vector3, #[offset(364)]#[rename(name="debugPos4")]pub debug_pos4:crate::unity_engine::vector3::Vector3,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_PositionOffset.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct IKSolverVR_PositionOffset{pub value:i32,}
@@ -84,6 +51,9 @@ pub fn right_heel()->Self{Self{value:8}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Spine.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Spine")]#[parent(crate::root_motion::final_ik::iksolvervr::IKSolverVR_BodyPart)]pub struct IKSolverVR_Spine{#[offset(72)]#[rename(name="headTarget")]pub head_target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="pelvisTarget")]pub pelvis_target:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="positionWeight")]pub position_weight:f32, #[offset(92)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(96)]#[rename(name="pelvisPositionWeight")]pub pelvis_position_weight:f32, #[offset(100)]#[rename(name="pelvisRotationWeight")]pub pelvis_rotation_weight:f32, #[offset(104)]#[rename(name="chestGoal")]pub chest_goal:crate::unity_engine::transform::Transform, #[offset(112)]#[rename(name="chestGoalWeight")]pub chest_goal_weight:f32, #[offset(116)]#[rename(name="minHeadHeight")]pub min_head_height:f32, #[offset(120)]#[rename(name="bodyPosStiffness")]pub body_pos_stiffness:f32, #[offset(124)]#[rename(name="bodyRotStiffness")]pub body_rot_stiffness:f32, #[offset(128)]#[rename(name="neckStiffness")]pub neck_stiffness:f32, #[offset(132)]#[rename(name="rotateChestByHands")]pub rotate_chest_by_hands:f32, #[offset(136)]#[rename(name="chestClampWeight")]pub chest_clamp_weight:f32, #[offset(140)]#[rename(name="headClampWeight")]pub head_clamp_weight:f32, #[offset(144)]#[rename(name="moveBodyBackWhenCrouching")]pub move_body_back_when_crouching:f32, #[offset(148)]#[rename(name="maintainPelvisPosition")]pub maintain_pelvis_position:f32, #[offset(152)]#[rename(name="maxRootAngle")]pub max_root_angle:f32, #[offset(156)]#[rename(name="rootHeadingOffset")]pub root_heading_offset:f32, #[offset(160)]#[rename(name="IKPositionHead")]pub ik_position_head:crate::unity_engine::vector3::Vector3, #[offset(172)]#[rename(name="IKRotationHead")]pub ik_rotation_head:crate::unity_engine::quaternion::Quaternion, #[offset(188)]#[rename(name="IKPositionPelvis")]pub ik_position_pelvis:crate::unity_engine::vector3::Vector3, #[offset(200)]#[rename(name="IKRotationPelvis")]pub ik_rotation_pelvis:crate::unity_engine::quaternion::Quaternion, #[offset(216)]#[rename(name="goalPositionChest")]pub goal_position_chest:crate::unity_engine::vector3::Vector3, #[offset(228)]#[rename(name="pelvisPositionOffset")]pub pelvis_position_offset:crate::unity_engine::vector3::Vector3, #[offset(240)]#[rename(name="chestPositionOffset")]pub chest_position_offset:crate::unity_engine::vector3::Vector3, #[offset(252)]#[rename(name="headPositionOffset")]pub head_position_offset:crate::unity_engine::vector3::Vector3, #[offset(264)]#[rename(name="pelvisRotationOffset")]pub pelvis_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(280)]#[rename(name="chestRotationOffset")]pub chest_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(296)]#[rename(name="headRotationOffset")]pub head_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(312)]#[rename(name="faceDirection")]pub face_direction:crate::unity_engine::vector3::Vector3, #[offset(324)]#[rename(name="locomotionHeadPositionOffset")]pub locomotion_head_position_offset:crate::unity_engine::vector3::Vector3, #[offset(336)]#[rename(name="headPosition")]pub head_position:crate::unity_engine::vector3::Vector3, #[offset(380)]#[rename(name="headRotation")]pub head_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(396)]#[rename(name="pelvisRotation")]pub pelvis_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(412)]#[rename(name="anchorRelativeToPelvis")]pub anchor_relative_to_pelvis:crate::unity_engine::quaternion::Quaternion, #[offset(428)]#[rename(name="pelvisRelativeRotation")]pub pelvis_relative_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(444)]#[rename(name="chestRelativeRotation")]pub chest_relative_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(460)]#[rename(name="headDeltaPosition")]pub head_delta_position:crate::unity_engine::vector3::Vector3, #[offset(472)]#[rename(name="pelvisDeltaRotation")]pub pelvis_delta_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(488)]#[rename(name="chestTargetRotation")]pub chest_target_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(504)]#[rename(name="pelvisIndex")]pub pelvis_index:i32, #[offset(508)]#[rename(name="spineIndex")]pub spine_index:i32, #[offset(512)]#[rename(name="chestIndex")]pub chest_index:i32, #[offset(516)]#[rename(name="neckIndex")]pub neck_index:i32, #[offset(520)]#[rename(name="headIndex")]pub head_index:i32, #[offset(524)]#[rename(name="length")]pub length:f32, #[offset(528)]#[rename(name="hasChest")]pub has_chest:bool, #[offset(529)]#[rename(name="hasNeck")]pub has_neck:bool, #[offset(530)]#[rename(name="hasLegs")]pub has_legs:bool, #[offset(532)]#[rename(name="headHeight")]pub head_height:f32, #[offset(536)]#[rename(name="sizeMlp")]pub size_mlp:f32, #[offset(540)]#[rename(name="chestForward")]pub chest_forward:crate::unity_engine::vector3::Vector3,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Arm_ShoulderRotationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct IKSolverVR_Arm_ShoulderRotationMode{pub value:i32,}
 impl::unity2::ClassIdentity for IKSolverVR_Arm_ShoulderRotationMode{const NAMESPACE: &'static str="RootMotion.FinalIK";
 const NAME: &'static str="IKSolverVR.Arm.ShoulderRotationMode";
@@ -100,12 +70,100 @@ pub fn from_to()->Self{Self{value:1}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Footstep.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Footstep")]#[parent(crate::system::object::Object)]pub struct IKSolverVR_Footstep{#[offset(16)]#[rename(name="stepSpeed")]pub step_speed:f32, #[offset(20)]#[rename(name="characterSpaceOffset")]pub character_space_offset:crate::unity_engine::vector3::Vector3, #[offset(32)]#[rename(name="position")]pub position:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="rotation")]pub rotation:crate::unity_engine::quaternion::Quaternion, #[offset(60)]#[rename(name="stepToRootRot")]pub step_to_root_rot:crate::unity_engine::quaternion::Quaternion, #[offset(76)]#[rename(name="isSupportLeg")]pub is_support_leg:bool, #[offset(77)]#[rename(name="relaxFlag")]pub relax_flag:bool, #[offset(84)]#[rename(name="stepFrom")]pub step_from:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="stepTo")]pub step_to_field:crate::unity_engine::vector3::Vector3, #[offset(108)]#[rename(name="stepFromRot")]pub step_from_rot:crate::unity_engine::quaternion::Quaternion, #[offset(124)]#[rename(name="stepToRot")]pub step_to_rot:crate::unity_engine::quaternion::Quaternion, #[offset(140)]#[rename(name="footRelativeToRoot")]pub foot_relative_to_root:crate::unity_engine::quaternion::Quaternion, #[offset(156)]#[rename(name="supportLegW")]pub support_leg_w:f32, #[offset(160)]#[rename(name="supportLegWV")]pub support_leg_wv:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Leg.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Leg")]#[parent(crate::root_motion::final_ik::iksolvervr::IKSolverVR_BodyPart)]pub struct IKSolverVR_Leg{#[offset(72)]#[rename(name="target")]pub target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="bendGoal")]pub bend_goal:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="positionWeight")]pub position_weight:f32, #[offset(92)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(96)]#[rename(name="bendGoalWeight")]pub bend_goal_weight:f32, #[offset(100)]#[rename(name="swivelOffset")]pub swivel_offset:f32, #[offset(104)]#[rename(name="bendToTargetWeight")]pub bend_to_target_weight:f32, #[offset(108)]#[rename(name="legLengthMlp")]pub leg_length_mlp:f32, #[offset(112)]#[rename(name="stretchCurve")]pub stretch_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(120)]#[rename(name="IKPosition")]pub ik_position:crate::unity_engine::vector3::Vector3, #[offset(132)]#[rename(name="IKRotation")]pub ik_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(148)]#[rename(name="footPositionOffset")]pub foot_position_offset:crate::unity_engine::vector3::Vector3, #[offset(160)]#[rename(name="heelPositionOffset")]pub heel_position_offset:crate::unity_engine::vector3::Vector3, #[offset(172)]#[rename(name="footRotationOffset")]pub foot_rotation_offset:crate::unity_engine::quaternion::Quaternion, #[offset(188)]#[rename(name="currentMag")]pub current_mag:f32, #[offset(192)]#[rename(name="useAnimatedBendNormal")]pub use_animated_bend_normal:bool, #[offset(240)]#[rename(name="footPosition")]pub foot_position:crate::unity_engine::vector3::Vector3, #[offset(252)]#[rename(name="footRotation")]pub foot_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(268)]#[rename(name="bendNormal")]pub bend_normal:crate::unity_engine::vector3::Vector3, #[offset(280)]#[rename(name="calfRelToThigh")]pub calf_rel_to_thigh:crate::unity_engine::quaternion::Quaternion, #[offset(296)]#[rename(name="thighRelToFoot")]pub thigh_rel_to_foot:crate::unity_engine::quaternion::Quaternion, #[offset(312)]#[rename(name="bendNormalRelToPelvis")]pub bend_normal_rel_to_pelvis:crate::unity_engine::vector3::Vector3, #[offset(324)]#[rename(name="bendNormalRelToTarget")]pub bend_normal_rel_to_target:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR")]#[parent(crate::root_motion::final_ik::iksolver::IKSolver)]pub struct IKSolverVR{#[offset(88)]#[rename(name="solverTransforms")]pub solver_transforms: ::unity2::Array<crate::unity_engine::transform::Transform> , #[offset(96)]#[rename(name="hasChest")]pub has_chest:bool, #[offset(97)]#[rename(name="hasNeck")]pub has_neck:bool, #[offset(98)]#[rename(name="hasShoulders")]pub has_shoulders:bool, #[offset(99)]#[rename(name="hasToes")]pub has_toes:bool, #[offset(100)]#[rename(name="hasLegs")]pub has_legs:bool, #[offset(104)]#[rename(name="readPositions")]pub read_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(112)]#[rename(name="readRotations")]pub read_rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> , #[offset(120)]#[rename(name="solvedPositions")]pub solved_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(128)]#[rename(name="solvedRotations")]pub solved_rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> , #[offset(136)]#[rename(name="defaultLocalRotations")]pub default_local_rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> , #[offset(144)]#[rename(name="defaultLocalPositions")]pub default_local_positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(152)]#[rename(name="rootV")]pub root_v:crate::unity_engine::vector3::Vector3, #[offset(164)]#[rename(name="rootVelocity")]pub root_velocity:crate::unity_engine::vector3::Vector3, #[offset(176)]#[rename(name="bodyOffset")]pub body_offset:crate::unity_engine::vector3::Vector3, #[offset(188)]#[rename(name="supportLegIndex")]pub support_leg_index:i32, #[offset(192)]#[rename(name="lastLOD")]pub last_lod:i32, #[offset(196)]#[rename(name="LOD")]pub lod:i32, #[offset(200)]#[rename(name="scale")]pub scale:f32, #[offset(204)]#[rename(name="plantFeet")]pub plant_feet:bool, #[offset(216)]#[rename(name="spine")]pub spine:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine, #[offset(224)]#[rename(name="leftArm")]pub left_arm:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, #[offset(232)]#[rename(name="rightArm")]pub right_arm:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, #[offset(240)]#[rename(name="leftLeg")]pub left_leg:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, #[offset(248)]#[rename(name="rightLeg")]pub right_leg:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, #[offset(256)]#[rename(name="locomotion")]pub locomotion:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Locomotion, #[offset(264)]#[rename(name="legs")]pub legs: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg> , #[offset(272)]#[rename(name="arms")]pub arms: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> , #[offset(280)]#[rename(name="headPosition")]pub head_position:crate::unity_engine::vector3::Vector3, #[offset(292)]#[rename(name="headDeltaPosition")]pub head_delta_position:crate::unity_engine::vector3::Vector3, #[offset(304)]#[rename(name="raycastOriginPelvis")]pub raycast_origin_pelvis:crate::unity_engine::vector3::Vector3, #[offset(316)]#[rename(name="lastOffset")]pub last_offset:crate::unity_engine::vector3::Vector3, #[offset(328)]#[rename(name="debugPos1")]pub debug_pos1:crate::unity_engine::vector3::Vector3, #[offset(340)]#[rename(name="debugPos2")]pub debug_pos2:crate::unity_engine::vector3::Vector3, #[offset(352)]#[rename(name="debugPos3")]pub debug_pos3:crate::unity_engine::vector3::Vector3, #[offset(364)]#[rename(name="debugPos4")]pub debug_pos4:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_BodyPart.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.BodyPart")]#[parent(crate::system::object::Object)]pub struct IKSolverVR_BodyPart{#[offset(24)]#[rename(name="bones")]pub bones: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone> , #[offset(32)]#[rename(name="initiated")]pub initiated:bool, #[offset(36)]#[rename(name="rootPosition")]pub root_position:crate::unity_engine::vector3::Vector3, #[offset(48)]#[rename(name="rootRotation")]pub root_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(64)]#[rename(name="index")]pub index:i32, #[offset(68)]#[rename(name="LOD")]pub lod_field:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Arm.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Arm")]#[parent(crate::root_motion::final_ik::iksolvervr::IKSolverVR_BodyPart)]pub struct IKSolverVR_Arm{#[offset(72)]#[rename(name="target")]pub target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="bendGoal")]pub bend_goal:crate::unity_engine::transform::Transform, #[offset(88)]#[rename(name="positionWeight")]pub position_weight:f32, #[offset(92)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(96)]#[rename(name="shoulderRotationMode")]pub shoulder_rotation_mode:crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm_ShoulderRotationMode, #[offset(100)]#[rename(name="shoulderRotationWeight")]pub shoulder_rotation_weight:f32, #[offset(104)]#[rename(name="shoulderTwistWeight")]pub shoulder_twist_weight:f32, #[offset(108)]#[rename(name="bendGoalWeight")]pub bend_goal_weight:f32, #[offset(112)]#[rename(name="swivelOffset")]pub swivel_offset:f32, #[offset(116)]#[rename(name="wristToPalmAxis")]pub wrist_to_palm_axis:crate::unity_engine::vector3::Vector3, #[offset(128)]#[rename(name="palmToThumbAxis")]pub palm_to_thumb_axis:crate::unity_engine::vector3::Vector3, #[offset(140)]#[rename(name="armLengthMlp")]pub arm_length_mlp:f32, #[offset(144)]#[rename(name="stretchCurve")]pub stretch_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(152)]#[rename(name="IKPosition")]pub ik_position:crate::unity_engine::vector3::Vector3, #[offset(164)]#[rename(name="IKRotation")]pub ik_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(180)]#[rename(name="bendDirection")]pub bend_direction:crate::unity_engine::vector3::Vector3, #[offset(192)]#[rename(name="handPositionOffset")]pub hand_position_offset:crate::unity_engine::vector3::Vector3, #[offset(232)]#[rename(name="hasShoulder")]pub has_shoulder:bool, #[offset(236)]#[rename(name="chestForwardAxis")]pub chest_forward_axis:crate::unity_engine::vector3::Vector3, #[offset(248)]#[rename(name="chestUpAxis")]pub chest_up_axis:crate::unity_engine::vector3::Vector3, #[offset(260)]#[rename(name="chestRotation")]pub chest_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(276)]#[rename(name="chestForward")]pub chest_forward:crate::unity_engine::vector3::Vector3, #[offset(288)]#[rename(name="chestUp")]pub chest_up:crate::unity_engine::vector3::Vector3, #[offset(300)]#[rename(name="forearmRelToUpperArm")]pub forearm_rel_to_upper_arm:crate::unity_engine::quaternion::Quaternion, #[offset(316)]#[rename(name="upperArmBendAxis")]pub upper_arm_bend_axis:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="yawOffsetAngle")]pub yaw_offset_angle:f32, #[static_field]#[rename(name="pitchOffsetAngle")]pub pitch_offset_angle:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_RotationOffset.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct IKSolverVR_RotationOffset{pub value:i32,}
+impl::unity2::ClassIdentity for IKSolverVR_RotationOffset{const NAMESPACE: &'static str="RootMotion.FinalIK";
+const NAME: &'static str="IKSolverVR.RotationOffset";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for IKSolverVR_RotationOffset{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl IKSolverVR_RotationOffset{pub fn pelvis()->Self{Self{value:0}
+}
+pub fn chest()->Self{Self{value:1}
+}
+pub fn head()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolvervr/IKSolverVR_Locomotion.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverVR.Locomotion")]#[parent(crate::system::object::Object)]pub struct IKSolverVR_Locomotion{#[offset(16)]#[rename(name="weight")]pub weight:f32, #[offset(20)]#[rename(name="footDistance")]pub foot_distance:f32, #[offset(24)]#[rename(name="stepThreshold")]pub step_threshold:f32, #[offset(28)]#[rename(name="angleThreshold")]pub angle_threshold:f32, #[offset(32)]#[rename(name="comAngleMlp")]pub com_angle_mlp:f32, #[offset(36)]#[rename(name="maxVelocity")]pub max_velocity:f32, #[offset(40)]#[rename(name="velocityFactor")]pub velocity_factor:f32, #[offset(44)]#[rename(name="maxLegStretch")]pub max_leg_stretch:f32, #[offset(48)]#[rename(name="rootSpeed")]pub root_speed:f32, #[offset(52)]#[rename(name="stepSpeed")]pub step_speed:f32, #[offset(56)]#[rename(name="stepHeight")]pub step_height:crate::unity_engine::animationcurve::AnimationCurve, #[offset(64)]#[rename(name="maxBodyYOffset")]pub max_body_y_offset:f32, #[offset(72)]#[rename(name="heelHeight")]pub heel_height:crate::unity_engine::animationcurve::AnimationCurve, #[offset(80)]#[rename(name="relaxLegTwistMinAngle")]pub relax_leg_twist_min_angle:f32, #[offset(84)]#[rename(name="relaxLegTwistSpeed")]pub relax_leg_twist_speed:f32, #[offset(88)]#[rename(name="stepInterpolation")]pub step_interpolation:crate::root_motion::interpolationmode::InterpolationMode, #[offset(92)]#[rename(name="offset")]pub offset:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="blockingEnabled")]pub blocking_enabled:bool, #[offset(108)]#[rename(name="blockingLayers")]pub blocking_layers:crate::unity_engine::layermask::LayerMask, #[offset(112)]#[rename(name="raycastRadius")]pub raycast_radius:f32, #[offset(116)]#[rename(name="raycastHeight")]pub raycast_height:f32, #[offset(120)]#[rename(name="onLeftFootstep")]pub on_left_footstep:crate::unity_engine::events::unityevent::UnityEvent, #[offset(128)]#[rename(name="onRightFootstep")]pub on_right_footstep:crate::unity_engine::events::unityevent::UnityEvent, #[offset(152)]#[rename(name="footsteps")]pub footsteps: ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Footstep> , #[offset(160)]#[rename(name="lastComPosition")]pub last_com_position:crate::unity_engine::vector3::Vector3, #[offset(172)]#[rename(name="comVelocity")]pub com_velocity:crate::unity_engine::vector3::Vector3, #[offset(184)]#[rename(name="leftFootIndex")]pub left_foot_index:i32, #[offset(188)]#[rename(name="rightFootIndex")]pub right_foot_index:i32,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-iksolvervr-types")]
 pub use __types::*;
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_FootstepMethods:IIKSolverVR_Footstep{#[doc="`get_isStepping()` overload"]fn get_is_stepping(self,)->bool{unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5470usize)as*mut u8,bool;
+(IKSolverVR_Footstep)__receiver)}
+}
+#[doc="`get_stepProgress()` overload"]fn get_step_progress(self,)->f32{unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5490usize)as*mut u8,f32;
+(IKSolverVR_Footstep)__receiver)}
+}
+#[doc="`set_stepProgress(f32)` overload"]fn set_step_progress(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af54a0usize)as*mut u8,();
+(IKSolverVR_Footstep)__receiver,(f32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` overload"]fn ctor(self,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,foot_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,foot_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,character_space_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af54b0usize)as*mut u8,();
+(IKSolverVR_Footstep)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(foot_position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(foot_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(character_space_offset))}
+}
+#[doc="`Reset(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]fn reset(self,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,foot_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,foot_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5660usize)as*mut u8,();
+(IKSolverVR_Footstep)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(foot_position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(foot_rotation))}
+}
+#[doc="`StepTo(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn step_to(self,p:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,step_threshold:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af56e0usize)as*mut u8,();
+(IKSolverVR_Footstep)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(p),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(f32)::core::convert::Into::into(step_threshold))}
+}
+#[doc="`UpdateStepping(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn update_stepping(self,p:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af58c0usize)as*mut u8,();
+(IKSolverVR_Footstep)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(p),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`UpdateStanding(crate::unity_engine::quaternion::Quaternion, f32, f32)` overload"]fn update_standing(self,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,min_angle:impl::core::convert::Into<f32> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5a30usize)as*mut u8,();
+(IKSolverVR_Footstep)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(f32)::core::convert::Into::into(min_angle),(f32)::core::convert::Into::into(speed))}
+}
+#[doc="`Update(crate::root_motion::interpolationmode::InterpolationMode, crate::unity_engine::events::unityevent::UnityEvent)` overload"]fn update(self,interpolation:impl::core::convert::Into<crate::root_motion::interpolationmode::InterpolationMode> ,on_step:impl::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5ba0usize)as*mut u8,();
+(IKSolverVR_Footstep)__receiver,(crate::root_motion::interpolationmode::InterpolationMode)::core::convert::Into::into(interpolation),(crate::unity_engine::events::unityevent::UnityEvent)::core::convert::Into::into(on_step))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR_Footstep>IIKSolverVR_FootstepMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Footstep{pub fn get_is_stepping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_step_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_step_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn step_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn update_stepping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_standing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Footstep{#[doc="`.ctor(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` — overload selector"]pub fn new(root_rotation:crate::unity_engine::quaternion::Quaternion,foot_position:crate::unity_engine::vector3::Vector3,foot_rotation:crate::unity_engine::quaternion::Quaternion,character_space_offset:crate::unity_engine::vector3::Vector3)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolverVR_Footstep), ::core::stringify!(new),));
+ <Self as IIKSolverVR_FootstepMethods> ::ctor(this,root_rotation,foot_position,foot_rotation,character_space_offset);
+this}
+}
 
 #[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_VirtualBone{#[doc="`SwingRotation(::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone>, i32, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn swing_rotation(bones:impl::core::convert::Into< ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone> > ,index:impl::core::convert::Into<i32> ,swing_target:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,weight:impl::core::convert::Into<f32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fc6250usize)as*mut u8,();
 (::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone>)::core::convert::Into::into(bones),(i32)::core::convert::Into::into(index),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(swing_target),(f32)::core::convert::Into::into(weight))}
@@ -179,107 +237,57 @@ pub fn solve_ccd_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Locomotion{#[doc="`GetLineSphereCollision(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn get_line_sphere_collision(line_start:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,line_end:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,sphere_center:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,sphere_radius:impl::core::convert::Into<f32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fc25d0usize)as*mut u8,bool;
-(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(line_start),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(line_end),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(sphere_center),(f32)::core::convert::Into::into(sphere_radius))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_LocomotionMethods:IIKSolverVR_Locomotion{#[doc="`get_centerOfMass()` overload"]fn get_center_of_mass(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0ae0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR_Locomotion)__receiver)}
-}
-#[doc="`set_centerOfMass(crate::unity_engine::vector3::Vector3)` overload"]fn set_center_of_mass(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0af0usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`Initiate(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, f32)` overload"]fn initiate(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_toes:impl::core::convert::Into<bool> ,scale:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0b00usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations),(bool)::core::convert::Into::into(has_toes),(f32)::core::convert::Into::into(scale))}
-}
-#[doc="`Reset(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>)` overload"]fn reset(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> >)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0de0usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations))}
-}
-#[doc="`Relax()` overload"]fn relax(self,)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0fb0usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver)}
-}
-#[doc="`AddDeltaRotation(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` overload"]fn add_delta_rotation(self,delta:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,pivot:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc1000usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(delta),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pivot))}
-}
-#[doc="`AddDeltaPosition(crate::unity_engine::vector3::Vector3)` overload"]fn add_delta_position(self,delta:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc1240usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(delta))}
-}
-#[doc="`Solve(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, i32, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, *mutcrate::unity_engine::quaternion::Quaternion, *mutf32, *mutf32, *mutf32, *mutf32, f32)` overload"]fn solve(self,root_bone:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone> ,spine:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine> ,left_leg:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg> ,right_leg:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg> ,left_arm:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> ,right_arm:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> ,support_leg_index:impl::core::convert::Into<i32> ,scale:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,crate::unity_engine::quaternion::Quaternion,crate::unity_engine::quaternion::Quaternion,f32,f32,f32,f32){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
-let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
-let mut __out_3= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
-let mut __out_4= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let mut __out_5= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let mut __out_6= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let mut __out_7= ::core::mem::MaybeUninit:: <f32> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc1310usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone)::core::convert::Into::into(root_bone),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine)::core::convert::Into::into(spine),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg)::core::convert::Into::into(left_leg),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg)::core::convert::Into::into(right_leg),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm)::core::convert::Into::into(left_arm),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm)::core::convert::Into::into(right_arm),(i32)::core::convert::Into::into(support_leg_index),(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_2.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_3.as_mut_ptr(),(*mut f32)__out_4.as_mut_ptr(),(*mut f32)__out_5.as_mut_ptr(),(*mut f32)__out_6.as_mut_ptr(),(*mut f32)__out_7.as_mut_ptr(),(f32)::core::convert::Into::into(scale));
-(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init(),__out_4.assume_init(),__out_5.assume_init(),__out_6.assume_init(),__out_7.assume_init())}
-}
-#[doc="`get_leftFootstepPosition()` overload"]fn get_left_footstep_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc26b0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR_Locomotion)__receiver)}
-}
-#[doc="`get_rightFootstepPosition()` overload"]fn get_right_footstep_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc26f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR_Locomotion)__receiver)}
-}
-#[doc="`get_leftFootstepRotation()` overload"]fn get_left_footstep_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc2730usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(IKSolverVR_Locomotion)__receiver)}
-}
-#[doc="`get_rightFootstepRotation()` overload"]fn get_right_footstep_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc2770usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(IKSolverVR_Locomotion)__receiver)}
-}
-#[doc="`StepBlocked(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn step_blocked(self,from_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,to_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,root_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc23f0usize)as*mut u8,bool;
-(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(from_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(to_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(root_position))}
-}
-#[doc="`CanStep()` overload"]fn can_step(self,)->bool{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc2520usize)as*mut u8,bool;
-(IKSolverVR_Locomotion)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc27b0usize)as*mut u8,();
-(IKSolverVR_Locomotion)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR_Locomotion>IIKSolverVR_LocomotionMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Locomotion{pub fn get_center_of_mass_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_center_of_mass_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn relax_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn add_delta_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn add_delta_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_left_footstep_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_right_footstep_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_left_footstep_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_right_footstep_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn step_blocked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn can_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_line_sphere_collision_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Locomotion{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolverVR_Locomotion), ::core::stringify!(new),));
- <Self as IIKSolverVR_LocomotionMethods> ::ctor(this,);
-this}
+#[cfg(feature="root_motion-final_ik-iksolvervr")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverVR_Spine_unity2_raw{use super:: * ;
+pub unsafe fn on_read(this:IKSolverVR_Spine,positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,has_chest:bool,has_neck:bool,has_shoulders:bool,has_toes:bool,has_legs:bool,root_index:i32,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolverVR_Spine as::unity2::ClassIdentity> ::NAME,"OnRead",));
+let inner:extern "C" fn(IKSolverVR_Spine, ::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,bool,bool,bool,bool,bool,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,positions,rotations,has_chest,has_neck,has_shoulders,has_toes,has_legs,root_index,index,__mi)}
+pub unsafe fn pre_solve(this:IKSolverVR_Spine,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKSolverVR_Spine as::unity2::ClassIdentity> ::NAME,"PreSolve",));
+let inner:extern "C" fn(IKSolverVR_Spine, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn apply_offsets(this:IKSolverVR_Spine,scale:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IKSolverVR_Spine as::unity2::ClassIdentity> ::NAME,"ApplyOffsets",));
+let inner:extern "C" fn(IKSolverVR_Spine,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,scale,__mi)}
+pub unsafe fn write(this:IKSolverVR_Spine,solved_positions: *mut::unity2::Array<crate::unity_engine::vector3::Vector3> ,solved_rotations: *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IKSolverVR_Spine as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(IKSolverVR_Spine, *mut::unity2::Array<crate::unity_engine::vector3::Vector3> , *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,solved_positions,solved_rotations,__mi)}
+pub unsafe fn reset_offsets(this:IKSolverVR_Spine,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IKSolverVR_Spine as::unity2::ClassIdentity> ::NAME,"ResetOffsets",));
+let inner:extern "C" fn(IKSolverVR_Spine, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_SpineMethods:IIKSolverVR_Spine{#[doc="`get_pelvis()` overload"]fn get_pelvis(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -319,16 +327,13 @@ this}
 (IKSolverVR_Spine)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
 }
 #[doc="`OnRead(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, bool, bool, bool, bool, i32, i32)` overload"]fn on_read(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_chest:impl::core::convert::Into<bool> ,has_neck:impl::core::convert::Into<bool> ,has_shoulders:impl::core::convert::Into<bool> ,has_toes:impl::core::convert::Into<bool> ,has_legs:impl::core::convert::Into<bool> ,root_index:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc2a50usize)as*mut u8,();
-(IKSolverVR_Spine)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations),(bool)::core::convert::Into::into(has_chest),(bool)::core::convert::Into::into(has_neck),(bool)::core::convert::Into::into(has_shoulders),(bool)::core::convert::Into::into(has_toes),(bool)::core::convert::Into::into(has_legs),(i32)::core::convert::Into::into(root_index),(i32)::core::convert::Into::into(index))}
+__IKSolverVR_Spine_unity2_raw::on_read(__receiver, ::core::convert::Into::into(positions), ::core::convert::Into::into(rotations), ::core::convert::Into::into(has_chest), ::core::convert::Into::into(has_neck), ::core::convert::Into::into(has_shoulders), ::core::convert::Into::into(has_toes), ::core::convert::Into::into(has_legs), ::core::convert::Into::into(root_index), ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`PreSolve()` overload"]fn pre_solve(self,)->(){unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc35b0usize)as*mut u8,();
-(IKSolverVR_Spine)__receiver)}
+__IKSolverVR_Spine_unity2_raw::pre_solve(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ApplyOffsets(f32)` overload"]fn apply_offsets(self,scale:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc37e0usize)as*mut u8,();
-(IKSolverVR_Spine)__receiver,(f32)::core::convert::Into::into(scale))}
+__IKSolverVR_Spine_unity2_raw::apply_offsets(__receiver, ::core::convert::Into::into(scale), ::core::option::Option::None)}
 }
 #[doc="`CalculateChestTargetRotation(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone, ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm>)` overload"]fn calculate_chest_target_rotation(self,root_bone:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone> ,arms:impl::core::convert::Into< ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> >)->(){unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc3c60usize)as*mut u8,();
@@ -349,13 +354,11 @@ this}
 #[doc="`Write(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion>)` overload"]fn write(self,)->(::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion>){unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::vector3::Vector3> > ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc5a30usize)as*mut u8,();
-(IKSolverVR_Spine)__receiver,(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>)__out_0.as_mut_ptr(),(*mut::unity2::Array<crate::unity_engine::quaternion::Quaternion>)__out_1.as_mut_ptr());
+__IKSolverVR_Spine_unity2_raw::write(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`ResetOffsets()` overload"]fn reset_offsets(self,)->(){unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc5c00usize)as*mut u8,();
-(IKSolverVR_Spine)__receiver)}
+__IKSolverVR_Spine_unity2_raw::reset_offsets(__receiver, ::core::option::Option::None)}
 }
 #[doc="`AdjustChestByHands(*mutcrate::unity_engine::quaternion::Quaternion, ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm>)` overload"]fn adjust_chest_by_hands(self,arms:impl::core::convert::Into< ::unity2::Array<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> >)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR_Spine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
@@ -425,38 +428,460 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-iksolvervr")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverVR_Leg_unity2_raw{use super:: * ;
+pub unsafe fn on_read(this:IKSolverVR_Leg,positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,has_chest:bool,has_neck:bool,has_shoulders:bool,has_toes:bool,has_legs:bool,root_index:i32,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolverVR_Leg as::unity2::ClassIdentity> ::NAME,"OnRead",));
+let inner:extern "C" fn(IKSolverVR_Leg, ::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,bool,bool,bool,bool,bool,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,positions,rotations,has_chest,has_neck,has_shoulders,has_toes,has_legs,root_index,index,__mi)}
+pub unsafe fn pre_solve(this:IKSolverVR_Leg,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKSolverVR_Leg as::unity2::ClassIdentity> ::NAME,"PreSolve",));
+let inner:extern "C" fn(IKSolverVR_Leg, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn apply_offsets(this:IKSolverVR_Leg,scale:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IKSolverVR_Leg as::unity2::ClassIdentity> ::NAME,"ApplyOffsets",));
+let inner:extern "C" fn(IKSolverVR_Leg,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,scale,__mi)}
+pub unsafe fn write(this:IKSolverVR_Leg,solved_positions: *mut::unity2::Array<crate::unity_engine::vector3::Vector3> ,solved_rotations: *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IKSolverVR_Leg as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(IKSolverVR_Leg, *mut::unity2::Array<crate::unity_engine::vector3::Vector3> , *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,solved_positions,solved_rotations,__mi)}
+pub unsafe fn reset_offsets(this:IKSolverVR_Leg,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IKSolverVR_Leg as::unity2::ClassIdentity> ::NAME,"ResetOffsets",));
+let inner:extern "C" fn(IKSolverVR_Leg, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_LegMethods:IIKSolverVR_Leg{#[doc="`get_position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5cf0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`set_position(crate::unity_engine::vector3::Vector3)` overload"]fn set_position(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d00usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`get_rotation()` overload"]fn get_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d10usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn set_rotation(self,value:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d20usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
+}
+#[doc="`get_hasToes()` overload"]fn get_has_toes(self,)->bool{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d40usize)as*mut u8,bool;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`set_hasToes(bool)` overload"]fn set_has_toes(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d50usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_thigh()` overload"]fn get_thigh(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d60usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`get_calf()` overload"]fn get_calf(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d90usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`get_foot()` overload"]fn get_foot(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5dc0usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`get_toes()` overload"]fn get_toes(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5df0usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`get_lastBone()` overload"]fn get_last_bone(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5e20usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`get_thighRelativeToPelvis()` overload"]fn get_thigh_relative_to_pelvis(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5e60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`set_thighRelativeToPelvis(crate::unity_engine::vector3::Vector3)` overload"]fn set_thigh_relative_to_pelvis(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5e70usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`OnRead(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, bool, bool, bool, bool, i32, i32)` overload"]fn on_read(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_chest:impl::core::convert::Into<bool> ,has_neck:impl::core::convert::Into<bool> ,has_shoulders:impl::core::convert::Into<bool> ,has_toes:impl::core::convert::Into<bool> ,has_legs:impl::core::convert::Into<bool> ,root_index:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_Leg_unity2_raw::on_read(__receiver, ::core::convert::Into::into(positions), ::core::convert::Into::into(rotations), ::core::convert::Into::into(has_chest), ::core::convert::Into::into(has_neck), ::core::convert::Into::into(has_shoulders), ::core::convert::Into::into(has_toes), ::core::convert::Into::into(has_legs), ::core::convert::Into::into(root_index), ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+#[doc="`PreSolve()` overload"]fn pre_solve(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_Leg_unity2_raw::pre_solve(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ApplyOffsets(f32)` overload"]fn apply_offsets(self,scale:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_Leg_unity2_raw::apply_offsets(__receiver, ::core::convert::Into::into(scale), ::core::option::Option::None)}
+}
+#[doc="`ApplyPositionOffset(crate::unity_engine::vector3::Vector3, f32)` overload"]fn apply_position_offset(self,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af69e0usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(weight))}
+}
+#[doc="`ApplyRotationOffset(crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn apply_rotation_offset(self,offset:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6870usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(weight))}
+}
+#[doc="`Solve(bool)` overload"]fn solve(self,stretch:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6dd0usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver,(bool)::core::convert::Into::into(stretch))}
+}
+#[doc="`FixTwistRotations()` overload"]fn fix_twist_rotations(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af7230usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`Stretching()` overload"]fn stretching(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6f70usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver)}
+}
+#[doc="`Write(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion>)` overload"]fn write(self,)->(::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion>){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::vector3::Vector3> > ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ::uninit();
+__IKSolverVR_Leg_unity2_raw::write(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
+(__out_0.assume_init(),__out_1.assume_init())}
+}
+#[doc="`ResetOffsets()` overload"]fn reset_offsets(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_Leg_unity2_raw::reset_offsets(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2af7730usize)as*mut u8,();
+(IKSolverVR_Leg)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR_Leg>IIKSolverVR_LegMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Leg{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_has_toes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_has_toes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_thigh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_calf_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_foot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_toes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_last_bone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_thigh_relative_to_pelvis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_thigh_relative_to_pelvis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn pre_solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn apply_offsets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn apply_position_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn apply_rotation_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn fix_twist_rotations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn stretching_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn reset_offsets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Leg{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolverVR_Leg), ::core::stringify!(new),));
+ <Self as IIKSolverVR_LegMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverVR_unity2_raw{use super:: * ;
+pub unsafe fn store_default_local_state(this:IKSolverVR,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IKSolverVR as::unity2::ClassIdentity> ::NAME,"StoreDefaultLocalState",));
+let inner:extern "C" fn(IKSolverVR, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn fix_transforms(this:IKSolverVR,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IKSolverVR as::unity2::ClassIdentity> ::NAME,"FixTransforms",));
+let inner:extern "C" fn(IKSolverVR, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_points(this:IKSolverVR,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IKSolverVR as::unity2::ClassIdentity> ::NAME,"GetPoints",));
+let inner:extern "C" fn(IKSolverVR, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_point(this:IKSolverVR,transform:crate::unity_engine::transform::Transform,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IKSolverVR as::unity2::ClassIdentity> ::NAME,"GetPoint",));
+let inner:extern "C" fn(IKSolverVR,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver_Point= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,transform,__mi)}
+pub unsafe fn is_valid(this:IKSolverVR,message: *mut::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolverVR as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let inner:extern "C" fn(IKSolverVR, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,message,__mi)}
+pub unsafe fn on_initiate(this:IKSolverVR,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IKSolverVR as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
+let inner:extern "C" fn(IKSolverVR, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:IKSolverVR,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IKSolverVR as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(IKSolverVR, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR{#[doc="`GetSineKeyframes(f32)` overload"]pub fn get_sine_keyframes(mag:impl::core::convert::Into<f32>)-> ::unity2::Array<crate::unity_engine::keyframe::Keyframe>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2907e00usize)as*mut u8, ::unity2::Array<crate::unity_engine::keyframe::Keyframe> ;
+(f32)::core::convert::Into::into(mag))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVRMethods:IIKSolverVR{#[doc="`SetToReferences(crate::root_motion::final_ik::vrik::VRIK_References)` overload"]fn set_to_references(self,references:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK_References>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2907820usize)as*mut u8,();
+(IKSolverVR)__receiver,(crate::root_motion::final_ik::vrik::VRIK_References)::core::convert::Into::into(references))}
+}
+#[doc="`GuessHandOrientations(crate::root_motion::final_ik::vrik::VRIK_References, bool)` overload"]fn guess_hand_orientations(self,references:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK_References> ,only_if_zero:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2907c60usize)as*mut u8,();
+(IKSolverVR)__receiver,(crate::root_motion::final_ik::vrik::VRIK_References)::core::convert::Into::into(references),(bool)::core::convert::Into::into(only_if_zero))}
+}
+#[doc="`DefaultAnimationCurves()` overload"]fn default_animation_curves(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2907af0usize)as*mut u8,();
+(IKSolverVR)__receiver)}
+}
+#[doc="`AddPositionOffset(crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset, crate::unity_engine::vector3::Vector3)` overload"]fn add_position_offset(self,position_offset:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset> ,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2907f20usize)as*mut u8,();
+(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset)::core::convert::Into::into(position_offset),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`AddRotationOffset(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset, crate::unity_engine::vector3::Vector3)` overload"]fn add_rotation_offset(self,rotation_offset:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset> ,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2908040usize)as*mut u8,();
+(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset)::core::convert::Into::into(rotation_offset),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+}
+#[doc="`AddRotationOffset(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset, crate::unity_engine::quaternion::Quaternion)` overload"]fn add_rotation_offset_2(self,rotation_offset:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset> ,value:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2908070usize)as*mut u8,();
+(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset)::core::convert::Into::into(rotation_offset),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
+}
+#[doc="`AddPlatformMotion(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` overload"]fn add_platform_motion(self,delta_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,delta_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,platform_pivot:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2908110usize)as*mut u8,();
+(IKSolverVR)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(delta_position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(delta_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(platform_pivot))}
+}
+#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2908210usize)as*mut u8,();
+(IKSolverVR)__receiver)}
+}
+#[doc="`StoreDefaultLocalState()` overload"]fn store_default_local_state(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_unity2_raw::store_default_local_state(__receiver, ::core::option::Option::None)}
+}
+#[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_unity2_raw::fix_transforms(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetPoints()` overload"]fn get_points(self,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_unity2_raw::get_points(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetPoint(crate::unity_engine::transform::Transform)` overload"]fn get_point(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::root_motion::final_ik::iksolver::IKSolver_Point{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_unity2_raw::get_point(__receiver, ::core::convert::Into::into(transform), ::core::option::Option::None)}
+}
+#[doc="`IsValid(*mut::unity2::Il2CppString)` overload"]fn is_valid(self,)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={__IKSolverVR_unity2_raw::is_valid(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetNormal(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]fn get_normal(self,transforms:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::transform::Transform> >)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2908f00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR)__receiver,(::unity2::Array<crate::unity_engine::transform::Transform>)::core::convert::Into::into(transforms))}
+}
+#[doc="`UpdateSolverTransforms()` overload"]fn update_solver_transforms(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x29082f0usize)as*mut u8,();
+(IKSolverVR)__receiver)}
+}
+#[doc="`OnInitiate()` overload"]fn on_initiate(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_unity2_raw::on_initiate(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKSolverVR_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
+}
+#[doc="`WriteTransforms()` overload"]fn write_transforms(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290a4b0usize)as*mut u8,();
+(IKSolverVR)__receiver)}
+}
+#[doc="`Read(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, bool, bool, bool, bool)` overload"]fn read(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_chest:impl::core::convert::Into<bool> ,has_neck:impl::core::convert::Into<bool> ,has_shoulders:impl::core::convert::Into<bool> ,has_toes:impl::core::convert::Into<bool> ,has_legs:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2908450usize)as*mut u8,();
+(IKSolverVR)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations),(bool)::core::convert::Into::into(has_chest),(bool)::core::convert::Into::into(has_neck),(bool)::core::convert::Into::into(has_shoulders),(bool)::core::convert::Into::into(has_toes),(bool)::core::convert::Into::into(has_legs))}
+}
+#[doc="`Solve()` overload"]fn solve(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2909420usize)as*mut u8,();
+(IKSolverVR)__receiver)}
+}
+#[doc="`GetPosition(i32)` overload"]fn get_position(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290a800usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetRotation(i32)` overload"]fn get_rotation(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290a840usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(IKSolverVR)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`get_rootBone()` overload"]fn get_root_bone(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290aca0usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
+(IKSolverVR)__receiver)}
+}
+#[doc="`set_rootBone(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone)` overload"]fn set_root_bone(self,value:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290acb0usize)as*mut u8,();
+(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone)::core::convert::Into::into(value))}
+}
+#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290a370usize)as*mut u8,();
+(IKSolverVR)__receiver)}
+}
+#[doc="`GetPelvisOffset()` overload"]fn get_pelvis_offset(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290a880usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x290acc0usize)as*mut u8,();
+(IKSolverVR)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR>IIKSolverVRMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR{pub fn set_to_references_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn guess_hand_orientations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn default_animation_curves_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn add_position_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn add_rotation_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_rotation_offset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_platform_motion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn store_default_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn fix_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_points_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_sine_keyframes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn update_solver_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn on_initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn write_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_root_bone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn set_root_bone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn get_pelvis_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKSolverVR), ::core::stringify!(new),));
+ <Self as IIKSolverVRMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="root_motion-final_ik-iksolvervr")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverVR_BodyPart_unity2_raw{use super:: * ;
-pub unsafe fn on_read(this:IKSolverVR_BodyPart,positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,has_chest:bool,has_neck:bool,has_shoulders:bool,has_toes:bool,has_legs:bool,root_index:i32,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnRead").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnRead", <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_read(this:IKSolverVR_BodyPart,positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,has_chest:bool,has_neck:bool,has_shoulders:bool,has_toes:bool,has_legs:bool,root_index:i32,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,"OnRead",));
 let inner:extern "C" fn(IKSolverVR_BodyPart, ::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,bool,bool,bool,bool,bool,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,positions,rotations,has_chest,has_neck,has_shoulders,has_toes,has_legs,root_index,index,__mi)}
-pub unsafe fn pre_solve(this:IKSolverVR_BodyPart,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PreSolve").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PreSolve", <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn pre_solve(this:IKSolverVR_BodyPart,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,"PreSolve",));
 let inner:extern "C" fn(IKSolverVR_BodyPart, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn write(this:IKSolverVR_BodyPart,solved_positions: *mut::unity2::Array<crate::unity_engine::vector3::Vector3> ,solved_rotations: *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Write").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Write", <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn write(this:IKSolverVR_BodyPart,solved_positions: *mut::unity2::Array<crate::unity_engine::vector3::Vector3> ,solved_rotations: *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,"Write",));
 let inner:extern "C" fn(IKSolverVR_BodyPart, *mut::unity2::Array<crate::unity_engine::vector3::Vector3> , *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,solved_positions,solved_rotations,__mi)}
-pub unsafe fn apply_offsets(this:IKSolverVR_BodyPart,scale:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ApplyOffsets").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ApplyOffsets", <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn apply_offsets(this:IKSolverVR_BodyPart,scale:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,"ApplyOffsets",));
 let inner:extern "C" fn(IKSolverVR_BodyPart,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,scale,__mi)}
-pub unsafe fn reset_offsets(this:IKSolverVR_BodyPart,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ResetOffsets").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ResetOffsets", <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn reset_offsets(this:IKSolverVR_BodyPart,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IKSolverVR_BodyPart as::unity2::ClassIdentity> ::NAME,"ResetOffsets",));
 let inner:extern "C" fn(IKSolverVR_BodyPart, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -569,140 +994,57 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_LegMethods:IIKSolverVR_Leg{#[doc="`get_position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5cf0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`set_position(crate::unity_engine::vector3::Vector3)` overload"]fn set_position(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d00usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`get_rotation()` overload"]fn get_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d10usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`set_rotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn set_rotation(self,value:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d20usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
-}
-#[doc="`get_hasToes()` overload"]fn get_has_toes(self,)->bool{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d40usize)as*mut u8,bool;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`set_hasToes(bool)` overload"]fn set_has_toes(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d50usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_thigh()` overload"]fn get_thigh(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d60usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`get_calf()` overload"]fn get_calf(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5d90usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`get_foot()` overload"]fn get_foot(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5dc0usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`get_toes()` overload"]fn get_toes(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5df0usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`get_lastBone()` overload"]fn get_last_bone(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5e20usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`get_thighRelativeToPelvis()` overload"]fn get_thigh_relative_to_pelvis(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5e60usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`set_thighRelativeToPelvis(crate::unity_engine::vector3::Vector3)` overload"]fn set_thigh_relative_to_pelvis(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5e70usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
-}
-#[doc="`OnRead(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, bool, bool, bool, bool, i32, i32)` overload"]fn on_read(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_chest:impl::core::convert::Into<bool> ,has_neck:impl::core::convert::Into<bool> ,has_shoulders:impl::core::convert::Into<bool> ,has_toes:impl::core::convert::Into<bool> ,has_legs:impl::core::convert::Into<bool> ,root_index:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5e80usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations),(bool)::core::convert::Into::into(has_chest),(bool)::core::convert::Into::into(has_neck),(bool)::core::convert::Into::into(has_shoulders),(bool)::core::convert::Into::into(has_toes),(bool)::core::convert::Into::into(has_legs),(i32)::core::convert::Into::into(root_index),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`PreSolve()` overload"]fn pre_solve(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6440usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`ApplyOffsets(f32)` overload"]fn apply_offsets(self,scale:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6a30usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(f32)::core::convert::Into::into(scale))}
-}
-#[doc="`ApplyPositionOffset(crate::unity_engine::vector3::Vector3, f32)` overload"]fn apply_position_offset(self,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af69e0usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(weight))}
-}
-#[doc="`ApplyRotationOffset(crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn apply_rotation_offset(self,offset:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6870usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(weight))}
-}
-#[doc="`Solve(bool)` overload"]fn solve(self,stretch:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6dd0usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(bool)::core::convert::Into::into(stretch))}
-}
-#[doc="`FixTwistRotations()` overload"]fn fix_twist_rotations(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af7230usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`Stretching()` overload"]fn stretching(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af6f70usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`Write(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion>)` overload"]fn write(self,)->(::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion>){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::vector3::Vector3> > ::uninit();
-let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af7490usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver,(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>)__out_0.as_mut_ptr(),(*mut::unity2::Array<crate::unity_engine::quaternion::Quaternion>)__out_1.as_mut_ptr());
-(__out_0.assume_init(),__out_1.assume_init())}
-}
-#[doc="`ResetOffsets()` overload"]fn reset_offsets(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af76d0usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverVR_Leg as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af7730usize)as*mut u8,();
-(IKSolverVR_Leg)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR_Leg>IIKSolverVR_LegMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Leg{pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_has_toes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_has_toes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_thigh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_calf_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_foot_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_toes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_last_bone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_thigh_relative_to_pelvis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_thigh_relative_to_pelvis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn on_read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn pre_solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn apply_offsets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn apply_position_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn apply_rotation_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn fix_twist_rotations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn stretching_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn reset_offsets_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Leg{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolverVR_Leg), ::core::stringify!(new),));
- <Self as IIKSolverVR_LegMethods> ::ctor(this,);
-this}
+#[cfg(feature="root_motion-final_ik-iksolvervr")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverVR_Arm_unity2_raw{use super:: * ;
+pub unsafe fn on_read(this:IKSolverVR_Arm,positions: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,rotations: ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,has_chest:bool,has_neck:bool,has_shoulders:bool,has_toes:bool,has_legs:bool,root_index:i32,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKSolverVR_Arm as::unity2::ClassIdentity> ::NAME,"OnRead",));
+let inner:extern "C" fn(IKSolverVR_Arm, ::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,bool,bool,bool,bool,bool,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,positions,rotations,has_chest,has_neck,has_shoulders,has_toes,has_legs,root_index,index,__mi)}
+pub unsafe fn pre_solve(this:IKSolverVR_Arm,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKSolverVR_Arm as::unity2::ClassIdentity> ::NAME,"PreSolve",));
+let inner:extern "C" fn(IKSolverVR_Arm, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn apply_offsets(this:IKSolverVR_Arm,scale:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IKSolverVR_Arm as::unity2::ClassIdentity> ::NAME,"ApplyOffsets",));
+let inner:extern "C" fn(IKSolverVR_Arm,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,scale,__mi)}
+pub unsafe fn reset_offsets(this:IKSolverVR_Arm,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IKSolverVR_Arm as::unity2::ClassIdentity> ::NAME,"ResetOffsets",));
+let inner:extern "C" fn(IKSolverVR_Arm, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write(this:IKSolverVR_Arm,solved_positions: *mut::unity2::Array<crate::unity_engine::vector3::Vector3> ,solved_rotations: *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IKSolverVR_Arm as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(IKSolverVR_Arm, *mut::unity2::Array<crate::unity_engine::vector3::Vector3> , *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,solved_positions,solved_rotations,__mi)}
 }
 
 #[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_ArmMethods:IIKSolverVR_Arm{#[doc="`get_position()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -738,16 +1080,13 @@ this}
 (IKSolverVR_Arm)__receiver)}
 }
 #[doc="`OnRead(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, bool, bool, bool, bool, i32, i32)` overload"]fn on_read(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_chest:impl::core::convert::Into<bool> ,has_neck:impl::core::convert::Into<bool> ,has_shoulders:impl::core::convert::Into<bool> ,has_toes:impl::core::convert::Into<bool> ,has_legs:impl::core::convert::Into<bool> ,root_index:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2780usize)as*mut u8,();
-(IKSolverVR_Arm)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations),(bool)::core::convert::Into::into(has_chest),(bool)::core::convert::Into::into(has_neck),(bool)::core::convert::Into::into(has_shoulders),(bool)::core::convert::Into::into(has_toes),(bool)::core::convert::Into::into(has_legs),(i32)::core::convert::Into::into(root_index),(i32)::core::convert::Into::into(index))}
+__IKSolverVR_Arm_unity2_raw::on_read(__receiver, ::core::convert::Into::into(positions), ::core::convert::Into::into(rotations), ::core::convert::Into::into(has_chest), ::core::convert::Into::into(has_neck), ::core::convert::Into::into(has_shoulders), ::core::convert::Into::into(has_toes), ::core::convert::Into::into(has_legs), ::core::convert::Into::into(root_index), ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`PreSolve()` overload"]fn pre_solve(self,)->(){unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af2fc0usize)as*mut u8,();
-(IKSolverVR_Arm)__receiver)}
+__IKSolverVR_Arm_unity2_raw::pre_solve(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ApplyOffsets(f32)` overload"]fn apply_offsets(self,scale:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af31b0usize)as*mut u8,();
-(IKSolverVR_Arm)__receiver,(f32)::core::convert::Into::into(scale))}
+__IKSolverVR_Arm_unity2_raw::apply_offsets(__receiver, ::core::convert::Into::into(scale), ::core::option::Option::None)}
 }
 #[doc="`Stretching()` overload"]fn stretching(self,)->(){unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2af31e0usize)as*mut u8,();
@@ -758,14 +1097,12 @@ this}
 (IKSolverVR_Arm)__receiver,(bool)::core::convert::Into::into(is_left))}
 }
 #[doc="`ResetOffsets()` overload"]fn reset_offsets(self,)->(){unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af4b70usize)as*mut u8,();
-(IKSolverVR_Arm)__receiver)}
+__IKSolverVR_Arm_unity2_raw::reset_offsets(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Write(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>, *mut::unity2::Array<crate::unity_engine::quaternion::Quaternion>)` overload"]fn write(self,)->(::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::Array<crate::unity_engine::quaternion::Quaternion>){unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::vector3::Vector3> > ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: < ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af4ba0usize)as*mut u8,();
-(IKSolverVR_Arm)__receiver,(*mut::unity2::Array<crate::unity_engine::vector3::Vector3>)__out_0.as_mut_ptr(),(*mut::unity2::Array<crate::unity_engine::quaternion::Quaternion>)__out_1.as_mut_ptr());
+__IKSolverVR_Arm_unity2_raw::write(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`DamperValue(f32, f32, f32, f32)` overload"]fn damper_value(self,value:impl::core::convert::Into<f32> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,weight:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <IKSolverVR_Arm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -816,251 +1153,139 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR{#[doc="`GetSineKeyframes(f32)` overload"]pub fn get_sine_keyframes(mag:impl::core::convert::Into<f32>)-> ::unity2::Array<crate::unity_engine::keyframe::Keyframe>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2907e00usize)as*mut u8, ::unity2::Array<crate::unity_engine::keyframe::Keyframe> ;
-(f32)::core::convert::Into::into(mag))}
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Locomotion{#[doc="`GetLineSphereCollision(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]pub fn get_line_sphere_collision(line_start:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,line_end:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,sphere_center:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,sphere_radius:impl::core::convert::Into<f32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fc25d0usize)as*mut u8,bool;
+(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(line_start),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(line_end),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(sphere_center),(f32)::core::convert::Into::into(sphere_radius))}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVRMethods:IIKSolverVR{#[doc="`SetToReferences(crate::root_motion::final_ik::vrik::VRIK_References)` overload"]fn set_to_references(self,references:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK_References>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2907820usize)as*mut u8,();
-(IKSolverVR)__receiver,(crate::root_motion::final_ik::vrik::VRIK_References)::core::convert::Into::into(references))}
+#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_LocomotionMethods:IIKSolverVR_Locomotion{#[doc="`get_centerOfMass()` overload"]fn get_center_of_mass(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0ae0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR_Locomotion)__receiver)}
 }
-#[doc="`GuessHandOrientations(crate::root_motion::final_ik::vrik::VRIK_References, bool)` overload"]fn guess_hand_orientations(self,references:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK_References> ,only_if_zero:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2907c60usize)as*mut u8,();
-(IKSolverVR)__receiver,(crate::root_motion::final_ik::vrik::VRIK_References)::core::convert::Into::into(references),(bool)::core::convert::Into::into(only_if_zero))}
+#[doc="`set_centerOfMass(crate::unity_engine::vector3::Vector3)` overload"]fn set_center_of_mass(self,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0af0usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
 }
-#[doc="`DefaultAnimationCurves()` overload"]fn default_animation_curves(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2907af0usize)as*mut u8,();
-(IKSolverVR)__receiver)}
+#[doc="`Initiate(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, f32)` overload"]fn initiate(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_toes:impl::core::convert::Into<bool> ,scale:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0b00usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations),(bool)::core::convert::Into::into(has_toes),(f32)::core::convert::Into::into(scale))}
 }
-#[doc="`AddPositionOffset(crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset, crate::unity_engine::vector3::Vector3)` overload"]fn add_position_offset(self,position_offset:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset> ,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2907f20usize)as*mut u8,();
-(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset)::core::convert::Into::into(position_offset),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+#[doc="`Reset(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>)` overload"]fn reset(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> >)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0de0usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations))}
 }
-#[doc="`AddRotationOffset(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset, crate::unity_engine::vector3::Vector3)` overload"]fn add_rotation_offset(self,rotation_offset:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset> ,value:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908040usize)as*mut u8,();
-(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset)::core::convert::Into::into(rotation_offset),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(value))}
+#[doc="`Relax()` overload"]fn relax(self,)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc0fb0usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver)}
 }
-#[doc="`AddRotationOffset(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset, crate::unity_engine::quaternion::Quaternion)` overload"]fn add_rotation_offset_2(self,rotation_offset:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset> ,value:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908070usize)as*mut u8,();
-(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset)::core::convert::Into::into(rotation_offset),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(value))}
+#[doc="`AddDeltaRotation(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` overload"]fn add_delta_rotation(self,delta:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,pivot:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc1000usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(delta),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pivot))}
 }
-#[doc="`AddPlatformMotion(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` overload"]fn add_platform_motion(self,delta_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,delta_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,platform_pivot:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908110usize)as*mut u8,();
-(IKSolverVR)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(delta_position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(delta_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(platform_pivot))}
+#[doc="`AddDeltaPosition(crate::unity_engine::vector3::Vector3)` overload"]fn add_delta_position(self,delta:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc1240usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(delta))}
 }
-#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908210usize)as*mut u8,();
-(IKSolverVR)__receiver)}
+#[doc="`Solve(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm, i32, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::quaternion::Quaternion, *mutcrate::unity_engine::quaternion::Quaternion, *mutf32, *mutf32, *mutf32, *mutf32, f32)` overload"]fn solve(self,root_bone:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone> ,spine:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine> ,left_leg:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg> ,right_leg:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg> ,left_arm:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> ,right_arm:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm> ,support_leg_index:impl::core::convert::Into<i32> ,scale:impl::core::convert::Into<f32>)->(crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,crate::unity_engine::quaternion::Quaternion,crate::unity_engine::quaternion::Quaternion,f32,f32,f32,f32){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
+let mut __out_2= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
+let mut __out_3= ::core::mem::MaybeUninit:: <crate::unity_engine::quaternion::Quaternion> ::uninit();
+let mut __out_4= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_5= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_6= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let mut __out_7= ::core::mem::MaybeUninit:: <f32> ::uninit();
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc1310usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone)::core::convert::Into::into(root_bone),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Spine)::core::convert::Into::into(spine),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg)::core::convert::Into::into(left_leg),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Leg)::core::convert::Into::into(right_leg),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm)::core::convert::Into::into(left_arm),(crate::root_motion::final_ik::iksolvervr::IKSolverVR_Arm)::core::convert::Into::into(right_arm),(i32)::core::convert::Into::into(support_leg_index),(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_2.as_mut_ptr(),(*mut crate::unity_engine::quaternion::Quaternion)__out_3.as_mut_ptr(),(*mut f32)__out_4.as_mut_ptr(),(*mut f32)__out_5.as_mut_ptr(),(*mut f32)__out_6.as_mut_ptr(),(*mut f32)__out_7.as_mut_ptr(),(f32)::core::convert::Into::into(scale));
+(__out_0.assume_init(),__out_1.assume_init(),__out_2.assume_init(),__out_3.assume_init(),__out_4.assume_init(),__out_5.assume_init(),__out_6.assume_init(),__out_7.assume_init())}
 }
-#[doc="`StoreDefaultLocalState()` overload"]fn store_default_local_state(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908960usize)as*mut u8,();
-(IKSolverVR)__receiver)}
+#[doc="`get_leftFootstepPosition()` overload"]fn get_left_footstep_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc26b0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR_Locomotion)__receiver)}
 }
-#[doc="`FixTransforms()` overload"]fn fix_transforms(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908ad0usize)as*mut u8,();
-(IKSolverVR)__receiver)}
+#[doc="`get_rightFootstepPosition()` overload"]fn get_right_footstep_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc26f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKSolverVR_Locomotion)__receiver)}
 }
-#[doc="`GetPoints()` overload"]fn get_points(self,)-> ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point>{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908d10usize)as*mut u8, ::unity2::Array<crate::root_motion::final_ik::iksolver::IKSolver_Point> ;
-(IKSolverVR)__receiver)}
+#[doc="`get_leftFootstepRotation()` overload"]fn get_left_footstep_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc2730usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(IKSolverVR_Locomotion)__receiver)}
 }
-#[doc="`GetPoint(crate::unity_engine::transform::Transform)` overload"]fn get_point(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->crate::root_motion::final_ik::iksolver::IKSolver_Point{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908d20usize)as*mut u8,crate::root_motion::final_ik::iksolver::IKSolver_Point;
-(IKSolverVR)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
+#[doc="`get_rightFootstepRotation()` overload"]fn get_right_footstep_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc2770usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
+(IKSolverVR_Locomotion)__receiver)}
 }
-#[doc="`IsValid(*mut::unity2::Il2CppString)` overload"]fn is_valid(self,)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2908d30usize)as*mut u8,bool;
-(IKSolverVR)__receiver,(*mut::unity2::Il2CppString)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
+#[doc="`StepBlocked(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn step_blocked(self,from_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,to_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,root_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc23f0usize)as*mut u8,bool;
+(IKSolverVR_Locomotion)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(from_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(to_position),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(root_position))}
 }
-#[doc="`GetNormal(::unity2::Array<crate::unity_engine::transform::Transform>)` overload"]fn get_normal(self,transforms:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::transform::Transform> >)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908f00usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR)__receiver,(::unity2::Array<crate::unity_engine::transform::Transform>)::core::convert::Into::into(transforms))}
+#[doc="`CanStep()` overload"]fn can_step(self,)->bool{unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc2520usize)as*mut u8,bool;
+(IKSolverVR_Locomotion)__receiver)}
 }
-#[doc="`UpdateSolverTransforms()` overload"]fn update_solver_transforms(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29082f0usize)as*mut u8,();
-(IKSolverVR)__receiver)}
-}
-#[doc="`OnInitiate()` overload"]fn on_initiate(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29090c0usize)as*mut u8,();
-(IKSolverVR)__receiver)}
-}
-#[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2909110usize)as*mut u8,();
-(IKSolverVR)__receiver)}
-}
-#[doc="`WriteTransforms()` overload"]fn write_transforms(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290a4b0usize)as*mut u8,();
-(IKSolverVR)__receiver)}
-}
-#[doc="`Read(::unity2::Array<crate::unity_engine::vector3::Vector3>, ::unity2::Array<crate::unity_engine::quaternion::Quaternion>, bool, bool, bool, bool, bool)` overload"]fn read(self,positions:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,rotations:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::quaternion::Quaternion> > ,has_chest:impl::core::convert::Into<bool> ,has_neck:impl::core::convert::Into<bool> ,has_shoulders:impl::core::convert::Into<bool> ,has_toes:impl::core::convert::Into<bool> ,has_legs:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2908450usize)as*mut u8,();
-(IKSolverVR)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(positions),(::unity2::Array<crate::unity_engine::quaternion::Quaternion>)::core::convert::Into::into(rotations),(bool)::core::convert::Into::into(has_chest),(bool)::core::convert::Into::into(has_neck),(bool)::core::convert::Into::into(has_shoulders),(bool)::core::convert::Into::into(has_toes),(bool)::core::convert::Into::into(has_legs))}
-}
-#[doc="`Solve()` overload"]fn solve(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2909420usize)as*mut u8,();
-(IKSolverVR)__receiver)}
-}
-#[doc="`GetPosition(i32)` overload"]fn get_position(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290a800usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetRotation(i32)` overload"]fn get_rotation(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290a840usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(IKSolverVR)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`get_rootBone()` overload"]fn get_root_bone(self,)->crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290aca0usize)as*mut u8,crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone;
-(IKSolverVR)__receiver)}
-}
-#[doc="`set_rootBone(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone)` overload"]fn set_root_bone(self,value:impl::core::convert::Into<crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone>)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290acb0usize)as*mut u8,();
-(IKSolverVR)__receiver,(crate::root_motion::final_ik::iksolvervr::IKSolverVR_VirtualBone)::core::convert::Into::into(value))}
-}
-#[doc="`Write()` overload"]fn write(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290a370usize)as*mut u8,();
-(IKSolverVR)__receiver)}
-}
-#[doc="`GetPelvisOffset()` overload"]fn get_pelvis_offset(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290a880usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverVR)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverVR as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x290acc0usize)as*mut u8,();
-(IKSolverVR)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverVR_Locomotion as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc27b0usize)as*mut u8,();
+(IKSolverVR_Locomotion)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR>IIKSolverVRMethods for __T{}
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR_Locomotion>IIKSolverVR_LocomotionMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR{pub fn set_to_references_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn guess_hand_orientations_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn default_animation_curves_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn add_position_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn add_rotation_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn add_rotation_offset_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn add_platform_motion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn store_default_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn fix_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_points_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_point_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_normal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn get_sine_keyframes_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn update_solver_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn on_initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn on_update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn write_transforms_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn read_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn get_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn get_root_bone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn set_root_bone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn write_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn get_pelvis_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Locomotion{pub fn get_center_of_mass_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_center_of_mass_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn relax_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_delta_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_delta_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn solve_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_left_footstep_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_right_footstep_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_left_footstep_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_right_footstep_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn step_blocked_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn can_step_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn get_line_sphere_collision_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Locomotion{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(IKSolverVR), ::core::stringify!(new),));
- <Self as IIKSolverVRMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]pub trait IIKSolverVR_FootstepMethods:IIKSolverVR_Footstep{#[doc="`get_isStepping()` overload"]fn get_is_stepping(self,)->bool{unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5470usize)as*mut u8,bool;
-(IKSolverVR_Footstep)__receiver)}
-}
-#[doc="`get_stepProgress()` overload"]fn get_step_progress(self,)->f32{unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5490usize)as*mut u8,f32;
-(IKSolverVR_Footstep)__receiver)}
-}
-#[doc="`set_stepProgress(f32)` overload"]fn set_step_progress(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af54a0usize)as*mut u8,();
-(IKSolverVR_Footstep)__receiver,(f32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` overload"]fn ctor(self,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,foot_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,foot_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,character_space_offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af54b0usize)as*mut u8,();
-(IKSolverVR_Footstep)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(foot_position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(foot_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(character_space_offset))}
-}
-#[doc="`Reset(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]fn reset(self,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,foot_position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,foot_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5660usize)as*mut u8,();
-(IKSolverVR_Footstep)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(foot_position),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(foot_rotation))}
-}
-#[doc="`StepTo(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn step_to(self,p:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,step_threshold:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af56e0usize)as*mut u8,();
-(IKSolverVR_Footstep)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(p),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(f32)::core::convert::Into::into(step_threshold))}
-}
-#[doc="`UpdateStepping(crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, f32)` overload"]fn update_stepping(self,p:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af58c0usize)as*mut u8,();
-(IKSolverVR_Footstep)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(p),(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(f32)::core::convert::Into::into(speed))}
-}
-#[doc="`UpdateStanding(crate::unity_engine::quaternion::Quaternion, f32, f32)` overload"]fn update_standing(self,root_rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion> ,min_angle:impl::core::convert::Into<f32> ,speed:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5a30usize)as*mut u8,();
-(IKSolverVR_Footstep)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(root_rotation),(f32)::core::convert::Into::into(min_angle),(f32)::core::convert::Into::into(speed))}
-}
-#[doc="`Update(crate::root_motion::interpolationmode::InterpolationMode, crate::unity_engine::events::unityevent::UnityEvent)` overload"]fn update(self,interpolation:impl::core::convert::Into<crate::root_motion::interpolationmode::InterpolationMode> ,on_step:impl::core::convert::Into<crate::unity_engine::events::unityevent::UnityEvent>)->(){unsafe{let __receiver= <IKSolverVR_Footstep as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2af5ba0usize)as*mut u8,();
-(IKSolverVR_Footstep)__receiver,(crate::root_motion::interpolationmode::InterpolationMode)::core::convert::Into::into(interpolation),(crate::unity_engine::events::unityevent::UnityEvent)::core::convert::Into::into(on_step))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl<__T:IIKSolverVR_Footstep>IIKSolverVR_FootstepMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Footstep{pub fn get_is_stepping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_step_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_step_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn step_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn update_stepping_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn update_standing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolvervr")]impl IKSolverVR_Footstep{#[doc="`.ctor(crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion, crate::unity_engine::vector3::Vector3)` — overload selector"]pub fn new(root_rotation:crate::unity_engine::quaternion::Quaternion,foot_position:crate::unity_engine::vector3::Vector3,foot_rotation:crate::unity_engine::quaternion::Quaternion,character_space_offset:crate::unity_engine::vector3::Vector3)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKSolverVR_Footstep), ::core::stringify!(new),));
- <Self as IIKSolverVR_FootstepMethods> ::ctor(this,root_rotation,foot_position,foot_rotation,character_space_offset);
+ failed to instantiate", ::core::stringify!(IKSolverVR_Locomotion), ::core::stringify!(new),));
+ <Self as IIKSolverVR_LocomotionMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "root_motion-final_ik-iksolvervr")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IKSolverVR_VirtualBone;
-    pub use super::IIKSolverVR_VirtualBone;
-    pub use super::IIKSolverVR_VirtualBoneMethods;
-    pub use super::IKSolverVR_Locomotion;
-    pub use super::IIKSolverVR_Locomotion;
-    pub use super::IIKSolverVR_LocomotionMethods;
-    pub use super::IKSolverVR_Spine;
-    pub use super::IIKSolverVR_Spine;
-    pub use super::IIKSolverVR_SpineMethods;
-    pub use super::IKSolverVR_RotationOffset;
-    pub use super::IKSolverVR_BodyPart;
-    pub use super::IIKSolverVR_BodyPart;
-    pub use super::IIKSolverVR_BodyPartMethods;
-    pub use super::IKSolverVR_Leg;
-    pub use super::IIKSolverVR_Leg;
-    pub use super::IIKSolverVR_LegMethods;
-    pub use super::IKSolverVR_Arm;
-    pub use super::IIKSolverVR_Arm;
-    pub use super::IIKSolverVR_ArmMethods;
-    pub use super::IKSolverVR;
-    pub use super::IIKSolverVR;
-    pub use super::IIKSolverVRMethods;
-    pub use super::IKSolverVR_PositionOffset;
-    pub use super::IKSolverVR_Arm_ShoulderRotationMode;
     pub use super::IKSolverVR_Footstep;
     pub use super::IIKSolverVR_Footstep;
     pub use super::IIKSolverVR_FootstepMethods;
+    pub use super::IKSolverVR_VirtualBone;
+    pub use super::IIKSolverVR_VirtualBone;
+    pub use super::IIKSolverVR_VirtualBoneMethods;
+    pub use super::IKSolverVR_PositionOffset;
+    pub use super::IKSolverVR_Spine;
+    pub use super::IIKSolverVR_Spine;
+    pub use super::IIKSolverVR_SpineMethods;
+    pub use super::IKSolverVR_Arm_ShoulderRotationMode;
+    pub use super::IKSolverVR_Leg;
+    pub use super::IIKSolverVR_Leg;
+    pub use super::IIKSolverVR_LegMethods;
+    pub use super::IKSolverVR;
+    pub use super::IIKSolverVR;
+    pub use super::IIKSolverVRMethods;
+    pub use super::IKSolverVR_BodyPart;
+    pub use super::IIKSolverVR_BodyPart;
+    pub use super::IIKSolverVR_BodyPartMethods;
+    pub use super::IKSolverVR_Arm;
+    pub use super::IIKSolverVR_Arm;
+    pub use super::IIKSolverVR_ArmMethods;
+    pub use super::IKSolverVR_RotationOffset;
+    pub use super::IKSolverVR_Locomotion;
+    pub use super::IIKSolverVR_Locomotion;
+    pub use super::IIKSolverVR_LocomotionMethods;
     pub use crate::root_motion::final_ik::iksolver::IIKSolver;
     pub use crate::root_motion::final_ik::iksolver::IKSolver;
     pub use crate::system::object::IObject;

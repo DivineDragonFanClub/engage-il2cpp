@@ -19,10 +19,103 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="app-basicitemmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BasicItemMenuItem_unity2_raw{use super:: * ;
-pub unsafe fn get_unit_item(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetUnitItem").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetUnitItem", <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_unit_item(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"GetUnitItem",));
 let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_unit(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unit::Unit{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"GetUnit",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_reciever_unit(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unit::Unit{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"GetRecieverUnit",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->crate::app::unit::Unit= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_blank_text(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"GetBlankText",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_visible_item_icon_on_blank(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"IsVisibleItemIconOnBlank",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build_menu_item_content(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_text_color(this:BasicItemMenuItem,color:crate::unity_engine::color::Color,b_inactive:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"SetTextColor",));
+let inner:extern "C" fn(BasicItemMenuItem,crate::unity_engine::color::Color,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,color,b_inactive,__mi)}
+pub unsafe fn set_initial_color(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"SetInitialColor",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_effective(this:BasicItemMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <BasicItemMenuItem as::unity2::ClassIdentity> ::NAME,"IsEffective",));
+let inner:extern "C" fn(BasicItemMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -32,40 +125,31 @@ inner(this,__mi)}
 __BasicItemMenuItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2456ef0usize)as*mut u8,crate::app::unit::Unit;
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::get_unit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRecieverUnit()` overload"]fn get_reciever_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2456f00usize)as*mut u8,crate::app::unit::Unit;
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::get_reciever_unit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetBlankText()` overload"]fn get_blank_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2456f10usize)as*mut u8, ::unity2::Il2CppString;
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::get_blank_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsVisibleItemIconOnBlank()` overload"]fn is_visible_item_icon_on_blank(self,)->bool{unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2456f60usize)as*mut u8,bool;
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2456f70usize)as*mut u8,();
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2456f80usize)as*mut u8,();
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetTextColor(crate::unity_engine::color::Color, bool)` overload"]fn set_text_color(self,color:impl::core::convert::Into<crate::unity_engine::color::Color> ,b_inactive:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2456f90usize)as*mut u8,();
-(BasicItemMenuItem)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(color),(bool)::core::convert::Into::into(b_inactive))}
+__BasicItemMenuItem_unity2_raw::set_text_color(__receiver, ::core::convert::Into::into(color), ::core::convert::Into::into(b_inactive), ::core::option::Option::None)}
 }
 #[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2457570usize)as*mut u8,();
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::set_initial_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsEffective()` overload"]fn is_effective(self,)->bool{unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24579e0usize)as*mut u8,bool;
-(BasicItemMenuItem)__receiver)}
+__BasicItemMenuItem_unity2_raw::is_effective(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BasicItemMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24585f0usize)as*mut u8,();

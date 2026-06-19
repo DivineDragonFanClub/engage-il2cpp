@@ -26,6 +26,29 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-trooplistmenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-trooplistmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TroopListMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn build(this:TroopListMenuItemContent,menu_item:crate::app::basicmenuitem::BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TroopListMenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(TroopListMenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item,__mi)}
+pub unsafe fn update_text_color(this:TroopListMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TroopListMenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
+let inner:extern "C" fn(TroopListMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-trooplistmenuitemcontent")]pub trait ITroopListMenuItemContentMethods:ITroopListMenuItemContent{#[doc="`GetMenuItemUnit()` overload"]fn get_menu_item_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22a9100usize)as*mut u8,crate::app::unit::Unit;
 (TroopListMenuItemContent)__receiver)}
@@ -35,12 +58,10 @@ pub use __types::*;
 (TroopListMenuItemContent)__receiver)}
 }
 #[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22a9200usize)as*mut u8,();
-(TroopListMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+__TroopListMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)}
 }
 #[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ab080usize)as*mut u8,();
-(TroopListMenuItemContent)__receiver)}
+__TroopListMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateSortieStatus()` overload"]fn update_sortie_status(self,)->(){unsafe{let __receiver= <TroopListMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22aada0usize)as*mut u8,();

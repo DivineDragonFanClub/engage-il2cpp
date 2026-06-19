@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-ai-navmeshpath-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-ai-navmeshpath")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NavMeshPath_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:NavMeshPath,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <NavMeshPath as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(NavMeshPath, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-ai-navmeshpath")]impl NavMeshPath{#[doc="`InitializeNavMeshPath()` overload"]pub fn initialize_nav_mesh_path()-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f43fc0usize)as*mut u8, ::unity2::IntPtr;
 )}
 }
@@ -29,8 +42,7 @@ pub use __types::*;
 (NavMeshPath)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44000usize)as*mut u8,();
-(NavMeshPath)__receiver)}
+__NavMeshPath_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalculateCornersInternal()` overload"]fn calculate_corners_internal(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <NavMeshPath as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44110usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;

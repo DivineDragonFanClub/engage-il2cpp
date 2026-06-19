@@ -18,6 +18,79 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-situation_converter-converterwithut-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-situation_converter-converterwithut")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConverterWithUt_unity2_raw{use super:: * ;
+pub unsafe fn convert(this:ConverterWithUt,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ConverterWithUt as::unity2::ClassIdentity> ::NAME,"Convert",));
+let inner:extern "C" fn(ConverterWithUt,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,situation,arg,__mi)}
+pub unsafe fn on_begin(this:ConverterWithUt,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ConverterWithUt as::unity2::ClassIdentity> ::NAME,"OnBegin",));
+let inner:extern "C" fn(ConverterWithUt, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_approach(this:ConverterWithUt,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ConverterWithUt as::unity2::ClassIdentity> ::NAME,"OnApproach",));
+let inner:extern "C" fn(ConverterWithUt, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_attack(this:ConverterWithUt,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ConverterWithUt as::unity2::ClassIdentity> ::NAME,"OnAttack",));
+let inner:extern "C" fn(ConverterWithUt, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_damage(this:ConverterWithUt,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ConverterWithUt as::unity2::ClassIdentity> ::NAME,"OnDamage",));
+let inner:extern "C" fn(ConverterWithUt, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_unusable(this:ConverterWithUt,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ConverterWithUt as::unity2::ClassIdentity> ::NAME,"OnUnusable",));
+let inner:extern "C" fn(ConverterWithUt, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_end(this:ConverterWithUt,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ConverterWithUt as::unity2::ClassIdentity> ::NAME,"OnEnd",));
+let inner:extern "C" fn(ConverterWithUt, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-situation_converter-converterwithut")]impl ConverterWithUt{#[doc="`get_IsOnAttack()` overload"]pub fn get_is_on_attack()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2543b20usize)as*mut u8,bool;
 )}
 }
@@ -53,32 +126,25 @@ pub use __types::*;
 (ConverterWithUt)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
 }
 #[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConverterWithUt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2540970usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConverterWithUt)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(situation),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+__ConverterWithUt_unity2_raw::convert(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg), ::core::option::Option::None)}
 }
 #[doc="`OnBegin()` overload"]fn on_begin(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConverterWithUt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543c40usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConverterWithUt)__receiver)}
+__ConverterWithUt_unity2_raw::on_begin(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnApproach()` overload"]fn on_approach(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConverterWithUt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543c50usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConverterWithUt)__receiver)}
+__ConverterWithUt_unity2_raw::on_approach(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnAttack()` overload"]fn on_attack(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConverterWithUt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543c60usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConverterWithUt)__receiver)}
+__ConverterWithUt_unity2_raw::on_attack(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConverterWithUt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543c70usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConverterWithUt)__receiver)}
+__ConverterWithUt_unity2_raw::on_damage(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUnusable()` overload"]fn on_unusable(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConverterWithUt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543c80usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConverterWithUt)__receiver)}
+__ConverterWithUt_unity2_raw::on_unusable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnd()` overload"]fn on_end(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConverterWithUt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543c90usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConverterWithUt)__receiver)}
+__ConverterWithUt_unity2_raw::on_end(__receiver, ::core::option::Option::None)}
 }
 }
 

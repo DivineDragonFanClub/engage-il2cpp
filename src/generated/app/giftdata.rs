@@ -22,6 +22,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-giftdata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-giftdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GiftData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:GiftData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GiftData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(GiftData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-giftdata")]impl GiftData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2522ac0usize)as*mut u8,();
 )}
 }
@@ -49,8 +62,7 @@ pub use __types::*;
 (GiftData)__receiver)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GiftData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2522ba0usize)as*mut u8, ::unity2::Il2CppString;
-(GiftData)__receiver)}
+__GiftData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_V00()` overload"]fn get_v00(self,)->i8{unsafe{let __receiver= <GiftData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2522dc0usize)as*mut u8,i8;

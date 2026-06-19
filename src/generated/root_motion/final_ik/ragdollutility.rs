@@ -17,18 +17,74 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/ragdollutility/RagdollUtility.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RagdollUtility")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RagdollUtility{#[offset(24)]#[rename(name="ik")]pub ik:crate::root_motion::final_ik::ik::IK, #[offset(32)]#[rename(name="ragdollToAnimationTime")]pub ragdoll_to_animation_time:f32, #[offset(36)]#[rename(name="applyIkOnRagdoll")]pub apply_ik_on_ragdoll:bool, #[offset(40)]#[rename(name="applyVelocity")]pub apply_velocity:f32, #[offset(44)]#[rename(name="applyAngularVelocity")]pub apply_angular_velocity:f32, #[offset(48)]#[rename(name="animator")]pub animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="rigidbones")]pub rigidbones: ::unity2::Array<crate::root_motion::final_ik::ragdollutility::RagdollUtility_Rigidbone> , #[offset(64)]#[rename(name="children")]pub children: ::unity2::Array<crate::root_motion::final_ik::ragdollutility::RagdollUtility_Child> , #[offset(72)]#[rename(name="enableRagdollFlag")]pub enable_ragdoll_flag:bool, #[offset(76)]#[rename(name="animatorUpdateMode")]pub animator_update_mode:crate::unity_engine::animatorupdatemode::AnimatorUpdateMode, #[offset(80)]#[rename(name="allIKComponents")]pub all_ik_components: ::unity2::Array<crate::root_motion::final_ik::ik::IK> , #[offset(88)]#[rename(name="fixTransforms")]pub fix_transforms_field: ::unity2::Array<bool> , #[offset(96)]#[rename(name="ragdollWeight")]pub ragdoll_weight:f32, #[offset(100)]#[rename(name="ragdollWeightV")]pub ragdoll_weight_v:f32, #[offset(104)]#[rename(name="fixedFrame")]pub fixed_frame:bool, #[offset(112)]#[rename(name="disabledIKComponents")]pub disabled_ik_components: ::unity2::Array<bool> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/ragdollutility/RagdollUtility_Child.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RagdollUtility.Child")]#[parent(crate::system::object::Object)]pub struct RagdollUtility_Child{#[offset(16)]#[rename(name="t")]pub t:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="localPosition")]pub local_position:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="localRotation")]pub local_rotation:crate::unity_engine::quaternion::Quaternion,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/ragdollutility/RagdollUtility_Rigidbone.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RagdollUtility.Rigidbone")]#[parent(crate::system::object::Object)]pub struct RagdollUtility_Rigidbone{#[offset(16)]#[rename(name="r")]pub r:crate::unity_engine::rigidbody::Rigidbody, #[offset(24)]#[rename(name="t")]pub t:crate::unity_engine::transform::Transform, #[offset(32)]#[rename(name="collider")]pub collider:crate::unity_engine::collider::Collider, #[offset(40)]#[rename(name="joint")]pub joint:crate::unity_engine::joint::Joint, #[offset(48)]#[rename(name="c")]pub c:crate::unity_engine::rigidbody::Rigidbody, #[offset(56)]#[rename(name="updateAnchor")]pub update_anchor:bool, #[offset(60)]#[rename(name="deltaPosition")]pub delta_position:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="deltaRotation")]pub delta_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(88)]#[rename(name="deltaTime")]pub delta_time:f32, #[offset(92)]#[rename(name="lastPosition")]pub last_position:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="lastRotation")]pub last_rotation:crate::unity_engine::quaternion::Quaternion,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/ragdollutility/RagdollUtility.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="RagdollUtility")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RagdollUtility{#[offset(24)]#[rename(name="ik")]pub ik:crate::root_motion::final_ik::ik::IK, #[offset(32)]#[rename(name="ragdollToAnimationTime")]pub ragdoll_to_animation_time:f32, #[offset(36)]#[rename(name="applyIkOnRagdoll")]pub apply_ik_on_ragdoll:bool, #[offset(40)]#[rename(name="applyVelocity")]pub apply_velocity:f32, #[offset(44)]#[rename(name="applyAngularVelocity")]pub apply_angular_velocity:f32, #[offset(48)]#[rename(name="animator")]pub animator:crate::unity_engine::animator::Animator, #[offset(56)]#[rename(name="rigidbones")]pub rigidbones: ::unity2::Array<crate::root_motion::final_ik::ragdollutility::RagdollUtility_Rigidbone> , #[offset(64)]#[rename(name="children")]pub children: ::unity2::Array<crate::root_motion::final_ik::ragdollutility::RagdollUtility_Child> , #[offset(72)]#[rename(name="enableRagdollFlag")]pub enable_ragdoll_flag:bool, #[offset(76)]#[rename(name="animatorUpdateMode")]pub animator_update_mode:crate::unity_engine::animatorupdatemode::AnimatorUpdateMode, #[offset(80)]#[rename(name="allIKComponents")]pub all_ik_components: ::unity2::Array<crate::root_motion::final_ik::ik::IK> , #[offset(88)]#[rename(name="fixTransforms")]pub fix_transforms_field: ::unity2::Array<bool> , #[offset(96)]#[rename(name="ragdollWeight")]pub ragdoll_weight:f32, #[offset(100)]#[rename(name="ragdollWeightV")]pub ragdoll_weight_v:f32, #[offset(104)]#[rename(name="fixedFrame")]pub fixed_frame:bool, #[offset(112)]#[rename(name="disabledIKComponents")]pub disabled_ik_components: ::unity2::Array<bool> ,}
+
 }
 
 #[cfg(feature = "root_motion-final_ik-ragdollutility-types")]
 pub use __types::*;
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]pub trait IRagdollUtility_ChildMethods:IRagdollUtility_Child{#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <RagdollUtility_Child as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1390usize)as*mut u8,();
+(RagdollUtility_Child)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
+}
+#[doc="`FixTransform(f32)` overload"]fn fix_transform(self,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <RagdollUtility_Child as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1400usize)as*mut u8,();
+(RagdollUtility_Child)__receiver,(f32)::core::convert::Into::into(weight))}
+}
+#[doc="`StoreLocalState()` overload"]fn store_local_state(self,)->(){unsafe{let __receiver= <RagdollUtility_Child as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1520usize)as*mut u8,();
+(RagdollUtility_Child)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]impl<__T:IRagdollUtility_Child>IRagdollUtility_ChildMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Child{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn fix_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn store_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Child{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(transform:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RagdollUtility_Child), ::core::stringify!(new),));
+ <Self as IRagdollUtility_ChildMethods> ::ctor(this,transform);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]pub trait IRagdollUtility_RigidboneMethods:IRagdollUtility_Rigidbone{#[doc="`.ctor(crate::unity_engine::rigidbody::Rigidbody)` overload"]fn ctor(self,r:impl::core::convert::Into<crate::unity_engine::rigidbody::Rigidbody>)->(){unsafe{let __receiver= <RagdollUtility_Rigidbone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1570usize)as*mut u8,();
+(RagdollUtility_Rigidbone)__receiver,(crate::unity_engine::rigidbody::Rigidbody)::core::convert::Into::into(r))}
+}
+#[doc="`RecordVelocity()` overload"]fn record_velocity(self,)->(){unsafe{let __receiver= <RagdollUtility_Rigidbone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1720usize)as*mut u8,();
+(RagdollUtility_Rigidbone)__receiver)}
+}
+#[doc="`WakeUp(f32, f32)` overload"]fn wake_up(self,velocity_weight:impl::core::convert::Into<f32> ,angular_velocity_weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <RagdollUtility_Rigidbone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1810usize)as*mut u8,();
+(RagdollUtility_Rigidbone)__receiver,(f32)::core::convert::Into::into(velocity_weight),(f32)::core::convert::Into::into(angular_velocity_weight))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]impl<__T:IRagdollUtility_Rigidbone>IRagdollUtility_RigidboneMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Rigidbone{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn record_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn wake_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Rigidbone{#[doc="`.ctor(crate::unity_engine::rigidbody::Rigidbody)` — overload selector"]pub fn new(r:crate::unity_engine::rigidbody::Rigidbody)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RagdollUtility_Rigidbone), ::core::stringify!(new),));
+ <Self as IRagdollUtility_RigidboneMethods> ::ctor(this,r);
+this}
+}
 
 #[cfg(feature="root_motion-final_ik-ragdollutility")]pub trait IRagdollUtilityMethods:IRagdollUtility{#[doc="`EnableRagdoll()` overload"]fn enable_ragdoll(self,)->(){unsafe{let __receiver= <RagdollUtility as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2372b70usize)as*mut u8,();
@@ -133,74 +189,18 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-ragdollutility")]pub trait IRagdollUtility_ChildMethods:IRagdollUtility_Child{#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <RagdollUtility_Child as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1390usize)as*mut u8,();
-(RagdollUtility_Child)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform))}
-}
-#[doc="`FixTransform(f32)` overload"]fn fix_transform(self,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <RagdollUtility_Child as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1400usize)as*mut u8,();
-(RagdollUtility_Child)__receiver,(f32)::core::convert::Into::into(weight))}
-}
-#[doc="`StoreLocalState()` overload"]fn store_local_state(self,)->(){unsafe{let __receiver= <RagdollUtility_Child as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1520usize)as*mut u8,();
-(RagdollUtility_Child)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-ragdollutility")]impl<__T:IRagdollUtility_Child>IRagdollUtility_ChildMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Child{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn fix_transform_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn store_local_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Child{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(transform:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RagdollUtility_Child), ::core::stringify!(new),));
- <Self as IRagdollUtility_ChildMethods> ::ctor(this,transform);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-ragdollutility")]pub trait IRagdollUtility_RigidboneMethods:IRagdollUtility_Rigidbone{#[doc="`.ctor(crate::unity_engine::rigidbody::Rigidbody)` overload"]fn ctor(self,r:impl::core::convert::Into<crate::unity_engine::rigidbody::Rigidbody>)->(){unsafe{let __receiver= <RagdollUtility_Rigidbone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1570usize)as*mut u8,();
-(RagdollUtility_Rigidbone)__receiver,(crate::unity_engine::rigidbody::Rigidbody)::core::convert::Into::into(r))}
-}
-#[doc="`RecordVelocity()` overload"]fn record_velocity(self,)->(){unsafe{let __receiver= <RagdollUtility_Rigidbone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1720usize)as*mut u8,();
-(RagdollUtility_Rigidbone)__receiver)}
-}
-#[doc="`WakeUp(f32, f32)` overload"]fn wake_up(self,velocity_weight:impl::core::convert::Into<f32> ,angular_velocity_weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <RagdollUtility_Rigidbone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1810usize)as*mut u8,();
-(RagdollUtility_Rigidbone)__receiver,(f32)::core::convert::Into::into(velocity_weight),(f32)::core::convert::Into::into(angular_velocity_weight))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-ragdollutility")]impl<__T:IRagdollUtility_Rigidbone>IRagdollUtility_RigidboneMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Rigidbone{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn record_velocity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn wake_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root_motion-final_ik-ragdollutility")]impl RagdollUtility_Rigidbone{#[doc="`.ctor(crate::unity_engine::rigidbody::Rigidbody)` — overload selector"]pub fn new(r:crate::unity_engine::rigidbody::Rigidbody)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RagdollUtility_Rigidbone), ::core::stringify!(new),));
- <Self as IRagdollUtility_RigidboneMethods> ::ctor(this,r);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-ragdollutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RagdollUtility;
-    pub use super::IRagdollUtility;
-    pub use super::IRagdollUtilityMethods;
     pub use super::RagdollUtility_Child;
     pub use super::IRagdollUtility_Child;
     pub use super::IRagdollUtility_ChildMethods;
     pub use super::RagdollUtility_Rigidbone;
     pub use super::IRagdollUtility_Rigidbone;
     pub use super::IRagdollUtility_RigidboneMethods;
+    pub use super::RagdollUtility;
+    pub use super::IRagdollUtility;
+    pub use super::IRagdollUtilityMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

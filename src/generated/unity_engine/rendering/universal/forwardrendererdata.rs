@@ -73,9 +73,31 @@ pub use __types::*;
 this}
 }
 
+#[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ForwardRendererData_unity2_raw{use super:: * ;
+pub unsafe fn create(this:ForwardRendererData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ForwardRendererData as::unity2::ClassIdentity> ::NAME,"Create",));
+let inner:extern "C" fn(ForwardRendererData, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:ForwardRendererData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ForwardRendererData as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(ForwardRendererData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-universal-forwardrendererdata")]pub trait IForwardRendererDataMethods:IForwardRendererData{#[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef01f0usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
-(ForwardRendererData)__receiver)}
+__ForwardRendererData_unity2_raw::create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_opaqueLayerMask()` overload"]fn get_opaque_layer_mask(self,)->crate::unity_engine::layermask::LayerMask{unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0260usize)as*mut u8,crate::unity_engine::layermask::LayerMask;
@@ -134,8 +156,7 @@ this}
 (ForwardRendererData)__receiver,(crate::unity_engine::rendering::universal::forwardrendererdata::ForwardRendererData_MixedResolutionFlag)::core::convert::Into::into(value))}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0430usize)as*mut u8,();
-(ForwardRendererData)__receiver)}
+__ForwardRendererData_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ForwardRendererData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0440usize)as*mut u8,();

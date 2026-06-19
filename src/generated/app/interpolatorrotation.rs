@@ -22,13 +22,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-interpolatorrotation-types")]
 pub use __types::*;
 
+#[cfg(feature="app-interpolatorrotation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InterpolatorRotation_unity2_raw{use super:: * ;
+pub unsafe fn set(this:InterpolatorRotation,value:f32,time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <InterpolatorRotation as::unity2::ClassIdentity> ::NAME,"Set",));
+let inner:extern "C" fn(InterpolatorRotation,f32,f32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,time,__mi)}
+}
+
 #[cfg(feature="app-interpolatorrotation")]pub trait IInterpolatorRotationMethods:IInterpolatorRotation{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorRotation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2794ce0usize)as*mut u8,();
 (InterpolatorRotation)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
 }
 #[doc="`Set(f32, f32)` overload"]fn set(self,value:impl::core::convert::Into<f32> ,time:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <InterpolatorRotation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2794d50usize)as*mut u8,bool;
-(InterpolatorRotation)__receiver,(f32)::core::convert::Into::into(value),(f32)::core::convert::Into::into(time))}
+__InterpolatorRotation_unity2_raw::set(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(time), ::core::option::Option::None)}
 }
 }
 

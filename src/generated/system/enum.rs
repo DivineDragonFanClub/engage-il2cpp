@@ -18,6 +18,49 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[cfg(feature = "system-enum-types")]
 pub use __types::*;
 
+#[cfg(feature="system-enum")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Enum_unity2_raw{use super:: * ;
+pub unsafe fn equals(this:Enum,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <Enum as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(Enum,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn get_hash_code(this:Enum,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <Enum as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(Enum, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:Enum,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <Enum as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(Enum, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn compare_to(this:Enum,target:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Enum as::unity2::ClassIdentity> ::NAME,"CompareTo",));
+let inner:extern "C" fn(Enum,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,target,__mi)}
+}
+
 #[cfg(feature="system-enum")]impl Enum{#[doc="`InternalFormattedHexString(crate::system::object::Object)` overload"]pub fn internal_formatted_hex_string(value:impl::core::convert::Into<crate::system::object::Object>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3acbec0usize)as*mut u8, ::unity2::Il2CppString;
 (crate::system::object::Object)::core::convert::Into::into(value))}
 }
@@ -138,20 +181,16 @@ __f(::core::convert::Into::into(value), ::core::convert::Into::into(ignore_case)
 (Enum)__receiver)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Enum as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3acf040usize)as*mut u8,bool;
-(Enum)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__Enum_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Enum as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3acf050usize)as*mut u8,i32;
-(Enum)__receiver)}
+__Enum_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Enum as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3acf060usize)as*mut u8, ::unity2::Il2CppString;
-(Enum)__receiver)}
+__Enum_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CompareTo(crate::system::object::Object)` overload"]fn compare_to(self,target:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Enum as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3acf3b0usize)as*mut u8,i32;
-(Enum)__receiver,(crate::system::object::Object)::core::convert::Into::into(target))}
+__Enum_unity2_raw::compare_to(__receiver, ::core::convert::Into::into(target), ::core::option::Option::None)}
 }
 #[doc="`ToString(::unity2::Il2CppString)` overload"]fn to_string_2(self,format:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <Enum as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3acf150usize)as*mut u8, ::unity2::Il2CppString;

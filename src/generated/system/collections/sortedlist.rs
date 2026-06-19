@@ -9,19 +9,19 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_SyncSortedList.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.SyncSortedList")]#[parent(crate::system::collections::sortedlist::SortedList)]pub struct SortedList_SyncSortedList{#[offset(72)]#[rename(name="_list")]pub list:crate::system::collections::sortedlist::SortedList, #[offset(80)]#[rename(name="_root")]pub root: ::unity2::IlInstance,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_ValueList.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.ValueList")]#[parent(crate::system::object::Object)]pub struct SortedList_ValueList{#[offset(16)]#[rename(name="sortedList")]pub sorted_list:crate::system::collections::sortedlist::SortedList,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList")]#[parent(crate::system::object::Object)]pub struct SortedList{#[offset(16)]#[rename(name="keys")]pub keys: ::unity2::Array<crate::system::object::Object> , #[offset(24)]#[rename(name="values")]pub values: ::unity2::Array<crate::system::object::Object> , #[offset(32)]#[rename(name="_size")]pub size:i32, #[offset(36)]#[rename(name="version")]pub version:i32, #[offset(40)]#[rename(name="comparer")]pub comparer:crate::system::collections::icomparer_interface::IComparer_Interface, #[offset(48)]#[rename(name="keyList")]pub key_list:crate::system::collections::sortedlist::SortedList_KeyList, #[offset(56)]#[rename(name="valueList")]pub value_list:crate::system::collections::sortedlist::SortedList_ValueList, #[offset(64)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance, #[static_field]#[rename(name="_defaultCapacity")]pub default_capacity:i32, #[static_field]#[rename(name="emptyArray")]pub empty_array: ::unity2::Array<crate::system::object::Object> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_SortedListEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.SortedListEnumerator")]#[parent(crate::system::object::Object)]pub struct SortedList_SortedListEnumerator{#[offset(16)]#[rename(name="sortedList")]pub sorted_list:crate::system::collections::sortedlist::SortedList, #[offset(24)]#[rename(name="key")]pub key: ::unity2::IlInstance, #[offset(32)]#[rename(name="value")]pub value: ::unity2::IlInstance, #[offset(40)]#[rename(name="index")]pub index:i32, #[offset(44)]#[rename(name="startIndex")]pub start_index:i32, #[offset(48)]#[rename(name="endIndex")]pub end_index:i32, #[offset(52)]#[rename(name="version")]pub version:i32, #[offset(56)]#[rename(name="current")]pub current:bool, #[offset(60)]#[rename(name="getObjectRetType")]pub get_object_ret_type:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_SortedListDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.SortedListDebugView")]#[parent(crate::system::object::Object)]pub struct SortedList_SortedListDebugView{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_ValueList.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.ValueList")]#[parent(crate::system::object::Object)]pub struct SortedList_ValueList{#[offset(16)]#[rename(name="sortedList")]pub sorted_list:crate::system::collections::sortedlist::SortedList,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_SyncSortedList.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.SyncSortedList")]#[parent(crate::system::collections::sortedlist::SortedList)]pub struct SortedList_SyncSortedList{#[offset(72)]#[rename(name="_list")]pub list:crate::system::collections::sortedlist::SortedList, #[offset(80)]#[rename(name="_root")]pub root: ::unity2::IlInstance,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_SortedListEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.SortedListEnumerator")]#[parent(crate::system::object::Object)]pub struct SortedList_SortedListEnumerator{#[offset(16)]#[rename(name="sortedList")]pub sorted_list:crate::system::collections::sortedlist::SortedList, #[offset(24)]#[rename(name="key")]pub key: ::unity2::IlInstance, #[offset(32)]#[rename(name="value")]pub value: ::unity2::IlInstance, #[offset(40)]#[rename(name="index")]pub index:i32, #[offset(44)]#[rename(name="startIndex")]pub start_index:i32, #[offset(48)]#[rename(name="endIndex")]pub end_index:i32, #[offset(52)]#[rename(name="version")]pub version:i32, #[offset(56)]#[rename(name="current")]pub current:bool, #[offset(60)]#[rename(name="getObjectRetType")]pub get_object_ret_type:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/sortedlist/SortedList_KeyList.md"))]#[::unity2::class(namespace="System.Collections",name="SortedList.KeyList")]#[parent(crate::system::object::Object)]pub struct SortedList_KeyList{#[offset(16)]#[rename(name="sortedList")]pub sorted_list:crate::system::collections::sortedlist::SortedList,}
@@ -31,137 +31,508 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-sortedlist-types")]
 pub use __types::*;
 
-#[cfg(feature="system-collections-sortedlist")]pub trait ISortedList_SyncSortedListMethods:ISortedList_SyncSortedList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::system::collections::sortedlist::SortedList>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c563d0usize)as*mut u8,();
-(SortedList_SyncSortedList)__receiver,(crate::system::collections::sortedlist::SortedList)::core::convert::Into::into(list))}
+#[cfg(feature="system-collections-sortedlist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortedList_ValueList_unity2_raw{use super:: * ;
+pub unsafe fn get_count(this:SortedList_ValueList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(SortedList_ValueList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:SortedList_ValueList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let inner:extern "C" fn(SortedList_ValueList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:SortedList_ValueList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(SortedList_ValueList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sync_root(this:SortedList_ValueList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(SortedList_ValueList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn add(this:SortedList_ValueList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(SortedList_ValueList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn clear(this:SortedList_ValueList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"Clear",));
+let inner:extern "C" fn(SortedList_ValueList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn contains(this:SortedList_ValueList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"Contains",));
+let inner:extern "C" fn(SortedList_ValueList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn copy_to(this:SortedList_ValueList,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(SortedList_ValueList, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,array_index,__mi)}
+pub unsafe fn insert(this:SortedList_ValueList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"Insert",));
+let inner:extern "C" fn(SortedList_ValueList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn get_item(this:SortedList_ValueList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let inner:extern "C" fn(SortedList_ValueList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn set_item(this:SortedList_ValueList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let inner:extern "C" fn(SortedList_ValueList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn get_enumerator(this:SortedList_ValueList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(SortedList_ValueList, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn index_of(this:SortedList_ValueList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"IndexOf",));
+let inner:extern "C" fn(SortedList_ValueList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn remove(this:SortedList_ValueList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(SortedList_ValueList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn remove_at(this:SortedList_ValueList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <SortedList_ValueList as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
+let inner:extern "C" fn(SortedList_ValueList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
 }
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56480usize)as*mut u8,i32;
-(SortedList_SyncSortedList)__receiver)}
+
+#[cfg(feature="system-collections-sortedlist")]pub trait ISortedList_ValueListMethods:ISortedList_ValueList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` overload"]fn ctor(self,sorted_list:impl::core::convert::Into<crate::system::collections::sortedlist::SortedList>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57720usize)as*mut u8,();
+(SortedList_ValueList)__receiver,(crate::system::collections::sortedlist::SortedList)::core::convert::Into::into(sorted_list))}
 }
-#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56570usize)as*mut u8,crate::system::object::Object;
-(SortedList_SyncSortedList)__receiver)}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
-#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56580usize)as*mut u8,bool;
-(SortedList_SyncSortedList)__receiver)}
+#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
 }
-#[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c565a0usize)as*mut u8,bool;
-(SortedList_SyncSortedList)__receiver)}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
-#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c565c0usize)as*mut u8,bool;
-(SortedList_SyncSortedList)__receiver)}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
 }
-#[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c565d0usize)as*mut u8,crate::system::object::Object;
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+#[doc="`Add(crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
-#[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c566c0usize)as*mut u8,();
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::clear(__receiver, ::core::option::Option::None)}
 }
-#[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c567b0usize)as*mut u8,();
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,value:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::contains(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
-#[doc="`get_Capacity()` overload"]fn get_capacity(self,)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c568a0usize)as*mut u8,i32;
-(SortedList_SyncSortedList)__receiver)}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
 }
-#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56990usize)as*mut u8,crate::system::object::Object;
-(SortedList_SyncSortedList)__receiver)}
+#[doc="`Insert(i32, crate::system::object::Object)` overload"]fn insert(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::insert(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
-#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56a80usize)as*mut u8,bool;
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
-#[doc="`ContainsKey(crate::system::object::Object)` overload"]fn contains_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56b70usize)as*mut u8,bool;
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+#[doc="`set_Item(i32, crate::system::object::Object)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::set_item(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
-#[doc="`ContainsValue(crate::system::object::Object)` overload"]fn contains_value(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56c60usize)as*mut u8,bool;
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
-#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56d50usize)as*mut u8,();
-(SortedList_SyncSortedList)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+#[doc="`IndexOf(crate::system::object::Object)` overload"]fn index_of(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::index_of(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
-#[doc="`GetByIndex(i32)` overload"]fn get_by_index(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56e40usize)as*mut u8,crate::system::object::Object;
-(SortedList_SyncSortedList)__receiver,(i32)::core::convert::Into::into(index))}
+#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::remove(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
-#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56f30usize)as*mut u8,crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
-(SortedList_SyncSortedList)__receiver)}
-}
-#[doc="`GetKey(i32)` overload"]fn get_key(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57020usize)as*mut u8,crate::system::object::Object;
-(SortedList_SyncSortedList)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetKeyList()` overload"]fn get_key_list(self,)->crate::system::collections::ilist::IList{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57110usize)as*mut u8,crate::system::collections::ilist::IList;
-(SortedList_SyncSortedList)__receiver)}
-}
-#[doc="`GetValueList()` overload"]fn get_value_list(self,)->crate::system::collections::ilist::IList{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57200usize)as*mut u8,crate::system::collections::ilist::IList;
-(SortedList_SyncSortedList)__receiver)}
-}
-#[doc="`IndexOfKey(crate::system::object::Object)` overload"]fn index_of_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c572f0usize)as*mut u8,i32;
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
-}
-#[doc="`IndexOfValue(crate::system::object::Object)` overload"]fn index_of_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57450usize)as*mut u8,i32;
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-#[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57540usize)as*mut u8,();
-(SortedList_SyncSortedList)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57630usize)as*mut u8,();
-(SortedList_SyncSortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+#[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_ValueList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="system-collections-sortedlist")]impl<__T:ISortedList_SyncSortedList>ISortedList_SyncSortedListMethods for __T{}
+#[cfg(feature="system-collections-sortedlist")]impl<__T:ISortedList_ValueList>ISortedList_ValueListMethods for __T{}
 
-#[cfg(feature="system-collections-sortedlist")]impl SortedList_SyncSortedList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="system-collections-sortedlist")]impl SortedList_ValueList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_is_fixed_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn contains_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn contains_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn get_by_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn get_key_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn get_value_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn index_of_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn index_of_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn insert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
 }
 
-#[cfg(feature="system-collections-sortedlist")]impl SortedList_SyncSortedList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` — overload selector"]pub fn new(list:crate::system::collections::sortedlist::SortedList)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="system-collections-sortedlist")]impl SortedList_ValueList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` — overload selector"]pub fn new(sorted_list:crate::system::collections::sortedlist::SortedList)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SortedList_SyncSortedList), ::core::stringify!(new),));
- <Self as ISortedList_SyncSortedListMethods> ::ctor(this,list);
+ failed to instantiate", ::core::stringify!(SortedList_ValueList), ::core::stringify!(new),));
+ <Self as ISortedList_ValueListMethods> ::ctor(this,sorted_list);
 this}
+}
+
+#[cfg(feature="system-collections-sortedlist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortedList_unity2_raw{use super:: * ;
+pub unsafe fn add(this:SortedList,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,value,__mi)}
+pub unsafe fn get_capacity(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_Capacity",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_capacity(this:SortedList,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"set_Capacity",));
+let inner:extern "C" fn(SortedList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_count(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_keys(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_Keys",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_values(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_Values",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::collections::icollection::ICollection= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_fixed_size(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sync_root(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clone(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn contains(this:SortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"Contains",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn contains_key(this:SortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"ContainsKey",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn contains_value(this:SortedList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"ContainsValue",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn copy_to(this:SortedList,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(SortedList, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,array_index,__mi)}
+pub unsafe fn get_by_index(this:SortedList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"GetByIndex",));
+let inner:extern "C" fn(SortedList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn system_collections_i_enumerable_get_enumerator(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"System.Collections.IEnumerable.GetEnumerator",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_enumerator(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_key(this:SortedList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"GetKey",));
+let inner:extern "C" fn(SortedList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn get_key_list(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"GetKeyList",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value_list(this:SortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"GetValueList",));
+let inner:extern "C" fn(SortedList, ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_item(this:SortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn set_item(this:SortedList,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,value,__mi)}
+pub unsafe fn index_of_key(this:SortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"IndexOfKey",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn index_of_value(this:SortedList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"IndexOfValue",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn remove_at(this:SortedList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
+let inner:extern "C" fn(SortedList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn remove(this:SortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <SortedList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(SortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
 }
 
 #[cfg(feature="system-collections-sortedlist")]impl SortedList{#[doc="`Synchronized(crate::system::collections::sortedlist::SortedList)` overload"]pub fn synchronized(list:impl::core::convert::Into<crate::system::collections::sortedlist::SortedList>)->crate::system::collections::sortedlist::SortedList{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37769a0usize)as*mut u8,crate::system::collections::sortedlist::SortedList;
@@ -193,120 +564,93 @@ this}
 (SortedList)__receiver,(crate::system::collections::icomparer_interface::IComparer_Interface)::core::convert::Into::into(comparer),(i32)::core::convert::Into::into(capacity))}
 }
 #[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775750usize)as*mut u8,();
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+__SortedList_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_Capacity()` overload"]fn get_capacity(self,)->i32{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775a60usize)as*mut u8,i32;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_capacity(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Capacity(i32)` overload"]fn set_capacity(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775a70usize)as*mut u8,();
-(SortedList)__receiver,(i32)::core::convert::Into::into(value))}
+__SortedList_unity2_raw::set_capacity(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775c50usize)as*mut u8,i32;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Keys()` overload"]fn get_keys(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775c60usize)as*mut u8,crate::system::collections::icollection::ICollection;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_keys(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Values()` overload"]fn get_values(self,)->crate::system::collections::icollection::ICollection{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775c70usize)as*mut u8,crate::system::collections::icollection::ICollection;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_values(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775c80usize)as*mut u8,bool;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775c90usize)as*mut u8,bool;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_is_fixed_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775ca0usize)as*mut u8,bool;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775cb0usize)as*mut u8,crate::system::object::Object;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775d40usize)as*mut u8,crate::system::object::Object;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775e00usize)as*mut u8,bool;
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`ContainsKey(crate::system::object::Object)` overload"]fn contains_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775e30usize)as*mut u8,bool;
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_unity2_raw::contains_key(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`ContainsValue(crate::system::object::Object)` overload"]fn contains_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775e60usize)as*mut u8,bool;
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__SortedList_unity2_raw::contains_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3775e90usize)as*mut u8,();
-(SortedList)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+__SortedList_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
 }
 #[doc="`EnsureCapacity(i32)` overload"]fn ensure_capacity(self,min:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3776100usize)as*mut u8,();
 (SortedList)__receiver,(i32)::core::convert::Into::into(min))}
 }
 #[doc="`GetByIndex(i32)` overload"]fn get_by_index(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776140usize)as*mut u8,crate::system::object::Object;
-(SortedList)__receiver,(i32)::core::convert::Into::into(index))}
+__SortedList_unity2_raw::get_by_index(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`System.Collections.IEnumerable.GetEnumerator()` overload"]fn system_collections_i_enumerable_get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776210usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::system_collections_i_enumerable_get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776290usize)as*mut u8,crate::system::collections::idictionaryenumerator::IDictionaryEnumerator;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetKey(i32)` overload"]fn get_key(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776310usize)as*mut u8,crate::system::object::Object;
-(SortedList)__receiver,(i32)::core::convert::Into::into(index))}
+__SortedList_unity2_raw::get_key(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`GetKeyList()` overload"]fn get_key_list(self,)->crate::system::collections::ilist::IList{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x37763e0usize)as*mut u8,crate::system::collections::ilist::IList;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_key_list(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetValueList()` overload"]fn get_value_list(self,)->crate::system::collections::ilist::IList{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776480usize)as*mut u8,crate::system::collections::ilist::IList;
-(SortedList)__receiver)}
+__SortedList_unity2_raw::get_value_list(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776520usize)as*mut u8,crate::system::object::Object;
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776590usize)as*mut u8,();
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
+__SortedList_unity2_raw::set_item(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`IndexOfKey(crate::system::object::Object)` overload"]fn index_of_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x37766d0usize)as*mut u8,i32;
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_unity2_raw::index_of_key(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`IndexOfValue(crate::system::object::Object)` overload"]fn index_of_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776780usize)as*mut u8,i32;
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
+__SortedList_unity2_raw::index_of_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Insert(i32, crate::system::object::Object, crate::system::object::Object)` overload"]fn insert(self,index:impl::core::convert::Into<i32> ,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x37758d0usize)as*mut u8,();
 (SortedList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(key),(crate::system::object::Object)::core::convert::Into::into(value))}
 }
 #[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x37767f0usize)as*mut u8,();
-(SortedList)__receiver,(i32)::core::convert::Into::into(index))}
+__SortedList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3776950usize)as*mut u8,();
-(SortedList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 }
 
@@ -372,37 +716,446 @@ this}
 this}
 }
 
+#[cfg(feature="system-collections-sortedlist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortedList_SyncSortedList_unity2_raw{use super:: * ;
+pub unsafe fn get_count(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sync_root(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_fixed_size(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"get_IsFixedSize",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_item(this:SortedList_SyncSortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn set_item(this:SortedList_SyncSortedList,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,value,__mi)}
+pub unsafe fn add(this:SortedList_SyncSortedList,key:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,value,__mi)}
+pub unsafe fn get_capacity(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"get_Capacity",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clone(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn contains(this:SortedList_SyncSortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"Contains",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn contains_key(this:SortedList_SyncSortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"ContainsKey",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn contains_value(this:SortedList_SyncSortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"ContainsValue",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn copy_to(this:SortedList_SyncSortedList,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,index,__mi)}
+pub unsafe fn get_by_index(this:SortedList_SyncSortedList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"GetByIndex",));
+let inner:extern "C" fn(SortedList_SyncSortedList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn get_enumerator(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_key(this:SortedList_SyncSortedList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"GetKey",));
+let inner:extern "C" fn(SortedList_SyncSortedList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn get_key_list(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"GetKeyList",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value_list(this:SortedList_SyncSortedList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"GetValueList",));
+let inner:extern "C" fn(SortedList_SyncSortedList, ::unity2::OptionalMethod,)->crate::system::collections::ilist::IList= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn index_of_key(this:SortedList_SyncSortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"IndexOfKey",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn index_of_value(this:SortedList_SyncSortedList,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"IndexOfValue",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn remove_at(this:SortedList_SyncSortedList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
+let inner:extern "C" fn(SortedList_SyncSortedList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn remove(this:SortedList_SyncSortedList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(45usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",45usize,__vt.len(), <SortedList_SyncSortedList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(SortedList_SyncSortedList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+}
+
+#[cfg(feature="system-collections-sortedlist")]pub trait ISortedList_SyncSortedListMethods:ISortedList_SyncSortedList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` overload"]fn ctor(self,list:impl::core::convert::Into<crate::system::collections::sortedlist::SortedList>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c563d0usize)as*mut u8,();
+(SortedList_SyncSortedList)__receiver,(crate::system::collections::sortedlist::SortedList)::core::convert::Into::into(list))}
+}
+#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_IsFixedSize()` overload"]fn get_is_fixed_size(self,)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_is_fixed_size(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
+}
+#[doc="`get_Item(crate::system::object::Object)` overload"]fn get_item(self,key:impl::core::convert::Into<crate::system::object::Object>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+}
+#[doc="`set_Item(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_item(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::set_item(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`Add(crate::system::object::Object, crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`get_Capacity()` overload"]fn get_capacity(self,)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_capacity(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::clone(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+}
+#[doc="`ContainsKey(crate::system::object::Object)` overload"]fn contains_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::contains_key(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+}
+#[doc="`ContainsValue(crate::system::object::Object)` overload"]fn contains_value(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::contains_value(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+}
+#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+#[doc="`GetByIndex(i32)` overload"]fn get_by_index(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_by_index(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::idictionaryenumerator::IDictionaryEnumerator{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetKey(i32)` overload"]fn get_key(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_key(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+#[doc="`GetKeyList()` overload"]fn get_key_list(self,)->crate::system::collections::ilist::IList{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_key_list(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetValueList()` overload"]fn get_value_list(self,)->crate::system::collections::ilist::IList{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::get_value_list(__receiver, ::core::option::Option::None)}
+}
+#[doc="`IndexOfKey(crate::system::object::Object)` overload"]fn index_of_key(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::index_of_key(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+}
+#[doc="`IndexOfValue(crate::system::object::Object)` overload"]fn index_of_value(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::index_of_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
+}
+#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_SyncSortedList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SortedList_SyncSortedList_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="system-collections-sortedlist")]impl<__T:ISortedList_SyncSortedList>ISortedList_SyncSortedListMethods for __T{}
+
+#[cfg(feature="system-collections-sortedlist")]impl SortedList_SyncSortedList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_is_fixed_size_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn clone_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn contains_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn contains_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn get_by_index_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn get_key_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn get_value_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn index_of_key_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn index_of_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+}
+
+#[cfg(feature="system-collections-sortedlist")]impl SortedList_SyncSortedList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` — overload selector"]pub fn new(list:crate::system::collections::sortedlist::SortedList)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortedList_SyncSortedList), ::core::stringify!(new),));
+ <Self as ISortedList_SyncSortedListMethods> ::ctor(this,list);
+this}
+}
+
+#[cfg(feature="system-collections-sortedlist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortedList_SortedListEnumerator_unity2_raw{use super:: * ;
+pub unsafe fn clone(this:SortedList_SortedListEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SortedList_SortedListEnumerator as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(SortedList_SortedListEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_key(this:SortedList_SortedListEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <SortedList_SortedListEnumerator as::unity2::ClassIdentity> ::NAME,"get_Key",));
+let inner:extern "C" fn(SortedList_SortedListEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn move_next(this:SortedList_SortedListEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SortedList_SortedListEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let inner:extern "C" fn(SortedList_SortedListEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_entry(this:SortedList_SortedListEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SortedList_SortedListEnumerator as::unity2::ClassIdentity> ::NAME,"get_Entry",));
+let inner:extern "C" fn(SortedList_SortedListEnumerator, ::unity2::OptionalMethod,)->crate::system::collections::dictionaryentry::DictionaryEntry= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_current(this:SortedList_SortedListEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <SortedList_SortedListEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let inner:extern "C" fn(SortedList_SortedListEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value(this:SortedList_SortedListEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SortedList_SortedListEnumerator as::unity2::ClassIdentity> ::NAME,"get_Value",));
+let inner:extern "C" fn(SortedList_SortedListEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset(this:SortedList_SortedListEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <SortedList_SortedListEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(SortedList_SortedListEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-collections-sortedlist")]pub trait ISortedList_SortedListEnumeratorMethods:ISortedList_SortedListEnumerator{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList, i32, i32, i32)` overload"]fn ctor(self,sorted_list:impl::core::convert::Into<crate::system::collections::sortedlist::SortedList> ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32> ,get_obj_ret_type:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55cd0usize)as*mut u8,();
 (SortedList_SortedListEnumerator)__receiver,(crate::system::collections::sortedlist::SortedList)::core::convert::Into::into(sorted_list),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count),(i32)::core::convert::Into::into(get_obj_ret_type))}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55ed0usize)as*mut u8,crate::system::object::Object;
-(SortedList_SortedListEnumerator)__receiver)}
+__SortedList_SortedListEnumerator_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55ee0usize)as*mut u8,crate::system::object::Object;
-(SortedList_SortedListEnumerator)__receiver)}
+__SortedList_SortedListEnumerator_unity2_raw::get_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55f80usize)as*mut u8,bool;
-(SortedList_SortedListEnumerator)__receiver)}
+__SortedList_SortedListEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Entry()` overload"]fn get_entry(self,)->crate::system::collections::dictionaryentry::DictionaryEntry{unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c560c0usize)as*mut u8,crate::system::collections::dictionaryentry::DictionaryEntry;
-(SortedList_SortedListEnumerator)__receiver)}
+__SortedList_SortedListEnumerator_unity2_raw::get_entry(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56170usize)as*mut u8,crate::system::object::Object;
-(SortedList_SortedListEnumerator)__receiver)}
+__SortedList_SortedListEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Value()` overload"]fn get_value(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56280usize)as*mut u8,crate::system::object::Object;
-(SortedList_SortedListEnumerator)__receiver)}
+__SortedList_SortedListEnumerator_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <SortedList_SortedListEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c56320usize)as*mut u8,();
-(SortedList_SortedListEnumerator)__receiver)}
+__SortedList_SortedListEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -425,97 +1178,157 @@ pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="system-collections-sortedlist")]pub trait ISortedList_ValueListMethods:ISortedList_ValueList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` overload"]fn ctor(self,sorted_list:impl::core::convert::Into<crate::system::collections::sortedlist::SortedList>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57720usize)as*mut u8,();
-(SortedList_ValueList)__receiver,(crate::system::collections::sortedlist::SortedList)::core::convert::Into::into(sorted_list))}
-}
-#[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57760usize)as*mut u8,i32;
-(SortedList_ValueList)__receiver)}
-}
-#[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57770usize)as*mut u8,bool;
-(SortedList_ValueList)__receiver)}
-}
-#[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57780usize)as*mut u8,bool;
-(SortedList_ValueList)__receiver)}
-}
-#[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c577a0usize)as*mut u8,crate::system::object::Object;
-(SortedList_ValueList)__receiver)}
-}
-#[doc="`Add(crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c577c0usize)as*mut u8,i32;
-(SortedList_ValueList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57820usize)as*mut u8,();
-(SortedList_ValueList)__receiver)}
-}
-#[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,value:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57880usize)as*mut u8,bool;
-(SortedList_ValueList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-#[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c578a0usize)as*mut u8,();
-(SortedList_ValueList)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
-}
-#[doc="`Insert(i32, crate::system::object::Object)` overload"]fn insert(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57970usize)as*mut u8,();
-(SortedList_ValueList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-#[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c579d0usize)as*mut u8,crate::system::object::Object;
-(SortedList_ValueList)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`set_Item(i32, crate::system::object::Object)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c579f0usize)as*mut u8,();
-(SortedList_ValueList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57a50usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(SortedList_ValueList)__receiver)}
-}
-#[doc="`IndexOf(crate::system::object::Object)` overload"]fn index_of(self,value:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57b00usize)as*mut u8,i32;
-(SortedList_ValueList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-#[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57b80usize)as*mut u8,();
-(SortedList_ValueList)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
-}
-#[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_ValueList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c57be0usize)as*mut u8,();
-(SortedList_ValueList)__receiver,(i32)::core::convert::Into::into(index))}
-}
-}
-
-#[cfg(feature="system-collections-sortedlist")]impl<__T:ISortedList_ValueList>ISortedList_ValueListMethods for __T{}
-
-#[cfg(feature="system-collections-sortedlist")]impl SortedList_ValueList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_read_only_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_is_synchronized_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_sync_root_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn contains_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn copy_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn insert_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn remove_at_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-}
-
-#[cfg(feature="system-collections-sortedlist")]impl SortedList_ValueList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` — overload selector"]pub fn new(sorted_list:crate::system::collections::sortedlist::SortedList)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortedList_ValueList), ::core::stringify!(new),));
- <Self as ISortedList_ValueListMethods> ::ctor(this,sorted_list);
-this}
+#[cfg(feature="system-collections-sortedlist")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortedList_KeyList_unity2_raw{use super:: * ;
+pub unsafe fn get_count(this:SortedList_KeyList,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(SortedList_KeyList, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_read_only(this:SortedList_KeyList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"get_IsReadOnly",));
+let inner:extern "C" fn(SortedList_KeyList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:SortedList_KeyList,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(SortedList_KeyList, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sync_root(this:SortedList_KeyList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(SortedList_KeyList, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn add(this:SortedList_KeyList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(SortedList_KeyList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn clear(this:SortedList_KeyList,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"Clear",));
+let inner:extern "C" fn(SortedList_KeyList, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn contains(this:SortedList_KeyList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"Contains",));
+let inner:extern "C" fn(SortedList_KeyList,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn copy_to(this:SortedList_KeyList,array: ::unity2::IlInstance,array_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(SortedList_KeyList, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,array_index,__mi)}
+pub unsafe fn insert(this:SortedList_KeyList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"Insert",));
+let inner:extern "C" fn(SortedList_KeyList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn get_item(this:SortedList_KeyList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"get_Item",));
+let inner:extern "C" fn(SortedList_KeyList,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn set_item(this:SortedList_KeyList,index:i32,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"set_Item",));
+let inner:extern "C" fn(SortedList_KeyList,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,value,__mi)}
+pub unsafe fn get_enumerator(this:SortedList_KeyList,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(SortedList_KeyList, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn index_of(this:SortedList_KeyList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"IndexOf",));
+let inner:extern "C" fn(SortedList_KeyList,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn remove(this:SortedList_KeyList,key:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(SortedList_KeyList,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,key,__mi)}
+pub unsafe fn remove_at(this:SortedList_KeyList,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <SortedList_KeyList as::unity2::ClassIdentity> ::NAME,"RemoveAt",));
+let inner:extern "C" fn(SortedList_KeyList,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
 }
 
 #[cfg(feature="system-collections-sortedlist")]pub trait ISortedList_KeyListMethods:ISortedList_KeyList{#[doc="`.ctor(crate::system::collections::sortedlist::SortedList)` overload"]fn ctor(self,sorted_list:impl::core::convert::Into<crate::system::collections::sortedlist::SortedList>)->(){unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -523,64 +1336,49 @@ this}
 (SortedList_KeyList)__receiver,(crate::system::collections::sortedlist::SortedList)::core::convert::Into::into(sorted_list))}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55930usize)as*mut u8,i32;
-(SortedList_KeyList)__receiver)}
+__SortedList_KeyList_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsReadOnly()` overload"]fn get_is_read_only(self,)->bool{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55940usize)as*mut u8,bool;
-(SortedList_KeyList)__receiver)}
+__SortedList_KeyList_unity2_raw::get_is_read_only(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55950usize)as*mut u8,bool;
-(SortedList_KeyList)__receiver)}
+__SortedList_KeyList_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55970usize)as*mut u8,crate::system::object::Object;
-(SortedList_KeyList)__receiver)}
+__SortedList_KeyList_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Add(crate::system::object::Object)` overload"]fn add(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55990usize)as*mut u8,i32;
-(SortedList_KeyList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_KeyList_unity2_raw::add(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c559f0usize)as*mut u8,();
-(SortedList_KeyList)__receiver)}
+__SortedList_KeyList_unity2_raw::clear(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Contains(crate::system::object::Object)` overload"]fn contains(self,key:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55a50usize)as*mut u8,bool;
-(SortedList_KeyList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_KeyList_unity2_raw::contains(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,array_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55a70usize)as*mut u8,();
-(SortedList_KeyList)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(array_index))}
+__SortedList_KeyList_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(array_index), ::core::option::Option::None)}
 }
 #[doc="`Insert(i32, crate::system::object::Object)` overload"]fn insert(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55b40usize)as*mut u8,();
-(SortedList_KeyList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(value))}
+__SortedList_KeyList_unity2_raw::insert(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_Item(i32)` overload"]fn get_item(self,index:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55ba0usize)as*mut u8,crate::system::object::Object;
-(SortedList_KeyList)__receiver,(i32)::core::convert::Into::into(index))}
+__SortedList_KeyList_unity2_raw::get_item(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`set_Item(i32, crate::system::object::Object)` overload"]fn set_item(self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55bc0usize)as*mut u8,();
-(SortedList_KeyList)__receiver,(i32)::core::convert::Into::into(index),(crate::system::object::Object)::core::convert::Into::into(value))}
+__SortedList_KeyList_unity2_raw::set_item(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55c20usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(SortedList_KeyList)__receiver)}
+__SortedList_KeyList_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IndexOf(crate::system::object::Object)` overload"]fn index_of(self,key:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55d40usize)as*mut u8,i32;
-(SortedList_KeyList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_KeyList_unity2_raw::index_of(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`Remove(crate::system::object::Object)` overload"]fn remove(self,key:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55e10usize)as*mut u8,();
-(SortedList_KeyList)__receiver,(crate::system::object::Object)::core::convert::Into::into(key))}
+__SortedList_KeyList_unity2_raw::remove(__receiver, ::core::convert::Into::into(key), ::core::option::Option::None)}
 }
 #[doc="`RemoveAt(i32)` overload"]fn remove_at(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SortedList_KeyList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c55e70usize)as*mut u8,();
-(SortedList_KeyList)__receiver,(i32)::core::convert::Into::into(index))}
+__SortedList_KeyList_unity2_raw::remove_at(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 }
 
@@ -614,20 +1412,20 @@ this}
 #[cfg(feature = "system-collections-sortedlist")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SortedList_SyncSortedList;
-    pub use super::ISortedList_SyncSortedList;
-    pub use super::ISortedList_SyncSortedListMethods;
-    pub use super::SortedList;
-    pub use super::ISortedList;
-    pub use super::ISortedListMethods;
-    pub use super::SortedList_SortedListEnumerator;
-    pub use super::ISortedList_SortedListEnumerator;
-    pub use super::ISortedList_SortedListEnumeratorMethods;
-    pub use super::SortedList_SortedListDebugView;
-    pub use super::ISortedList_SortedListDebugView;
     pub use super::SortedList_ValueList;
     pub use super::ISortedList_ValueList;
     pub use super::ISortedList_ValueListMethods;
+    pub use super::SortedList;
+    pub use super::ISortedList;
+    pub use super::ISortedListMethods;
+    pub use super::SortedList_SortedListDebugView;
+    pub use super::ISortedList_SortedListDebugView;
+    pub use super::SortedList_SyncSortedList;
+    pub use super::ISortedList_SyncSortedList;
+    pub use super::ISortedList_SyncSortedListMethods;
+    pub use super::SortedList_SortedListEnumerator;
+    pub use super::ISortedList_SortedListEnumerator;
+    pub use super::ISortedList_SortedListEnumeratorMethods;
     pub use super::SortedList_KeyList;
     pub use super::ISortedList_KeyList;
     pub use super::ISortedList_KeyListMethods;

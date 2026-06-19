@@ -22,6 +22,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-relaydata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-relaydata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:RelayData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RelayData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(RelayData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-relaydata")]impl RelayData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcd40usize)as*mut u8,();
 )}
 }
@@ -116,8 +129,7 @@ pub use __types::*;
 (RelayData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf50usize)as*mut u8, ::unity2::Il2CppString;
-(RelayData)__receiver)}
+__RelayData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCompletionAwardsForShow(crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>)` overload"]fn get_completion_awards_for_show(self,results:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> >)->crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData>{unsafe{let __receiver= <RelayData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ffcf60usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::itemdata::ItemData> ;

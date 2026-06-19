@@ -30,26 +30,56 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root-akambient-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akambient")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkAmbient_unity2_raw{use super:: * ;
+pub unsafe fn on_enable(this:AkAmbient,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AkAmbient as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(AkAmbient, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start(this:AkAmbient,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkAmbient as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(AkAmbient, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn handle_event(this:AkAmbient,in_game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkAmbient as::unity2::ClassIdentity> ::NAME,"HandleEvent",));
+let inner:extern "C" fn(AkAmbient,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,in_game_object,__mi)}
+}
+
 #[cfg(feature="root-akambient")]impl AkAmbient{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bcd950usize)as*mut u8,();
 )}
 }
 }
 
 #[cfg(feature="root-akambient")]pub trait IAkAmbientMethods:IAkAmbient{#[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcc210usize)as*mut u8,();
-(AkAmbient)__receiver)}
+__AkAmbient_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bcc6a0usize)as*mut u8,();
-(AkAmbient)__receiver)}
+__AkAmbient_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bccb40usize)as*mut u8,();
 (AkAmbient)__receiver)}
 }
 #[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bccd30usize)as*mut u8,();
-(AkAmbient)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+__AkAmbient_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)}
 }
 #[doc="`OnDrawGizmosSelected()` overload"]fn on_draw_gizmos_selected(self,)->(){unsafe{let __receiver= <AkAmbient as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bccf30usize)as*mut u8,();

@@ -21,196 +21,196 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkclrbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FrameworkClrBase_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_type_info_from_type{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetTypeInfoFromType",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetTypeInfoFromType",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_add_method{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::reflection::eventinfo::EventInfo as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetAddMethod",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetAddMethod",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_constructors{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetConstructors",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetConstructors",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_events{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetEvents",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetEvents",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_fields{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetFields",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetFields",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_generic_arguments{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetGenericArguments",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetGenericArguments",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_get_method{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::reflection::propertyinfo::PropertyInfo as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetGetMethod",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetGetMethod",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_interfaces{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetInterfaces",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetInterfaces",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_method{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetMethod",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetMethod",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_methods{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetMethods",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetMethods",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_nested_types{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetNestedTypes",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetNestedTypes",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_properties{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetProperties",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetProperties",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_property{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetProperty",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetProperty",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_remove_method{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::reflection::eventinfo::EventInfo as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetRemoveMethod",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetRemoveMethod",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_set_method{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::reflection::propertyinfo::PropertyInfo as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetSetMethod",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetSetMethod",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_assignable_from{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), < ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"IsAssignableFrom",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"IsAssignableFrom",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_instance_of_type{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"IsInstanceOfType",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"IsInstanceOfType",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_method_2{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Array< ::unity2::SystemType>as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetMethod",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetMethod",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_assembly_types{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::reflection::assembly::Assembly as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),"GetAssemblyTypes",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetAssemblyTypes",e),}
-}
-}
+pub unsafe fn get_type_info_from_type(this:FrameworkClrBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetTypeInfoFromType",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
+pub unsafe fn get_add_method(this:FrameworkClrBase,ei:crate::system::reflection::eventinfo::EventInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetAddMethod",));
+let inner:extern "C" fn(FrameworkClrBase,crate::system::reflection::eventinfo::EventInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ei,__mi)}
+pub unsafe fn get_constructors(this:FrameworkClrBase,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetConstructors",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn get_events(this:FrameworkClrBase,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetEvents",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn get_fields(this:FrameworkClrBase,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetFields",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn get_generic_arguments(this:FrameworkClrBase,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetGenericArguments",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn get_get_method(this:FrameworkClrBase,pi:crate::system::reflection::propertyinfo::PropertyInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetGetMethod",));
+let inner:extern "C" fn(FrameworkClrBase,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,pi,__mi)}
+pub unsafe fn get_interfaces(this:FrameworkClrBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetInterfaces",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
+pub unsafe fn get_method(this:FrameworkClrBase,r#type: ::unity2::SystemType,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetMethod",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,name,__mi)}
+pub unsafe fn get_methods(this:FrameworkClrBase,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetMethods",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn get_nested_types(this:FrameworkClrBase,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetNestedTypes",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn get_properties(this:FrameworkClrBase,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetProperties",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn get_property(this:FrameworkClrBase,r#type: ::unity2::SystemType,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetProperty",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::system::reflection::propertyinfo::PropertyInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,name,__mi)}
+pub unsafe fn get_remove_method(this:FrameworkClrBase,ei:crate::system::reflection::eventinfo::EventInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetRemoveMethod",));
+let inner:extern "C" fn(FrameworkClrBase,crate::system::reflection::eventinfo::EventInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ei,__mi)}
+pub unsafe fn get_set_method(this:FrameworkClrBase,pi:crate::system::reflection::propertyinfo::PropertyInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetSetMethod",));
+let inner:extern "C" fn(FrameworkClrBase,crate::system::reflection::propertyinfo::PropertyInfo, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,pi,__mi)}
+pub unsafe fn is_assignable_from(this:FrameworkClrBase,current: ::unity2::SystemType,to_compare: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"IsAssignableFrom",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,current,to_compare,__mi)}
+pub unsafe fn is_instance_of_type(this:FrameworkClrBase,t: ::unity2::SystemType,o:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"IsInstanceOfType",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,o,__mi)}
+pub unsafe fn get_method_2(this:FrameworkClrBase,resources_type: ::unity2::SystemType,name: ::unity2::Il2CppString,types: ::unity2::Array< ::unity2::SystemType> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetMethod",));
+let inner:extern "C" fn(FrameworkClrBase, ::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Array< ::unity2::SystemType> , ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,resources_type,name,types,__mi)}
+pub unsafe fn get_assembly_types(this:FrameworkClrBase,asm:crate::system::reflection::assembly::Assembly,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <FrameworkClrBase as::unity2::ClassIdentity> ::NAME,"GetAssemblyTypes",));
+let inner:extern "C" fn(FrameworkClrBase,crate::system::reflection::assembly::Assembly, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::SystemType> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,asm,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<FrameworkClrBase as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -224,80 +224,61 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-compatibility-frameworks-frameworkclrbase")]pub trait IFrameworkClrBaseMethods:IFrameworkClrBase{#[doc="`GetTypeInfoFromType(::unity2::SystemType)` overload"]fn get_type_info_from_type(self,t:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::SystemType{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_type_info_from_type::get_method_info().method_ptr, ::unity2::SystemType;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+__FrameworkClrBase_unity2_raw::get_type_info_from_type(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 #[doc="`GetAddMethod(crate::system::reflection::eventinfo::EventInfo)` overload"]fn get_add_method(self,ei:impl::core::convert::Into<crate::system::reflection::eventinfo::EventInfo>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_add_method::get_method_info().method_ptr,crate::system::reflection::methodinfo::MethodInfo;
-(FrameworkClrBase)__receiver,(crate::system::reflection::eventinfo::EventInfo)::core::convert::Into::into(ei))}
+__FrameworkClrBase_unity2_raw::get_add_method(__receiver, ::core::convert::Into::into(ei), ::core::option::Option::None)}
 }
 #[doc="`GetConstructors(::unity2::SystemType)` overload"]fn get_constructors(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_constructors::get_method_info().method_ptr, ::unity2::Array<crate::system::reflection::constructorinfo::ConstructorInfo> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__FrameworkClrBase_unity2_raw::get_constructors(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`GetEvents(::unity2::SystemType)` overload"]fn get_events(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::system::reflection::eventinfo::EventInfo>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_events::get_method_info().method_ptr, ::unity2::Array<crate::system::reflection::eventinfo::EventInfo> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__FrameworkClrBase_unity2_raw::get_events(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`GetFields(::unity2::SystemType)` overload"]fn get_fields(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_fields::get_method_info().method_ptr, ::unity2::Array<crate::system::reflection::fieldinfo::FieldInfo> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__FrameworkClrBase_unity2_raw::get_fields(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`GetGenericArguments(::unity2::SystemType)` overload"]fn get_generic_arguments(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_generic_arguments::get_method_info().method_ptr, ::unity2::Array< ::unity2::SystemType> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__FrameworkClrBase_unity2_raw::get_generic_arguments(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`GetGetMethod(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn get_get_method(self,pi:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_get_method::get_method_info().method_ptr,crate::system::reflection::methodinfo::MethodInfo;
-(FrameworkClrBase)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(pi))}
+__FrameworkClrBase_unity2_raw::get_get_method(__receiver, ::core::convert::Into::into(pi), ::core::option::Option::None)}
 }
 #[doc="`GetInterfaces(::unity2::SystemType)` overload"]fn get_interfaces(self,t:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_interfaces::get_method_info().method_ptr, ::unity2::Array< ::unity2::SystemType> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+__FrameworkClrBase_unity2_raw::get_interfaces(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 #[doc="`GetMethod(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn get_method(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_method::get_method_info().method_ptr,crate::system::reflection::methodinfo::MethodInfo;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__FrameworkClrBase_unity2_raw::get_method(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`GetMethods(::unity2::SystemType)` overload"]fn get_methods(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_methods::get_method_info().method_ptr, ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__FrameworkClrBase_unity2_raw::get_methods(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`GetNestedTypes(::unity2::SystemType)` overload"]fn get_nested_types(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_nested_types::get_method_info().method_ptr, ::unity2::Array< ::unity2::SystemType> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__FrameworkClrBase_unity2_raw::get_nested_types(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`GetProperties(::unity2::SystemType)` overload"]fn get_properties(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)-> ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_properties::get_method_info().method_ptr, ::unity2::Array<crate::system::reflection::propertyinfo::PropertyInfo> ;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__FrameworkClrBase_unity2_raw::get_properties(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`GetProperty(::unity2::SystemType, ::unity2::Il2CppString)` overload"]fn get_property(self,r#type:impl::core::convert::Into< ::unity2::SystemType> ,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::system::reflection::propertyinfo::PropertyInfo{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_property::get_method_info().method_ptr,crate::system::reflection::propertyinfo::PropertyInfo;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__FrameworkClrBase_unity2_raw::get_property(__receiver, ::core::convert::Into::into(r#type), ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`GetRemoveMethod(crate::system::reflection::eventinfo::EventInfo)` overload"]fn get_remove_method(self,ei:impl::core::convert::Into<crate::system::reflection::eventinfo::EventInfo>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_remove_method::get_method_info().method_ptr,crate::system::reflection::methodinfo::MethodInfo;
-(FrameworkClrBase)__receiver,(crate::system::reflection::eventinfo::EventInfo)::core::convert::Into::into(ei))}
+__FrameworkClrBase_unity2_raw::get_remove_method(__receiver, ::core::convert::Into::into(ei), ::core::option::Option::None)}
 }
 #[doc="`GetSetMethod(crate::system::reflection::propertyinfo::PropertyInfo)` overload"]fn get_set_method(self,pi:impl::core::convert::Into<crate::system::reflection::propertyinfo::PropertyInfo>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_set_method::get_method_info().method_ptr,crate::system::reflection::methodinfo::MethodInfo;
-(FrameworkClrBase)__receiver,(crate::system::reflection::propertyinfo::PropertyInfo)::core::convert::Into::into(pi))}
+__FrameworkClrBase_unity2_raw::get_set_method(__receiver, ::core::convert::Into::into(pi), ::core::option::Option::None)}
 }
 #[doc="`IsAssignableFrom(::unity2::SystemType, ::unity2::SystemType)` overload"]fn is_assignable_from(self,current:impl::core::convert::Into< ::unity2::SystemType> ,to_compare:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_is_assignable_from::get_method_info().method_ptr,bool;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(current),(::unity2::SystemType)::core::convert::Into::into(to_compare))}
+__FrameworkClrBase_unity2_raw::is_assignable_from(__receiver, ::core::convert::Into::into(current), ::core::convert::Into::into(to_compare), ::core::option::Option::None)}
 }
 #[doc="`IsInstanceOfType(::unity2::SystemType, crate::system::object::Object)` overload"]fn is_instance_of_type(self,t:impl::core::convert::Into< ::unity2::SystemType> ,o:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_is_instance_of_type::get_method_info().method_ptr,bool;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t),(crate::system::object::Object)::core::convert::Into::into(o))}
+__FrameworkClrBase_unity2_raw::is_instance_of_type(__receiver, ::core::convert::Into::into(t), ::core::convert::Into::into(o), ::core::option::Option::None)}
 }
 #[doc="`GetMethod(::unity2::SystemType, ::unity2::Il2CppString, ::unity2::Array<::unity2::SystemType>)` overload"]fn get_method_2(self,resources_type:impl::core::convert::Into< ::unity2::SystemType> ,name:impl::core::convert::Into< ::unity2::Il2CppString> ,types:impl::core::convert::Into< ::unity2::Array< ::unity2::SystemType> >)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_method_2::get_method_info().method_ptr,crate::system::reflection::methodinfo::MethodInfo;
-(FrameworkClrBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(resources_type),(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Array< ::unity2::SystemType>)::core::convert::Into::into(types))}
+__FrameworkClrBase_unity2_raw::get_method_2(__receiver, ::core::convert::Into::into(resources_type), ::core::convert::Into::into(name), ::core::convert::Into::into(types), ::core::option::Option::None)}
 }
 #[doc="`GetAssemblyTypes(crate::system::reflection::assembly::Assembly)` overload"]fn get_assembly_types(self,asm:impl::core::convert::Into<crate::system::reflection::assembly::Assembly>)-> ::unity2::Array< ::unity2::SystemType>{unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_get_assembly_types::get_method_info().method_ptr, ::unity2::Array< ::unity2::SystemType> ;
-(FrameworkClrBase)__receiver,(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(asm))}
+__FrameworkClrBase_unity2_raw::get_assembly_types(__receiver, ::core::convert::Into::into(asm), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FrameworkClrBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FrameworkClrBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

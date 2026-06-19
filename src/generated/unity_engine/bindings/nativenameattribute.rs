@@ -14,9 +14,21 @@ mod __types {
 #[cfg(feature = "unity_engine-bindings-nativenameattribute-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-bindings-nativenameattribute")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NativeNameAttribute_unity2_raw{use super:: * ;
+pub unsafe fn set_name(this:NativeNameAttribute,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NativeNameAttribute as::unity2::ClassIdentity> ::NAME,"set_Name",));
+let inner:extern "C" fn(NativeNameAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="unity_engine-bindings-nativenameattribute")]pub trait INativeNameAttributeMethods:INativeNameAttribute{#[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeNameAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f380a0usize)as*mut u8,();
-(NativeNameAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__NativeNameAttribute_unity2_raw::set_name(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeNameAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f380b0usize)as*mut u8,();

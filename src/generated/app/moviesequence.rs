@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/moviesequence/MovieSequence.md"))]#[::unity2::class(namespace="App",name="MovieSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::moviesequence::MovieSequence>)]pub struct MovieSequence{#[static_field]#[rename(name="PrepareRetryCountLimit")]pub prepare_retry_count_limit:i32, #[offset(120)]#[rename(name="m_MoviePlayer")]pub m_movie_player:crate::app::movieplayer::MoviePlayer, #[offset(128)]#[rename(name="m_IsFadeOutInStart")]pub m_is_fade_out_in_start:bool, #[offset(129)]#[rename(name="m_IsWaitForPlayGOP")]pub m_is_wait_for_play_gop:bool, #[offset(130)]#[rename(name="m_IsPlayGOPFromTitle")]pub m_is_play_gop_from_title:bool, #[offset(132)]#[rename(name="m_PrepareRetryCount")]pub m_prepare_retry_count:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/moviesequence/MovieSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MovieSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MovieSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MovieSequence.Label";
@@ -34,13 +37,43 @@ pub fn end()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/moviesequence/MovieSequence.md"))]#[::unity2::class(namespace="App",name="MovieSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::moviesequence::MovieSequence>)]pub struct MovieSequence{#[static_field]#[rename(name="PrepareRetryCountLimit")]pub prepare_retry_count_limit:i32, #[offset(120)]#[rename(name="m_MoviePlayer")]pub m_movie_player:crate::app::movieplayer::MoviePlayer, #[offset(128)]#[rename(name="m_IsFadeOutInStart")]pub m_is_fade_out_in_start:bool, #[offset(129)]#[rename(name="m_IsWaitForPlayGOP")]pub m_is_wait_for_play_gop:bool, #[offset(130)]#[rename(name="m_IsPlayGOPFromTitle")]pub m_is_play_gop_from_title:bool, #[offset(132)]#[rename(name="m_PrepareRetryCount")]pub m_prepare_retry_count:i32,}
-
 }
 
 #[cfg(feature = "app-moviesequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-moviesequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MovieSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MovieSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MovieSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MovieSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MovieSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MovieSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MovieSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_shutdown(this:MovieSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MovieSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(MovieSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-moviesequence")]impl MovieSequence{#[doc="`StartCaption(::unity2::Il2CppString, i32)` overload"]pub fn start_caption(mid:impl::core::convert::Into< ::unity2::Il2CppString> ,msec:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2780c80usize)as*mut u8,();
 (::unity2::Il2CppString)::core::convert::Into::into(mid),(i32)::core::convert::Into::into(msec))}
@@ -67,12 +100,10 @@ pub use __types::*;
 (MovieSequence)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(movie_file_name),(bool)::core::convert::Into::into(is_movie_file_name_direct))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MovieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2780030usize)as*mut u8,();
-(MovieSequence)__receiver)}
+__MovieSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MovieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27800f0usize)as*mut u8,();
-(MovieSequence)__receiver)}
+__MovieSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PushFade()` overload"]fn push_fade(self,)->(){unsafe{let __receiver= <MovieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27801d0usize)as*mut u8,();
@@ -159,8 +190,7 @@ pub use __types::*;
 (MovieSequence)__receiver)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <MovieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2780c40usize)as*mut u8,();
-(MovieSequence)__receiver)}
+__MovieSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <MovieSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2780e60usize)as*mut u8,();
@@ -279,10 +309,10 @@ this}
 #[cfg(feature = "app-moviesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MovieSequence_Label;
     pub use super::MovieSequence;
     pub use super::IMovieSequence;
     pub use super::IMovieSequenceMethods;
+    pub use super::MovieSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

@@ -23,9 +23,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapuiicon/MapUIIcon.md"))]#[::unity2::class(namespace="",name="MapUIIcon")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::root::mapuiicon::MapUIIcon>)]pub struct MapUIIcon{#[static_field]#[rename(name="IconNames")]pub icon_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_IconLocatorRoot")]pub m_icon_locator_root:crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot, #[offset(40)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(48)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(56)]#[rename(name="m_IconPool")]pub m_icon_pool:crate::root::mapinfoiconpool::MapInfoIconPool, #[offset(64)]#[rename(name="m_IconTable")]pub m_icon_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(72)]#[rename(name="m_TempTable")]pub m_temp_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(80)]#[rename(name="m_RemoveTable")]pub m_remove_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(88)]#[rename(name="m_IsUpdate")]pub m_is_update:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapuiicon/MapUIIcon_IconIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapUIIcon_IconIndex{pub value:i32,}
 impl::unity2::ClassIdentity for MapUIIcon_IconIndex{const NAMESPACE: &'static str="";
 const NAME: &'static str="MapUIIcon.IconIndex";
@@ -44,6 +41,9 @@ pub fn cannon()->Self{Self{value:2}
 pub fn num()->Self{Self{value:3}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/mapuiicon/MapUIIcon.md"))]#[::unity2::class(namespace="",name="MapUIIcon")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::root::mapuiicon::MapUIIcon>)]pub struct MapUIIcon{#[static_field]#[rename(name="IconNames")]pub icon_names: ::unity2::Array< ::unity2::Il2CppString> , #[offset(32)]#[rename(name="m_IconLocatorRoot")]pub m_icon_locator_root:crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot, #[offset(40)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(48)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[offset(56)]#[rename(name="m_IconPool")]pub m_icon_pool:crate::root::mapinfoiconpool::MapInfoIconPool, #[offset(64)]#[rename(name="m_IconTable")]pub m_icon_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(72)]#[rename(name="m_TempTable")]pub m_temp_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(80)]#[rename(name="m_RemoveTable")]pub m_remove_table:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot> , #[offset(88)]#[rename(name="m_IsUpdate")]pub m_is_update:bool,}
 
 }
 
@@ -137,10 +137,10 @@ this}
 #[cfg(feature = "root-mapuiicon")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapUIIcon_IconIndex;
     pub use super::MapUIIcon;
     pub use super::IMapUIIcon;
     pub use super::IMapUIIconMethods;
-    pub use super::MapUIIcon_IconIndex;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -23,6 +23,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-aklogger-types")]
 pub use __types::*;
 
+#[cfg(feature="root-aklogger")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkLogger_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:AkLogger,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AkLogger as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AkLogger, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-aklogger")]impl AkLogger{#[doc="`get_Instance()` overload"]pub fn get_instance()->crate::root::aklogger::AkLogger{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f22ee0usize)as*mut u8,crate::root::aklogger::AkLogger;
 )}
 }
@@ -48,8 +61,7 @@ pub use __types::*;
 (AkLogger)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f22f50usize)as*mut u8,();
-(AkLogger)__receiver)}
+__AkLogger_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Init()` overload"]fn init(self,)->(){unsafe{let __receiver= <AkLogger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f230a0usize)as*mut u8,();
@@ -77,13 +89,25 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="root-aklogger")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkLogger_ErrorLoggerInteropDelegate_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:AkLogger_ErrorLoggerInteropDelegate,message: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <AkLogger_ErrorLoggerInteropDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(AkLogger_ErrorLoggerInteropDelegate, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,message,__mi)}
+}
+
 #[cfg(feature="root-aklogger")]pub trait IAkLogger_ErrorLoggerInteropDelegateMethods:IAkLogger_ErrorLoggerInteropDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e7f0usize)as*mut u8,();
 (AkLogger_ErrorLoggerInteropDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AkLogger_ErrorLoggerInteropDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b9e810usize)as*mut u8,();
-(AkLogger_ErrorLoggerInteropDelegate)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+__AkLogger_ErrorLoggerInteropDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(message), ::core::option::Option::None)}
 }
 }
 

@@ -14,9 +14,21 @@ mod __types {
 #[cfg(feature = "unity_engine-bindings-nativeheaderattribute-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-bindings-nativeheaderattribute")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NativeHeaderAttribute_unity2_raw{use super:: * ;
+pub unsafe fn set_header(this:NativeHeaderAttribute,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <NativeHeaderAttribute as::unity2::ClassIdentity> ::NAME,"set_Header",));
+let inner:extern "C" fn(NativeHeaderAttribute, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="unity_engine-bindings-nativeheaderattribute")]pub trait INativeHeaderAttributeMethods:INativeHeaderAttribute{#[doc="`set_Header(::unity2::Il2CppString)` overload"]fn set_header(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeHeaderAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37e20usize)as*mut u8,();
-(NativeHeaderAttribute)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__NativeHeaderAttribute_unity2_raw::set_header(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,header:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NativeHeaderAttribute as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f37e30usize)as*mut u8,();

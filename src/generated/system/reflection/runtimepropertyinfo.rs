@@ -20,13 +20,35 @@ use crate::system::reflection::propertyinfo::{IPropertyInfo,PropertyInfo}
 #[cfg(feature = "system-reflection-runtimepropertyinfo-types")]
 pub use __types::*;
 
+#[cfg(feature="system-reflection-runtimepropertyinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimePropertyInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_module(this:RuntimePropertyInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <RuntimePropertyInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
+let inner:extern "C" fn(RuntimePropertyInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:RuntimePropertyInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <RuntimePropertyInfo as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(RuntimePropertyInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-reflection-runtimepropertyinfo")]pub trait IRuntimePropertyInfoMethods:IRuntimePropertyInfo{#[doc="`get_BindingFlags()` overload"]fn get_binding_flags(self,)->crate::system::reflection::bindingflags::BindingFlags{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6320usize)as*mut u8,crate::system::reflection::bindingflags::BindingFlags;
 (RuntimePropertyInfo)__receiver)}
 }
 #[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6330usize)as*mut u8,crate::system::reflection::module::Module;
-(RuntimePropertyInfo)__receiver)}
+__RuntimePropertyInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDeclaringTypeInternal()` overload"]fn get_declaring_type_internal(self,)->crate::system::runtimetype::RuntimeType{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6450usize)as*mut u8,crate::system::runtimetype::RuntimeType;
@@ -41,8 +63,7 @@ pub use __types::*;
 (RuntimePropertyInfo)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6570usize)as*mut u8, ::unity2::Il2CppString;
-(RuntimePropertyInfo)__receiver)}
+__RuntimePropertyInfo_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FormatNameAndSig(bool)` overload"]fn format_name_and_sig(self,serialization:impl::core::convert::Into<bool>)-> ::unity2::Il2CppString{unsafe{let __receiver= <RuntimePropertyInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd6580usize)as*mut u8, ::unity2::Il2CppString;

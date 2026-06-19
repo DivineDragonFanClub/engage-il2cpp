@@ -14,6 +14,19 @@ mod __types {
 #[cfg(feature = "unity_engine-addressable_assets-invalidkeyexception-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-addressable_assets-invalidkeyexception")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvalidKeyException_unity2_raw{use super:: * ;
+pub unsafe fn get_message(this:InvalidKeyException,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InvalidKeyException as::unity2::ClassIdentity> ::NAME,"get_Message",));
+let inner:extern "C" fn(InvalidKeyException, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-invalidkeyexception")]pub trait IInvalidKeyExceptionMethods:IInvalidKeyException{#[doc="`get_Key()` overload"]fn get_key(self,)->crate::system::object::Object{unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb100usize)as*mut u8,crate::system::object::Object;
 (InvalidKeyException)__receiver)}
@@ -47,8 +60,7 @@ pub use __types::*;
 (InvalidKeyException)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
 }
 #[doc="`get_Message()` overload"]fn get_message(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InvalidKeyException as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb450usize)as*mut u8, ::unity2::Il2CppString;
-(InvalidKeyException)__receiver)}
+__InvalidKeyException_unity2_raw::get_message(__receiver, ::core::option::Option::None)}
 }
 }
 

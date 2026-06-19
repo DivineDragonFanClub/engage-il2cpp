@@ -19,16 +19,16 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-registration_policies-automaticregistrationpolicy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AutomaticRegistrationPolicy_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_allow_type_auto_registration{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<AutomaticRegistrationPolicy as::unity2::ClassIdentity> ::class(),"AllowTypeAutoRegistration",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <AutomaticRegistrationPolicy as::unity2::ClassIdentity> ::NAME,"AllowTypeAutoRegistration",e),}
-}
-}
+pub unsafe fn allow_type_auto_registration(this:AutomaticRegistrationPolicy,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AutomaticRegistrationPolicy as::unity2::ClassIdentity> ::NAME,"AllowTypeAutoRegistration",));
+let inner:extern "C" fn(AutomaticRegistrationPolicy, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<AutomaticRegistrationPolicy as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -42,8 +42,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-registration_policies-automaticregistrationpolicy")]pub trait IAutomaticRegistrationPolicyMethods:IAutomaticRegistrationPolicy{#[doc="`AllowTypeAutoRegistration(::unity2::SystemType)` overload"]fn allow_type_auto_registration(self,r#type:impl::core::convert::Into< ::unity2::SystemType>)->bool{unsafe{let __receiver= <AutomaticRegistrationPolicy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__AutomaticRegistrationPolicy_unity2_raw::__lookup_allow_type_auto_registration::get_method_info().method_ptr,bool;
-(AutomaticRegistrationPolicy)__receiver,(::unity2::SystemType)::core::convert::Into::into(r#type))}
+__AutomaticRegistrationPolicy_unity2_raw::allow_type_auto_registration(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AutomaticRegistrationPolicy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__AutomaticRegistrationPolicy_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

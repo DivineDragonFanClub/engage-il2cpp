@@ -18,6 +18,19 @@ use crate::unity_engine::playables::playablebehaviour::{IPlayableBehaviour,Playa
 #[cfg(feature = "root-aktimelinertpcplayablebehaviour-types")]
 pub use __types::*;
 
+#[cfg(feature="root-aktimelinertpcplayablebehaviour")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkTimelineRtpcPlayableBehaviour_unity2_raw{use super:: * ;
+pub unsafe fn process_frame(this:AkTimelineRtpcPlayableBehaviour,playable:crate::unity_engine::playables::playable::Playable,frame_data:crate::unity_engine::playables::framedata::FrameData,player_data:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <AkTimelineRtpcPlayableBehaviour as::unity2::ClassIdentity> ::NAME,"ProcessFrame",));
+let inner:extern "C" fn(AkTimelineRtpcPlayableBehaviour,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::framedata::FrameData,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playable,frame_data,player_data,__mi)}
+}
+
 #[cfg(feature="root-aktimelinertpcplayablebehaviour")]pub trait IAkTimelineRtpcPlayableBehaviourMethods:IAkTimelineRtpcPlayableBehaviour{#[doc="`set_setGlobally(bool)` overload"]fn set_set_globally(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28e10usize)as*mut u8,();
 (AkTimelineRtpcPlayableBehaviour)__receiver,(bool)::core::convert::Into::into(value))}
@@ -35,8 +48,7 @@ pub use __types::*;
 (AkTimelineRtpcPlayableBehaviour)__receiver)}
 }
 #[doc="`ProcessFrame(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::framedata::FrameData, crate::system::object::Object)` overload"]fn process_frame(self,playable:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,frame_data:impl::core::convert::Into<crate::unity_engine::playables::framedata::FrameData> ,player_data:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28e50usize)as*mut u8,();
-(AkTimelineRtpcPlayableBehaviour)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(playable),(crate::unity_engine::playables::framedata::FrameData)::core::convert::Into::into(frame_data),(crate::system::object::Object)::core::convert::Into::into(player_data))}
+__AkTimelineRtpcPlayableBehaviour_unity2_raw::process_frame(__receiver, ::core::convert::Into::into(playable), ::core::convert::Into::into(frame_data), ::core::convert::Into::into(player_data), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkTimelineRtpcPlayableBehaviour as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d28de0usize)as*mut u8,();

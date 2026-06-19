@@ -16,17 +16,277 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-calculatorcommand-types")]
 pub use __types::*;
 
+#[cfg(feature="app-calculatorcommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CalculatorCommand_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:CalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_header(this:CalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"get_Header",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_footer(this:CalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"get_Footer",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_arg_num(this:CalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"get_ArgNum",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_help(this:CalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"get_Help",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get(this:CalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Get",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_2(this:CalculatorCommand,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Get",));
+let inner:extern "C" fn(CalculatorCommand,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn get_3(this:CalculatorCommand,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Get",));
+let inner:extern "C" fn(CalculatorCommand,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj1,obj2,__mi)}
+pub unsafe fn set(this:CalculatorCommand,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Set",));
+let inner:extern "C" fn(CalculatorCommand,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn set_2(this:CalculatorCommand,value:f32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Set",));
+let inner:extern "C" fn(CalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,obj,__mi)}
+pub unsafe fn set_3(this:CalculatorCommand,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Set",));
+let inner:extern "C" fn(CalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,obj1,obj2,__mi)}
+pub unsafe fn add(this:CalculatorCommand,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(CalculatorCommand,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn add_2(this:CalculatorCommand,value:f32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(CalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,obj,__mi)}
+pub unsafe fn add_3(this:CalculatorCommand,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(CalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,obj1,obj2,__mi)}
+pub unsafe fn scale(this:CalculatorCommand,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Scale",));
+let inner:extern "C" fn(CalculatorCommand,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn scale_2(this:CalculatorCommand,value:f32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Scale",));
+let inner:extern "C" fn(CalculatorCommand,f32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,obj,__mi)}
+pub unsafe fn scale_3(this:CalculatorCommand,value:f32,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Scale",));
+let inner:extern "C" fn(CalculatorCommand,f32,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,obj1,obj2,__mi)}
+pub unsafe fn func(this:CalculatorCommand,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn func_2(this:CalculatorCommand,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn func_3(this:CalculatorCommand,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj1,obj2,__mi)}
+pub unsafe fn func_4(this:CalculatorCommand,args:crate::system::collections::generic::list_1::List_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,__mi)}
+pub unsafe fn func_5(this:CalculatorCommand,args:crate::system::collections::generic::list_1::List_1<f32> ,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,obj,__mi)}
+pub unsafe fn func_6(this:CalculatorCommand,args:crate::system::collections::generic::list_1::List_1<f32> ,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,obj1,obj2,__mi)}
+pub unsafe fn func_7(this:CalculatorCommand,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg,__mi)}
+pub unsafe fn func_8(this:CalculatorCommand,arg: ::unity2::Il2CppString,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::Il2CppString,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg,obj,__mi)}
+pub unsafe fn func_9(this:CalculatorCommand,arg: ::unity2::Il2CppString,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <CalculatorCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CalculatorCommand, ::unity2::Il2CppString,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg,obj1,obj2,__mi)}
+}
+
 #[cfg(feature="app-calculatorcommand")]pub trait ICalculatorCommandMethods:ICalculatorCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298c970usize)as*mut u8, ::unity2::Il2CppString;
-(CalculatorCommand)__receiver)}
+__CalculatorCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Header()` overload"]fn get_header(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298c9c0usize)as*mut u8, ::unity2::Il2CppString;
-(CalculatorCommand)__receiver)}
+__CalculatorCommand_unity2_raw::get_header(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Footer()` overload"]fn get_footer(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298ca10usize)as*mut u8, ::unity2::Il2CppString;
-(CalculatorCommand)__receiver)}
+__CalculatorCommand_unity2_raw::get_footer(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_FullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x298ca60usize)as*mut u8, ::unity2::Il2CppString;
@@ -37,96 +297,73 @@ pub use __types::*;
 (CalculatorCommand)__receiver)}
 }
 #[doc="`get_ArgNum()` overload"]fn get_arg_num(self,)->i32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cb50usize)as*mut u8,i32;
-(CalculatorCommand)__receiver)}
+__CalculatorCommand_unity2_raw::get_arg_num(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Help()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cb60usize)as*mut u8, ::unity2::Il2CppString;
-(CalculatorCommand)__receiver)}
+__CalculatorCommand_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Get()` overload"]fn get(self,)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cb70usize)as*mut u8,f32;
-(CalculatorCommand)__receiver)}
+__CalculatorCommand_unity2_raw::get(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Get(crate::system::object::Object)` overload"]fn get_2(self,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cb80usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CalculatorCommand_unity2_raw::get_2(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Get(crate::system::object::Object, crate::system::object::Object)` overload"]fn get_3(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cb90usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__CalculatorCommand_unity2_raw::get_3(__receiver, ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Set(f32)` overload"]fn set(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cba0usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value))}
+__CalculatorCommand_unity2_raw::set(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Set(f32, crate::system::object::Object)` overload"]fn set_2(self,value:impl::core::convert::Into<f32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cbb0usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CalculatorCommand_unity2_raw::set_2(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Set(f32, crate::system::object::Object, crate::system::object::Object)` overload"]fn set_3(self,value:impl::core::convert::Into<f32> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cbc0usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value),(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__CalculatorCommand_unity2_raw::set_3(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Add(f32)` overload"]fn add(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cbd0usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value))}
+__CalculatorCommand_unity2_raw::add(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Add(f32, crate::system::object::Object)` overload"]fn add_2(self,value:impl::core::convert::Into<f32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cc20usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CalculatorCommand_unity2_raw::add_2(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Add(f32, crate::system::object::Object, crate::system::object::Object)` overload"]fn add_3(self,value:impl::core::convert::Into<f32> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cc70usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value),(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__CalculatorCommand_unity2_raw::add_3(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Scale(f32)` overload"]fn scale(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298ccd0usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value))}
+__CalculatorCommand_unity2_raw::scale(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Scale(f32, crate::system::object::Object)` overload"]fn scale_2(self,value:impl::core::convert::Into<f32> ,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cd20usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CalculatorCommand_unity2_raw::scale_2(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Scale(f32, crate::system::object::Object, crate::system::object::Object)` overload"]fn scale_3(self,value:impl::core::convert::Into<f32> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cd70usize)as*mut u8,();
-(CalculatorCommand)__receiver,(f32)::core::convert::Into::into(value),(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__CalculatorCommand_unity2_raw::scale_3(__receiver, ::core::convert::Into::into(value), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Func()` overload"]fn func(self,)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cdd0usize)as*mut u8,f32;
-(CalculatorCommand)__receiver)}
+__CalculatorCommand_unity2_raw::func(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Func(crate::system::object::Object)` overload"]fn func_2(self,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298ce50usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CalculatorCommand_unity2_raw::func_2(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Func(crate::system::object::Object, crate::system::object::Object)` overload"]fn func_3(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cee0usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__CalculatorCommand_unity2_raw::func_3(__receiver, ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func_4(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cf80usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
+__CalculatorCommand_unity2_raw::func_4(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object)` overload"]fn func_5(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> > ,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cf90usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CalculatorCommand_unity2_raw::func_5(__receiver, ::core::convert::Into::into(args), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object, crate::system::object::Object)` overload"]fn func_6(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> > ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cfa0usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args),(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__CalculatorCommand_unity2_raw::func_6(__receiver, ::core::convert::Into::into(args), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Func(::unity2::Il2CppString)` overload"]fn func_7(self,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cfb0usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+__CalculatorCommand_unity2_raw::func_7(__receiver, ::core::convert::Into::into(arg), ::core::option::Option::None)}
 }
 #[doc="`Func(::unity2::Il2CppString, crate::system::object::Object)` overload"]fn func_8(self,arg:impl::core::convert::Into< ::unity2::Il2CppString> ,obj:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cfc0usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(arg),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__CalculatorCommand_unity2_raw::func_8(__receiver, ::core::convert::Into::into(arg), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Func(::unity2::Il2CppString, crate::system::object::Object, crate::system::object::Object)` overload"]fn func_9(self,arg:impl::core::convert::Into< ::unity2::Il2CppString> ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x298cfd0usize)as*mut u8,f32;
-(CalculatorCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(arg),(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__CalculatorCommand_unity2_raw::func_9(__receiver, ::core::convert::Into::into(arg), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`get_Manager()` overload"]fn get_manager(self,)->crate::app::calculatormanager::CalculatorManager{unsafe{let __receiver= <CalculatorCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x298cfe0usize)as*mut u8,crate::app::calculatormanager::CalculatorManager;

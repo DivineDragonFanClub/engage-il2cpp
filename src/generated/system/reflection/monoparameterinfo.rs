@@ -20,21 +20,51 @@ use crate::system::reflection::runtimeparameterinfo::{IRuntimeParameterInfo,Runt
 #[cfg(feature = "system-reflection-monoparameterinfo-types")]
 pub use __types::*;
 
+#[cfg(feature="system-reflection-monoparameterinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MonoParameterInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_default_value(this:MonoParameterInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MonoParameterInfo as::unity2::ClassIdentity> ::NAME,"get_DefaultValue",));
+let inner:extern "C" fn(MonoParameterInfo, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_custom_attributes(this:MonoParameterInfo,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MonoParameterInfo as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let inner:extern "C" fn(MonoParameterInfo, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn is_defined(this:MonoParameterInfo,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MonoParameterInfo as::unity2::ClassIdentity> ::NAME,"IsDefined",));
+let inner:extern "C" fn(MonoParameterInfo, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+}
+
 #[cfg(feature="system-reflection-monoparameterinfo")]pub trait IMonoParameterInfoMethods:IMonoParameterInfo{#[doc="`.ctor(crate::system::reflection::parameterinfo::ParameterInfo, crate::system::reflection::memberinfo::MemberInfo)` overload"]fn ctor(self,pinfo:impl::core::convert::Into<crate::system::reflection::parameterinfo::ParameterInfo> ,member:impl::core::convert::Into<crate::system::reflection::memberinfo::MemberInfo>)->(){unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3383390usize)as*mut u8,();
 (MonoParameterInfo)__receiver,(crate::system::reflection::parameterinfo::ParameterInfo)::core::convert::Into::into(pinfo),(crate::system::reflection::memberinfo::MemberInfo)::core::convert::Into::into(member))}
 }
 #[doc="`get_DefaultValue()` overload"]fn get_default_value(self,)->crate::system::object::Object{unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3383450usize)as*mut u8,crate::system::object::Object;
-(MonoParameterInfo)__receiver)}
+__MonoParameterInfo_unity2_raw::get_default_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33836d0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(MonoParameterInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__MonoParameterInfo_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MonoParameterInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3383750usize)as*mut u8,bool;
-(MonoParameterInfo)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__MonoParameterInfo_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 }
 

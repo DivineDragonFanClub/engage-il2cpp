@@ -237,16 +237,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <AssetBundleRequestOptions as::unity2::ClassIdentity> ::NAME,"set_ClearOtherCachedVersionsWhenLoaded",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compute_size{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), <crate::unity_engine::resource_management::resourcemanager::ResourceManager as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleRequestOptions as::unity2::ClassIdentity> ::class(),"ComputeSize",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <AssetBundleRequestOptions as::unity2::ClassIdentity> ::NAME,"ComputeSize",e),}
-}
-}
+pub unsafe fn compute_size(this:AssetBundleRequestOptions,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AssetBundleRequestOptions as::unity2::ClassIdentity> ::NAME,"ComputeSize",));
+let inner:extern "C" fn(AssetBundleRequestOptions,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::resource_management::resourcemanager::ResourceManager, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,location,resource_manager,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleRequestOptions as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -348,8 +348,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (AssetBundleRequestOptions)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`ComputeSize(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]fn compute_size(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>)->i64{unsafe{let __receiver= <AssetBundleRequestOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__AssetBundleRequestOptions_unity2_raw::__lookup_compute_size::get_method_info().method_ptr,i64;
-(AssetBundleRequestOptions)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(resource_manager))}
+__AssetBundleRequestOptions_unity2_raw::compute_size(__receiver, ::core::convert::Into::into(location), ::core::convert::Into::into(resource_manager), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetBundleRequestOptions as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__AssetBundleRequestOptions_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

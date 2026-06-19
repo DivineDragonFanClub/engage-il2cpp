@@ -22,36 +22,66 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK_PositionOffset.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK.PositionOffset")]#[parent(crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_Offset)]pub struct HitReactionVRIK_PositionOffset{#[offset(80)]#[rename(name="forceDirCurveIndex")]pub force_dir_curve_index:i32, #[offset(84)]#[rename(name="upDirCurveIndex")]pub up_dir_curve_index:i32, #[offset(88)]#[rename(name="offsetLinks")]pub offset_links: ::unity2::Array<crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_PositionOffset_PositionOffsetLink> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK_PositionOffset_PositionOffsetLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK.PositionOffset.PositionOffsetLink")]#[parent(crate::system::object::Object)]pub struct HitReactionVRIK_PositionOffset_PositionOffsetLink{#[offset(16)]#[rename(name="positionOffset")]pub position_offset:crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset, #[offset(20)]#[rename(name="weight")]pub weight:f32, #[offset(24)]#[rename(name="lastValue")]pub last_value:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="current")]pub current:crate::unity_engine::vector3::Vector3,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK_RotationOffset_RotationOffsetLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK.RotationOffset.RotationOffsetLink")]#[parent(crate::system::object::Object)]pub struct HitReactionVRIK_RotationOffset_RotationOffsetLink{#[offset(16)]#[rename(name="rotationOffset")]pub rotation_offset:crate::root_motion::final_ik::iksolvervr::IKSolverVR_RotationOffset, #[offset(20)]#[rename(name="weight")]pub weight:f32, #[offset(24)]#[rename(name="lastValue")]pub last_value:crate::unity_engine::quaternion::Quaternion, #[offset(40)]#[rename(name="current")]pub current:crate::unity_engine::quaternion::Quaternion,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK_RotationOffset.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK.RotationOffset")]#[parent(crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_Offset)]pub struct HitReactionVRIK_RotationOffset{#[offset(80)]#[rename(name="curveIndex")]pub curve_index:i32, #[offset(88)]#[rename(name="offsetLinks")]pub offset_links: ::unity2::Array<crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_RotationOffset_RotationOffsetLink> , #[offset(96)]#[rename(name="rigidbody")]pub rigidbody:crate::unity_engine::rigidbody::Rigidbody,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK_PositionOffset_PositionOffsetLink.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK.PositionOffset.PositionOffsetLink")]#[parent(crate::system::object::Object)]pub struct HitReactionVRIK_PositionOffset_PositionOffsetLink{#[offset(16)]#[rename(name="positionOffset")]pub position_offset:crate::root_motion::final_ik::iksolvervr::IKSolverVR_PositionOffset, #[offset(20)]#[rename(name="weight")]pub weight:f32, #[offset(24)]#[rename(name="lastValue")]pub last_value:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="current")]pub current:crate::unity_engine::vector3::Vector3,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK")]#[parent(crate::root_motion::final_ik::offsetmodifiervrik::OffsetModifierVRIK)]pub struct HitReactionVRIK{#[offset(48)]#[rename(name="offsetCurves")]pub offset_curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> , #[offset(56)]#[rename(name="positionOffsets")]pub position_offsets: ::unity2::Array<crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_PositionOffset> , #[offset(64)]#[rename(name="rotationOffsets")]pub rotation_offsets: ::unity2::Array<crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_RotationOffset> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK_Offset.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK.Offset")]#[parent(crate::system::object::Object)]pub struct HitReactionVRIK_Offset{#[offset(16)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="collider")]pub collider:crate::unity_engine::collider::Collider, #[offset(32)]#[rename(name="crossFadeTime")]pub cross_fade_time:f32, #[offset(68)]#[rename(name="length")]pub length:f32, #[offset(72)]#[rename(name="crossFadeSpeed")]pub cross_fade_speed:f32, #[offset(76)]#[rename(name="lastTime")]pub last_time:f32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK")]#[parent(crate::root_motion::final_ik::offsetmodifiervrik::OffsetModifierVRIK)]pub struct HitReactionVRIK{#[offset(48)]#[rename(name="offsetCurves")]pub offset_curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> , #[offset(56)]#[rename(name="positionOffsets")]pub position_offsets: ::unity2::Array<crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_PositionOffset> , #[offset(64)]#[rename(name="rotationOffsets")]pub rotation_offsets: ::unity2::Array<crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_RotationOffset> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/hitreactionvrik/HitReactionVRIK_RotationOffset.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="HitReactionVRIK.RotationOffset")]#[parent(crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_Offset)]pub struct HitReactionVRIK_RotationOffset{#[offset(80)]#[rename(name="curveIndex")]pub curve_index:i32, #[offset(88)]#[rename(name="offsetLinks")]pub offset_links: ::unity2::Array<crate::root_motion::final_ik::hitreactionvrik::HitReactionVRIK_RotationOffset_RotationOffsetLink> , #[offset(96)]#[rename(name="rigidbody")]pub rigidbody:crate::unity_engine::rigidbody::Rigidbody,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-hitreactionvrik-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReactionVRIK_PositionOffset_unity2_raw{use super:: * ;
+pub unsafe fn get_length(this:HitReactionVRIK_PositionOffset,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReactionVRIK_PositionOffset as::unity2::ClassIdentity> ::NAME,"GetLength",));
+let inner:extern "C" fn(HitReactionVRIK_PositionOffset, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,curves,__mi)}
+pub unsafe fn cross_fade_start(this:HitReactionVRIK_PositionOffset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HitReactionVRIK_PositionOffset as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
+let inner:extern "C" fn(HitReactionVRIK_PositionOffset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_apply(this:HitReactionVRIK_PositionOffset,ik:crate::root_motion::final_ik::vrik::VRIK,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,weight:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HitReactionVRIK_PositionOffset as::unity2::ClassIdentity> ::NAME,"OnApply",));
+let inner:extern "C" fn(HitReactionVRIK_PositionOffset,crate::root_motion::final_ik::vrik::VRIK, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ik,curves,weight,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub trait IHitReactionVRIK_PositionOffsetMethods:IHitReactionVRIK_PositionOffset{#[doc="`GetLength(::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>)` overload"]fn get_length(self,curves:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> >)->f32{unsafe{let __receiver= <HitReactionVRIK_PositionOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2100usize)as*mut u8,f32;
-(HitReactionVRIK_PositionOffset)__receiver,(::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>)::core::convert::Into::into(curves))}
+__HitReactionVRIK_PositionOffset_unity2_raw::get_length(__receiver, ::core::convert::Into::into(curves), ::core::option::Option::None)}
 }
 #[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2290usize)as*mut u8,();
-(HitReactionVRIK_PositionOffset)__receiver)}
+__HitReactionVRIK_PositionOffset_unity2_raw::cross_fade_start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnApply(crate::root_motion::final_ik::vrik::VRIK, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>, f32)` overload"]fn on_apply(self,ik:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK> ,curves:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> > ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2300usize)as*mut u8,();
-(HitReactionVRIK_PositionOffset)__receiver,(crate::root_motion::final_ik::vrik::VRIK)::core::convert::Into::into(ik),(::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>)::core::convert::Into::into(curves),(f32)::core::convert::Into::into(weight))}
+__HitReactionVRIK_PositionOffset_unity2_raw::on_apply(__receiver, ::core::convert::Into::into(ik), ::core::convert::Into::into(curves), ::core::convert::Into::into(weight), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce24a0usize)as*mut u8,();
@@ -71,34 +101,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(HitReactionVRIK_PositionOffset), ::core::stringify!(new),));
  <Self as IHitReactionVRIK_PositionOffsetMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub trait IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods:IHitReactionVRIK_PositionOffset_PositionOffsetLink{#[doc="`Apply(crate::root_motion::final_ik::vrik::VRIK, crate::unity_engine::vector3::Vector3, f32)` overload"]fn apply(self,ik:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK> ,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,cross_fader:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset_PositionOffsetLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63880usize)as*mut u8,();
-(HitReactionVRIK_PositionOffset_PositionOffsetLink)__receiver,(crate::root_motion::final_ik::vrik::VRIK)::core::convert::Into::into(ik),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(cross_fader))}
-}
-#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset_PositionOffsetLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63920usize)as*mut u8,();
-(HitReactionVRIK_PositionOffset_PositionOffsetLink)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset_PositionOffsetLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63940usize)as*mut u8,();
-(HitReactionVRIK_PositionOffset_PositionOffsetLink)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl<__T:IHitReactionVRIK_PositionOffset_PositionOffsetLink>IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_PositionOffset_PositionOffsetLink{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_PositionOffset_PositionOffsetLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HitReactionVRIK_PositionOffset_PositionOffsetLink), ::core::stringify!(new),));
- <Self as IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods> ::ctor(this,);
 this}
 }
 
@@ -130,57 +132,101 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub trait IHitReactionVRIK_RotationOffsetMethods:IHitReactionVRIK_RotationOffset{#[doc="`GetLength(::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>)` overload"]fn get_length(self,curves:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> >)->f32{unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce24c0usize)as*mut u8,f32;
-(HitReactionVRIK_RotationOffset)__receiver,(::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>)::core::convert::Into::into(curves))}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub trait IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods:IHitReactionVRIK_PositionOffset_PositionOffsetLink{#[doc="`Apply(crate::root_motion::final_ik::vrik::VRIK, crate::unity_engine::vector3::Vector3, f32)` overload"]fn apply(self,ik:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK> ,offset:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,cross_fader:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset_PositionOffsetLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63880usize)as*mut u8,();
+(HitReactionVRIK_PositionOffset_PositionOffsetLink)__receiver,(crate::root_motion::final_ik::vrik::VRIK)::core::convert::Into::into(ik),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(offset),(f32)::core::convert::Into::into(cross_fader))}
 }
-#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce25a0usize)as*mut u8,();
-(HitReactionVRIK_RotationOffset)__receiver)}
+#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset_PositionOffsetLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63920usize)as*mut u8,();
+(HitReactionVRIK_PositionOffset_PositionOffsetLink)__receiver)}
 }
-#[doc="`OnApply(crate::root_motion::final_ik::vrik::VRIK, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>, f32)` overload"]fn on_apply(self,ik:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK> ,curves:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> > ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2610usize)as*mut u8,();
-(HitReactionVRIK_RotationOffset)__receiver,(crate::root_motion::final_ik::vrik::VRIK)::core::convert::Into::into(ik),(::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>)::core::convert::Into::into(curves),(f32)::core::convert::Into::into(weight))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2850usize)as*mut u8,();
-(HitReactionVRIK_RotationOffset)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReactionVRIK_PositionOffset_PositionOffsetLink as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63940usize)as*mut u8,();
+(HitReactionVRIK_PositionOffset_PositionOffsetLink)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl<__T:IHitReactionVRIK_RotationOffset>IHitReactionVRIK_RotationOffsetMethods for __T{}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl<__T:IHitReactionVRIK_PositionOffset_PositionOffsetLink>IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_RotationOffset{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_PositionOffset_PositionOffsetLink{pub fn apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn on_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_RotationOffset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_PositionOffset_PositionOffsetLink{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HitReactionVRIK_RotationOffset), ::core::stringify!(new),));
- <Self as IHitReactionVRIK_RotationOffsetMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HitReactionVRIK_PositionOffset_PositionOffsetLink), ::core::stringify!(new),));
+ <Self as IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReactionVRIK_unity2_raw{use super:: * ;
+pub unsafe fn on_modify_offset(this:HitReactionVRIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReactionVRIK as::unity2::ClassIdentity> ::NAME,"OnModifyOffset",));
+let inner:extern "C" fn(HitReactionVRIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub trait IHitReactionVRIKMethods:IHitReactionVRIK{#[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <HitReactionVRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HitReactionVRIK_unity2_raw::on_modify_offset(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Hit(crate::unity_engine::collider::Collider, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn hit(self,collider:impl::core::convert::Into<crate::unity_engine::collider::Collider> ,force:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,point:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HitReactionVRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2166f80usize)as*mut u8,();
+(HitReactionVRIK)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(collider),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(force),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(point))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReactionVRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2167180usize)as*mut u8,();
+(HitReactionVRIK)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl<__T:IHitReactionVRIK>IHitReactionVRIKMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK{pub fn on_modify_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HitReactionVRIK), ::core::stringify!(new),));
+ <Self as IHitReactionVRIKMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature="root_motion-final_ik-hitreactionvrik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReactionVRIK_Offset_unity2_raw{use super:: * ;
-pub unsafe fn get_length(this:HitReactionVRIK_Offset,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetLength").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetLength", <HitReactionVRIK_Offset as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_length(this:HitReactionVRIK_Offset,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReactionVRIK_Offset as::unity2::ClassIdentity> ::NAME,"GetLength",));
 let inner:extern "C" fn(HitReactionVRIK_Offset, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,curves,__mi)}
-pub unsafe fn cross_fade_start(this:HitReactionVRIK_Offset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CrossFadeStart").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CrossFadeStart", <HitReactionVRIK_Offset as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn cross_fade_start(this:HitReactionVRIK_Offset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HitReactionVRIK_Offset as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
 let inner:extern "C" fn(HitReactionVRIK_Offset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn on_apply(this:HitReactionVRIK_Offset,ik:crate::root_motion::final_ik::vrik::VRIK,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,weight:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnApply").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnApply", <HitReactionVRIK_Offset as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_apply(this:HitReactionVRIK_Offset,ik:crate::root_motion::final_ik::vrik::VRIK,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,weight:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HitReactionVRIK_Offset as::unity2::ClassIdentity> ::NAME,"OnApply",));
 let inner:extern "C" fn(HitReactionVRIK_Offset,crate::root_motion::final_ik::vrik::VRIK, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -267,31 +313,66 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub trait IHitReactionVRIKMethods:IHitReactionVRIK{#[doc="`OnModifyOffset()` overload"]fn on_modify_offset(self,)->(){unsafe{let __receiver= <HitReactionVRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2166eb0usize)as*mut u8,();
-(HitReactionVRIK)__receiver)}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitReactionVRIK_RotationOffset_unity2_raw{use super:: * ;
+pub unsafe fn get_length(this:HitReactionVRIK_RotationOffset,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitReactionVRIK_RotationOffset as::unity2::ClassIdentity> ::NAME,"GetLength",));
+let inner:extern "C" fn(HitReactionVRIK_RotationOffset, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,curves,__mi)}
+pub unsafe fn cross_fade_start(this:HitReactionVRIK_RotationOffset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HitReactionVRIK_RotationOffset as::unity2::ClassIdentity> ::NAME,"CrossFadeStart",));
+let inner:extern "C" fn(HitReactionVRIK_RotationOffset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_apply(this:HitReactionVRIK_RotationOffset,ik:crate::root_motion::final_ik::vrik::VRIK,curves: ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,weight:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HitReactionVRIK_RotationOffset as::unity2::ClassIdentity> ::NAME,"OnApply",));
+let inner:extern "C" fn(HitReactionVRIK_RotationOffset,crate::root_motion::final_ik::vrik::VRIK, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> ,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ik,curves,weight,__mi)}
 }
-#[doc="`Hit(crate::unity_engine::collider::Collider, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]fn hit(self,collider:impl::core::convert::Into<crate::unity_engine::collider::Collider> ,force:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,point:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <HitReactionVRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2166f80usize)as*mut u8,();
-(HitReactionVRIK)__receiver,(crate::unity_engine::collider::Collider)::core::convert::Into::into(collider),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(force),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(point))}
+
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]pub trait IHitReactionVRIK_RotationOffsetMethods:IHitReactionVRIK_RotationOffset{#[doc="`GetLength(::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>)` overload"]fn get_length(self,curves:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> >)->f32{unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HitReactionVRIK_RotationOffset_unity2_raw::get_length(__receiver, ::core::convert::Into::into(curves), ::core::option::Option::None)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReactionVRIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2167180usize)as*mut u8,();
-(HitReactionVRIK)__receiver)}
+#[doc="`CrossFadeStart()` overload"]fn cross_fade_start(self,)->(){unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HitReactionVRIK_RotationOffset_unity2_raw::cross_fade_start(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnApply(crate::root_motion::final_ik::vrik::VRIK, ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve>, f32)` overload"]fn on_apply(self,ik:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK> ,curves:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::animationcurve::AnimationCurve> > ,weight:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HitReactionVRIK_RotationOffset_unity2_raw::on_apply(__receiver, ::core::convert::Into::into(ik), ::core::convert::Into::into(curves), ::core::convert::Into::into(weight), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HitReactionVRIK_RotationOffset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2850usize)as*mut u8,();
+(HitReactionVRIK_RotationOffset)__receiver)}
 }
 }
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl<__T:IHitReactionVRIK>IHitReactionVRIKMethods for __T{}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl<__T:IHitReactionVRIK_RotationOffset>IHitReactionVRIK_RotationOffsetMethods for __T{}
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK{pub fn on_modify_offset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn hit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_RotationOffset{pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cross_fade_start_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn on_apply_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="root_motion-final_ik-hitreactionvrik")]impl HitReactionVRIK_RotationOffset{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(HitReactionVRIK), ::core::stringify!(new),));
- <Self as IHitReactionVRIKMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(HitReactionVRIK_RotationOffset), ::core::stringify!(new),));
+ <Self as IHitReactionVRIK_RotationOffsetMethods> ::ctor(this,);
 this}
 }
 
@@ -301,21 +382,21 @@ pub mod prelude {
     pub use super::HitReactionVRIK_PositionOffset;
     pub use super::IHitReactionVRIK_PositionOffset;
     pub use super::IHitReactionVRIK_PositionOffsetMethods;
-    pub use super::HitReactionVRIK_PositionOffset_PositionOffsetLink;
-    pub use super::IHitReactionVRIK_PositionOffset_PositionOffsetLink;
-    pub use super::IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods;
     pub use super::HitReactionVRIK_RotationOffset_RotationOffsetLink;
     pub use super::IHitReactionVRIK_RotationOffset_RotationOffsetLink;
     pub use super::IHitReactionVRIK_RotationOffset_RotationOffsetLinkMethods;
-    pub use super::HitReactionVRIK_RotationOffset;
-    pub use super::IHitReactionVRIK_RotationOffset;
-    pub use super::IHitReactionVRIK_RotationOffsetMethods;
-    pub use super::HitReactionVRIK_Offset;
-    pub use super::IHitReactionVRIK_Offset;
-    pub use super::IHitReactionVRIK_OffsetMethods;
+    pub use super::HitReactionVRIK_PositionOffset_PositionOffsetLink;
+    pub use super::IHitReactionVRIK_PositionOffset_PositionOffsetLink;
+    pub use super::IHitReactionVRIK_PositionOffset_PositionOffsetLinkMethods;
     pub use super::HitReactionVRIK;
     pub use super::IHitReactionVRIK;
     pub use super::IHitReactionVRIKMethods;
+    pub use super::HitReactionVRIK_Offset;
+    pub use super::IHitReactionVRIK_Offset;
+    pub use super::IHitReactionVRIK_OffsetMethods;
+    pub use super::HitReactionVRIK_RotationOffset;
+    pub use super::IHitReactionVRIK_RotationOffset;
+    pub use super::IHitReactionVRIK_RotationOffsetMethods;
     pub use crate::root_motion::final_ik::offsetmodifiervrik::IOffsetModifierVRIK;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

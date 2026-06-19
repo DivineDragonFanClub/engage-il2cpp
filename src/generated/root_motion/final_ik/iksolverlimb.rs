@@ -17,6 +17,20 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolverlimb/IKSolverLimb.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverLimb")]#[parent(crate::root_motion::final_ik::iksolvertrigonometric::IKSolverTrigonometric)]pub struct IKSolverLimb{#[offset(168)]#[rename(name="goal")]pub goal:crate::unity_engine::avatarikgoal::AvatarIKGoal, #[offset(172)]#[rename(name="bendModifier")]pub bend_modifier:crate::root_motion::final_ik::iksolverlimb::IKSolverLimb_BendModifier, #[offset(176)]#[rename(name="maintainRotationWeight")]pub maintain_rotation_weight:f32, #[offset(180)]#[rename(name="bendModifierWeight")]pub bend_modifier_weight:f32, #[offset(184)]#[rename(name="bendGoal")]pub bend_goal:crate::unity_engine::transform::Transform, #[offset(192)]#[rename(name="maintainBendFor1Frame")]pub maintain_bend_for1_frame:bool, #[offset(193)]#[rename(name="maintainRotationFor1Frame")]pub maintain_rotation_for1_frame:bool, #[offset(196)]#[rename(name="defaultRootRotation")]pub default_root_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(212)]#[rename(name="parentDefaultRotation")]pub parent_default_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(228)]#[rename(name="bone3RotationBeforeSolve")]pub bone3_rotation_before_solve:crate::unity_engine::quaternion::Quaternion, #[offset(244)]#[rename(name="maintainRotation")]pub maintain_rotation_field:crate::unity_engine::quaternion::Quaternion, #[offset(260)]#[rename(name="bone3DefaultRotation")]pub bone3_default_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(276)]#[rename(name="_bendNormal")]pub bend_normal:crate::unity_engine::vector3::Vector3, #[offset(288)]#[rename(name="animationNormal")]pub animation_normal:crate::unity_engine::vector3::Vector3, #[offset(304)]#[rename(name="axisDirectionsLeft")]pub axis_directions_left: ::unity2::Array<crate::root_motion::final_ik::iksolverlimb::IKSolverLimb_AxisDirection> , #[offset(312)]#[rename(name="axisDirectionsRight")]pub axis_directions_right: ::unity2::Array<crate::root_motion::final_ik::iksolverlimb::IKSolverLimb_AxisDirection> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolverlimb/IKSolverLimb_AxisDirection.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct IKSolverLimb_AxisDirection{pub direction:crate::unity_engine::vector3::Vector3,pub axis:crate::unity_engine::vector3::Vector3,pub dot:f32,}
+impl::unity2::ClassIdentity for IKSolverLimb_AxisDirection{const NAMESPACE: &'static str="RootMotion.FinalIK";
+const NAME: &'static str="IKSolverLimb.AxisDirection";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for IKSolverLimb_AxisDirection{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolverlimb/IKSolverLimb_BendModifier.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct IKSolverLimb_BendModifier{pub value:i32,}
 impl::unity2::ClassIdentity for IKSolverLimb_BendModifier{const NAMESPACE: &'static str="RootMotion.FinalIK";
 const NAME: &'static str="IKSolverLimb.BendModifier";
@@ -38,31 +52,42 @@ pub fn goal()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolverlimb/IKSolverLimb_AxisDirection.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct IKSolverLimb_AxisDirection{pub direction:crate::unity_engine::vector3::Vector3,pub axis:crate::unity_engine::vector3::Vector3,pub dot:f32,}
-impl::unity2::ClassIdentity for IKSolverLimb_AxisDirection{const NAMESPACE: &'static str="RootMotion.FinalIK";
-const NAME: &'static str="IKSolverLimb.AxisDirection";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for IKSolverLimb_AxisDirection{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/iksolverlimb/IKSolverLimb.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKSolverLimb")]#[parent(crate::root_motion::final_ik::iksolvertrigonometric::IKSolverTrigonometric)]pub struct IKSolverLimb{#[offset(168)]#[rename(name="goal")]pub goal:crate::unity_engine::avatarikgoal::AvatarIKGoal, #[offset(172)]#[rename(name="bendModifier")]pub bend_modifier:crate::root_motion::final_ik::iksolverlimb::IKSolverLimb_BendModifier, #[offset(176)]#[rename(name="maintainRotationWeight")]pub maintain_rotation_weight:f32, #[offset(180)]#[rename(name="bendModifierWeight")]pub bend_modifier_weight:f32, #[offset(184)]#[rename(name="bendGoal")]pub bend_goal:crate::unity_engine::transform::Transform, #[offset(192)]#[rename(name="maintainBendFor1Frame")]pub maintain_bend_for1_frame:bool, #[offset(193)]#[rename(name="maintainRotationFor1Frame")]pub maintain_rotation_for1_frame:bool, #[offset(196)]#[rename(name="defaultRootRotation")]pub default_root_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(212)]#[rename(name="parentDefaultRotation")]pub parent_default_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(228)]#[rename(name="bone3RotationBeforeSolve")]pub bone3_rotation_before_solve:crate::unity_engine::quaternion::Quaternion, #[offset(244)]#[rename(name="maintainRotation")]pub maintain_rotation_field:crate::unity_engine::quaternion::Quaternion, #[offset(260)]#[rename(name="bone3DefaultRotation")]pub bone3_default_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(276)]#[rename(name="_bendNormal")]pub bend_normal:crate::unity_engine::vector3::Vector3, #[offset(288)]#[rename(name="animationNormal")]pub animation_normal:crate::unity_engine::vector3::Vector3, #[offset(304)]#[rename(name="axisDirectionsLeft")]pub axis_directions_left: ::unity2::Array<crate::root_motion::final_ik::iksolverlimb::IKSolverLimb_AxisDirection> , #[offset(312)]#[rename(name="axisDirectionsRight")]pub axis_directions_right: ::unity2::Array<crate::root_motion::final_ik::iksolverlimb::IKSolverLimb_AxisDirection> ,}
-
 }
 
 #[cfg(feature = "root_motion-final_ik-iksolverlimb-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-iksolverlimb")]impl IKSolverLimb_AxisDirection{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn ctor(&mut self,direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,axis:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2af2090usize)as*mut u8,();
-(*mut IKSolverLimb_AxisDirection)self as*mut IKSolverLimb_AxisDirection,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(direction),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(axis))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-iksolverlimb")]impl IKSolverLimb_AxisDirection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="root_motion-final_ik-iksolverlimb")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverLimb_unity2_raw{use super:: * ;
+pub unsafe fn on_initiate_virtual(this:IKSolverLimb,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnInitiateVirtual",));
+let inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update_virtual(this:IKSolverLimb,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnUpdateVirtual",));
+let inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_post_solve_virtual(this:IKSolverLimb,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <IKSolverLimb as::unity2::ClassIdentity> ::NAME,"OnPostSolveVirtual",));
+let inner:extern "C" fn(IKSolverLimb, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="root_motion-final_ik-iksolverlimb")]pub trait IIKSolverLimbMethods:IIKSolverLimb{#[doc="`MaintainRotation()` overload"]fn maintain_rotation(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -74,16 +99,13 @@ pub use __types::*;
 (IKSolverLimb)__receiver)}
 }
 #[doc="`OnInitiateVirtual()` overload"]fn on_initiate_virtual(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c32d90usize)as*mut u8,();
-(IKSolverLimb)__receiver)}
+__IKSolverLimb_unity2_raw::on_initiate_virtual(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpdateVirtual()` overload"]fn on_update_virtual(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c33230usize)as*mut u8,();
-(IKSolverLimb)__receiver)}
+__IKSolverLimb_unity2_raw::on_update_virtual(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnPostSolveVirtual()` overload"]fn on_post_solve_virtual(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c33b20usize)as*mut u8,();
-(IKSolverLimb)__receiver)}
+__IKSolverLimb_unity2_raw::on_post_solve_virtual(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverLimb as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c33bc0usize)as*mut u8,();
@@ -135,14 +157,22 @@ this}
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-iksolverlimb")]impl IKSolverLimb_AxisDirection{#[doc="`.ctor(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3)` overload"]pub fn ctor(&mut self,direction:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,axis:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2af2090usize)as*mut u8,();
+(*mut IKSolverLimb_AxisDirection)self as*mut IKSolverLimb_AxisDirection,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(direction),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(axis))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-iksolverlimb")]impl IKSolverLimb_AxisDirection{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "root_motion-final_ik-iksolverlimb")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IKSolverLimb_BendModifier;
-    pub use super::IKSolverLimb_AxisDirection;
     pub use super::IKSolverLimb;
     pub use super::IIKSolverLimb;
     pub use super::IIKSolverLimbMethods;
+    pub use super::IKSolverLimb_AxisDirection;
+    pub use super::IKSolverLimb_BendModifier;
     pub use crate::root_motion::final_ik::iksolver::IIKSolver;
     pub use crate::root_motion::final_ik::iksolver::IKSolver;
     pub use crate::root_motion::final_ik::iksolvertrigonometric::IIKSolverTrigonometric;

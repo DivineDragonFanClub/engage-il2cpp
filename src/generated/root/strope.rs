@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-strope-types")]
 pub use __types::*;
 
+#[cfg(feature="root-strope")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StrOpe_unity2_raw{use super:: * ;
+pub unsafe fn to_string(this:StrOpe,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <StrOpe as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(StrOpe, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-strope")]impl StrOpe{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25037a0usize)as*mut u8,();
 )}
 }
@@ -121,8 +134,7 @@ pub use __types::*;
 (StrOpe)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(str),(i32)::core::convert::Into::into(length))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StrOpe as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2503eb0usize)as*mut u8, ::unity2::Il2CppString;
-(StrOpe)__receiver)}
+__StrOpe_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <StrOpe as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2503ec0usize)as*mut u8,();

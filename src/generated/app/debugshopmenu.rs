@@ -23,13 +23,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-debugshopmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-debugshopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugShopMenu_ShopCallItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:DebugShopMenu_ShopCallItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugShopMenu_ShopCallItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugShopMenu_ShopCallItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-debugshopmenu")]pub trait IDebugShopMenu_ShopCallItemMethods:IDebugShopMenu_ShopCallItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <DebugShopMenu_ShopCallItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9e50usize)as*mut u8,();
 (DebugShopMenu_ShopCallItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugShopMenu_ShopCallItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9e90usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugShopMenu_ShopCallItem)__receiver)}
+__DebugShopMenu_ShopCallItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -11,16 +11,16 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Vertex.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="MeshUtils.Vertex")]#[parent(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Pooled_1<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>)]pub struct MeshUtils_Vertex{#[offset(16)]#[rename(name="_prev")]pub prev:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, #[offset(24)]#[rename(name="_next")]pub next:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, #[offset(32)]#[rename(name="_anEdge")]pub an_edge:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, #[offset(40)]#[rename(name="_coords")]pub coords:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, #[offset(52)]#[rename(name="_s")]pub s:f32, #[offset(56)]#[rename(name="_t")]pub t:f32, #[offset(60)]#[rename(name="_pqHandle")]pub pq_handle:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::pqhandle::PQHandle, #[offset(64)]#[rename(name="_n")]pub n:i32, #[offset(72)]#[rename(name="_data")]pub data: ::unity2::IlInstance,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="MeshUtils")]#[parent(crate::system::object::Object)]pub struct MeshUtils{#[static_field]#[rename(name="Undef")]pub undef:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Edge.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="MeshUtils.Edge")]#[parent(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Pooled_1<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>)]pub struct MeshUtils_Edge{#[offset(16)]#[rename(name="_pair")]pub pair:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_EdgePair, #[offset(32)]#[rename(name="_next")]pub next:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, #[offset(40)]#[rename(name="_Sym")]pub sym:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, #[offset(48)]#[rename(name="_Onext")]pub onext:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, #[offset(56)]#[rename(name="_Lnext")]pub lnext:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, #[offset(64)]#[rename(name="_Org")]pub org:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, #[offset(72)]#[rename(name="_Lface")]pub lface:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, #[offset(80)]#[rename(name="_activeRegion")]pub active_region:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::tess::Tess_ActiveRegion, #[offset(88)]#[rename(name="_winding")]pub winding:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="MeshUtils")]#[parent(crate::system::object::Object)]pub struct MeshUtils{#[static_field]#[rename(name="Undef")]pub undef:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Pooled_1.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="MeshUtils.Pooled`1")]#[parent(crate::system::object::Object)]pub struct MeshUtils_Pooled_1<T0: ::unity2::ClassIdentity>{#[static_field]#[rename(name="_stack")]pub stack:crate::system::collections::generic::stack_1::Stack_1<T0> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Vertex.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="MeshUtils.Vertex")]#[parent(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Pooled_1<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>)]pub struct MeshUtils_Vertex{#[offset(16)]#[rename(name="_prev")]pub prev:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, #[offset(24)]#[rename(name="_next")]pub next:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, #[offset(32)]#[rename(name="_anEdge")]pub an_edge:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, #[offset(40)]#[rename(name="_coords")]pub coords:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::vec3::Vec3, #[offset(52)]#[rename(name="_s")]pub s:f32, #[offset(56)]#[rename(name="_t")]pub t:f32, #[offset(60)]#[rename(name="_pqHandle")]pub pq_handle:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::pqhandle::PQHandle, #[offset(64)]#[rename(name="_n")]pub n:i32, #[offset(72)]#[rename(name="_data")]pub data: ::unity2::IlInstance,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lib_tess_dot_net/meshutils/MeshUtils_Face.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal.LibTessDotNet",name="MeshUtils.Face")]#[parent(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Pooled_1<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>)]pub struct MeshUtils_Face{#[offset(16)]#[rename(name="_prev")]pub prev:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, #[offset(24)]#[rename(name="_next")]pub next:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, #[offset(32)]#[rename(name="_anEdge")]pub an_edge:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, #[offset(40)]#[rename(name="_trail")]pub trail:crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, #[offset(48)]#[rename(name="_n")]pub n:i32, #[offset(52)]#[rename(name="_marked")]pub marked:bool, #[offset(53)]#[rename(name="_inside")]pub inside:bool,}
@@ -41,27 +41,53 @@ impl::unity2::IlType for MeshUtils_EdgePair{fn il_type()-> &'static::unity2::il2
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]pub trait IMeshUtils_VertexMethods:IMeshUtils_Vertex{#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MeshUtils_Vertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7690usize)as*mut u8,();
-(MeshUtils_Vertex)__receiver)}
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils{#[doc="`MakeEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]pub fn make_edge(e_next:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>)->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3193e60usize)as*mut u8,crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge;
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_next))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshUtils_Vertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7750usize)as*mut u8,();
-(MeshUtils_Vertex)__receiver)}
+#[doc="`Splice(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]pub fn splice(a:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge> ,b:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3194520usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(a),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(b))}
+}
+#[doc="`MakeVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]pub fn make_vertex(e_orig:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge> ,v_next:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3193fc0usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_orig),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)::core::convert::Into::into(v_next))}
+}
+#[doc="`MakeFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]pub fn make_face(e_orig:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge> ,f_next:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31940a0usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_orig),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(f_next))}
+}
+#[doc="`KillEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]pub fn kill_edge(e_del:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31949f0usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_del))}
+}
+#[doc="`KillVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]pub fn kill_vertex(v_del:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex> ,new_org:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31943c0usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)::core::convert::Into::into(v_del),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)::core::convert::Into::into(new_org))}
+}
+#[doc="`KillFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]pub fn kill_face(f_del:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face> ,new_l_face:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3194470usize)as*mut u8,();
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(f_del),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(new_l_face))}
+}
+#[doc="`FaceArea(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]pub fn face_area(f:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31953e0usize)as*mut u8,f32;
+(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(f))}
 }
 }
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl<__T:IMeshUtils_Vertex>IMeshUtils_VertexMethods for __T{}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils_Vertex{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils{pub fn make_edge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn splice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn make_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn make_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn kill_edge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn kill_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn kill_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn face_area_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
 }
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils_Vertex{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MeshUtils_Vertex), ::core::stringify!(new),));
- <Self as IMeshUtils_VertexMethods> ::ctor(this,);
-this}
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MeshUtils_Edge_unity2_raw{use super:: * ;
+pub unsafe fn reset(this:MeshUtils_Edge,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MeshUtils_Edge as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(MeshUtils_Edge, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils_Edge{#[doc="`EnsureFirst(*mutcrate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]pub fn ensure_first()->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge{unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge> ::uninit();
@@ -136,8 +162,7 @@ __out_0.assume_init()}
 (MeshUtils_Edge)__receiver,(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(value))}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MeshUtils_Edge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7390usize)as*mut u8,();
-(MeshUtils_Edge)__receiver)}
+__MeshUtils_Edge_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshUtils_Edge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7480usize)as*mut u8,();
@@ -175,42 +200,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils{#[doc="`MakeEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]pub fn make_edge(e_next:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>)->crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3193e60usize)as*mut u8,crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge;
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_next))}
-}
-#[doc="`Splice(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]pub fn splice(a:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge> ,b:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3194520usize)as*mut u8,();
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(a),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(b))}
-}
-#[doc="`MakeVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]pub fn make_vertex(e_orig:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge> ,v_next:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3193fc0usize)as*mut u8,();
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_orig),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)::core::convert::Into::into(v_next))}
-}
-#[doc="`MakeFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]pub fn make_face(e_orig:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge> ,f_next:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31940a0usize)as*mut u8,();
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_orig),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(f_next))}
-}
-#[doc="`KillEdge(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)` overload"]pub fn kill_edge(e_del:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31949f0usize)as*mut u8,();
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Edge)::core::convert::Into::into(e_del))}
-}
-#[doc="`KillVertex(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)` overload"]pub fn kill_vertex(v_del:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex> ,new_org:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31943c0usize)as*mut u8,();
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)::core::convert::Into::into(v_del),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Vertex)::core::convert::Into::into(new_org))}
-}
-#[doc="`KillFace(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face, crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]pub fn kill_face(f_del:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face> ,new_l_face:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3194470usize)as*mut u8,();
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(f_del),(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(new_l_face))}
-}
-#[doc="`FaceArea(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)` overload"]pub fn face_area(f:impl::core::convert::Into<crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31953e0usize)as*mut u8,f32;
-(crate::unity_engine::experimental::rendering::universal::lib_tess_dot_net::meshutils::MeshUtils_Face)::core::convert::Into::into(f))}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils{pub fn make_edge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn splice_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn make_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn make_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn kill_edge_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn kill_vertex_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn kill_face_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn face_area_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
 #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>MeshUtils_Pooled_1<T0>{#[doc="`Reset()` overload"]#[method(name="Reset",args=0,abstract_dispatch)]pub fn reset(self,)->();
  #[doc="`OnFree()` overload"]#[method(name="OnFree",args=0)]pub fn on_free(self,)->();
  #[doc="`Create()` overload"]#[method(name="Create",args=0)]pub fn create()->T0;
@@ -225,13 +214,60 @@ pub fn face_area_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MeshUtils_Vertex_unity2_raw{use super:: * ;
+pub unsafe fn reset(this:MeshUtils_Vertex,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MeshUtils_Vertex as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(MeshUtils_Vertex, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]pub trait IMeshUtils_VertexMethods:IMeshUtils_Vertex{#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MeshUtils_Vertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MeshUtils_Vertex_unity2_raw::reset(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshUtils_Vertex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7750usize)as*mut u8,();
+(MeshUtils_Vertex)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl<__T:IMeshUtils_Vertex>IMeshUtils_VertexMethods for __T{}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils_Vertex{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]impl MeshUtils_Vertex{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MeshUtils_Vertex), ::core::stringify!(new),));
+ <Self as IMeshUtils_VertexMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MeshUtils_Face_unity2_raw{use super:: * ;
+pub unsafe fn reset(this:MeshUtils_Face,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MeshUtils_Face as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(MeshUtils_Face, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]pub trait IMeshUtils_FaceMethods:IMeshUtils_Face{#[doc="`get_VertsCount()` overload"]fn get_verts_count(self,)->i32{unsafe{let __receiver= <MeshUtils_Face as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb75a0usize)as*mut u8,i32;
 (MeshUtils_Face)__receiver)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <MeshUtils_Face as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb75d0usize)as*mut u8,();
-(MeshUtils_Face)__receiver)}
+__MeshUtils_Face_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MeshUtils_Face as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7630usize)as*mut u8,();
@@ -270,17 +306,17 @@ pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lib_tess_dot_net-meshutils")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MeshUtils_Vertex;
-    pub use super::IMeshUtils_Vertex;
-    pub use super::IMeshUtils_VertexMethods;
+    pub use super::MeshUtils;
+    pub use super::IMeshUtils;
     pub use super::MeshUtils_Edge;
     pub use super::IMeshUtils_Edge;
     pub use super::IMeshUtils_EdgeMethods;
-    pub use super::MeshUtils;
-    pub use super::IMeshUtils;
     pub use super::MeshUtils_Pooled_1;
     pub use super::IMeshUtils_Pooled_1;
     pub use super::IMeshUtils_Pooled_1Methods;
+    pub use super::MeshUtils_Vertex;
+    pub use super::IMeshUtils_Vertex;
+    pub use super::IMeshUtils_VertexMethods;
     pub use super::MeshUtils_Face;
     pub use super::IMeshUtils_Face;
     pub use super::IMeshUtils_FaceMethods;

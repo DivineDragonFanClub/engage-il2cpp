@@ -42,21 +42,51 @@ pub fn finish()->Self{Self{value:2}
 #[cfg(feature = "combat-actiontransform-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actiontransform")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionTransform_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionTransform,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionTransform as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionTransform, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:ActionTransform,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ActionTransform as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(ActionTransform, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:ActionTransform,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ActionTransform as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(ActionTransform, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actiontransform")]pub trait IActionTransformMethods:IActionTransform{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc92d0usize)as*mut u8, ::unity2::Il2CppString;
-(ActionTransform)__receiver)}
+__ActionTransform_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(bool, bool)` overload"]fn ctor(self,do_player:impl::core::convert::Into<bool> ,do_enemy:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9320usize)as*mut u8,();
 (ActionTransform)__receiver,(bool)::core::convert::Into::into(do_player),(bool)::core::convert::Into::into(do_enemy))}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9410usize)as*mut u8,();
-(ActionTransform)__receiver)}
+__ActionTransform_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc9510usize)as*mut u8,();
-(ActionTransform)__receiver)}
+__ActionTransform_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Transform()` overload"]fn transform(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ActionTransform as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc95d0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;

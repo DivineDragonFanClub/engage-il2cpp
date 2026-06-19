@@ -18,6 +18,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-godunit-types")]
 pub use __types::*;
 
+#[cfg(feature="app-godunit")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GodUnit_unity2_raw{use super:: * ;
+pub unsafe fn on_serialize(this:GodUnit,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GodUnit as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let inner:extern "C" fn(GodUnit,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn on_deserialize(this:GodUnit,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GodUnit as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let inner:extern "C" fn(GodUnit,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,version,__mi)}
+pub unsafe fn get_sort_key(this:GodUnit,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GodUnit as::unity2::ClassIdentity> ::NAME,"get_SortKey",));
+let inner:extern "C" fn(GodUnit, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_valid(this:GodUnit,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GodUnit as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let inner:extern "C" fn(GodUnit, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-godunit")]impl GodUnit{#[doc="`GetName(crate::app::goddata::GodData)` overload"]pub fn get_name_2(data:impl::core::convert::Into<crate::app::goddata::GodData>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x233f090usize)as*mut u8, ::unity2::Il2CppString;
 (crate::app::goddata::GodData)::core::convert::Into::into(data))}
 }
@@ -659,12 +702,10 @@ pub use __types::*;
 (GodUnit)__receiver,(i32)::core::convert::Into::into(instance_id))}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2345420usize)as*mut u8,();
-(GodUnit)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__GodUnit_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GodUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23458f0usize)as*mut u8,();
-(GodUnit)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+__GodUnit_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
 }
 #[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GodUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2346b10usize)as*mut u8,();
@@ -679,12 +720,10 @@ pub use __types::*;
 (GodUnit)__receiver)}
 }
 #[doc="`get_SortKey()` overload"]fn get_sort_key(self,)->i32{unsafe{let __receiver= <GodUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2346bb0usize)as*mut u8,i32;
-(GodUnit)__receiver)}
+__GodUnit_unity2_raw::get_sort_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsValid()` overload"]fn is_valid(self,)->bool{unsafe{let __receiver= <GodUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2346bd0usize)as*mut u8,bool;
-(GodUnit)__receiver)}
+__GodUnit_unity2_raw::is_valid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ChangeCancel()` overload"]fn change_cancel(self,)->(){unsafe{let __receiver= <GodUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2346c70usize)as*mut u8,();

@@ -26,13 +26,34 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-commonrewardmenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-commonrewardmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CommonRewardMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn build(this:CommonRewardMenuItemContent,menu_item:crate::app::basicmenuitem::BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CommonRewardMenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(CommonRewardMenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item,__mi)}
+pub unsafe fn build_text_color(this:CommonRewardMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <CommonRewardMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildTextColor",));
+let inner:extern "C" fn(CommonRewardMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-commonrewardmenuitemcontent")]pub trait ICommonRewardMenuItemContentMethods:ICommonRewardMenuItemContent{#[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25327e0usize)as*mut u8,();
-(CommonRewardMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+__CommonRewardMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)}
 }
 #[doc="`BuildTextColor()` overload"]fn build_text_color(self,)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2532e60usize)as*mut u8,();
-(CommonRewardMenuItemContent)__receiver)}
+__CommonRewardMenuItemContent_unity2_raw::build_text_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`StartGauge()` overload"]fn start_gauge(self,)->(){unsafe{let __receiver= <CommonRewardMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2531b40usize)as*mut u8,();

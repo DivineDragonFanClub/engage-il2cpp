@@ -18,17 +18,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-versusserverrankeddata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-versusserverrankeddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VersusServerRankedData_unity2_raw{use super:: * ;
+pub unsafe fn serialize(this:VersusServerRankedData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VersusServerRankedData as::unity2::ClassIdentity> ::NAME,"Serialize",));
+let inner:extern "C" fn(VersusServerRankedData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn deserialize(this:VersusServerRankedData,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <VersusServerRankedData as::unity2::ClassIdentity> ::NAME,"Deserialize",));
+let inner:extern "C" fn(VersusServerRankedData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-versusserverrankeddata")]pub trait IVersusServerRankedDataMethods:IVersusServerRankedData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26a62a0usize)as*mut u8,();
 (VersusServerRankedData)__receiver)}
 }
 #[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b82d0usize)as*mut u8,();
-(VersusServerRankedData)__receiver)}
+__VersusServerRankedData_unity2_raw::serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b84e0usize)as*mut u8,bool;
-(VersusServerRankedData)__receiver)}
+__VersusServerRankedData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_EditData()` overload"]fn get_edit_data(self,)->crate::app::mapeditdata::MapEditData{unsafe{let __receiver= <VersusServerRankedData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b88a0usize)as*mut u8,crate::app::mapeditdata::MapEditData;

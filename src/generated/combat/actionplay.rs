@@ -20,25 +20,64 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actionplay-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actionplay")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionPlay_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionPlay,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionPlay as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionPlay, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_abort_by_interrupt(this:ActionPlay,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ActionPlay as::unity2::ClassIdentity> ::NAME,"get_AbortByInterrupt",));
+let inner:extern "C" fn(ActionPlay, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enter(this:ActionPlay,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ActionPlay as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(ActionPlay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:ActionPlay,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ActionPlay as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(ActionPlay, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actionplay")]pub trait IActionPlayMethods:IActionPlay{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8060usize)as*mut u8, ::unity2::Il2CppString;
-(ActionPlay)__receiver)}
+__ActionPlay_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_AbortByInterrupt()` overload"]fn get_abort_by_interrupt(self,)->bool{unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8100usize)as*mut u8,bool;
-(ActionPlay)__receiver)}
+__ActionPlay_unity2_raw::get_abort_by_interrupt(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::combat::character::Character, i32, bool, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,hash:impl::core::convert::Into<i32> ,wait_idle:impl::core::convert::Into<bool> ,start_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc8110usize)as*mut u8,();
 (ActionPlay)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(i32)::core::convert::Into::into(hash),(bool)::core::convert::Into::into(wait_idle),(f32)::core::convert::Into::into(start_time))}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc81a0usize)as*mut u8,();
-(ActionPlay)__receiver)}
+__ActionPlay_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc81c0usize)as*mut u8,();
-(ActionPlay)__receiver)}
+__ActionPlay_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 }
 

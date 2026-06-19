@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="tm_pro-itextpreprocessor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ITextPreprocessor_unity2_raw{use super:: * ;
-pub unsafe fn preprocess_text(this:ITextPreprocessor,text: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("PreprocessText").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","PreprocessText", <ITextPreprocessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn preprocess_text(this:ITextPreprocessor,text: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ITextPreprocessor as::unity2::ClassIdentity> ::NAME,"PreprocessText",));
 let inner:extern "C" fn(ITextPreprocessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -57,10 +57,10 @@ pub fn pool_circle_swim()->Self{Self{value:15}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil.md"))]#[::unity2::class(namespace="App",name="HubUtil")]#[parent(crate::system::object::Object)]pub struct HubUtil{#[static_field]#[rename(name="s_HubParams")]pub s_hub_params:crate::app::hubparams::HubParams,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil_BSpline.md"))]#[::unity2::class(namespace="App",name="HubUtil.BSpline")]#[parent(crate::system::object::Object)]pub struct HubUtil_BSpline{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil.md"))]#[::unity2::class(namespace="App",name="HubUtil")]#[parent(crate::system::object::Object)]pub struct HubUtil{#[static_field]#[rename(name="s_HubParams")]pub s_hub_params:crate::app::hubparams::HubParams,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubutil/HubUtil_TimezoneType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubUtil_TimezoneType{pub value:i32,}
@@ -88,6 +88,42 @@ pub fn max()->Self{Self{value:4}
 
 #[cfg(feature = "app-hubutil-types")]
 pub use __types::*;
+
+#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{#[doc="`Loop(i32, i32, i32)` overload"]pub fn r#loop(n:impl::core::convert::Into<i32> ,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedd40usize)as*mut u8,i32;
+(i32)::core::convert::Into::into(n),(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
+}
+#[doc="`Coefficient(f32)` overload"]pub fn coefficient(t:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedd70usize)as*mut u8,f32;
+(f32)::core::convert::Into::into(t))}
+}
+#[doc="`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]pub fn calc(v:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeddf0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(v),(f32)::core::convert::Into::into(t))}
+}
+#[doc="`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]pub fn calc_loop(v:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedf80usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(v),(f32)::core::convert::Into::into(t))}
+}
+}
+
+#[cfg(feature="app-hubutil")]pub trait IHubUtil_BSplineMethods:IHubUtil_BSpline{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubUtil_BSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2aee130usize)as*mut u8,();
+(HubUtil_BSpline)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubutil")]impl<__T:IHubUtil_BSpline>IHubUtil_BSplineMethods for __T{}
+
+#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{pub fn loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn coefficient_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calc_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubUtil_BSpline), ::core::stringify!(new),));
+ <Self as IHubUtil_BSplineMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-hubutil")]impl HubUtil{#[doc="`get_Params()` overload"]pub fn get_params()->crate::app::hubparams::HubParams{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a5e550usize)as*mut u8,crate::app::hubparams::HubParams;
 )}
@@ -785,52 +821,16 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{#[doc="`Loop(i32, i32, i32)` overload"]pub fn r#loop(n:impl::core::convert::Into<i32> ,min:impl::core::convert::Into<i32> ,max:impl::core::convert::Into<i32>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedd40usize)as*mut u8,i32;
-(i32)::core::convert::Into::into(n),(i32)::core::convert::Into::into(min),(i32)::core::convert::Into::into(max))}
-}
-#[doc="`Coefficient(f32)` overload"]pub fn coefficient(t:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedd70usize)as*mut u8,f32;
-(f32)::core::convert::Into::into(t))}
-}
-#[doc="`Calc(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]pub fn calc(v:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aeddf0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(v),(f32)::core::convert::Into::into(t))}
-}
-#[doc="`CalcLoop(::unity2::Array<crate::unity_engine::vector3::Vector3>, f32)` overload"]pub fn calc_loop(v:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> > ,t:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2aedf80usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(v),(f32)::core::convert::Into::into(t))}
-}
-}
-
-#[cfg(feature="app-hubutil")]pub trait IHubUtil_BSplineMethods:IHubUtil_BSpline{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubUtil_BSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2aee130usize)as*mut u8,();
-(HubUtil_BSpline)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubutil")]impl<__T:IHubUtil_BSpline>IHubUtil_BSplineMethods for __T{}
-
-#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{pub fn loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn coefficient_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn calc_loop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-hubutil")]impl HubUtil_BSpline{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubUtil_BSpline), ::core::stringify!(new),));
- <Self as IHubUtil_BSplineMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-hubutil")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::HubUtil_ConditionType;
-    pub use super::HubUtil;
-    pub use super::IHubUtil;
-    pub use super::IHubUtilMethods;
     pub use super::HubUtil_BSpline;
     pub use super::IHubUtil_BSpline;
     pub use super::IHubUtil_BSplineMethods;
+    pub use super::HubUtil;
+    pub use super::IHubUtil;
+    pub use super::IHubUtilMethods;
     pub use super::HubUtil_TimezoneType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md"))]#[::unity2::class(namespace="App",name="MapSequenceTargetSelect")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencetargetselect::MapSequenceTargetSelect>)]pub struct MapSequenceTargetSelect{#[offset(120)]#[rename(name="m_TargetData")]pub m_target_data:crate::app::maptarget::MapTarget_Data, #[offset(128)]#[rename(name="m_ItemIndex")]pub m_item_index:i32, #[offset(136)]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo, #[offset(144)]#[rename(name="m_BattleCalc")]pub m_battle_calc:crate::app::battlecalculator::BattleCalculator, #[offset(152)]#[rename(name="m_EngageLinkInfo")]pub m_engage_link_info:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_MaskSkill")]pub m_mask_skill:crate::app::skillarray::SkillArray,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencetargetselect/MapSequenceTargetSelect_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceTargetSelect_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceTargetSelect_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceTargetSelect.Label";
@@ -29,9 +32,6 @@ impl::unity2::IlType for MapSequenceTargetSelect_Label{fn il_type()-> &'static::
 impl MapSequenceTargetSelect_Label{pub fn end()->Self{Self{value:0}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencetargetselect/MapSequenceTargetSelect.md"))]#[::unity2::class(namespace="App",name="MapSequenceTargetSelect")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapsequencetargetselect::MapSequenceTargetSelect>)]pub struct MapSequenceTargetSelect{#[offset(120)]#[rename(name="m_TargetData")]pub m_target_data:crate::app::maptarget::MapTarget_Data, #[offset(128)]#[rename(name="m_ItemIndex")]pub m_item_index:i32, #[offset(136)]#[rename(name="m_BattleInfo")]pub m_battle_info:crate::app::battleinfo::BattleInfo, #[offset(144)]#[rename(name="m_BattleCalc")]pub m_battle_calc:crate::app::battlecalculator::BattleCalculator, #[offset(152)]#[rename(name="m_EngageLinkInfo")]pub m_engage_link_info:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_MaskSkill")]pub m_mask_skill:crate::app::skillarray::SkillArray,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencetargetselect/MapSequenceTargetSelect_InfoType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceTargetSelect_InfoType{pub value:i32,}
@@ -62,26 +62,56 @@ pub fn destroy()->Self{Self{value:5}
 #[cfg(feature = "app-mapsequencetargetselect-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapsequencetargetselect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceTargetSelect_unity2_raw{use super:: * ;
+pub unsafe fn get_global_asset_path(this:MapSequenceTargetSelect,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MapSequenceTargetSelect as::unity2::ClassIdentity> ::NAME,"get_GlobalAssetPath",));
+let inner:extern "C" fn(MapSequenceTargetSelect, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_create(this:MapSequenceTargetSelect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceTargetSelect as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapSequenceTargetSelect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapSequenceTargetSelect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceTargetSelect as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapSequenceTargetSelect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapsequencetargetselect")]impl MapSequenceTargetSelect{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f409d0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
 #[cfg(feature="app-mapsequencetargetselect")]pub trait IMapSequenceTargetSelectMethods:IMapSequenceTargetSelect{#[doc="`get_GlobalAssetPath()` overload"]fn get_global_asset_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSequenceTargetSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f358c0usize)as*mut u8, ::unity2::Il2CppString;
-(MapSequenceTargetSelect)__receiver)}
+__MapSequenceTargetSelect_unity2_raw::get_global_asset_path(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSequenceTargetSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f35910usize)as*mut u8,();
 (MapSequenceTargetSelect)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceTargetSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f35b40usize)as*mut u8,();
-(MapSequenceTargetSelect)__receiver)}
+__MapSequenceTargetSelect_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceTargetSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f35cf0usize)as*mut u8,();
-(MapSequenceTargetSelect)__receiver)}
+__MapSequenceTargetSelect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`WaitForLoad()` overload"]fn wait_for_load(self,)->(){unsafe{let __receiver= <MapSequenceTargetSelect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f35e40usize)as*mut u8,();
@@ -409,10 +439,10 @@ this}
 #[cfg(feature = "app-mapsequencetargetselect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSequenceTargetSelect_Label;
     pub use super::MapSequenceTargetSelect;
     pub use super::IMapSequenceTargetSelect;
     pub use super::IMapSequenceTargetSelectMethods;
+    pub use super::MapSequenceTargetSelect_Label;
     pub use super::MapSequenceTargetSelect_InfoType;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

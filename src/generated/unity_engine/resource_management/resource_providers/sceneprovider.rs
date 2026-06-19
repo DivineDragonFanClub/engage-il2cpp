@@ -11,200 +11,18 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="SceneProvider")]#[parent(crate::system::object::Object)]pub struct SceneProvider{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_SceneOp.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="SceneProvider.SceneOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)]pub struct SceneProvider_SceneOp{#[offset(144)]#[rename(name="m_ActivateOnLoad")]pub m_activate_on_load:bool, #[offset(152)]#[rename(name="m_Inst")]pub m_inst:crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance, #[offset(168)]#[rename(name="m_Location")]pub m_location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, #[offset(176)]#[rename(name="m_LoadMode")]pub m_load_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, #[offset(180)]#[rename(name="m_Priority")]pub m_priority:i32, #[offset(184)]#[rename(name="m_DepOp")]pub m_dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > , #[offset(208)]#[rename(name="m_ResourceManager")]pub m_resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_UnloadSceneOp.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="SceneProvider.UnloadSceneOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)]pub struct SceneProvider_UnloadSceneOp{#[offset(144)]#[rename(name="m_Instance")]pub m_instance:crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance, #[offset(160)]#[rename(name="m_sceneLoadHandle")]pub m_scene_load_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider_SceneOp.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="SceneProvider.SceneOp")]#[parent(crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::AsyncOperationBase_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)]pub struct SceneProvider_SceneOp{#[offset(144)]#[rename(name="m_ActivateOnLoad")]pub m_activate_on_load:bool, #[offset(152)]#[rename(name="m_Inst")]pub m_inst:crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance, #[offset(168)]#[rename(name="m_Location")]pub m_location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, #[offset(176)]#[rename(name="m_LoadMode")]pub m_load_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, #[offset(180)]#[rename(name="m_Priority")]pub m_priority:i32, #[offset(184)]#[rename(name="m_DepOp")]pub m_dep_op:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > , #[offset(208)]#[rename(name="m_ResourceManager")]pub m_resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/resource_management/resource_providers/sceneprovider/SceneProvider.md"))]#[::unity2::class(namespace="UnityEngine.ResourceManagement.ResourceProviders",name="SceneProvider")]#[parent(crate::system::object::Object)]pub struct SceneProvider{}
 
 }
 
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SceneProvider_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_provide_scene{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resourcemanager::ResourceManager as::unity2::IlType> ::il_type(), <crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider as::unity2::ClassIdentity> ::class(),"ProvideScene",5,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider as::unity2::ClassIdentity> ::NAME,"ProvideScene",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_release_scene{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resourcemanager::ResourceManager as::unity2::IlType> ::il_type(), <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider as::unity2::ClassIdentity> ::class(),"ReleaseScene",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider as::unity2::ClassIdentity> ::NAME,"ReleaseScene",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]pub trait ISceneProviderMethods:ISceneProvider{#[doc="`ProvideScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]fn provide_scene(self,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,load_mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode> ,activate_on_load:impl::core::convert::Into<bool> ,priority:impl::core::convert::Into<i32>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{unsafe{let __receiver= <SceneProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_unity2_raw::__lookup_provide_scene::get_method_info().method_ptr,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ;
-(SceneProvider)__receiver,(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(resource_manager),(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(load_mode),(bool)::core::convert::Into::into(activate_on_load),(i32)::core::convert::Into::into(priority))}
-}
-#[doc="`ReleaseScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]fn release_scene(self,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,scene_load_handle:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> >)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{unsafe{let __receiver= <SceneProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_unity2_raw::__lookup_release_scene::get_method_info().method_ptr,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ;
-(SceneProvider)__receiver,(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(resource_manager),(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)::core::convert::Into::into(scene_load_handle))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SceneProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(SceneProvider)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl<__T:ISceneProvider>ISceneProviderMethods for __T{}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider{pub fn provide_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn release_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SceneProvider), ::core::stringify!(new),));
- <Self as ISceneProviderMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SceneProvider_UnloadSceneOp_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_init{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"Init",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"Init",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_execute{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"Execute",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"Execute",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke_wait_for_completion{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"InvokeWaitForCompletion",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_unload_scene_completed{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::asyncoperation::AsyncOperation as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"UnloadSceneCompleted",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"UnloadSceneCompleted",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_unload_scene_completed_no_release{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::asyncoperation::AsyncOperation as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"UnloadSceneCompletedNoRelease",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"UnloadSceneCompletedNoRelease",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_progress{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"get_Progress",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"get_Progress",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]pub trait ISceneProvider_UnloadSceneOpMethods:ISceneProvider_UnloadSceneOp{#[doc="`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]fn init(self,scene_load_handle:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> >)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_init::get_method_info().method_ptr,();
-(SceneProvider_UnloadSceneOp)__receiver,(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)::core::convert::Into::into(scene_load_handle))}
-}
-#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_execute::get_method_info().method_ptr,();
-(SceneProvider_UnloadSceneOp)__receiver)}
-}
-#[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_invoke_wait_for_completion::get_method_info().method_ptr,bool;
-(SceneProvider_UnloadSceneOp)__receiver)}
-}
-#[doc="`UnloadSceneCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]fn unload_scene_completed(self,obj:impl::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_unload_scene_completed::get_method_info().method_ptr,();
-(SceneProvider_UnloadSceneOp)__receiver,(crate::unity_engine::asyncoperation::AsyncOperation)::core::convert::Into::into(obj))}
-}
-#[doc="`UnloadSceneCompletedNoRelease(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]fn unload_scene_completed_no_release(self,obj:impl::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_unload_scene_completed_no_release::get_method_info().method_ptr,();
-(SceneProvider_UnloadSceneOp)__receiver,(crate::unity_engine::asyncoperation::AsyncOperation)::core::convert::Into::into(obj))}
-}
-#[doc="`get_Progress()` overload"]fn get_progress(self,)->f32{unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_get_progress::get_method_info().method_ptr,f32;
-(SceneProvider_UnloadSceneOp)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(SceneProvider_UnloadSceneOp)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl<__T:ISceneProvider_UnloadSceneOp>ISceneProvider_UnloadSceneOpMethods for __T{}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider_UnloadSceneOp{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn unload_scene_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn unload_scene_completed_no_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider_UnloadSceneOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SceneProvider_UnloadSceneOp), ::core::stringify!(new),));
- <Self as ISceneProvider_UnloadSceneOpMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SceneProvider_SceneOp_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
@@ -217,16 +35,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_download_status{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"GetDownloadStatus",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"GetDownloadStatus",e),}
-}
-}
+pub unsafe fn get_download_status(this:SceneProvider_SceneOp,visited:crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"GetDownloadStatus",));
+let inner:extern "C" fn(SceneProvider_SceneOp,crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,visited,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_init{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"Init",5,param_types,false,)}
@@ -237,46 +55,46 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"Init",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke_wait_for_completion{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"InvokeWaitForCompletion",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_dependencies{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"GetDependencies",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"GetDependencies",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_debug_name{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"get_DebugName",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"get_DebugName",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_execute{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"Execute",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"Execute",e),}
-}
-}
+pub unsafe fn invoke_wait_for_completion(this:SceneProvider_SceneOp,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let inner:extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_dependencies(this:SceneProvider_SceneOp,deps:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"GetDependencies",));
+let inner:extern "C" fn(SceneProvider_SceneOp,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,deps,__mi)}
+pub unsafe fn get_debug_name(this:SceneProvider_SceneOp,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"get_DebugName",));
+let inner:extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn execute(this:SceneProvider_SceneOp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_internal_load_scene{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type(), <crate::unity_engine::scene_management::loadscenemode::LoadSceneMode as::unity2::IlType> ::il_type(), <bool as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"InternalLoadScene",5,param_types,false,)}
@@ -297,36 +115,36 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"InternalLoad",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_destroy{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"Destroy",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"Destroy",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_progress{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"get_Progress",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"get_Progress",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_unity_engine_resource_management_i_update_receiver_update{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<f32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_SceneOp as::unity2::ClassIdentity> ::class(),"UnityEngine.ResourceManagement.IUpdateReceiver.Update",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"UnityEngine.ResourceManagement.IUpdateReceiver.Update",e),}
-}
-}
+pub unsafe fn destroy(this:SceneProvider_SceneOp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"Destroy",));
+let inner:extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_progress(this:SceneProvider_SceneOp,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"get_Progress",));
+let inner:extern "C" fn(SceneProvider_SceneOp, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_resource_management_i_update_receiver_update(this:SceneProvider_SceneOp,unscaled_delta_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <SceneProvider_SceneOp as::unity2::ClassIdentity> ::NAME,"UnityEngine.ResourceManagement.IUpdateReceiver.Update",));
+let inner:extern "C" fn(SceneProvider_SceneOp,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unscaled_delta_time,__mi)}
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]pub trait ISceneProvider_SceneOpMethods:ISceneProvider_SceneOp{#[doc="`.ctor(crate::unity_engine::resource_management::resourcemanager::ResourceManager)` overload"]fn ctor(self,rm:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager>)->(){unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -334,28 +152,23 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (SceneProvider_SceneOp)__receiver,(crate::unity_engine::resource_management::resourcemanager::ResourceManager)::core::convert::Into::into(rm))}
 }
 #[doc="`GetDownloadStatus(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)` overload"]fn get_download_status(self,visited:impl::core::convert::Into<crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> >)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus{unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_get_download_status::get_method_info().method_ptr,crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus;
-(SceneProvider_SceneOp)__receiver,(crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object>)::core::convert::Into::into(visited))}
+__SceneProvider_SceneOp_unity2_raw::get_download_status(__receiver, ::core::convert::Into::into(visited), ::core::option::Option::None)}
 }
 #[doc="`Init(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>>)` overload"]fn init(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,load_mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode> ,activate_on_load:impl::core::convert::Into<bool> ,priority:impl::core::convert::Into<i32> ,dep_op:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> > >)->(){unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_init::get_method_info().method_ptr,();
 (SceneProvider_SceneOp)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(load_mode),(bool)::core::convert::Into::into(activate_on_load),(i32)::core::convert::Into::into(priority),(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)::core::convert::Into::into(dep_op))}
 }
 #[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_invoke_wait_for_completion::get_method_info().method_ptr,bool;
-(SceneProvider_SceneOp)__receiver)}
+__SceneProvider_SceneOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDependencies(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)` overload"]fn get_dependencies(self,deps:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> >)->(){unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_get_dependencies::get_method_info().method_ptr,();
-(SceneProvider_SceneOp)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle>)::core::convert::Into::into(deps))}
+__SceneProvider_SceneOp_unity2_raw::get_dependencies(__receiver, ::core::convert::Into::into(deps), ::core::option::Option::None)}
 }
 #[doc="`get_DebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_get_debug_name::get_method_info().method_ptr, ::unity2::Il2CppString;
-(SceneProvider_SceneOp)__receiver)}
+__SceneProvider_SceneOp_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_execute::get_method_info().method_ptr,();
-(SceneProvider_SceneOp)__receiver)}
+__SceneProvider_SceneOp_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InternalLoadScene(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, bool, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]fn internal_load_scene(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,loading_from_bundle:impl::core::convert::Into<bool> ,load_mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode> ,activate_on_load:impl::core::convert::Into<bool> ,priority:impl::core::convert::Into<i32>)->crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance{unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_internal_load_scene::get_method_info().method_ptr,crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance;
@@ -366,16 +179,13 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (SceneProvider_SceneOp)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(bool)::core::convert::Into::into(loading_from_bundle),(crate::unity_engine::scene_management::loadscenemode::LoadSceneMode)::core::convert::Into::into(mode))}
 }
 #[doc="`Destroy()` overload"]fn destroy(self,)->(){unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_destroy::get_method_info().method_ptr,();
-(SceneProvider_SceneOp)__receiver)}
+__SceneProvider_SceneOp_unity2_raw::destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Progress()` overload"]fn get_progress(self,)->f32{unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_get_progress::get_method_info().method_ptr,f32;
-(SceneProvider_SceneOp)__receiver)}
+__SceneProvider_SceneOp_unity2_raw::get_progress(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.ResourceManagement.IUpdateReceiver.Update(f32)` overload"]fn unity_engine_resource_management_i_update_receiver_update(self,unscaled_delta_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <SceneProvider_SceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SceneProvider_SceneOp_unity2_raw::__lookup_unity_engine_resource_management_i_update_receiver_update::get_method_info().method_ptr,();
-(SceneProvider_SceneOp)__receiver,(f32)::core::convert::Into::into(unscaled_delta_time))}
+__SceneProvider_SceneOp_unity2_raw::unity_engine_resource_management_i_update_receiver_update(__receiver, ::core::convert::Into::into(unscaled_delta_time), ::core::option::Option::None)}
 }
 }
 
@@ -402,18 +212,195 @@ pub fn unity_engine_resource_management_i_update_receiver_update_method_info()->
 this}
 }
 
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SceneProvider_UnloadSceneOp_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_init{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"Init",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"Init",e),}
+}
+}
+pub unsafe fn execute(this:SceneProvider_UnloadSceneOp,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(SceneProvider_UnloadSceneOp, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn invoke_wait_for_completion(this:SceneProvider_UnloadSceneOp,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let inner:extern "C" fn(SceneProvider_UnloadSceneOp, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_unload_scene_completed{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::asyncoperation::AsyncOperation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"UnloadSceneCompleted",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"UnloadSceneCompleted",e),}
+}
+}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_unload_scene_completed_no_release{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::asyncoperation::AsyncOperation as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),"UnloadSceneCompletedNoRelease",1,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"UnloadSceneCompletedNoRelease",e),}
+}
+}
+pub unsafe fn get_progress(this:SceneProvider_UnloadSceneOp,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,"get_Progress",));
+let inner:extern "C" fn(SceneProvider_UnloadSceneOp, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SceneProvider_UnloadSceneOp as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]pub trait ISceneProvider_UnloadSceneOpMethods:ISceneProvider_UnloadSceneOp{#[doc="`Init(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]fn init(self,scene_load_handle:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> >)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_init::get_method_info().method_ptr,();
+(SceneProvider_UnloadSceneOp)__receiver,(crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)::core::convert::Into::into(scene_load_handle))}
+}
+#[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SceneProvider_UnloadSceneOp_unity2_raw::execute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SceneProvider_UnloadSceneOp_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
+}
+#[doc="`UnloadSceneCompleted(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]fn unload_scene_completed(self,obj:impl::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_unload_scene_completed::get_method_info().method_ptr,();
+(SceneProvider_UnloadSceneOp)__receiver,(crate::unity_engine::asyncoperation::AsyncOperation)::core::convert::Into::into(obj))}
+}
+#[doc="`UnloadSceneCompletedNoRelease(crate::unity_engine::asyncoperation::AsyncOperation)` overload"]fn unload_scene_completed_no_release(self,obj:impl::core::convert::Into<crate::unity_engine::asyncoperation::AsyncOperation>)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_unload_scene_completed_no_release::get_method_info().method_ptr,();
+(SceneProvider_UnloadSceneOp)__receiver,(crate::unity_engine::asyncoperation::AsyncOperation)::core::convert::Into::into(obj))}
+}
+#[doc="`get_Progress()` overload"]fn get_progress(self,)->f32{unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SceneProvider_UnloadSceneOp_unity2_raw::get_progress(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SceneProvider_UnloadSceneOp as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SceneProvider_UnloadSceneOp_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(SceneProvider_UnloadSceneOp)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl<__T:ISceneProvider_UnloadSceneOp>ISceneProvider_UnloadSceneOpMethods for __T{}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider_UnloadSceneOp{pub fn init_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn invoke_wait_for_completion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn unload_scene_completed_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn unload_scene_completed_no_release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_progress_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider_UnloadSceneOp{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SceneProvider_UnloadSceneOp), ::core::stringify!(new),));
+ <Self as ISceneProvider_UnloadSceneOpMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SceneProvider_unity2_raw{use super:: * ;
+pub unsafe fn provide_scene(this:SceneProvider,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,load_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,activate_on_load:bool,priority:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SceneProvider as::unity2::ClassIdentity> ::NAME,"ProvideScene",));
+let inner:extern "C" fn(SceneProvider,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,bool,i32, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,resource_manager,location,load_mode,activate_on_load,priority,__mi)}
+pub unsafe fn release_scene(this:SceneProvider,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,scene_load_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SceneProvider as::unity2::ClassIdentity> ::NAME,"ReleaseScene",));
+let inner:extern "C" fn(SceneProvider,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> , ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,resource_manager,scene_load_handle,__mi)}
+#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
+ ::unity2::lookup::method_info_on_class_with_signature(<SceneProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <SceneProvider as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]pub trait ISceneProviderMethods:ISceneProvider{#[doc="`ProvideScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::unity_engine::scene_management::loadscenemode::LoadSceneMode, bool, i32)` overload"]fn provide_scene(self,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,load_mode:impl::core::convert::Into<crate::unity_engine::scene_management::loadscenemode::LoadSceneMode> ,activate_on_load:impl::core::convert::Into<bool> ,priority:impl::core::convert::Into<i32>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{unsafe{let __receiver= <SceneProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SceneProvider_unity2_raw::provide_scene(__receiver, ::core::convert::Into::into(resource_manager), ::core::convert::Into::into(location), ::core::convert::Into::into(load_mode), ::core::convert::Into::into(activate_on_load), ::core::convert::Into::into(priority), ::core::option::Option::None)}
+}
+#[doc="`ReleaseScene(crate::unity_engine::resource_management::resourcemanager::ResourceManager, crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>)` overload"]fn release_scene(self,resource_manager:impl::core::convert::Into<crate::unity_engine::resource_management::resourcemanager::ResourceManager> ,scene_load_handle:impl::core::convert::Into<crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> >)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{unsafe{let __receiver= <SceneProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SceneProvider_unity2_raw::release_scene(__receiver, ::core::convert::Into::into(resource_manager), ::core::convert::Into::into(scene_load_handle), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SceneProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__SceneProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(SceneProvider)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl<__T:ISceneProvider>ISceneProviderMethods for __T{}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider{pub fn provide_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn release_scene_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="unity_engine-resource_management-resource_providers-sceneprovider")]impl SceneProvider{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SceneProvider), ::core::stringify!(new),));
+ <Self as ISceneProviderMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "unity_engine-resource_management-resource_providers-sceneprovider")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SceneProvider;
-    pub use super::ISceneProvider;
-    pub use super::ISceneProviderMethods;
-    pub use super::SceneProvider_UnloadSceneOp;
-    pub use super::ISceneProvider_UnloadSceneOp;
-    pub use super::ISceneProvider_UnloadSceneOpMethods;
     pub use super::SceneProvider_SceneOp;
     pub use super::ISceneProvider_SceneOp;
     pub use super::ISceneProvider_SceneOpMethods;
+    pub use super::SceneProvider_UnloadSceneOp;
+    pub use super::ISceneProvider_UnloadSceneOp;
+    pub use super::ISceneProvider_UnloadSceneOpMethods;
+    pub use super::SceneProvider;
+    pub use super::ISceneProvider;
+    pub use super::ISceneProviderMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::resource_management::async_operations::asyncoperationbase_1::IAsyncOperationBase_1;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

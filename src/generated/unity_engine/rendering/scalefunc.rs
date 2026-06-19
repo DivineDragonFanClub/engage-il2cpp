@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-rendering-scalefunc-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-scalefunc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScaleFunc_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:ScaleFunc,size:crate::unity_engine::vector2int::Vector2Int,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector2int::Vector2Int{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ScaleFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(ScaleFunc,crate::unity_engine::vector2int::Vector2Int, ::unity2::OptionalMethod,)->crate::unity_engine::vector2int::Vector2Int= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,size,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-scalefunc")]pub trait IScaleFuncMethods:IScaleFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ScaleFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e0bb0usize)as*mut u8,();
 (ScaleFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::vector2int::Vector2Int)` overload"]fn invoke(self,size:impl::core::convert::Into<crate::unity_engine::vector2int::Vector2Int>)->crate::unity_engine::vector2int::Vector2Int{unsafe{let __receiver= <ScaleFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e0bd0usize)as*mut u8,crate::unity_engine::vector2int::Vector2Int;
-(ScaleFunc)__receiver,(crate::unity_engine::vector2int::Vector2Int)::core::convert::Into::into(size))}
+__ScaleFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)}
 }
 }
 

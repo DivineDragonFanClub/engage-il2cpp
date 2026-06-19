@@ -17,10 +17,43 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-customyieldinstruction")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CustomYieldInstruction_unity2_raw{use super:: * ;
-pub unsafe fn get_keep_waiting(this:CustomYieldInstruction,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_keepWaiting").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_keepWaiting", <CustomYieldInstruction as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_keep_waiting(this:CustomYieldInstruction,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CustomYieldInstruction as::unity2::ClassIdentity> ::NAME,"get_keepWaiting",));
 let inner:extern "C" fn(CustomYieldInstruction, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_current(this:CustomYieldInstruction,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CustomYieldInstruction as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let inner:extern "C" fn(CustomYieldInstruction, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn move_next(this:CustomYieldInstruction,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CustomYieldInstruction as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let inner:extern "C" fn(CustomYieldInstruction, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset(this:CustomYieldInstruction,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CustomYieldInstruction as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(CustomYieldInstruction, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -30,16 +63,13 @@ inner(this,__mi)}
 __CustomYieldInstruction_unity2_raw::get_keep_waiting(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a470usize)as*mut u8,crate::system::object::Object;
-(CustomYieldInstruction)__receiver)}
+__CustomYieldInstruction_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a480usize)as*mut u8,bool;
-(CustomYieldInstruction)__receiver)}
+__CustomYieldInstruction_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a490usize)as*mut u8,();
-(CustomYieldInstruction)__receiver)}
+__CustomYieldInstruction_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CustomYieldInstruction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c4a4a0usize)as*mut u8,();

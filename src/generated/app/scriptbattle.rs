@@ -51,6 +51,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-scriptbattle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptBattle_ScriptCombatSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:ScriptBattle_ScriptCombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ScriptBattle_ScriptCombatSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(ScriptBattle_ScriptCombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:ScriptBattle_ScriptCombatSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ScriptBattle_ScriptCombatSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(ScriptBattle_ScriptCombatSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-scriptbattle")]impl ScriptBattle_ScriptCombatSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::persondata::PersonData, crate::app::persondata::PersonData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,person_a:impl::core::convert::Into<crate::app::persondata::PersonData> ,person_b:impl::core::convert::Into<crate::app::persondata::PersonData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d67ed0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::persondata::PersonData)::core::convert::Into::into(person_a),(crate::app::persondata::PersonData)::core::convert::Into::into(person_b))}
 }
@@ -61,12 +84,10 @@ this}
 (ScriptBattle_ScriptCombatSequence)__receiver,(crate::app::persondata::PersonData)::core::convert::Into::into(person_a),(crate::app::persondata::PersonData)::core::convert::Into::into(person_b))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ScriptBattle_ScriptCombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d679a0usize)as*mut u8,();
-(ScriptBattle_ScriptCombatSequence)__receiver)}
+__ScriptBattle_ScriptCombatSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ScriptBattle_ScriptCombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d67dc0usize)as*mut u8,();
-(ScriptBattle_ScriptCombatSequence)__receiver)}
+__ScriptBattle_ScriptCombatSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BattleStart()` overload"]fn battle_start(self,)->(){unsafe{let __receiver= <ScriptBattle_ScriptCombatSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d67ec0usize)as*mut u8,();

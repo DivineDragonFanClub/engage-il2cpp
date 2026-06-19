@@ -17,37 +17,97 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangecountmenu/RefineShopExchangeCountMenu_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeCountMenu.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopExchangeCountMenu_CloseEventHandler{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangecountmenu/RefineShopExchangeCountMenu.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeCountMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RefineShopExchangeCountMenu{#[static_field]#[rename(name="ValueMin")]pub value_min:i32, #[static_field]#[rename(name="SourceValueMin")]pub source_value_min:i32, #[offset(236)]#[rename(name="m_Times")]pub m_times:i32, #[offset(240)]#[rename(name="m_Min")]pub m_min:bool, #[offset(241)]#[rename(name="m_Max")]pub m_max:bool, #[offset(248)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu_CloseEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangecountmenu/RefineShopExchangeCountMenu_CloseEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeCountMenu.CloseEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopExchangeCountMenu_CloseEventHandler{}
 
 }
 
 #[cfg(feature = "app-refineshopexchangecountmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-refineshopexchangecountmenu")]pub trait IRefineShopExchangeCountMenu_CloseEventHandlerMethods:IRefineShopExchangeCountMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afa630usize)as*mut u8,();
-(RefineShopExchangeCountMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afa650usize)as*mut u8,();
-(RefineShopExchangeCountMenu_CloseEventHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-refineshopexchangecountmenu")]impl<__T:IRefineShopExchangeCountMenu_CloseEventHandler>IRefineShopExchangeCountMenu_CloseEventHandlerMethods for __T{}
-
-#[cfg(feature="app-refineshopexchangecountmenu")]impl RefineShopExchangeCountMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refineshopexchangecountmenu")]impl RefineShopExchangeCountMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefineShopExchangeCountMenu_CloseEventHandler), ::core::stringify!(new),));
- <Self as IRefineShopExchangeCountMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="app-refineshopexchangecountmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopExchangeCountMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:RefineShopExchangeCountMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_up(this:RefineShopExchangeCountMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"KeyUp",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_down(this:RefineShopExchangeCountMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"KeyDown",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_left(this:RefineShopExchangeCountMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:RefineShopExchangeCountMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn custom_call(this:RefineShopExchangeCountMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:RefineShopExchangeCountMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:RefineShopExchangeCountMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefineShopExchangeCountMenu as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-refineshopexchangecountmenu")]impl RefineShopExchangeCountMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::refineshopexchangecountmenucontent::RefineShopExchangeCountMenuContent, crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::itemrefineexchangedata::ItemRefineExchangeData, crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler, crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler, crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu_CloseEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::refineshopexchangecountmenucontent::RefineShopExchangeCountMenuContent> ,source_material_data:impl::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData> ,target_material_data:impl::core::convert::Into<crate::app::itemrefineexchangedata::ItemRefineExchangeData> ,select_event_handler:impl::core::convert::Into<crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_SelectEventHandler> ,decide_event_handler:impl::core::convert::Into<crate::app::refineshopexchangecountmenuitem::RefineShopExchangeCountMenuItem_DecideEventHandler> ,close_event_handler:impl::core::convert::Into<crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu_CloseEventHandler>)->crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x295f4f0usize)as*mut u8,crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu;
@@ -135,40 +195,32 @@ this}
 (RefineShopExchangeCountMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::refineshopexchangecountmenucontent::RefineShopExchangeCountMenuContent)::core::convert::Into::into(menu_content),(crate::app::itemrefineexchangedata::ItemRefineExchangeData)::core::convert::Into::into(source_material_data),(crate::app::itemrefineexchangedata::ItemRefineExchangeData)::core::convert::Into::into(target_material_data),(crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu_CloseEventHandler)::core::convert::Into::into(close_event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x295fd20usize)as*mut u8, ::unity2::Il2CppString;
-(RefineShopExchangeCountMenu)__receiver)}
+__RefineShopExchangeCountMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ResetValues()` overload"]fn reset_values(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x295fd70usize)as*mut u8,();
 (RefineShopExchangeCountMenu)__receiver)}
 }
 #[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29601f0usize)as*mut u8,();
-(RefineShopExchangeCountMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefineShopExchangeCountMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960200usize)as*mut u8,();
-(RefineShopExchangeCountMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefineShopExchangeCountMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960210usize)as*mut u8,();
-(RefineShopExchangeCountMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefineShopExchangeCountMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960410usize)as*mut u8,();
-(RefineShopExchangeCountMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RefineShopExchangeCountMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960610usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefineShopExchangeCountMenu)__receiver)}
+__RefineShopExchangeCountMenu_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960a80usize)as*mut u8,();
-(RefineShopExchangeCountMenu)__receiver)}
+__RefineShopExchangeCountMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2960aa0usize)as*mut u8,();
-(RefineShopExchangeCountMenu)__receiver)}
+__RefineShopExchangeCountMenu_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcValue(i32)` overload"]fn calc_value(self,value_diff:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <RefineShopExchangeCountMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x295f980usize)as*mut u8,bool;
@@ -218,15 +270,50 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-refineshopexchangecountmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopExchangeCountMenu_CloseEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefineShopExchangeCountMenu_CloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineShopExchangeCountMenu_CloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefineShopExchangeCountMenu_CloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-refineshopexchangecountmenu")]pub trait IRefineShopExchangeCountMenu_CloseEventHandlerMethods:IRefineShopExchangeCountMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afa630usize)as*mut u8,();
+(RefineShopExchangeCountMenu_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineShopExchangeCountMenu_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RefineShopExchangeCountMenu_CloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-refineshopexchangecountmenu")]impl<__T:IRefineShopExchangeCountMenu_CloseEventHandler>IRefineShopExchangeCountMenu_CloseEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refineshopexchangecountmenu")]impl RefineShopExchangeCountMenu_CloseEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refineshopexchangecountmenu")]impl RefineShopExchangeCountMenu_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopExchangeCountMenu_CloseEventHandler), ::core::stringify!(new),));
+ <Self as IRefineShopExchangeCountMenu_CloseEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "app-refineshopexchangecountmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineShopExchangeCountMenu_CloseEventHandler;
-    pub use super::IRefineShopExchangeCountMenu_CloseEventHandler;
-    pub use super::IRefineShopExchangeCountMenu_CloseEventHandlerMethods;
     pub use super::RefineShopExchangeCountMenu;
     pub use super::IRefineShopExchangeCountMenu;
     pub use super::IRefineShopExchangeCountMenuMethods;
+    pub use super::RefineShopExchangeCountMenu_CloseEventHandler;
+    pub use super::IRefineShopExchangeCountMenu_CloseEventHandler;
+    pub use super::IRefineShopExchangeCountMenu_CloseEventHandlerMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;

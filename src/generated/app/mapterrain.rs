@@ -13,10 +13,10 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterrain/MapTerrain_LayerData.md"))]#[::unity2::class(namespace="App",name="MapTerrain.LayerData")]#[parent(crate::system::object::Object)]pub struct MapTerrain_LayerData{#[offset(16)]#[rename(name="X")]pub x:u8, #[offset(17)]#[rename(name="Y")]pub y:u8, #[offset(18)]#[rename(name="W")]pub w:u8, #[offset(19)]#[rename(name="H")]pub h:u8, #[offset(20)]#[rename(name="Group")]pub group:i32, #[offset(24)]#[rename(name="Attr")]pub attr: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterrain/MapTerrain_OverlapData.md"))]#[::unity2::class(namespace="App",name="MapTerrain.OverlapData")]#[parent(crate::system::object::Object)]pub struct MapTerrain_OverlapData{#[offset(16)]#[rename(name="X")]pub x:u8, #[offset(17)]#[rename(name="Y")]pub y:u8, #[offset(24)]#[rename(name="Attr")]pub attr: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterrain/MapTerrain_LayerData.md"))]#[::unity2::class(namespace="App",name="MapTerrain.LayerData")]#[parent(crate::system::object::Object)]pub struct MapTerrain_LayerData{#[offset(16)]#[rename(name="X")]pub x:u8, #[offset(17)]#[rename(name="Y")]pub y:u8, #[offset(18)]#[rename(name="W")]pub w:u8, #[offset(19)]#[rename(name="H")]pub h:u8, #[offset(20)]#[rename(name="Group")]pub group:i32, #[offset(24)]#[rename(name="Attr")]pub attr: ::unity2::Il2CppString,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapterrain/MapTerrain.md"))]#[::unity2::class(namespace="App",name="MapTerrain")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct MapTerrain{#[static_field]#[rename(name="Root")]pub root: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_X")]pub m_x:i32, #[offset(28)]#[rename(name="m_Z")]pub m_z:i32, #[offset(32)]#[rename(name="m_Width")]pub m_width:i32, #[offset(36)]#[rename(name="m_Height")]pub m_height:i32, #[offset(40)]#[rename(name="m_Layers")]pub m_layers:crate::system::collections::generic::list_1::List_1<crate::app::mapterrain::MapTerrain_LayerData> , #[offset(48)]#[rename(name="m_Overlaps")]pub m_overlaps:crate::system::collections::generic::list_1::List_1<crate::app::mapterrain::MapTerrain_OverlapData> , #[offset(56)]#[rename(name="m_Terrains")]pub m_terrains: ::unity2::Array< ::unity2::Il2CppString> ,}
@@ -25,24 +25,6 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 
 #[cfg(feature = "app-mapterrain-types")]
 pub use __types::*;
-
-#[cfg(feature="app-mapterrain")]pub trait IMapTerrain_LayerDataMethods:IMapTerrain_LayerData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTerrain_LayerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42f00usize)as*mut u8,();
-(MapTerrain_LayerData)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapterrain")]impl<__T:IMapTerrain_LayerData>IMapTerrain_LayerDataMethods for __T{}
-
-#[cfg(feature="app-mapterrain")]impl MapTerrain_LayerData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapterrain")]impl MapTerrain_LayerData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapTerrain_LayerData), ::core::stringify!(new),));
- <Self as IMapTerrain_LayerDataMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-mapterrain")]pub trait IMapTerrain_OverlapDataMethods:IMapTerrain_OverlapData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTerrain_OverlapData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42f10usize)as*mut u8,();
@@ -59,6 +41,24 @@ this}
 ::{}
  failed to instantiate", ::core::stringify!(MapTerrain_OverlapData), ::core::stringify!(new),));
  <Self as IMapTerrain_OverlapDataMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapterrain")]pub trait IMapTerrain_LayerDataMethods:IMapTerrain_LayerData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapTerrain_LayerData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e42f00usize)as*mut u8,();
+(MapTerrain_LayerData)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapterrain")]impl<__T:IMapTerrain_LayerData>IMapTerrain_LayerDataMethods for __T{}
+
+#[cfg(feature="app-mapterrain")]impl MapTerrain_LayerData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapterrain")]impl MapTerrain_LayerData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapTerrain_LayerData), ::core::stringify!(new),));
+ <Self as IMapTerrain_LayerDataMethods> ::ctor(this,);
 this}
 }
 
@@ -103,12 +103,12 @@ this}
 #[cfg(feature = "app-mapterrain")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapTerrain_LayerData;
-    pub use super::IMapTerrain_LayerData;
-    pub use super::IMapTerrain_LayerDataMethods;
     pub use super::MapTerrain_OverlapData;
     pub use super::IMapTerrain_OverlapData;
     pub use super::IMapTerrain_OverlapDataMethods;
+    pub use super::MapTerrain_LayerData;
+    pub use super::IMapTerrain_LayerData;
+    pub use super::IMapTerrain_LayerDataMethods;
     pub use super::MapTerrain;
     pub use super::IMapTerrain;
     pub use super::IMapTerrainMethods;

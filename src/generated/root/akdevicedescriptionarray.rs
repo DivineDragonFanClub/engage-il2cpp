@@ -18,25 +18,64 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akdevicedescriptionarray-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akdevicedescriptionarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkDeviceDescriptionArray_unity2_raw{use super:: * ;
+pub unsafe fn get_structure_size(this:AkDeviceDescriptionArray,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkDeviceDescriptionArray as::unity2::ClassIdentity> ::NAME,"get_StructureSize",));
+let inner:extern "C" fn(AkDeviceDescriptionArray, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn default_construct_at_int_ptr(this:AkDeviceDescriptionArray,address: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AkDeviceDescriptionArray as::unity2::ClassIdentity> ::NAME,"DefaultConstructAtIntPtr",));
+let inner:extern "C" fn(AkDeviceDescriptionArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,__mi)}
+pub unsafe fn create_new_reference_from_int_ptr(this:AkDeviceDescriptionArray,address: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akdevicedescription::AkDeviceDescription{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AkDeviceDescriptionArray as::unity2::ClassIdentity> ::NAME,"CreateNewReferenceFromIntPtr",));
+let inner:extern "C" fn(AkDeviceDescriptionArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->crate::root::akdevicedescription::AkDeviceDescription= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,__mi)}
+pub unsafe fn clone_into_reference_from_int_ptr(this:AkDeviceDescriptionArray,address: ::unity2::IntPtr,other:crate::root::akdevicedescription::AkDeviceDescription,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AkDeviceDescriptionArray as::unity2::ClassIdentity> ::NAME,"CloneIntoReferenceFromIntPtr",));
+let inner:extern "C" fn(AkDeviceDescriptionArray, ::unity2::IntPtr,crate::root::akdevicedescription::AkDeviceDescription, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,other,__mi)}
+}
+
 #[cfg(feature="root-akdevicedescriptionarray")]pub trait IAkDeviceDescriptionArrayMethods:IAkDeviceDescriptionArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkDeviceDescriptionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16ad0usize)as*mut u8,();
 (AkDeviceDescriptionArray)__receiver,(i32)::core::convert::Into::into(count))}
 }
 #[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkDeviceDescriptionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16b30usize)as*mut u8,i32;
-(AkDeviceDescriptionArray)__receiver)}
+__AkDeviceDescriptionArray_unity2_raw::get_structure_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"]fn default_construct_at_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkDeviceDescriptionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16ba0usize)as*mut u8,();
-(AkDeviceDescriptionArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+__AkDeviceDescriptionArray_unity2_raw::default_construct_at_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::option::Option::None)}
 }
 #[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akdevicedescription::AkDeviceDescription{unsafe{let __receiver= <AkDeviceDescriptionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16c10usize)as*mut u8,crate::root::akdevicedescription::AkDeviceDescription;
-(AkDeviceDescriptionArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+__AkDeviceDescriptionArray_unity2_raw::create_new_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::option::Option::None)}
 }
 #[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akdevicedescription::AkDeviceDescription)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akdevicedescription::AkDeviceDescription>)->(){unsafe{let __receiver= <AkDeviceDescriptionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f16c80usize)as*mut u8,();
-(AkDeviceDescriptionArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address),(crate::root::akdevicedescription::AkDeviceDescription)::core::convert::Into::into(other))}
+__AkDeviceDescriptionArray_unity2_raw::clone_into_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::convert::Into::into(other), ::core::option::Option::None)}
 }
 }
 

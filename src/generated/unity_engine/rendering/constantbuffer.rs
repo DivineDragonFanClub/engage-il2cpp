@@ -9,34 +9,51 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ConstantBuffer.TypedConstantBuffer`1")]#[parent(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase)]#[parent(crate::system::object::Object)]pub struct ConstantBuffer_TypedConstantBuffer_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_GlobalBindings")]pub m_global_bindings:crate::system::collections::generic::hashset_1::HashSet_1<i32> , #[rename(name="m_Data")]pub m_data: ::unity2::Array<T0> , #[static_field]#[rename(name="s_Instance")]pub s_instance:crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0> , #[rename(name="m_GPUConstantBuffer")]pub m_gpu_constant_buffer:crate::unity_engine::computebuffer::ComputeBuffer,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ConstantBuffer.ConstantBufferBase")]#[parent(crate::system::object::Object)]pub struct ConstantBuffer_ConstantBufferBase{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/constantbuffer/ConstantBuffer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ConstantBuffer")]#[parent(crate::system::object::Object)]pub struct ConstantBuffer{#[static_field]#[rename(name="m_RegisteredConstantBuffers")]pub m_registered_constant_buffers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/constantbuffer/ConstantBuffer_ConstantBufferBase.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ConstantBuffer.ConstantBufferBase")]#[parent(crate::system::object::Object)]pub struct ConstantBuffer_ConstantBufferBase{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/constantbuffer/ConstantBuffer_TypedConstantBuffer_1.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="ConstantBuffer.TypedConstantBuffer`1")]#[parent(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_ConstantBufferBase)]#[parent(crate::system::object::Object)]pub struct ConstantBuffer_TypedConstantBuffer_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_GlobalBindings")]pub m_global_bindings:crate::system::collections::generic::hashset_1::HashSet_1<i32> , #[rename(name="m_Data")]pub m_data: ::unity2::Array<T0> , #[static_field]#[rename(name="s_Instance")]pub s_instance:crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0> , #[rename(name="m_GPUConstantBuffer")]pub m_gpu_constant_buffer:crate::unity_engine::computebuffer::ComputeBuffer,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-rendering-constantbuffer")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>ConstantBuffer_TypedConstantBuffer_1<T0>{#[doc="`get_instance()` overload"]#[method(name="get_instance",args=0)]pub fn get_instance()->crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0> ;
- #[doc="`set_instance(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>)` overload"]#[method(name="set_instance",args=1)]pub fn set_instance(value:crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>)->();
- #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
- #[doc="`UpdateData(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutT0)` overload"]#[method(name="UpdateData",args=2)]pub fn update_data(self,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,data: *mut T0)->();
- #[doc="`SetGlobal(crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]#[method(name="SetGlobal",args=2)]pub fn set_global(self,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,shader_id:i32)->();
- #[doc="`Set(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader, i32)` overload"]#[method(name="Set",args=3)]pub fn set(self,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,cs:crate::unity_engine::computeshader::ComputeShader,shader_id:i32)->();
- #[doc="`Set(crate::unity_engine::material::Material, i32)` overload"]#[method(name="Set",args=2)]pub fn set_2(self,mat:crate::unity_engine::material::Material,shader_id:i32)->();
- #[doc="`Release()` overload"]#[method(name="Release",args=0)]pub fn release(self,)->();
- #[doc="`.cctor()` overload"]#[method(name=".cctor",args=0)]pub fn cctor()->();
+#[cfg(feature="unity_engine-rendering-constantbuffer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConstantBuffer_ConstantBufferBase_unity2_raw{use super:: * ;
+pub unsafe fn release(this:ConstantBuffer_ConstantBufferBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ConstantBuffer_ConstantBufferBase as::unity2::ClassIdentity> ::NAME,"Release",));
+let inner:extern "C" fn(ConstantBuffer_ConstantBufferBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
-#[cfg(feature="unity_engine-rendering-constantbuffer")]impl<T0: ::unity2::ClassIdentity>ConstantBuffer_TypedConstantBuffer_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="unity_engine-rendering-constantbuffer")]pub trait IConstantBuffer_ConstantBufferBaseMethods:IConstantBuffer_ConstantBufferBase{#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <ConstantBuffer_ConstantBufferBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ConstantBuffer_ConstantBufferBase_unity2_raw::release(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConstantBuffer_ConstantBufferBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x33e9980usize)as*mut u8,();
+(ConstantBuffer_ConstantBufferBase)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-constantbuffer")]impl<__T:IConstantBuffer_ConstantBufferBase>IConstantBuffer_ConstantBufferBaseMethods for __T{}
+
+#[cfg(feature="unity_engine-rendering-constantbuffer")]impl ConstantBuffer_ConstantBufferBase{pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-rendering-constantbuffer")]impl ConstantBuffer_ConstantBufferBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(ConstantBuffer_TypedConstantBuffer_1), ::core::stringify!(new),));
- <Self as IConstantBuffer_TypedConstantBuffer_1Methods<T0> > ::ctor(this,);
+ failed to instantiate", ::core::stringify!(ConstantBuffer_ConstantBufferBase), ::core::stringify!(new),));
+ <Self as IConstantBuffer_ConstantBufferBaseMethods> ::ctor(this,);
 this}
 }
 
@@ -212,50 +229,36 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="unity_engine-rendering-constantbuffer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConstantBuffer_ConstantBufferBase_unity2_raw{use super:: * ;
-pub unsafe fn release(this:ConstantBuffer_ConstantBufferBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Release").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Release", <ConstantBuffer_ConstantBufferBase as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(ConstantBuffer_ConstantBufferBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
+#[cfg(feature="unity_engine-rendering-constantbuffer")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>ConstantBuffer_TypedConstantBuffer_1<T0>{#[doc="`get_instance()` overload"]#[method(name="get_instance",args=0)]pub fn get_instance()->crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0> ;
+ #[doc="`set_instance(crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>)` overload"]#[method(name="set_instance",args=1)]pub fn set_instance(value:crate::unity_engine::rendering::constantbuffer::ConstantBuffer_TypedConstantBuffer_1<T0>)->();
+ #[doc="`.ctor()` overload"]#[method(name=".ctor",args=0)]pub fn ctor(self,)->();
+ #[doc="`UpdateData(crate::unity_engine::rendering::commandbuffer::CommandBuffer, *mutT0)` overload"]#[method(name="UpdateData",args=2)]pub fn update_data(self,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,data: *mut T0)->();
+ #[doc="`SetGlobal(crate::unity_engine::rendering::commandbuffer::CommandBuffer, i32)` overload"]#[method(name="SetGlobal",args=2)]pub fn set_global(self,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,shader_id:i32)->();
+ #[doc="`Set(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::computeshader::ComputeShader, i32)` overload"]#[method(name="Set",args=3)]pub fn set(self,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,cs:crate::unity_engine::computeshader::ComputeShader,shader_id:i32)->();
+ #[doc="`Set(crate::unity_engine::material::Material, i32)` overload"]#[method(name="Set",args=2)]pub fn set_2(self,mat:crate::unity_engine::material::Material,shader_id:i32)->();
+ #[doc="`Release()` overload"]#[method(name="Release",args=0)]pub fn release(self,)->();
+ #[doc="`.cctor()` overload"]#[method(name=".cctor",args=0)]pub fn cctor()->();
 }
 
-#[cfg(feature="unity_engine-rendering-constantbuffer")]pub trait IConstantBuffer_ConstantBufferBaseMethods:IConstantBuffer_ConstantBufferBase{#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <ConstantBuffer_ConstantBufferBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__ConstantBuffer_ConstantBufferBase_unity2_raw::release(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConstantBuffer_ConstantBufferBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e9980usize)as*mut u8,();
-(ConstantBuffer_ConstantBufferBase)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-constantbuffer")]impl<__T:IConstantBuffer_ConstantBufferBase>IConstantBuffer_ConstantBufferBaseMethods for __T{}
-
-#[cfg(feature="unity_engine-rendering-constantbuffer")]impl ConstantBuffer_ConstantBufferBase{pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-rendering-constantbuffer")]impl ConstantBuffer_ConstantBufferBase{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="unity_engine-rendering-constantbuffer")]impl<T0: ::unity2::ClassIdentity>ConstantBuffer_TypedConstantBuffer_1<T0>{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(ConstantBuffer_ConstantBufferBase), ::core::stringify!(new),));
- <Self as IConstantBuffer_ConstantBufferBaseMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(ConstantBuffer_TypedConstantBuffer_1), ::core::stringify!(new),));
+ <Self as IConstantBuffer_TypedConstantBuffer_1Methods<T0> > ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "unity_engine-rendering-constantbuffer")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConstantBuffer_TypedConstantBuffer_1;
-    pub use super::IConstantBuffer_TypedConstantBuffer_1;
-    pub use super::IConstantBuffer_TypedConstantBuffer_1Methods;
-    pub use super::ConstantBuffer;
-    pub use super::IConstantBuffer;
-    pub use super::IConstantBufferMethods;
     pub use super::ConstantBuffer_ConstantBufferBase;
     pub use super::IConstantBuffer_ConstantBufferBase;
     pub use super::IConstantBuffer_ConstantBufferBaseMethods;
+    pub use super::ConstantBuffer;
+    pub use super::IConstantBuffer;
+    pub use super::IConstantBufferMethods;
+    pub use super::ConstantBuffer_TypedConstantBuffer_1;
+    pub use super::IConstantBuffer_TypedConstantBuffer_1;
+    pub use super::IConstantBuffer_TypedConstantBuffer_1Methods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

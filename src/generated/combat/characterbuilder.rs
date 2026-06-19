@@ -26,6 +26,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "combat-characterbuilder-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-characterbuilder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CharacterBuilder_unity2_raw{use super:: * ;
+pub unsafe fn co_build_hierarchy(this:CharacterBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CharacterBuilder as::unity2::ClassIdentity> ::NAME,"CoBuildHierarchy",));
+let inner:extern "C" fn(CharacterBuilder, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_hierarchy(this:CharacterBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CharacterBuilder as::unity2::ClassIdentity> ::NAME,"BuildHierarchy",));
+let inner:extern "C" fn(CharacterBuilder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unload_d(this:CharacterBuilder,chr:crate::unity_engine::transform::Transform,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CharacterBuilder as::unity2::ClassIdentity> ::NAME,"UnloadD",));
+let inner:extern "C" fn(CharacterBuilder,crate::unity_engine::transform::Transform, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,chr,__mi)}
+}
+
 #[cfg(feature="combat-characterbuilder")]impl CharacterBuilder{#[doc="`Validate(crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController)` overload"]pub fn validate(aoc:impl::core::convert::Into<crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27d7bd0usize)as*mut u8,();
 (crate::unity_engine::animatoroverridecontroller::AnimatorOverrideController)::core::convert::Into::into(aoc))}
 }
@@ -185,12 +218,10 @@ pub use __types::*;
 (CharacterBuilder)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`CoBuildHierarchy()` overload"]fn co_build_hierarchy(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <CharacterBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27d61e0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(CharacterBuilder)__receiver)}
+__CharacterBuilder_unity2_raw::co_build_hierarchy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildHierarchy()` overload"]fn build_hierarchy(self,)->(){unsafe{let __receiver= <CharacterBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27d6260usize)as*mut u8,();
-(CharacterBuilder)__receiver)}
+__CharacterBuilder_unity2_raw::build_hierarchy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildBaseHierarchy()` overload"]fn build_base_hierarchy(self,)->(){unsafe{let __receiver= <CharacterBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27d64c0usize)as*mut u8,();
@@ -209,8 +240,7 @@ pub use __types::*;
 (CharacterBuilder)__receiver)}
 }
 #[doc="`UnloadD(crate::unity_engine::transform::Transform)` overload"]fn unload_d(self,chr:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <CharacterBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27d7f90usize)as*mut u8,();
-(CharacterBuilder)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(chr))}
+__CharacterBuilder_unity2_raw::unload_d(__receiver, ::core::convert::Into::into(chr), ::core::option::Option::None)}
 }
 #[doc="`Others()` overload"]fn others(self,)->(){unsafe{let __receiver= <CharacterBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27d7280usize)as*mut u8,();

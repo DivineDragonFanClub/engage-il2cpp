@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagicon/TalkTagIcon.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagIcon")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagIcon{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagicon::TalkTagIcon_TagID, #[offset(24)]#[rename(name="m_KindName")]pub m_kind_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagicon/TalkTagIcon_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagIcon_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagIcon_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagIcon.TagID";
@@ -35,22 +32,55 @@ pub fn system()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagicon/TalkTagIcon.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagIcon")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagIcon{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagicon::TalkTagIcon_TagID, #[offset(24)]#[rename(name="m_KindName")]pub m_kind_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
+
 }
 
 #[cfg(feature = "app-talk3_d-talktagicon-types")]
 pub use __types::*;
 
+#[cfg(feature="app-talk3_d-talktagicon")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkTagIcon_unity2_raw{use super:: * ;
+pub unsafe fn initialize(this:TalkTagIcon,talk_ptr:crate::app::talk3_d::talkptr::TalkPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TalkTagIcon as::unity2::ClassIdentity> ::NAME,"Initialize",));
+let inner:extern "C" fn(TalkTagIcon,crate::app::talk3_d::talkptr::TalkPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,talk_ptr,__mi)}
+pub unsafe fn execute(this:TalkTagIcon,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TalkTagIcon as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(TalkTagIcon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_result(this:TalkTagIcon,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TalkTagIcon as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let inner:extern "C" fn(TalkTagIcon, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-talk3_d-talktagicon")]pub trait ITalkTagIconMethods:ITalkTagIcon{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9610usize)as*mut u8,();
-(TalkTagIcon)__receiver,(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+__TalkTagIcon_unity2_raw::initialize(__receiver, ::core::convert::Into::into(talk_ptr), ::core::option::Option::None)}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9680usize)as*mut u8,();
-(TalkTagIcon)__receiver)}
+__TalkTagIcon_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d98b0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
-(TalkTagIcon)__receiver)}
+__TalkTagIcon_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d98c0usize)as*mut u8,();
@@ -76,10 +106,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktagicon")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkTagIcon_TagID;
     pub use super::TalkTagIcon;
     pub use super::ITalkTagIcon;
     pub use super::ITalkTagIconMethods;
-    pub use super::TalkTagIcon_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

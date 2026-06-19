@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-situation_converter-convertsky-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-situation_converter-convertsky")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConvertSky_unity2_raw{use super:: * ;
+pub unsafe fn on_damage(this:ConvertSky,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ConvertSky as::unity2::ClassIdentity> ::NAME,"OnDamage",));
+let inner:extern "C" fn(ConvertSky, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-situation_converter-convertsky")]pub trait IConvertSkyMethods:IConvertSky{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertSky as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25435f0usize)as*mut u8,();
 (ConvertSky)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
 }
 #[doc="`OnDamage()` overload"]fn on_damage(self,)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertSky as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543600usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConvertSky)__receiver)}
+__ConvertSky_unity2_raw::on_damage(__receiver, ::core::option::Option::None)}
 }
 }
 

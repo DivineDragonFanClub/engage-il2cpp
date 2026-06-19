@@ -17,41 +17,18 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DialogMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampVisibilitySettingDialog.DialogMenuItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct ProfileCardStampVisibilitySettingDialog_DialogMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampVisibilitySettingDialog")]#[parent(crate::system::object::Object)]pub struct ProfileCardStampVisibilitySettingDialog{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampVisibilitySettingDialog.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ProfileCardStampVisibilitySettingDialog_DecideEventHandler{}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampvisibilitysettingdialog/ProfileCardStampVisibilitySettingDialog_DialogMenuItem.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampVisibilitySettingDialog.DialogMenuItem")]#[parent(crate::app::basicdialogitem::BasicDialogItem)]pub struct ProfileCardStampVisibilitySettingDialog_DialogMenuItem{#[offset(112)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler,}
+
 }
 
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog-types")]
 pub use __types::*;
-
-#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]pub trait IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods:IProfileCardStampVisibilitySettingDialog_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226ce60usize)as*mut u8,();
-(ProfileCardStampVisibilitySettingDialog_DialogMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226cea0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ProfileCardStampVisibilitySettingDialog_DialogMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]impl<__T:IProfileCardStampVisibilitySettingDialog_DialogMenuItem>IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods for __T{}
-
-#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]impl ProfileCardStampVisibilitySettingDialog_DialogMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]impl ProfileCardStampVisibilitySettingDialog_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,decide_event_handler:crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ProfileCardStampVisibilitySettingDialog_DialogMenuItem), ::core::stringify!(new),));
- <Self as IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods> ::ctor(this,message,decide_event_handler);
-this}
-}
 
 #[cfg(feature="app-profilecardstampvisibilitysettingdialog")]impl ProfileCardStampVisibilitySettingDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bfbb90usize)as*mut u8,crate::app::basicdialog::BasicDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -77,13 +54,25 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:ProfileCardStampVisibilitySettingDialog_DecideEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(ProfileCardStampVisibilitySettingDialog_DecideEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-profilecardstampvisibilitysettingdialog")]pub trait IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods:IProfileCardStampVisibilitySettingDialog_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x226cbf0usize)as*mut u8,();
 (ProfileCardStampVisibilitySettingDialog_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <ProfileCardStampVisibilitySettingDialog_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x226cc10usize)as*mut u8,();
-(ProfileCardStampVisibilitySettingDialog_DecideEventHandler)__receiver)}
+__ProfileCardStampVisibilitySettingDialog_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -100,18 +89,53 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:ProfileCardStampVisibilitySettingDialog_DialogMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(ProfileCardStampVisibilitySettingDialog_DialogMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]pub trait IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods:IProfileCardStampVisibilitySettingDialog_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,decide_event_handler:impl::core::convert::Into<crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler>)->(){unsafe{let __receiver= <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x226ce60usize)as*mut u8,();
+(ProfileCardStampVisibilitySettingDialog_DialogMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ProfileCardStampVisibilitySettingDialog_DialogMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ProfileCardStampVisibilitySettingDialog_DialogMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]impl<__T:IProfileCardStampVisibilitySettingDialog_DialogMenuItem>IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods for __T{}
+
+#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]impl ProfileCardStampVisibilitySettingDialog_DialogMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-profilecardstampvisibilitysettingdialog")]impl ProfileCardStampVisibilitySettingDialog_DialogMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)` — overload selector"]pub fn new(message: ::unity2::Il2CppString,decide_event_handler:crate::app::profilecardstampvisibilitysettingdialog::ProfileCardStampVisibilitySettingDialog_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ProfileCardStampVisibilitySettingDialog_DialogMenuItem), ::core::stringify!(new),));
+ <Self as IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods> ::ctor(this,message,decide_event_handler);
+this}
+}
+
 #[cfg(feature = "app-profilecardstampvisibilitysettingdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ProfileCardStampVisibilitySettingDialog_DialogMenuItem;
-    pub use super::IProfileCardStampVisibilitySettingDialog_DialogMenuItem;
-    pub use super::IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods;
     pub use super::ProfileCardStampVisibilitySettingDialog;
     pub use super::IProfileCardStampVisibilitySettingDialog;
     pub use super::IProfileCardStampVisibilitySettingDialogMethods;
     pub use super::ProfileCardStampVisibilitySettingDialog_DecideEventHandler;
     pub use super::IProfileCardStampVisibilitySettingDialog_DecideEventHandler;
     pub use super::IProfileCardStampVisibilitySettingDialog_DecideEventHandlerMethods;
+    pub use super::ProfileCardStampVisibilitySettingDialog_DialogMenuItem;
+    pub use super::IProfileCardStampVisibilitySettingDialog_DialogMenuItem;
+    pub use super::IProfileCardStampVisibilitySettingDialog_DialogMenuItemMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::delegate::IDelegate;

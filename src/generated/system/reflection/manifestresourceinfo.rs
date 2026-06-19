@@ -16,21 +16,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-reflection-manifestresourceinfo-types")]
 pub use __types::*;
 
+#[cfg(feature="system-reflection-manifestresourceinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ManifestResourceInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_referenced_assembly(this:ManifestResourceInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ManifestResourceInfo as::unity2::ClassIdentity> ::NAME,"get_ReferencedAssembly",));
+let inner:extern "C" fn(ManifestResourceInfo, ::unity2::OptionalMethod,)->crate::system::reflection::assembly::Assembly= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_file_name(this:ManifestResourceInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ManifestResourceInfo as::unity2::ClassIdentity> ::NAME,"get_FileName",));
+let inner:extern "C" fn(ManifestResourceInfo, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_resource_location(this:ManifestResourceInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::resourcelocation::ResourceLocation{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ManifestResourceInfo as::unity2::ClassIdentity> ::NAME,"get_ResourceLocation",));
+let inner:extern "C" fn(ManifestResourceInfo, ::unity2::OptionalMethod,)->crate::system::reflection::resourcelocation::ResourceLocation= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-reflection-manifestresourceinfo")]pub trait IManifestResourceInfoMethods:IManifestResourceInfo{#[doc="`.ctor(crate::system::reflection::assembly::Assembly, ::unity2::Il2CppString, crate::system::reflection::resourcelocation::ResourceLocation)` overload"]fn ctor(self,containing_assembly:impl::core::convert::Into<crate::system::reflection::assembly::Assembly> ,containing_file_name:impl::core::convert::Into< ::unity2::Il2CppString> ,resource_location:impl::core::convert::Into<crate::system::reflection::resourcelocation::ResourceLocation>)->(){unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x336b270usize)as*mut u8,();
 (ManifestResourceInfo)__receiver,(crate::system::reflection::assembly::Assembly)::core::convert::Into::into(containing_assembly),(::unity2::Il2CppString)::core::convert::Into::into(containing_file_name),(crate::system::reflection::resourcelocation::ResourceLocation)::core::convert::Into::into(resource_location))}
 }
 #[doc="`get_ReferencedAssembly()` overload"]fn get_referenced_assembly(self,)->crate::system::reflection::assembly::Assembly{unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x336b2d0usize)as*mut u8,crate::system::reflection::assembly::Assembly;
-(ManifestResourceInfo)__receiver)}
+__ManifestResourceInfo_unity2_raw::get_referenced_assembly(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_FileName()` overload"]fn get_file_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x336b2e0usize)as*mut u8, ::unity2::Il2CppString;
-(ManifestResourceInfo)__receiver)}
+__ManifestResourceInfo_unity2_raw::get_file_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ResourceLocation()` overload"]fn get_resource_location(self,)->crate::system::reflection::resourcelocation::ResourceLocation{unsafe{let __receiver= <ManifestResourceInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x336b2f0usize)as*mut u8,crate::system::reflection::resourcelocation::ResourceLocation;
-(ManifestResourceInfo)__receiver)}
+__ManifestResourceInfo_unity2_raw::get_resource_location(__receiver, ::core::option::Option::None)}
 }
 }
 

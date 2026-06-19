@@ -19,15 +19,56 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymessagemenucontent/RelayMessageMenuContent.md"))]#[::unity2::class(namespace="App",name="RelayMessageMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RelayMessageMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::relaymessagemenucontent::RelayMessageMenuContent_KindIcon> , #[offset(240)]#[rename(name="m_ActiveKindIcon")]pub m_active_kind_icon:crate::system::collections::generic::list_1::List_1<crate::app::relaymessagemenucontent::RelayMessageMenuContent_KindIcon> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymessagemenucontent/RelayMessageMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="RelayMessageMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct RelayMessageMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::relaystampdata::RelayStampData_Kinds,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relaymessagemenucontent/RelayMessageMenuContent.md"))]#[::unity2::class(namespace="App",name="RelayMessageMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct RelayMessageMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(232)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::relaymessagemenucontent::RelayMessageMenuContent_KindIcon> , #[offset(240)]#[rename(name="m_ActiveKindIcon")]pub m_active_kind_icon:crate::system::collections::generic::list_1::List_1<crate::app::relaymessagemenucontent::RelayMessageMenuContent_KindIcon> ,}
 
 }
 
 #[cfg(feature = "app-relaymessagemenucontent-types")]
 pub use __types::*;
+
+#[cfg(feature="app-relaymessagemenucontent")]pub trait IRelayMessageMenuContent_KindIconMethods:IRelayMessageMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayMessageMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b063f0usize)as*mut u8,();
+(RelayMessageMenuContent_KindIcon)__receiver)}
+}
+}
+
+#[cfg(feature="app-relaymessagemenucontent")]impl<__T:IRelayMessageMenuContent_KindIcon>IRelayMessageMenuContent_KindIconMethods for __T{}
+
+#[cfg(feature="app-relaymessagemenucontent")]impl RelayMessageMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-relaymessagemenucontent")]impl RelayMessageMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RelayMessageMenuContent_KindIcon), ::core::stringify!(new),));
+ <Self as IRelayMessageMenuContent_KindIconMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-relaymessagemenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayMessageMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn get_menu_item_content_max(this:RelayMessageMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RelayMessageMenuContent as::unity2::ClassIdentity> ::NAME,"GetMenuItemContentMax",));
+let inner:extern "C" fn(RelayMessageMenuContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:RelayMessageMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RelayMessageMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(RelayMessageMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+}
 
 #[cfg(feature="app-relaymessagemenucontent")]impl RelayMessageMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2000a90usize)as*mut u8,();
 )}
@@ -44,12 +85,10 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-relaymessagemenucontent")]pub trait IRelayMessageMenuContentMethods:IRelayMessageMenuContent{#[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <RelayMessageMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20010c0usize)as*mut u8,i32;
-(RelayMessageMenuContent)__receiver)}
+__RelayMessageMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <RelayMessageMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20010e0usize)as*mut u8,f32;
-(RelayMessageMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__RelayMessageMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`Setup(crate::app::relaystampdata::RelayStampData_Kinds)` overload"]fn setup(self,kind:impl::core::convert::Into<crate::app::relaystampdata::RelayStampData_Kinds>)->(){unsafe{let __receiver= <RelayMessageMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2000c10usize)as*mut u8,();
@@ -100,33 +139,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-relaymessagemenucontent")]pub trait IRelayMessageMenuContent_KindIconMethods:IRelayMessageMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RelayMessageMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b063f0usize)as*mut u8,();
-(RelayMessageMenuContent_KindIcon)__receiver)}
-}
-}
-
-#[cfg(feature="app-relaymessagemenucontent")]impl<__T:IRelayMessageMenuContent_KindIcon>IRelayMessageMenuContent_KindIconMethods for __T{}
-
-#[cfg(feature="app-relaymessagemenucontent")]impl RelayMessageMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-relaymessagemenucontent")]impl RelayMessageMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RelayMessageMenuContent_KindIcon), ::core::stringify!(new),));
- <Self as IRelayMessageMenuContent_KindIconMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-relaymessagemenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayMessageMenuContent;
-    pub use super::IRelayMessageMenuContent;
-    pub use super::IRelayMessageMenuContentMethods;
     pub use super::RelayMessageMenuContent_KindIcon;
     pub use super::IRelayMessageMenuContent_KindIcon;
     pub use super::IRelayMessageMenuContent_KindIconMethods;
+    pub use super::RelayMessageMenuContent;
+    pub use super::IRelayMessageMenuContent;
+    pub use super::IRelayMessageMenuContentMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

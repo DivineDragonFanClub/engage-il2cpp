@@ -23,13 +23,13 @@ use crate::unity_engine::rendering::renderpipeline::{IRenderPipeline,RenderPipel
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_Renderer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="UniversalRenderPipeline.Profiling.Pipeline.Renderer")]#[parent(crate::system::object::Object)]pub struct UniversalRenderPipeline_Profiling_Pipeline_Renderer{#[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="setupCullingParameters")]pub setup_culling_parameters:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="setup")]pub setup:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="UniversalRenderPipeline.Profiling.Pipeline")]#[parent(crate::system::object::Object)]pub struct UniversalRenderPipeline_Profiling_Pipeline{#[static_field]#[rename(name="beginFrameRendering")]pub begin_frame_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="endFrameRendering")]pub end_frame_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="beginCameraRendering")]pub begin_camera_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="endCameraRendering")]pub end_camera_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="initializeCameraData")]pub initialize_camera_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeStackedCameraData")]pub initialize_stacked_camera_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeAdditionalCameraData")]pub initialize_additional_camera_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeRenderingData")]pub initialize_rendering_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeShadowData")]pub initialize_shadow_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeLightData")]pub initialize_light_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="getPerObjectLightFlags")]pub get_per_object_light_flags:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="getMainLightIndex")]pub get_main_light_index:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="setupPerFrameShaderConstants")]pub setup_per_frame_shader_constants:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="UniversalRenderPipeline")]#[parent(crate::unity_engine::rendering::renderpipeline::RenderPipeline)]pub struct UniversalRenderPipeline{#[static_field]#[rename(name="k_ShaderTagName")]pub k_shader_tag_name: ::unity2::Il2CppString, #[static_field]#[rename(name="k_ProfilingUnknownSamplerName")]pub k_profiling_unknown_sampler_name: ::unity2::Il2CppString, #[static_field]#[rename(name="m_XRSystem")]pub m_xr_system:crate::unity_engine::rendering::universal::xrsystem::XRSystem, #[static_field]#[rename(name="customBeginFrameRendering")]pub custom_begin_frame_rendering:crate::system::action_2::Action_2<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera> > , #[static_field]#[rename(name="k_MaxVisibleAdditionalLightsMobileShaderLevelLessThan45")]pub k_max_visible_additional_lights_mobile_shader_level_less_than45:i32, #[static_field]#[rename(name="k_MaxVisibleAdditionalLightsMobile")]pub k_max_visible_additional_lights_mobile:i32, #[static_field]#[rename(name="k_MaxVisibleAdditionalLightsNonMobile")]pub k_max_visible_additional_lights_non_mobile:i32, #[static_field]#[rename(name="k_DefaultLightPosition")]pub k_default_light_position:crate::unity_engine::vector4::Vector4, #[static_field]#[rename(name="k_DefaultLightColor")]pub k_default_light_color:crate::unity_engine::vector4::Vector4, #[static_field]#[rename(name="k_DefaultLightAttenuation")]pub k_default_light_attenuation:crate::unity_engine::vector4::Vector4, #[static_field]#[rename(name="k_DefaultLightSpotDirection")]pub k_default_light_spot_direction:crate::unity_engine::vector4::Vector4, #[static_field]#[rename(name="k_DefaultLightsProbeChannel")]pub k_default_lights_probe_channel:crate::unity_engine::vector4::Vector4, #[static_field]#[rename(name="m_ShadowBiasData")]pub m_shadow_bias_data:crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> , #[offset(24)]#[rename(name="cameraComparison")]pub camera_comparison:crate::system::comparison_1::Comparison_1<crate::unity_engine::camera::Camera> , #[static_field]#[rename(name="lightsDelegate")]pub lights_delegate:crate::unity_engine::experimental::global_illumination::lightmapping::Lightmapping_RequestLightsDelegate, #[static_field]#[rename(name="ResolutionRateScreenOnGpuSaveMode")]pub resolution_rate_screen_on_gpu_save_mode:f32, #[static_field]#[rename(name="ResolutionRateRTOnGpuSaveMode")]pub resolution_rate_rt_on_gpu_save_mode:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline_XR.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="UniversalRenderPipeline.Profiling.Pipeline.XR")]#[parent(crate::system::object::Object)]pub struct UniversalRenderPipeline_Profiling_Pipeline_XR{#[static_field]#[rename(name="mirrorView")]pub mirror_view:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/universalrenderpipeline/UniversalRenderPipeline_Profiling_Pipeline.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal",name="UniversalRenderPipeline.Profiling.Pipeline")]#[parent(crate::system::object::Object)]pub struct UniversalRenderPipeline_Profiling_Pipeline{#[static_field]#[rename(name="beginFrameRendering")]pub begin_frame_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="endFrameRendering")]pub end_frame_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="beginCameraRendering")]pub begin_camera_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="endCameraRendering")]pub end_camera_rendering:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="k_Name")]pub k_name: ::unity2::Il2CppString, #[static_field]#[rename(name="initializeCameraData")]pub initialize_camera_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeStackedCameraData")]pub initialize_stacked_camera_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeAdditionalCameraData")]pub initialize_additional_camera_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeRenderingData")]pub initialize_rendering_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeShadowData")]pub initialize_shadow_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="initializeLightData")]pub initialize_light_data:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="getPerObjectLightFlags")]pub get_per_object_light_flags:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="getMainLightIndex")]pub get_main_light_index:crate::unity_engine::rendering::profilingsampler::ProfilingSampler, #[static_field]#[rename(name="setupPerFrameShaderConstants")]pub setup_per_frame_shader_constants:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
 
 }
 
@@ -72,12 +72,27 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 #[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]impl UniversalRenderPipeline_Profiling_Pipeline_Renderer{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]impl UniversalRenderPipeline_Profiling_Pipeline{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbb020usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]impl UniversalRenderPipeline_Profiling_Pipeline{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UniversalRenderPipeline_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:UniversalRenderPipeline,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <UniversalRenderPipeline as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(UniversalRenderPipeline,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn render(this:UniversalRenderPipeline,render_context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,cameras: ::unity2::Array<crate::unity_engine::camera::Camera> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UniversalRenderPipeline as::unity2::ClassIdentity> ::NAME,"Render",));
+let inner:extern "C" fn(UniversalRenderPipeline,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,render_context,cameras,__mi)}
 }
 
 #[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]impl UniversalRenderPipeline{#[doc="`add_customBeginFrameRendering(crate::system::action_2::Action_2<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,::unity2::Array<crate::unity_engine::camera::Camera>>)` overload"]pub fn add_custom_begin_frame_rendering(value:impl::core::convert::Into<crate::system::action_2::Action_2<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera> > >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ca5680usize)as*mut u8,();
@@ -204,12 +219,10 @@ __out_0.assume_init()}
 (UniversalRenderPipeline)__receiver,(crate::unity_engine::rendering::universal::universalrenderpipelineasset::UniversalRenderPipelineAsset)::core::convert::Into::into(asset))}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <UniversalRenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca6180usize)as*mut u8,();
-(UniversalRenderPipeline)__receiver,(bool)::core::convert::Into::into(disposing))}
+__UniversalRenderPipeline_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`Render(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]fn render(self,render_context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext> ,cameras:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::camera::Camera> >)->(){unsafe{let __receiver= <UniversalRenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca64a0usize)as*mut u8,();
-(UniversalRenderPipeline)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(render_context),(::unity2::Array<crate::unity_engine::camera::Camera>)::core::convert::Into::into(cameras))}
+__UniversalRenderPipeline_unity2_raw::render(__receiver, ::core::convert::Into::into(render_context), ::core::convert::Into::into(cameras), ::core::option::Option::None)}
 }
 #[doc="`SortCameras(::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]fn sort_cameras(self,cameras:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::camera::Camera> >)->(){unsafe{let __receiver= <UniversalRenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ca7120usize)as*mut u8,();
@@ -273,6 +286,14 @@ this}
 #[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]impl UniversalRenderPipeline_Profiling_Pipeline_XR{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
+#[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]impl UniversalRenderPipeline_Profiling_Pipeline{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cbb020usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-universal-universalrenderpipeline")]impl UniversalRenderPipeline_Profiling_Pipeline{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-rendering-universal-universalrenderpipeline")]
 #[doc(hidden)]
 pub mod prelude {
@@ -284,13 +305,13 @@ pub mod prelude {
     pub use super::IUniversalRenderPipeline_Profiling;
     pub use super::UniversalRenderPipeline_Profiling_Pipeline_Renderer;
     pub use super::IUniversalRenderPipeline_Profiling_Pipeline_Renderer;
-    pub use super::UniversalRenderPipeline_Profiling_Pipeline;
-    pub use super::IUniversalRenderPipeline_Profiling_Pipeline;
     pub use super::UniversalRenderPipeline;
     pub use super::IUniversalRenderPipeline;
     pub use super::IUniversalRenderPipelineMethods;
     pub use super::UniversalRenderPipeline_Profiling_Pipeline_XR;
     pub use super::IUniversalRenderPipeline_Profiling_Pipeline_XR;
+    pub use super::UniversalRenderPipeline_Profiling_Pipeline;
+    pub use super::IUniversalRenderPipeline_Profiling_Pipeline;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::rendering::renderpipeline::IRenderPipeline;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

@@ -18,13 +18,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapbinder-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapbinder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapBinder_unity2_raw{use super:: * ;
+pub unsafe fn on_bind(this:MapBinder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapBinder as::unity2::ClassIdentity> ::NAME,"OnBind",));
+let inner:extern "C" fn(MapBinder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_unbind(this:MapBinder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapBinder as::unity2::ClassIdentity> ::NAME,"OnUnbind",));
+let inner:extern "C" fn(MapBinder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapbinder")]pub trait IMapBinderMethods:IMapBinder{#[doc="`OnBind()` overload"]fn on_bind(self,)->(){unsafe{let __receiver= <MapBinder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x299a080usize)as*mut u8,();
-(MapBinder)__receiver)}
+__MapBinder_unity2_raw::on_bind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUnbind()` overload"]fn on_unbind(self,)->(){unsafe{let __receiver= <MapBinder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x299a090usize)as*mut u8,();
-(MapBinder)__receiver)}
+__MapBinder_unity2_raw::on_unbind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapBinder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x299a0a0usize)as*mut u8,();

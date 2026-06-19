@@ -23,9 +23,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind.md"))]#[::unity2::class(namespace="App",name="MapMind")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapmind::MapMind>)]pub struct MapMind{#[static_field]#[rename(name="RouteMax")]pub route_max:i32, #[offset(25)]#[rename(name="m_UnitIndex")]pub m_unit_index:u8, #[offset(26)]#[rename(name="m_FirstUnitIndex")]pub m_first_unit_index:u8, #[offset(27)]#[rename(name="m_FirstX")]pub m_first_x:i8, #[offset(28)]#[rename(name="m_FirstZ")]pub m_first_z:i8, #[offset(29)]#[rename(name="m_UnitShowX")]pub m_unit_show_x:i8, #[offset(30)]#[rename(name="m_UnitShowZ")]pub m_unit_show_z:i8, #[offset(31)]#[rename(name="m_X")]pub m_x:i8, #[offset(32)]#[rename(name="m_Z")]pub m_z:i8, #[offset(36)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(40)]#[rename(name="m_AttackX")]pub m_attack_x:i8, #[offset(41)]#[rename(name="m_AttackZ")]pub m_attack_z:i8, #[offset(42)]#[rename(name="m_ItemIndex")]pub m_item_index:i8, #[offset(43)]#[rename(name="m_TargetUnitIndex")]pub m_target_unit_index:u8, #[offset(44)]#[rename(name="m_TargetX")]pub m_target_x:i8, #[offset(45)]#[rename(name="m_TargetZ")]pub m_target_z:i8, #[offset(46)]#[rename(name="m_FocusX")]pub m_focus_x:i8, #[offset(47)]#[rename(name="m_FocusZ")]pub m_focus_z:i8, #[offset(48)]#[rename(name="m_TargetArgument")]pub m_target_argument:i16, #[offset(50)]#[rename(name="m_TradeUnitIndex")]pub m_trade_unit_index:u8, #[offset(51)]#[rename(name="m_EventUnitIndex")]pub m_event_unit_index:u8, #[offset(56)]#[rename(name="m_Done")]pub m_done:crate::app::mapmind::MapMind_DoneField, #[offset(64)]#[rename(name="m_MovePower")]pub m_move_power:u8, #[offset(66)]#[rename(name="m_TransporterIndex")]pub m_transporter_index:i16, #[offset(72)]#[rename(name="m_CommandSkill")]pub m_command_skill:crate::app::skilldata::SkillData, #[offset(80)]#[rename(name="m_SpecifiedItem")]pub m_specified_item:crate::app::itemdata::ItemData, #[offset(88)]#[rename(name="m_AIEngageRewarpX")]pub m_ai_engage_rewarp_x:i8, #[offset(89)]#[rename(name="m_AIEngageRewarpZ")]pub m_ai_engage_rewarp_z:i8, #[offset(96)]#[rename(name="m_Routes")]pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_Target.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapMind_Target{pub unit:crate::app::unit::Unit,pub terrain:crate::app::terraindata_2::TerrainData_2,pub x:i8,pub z:i8,}
 impl::unity2::ClassIdentity for MapMind_Target{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapMind.Target";
@@ -35,6 +32,12 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for MapMind_Target{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_CommandStack.md"))]#[::unity2::class(namespace="App",name="MapMind.CommandStack")]#[parent(crate::system::object::Object)]pub struct MapMind_CommandStack{#[offset(16)]#[rename(name="m_Statck")]pub m_statck:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_MultiTargets.md"))]#[::unity2::class(namespace="App",name="MapMind.MultiTargets")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapmind::MapMind_Target>)]pub struct MapMind_MultiTargets{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_Record.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapMind_Record{pub r#type:crate::app::mapmind::MapMind_Type,pub main:crate::app::mapmind::MapMind_Record_Value,pub link:crate::app::mapmind::MapMind_Record_Value,}
@@ -48,7 +51,45 @@ impl::unity2::IlType for MapMind_Record{fn il_type()-> &'static::unity2::il2cpp:
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_MultiTargets.md"))]#[::unity2::class(namespace="App",name="MapMind.MultiTargets")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::mapmind::MapMind_Target>)]pub struct MapMind_MultiTargets{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_DoneField.md"))]#[::unity2::class(namespace="App",name="MapMind.DoneField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapmind::MapMind_Done>)]pub struct MapMind_DoneField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_Done.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMind_Done{pub value:i32,}
+impl::unity2::ClassIdentity for MapMind_Done{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapMind.Done";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapMind_Done{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapMind_Done{pub fn talk()->Self{Self{value:1}
+}
+pub fn trade()->Self{Self{value:2}
+}
+pub fn putoff()->Self{Self{value:4}
+}
+pub fn transporter()->Self{Self{value:8}
+}
+pub fn action()->Self{Self{value:16}
+}
+pub fn sight()->Self{Self{value:32}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind.md"))]#[::unity2::class(namespace="App",name="MapMind")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapmind::MapMind>)]pub struct MapMind{#[static_field]#[rename(name="RouteMax")]pub route_max:i32, #[offset(25)]#[rename(name="m_UnitIndex")]pub m_unit_index:u8, #[offset(26)]#[rename(name="m_FirstUnitIndex")]pub m_first_unit_index:u8, #[offset(27)]#[rename(name="m_FirstX")]pub m_first_x:i8, #[offset(28)]#[rename(name="m_FirstZ")]pub m_first_z:i8, #[offset(29)]#[rename(name="m_UnitShowX")]pub m_unit_show_x:i8, #[offset(30)]#[rename(name="m_UnitShowZ")]pub m_unit_show_z:i8, #[offset(31)]#[rename(name="m_X")]pub m_x:i8, #[offset(32)]#[rename(name="m_Z")]pub m_z:i8, #[offset(36)]#[rename(name="m_Mind")]pub m_mind:crate::app::mapmind::MapMind_Type, #[offset(40)]#[rename(name="m_AttackX")]pub m_attack_x:i8, #[offset(41)]#[rename(name="m_AttackZ")]pub m_attack_z:i8, #[offset(42)]#[rename(name="m_ItemIndex")]pub m_item_index:i8, #[offset(43)]#[rename(name="m_TargetUnitIndex")]pub m_target_unit_index:u8, #[offset(44)]#[rename(name="m_TargetX")]pub m_target_x:i8, #[offset(45)]#[rename(name="m_TargetZ")]pub m_target_z:i8, #[offset(46)]#[rename(name="m_FocusX")]pub m_focus_x:i8, #[offset(47)]#[rename(name="m_FocusZ")]pub m_focus_z:i8, #[offset(48)]#[rename(name="m_TargetArgument")]pub m_target_argument:i16, #[offset(50)]#[rename(name="m_TradeUnitIndex")]pub m_trade_unit_index:u8, #[offset(51)]#[rename(name="m_EventUnitIndex")]pub m_event_unit_index:u8, #[offset(56)]#[rename(name="m_Done")]pub m_done:crate::app::mapmind::MapMind_DoneField, #[offset(64)]#[rename(name="m_MovePower")]pub m_move_power:u8, #[offset(66)]#[rename(name="m_TransporterIndex")]pub m_transporter_index:i16, #[offset(72)]#[rename(name="m_CommandSkill")]pub m_command_skill:crate::app::skilldata::SkillData, #[offset(80)]#[rename(name="m_SpecifiedItem")]pub m_specified_item:crate::app::itemdata::ItemData, #[offset(88)]#[rename(name="m_AIEngageRewarpX")]pub m_ai_engage_rewarp_x:i8, #[offset(89)]#[rename(name="m_AIEngageRewarpZ")]pub m_ai_engage_rewarp_z:i8, #[offset(96)]#[rename(name="m_Routes")]pub m_routes: ::unity2::Array<crate::app::dir_2::Dir_Type> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_Record_Value.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapMind_Record_Value{pub unit:crate::app::unit::Unit,pub x:i32,pub z:i32,pub is_changed:bool,pub engage_count:i32,pub unit_item:crate::app::unititem::UnitItem,}
+impl::unity2::ClassIdentity for MapMind_Record_Value{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapMind.Record.Value";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapMind_Record_Value{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMind_Type{pub value:i32,}
@@ -174,51 +215,209 @@ pub fn sub_menu()->Self{Self{value:55}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_Done.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMind_Done{pub value:i32,}
-impl::unity2::ClassIdentity for MapMind_Done{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapMind.Done";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapMind_Done{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapMind_Done{pub fn talk()->Self{Self{value:1}
-}
-pub fn trade()->Self{Self{value:2}
-}
-pub fn putoff()->Self{Self{value:4}
-}
-pub fn transporter()->Self{Self{value:8}
-}
-pub fn action()->Self{Self{value:16}
-}
-pub fn sight()->Self{Self{value:32}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_Record_Value.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapMind_Record_Value{pub unit:crate::app::unit::Unit,pub x:i32,pub z:i32,pub is_changed:bool,pub engage_count:i32,pub unit_item:crate::app::unititem::UnitItem,}
-impl::unity2::ClassIdentity for MapMind_Record_Value{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapMind.Record.Value";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapMind_Record_Value{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_CommandStack.md"))]#[::unity2::class(namespace="App",name="MapMind.CommandStack")]#[parent(crate::system::object::Object)]pub struct MapMind_CommandStack{#[offset(16)]#[rename(name="m_Statck")]pub m_statck:crate::system::collections::generic::stack_1::Stack_1<crate::app::mapmind::MapMind_Record> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapmind/MapMind_DoneField.md"))]#[::unity2::class(namespace="App",name="MapMind.DoneField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::mapmind::MapMind_Done>)]pub struct MapMind_DoneField{}
-
 }
 
 #[cfg(feature = "app-mapmind-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapmind")]impl MapMind_Target{#[doc="`get_Value()` overload"]pub fn get_value(&mut self,)->i8{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218a310usize)as*mut u8,i8;
+(*mut MapMind_Target)self as*mut MapMind_Target)}
+}
+#[doc="`set_Value(i8)` overload"]pub fn set_value(&mut self,value:impl::core::convert::Into<i8>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218a320usize)as*mut u8,();
+(*mut MapMind_Target)self as*mut MapMind_Target,(i8)::core::convert::Into::into(value))}
+}
+#[doc="`get_Position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21880f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(*mut MapMind_Target)self as*mut MapMind_Target)}
+}
+}
+
+#[cfg(feature="app-mapmind")]impl MapMind_Target{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-mapmind")]pub trait IMapMind_CommandStackMethods:IMapMind_CommandStack{#[doc="`Peek()` overload"]fn peek(self,)->crate::app::mapmind::MapMind_Type{unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186b10usize)as*mut u8,crate::app::mapmind::MapMind_Type;
+(MapMind_CommandStack)__receiver)}
+}
+#[doc="`Push(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn push(self,r#type:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,link:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186ba0usize)as*mut u8,();
+(MapMind_CommandStack)__receiver,(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(r#type),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(link))}
+}
+#[doc="`Pop()` overload"]fn pop(self,)->bool{unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186f20usize)as*mut u8,bool;
+(MapMind_CommandStack)__receiver)}
+}
+#[doc="`Decide()` overload"]fn decide(self,)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187120usize)as*mut u8,();
+(MapMind_CommandStack)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21871d0usize)as*mut u8,();
+(MapMind_CommandStack)__receiver)}
+}
+#[doc="`get_Exist()` overload"]fn get_exist(self,)->bool{unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187230usize)as*mut u8,bool;
+(MapMind_CommandStack)__receiver)}
+}
+#[doc="`TryAddAchieveEngage(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit)` overload"]fn try_add_achieve_engage(self,r#type:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2186f00usize)as*mut u8,();
+(MapMind_CommandStack)__receiver,(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(r#type),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187280usize)as*mut u8,();
+(MapMind_CommandStack)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapmind")]impl<__T:IMapMind_CommandStack>IMapMind_CommandStackMethods for __T{}
+
+#[cfg(feature="app-mapmind")]impl MapMind_CommandStack{pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn try_add_achieve_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-mapmind")]impl MapMind_CommandStack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapMind_CommandStack), ::core::stringify!(new),));
+ <Self as IMapMind_CommandStackMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapmind")]pub trait IMapMind_MultiTargetsMethods:IMapMind_MultiTargets{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187380usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver)}
+}
+#[doc="`Exists(crate::app::unit::Unit)` overload"]fn exists(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187410usize)as*mut u8,bool;
+(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IndexOf(crate::app::unit::Unit)` overload"]fn index_of(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21874d0usize)as*mut u8,i32;
+(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`IndexOf(crate::app::terraindata_2::TerrainData_2)` overload"]fn index_of_2(self,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187590usize)as*mut u8,i32;
+(MapMind_MultiTargets)__receiver,(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
+}
+#[doc="`IndexOf(i32, i32)` overload"]fn index_of_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187650usize)as*mut u8,i32;
+(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Add(crate::app::unit::Unit)` overload"]fn add(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187740usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Add(i32, i32, crate::app::unit::Unit)` overload"]fn add_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187760usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Add(i32, i32, ::unity2::Il2CppString)` overload"]fn add_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,tid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21879c0usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(tid))}
+}
+#[doc="`Add(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]fn add_4(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187a70usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
+}
+#[doc="`Add(crate::app::unit::Unit, i32)` overload"]fn add_5(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187c60usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value))}
+}
+#[doc="`Add(i32, i32)` overload"]fn add_6(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187d90usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Remove(crate::app::unit::Unit)` overload"]fn remove(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187ee0usize)as*mut u8,();
+(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetCneter()` overload"]fn get_cneter(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187fe0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(MapMind_MultiTargets)__receiver)}
+}
+#[doc="`GetUnitCount()` overload"]fn get_unit_count(self,)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x218a260usize)as*mut u8,i32;
+(MapMind_MultiTargets)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapmind")]impl<__T:IMapMind_MultiTargets>IMapMind_MultiTargetsMethods for __T{}
+
+#[cfg(feature="app-mapmind")]impl MapMind_MultiTargets{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn index_of_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn index_of_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn add_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn add_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn add_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn add_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_cneter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn get_unit_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+}
+
+#[cfg(feature="app-mapmind")]impl MapMind_MultiTargets{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapMind_MultiTargets), ::core::stringify!(new),));
+ <Self as IMapMind_MultiTargetsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapmind")]impl MapMind_Record{#[doc="`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,r#type:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,link:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2186e60usize)as*mut u8,();
+(*mut MapMind_Record)self as*mut MapMind_Record,(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(r#type),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(link))}
+}
+#[doc="`Cancel()` overload"]pub fn cancel(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21870f0usize)as*mut u8,();
+(*mut MapMind_Record)self as*mut MapMind_Record)}
+}
+}
+
+#[cfg(feature="app-mapmind")]impl MapMind_Record{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapmind")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapMind_DoneField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:MapMind_DoneField,value:crate::app::mapmind::MapMind_Done,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapMind_DoneField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(MapMind_DoneField,crate::app::mapmind::MapMind_Done, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-mapmind")]pub trait IMapMind_DoneFieldMethods:IMapMind_DoneField{#[doc="`ToInt(crate::app::mapmind::MapMind_Done)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapmind::MapMind_Done>)->i32{unsafe{let __receiver= <MapMind_DoneField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapMind_DoneField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMind_DoneField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2187320usize)as*mut u8,();
+(MapMind_DoneField)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapmind")]impl<__T:IMapMind_DoneField>IMapMind_DoneFieldMethods for __T{}
+
+#[cfg(feature="app-mapmind")]impl MapMind_DoneField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapmind")]impl MapMind_DoneField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapMind_DoneField), ::core::stringify!(new),));
+ <Self as IMapMind_DoneFieldMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-mapmind")]impl MapMind{#[doc="`GetMind(crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]pub fn get_mind_2(mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::app::mapmind::MapMind_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1dee1b0usize)as*mut u8,crate::app::mapmind::MapMind_Type;
 (crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
@@ -639,117 +838,6 @@ pub fn get_mind_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as
 this}
 }
 
-#[cfg(feature="app-mapmind")]impl MapMind_Target{#[doc="`get_Value()` overload"]pub fn get_value(&mut self,)->i8{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218a310usize)as*mut u8,i8;
-(*mut MapMind_Target)self as*mut MapMind_Target)}
-}
-#[doc="`set_Value(i8)` overload"]pub fn set_value(&mut self,value:impl::core::convert::Into<i8>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x218a320usize)as*mut u8,();
-(*mut MapMind_Target)self as*mut MapMind_Target,(i8)::core::convert::Into::into(value))}
-}
-#[doc="`get_Position()` overload"]pub fn get_position(&mut self,)->crate::unity_engine::vector3::Vector3{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21880f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(*mut MapMind_Target)self as*mut MapMind_Target)}
-}
-}
-
-#[cfg(feature="app-mapmind")]impl MapMind_Target{pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-mapmind")]impl MapMind_Record{#[doc="`.ctor(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,r#type:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,link:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2186e60usize)as*mut u8,();
-(*mut MapMind_Record)self as*mut MapMind_Record,(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(r#type),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(link))}
-}
-#[doc="`Cancel()` overload"]pub fn cancel(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21870f0usize)as*mut u8,();
-(*mut MapMind_Record)self as*mut MapMind_Record)}
-}
-}
-
-#[cfg(feature="app-mapmind")]impl MapMind_Record{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapmind")]pub trait IMapMind_MultiTargetsMethods:IMapMind_MultiTargets{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187380usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver)}
-}
-#[doc="`Exists(crate::app::unit::Unit)` overload"]fn exists(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187410usize)as*mut u8,bool;
-(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`IndexOf(crate::app::unit::Unit)` overload"]fn index_of(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21874d0usize)as*mut u8,i32;
-(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`IndexOf(crate::app::terraindata_2::TerrainData_2)` overload"]fn index_of_2(self,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187590usize)as*mut u8,i32;
-(MapMind_MultiTargets)__receiver,(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
-}
-#[doc="`IndexOf(i32, i32)` overload"]fn index_of_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187650usize)as*mut u8,i32;
-(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Add(crate::app::unit::Unit)` overload"]fn add(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187740usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`Add(i32, i32, crate::app::unit::Unit)` overload"]fn add_2(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187760usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`Add(i32, i32, ::unity2::Il2CppString)` overload"]fn add_3(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,tid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21879c0usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(tid))}
-}
-#[doc="`Add(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]fn add_4(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187a70usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
-}
-#[doc="`Add(crate::app::unit::Unit, i32)` overload"]fn add_5(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187c60usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(value))}
-}
-#[doc="`Add(i32, i32)` overload"]fn add_6(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187d90usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Remove(crate::app::unit::Unit)` overload"]fn remove(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187ee0usize)as*mut u8,();
-(MapMind_MultiTargets)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`GetCneter()` overload"]fn get_cneter(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187fe0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(MapMind_MultiTargets)__receiver)}
-}
-#[doc="`GetUnitCount()` overload"]fn get_unit_count(self,)->i32{unsafe{let __receiver= <MapMind_MultiTargets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x218a260usize)as*mut u8,i32;
-(MapMind_MultiTargets)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapmind")]impl<__T:IMapMind_MultiTargets>IMapMind_MultiTargetsMethods for __T{}
-
-#[cfg(feature="app-mapmind")]impl MapMind_MultiTargets{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn exists_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn index_of_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn index_of_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn index_of_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn add_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn add_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn add_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn add_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_cneter_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn get_unit_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-}
-
-#[cfg(feature="app-mapmind")]impl MapMind_MultiTargets{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapMind_MultiTargets), ::core::stringify!(new),));
- <Self as IMapMind_MultiTargetsMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-mapmind")]impl MapMind_Record_Value{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b6c980usize)as*mut u8,();
 (*mut MapMind_Record_Value)self as*mut MapMind_Record_Value,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
@@ -762,102 +850,26 @@ this}
 pub fn cancel_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-mapmind")]pub trait IMapMind_CommandStackMethods:IMapMind_CommandStack{#[doc="`Peek()` overload"]fn peek(self,)->crate::app::mapmind::MapMind_Type{unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186b10usize)as*mut u8,crate::app::mapmind::MapMind_Type;
-(MapMind_CommandStack)__receiver)}
-}
-#[doc="`Push(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit, crate::app::unit::Unit)` overload"]fn push(self,r#type:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,link:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186ba0usize)as*mut u8,();
-(MapMind_CommandStack)__receiver,(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(r#type),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(link))}
-}
-#[doc="`Pop()` overload"]fn pop(self,)->bool{unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186f20usize)as*mut u8,bool;
-(MapMind_CommandStack)__receiver)}
-}
-#[doc="`Decide()` overload"]fn decide(self,)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187120usize)as*mut u8,();
-(MapMind_CommandStack)__receiver)}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21871d0usize)as*mut u8,();
-(MapMind_CommandStack)__receiver)}
-}
-#[doc="`get_Exist()` overload"]fn get_exist(self,)->bool{unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187230usize)as*mut u8,bool;
-(MapMind_CommandStack)__receiver)}
-}
-#[doc="`TryAddAchieveEngage(crate::app::mapmind::MapMind_Type, crate::app::unit::Unit)` overload"]fn try_add_achieve_engage(self,r#type:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2186f00usize)as*mut u8,();
-(MapMind_CommandStack)__receiver,(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(r#type),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMind_CommandStack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187280usize)as*mut u8,();
-(MapMind_CommandStack)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapmind")]impl<__T:IMapMind_CommandStack>IMapMind_CommandStackMethods for __T{}
-
-#[cfg(feature="app-mapmind")]impl MapMind_CommandStack{pub fn peek_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn decide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn try_add_achieve_engage_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-mapmind")]impl MapMind_CommandStack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapMind_CommandStack), ::core::stringify!(new),));
- <Self as IMapMind_CommandStackMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-mapmind")]pub trait IMapMind_DoneFieldMethods:IMapMind_DoneField{#[doc="`ToInt(crate::app::mapmind::MapMind_Done)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::mapmind::MapMind_Done>)->i32{unsafe{let __receiver= <MapMind_DoneField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187310usize)as*mut u8,i32;
-(MapMind_DoneField)__receiver,(crate::app::mapmind::MapMind_Done)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapMind_DoneField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2187320usize)as*mut u8,();
-(MapMind_DoneField)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapmind")]impl<__T:IMapMind_DoneField>IMapMind_DoneFieldMethods for __T{}
-
-#[cfg(feature="app-mapmind")]impl MapMind_DoneField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapmind")]impl MapMind_DoneField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapMind_DoneField), ::core::stringify!(new),));
- <Self as IMapMind_DoneFieldMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapmind")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapMind;
-    pub use super::IMapMind;
-    pub use super::IMapMindMethods;
     pub use super::MapMind_Target;
-    pub use super::MapMind_Record;
-    pub use super::MapMind_MultiTargets;
-    pub use super::IMapMind_MultiTargets;
-    pub use super::IMapMind_MultiTargetsMethods;
-    pub use super::MapMind_Type;
-    pub use super::MapMind_Done;
-    pub use super::MapMind_Record_Value;
     pub use super::MapMind_CommandStack;
     pub use super::IMapMind_CommandStack;
     pub use super::IMapMind_CommandStackMethods;
+    pub use super::MapMind_MultiTargets;
+    pub use super::IMapMind_MultiTargets;
+    pub use super::IMapMind_MultiTargetsMethods;
+    pub use super::MapMind_Record;
     pub use super::MapMind_DoneField;
     pub use super::IMapMind_DoneField;
     pub use super::IMapMind_DoneFieldMethods;
+    pub use super::MapMind_Done;
+    pub use super::MapMind;
+    pub use super::IMapMind;
+    pub use super::IMapMindMethods;
+    pub use super::MapMind_Record_Value;
+    pub use super::MapMind_Type;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

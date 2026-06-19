@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagkeywait/TalkTagKeyWait.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagKeyWait")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagKeyWait{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagkeywait::TalkTagKeyWait_TagID, #[offset(20)]#[rename(name="m_Sec")]pub m_sec:f32, #[offset(24)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagkeywait/TalkTagKeyWait_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagKeyWait_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagKeyWait_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagKeyWait.TagID";
@@ -34,25 +37,52 @@ pub fn time_wait()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagkeywait/TalkTagKeyWait.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagKeyWait")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagKeyWait{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagkeywait::TalkTagKeyWait_TagID, #[offset(20)]#[rename(name="m_Sec")]pub m_sec:f32, #[offset(24)]#[rename(name="m_Result")]pub m_result:crate::app::talk3_d::talktag::TalkTag_Result,}
-
 }
 
 #[cfg(feature = "app-talk3_d-talktagkeywait-types")]
 pub use __types::*;
 
+#[cfg(feature="app-talk3_d-talktagkeywait")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkTagKeyWait_unity2_raw{use super:: * ;
+pub unsafe fn initialize(this:TalkTagKeyWait,talk_ptr:crate::app::talk3_d::talkptr::TalkPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TalkTagKeyWait as::unity2::ClassIdentity> ::NAME,"Initialize",));
+let inner:extern "C" fn(TalkTagKeyWait,crate::app::talk3_d::talkptr::TalkPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,talk_ptr,__mi)}
+pub unsafe fn execute(this:TalkTagKeyWait,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TalkTagKeyWait as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(TalkTagKeyWait, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_result(this:TalkTagKeyWait,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TalkTagKeyWait as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let inner:extern "C" fn(TalkTagKeyWait, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-talk3_d-talktagkeywait")]pub trait ITalkTagKeyWaitMethods:ITalkTagKeyWait{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d98d0usize)as*mut u8,();
-(TalkTagKeyWait)__receiver,(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+__TalkTagKeyWait_unity2_raw::initialize(__receiver, ::core::convert::Into::into(talk_ptr), ::core::option::Option::None)}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9940usize)as*mut u8,();
-(TalkTagKeyWait)__receiver)}
+__TalkTagKeyWait_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9ab0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
-(TalkTagKeyWait)__receiver)}
+__TalkTagKeyWait_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagKeyWait as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9ac0usize)as*mut u8,();
@@ -78,10 +108,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktagkeywait")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TalkTagKeyWait_TagID;
     pub use super::TalkTagKeyWait;
     pub use super::ITalkTagKeyWait;
     pub use super::ITalkTagKeyWaitMethods;
+    pub use super::TalkTagKeyWait_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

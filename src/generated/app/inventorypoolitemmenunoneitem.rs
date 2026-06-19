@@ -22,33 +22,90 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-inventorypoolitemmenunoneitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-inventorypoolitemmenunoneitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InventoryPoolItemMenuNoneItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:InventoryPoolItemMenuNoneItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <InventoryPoolItemMenuNoneItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(InventoryPoolItemMenuNoneItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:InventoryPoolItemMenuNoneItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <InventoryPoolItemMenuNoneItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(InventoryPoolItemMenuNoneItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_menu_item_kind(this:InventoryPoolItemMenuNoneItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <InventoryPoolItemMenuNoneItem as::unity2::ClassIdentity> ::NAME,"GetMenuItemKind",));
+let inner:extern "C" fn(InventoryPoolItemMenuNoneItem, ::unity2::OptionalMethod,)->crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_unit_item(this:InventoryPoolItemMenuNoneItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <InventoryPoolItemMenuNoneItem as::unity2::ClassIdentity> ::NAME,"GetUnitItem",));
+let inner:extern "C" fn(InventoryPoolItemMenuNoneItem, ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_blank_text(this:InventoryPoolItemMenuNoneItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <InventoryPoolItemMenuNoneItem as::unity2::ClassIdentity> ::NAME,"GetBlankText",));
+let inner:extern "C" fn(InventoryPoolItemMenuNoneItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_visible_item_icon_on_blank(this:InventoryPoolItemMenuNoneItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <InventoryPoolItemMenuNoneItem as::unity2::ClassIdentity> ::NAME,"IsVisibleItemIconOnBlank",));
+let inner:extern "C" fn(InventoryPoolItemMenuNoneItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-inventorypoolitemmenunoneitem")]pub trait IInventoryPoolItemMenuNoneItemMethods:IInventoryPoolItemMenuNoneItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InventoryPoolItemMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27995c0usize)as*mut u8,();
 (InventoryPoolItemMenuNoneItem)__receiver)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <InventoryPoolItemMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x279c100usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(InventoryPoolItemMenuNoneItem)__receiver)}
+__InventoryPoolItemMenuNoneItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <InventoryPoolItemMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x279c110usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(InventoryPoolItemMenuNoneItem)__receiver)}
+__InventoryPoolItemMenuNoneItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMenuItemKind()` overload"]fn get_menu_item_kind(self,)->crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind{unsafe{let __receiver= <InventoryPoolItemMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x279c120usize)as*mut u8,crate::app::inventorypoolitemmenuitem::InventoryPoolItemMenuItem_PoolItemKind;
-(InventoryPoolItemMenuNoneItem)__receiver)}
+__InventoryPoolItemMenuNoneItem_unity2_raw::get_menu_item_kind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <InventoryPoolItemMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x279c130usize)as*mut u8,crate::app::unititem::UnitItem;
-(InventoryPoolItemMenuNoneItem)__receiver)}
+__InventoryPoolItemMenuNoneItem_unity2_raw::get_unit_item(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetBlankText()` overload"]fn get_blank_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InventoryPoolItemMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x279c190usize)as*mut u8, ::unity2::Il2CppString;
-(InventoryPoolItemMenuNoneItem)__receiver)}
+__InventoryPoolItemMenuNoneItem_unity2_raw::get_blank_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsVisibleItemIconOnBlank()` overload"]fn is_visible_item_icon_on_blank(self,)->bool{unsafe{let __receiver= <InventoryPoolItemMenuNoneItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x279c210usize)as*mut u8,bool;
-(InventoryPoolItemMenuNoneItem)__receiver)}
+__InventoryPoolItemMenuNoneItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)}
 }
 }
 

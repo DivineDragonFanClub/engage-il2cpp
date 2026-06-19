@@ -15,44 +15,62 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-iresourceprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IResourceProvider_unity2_raw{use super:: * ;
-pub unsafe fn get_provider_id(this:IResourceProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ProviderId").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_ProviderId", <IResourceProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_provider_id(this:IResourceProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"get_ProviderId",));
 let inner:extern "C" fn(IResourceProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_default_type(this:IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetDefaultType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetDefaultType", <IResourceProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_default_type(this:IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"GetDefaultType",));
 let inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,location,__mi)}
-pub unsafe fn can_provide(this:IResourceProvider,r#type: ::unity2::SystemType,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CanProvide").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CanProvide", <IResourceProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn can_provide(this:IResourceProvider,r#type: ::unity2::SystemType,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"CanProvide",));
 let inner:extern "C" fn(IResourceProvider, ::unity2::SystemType,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,r#type,location,__mi)}
-pub unsafe fn provide(this:IResourceProvider,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Provide").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Provide", <IResourceProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn provide(this:IResourceProvider,provide_handle:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
 let inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,provide_handle,__mi)}
-pub unsafe fn release(this:IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,asset:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Release").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Release", <IResourceProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn release(this:IResourceProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,asset:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"Release",));
 let inner:extern "C" fn(IResourceProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,location,asset,__mi)}
-pub unsafe fn get_behaviour_flags(this:IResourceProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_BehaviourFlags").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_BehaviourFlags", <IResourceProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_behaviour_flags(this:IResourceProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IResourceProvider as::unity2::ClassIdentity> ::NAME,"get_BehaviourFlags",));
 let inner:extern "C" fn(IResourceProvider, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::resource_providers::providerbehaviourflags::ProviderBehaviourFlags= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

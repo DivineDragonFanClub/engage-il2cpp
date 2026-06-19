@@ -20,6 +20,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-commonwaitmessage-types")]
 pub use __types::*;
 
+#[cfg(feature="app-commonwaitmessage")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CommonWaitMessage_unity2_raw{use super:: * ;
+pub unsafe fn on_dispose(this:CommonWaitMessage,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CommonWaitMessage as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(CommonWaitMessage, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-commonwaitmessage")]impl CommonWaitMessage{#[doc="`Open(::unity2::Il2CppString, bool, bool)` overload"]pub fn open(msg:impl::core::convert::Into< ::unity2::Il2CppString> ,is_play_sound:impl::core::convert::Into<bool> ,is_hide_wait_anime:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2536160usize)as*mut u8,();
 (::unity2::Il2CppString)::core::convert::Into::into(msg),(bool)::core::convert::Into::into(is_play_sound),(bool)::core::convert::Into::into(is_hide_wait_anime))}
 }
@@ -36,8 +49,7 @@ pub use __types::*;
 (CommonWaitMessage)__receiver,(bool)::core::convert::Into::into(is_play_sound))}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <CommonWaitMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2536700usize)as*mut u8,();
-(CommonWaitMessage)__receiver)}
+__CommonWaitMessage_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PlayLoopSE()` overload"]fn play_loop_se(self,)->(){unsafe{let __receiver= <CommonWaitMessage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25366e0usize)as*mut u8,();

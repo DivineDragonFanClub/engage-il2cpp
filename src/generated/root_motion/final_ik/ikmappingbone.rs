@@ -18,10 +18,32 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root_motion-final_ik-ikmappingbone-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-ikmappingbone")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKMappingBone_unity2_raw{use super:: * ;
+pub unsafe fn is_valid(this:IKMappingBone,solver:crate::root_motion::final_ik::iksolver::IKSolver,message: *mut::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKMappingBone as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let inner:extern "C" fn(IKMappingBone,crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,solver,message,__mi)}
+pub unsafe fn initiate(this:IKMappingBone,solver:crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKMappingBone as::unity2::ClassIdentity> ::NAME,"Initiate",));
+let inner:extern "C" fn(IKMappingBone,crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,solver,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-ikmappingbone")]pub trait IIKMappingBoneMethods:IIKMappingBone{#[doc="`IsValid(crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString)` overload"]fn is_valid(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMappingBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a79ba0usize)as*mut u8,bool;
-(IKMappingBone)__receiver,(crate::root_motion::final_ik::iksolver::IKSolver)::core::convert::Into::into(solver),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr())}
+let __ret={__IKMappingBone_unity2_raw::is_valid(__receiver, ::core::convert::Into::into(solver),__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -42,8 +64,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a79ba0usize)as*mut
 (IKMappingBone)__receiver)}
 }
 #[doc="`Initiate(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <IKMappingBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a79da0usize)as*mut u8,();
-(IKMappingBone)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
+__IKMappingBone_unity2_raw::initiate(__receiver, ::core::convert::Into::into(solver), ::core::option::Option::None)}
 }
 #[doc="`ReadPose()` overload"]fn read_pose(self,)->(){unsafe{let __receiver= <IKMappingBone as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a79e30usize)as*mut u8,();

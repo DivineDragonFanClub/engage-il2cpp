@@ -15,9 +15,6 @@ use crate::unity_engine::propertyattribute::{IPropertyAttribute,PropertyAttribut
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimeFieldAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct TimeFieldAttribute{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute_UseEditMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimeFieldAttribute_UseEditMode{pub value:i32,}
 impl::unity2::ClassIdentity for TimeFieldAttribute_UseEditMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
 const NAME: &'static str="TimeFieldAttribute.UseEditMode";
@@ -32,6 +29,9 @@ impl TimeFieldAttribute_UseEditMode{pub fn none()->Self{Self{value:0}
 pub fn apply_edit_mode()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timefieldattribute/TimeFieldAttribute.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimeFieldAttribute")]#[parent(crate::unity_engine::propertyattribute::PropertyAttribute)]pub struct TimeFieldAttribute{}
 
 }
 
@@ -59,10 +59,10 @@ this}
 #[cfg(feature = "unity_engine-timeline-timefieldattribute")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TimeFieldAttribute_UseEditMode;
     pub use super::TimeFieldAttribute;
     pub use super::ITimeFieldAttribute;
     pub use super::ITimeFieldAttributeMethods;
-    pub use super::TimeFieldAttribute_UseEditMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

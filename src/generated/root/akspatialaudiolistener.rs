@@ -17,15 +17,53 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akspatialaudiolistener/AkSpatialAudioListener.md"))]#[::unity2::class(namespace="",name="AkSpatialAudioListener")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkSpatialAudioListener{#[static_field]#[rename(name="s_SpatialAudioListener")]pub s_spatial_audio_listener:crate::root::akspatialaudiolistener::AkSpatialAudioListener, #[static_field]#[rename(name="spatialAudioListeners")]pub spatial_audio_listeners:crate::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList, #[offset(24)]#[rename(name="AkAudioListener")]pub ak_audio_listener:crate::root::akaudiolistener::AkAudioListener,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akspatialaudiolistener/AkSpatialAudioListener_SpatialAudioListenerList.md"))]#[::unity2::class(namespace="",name="AkSpatialAudioListener.SpatialAudioListenerList")]#[parent(crate::system::object::Object)]pub struct AkSpatialAudioListener_SpatialAudioListenerList{#[offset(16)]#[rename(name="listenerList")]pub listener_list:crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akspatialaudiolistener/AkSpatialAudioListener.md"))]#[::unity2::class(namespace="",name="AkSpatialAudioListener")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct AkSpatialAudioListener{#[static_field]#[rename(name="s_SpatialAudioListener")]pub s_spatial_audio_listener:crate::root::akspatialaudiolistener::AkSpatialAudioListener, #[static_field]#[rename(name="spatialAudioListeners")]pub spatial_audio_listeners:crate::root::akspatialaudiolistener::AkSpatialAudioListener_SpatialAudioListenerList, #[offset(24)]#[rename(name="AkAudioListener")]pub ak_audio_listener:crate::root::akaudiolistener::AkAudioListener,}
 
 }
 
 #[cfg(feature = "root-akspatialaudiolistener-types")]
 pub use __types::*;
+
+#[cfg(feature="root-akspatialaudiolistener")]pub trait IAkSpatialAudioListener_SpatialAudioListenerListMethods:IAkSpatialAudioListener_SpatialAudioListenerList{#[doc="`get_ListenerList()` overload"]fn get_listener_list(self,)->crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener>{unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1e30usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener> ;
+(AkSpatialAudioListener_SpatialAudioListenerList)__receiver)}
+}
+#[doc="`Add(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"]fn add(self,listener:impl::core::convert::Into<crate::root::akspatialaudiolistener::AkSpatialAudioListener>)->bool{unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1e40usize)as*mut u8,bool;
+(AkSpatialAudioListener_SpatialAudioListenerList)__receiver,(crate::root::akspatialaudiolistener::AkSpatialAudioListener)::core::convert::Into::into(listener))}
+}
+#[doc="`Remove(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"]fn remove(self,listener:impl::core::convert::Into<crate::root::akspatialaudiolistener::AkSpatialAudioListener>)->bool{unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba21f0usize)as*mut u8,bool;
+(AkSpatialAudioListener_SpatialAudioListenerList)__receiver,(crate::root::akspatialaudiolistener::AkSpatialAudioListener)::core::convert::Into::into(listener))}
+}
+#[doc="`Refresh()` overload"]fn refresh(self,)->(){unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1f30usize)as*mut u8,();
+(AkSpatialAudioListener_SpatialAudioListenerList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba22c0usize)as*mut u8,();
+(AkSpatialAudioListener_SpatialAudioListenerList)__receiver)}
+}
+}
+
+#[cfg(feature="root-akspatialaudiolistener")]impl<__T:IAkSpatialAudioListener_SpatialAudioListenerList>IAkSpatialAudioListener_SpatialAudioListenerListMethods for __T{}
+
+#[cfg(feature="root-akspatialaudiolistener")]impl AkSpatialAudioListener_SpatialAudioListenerList{pub fn get_listener_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn refresh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="root-akspatialaudiolistener")]impl AkSpatialAudioListener_SpatialAudioListenerList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AkSpatialAudioListener_SpatialAudioListenerList), ::core::stringify!(new),));
+ <Self as IAkSpatialAudioListener_SpatialAudioListenerListMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="root-akspatialaudiolistener")]impl AkSpatialAudioListener{#[doc="`get_TheSpatialAudioListener()` overload"]pub fn get_the_spatial_audio_listener()->crate::root::akaudiolistener::AkAudioListener{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d037a0usize)as*mut u8,crate::root::akaudiolistener::AkAudioListener;
 )}
@@ -74,53 +112,15 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="root-akspatialaudiolistener")]pub trait IAkSpatialAudioListener_SpatialAudioListenerListMethods:IAkSpatialAudioListener_SpatialAudioListenerList{#[doc="`get_ListenerList()` overload"]fn get_listener_list(self,)->crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener>{unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1e30usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::root::akspatialaudiolistener::AkSpatialAudioListener> ;
-(AkSpatialAudioListener_SpatialAudioListenerList)__receiver)}
-}
-#[doc="`Add(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"]fn add(self,listener:impl::core::convert::Into<crate::root::akspatialaudiolistener::AkSpatialAudioListener>)->bool{unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1e40usize)as*mut u8,bool;
-(AkSpatialAudioListener_SpatialAudioListenerList)__receiver,(crate::root::akspatialaudiolistener::AkSpatialAudioListener)::core::convert::Into::into(listener))}
-}
-#[doc="`Remove(crate::root::akspatialaudiolistener::AkSpatialAudioListener)` overload"]fn remove(self,listener:impl::core::convert::Into<crate::root::akspatialaudiolistener::AkSpatialAudioListener>)->bool{unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba21f0usize)as*mut u8,bool;
-(AkSpatialAudioListener_SpatialAudioListenerList)__receiver,(crate::root::akspatialaudiolistener::AkSpatialAudioListener)::core::convert::Into::into(listener))}
-}
-#[doc="`Refresh()` overload"]fn refresh(self,)->(){unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba1f30usize)as*mut u8,();
-(AkSpatialAudioListener_SpatialAudioListenerList)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkSpatialAudioListener_SpatialAudioListenerList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba22c0usize)as*mut u8,();
-(AkSpatialAudioListener_SpatialAudioListenerList)__receiver)}
-}
-}
-
-#[cfg(feature="root-akspatialaudiolistener")]impl<__T:IAkSpatialAudioListener_SpatialAudioListenerList>IAkSpatialAudioListener_SpatialAudioListenerListMethods for __T{}
-
-#[cfg(feature="root-akspatialaudiolistener")]impl AkSpatialAudioListener_SpatialAudioListenerList{pub fn get_listener_list_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn remove_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn refresh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="root-akspatialaudiolistener")]impl AkSpatialAudioListener_SpatialAudioListenerList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AkSpatialAudioListener_SpatialAudioListenerList), ::core::stringify!(new),));
- <Self as IAkSpatialAudioListener_SpatialAudioListenerListMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root-akspatialaudiolistener")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AkSpatialAudioListener;
-    pub use super::IAkSpatialAudioListener;
-    pub use super::IAkSpatialAudioListenerMethods;
     pub use super::AkSpatialAudioListener_SpatialAudioListenerList;
     pub use super::IAkSpatialAudioListener_SpatialAudioListenerList;
     pub use super::IAkSpatialAudioListener_SpatialAudioListenerListMethods;
+    pub use super::AkSpatialAudioListener;
+    pub use super::IAkSpatialAudioListener;
+    pub use super::IAkSpatialAudioListenerMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

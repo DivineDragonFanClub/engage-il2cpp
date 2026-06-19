@@ -19,10 +19,23 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="app-procdescwaitfunc")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescWaitFunc_unity2_raw{use super:: * ;
-pub unsafe fn is_wait(this:ProcDescWaitFunc,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsWait").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsWait", <ProcDescWaitFunc as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn is_wait(this:ProcDescWaitFunc,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ProcDescWaitFunc as::unity2::ClassIdentity> ::NAME,"IsWait",));
 let inner:extern "C" fn(ProcDescWaitFunc,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+pub unsafe fn execute(this:ProcDescWaitFunc,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProcDescWaitFunc as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(ProcDescWaitFunc,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,inst,__mi)}
@@ -36,8 +49,7 @@ inner(this,inst,__mi)}
 __ProcDescWaitFunc_unity2_raw::is_wait(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 #[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescWaitFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281dc60usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
-(ProcDescWaitFunc)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+__ProcDescWaitFunc_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 }
 

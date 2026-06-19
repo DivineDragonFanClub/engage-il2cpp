@@ -21,6 +21,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator_LightProbeArea.md"))]#[::unity2::class(namespace="",name="LightProbeGenerator.LightProbeArea")]#[parent(crate::system::object::Object)]pub struct LightProbeGenerator_LightProbeArea{#[offset(16)]#[rename(name="ProbeVolume")]pub probe_volume:crate::unity_engine::bounds::Bounds, #[offset(40)]#[rename(name="Subdivisions")]pub subdivisions:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="RandomCount")]pub random_count:i32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator_LightProbePlacementType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct LightProbeGenerator_LightProbePlacementType{pub value:i32,}
 impl::unity2::ClassIdentity for LightProbeGenerator_LightProbePlacementType{const NAMESPACE: &'static str="";
 const NAME: &'static str="LightProbeGenerator.LightProbePlacementType";
@@ -35,9 +38,6 @@ impl LightProbeGenerator_LightProbePlacementType{pub fn grid()->Self{Self{value:
 pub fn random()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator_LightProbeArea.md"))]#[::unity2::class(namespace="",name="LightProbeGenerator.LightProbeArea")]#[parent(crate::system::object::Object)]pub struct LightProbeGenerator_LightProbeArea{#[offset(16)]#[rename(name="ProbeVolume")]pub probe_volume:crate::unity_engine::bounds::Bounds, #[offset(40)]#[rename(name="Subdivisions")]pub subdivisions:crate::unity_engine::vector3::Vector3, #[offset(52)]#[rename(name="RandomCount")]pub random_count:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/lightprobegenerator/LightProbeGenerator.md"))]#[::unity2::class(namespace="",name="LightProbeGenerator")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct LightProbeGenerator{#[offset(24)]#[rename(name="LightProbeVolumes")]pub light_probe_volumes: ::unity2::Array<crate::root::lightprobegenerator::LightProbeGenerator_LightProbeArea> , #[offset(32)]#[rename(name="PlacementAlgorithm")]pub placement_algorithm:crate::root::lightprobegenerator::LightProbeGenerator_LightProbePlacementType,}
@@ -101,10 +101,10 @@ this}
 #[cfg(feature = "root-lightprobegenerator")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LightProbeGenerator_LightProbePlacementType;
     pub use super::LightProbeGenerator_LightProbeArea;
     pub use super::ILightProbeGenerator_LightProbeArea;
     pub use super::ILightProbeGenerator_LightProbeAreaMethods;
+    pub use super::LightProbeGenerator_LightProbePlacementType;
     pub use super::LightProbeGenerator;
     pub use super::ILightProbeGenerator;
     pub use super::ILightProbeGeneratorMethods;

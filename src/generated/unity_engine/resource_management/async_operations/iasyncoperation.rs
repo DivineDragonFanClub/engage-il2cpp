@@ -15,156 +15,222 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-async_operations-iasyncoperation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IAsyncOperation_unity2_raw{use super:: * ;
-pub unsafe fn get_result_as_object(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetResultAsObject").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetResultAsObject", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_result_as_object(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"GetResultAsObject",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_result_type(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ResultType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_ResultType", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_result_type(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_ResultType",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_version(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Version").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Version", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_version(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_Version",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_debug_name(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_DebugName").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_DebugName", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_debug_name(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_DebugName",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn decrement_reference_count(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("DecrementReferenceCount").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","DecrementReferenceCount", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn decrement_reference_count(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"DecrementReferenceCount",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn increment_reference_count(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IncrementReferenceCount").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IncrementReferenceCount", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn increment_reference_count(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"IncrementReferenceCount",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_reference_count(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ReferenceCount").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_ReferenceCount", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_reference_count(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_ReferenceCount",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_percent_complete(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_PercentComplete").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_PercentComplete", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_percent_complete(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_PercentComplete",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_download_status(this:IAsyncOperation,visited:crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetDownloadStatus").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetDownloadStatus", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_download_status(this:IAsyncOperation,visited:crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"GetDownloadStatus",));
 let inner:extern "C" fn(IAsyncOperation,crate::system::collections::generic::hashset_1::HashSet_1<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::downloadstatus::DownloadStatus= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,visited,__mi)}
-pub unsafe fn get_status(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationstatus::AsyncOperationStatus{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Status").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Status", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_status(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationstatus::AsyncOperationStatus{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_Status",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationstatus::AsyncOperationStatus= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_is_done(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_IsDone").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_IsDone", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_is_done(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_IsDone",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_on_destroy(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_OnDestroy").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_OnDestroy", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_on_destroy(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"set_OnDestroy",));
 let inner:extern "C" fn(IAsyncOperation,crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::iasyncoperation::IAsyncOperation> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_dependencies(this:IAsyncOperation,deps:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetDependencies").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetDependencies", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_dependencies(this:IAsyncOperation,deps:crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"GetDependencies",));
 let inner:extern "C" fn(IAsyncOperation,crate::system::collections::generic::list_1::List_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,deps,__mi)}
-pub unsafe fn get_is_running(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_IsRunning").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_IsRunning", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_is_running(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_IsRunning",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn add_completed_typeless(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("add_CompletedTypeless").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","add_CompletedTypeless", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn add_completed_typeless(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"add_CompletedTypeless",));
 let inner:extern "C" fn(IAsyncOperation,crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn remove_completed_typeless(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("remove_CompletedTypeless").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","remove_CompletedTypeless", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn remove_completed_typeless(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"remove_CompletedTypeless",));
 let inner:extern "C" fn(IAsyncOperation,crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn add_destroyed(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("add_Destroyed").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","add_Destroyed", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn add_destroyed(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"add_Destroyed",));
 let inner:extern "C" fn(IAsyncOperation,crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn remove_destroyed(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("remove_Destroyed").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","remove_Destroyed", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn remove_destroyed(this:IAsyncOperation,value:crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"remove_Destroyed",));
 let inner:extern "C" fn(IAsyncOperation,crate::system::action_1::Action_1<crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn invoke_completion_event(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("InvokeCompletionEvent").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","InvokeCompletionEvent", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn invoke_completion_event(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"InvokeCompletionEvent",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn start(this:IAsyncOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,dependency:crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,update_callbacks:crate::root::delegatelist_1::DelegateList_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Start").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Start", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn start(this:IAsyncOperation,rm:crate::unity_engine::resource_management::resourcemanager::ResourceManager,dependency:crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,update_callbacks:crate::root::delegatelist_1::DelegateList_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"Start",));
 let inner:extern "C" fn(IAsyncOperation,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle,crate::root::delegatelist_1::DelegateList_1<f32> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,rm,dependency,update_callbacks,__mi)}
-pub unsafe fn get_handle(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Handle").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Handle", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_handle(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"get_Handle",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle::AsyncOperationHandle= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn wait_for_completion(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("WaitForCompletion").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","WaitForCompletion", <IAsyncOperation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn wait_for_completion(this:IAsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <IAsyncOperation as::unity2::ClassIdentity> ::NAME,"WaitForCompletion",));
 let inner:extern "C" fn(IAsyncOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

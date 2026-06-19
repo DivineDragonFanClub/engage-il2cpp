@@ -32,6 +32,29 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root-akroom-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akroom")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkRoom_unity2_raw{use super:: * ;
+pub unsafe fn on_enable(this:AkRoom,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AkRoom as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(AkRoom, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn handle_event(this:AkRoom,in_game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkRoom as::unity2::ClassIdentity> ::NAME,"HandleEvent",));
+let inner:extern "C" fn(AkRoom,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,in_game_object,__mi)}
+}
+
 #[cfg(feature="root-akroom")]impl AkRoom{#[doc="`GetAkRoomID(crate::root::akroom::AkRoom)` overload"]pub fn get_ak_room_id(room:impl::core::convert::Into<crate::root::akroom::AkRoom>)->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f31fb0usize)as*mut u8,u64;
 (crate::root::akroom::AkRoom)::core::convert::Into::into(room))}
 }
@@ -59,8 +82,7 @@ pub use __types::*;
 (AkRoom)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f32440usize)as*mut u8,();
-(AkRoom)__receiver)}
+__AkRoom_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33310usize)as*mut u8,();
@@ -79,8 +101,7 @@ pub use __types::*;
 (AkRoom)__receiver)}
 }
 #[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33c00usize)as*mut u8,();
-(AkRoom)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+__AkRoom_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoom as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f33c10usize)as*mut u8,();
@@ -182,9 +203,21 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="root-akroom")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkRoom_PriorityList_CompareByPriority_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:AkRoom_PriorityList_CompareByPriority,a:crate::root::akroom::AkRoom,b:crate::root::akroom::AkRoom,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkRoom_PriorityList_CompareByPriority as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(AkRoom_PriorityList_CompareByPriority,crate::root::akroom::AkRoom,crate::root::akroom::AkRoom, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="root-akroom")]pub trait IAkRoom_PriorityList_CompareByPriorityMethods:IAkRoom_PriorityList_CompareByPriority{#[doc="`Compare(crate::root::akroom::AkRoom, crate::root::akroom::AkRoom)` overload"]fn compare(self,a:impl::core::convert::Into<crate::root::akroom::AkRoom> ,b:impl::core::convert::Into<crate::root::akroom::AkRoom>)->i32{unsafe{let __receiver= <AkRoom_PriorityList_CompareByPriority as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b317c0usize)as*mut u8,i32;
-(AkRoom_PriorityList_CompareByPriority)__receiver,(crate::root::akroom::AkRoom)::core::convert::Into::into(a),(crate::root::akroom::AkRoom)::core::convert::Into::into(b))}
+__AkRoom_PriorityList_CompareByPriority_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkRoom_PriorityList_CompareByPriority as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b31870usize)as*mut u8,();

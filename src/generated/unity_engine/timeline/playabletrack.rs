@@ -24,9 +24,21 @@ use crate::unity_engine::timeline::trackasset::{ITrackAsset,TrackAsset}
 #[cfg(feature = "unity_engine-timeline-playabletrack-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-timeline-playabletrack")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PlayableTrack_unity2_raw{use super:: * ;
+pub unsafe fn on_create_clip(this:PlayableTrack,clip:crate::unity_engine::timeline::timelineclip::TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <PlayableTrack as::unity2::ClassIdentity> ::NAME,"OnCreateClip",));
+let inner:extern "C" fn(PlayableTrack,crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip,__mi)}
+}
+
 #[cfg(feature="unity_engine-timeline-playabletrack")]pub trait IPlayableTrackMethods:IPlayableTrack{#[doc="`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn on_create_clip(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->(){unsafe{let __receiver= <PlayableTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d93a0usize)as*mut u8,();
-(PlayableTrack)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+__PlayableTrack_unity2_raw::on_create_clip(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <PlayableTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d9450usize)as*mut u8,();

@@ -21,15 +21,50 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshopbuyroot/ItemShopBuyRoot.md"))]#[::unity2::class(namespace="App",name="ItemShopBuyRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ItemShopBuyRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MenuObject")]pub m_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_UnitItemMenuContent")]pub m_unit_item_menu_content:crate::app::unititemmenucontent::UnitItemMenuContent, #[offset(40)]#[rename(name="m_HoldingInfoWindowObject")]pub m_holding_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_DetailInfoWindowObject")]pub m_detail_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_UnitImageObject")]pub m_unit_image_object:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_PriceDownObject")]pub m_price_down_object:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_PriceDownText")]pub m_price_down_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(88)]#[rename(name="m_ItemShopBuyMenu")]pub m_item_shop_buy_menu:crate::app::itemshopbuymenu::ItemShopBuyMenu, #[offset(96)]#[rename(name="m_UnitItemMenu")]pub m_unit_item_menu:crate::app::unititemmenu::UnitItemMenu, #[offset(104)]#[rename(name="m_ItemHoldingInfoWindow")]pub m_item_holding_info_window:crate::app::itemholdinginfowindow::ItemHoldingInfoWindow, #[offset(112)]#[rename(name="m_ItemMenuDetailSetter")]pub m_item_menu_detail_setter:crate::app::itemmenudetailsetter::ItemMenuDetailSetter, #[offset(120)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::itemshopbuyroot::ItemShopBuyRoot_ReturnEventHandler, #[offset(128)]#[rename(name="m_YesNoDialog")]pub m_yes_no_dialog:crate::app::exchangeyesnodialog::ExchangeYesNoDialog, #[offset(136)]#[rename(name="m_SendItemMenu")]pub m_send_item_menu:crate::app::procinst::ProcInst, #[offset(144)]#[rename(name="m_DiscardItemMenu")]pub m_discard_item_menu:crate::app::procinst::ProcInst, #[offset(152)]#[rename(name="m_ItemData")]pub m_item_data:crate::app::itemdata::ItemData, #[offset(160)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(168)]#[rename(name="m_IsSendingItemToTransporter")]pub m_is_sending_item_to_transporter:bool, #[offset(169)]#[rename(name="m_IsSendingUnitItem")]pub m_is_sending_unit_item:bool, #[offset(172)]#[rename(name="m_SendingUnitItemIndex")]pub m_sending_unit_item_index:i32, #[offset(176)]#[rename(name="m_IsDiscardingTransporterItem")]pub m_is_discarding_transporter_item:bool, #[offset(180)]#[rename(name="m_DiscardingTransporterItemIndex")]pub m_discarding_transporter_item_index:i32, #[offset(184)]#[rename(name="m_ExistingOwner")]pub m_existing_owner:bool, #[offset(185)]#[rename(name="m_ItemDetailDisplayWithUnit")]pub m_item_detail_display_with_unit:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshopbuyroot/ItemShopBuyRoot_ReturnEventHandler.md"))]#[::unity2::class(namespace="App",name="ItemShopBuyRoot.ReturnEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct ItemShopBuyRoot_ReturnEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/itemshopbuyroot/ItemShopBuyRoot.md"))]#[::unity2::class(namespace="App",name="ItemShopBuyRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct ItemShopBuyRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_MenuObject")]pub m_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_UnitItemMenuContent")]pub m_unit_item_menu_content:crate::app::unititemmenucontent::UnitItemMenuContent, #[offset(40)]#[rename(name="m_HoldingInfoWindowObject")]pub m_holding_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_DetailInfoWindowObject")]pub m_detail_info_window_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_UnitImageObject")]pub m_unit_image_object:crate::unity_engine::gameobject::GameObject, #[offset(64)]#[rename(name="m_PriceDownObject")]pub m_price_down_object:crate::unity_engine::gameobject::GameObject, #[offset(72)]#[rename(name="m_PriceDownText")]pub m_price_down_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(80)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(88)]#[rename(name="m_ItemShopBuyMenu")]pub m_item_shop_buy_menu:crate::app::itemshopbuymenu::ItemShopBuyMenu, #[offset(96)]#[rename(name="m_UnitItemMenu")]pub m_unit_item_menu:crate::app::unititemmenu::UnitItemMenu, #[offset(104)]#[rename(name="m_ItemHoldingInfoWindow")]pub m_item_holding_info_window:crate::app::itemholdinginfowindow::ItemHoldingInfoWindow, #[offset(112)]#[rename(name="m_ItemMenuDetailSetter")]pub m_item_menu_detail_setter:crate::app::itemmenudetailsetter::ItemMenuDetailSetter, #[offset(120)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::itemshopbuyroot::ItemShopBuyRoot_ReturnEventHandler, #[offset(128)]#[rename(name="m_YesNoDialog")]pub m_yes_no_dialog:crate::app::exchangeyesnodialog::ExchangeYesNoDialog, #[offset(136)]#[rename(name="m_SendItemMenu")]pub m_send_item_menu:crate::app::procinst::ProcInst, #[offset(144)]#[rename(name="m_DiscardItemMenu")]pub m_discard_item_menu:crate::app::procinst::ProcInst, #[offset(152)]#[rename(name="m_ItemData")]pub m_item_data:crate::app::itemdata::ItemData, #[offset(160)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(168)]#[rename(name="m_IsSendingItemToTransporter")]pub m_is_sending_item_to_transporter:bool, #[offset(169)]#[rename(name="m_IsSendingUnitItem")]pub m_is_sending_unit_item:bool, #[offset(172)]#[rename(name="m_SendingUnitItemIndex")]pub m_sending_unit_item_index:i32, #[offset(176)]#[rename(name="m_IsDiscardingTransporterItem")]pub m_is_discarding_transporter_item:bool, #[offset(180)]#[rename(name="m_DiscardingTransporterItemIndex")]pub m_discarding_transporter_item_index:i32, #[offset(184)]#[rename(name="m_ExistingOwner")]pub m_existing_owner:bool, #[offset(185)]#[rename(name="m_ItemDetailDisplayWithUnit")]pub m_item_detail_display_with_unit:bool,}
 
 }
 
 #[cfg(feature = "app-itemshopbuyroot-types")]
 pub use __types::*;
+
+#[cfg(feature="app-itemshopbuyroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ItemShopBuyRoot_ReturnEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:ItemShopBuyRoot_ReturnEventHandler,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ItemShopBuyRoot_ReturnEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(ItemShopBuyRoot_ReturnEventHandler,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit,__mi)}
+}
+
+#[cfg(feature="app-itemshopbuyroot")]pub trait IItemShopBuyRoot_ReturnEventHandlerMethods:IItemShopBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ItemShopBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd0420usize)as*mut u8,();
+(ItemShopBuyRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ItemShopBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ItemShopBuyRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-itemshopbuyroot")]impl<__T:IItemShopBuyRoot_ReturnEventHandler>IItemShopBuyRoot_ReturnEventHandlerMethods for __T{}
+
+#[cfg(feature="app-itemshopbuyroot")]impl ItemShopBuyRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-itemshopbuyroot")]impl ItemShopBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ItemShopBuyRoot_ReturnEventHandler), ::core::stringify!(new),));
+ <Self as IItemShopBuyRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-itemshopbuyroot")]impl ItemShopBuyRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x204e9c0usize)as*mut u8,();
 )}
@@ -156,38 +191,15 @@ pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-itemshopbuyroot")]pub trait IItemShopBuyRoot_ReturnEventHandlerMethods:IItemShopBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ItemShopBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd0420usize)as*mut u8,();
-(ItemShopBuyRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unit::Unit)` overload"]fn invoke(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ItemShopBuyRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd0440usize)as*mut u8,();
-(ItemShopBuyRoot_ReturnEventHandler)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-itemshopbuyroot")]impl<__T:IItemShopBuyRoot_ReturnEventHandler>IItemShopBuyRoot_ReturnEventHandlerMethods for __T{}
-
-#[cfg(feature="app-itemshopbuyroot")]impl ItemShopBuyRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-itemshopbuyroot")]impl ItemShopBuyRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ItemShopBuyRoot_ReturnEventHandler), ::core::stringify!(new),));
- <Self as IItemShopBuyRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-itemshopbuyroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ItemShopBuyRoot;
-    pub use super::IItemShopBuyRoot;
-    pub use super::IItemShopBuyRootMethods;
     pub use super::ItemShopBuyRoot_ReturnEventHandler;
     pub use super::IItemShopBuyRoot_ReturnEventHandler;
     pub use super::IItemShopBuyRoot_ReturnEventHandlerMethods;
+    pub use super::ItemShopBuyRoot;
+    pub use super::IItemShopBuyRoot;
+    pub use super::IItemShopBuyRootMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

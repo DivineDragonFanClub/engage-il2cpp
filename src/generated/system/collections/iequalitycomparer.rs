@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="system-collections-iequalitycomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IEqualityComparer_unity2_raw{use super:: * ;
-pub unsafe fn equals(this:IEqualityComparer,x:crate::system::object::Object,y:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Equals").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Equals", <IEqualityComparer as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn equals(this:IEqualityComparer,x:crate::system::object::Object,y:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IEqualityComparer as::unity2::ClassIdentity> ::NAME,"Equals",));
 let inner:extern "C" fn(IEqualityComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,x,y,__mi)}
-pub unsafe fn get_hash_code(this:IEqualityComparer,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetHashCode").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetHashCode", <IEqualityComparer as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_hash_code(this:IEqualityComparer,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IEqualityComparer as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
 let inner:extern "C" fn(IEqualityComparer,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

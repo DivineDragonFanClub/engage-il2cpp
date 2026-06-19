@@ -44,6 +44,29 @@ pub fn custom()->Self{Self{value:2}
 #[cfg(feature = "unity_engine-experimental-rendering-universal-renderer2ddata-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Renderer2DData_unity2_raw{use super:: * ;
+pub unsafe fn create(this:Renderer2DData,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Renderer2DData as::unity2::ClassIdentity> ::NAME,"Create",));
+let inner:extern "C" fn(Renderer2DData, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:Renderer2DData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Renderer2DData as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(Renderer2DData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-experimental-rendering-universal-renderer2ddata")]pub trait IRenderer2DDataMethods:IRenderer2DData{#[doc="`get_hdrEmulationScale()` overload"]fn get_hdr_emulation_scale(self,)->f32{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31ab970usize)as*mut u8,f32;
 (Renderer2DData)__receiver)}
@@ -97,12 +120,10 @@ pub use __types::*;
 (Renderer2DData)__receiver)}
 }
 #[doc="`Create()` overload"]fn create(self,)->crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31aba40usize)as*mut u8,crate::unity_engine::rendering::universal::scriptablerenderer::ScriptableRenderer;
-(Renderer2DData)__receiver)}
+__Renderer2DData_unity2_raw::create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31abab0usize)as*mut u8,();
-(Renderer2DData)__receiver)}
+__Renderer2DData_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_lightMaterials()` overload"]fn get_light_materials(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::unity_engine::material::Material>{unsafe{let __receiver= <Renderer2DData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x31abc70usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<u32,crate::unity_engine::material::Material> ;

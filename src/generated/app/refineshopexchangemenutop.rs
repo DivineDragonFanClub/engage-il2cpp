@@ -31,6 +31,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangemenutop/RefineShopExchangeMenuTop.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeMenuTop")]#[parent(crate::app::procinst::ProcInst)]pub struct RefineShopExchangeMenuTop{#[offset(112)]#[rename(name="m_RefineShopExchangeRoot")]pub m_refine_shop_exchange_root:crate::app::refineshopexchangeroot::RefineShopExchangeRoot, #[offset(120)]#[rename(name="m_RefineShopExchangeTargetMenu")]pub m_refine_shop_exchange_target_menu:crate::app::refineshopexchangetargetmenu::RefineShopExchangeTargetMenu, #[offset(128)]#[rename(name="m_RefineShopExchangeSourceMenu")]pub m_refine_shop_exchange_source_menu:crate::app::refineshopexchangesourcemenu::RefineShopExchangeSourceMenu, #[offset(136)]#[rename(name="m_RefineShopExchangeCountMenu")]pub m_refine_shop_exchange_count_menu:crate::app::refineshopexchangecountmenu::RefineShopExchangeCountMenu, #[offset(144)]#[rename(name="m_RefineShopExchangeResultPopup")]pub m_refine_shop_exchange_result_popup:crate::app::refineshopexchangeresultpopup::RefineShopExchangeResultPopup, #[offset(152)]#[rename(name="m_CloseEventHandler")]pub m_close_event_handler:crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop_CloseEventHandler, #[offset(160)]#[rename(name="m_Result")]pub m_result:crate::app::basicmenu::BasicMenu_Result, #[offset(168)]#[rename(name="m_TargetMaterialId")]pub m_target_material_id: ::unity2::Il2CppString, #[offset(176)]#[rename(name="m_SourceMaterialId")]pub m_source_material_id: ::unity2::Il2CppString, #[offset(184)]#[rename(name="m_TargetMaterialCount")]pub m_target_material_count:i32, #[offset(188)]#[rename(name="m_SourceMaterialCount")]pub m_source_material_count:i32,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangemenutop/RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeMenuTop.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangemenutop/RefineShopExchangeMenuTop_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RefineShopExchangeMenuTop_Label{pub value:i32,}
 impl::unity2::ClassIdentity for RefineShopExchangeMenuTop_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RefineShopExchangeMenuTop.Label";
@@ -53,9 +56,6 @@ pub fn end()->Self{Self{value:4}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangemenutop/RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeMenuTop.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshopexchangemenutop/RefineShopExchangeMenuTop_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RefineShopExchangeMenuTop.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct RefineShopExchangeMenuTop_ConfirmDialog{#[static_field]#[rename(name="m_StringBuilder")]pub m_string_builder: ::unity2::IlInstance,}
 
 
@@ -66,13 +66,25 @@ pub fn end()->Self{Self{value:4}
 #[cfg(feature = "app-refineshopexchangemenutop-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refineshopexchangemenutop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopExchangeMenuTop_CloseEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefineShopExchangeMenuTop_CloseEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineShopExchangeMenuTop_CloseEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefineShopExchangeMenuTop_CloseEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshopexchangemenutop")]pub trait IRefineShopExchangeMenuTop_CloseEventHandlerMethods:IRefineShopExchangeMenuTop_CloseEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeMenuTop_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1afae60usize)as*mut u8,();
 (RefineShopExchangeMenuTop_CloseEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineShopExchangeMenuTop_CloseEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afae80usize)as*mut u8,();
-(RefineShopExchangeMenuTop_CloseEventHandler)__receiver)}
+__RefineShopExchangeMenuTop_CloseEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -178,13 +190,25 @@ pub fn destroy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
+#[cfg(feature="app-refineshopexchangemenutop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshopexchangemenutop")]pub trait IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItemMethods:IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem{#[doc="`.ctor(::unity2::Il2CppString, crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler)` overload"]fn ctor(self,message:impl::core::convert::Into< ::unity2::Il2CppString> ,yes_event_handler:impl::core::convert::Into<crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler>)->(){unsafe{let __receiver= <RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7ba90usize)as*mut u8,();
 (RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message),(crate::app::refineshopexchangemenutop::RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7bad0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem)__receiver)}
+__RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -229,13 +253,25 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-refineshopexchangemenutop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshopexchangemenutop")]pub trait IRefineShopExchangeMenuTop_ConfirmDialog_YesEventHandlerMethods:IRefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7b820usize)as*mut u8,();
 (RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7b840usize)as*mut u8,();
-(RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler)__receiver)}
+__RefineShopExchangeMenuTop_ConfirmDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -261,10 +297,10 @@ pub mod prelude {
     pub use super::RefineShopExchangeMenuTop;
     pub use super::IRefineShopExchangeMenuTop;
     pub use super::IRefineShopExchangeMenuTopMethods;
-    pub use super::RefineShopExchangeMenuTop_Label;
     pub use super::RefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem;
     pub use super::IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItem;
     pub use super::IRefineShopExchangeMenuTop_ConfirmDialog_YesMenuItemMethods;
+    pub use super::RefineShopExchangeMenuTop_Label;
     pub use super::RefineShopExchangeMenuTop_ConfirmDialog;
     pub use super::IRefineShopExchangeMenuTop_ConfirmDialog;
     pub use super::IRefineShopExchangeMenuTop_ConfirmDialogMethods;

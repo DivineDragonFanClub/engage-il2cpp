@@ -43,6 +43,109 @@ pub fn convert_root_motion_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 pub fn convert_infinite_track_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
+#[cfg(feature="unity_engine-timeline-animationtrack")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimationTrack_unity2_raw{use super:: * ;
+pub unsafe fn can_compile_clips(this:AnimationTrack,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"CanCompileClips",));
+let inner:extern "C" fn(AnimationTrack, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_outputs(this:AnimationTrack,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"get_outputs",));
+let inner:extern "C" fn(AnimationTrack, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_create_clip(this:AnimationTrack,clip:crate::unity_engine::timeline::timelineclip::TimelineClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"OnCreateClip",));
+let inner:extern "C" fn(AnimationTrack,crate::unity_engine::timeline::timelineclip::TimelineClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip,__mi)}
+pub unsafe fn calculate_items_hash(this:AnimationTrack,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"CalculateItemsHash",));
+let inner:extern "C" fn(AnimationTrack, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_timeline_i_layerable_create_layer_mixer(this:AnimationTrack,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,input_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"UnityEngine.Timeline.ILayerable.CreateLayerMixer",));
+let inner:extern "C" fn(AnimationTrack,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,i32, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,input_count,__mi)}
+pub unsafe fn on_create_clip_playable_graph(this:AnimationTrack,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,tree:crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"OnCreateClipPlayableGraph",));
+let inner:extern "C" fn(AnimationTrack,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject,crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> , ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,tree,__mi)}
+pub unsafe fn get_evaluation_time(this:AnimationTrack,out_start: *mut f64,out_duration: *mut f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"GetEvaluationTime",));
+let inner:extern "C" fn(AnimationTrack, *mut f64, *mut f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,out_start,out_duration,__mi)}
+pub unsafe fn get_sequence_time(this:AnimationTrack,out_start: *mut f64,out_duration: *mut f64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"GetSequenceTime",));
+let inner:extern "C" fn(AnimationTrack, *mut f64, *mut f64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,out_start,out_duration,__mi)}
+pub unsafe fn gather_properties(this:AnimationTrack,director:crate::unity_engine::playables::playabledirector::PlayableDirector,driver:crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"GatherProperties",));
+let inner:extern "C" fn(AnimationTrack,crate::unity_engine::playables::playabledirector::PlayableDirector,crate::unity_engine::timeline::ipropertycollector::IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,director,driver,__mi)}
+pub unsafe fn on_upgrade_from_version(this:AnimationTrack,old_version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AnimationTrack as::unity2::ClassIdentity> ::NAME,"OnUpgradeFromVersion",));
+let inner:extern "C" fn(AnimationTrack,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,old_version,__mi)}
+}
+
 #[cfg(feature="unity_engine-timeline-animationtrack")]impl AnimationTrack{#[doc="`UsesAbsoluteMotion(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)` overload"]pub fn uses_absolute_motion(mode:impl::core::convert::Into<crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35d4300usize)as*mut u8,bool;
 (crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)::core::convert::Into::into(mode))}
 }
@@ -138,12 +241,10 @@ pub fn convert_infinite_track_method_info()-> & 'static::unity2::il2cpp::MethodI
 (AnimationTrack)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`CanCompileClips()` overload"]fn can_compile_clips(self,)->bool{unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d10a0usize)as*mut u8,bool;
-(AnimationTrack)__receiver)}
+__AnimationTrack_unity2_raw::can_compile_clips(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d1180usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> ;
-(AnimationTrack)__receiver)}
+__AnimationTrack_unity2_raw::get_outputs(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_inClipMode()` overload"]fn get_in_clip_mode(self,)->bool{unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d1250usize)as*mut u8,bool;
@@ -230,12 +331,10 @@ pub fn convert_infinite_track_method_info()-> & 'static::unity2::il2cpp::MethodI
 (AnimationTrack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(anim_clip_name))}
 }
 #[doc="`OnCreateClip(crate::unity_engine::timeline::timelineclip::TimelineClip)` overload"]fn on_create_clip(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip>)->(){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d1ee0usize)as*mut u8,();
-(AnimationTrack)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip))}
+__AnimationTrack_unity2_raw::on_create_clip(__receiver, ::core::convert::Into::into(clip), ::core::option::Option::None)}
 }
 #[doc="`CalculateItemsHash()` overload"]fn calculate_items_hash(self,)->i32{unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d20f0usize)as*mut u8,i32;
-(AnimationTrack)__receiver)}
+__AnimationTrack_unity2_raw::calculate_items_hash(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateClipOffsets()` overload"]fn update_clip_offsets(self,)->(){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d1520usize)as*mut u8,();
@@ -246,12 +345,10 @@ pub fn convert_infinite_track_method_info()-> & 'static::unity2::il2cpp::MethodI
 (AnimationTrack)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::timeline::animationtrack::AnimationTrack)::core::convert::Into::into(track),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)::core::convert::Into::into(tree),(crate::unity_engine::timeline::appliedoffsetmode::AppliedOffsetMode)::core::convert::Into::into(mode))}
 }
 #[doc="`UnityEngine.Timeline.ILayerable.CreateLayerMixer(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, i32)` overload"]fn unity_engine_timeline_i_layerable_create_layer_mixer(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,input_count:impl::core::convert::Into<i32>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d2e00usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(AnimationTrack)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(i32)::core::convert::Into::into(input_count))}
+__AnimationTrack_unity2_raw::unity_engine_timeline_i_layerable_create_layer_mixer(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::convert::Into::into(input_count), ::core::option::Option::None)}
 }
 #[doc="`OnCreateClipPlayableGraph(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject, crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)` overload"]fn on_create_clip_playable_graph(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,tree:impl::core::convert::Into<crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement> >)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d2e70usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(AnimationTrack)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go),(crate::unity_engine::timeline::intervaltree_1::IntervalTree_1<crate::unity_engine::timeline::runtimeelement::RuntimeElement>)::core::convert::Into::into(tree))}
+__AnimationTrack_unity2_raw::on_create_clip_playable_graph(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::convert::Into::into(tree), ::core::option::Option::None)}
 }
 #[doc="`GetDefaultBlendCount()` overload"]fn get_default_blend_count(self,)->i32{unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d3d80usize)as*mut u8,i32;
@@ -288,15 +385,13 @@ pub fn convert_infinite_track_method_info()-> & 'static::unity2::il2cpp::MethodI
 #[doc="`GetEvaluationTime(*mutf64, *mutf64)` overload"]fn get_evaluation_time(self,)->(f64,f64){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <f64> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d4820usize)as*mut u8,();
-(AnimationTrack)__receiver,(*mut f64)__out_0.as_mut_ptr(),(*mut f64)__out_1.as_mut_ptr());
+__AnimationTrack_unity2_raw::get_evaluation_time(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`GetSequenceTime(*mutf64, *mutf64)` overload"]fn get_sequence_time(self,)->(f64,f64){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <f64> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d4bc0usize)as*mut u8,();
-(AnimationTrack)__receiver,(*mut f64)__out_0.as_mut_ptr(),(*mut f64)__out_1.as_mut_ptr());
+__AnimationTrack_unity2_raw::get_sequence_time(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None);
 (__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`AssignAnimationClip(crate::unity_engine::timeline::timelineclip::TimelineClip, crate::unity_engine::animationclip::AnimationClip)` overload"]fn assign_animation_clip(self,clip:impl::core::convert::Into<crate::unity_engine::timeline::timelineclip::TimelineClip> ,anim_clip:impl::core::convert::Into<crate::unity_engine::animationclip::AnimationClip>)->(){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -304,8 +399,7 @@ let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
 (AnimationTrack)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip)::core::convert::Into::into(clip),(crate::unity_engine::animationclip::AnimationClip)::core::convert::Into::into(anim_clip))}
 }
 #[doc="`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]fn gather_properties(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector> ,driver:impl::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>)->(){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d5080usize)as*mut u8,();
-(AnimationTrack)__receiver,(crate::unity_engine::playables::playabledirector::PlayableDirector)::core::convert::Into::into(director),(crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)::core::convert::Into::into(driver))}
+__AnimationTrack_unity2_raw::gather_properties(__receiver, ::core::convert::Into::into(director), ::core::convert::Into::into(driver), ::core::option::Option::None)}
 }
 #[doc="`GetAnimationClips(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip>)` overload"]fn get_animation_clips(self,anim_clips:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::animationclip::AnimationClip> >)->(){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d5090usize)as*mut u8,();
@@ -368,8 +462,7 @@ let mut __out_1= ::core::mem::MaybeUninit:: <f64> ::uninit();
 (AnimationTrack)__receiver,(crate::unity_engine::timeline::timelineclip::TimelineClip_ClipExtrapolation)::core::convert::Into::into(value))}
 }
 #[doc="`OnUpgradeFromVersion(i32)` overload"]fn on_upgrade_from_version(self,old_version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35d5830usize)as*mut u8,();
-(AnimationTrack)__receiver,(i32)::core::convert::Into::into(old_version))}
+__AnimationTrack_unity2_raw::on_upgrade_from_version(__receiver, ::core::convert::Into::into(old_version), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimationTrack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35d59e0usize)as*mut u8,();

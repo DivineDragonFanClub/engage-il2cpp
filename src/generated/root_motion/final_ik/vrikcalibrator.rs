@@ -9,80 +9,21 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrikcalibrator/VRIKCalibrator_CalibrationData_Target.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIKCalibrator.CalibrationData.Target")]#[parent(crate::system::object::Object)]pub struct VRIKCalibrator_CalibrationData_Target{#[offset(16)]#[rename(name="used")]pub used:bool, #[offset(20)]#[rename(name="localPosition")]pub local_position:crate::unity_engine::vector3::Vector3, #[offset(32)]#[rename(name="localRotation")]pub local_rotation:crate::unity_engine::quaternion::Quaternion,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrikcalibrator/VRIKCalibrator_CalibrationData.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIKCalibrator.CalibrationData")]#[parent(crate::system::object::Object)]pub struct VRIKCalibrator_CalibrationData{#[offset(16)]#[rename(name="scale")]pub scale:f32, #[offset(24)]#[rename(name="head")]pub head:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(32)]#[rename(name="leftHand")]pub left_hand:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(40)]#[rename(name="rightHand")]pub right_hand:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(48)]#[rename(name="pelvis")]pub pelvis:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(56)]#[rename(name="leftFoot")]pub left_foot:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(64)]#[rename(name="rightFoot")]pub right_foot:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(72)]#[rename(name="leftLegGoal")]pub left_leg_goal:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(80)]#[rename(name="rightLegGoal")]pub right_leg_goal:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(88)]#[rename(name="pelvisTargetRight")]pub pelvis_target_right:crate::unity_engine::vector3::Vector3, #[offset(100)]#[rename(name="pelvisPositionWeight")]pub pelvis_position_weight:f32, #[offset(104)]#[rename(name="pelvisRotationWeight")]pub pelvis_rotation_weight:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrikcalibrator/VRIKCalibrator.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIKCalibrator")]#[parent(crate::system::object::Object)]pub struct VRIKCalibrator{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrikcalibrator/VRIKCalibrator_Settings.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIKCalibrator.Settings")]#[parent(crate::system::object::Object)]pub struct VRIKCalibrator_Settings{#[offset(16)]#[rename(name="scaleMlp")]pub scale_mlp:f32, #[offset(20)]#[rename(name="headTrackerForward")]pub head_tracker_forward:crate::unity_engine::vector3::Vector3, #[offset(32)]#[rename(name="headTrackerUp")]pub head_tracker_up:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="handTrackerForward")]pub hand_tracker_forward:crate::unity_engine::vector3::Vector3, #[offset(56)]#[rename(name="handTrackerUp")]pub hand_tracker_up:crate::unity_engine::vector3::Vector3, #[offset(68)]#[rename(name="footTrackerForward")]pub foot_tracker_forward:crate::unity_engine::vector3::Vector3, #[offset(80)]#[rename(name="footTrackerUp")]pub foot_tracker_up:crate::unity_engine::vector3::Vector3, #[offset(92)]#[rename(name="headOffset")]pub head_offset:crate::unity_engine::vector3::Vector3, #[offset(104)]#[rename(name="handOffset")]pub hand_offset:crate::unity_engine::vector3::Vector3, #[offset(116)]#[rename(name="footForwardOffset")]pub foot_forward_offset:f32, #[offset(120)]#[rename(name="footInwardOffset")]pub foot_inward_offset:f32, #[offset(124)]#[rename(name="footHeadingOffset")]pub foot_heading_offset:f32, #[offset(128)]#[rename(name="pelvisPositionWeight")]pub pelvis_position_weight:f32, #[offset(132)]#[rename(name="pelvisRotationWeight")]pub pelvis_rotation_weight:f32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrikcalibrator/VRIKCalibrator.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIKCalibrator")]#[parent(crate::system::object::Object)]pub struct VRIKCalibrator{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrikcalibrator/VRIKCalibrator_CalibrationData_Target.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIKCalibrator.CalibrationData.Target")]#[parent(crate::system::object::Object)]pub struct VRIKCalibrator_CalibrationData_Target{#[offset(16)]#[rename(name="used")]pub used:bool, #[offset(20)]#[rename(name="localPosition")]pub local_position:crate::unity_engine::vector3::Vector3, #[offset(32)]#[rename(name="localRotation")]pub local_rotation:crate::unity_engine::quaternion::Quaternion,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/vrikcalibrator/VRIKCalibrator_CalibrationData.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="VRIKCalibrator.CalibrationData")]#[parent(crate::system::object::Object)]pub struct VRIKCalibrator_CalibrationData{#[offset(16)]#[rename(name="scale")]pub scale:f32, #[offset(24)]#[rename(name="head")]pub head:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(32)]#[rename(name="leftHand")]pub left_hand:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(40)]#[rename(name="rightHand")]pub right_hand:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(48)]#[rename(name="pelvis")]pub pelvis:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(56)]#[rename(name="leftFoot")]pub left_foot:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(64)]#[rename(name="rightFoot")]pub right_foot:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(72)]#[rename(name="leftLegGoal")]pub left_leg_goal:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(80)]#[rename(name="rightLegGoal")]pub right_leg_goal:crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData_Target, #[offset(88)]#[rename(name="pelvisTargetRight")]pub pelvis_target_right:crate::unity_engine::vector3::Vector3, #[offset(100)]#[rename(name="pelvisPositionWeight")]pub pelvis_position_weight:f32, #[offset(104)]#[rename(name="pelvisRotationWeight")]pub pelvis_rotation_weight:f32,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-vrikcalibrator-types")]
 pub use __types::*;
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub trait IVRIKCalibrator_CalibrationData_TargetMethods:IVRIKCalibrator_CalibrationData_Target{#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <VRIKCalibrator_CalibrationData_Target as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6250usize)as*mut u8,();
-(VRIKCalibrator_CalibrationData_Target)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t))}
-}
-#[doc="`SetTo(crate::unity_engine::transform::Transform)` overload"]fn set_to(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <VRIKCalibrator_CalibrationData_Target as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6310usize)as*mut u8,();
-(VRIKCalibrator_CalibrationData_Target)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t))}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl<__T:IVRIKCalibrator_CalibrationData_Target>IVRIKCalibrator_CalibrationData_TargetMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData_Target{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData_Target{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(t:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VRIKCalibrator_CalibrationData_Target), ::core::stringify!(new),));
- <Self as IVRIKCalibrator_CalibrationData_TargetMethods> ::ctor(this,t);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub trait IVRIKCalibrator_CalibrationDataMethods:IVRIKCalibrator_CalibrationData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VRIKCalibrator_CalibrationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f220usize)as*mut u8,();
-(VRIKCalibrator_CalibrationData)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl<__T:IVRIKCalibrator_CalibrationData>IVRIKCalibrator_CalibrationDataMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VRIKCalibrator_CalibrationData), ::core::stringify!(new),));
- <Self as IVRIKCalibrator_CalibrationDataMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub trait IVRIKCalibrator_SettingsMethods:IVRIKCalibrator_Settings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VRIKCalibrator_Settings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f230usize)as*mut u8,();
-(VRIKCalibrator_Settings)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl<__T:IVRIKCalibrator_Settings>IVRIKCalibrator_SettingsMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_Settings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_Settings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(VRIKCalibrator_Settings), ::core::stringify!(new),));
- <Self as IVRIKCalibrator_SettingsMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator{#[doc="`RecalibrateScale(crate::root_motion::final_ik::vrik::VRIK, crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData, crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_Settings)` overload"]pub fn recalibrate_scale(ik:impl::core::convert::Into<crate::root_motion::final_ik::vrik::VRIK> ,data:impl::core::convert::Into<crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData> ,settings:impl::core::convert::Into<crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_Settings>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a1ad0usize)as*mut u8,();
 (crate::root_motion::final_ik::vrik::VRIK)::core::convert::Into::into(ik),(crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_CalibrationData)::core::convert::Into::into(data),(crate::root_motion::final_ik::vrikcalibrator::VRIKCalibrator_Settings)::core::convert::Into::into(settings))}
@@ -148,20 +89,79 @@ pub fn guess_wrist_to_palm_axis_method_info()-> & 'static::unity2::il2cpp::Metho
 pub fn guess_palm_to_thumb_axis_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
 }
 
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub trait IVRIKCalibrator_SettingsMethods:IVRIKCalibrator_Settings{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VRIKCalibrator_Settings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f230usize)as*mut u8,();
+(VRIKCalibrator_Settings)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl<__T:IVRIKCalibrator_Settings>IVRIKCalibrator_SettingsMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_Settings{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_Settings{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VRIKCalibrator_Settings), ::core::stringify!(new),));
+ <Self as IVRIKCalibrator_SettingsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub trait IVRIKCalibrator_CalibrationData_TargetMethods:IVRIKCalibrator_CalibrationData_Target{#[doc="`.ctor(crate::unity_engine::transform::Transform)` overload"]fn ctor(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <VRIKCalibrator_CalibrationData_Target as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6250usize)as*mut u8,();
+(VRIKCalibrator_CalibrationData_Target)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t))}
+}
+#[doc="`SetTo(crate::unity_engine::transform::Transform)` overload"]fn set_to(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->(){unsafe{let __receiver= <VRIKCalibrator_CalibrationData_Target as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6310usize)as*mut u8,();
+(VRIKCalibrator_CalibrationData_Target)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(t))}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl<__T:IVRIKCalibrator_CalibrationData_Target>IVRIKCalibrator_CalibrationData_TargetMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData_Target{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_to_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData_Target{#[doc="`.ctor(crate::unity_engine::transform::Transform)` — overload selector"]pub fn new(t:crate::unity_engine::transform::Transform)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VRIKCalibrator_CalibrationData_Target), ::core::stringify!(new),));
+ <Self as IVRIKCalibrator_CalibrationData_TargetMethods> ::ctor(this,t);
+this}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]pub trait IVRIKCalibrator_CalibrationDataMethods:IVRIKCalibrator_CalibrationData{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VRIKCalibrator_CalibrationData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f220usize)as*mut u8,();
+(VRIKCalibrator_CalibrationData)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl<__T:IVRIKCalibrator_CalibrationData>IVRIKCalibrator_CalibrationDataMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root_motion-final_ik-vrikcalibrator")]impl VRIKCalibrator_CalibrationData{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(VRIKCalibrator_CalibrationData), ::core::stringify!(new),));
+ <Self as IVRIKCalibrator_CalibrationDataMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-vrikcalibrator")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::VRIKCalibrator;
+    pub use super::IVRIKCalibrator;
+    pub use super::VRIKCalibrator_Settings;
+    pub use super::IVRIKCalibrator_Settings;
+    pub use super::IVRIKCalibrator_SettingsMethods;
     pub use super::VRIKCalibrator_CalibrationData_Target;
     pub use super::IVRIKCalibrator_CalibrationData_Target;
     pub use super::IVRIKCalibrator_CalibrationData_TargetMethods;
     pub use super::VRIKCalibrator_CalibrationData;
     pub use super::IVRIKCalibrator_CalibrationData;
     pub use super::IVRIKCalibrator_CalibrationDataMethods;
-    pub use super::VRIKCalibrator_Settings;
-    pub use super::IVRIKCalibrator_Settings;
-    pub use super::IVRIKCalibrator_SettingsMethods;
-    pub use super::VRIKCalibrator;
-    pub use super::IVRIKCalibrator;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

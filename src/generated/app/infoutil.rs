@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil_StatusSkill.md"))]#[::unity2::class(namespace="App",name="InfoUtil.StatusSkill")]#[parent(crate::system::object::Object)]pub struct InfoUtil_StatusSkill{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil_HpStockSpriteType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InfoUtil_HpStockSpriteType{pub value:i32,}
 impl::unity2::ClassIdentity for InfoUtil_HpStockSpriteType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="InfoUtil.HpStockSpriteType";
@@ -33,13 +36,58 @@ pub fn player()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil.md"))]#[::unity2::class(namespace="App",name="InfoUtil")]#[parent(crate::system::object::Object)]pub struct InfoUtil{#[static_field]#[rename(name="SKILL_SLOT_MAX")]pub skill_slot_max:i32, #[static_field]#[rename(name="s_EmptyStringBuilder")]pub s_empty_string_builder: ::unity2::IlInstance,}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/infoutil/InfoUtil_StatusSkill.md"))]#[::unity2::class(namespace="App",name="InfoUtil.StatusSkill")]#[parent(crate::system::object::Object)]pub struct InfoUtil_StatusSkill{}
-
 }
 
 #[cfg(feature = "app-infoutil-types")]
 pub use __types::*;
+
+#[cfg(feature="app-infoutil")]pub trait IInfoUtil_StatusSkillMethods:IInfoUtil_StatusSkill{#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc72e0usize)as*mut u8,crate::app::skilldata::SkillData;
+(InfoUtil_StatusSkill)__receiver)}
+}
+#[doc="`set_Data(crate::app::skilldata::SkillData)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc72f0usize)as*mut u8,();
+(InfoUtil_StatusSkill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(value))}
+}
+#[doc="`get_IsActive()` overload"]fn get_is_active(self,)->bool{unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7300usize)as*mut u8,bool;
+(InfoUtil_StatusSkill)__receiver)}
+}
+#[doc="`set_IsActive(bool)` overload"]fn set_is_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7310usize)as*mut u8,();
+(InfoUtil_StatusSkill)__receiver,(bool)::core::convert::Into::into(value))}
+}
+#[doc="`get_Category()` overload"]fn get_category(self,)->crate::app::skilldata::SkillData_Categorys{unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7320usize)as*mut u8,crate::app::skilldata::SkillData_Categorys;
+(InfoUtil_StatusSkill)__receiver)}
+}
+#[doc="`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]fn set_category(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData_Categorys>)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7330usize)as*mut u8,();
+(InfoUtil_StatusSkill)__receiver,(crate::app::skilldata::SkillData_Categorys)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7340usize)as*mut u8,();
+(InfoUtil_StatusSkill)__receiver)}
+}
+}
+
+#[cfg(feature="app-infoutil")]impl<__T:IInfoUtil_StatusSkill>IInfoUtil_StatusSkillMethods for __T{}
+
+#[cfg(feature="app-infoutil")]impl InfoUtil_StatusSkill{pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-infoutil")]impl InfoUtil_StatusSkill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InfoUtil_StatusSkill), ::core::stringify!(new),));
+ <Self as IInfoUtil_StatusSkillMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-infoutil")]impl InfoUtil{#[doc="`TrySetText(crate::tm_pro::textmeshprougui::TextMeshProUGUI, ::unity2::Il2CppString)` overload"]pub fn try_set_text(tmp:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,str:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x290f0a0usize)as*mut u8,();
 (crate::tm_pro::textmeshprougui::TextMeshProUGUI)::core::convert::Into::into(tmp),(::unity2::Il2CppString)::core::convert::Into::into(str))}
@@ -265,64 +313,16 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-infoutil")]pub trait IInfoUtil_StatusSkillMethods:IInfoUtil_StatusSkill{#[doc="`get_Data()` overload"]fn get_data(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc72e0usize)as*mut u8,crate::app::skilldata::SkillData;
-(InfoUtil_StatusSkill)__receiver)}
-}
-#[doc="`set_Data(crate::app::skilldata::SkillData)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc72f0usize)as*mut u8,();
-(InfoUtil_StatusSkill)__receiver,(crate::app::skilldata::SkillData)::core::convert::Into::into(value))}
-}
-#[doc="`get_IsActive()` overload"]fn get_is_active(self,)->bool{unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7300usize)as*mut u8,bool;
-(InfoUtil_StatusSkill)__receiver)}
-}
-#[doc="`set_IsActive(bool)` overload"]fn set_is_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7310usize)as*mut u8,();
-(InfoUtil_StatusSkill)__receiver,(bool)::core::convert::Into::into(value))}
-}
-#[doc="`get_Category()` overload"]fn get_category(self,)->crate::app::skilldata::SkillData_Categorys{unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7320usize)as*mut u8,crate::app::skilldata::SkillData_Categorys;
-(InfoUtil_StatusSkill)__receiver)}
-}
-#[doc="`set_Category(crate::app::skilldata::SkillData_Categorys)` overload"]fn set_category(self,value:impl::core::convert::Into<crate::app::skilldata::SkillData_Categorys>)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7330usize)as*mut u8,();
-(InfoUtil_StatusSkill)__receiver,(crate::app::skilldata::SkillData_Categorys)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InfoUtil_StatusSkill as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc7340usize)as*mut u8,();
-(InfoUtil_StatusSkill)__receiver)}
-}
-}
-
-#[cfg(feature="app-infoutil")]impl<__T:IInfoUtil_StatusSkill>IInfoUtil_StatusSkillMethods for __T{}
-
-#[cfg(feature="app-infoutil")]impl InfoUtil_StatusSkill{pub fn get_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_is_active_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_category_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-infoutil")]impl InfoUtil_StatusSkill{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InfoUtil_StatusSkill), ::core::stringify!(new),));
- <Self as IInfoUtil_StatusSkillMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-infoutil")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::InfoUtil_StatusSkill;
+    pub use super::IInfoUtil_StatusSkill;
+    pub use super::IInfoUtil_StatusSkillMethods;
     pub use super::InfoUtil_HpStockSpriteType;
     pub use super::InfoUtil;
     pub use super::IInfoUtil;
     pub use super::IInfoUtilMethods;
-    pub use super::InfoUtil_StatusSkill;
-    pub use super::IInfoUtil_StatusSkill;
-    pub use super::IInfoUtil_StatusSkillMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

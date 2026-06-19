@@ -26,29 +26,77 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-grassmanagerwithoutterrain-types")]
 pub use __types::*;
 
+#[cfg(feature="app-grassmanagerwithoutterrain")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GrassManagerWithoutTerrain_unity2_raw{use super:: * ;
+pub unsafe fn get_has_terrain(this:GrassManagerWithoutTerrain,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GrassManagerWithoutTerrain as::unity2::ClassIdentity> ::NAME,"get_HasTerrain",));
+let inner:extern "C" fn(GrassManagerWithoutTerrain, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn find_grass_mesh_parent_transform(this:GrassManagerWithoutTerrain,parent:crate::unity_engine::transform::Transform,mesh_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GrassManagerWithoutTerrain as::unity2::ClassIdentity> ::NAME,"FindGrassMeshParentTransform",));
+let inner:extern "C" fn(GrassManagerWithoutTerrain,crate::unity_engine::transform::Transform,i32, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,parent,mesh_index,__mi)}
+pub unsafe fn calc_reference_transform_num(this:GrassManagerWithoutTerrain,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GrassManagerWithoutTerrain as::unity2::ClassIdentity> ::NAME,"CalcReferenceTransformNum",));
+let inner:extern "C" fn(GrassManagerWithoutTerrain, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_field_size_offset(this:GrassManagerWithoutTerrain,size: *mut crate::unity_engine::vector3::Vector3,offset: *mut crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GrassManagerWithoutTerrain as::unity2::ClassIdentity> ::NAME,"GetFieldSizeOffset",));
+let inner:extern "C" fn(GrassManagerWithoutTerrain, *mut crate::unity_engine::vector3::Vector3, *mut crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,size,offset,__mi)}
+pub unsafe fn find_ground_texture(this:GrassManagerWithoutTerrain,mesh_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::texture2d::Texture2D{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GrassManagerWithoutTerrain as::unity2::ClassIdentity> ::NAME,"FindGroundTexture",));
+let inner:extern "C" fn(GrassManagerWithoutTerrain,i32, ::unity2::OptionalMethod,)->crate::unity_engine::texture2d::Texture2D= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mesh_index,__mi)}
+}
+
 #[cfg(feature="app-grassmanagerwithoutterrain")]pub trait IGrassManagerWithoutTerrainMethods:IGrassManagerWithoutTerrain{#[doc="`get_HasTerrain()` overload"]fn get_has_terrain(self,)->bool{unsafe{let __receiver= <GrassManagerWithoutTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296c8e0usize)as*mut u8,bool;
-(GrassManagerWithoutTerrain)__receiver)}
+__GrassManagerWithoutTerrain_unity2_raw::get_has_terrain(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FindGrassMeshParentTransform(crate::unity_engine::transform::Transform, i32)` overload"]fn find_grass_mesh_parent_transform(self,parent:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,mesh_index:impl::core::convert::Into<i32>)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <GrassManagerWithoutTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296c8f0usize)as*mut u8,crate::unity_engine::transform::Transform;
-(GrassManagerWithoutTerrain)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(parent),(i32)::core::convert::Into::into(mesh_index))}
+__GrassManagerWithoutTerrain_unity2_raw::find_grass_mesh_parent_transform(__receiver, ::core::convert::Into::into(parent), ::core::convert::Into::into(mesh_index), ::core::option::Option::None)}
 }
 #[doc="`CalcReferenceTransformNum()` overload"]fn calc_reference_transform_num(self,)->i32{unsafe{let __receiver= <GrassManagerWithoutTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296cc90usize)as*mut u8,i32;
-(GrassManagerWithoutTerrain)__receiver)}
+__GrassManagerWithoutTerrain_unity2_raw::calc_reference_transform_num(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetFieldSizeOffset(*mutcrate::unity_engine::vector3::Vector3, *mutcrate::unity_engine::vector3::Vector3)` overload"]fn get_field_size_offset(self,)->(bool,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3){unsafe{let __receiver= <GrassManagerWithoutTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <crate::unity_engine::vector3::Vector3> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x296ced0usize)as*mut u8,bool;
-(GrassManagerWithoutTerrain)__receiver,(*mut crate::unity_engine::vector3::Vector3)__out_0.as_mut_ptr(),(*mut crate::unity_engine::vector3::Vector3)__out_1.as_mut_ptr())}
+let __ret={__GrassManagerWithoutTerrain_unity2_raw::get_field_size_offset(__receiver,__out_0.as_mut_ptr(),__out_1.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init(),__out_1.assume_init())}
 }
 #[doc="`FindGroundTexture(i32)` overload"]fn find_ground_texture(self,mesh_index:impl::core::convert::Into<i32>)->crate::unity_engine::texture2d::Texture2D{unsafe{let __receiver= <GrassManagerWithoutTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296d0e0usize)as*mut u8,crate::unity_engine::texture2d::Texture2D;
-(GrassManagerWithoutTerrain)__receiver,(i32)::core::convert::Into::into(mesh_index))}
+__GrassManagerWithoutTerrain_unity2_raw::find_ground_texture(__receiver, ::core::convert::Into::into(mesh_index), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GrassManagerWithoutTerrain as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x296d2e0usize)as*mut u8,();

@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfosequence/SolanelInfoSequence.md"))]#[::unity2::class(namespace="App",name="SolanelInfoSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct SolanelInfoSequence{#[offset(120)]#[rename(name="m_InfoMenuResult")]pub m_info_menu_result:crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfosequence/SolanelInfoSequence_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="SolanelInfoSequence.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct SolanelInfoSequence_DecideEventHandler{}
 
 
@@ -40,10 +37,48 @@ pub fn end()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfosequence/SolanelInfoSequence.md"))]#[::unity2::class(namespace="App",name="SolanelInfoSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct SolanelInfoSequence{#[offset(120)]#[rename(name="m_InfoMenuResult")]pub m_info_menu_result:crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,}
+
 }
 
 #[cfg(feature = "app-solanelinfosequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-solanelinfosequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SolanelInfoSequence_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:SolanelInfoSequence_DecideEventHandler,result:crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SolanelInfoSequence_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(SolanelInfoSequence_DecideEventHandler,crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,__mi)}
+}
+
+#[cfg(feature="app-solanelinfosequence")]pub trait ISolanelInfoSequence_DecideEventHandlerMethods:ISolanelInfoSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SolanelInfoSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72490usize)as*mut u8,();
+(SolanelInfoSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult>)->(){unsafe{let __receiver= <SolanelInfoSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SolanelInfoSequence_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-solanelinfosequence")]impl<__T:ISolanelInfoSequence_DecideEventHandler>ISolanelInfoSequence_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-solanelinfosequence")]impl SolanelInfoSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-solanelinfosequence")]impl SolanelInfoSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoSequence_DecideEventHandler), ::core::stringify!(new),));
+ <Self as ISolanelInfoSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-solanelinfosequence")]impl SolanelInfoSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,event_handler:impl::core::convert::Into<crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe2760usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::solanelinfosequence::SolanelInfoSequence_DecideEventHandler)::core::convert::Into::into(event_handler))}
@@ -109,39 +144,16 @@ pub fn close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-solanelinfosequence")]pub trait ISolanelInfoSequence_DecideEventHandlerMethods:ISolanelInfoSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SolanelInfoSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d72490usize)as*mut u8,();
-(SolanelInfoSequence_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult>)->(){unsafe{let __receiver= <SolanelInfoSequence_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d724b0usize)as*mut u8,();
-(SolanelInfoSequence_DecideEventHandler)__receiver,(crate::app::solanelinfomenu::SolanelInfoMenu_InfoResult)::core::convert::Into::into(result))}
-}
-}
-
-#[cfg(feature="app-solanelinfosequence")]impl<__T:ISolanelInfoSequence_DecideEventHandler>ISolanelInfoSequence_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-solanelinfosequence")]impl SolanelInfoSequence_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-solanelinfosequence")]impl SolanelInfoSequence_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SolanelInfoSequence_DecideEventHandler), ::core::stringify!(new),));
- <Self as ISolanelInfoSequence_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-solanelinfosequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SolanelInfoSequence;
-    pub use super::ISolanelInfoSequence;
-    pub use super::ISolanelInfoSequenceMethods;
     pub use super::SolanelInfoSequence_DecideEventHandler;
     pub use super::ISolanelInfoSequence_DecideEventHandler;
     pub use super::ISolanelInfoSequence_DecideEventHandlerMethods;
     pub use super::SolanelInfoSequence_Label2;
+    pub use super::SolanelInfoSequence;
+    pub use super::ISolanelInfoSequence;
+    pub use super::ISolanelInfoSequenceMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

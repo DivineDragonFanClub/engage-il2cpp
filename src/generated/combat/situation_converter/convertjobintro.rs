@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertJobIntro")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertJobIntro{#[offset(24)]#[rename(name="m_State")]pub m_state:crate::combat::situation_converter::convertjobintro::ConvertJobIntro_State,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertjobintro/ConvertJobIntro_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ConvertJobIntro_State{pub value:i32,}
 impl::unity2::ClassIdentity for ConvertJobIntro_State{const NAMESPACE: &'static str="Combat.SituationConverter";
 const NAME: &'static str="ConvertJobIntro.State";
@@ -34,21 +37,30 @@ pub fn end()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/situation_converter/convertjobintro/ConvertJobIntro.md"))]#[::unity2::class(namespace="Combat.SituationConverter",name="ConvertJobIntro")]#[parent(crate::combat::situation_converter::baseconverter::BaseConverter)]pub struct ConvertJobIntro{#[offset(24)]#[rename(name="m_State")]pub m_state:crate::combat::situation_converter::convertjobintro::ConvertJobIntro_State,}
-
 }
 
 #[cfg(feature = "combat-situation_converter-convertjobintro-types")]
 pub use __types::*;
+
+#[cfg(feature="combat-situation_converter-convertjobintro")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConvertJobIntro_unity2_raw{use super:: * ;
+pub unsafe fn convert(this:ConvertJobIntro,situation:crate::combat::camerasituation::CameraSituation,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ConvertJobIntro as::unity2::ClassIdentity> ::NAME,"Convert",));
+let inner:extern "C" fn(ConvertJobIntro,crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::combat::cameraposition::CameraPosition= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,situation,arg,__mi)}
+}
 
 #[cfg(feature="combat-situation_converter-convertjobintro")]pub trait IConvertJobIntroMethods:IConvertJobIntro{#[doc="`.ctor(crate::combat::situation_converter::cameradataset::CameraDataSet)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::combat::situation_converter::cameradataset::CameraDataSet>)->(){unsafe{let __receiver= <ConvertJobIntro as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2541fe0usize)as*mut u8,();
 (ConvertJobIntro)__receiver,(crate::combat::situation_converter::cameradataset::CameraDataSet)::core::convert::Into::into(data))}
 }
 #[doc="`Convert(crate::combat::camerasituation::CameraSituation, ::unity2::Il2CppString)` overload"]fn convert(self,situation:impl::core::convert::Into<crate::combat::camerasituation::CameraSituation> ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::combat::cameraposition::CameraPosition{unsafe{let __receiver= <ConvertJobIntro as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2541ff0usize)as*mut u8,crate::combat::cameraposition::CameraPosition;
-(ConvertJobIntro)__receiver,(crate::combat::camerasituation::CameraSituation)::core::convert::Into::into(situation),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+__ConvertJobIntro_unity2_raw::convert(__receiver, ::core::convert::Into::into(situation), ::core::convert::Into::into(arg), ::core::option::Option::None)}
 }
 }
 
@@ -68,10 +80,10 @@ this}
 #[cfg(feature = "combat-situation_converter-convertjobintro")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConvertJobIntro_State;
     pub use super::ConvertJobIntro;
     pub use super::IConvertJobIntro;
     pub use super::IConvertJobIntroMethods;
+    pub use super::ConvertJobIntro_State;
     pub use crate::combat::situation_converter::baseconverter::IBaseConverter;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

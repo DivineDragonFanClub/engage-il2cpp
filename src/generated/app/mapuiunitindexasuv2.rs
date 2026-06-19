@@ -28,13 +28,25 @@ use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect,IBaseMeshEffect}
 #[cfg(feature = "app-mapuiunitindexasuv2-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapuiunitindexasuv2")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapUIUnitIndexAsUV2_unity2_raw{use super:: * ;
+pub unsafe fn modify_mesh(this:MapUIUnitIndexAsUV2,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <MapUIUnitIndexAsUV2 as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
+let inner:extern "C" fn(MapUIUnitIndexAsUV2,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vh,__mi)}
+}
+
 #[cfg(feature="app-mapuiunitindexasuv2")]pub trait IMapUIUnitIndexAsUV2Methods:IMapUIUnitIndexAsUV2{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapUIUnitIndexAsUV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x202b2d0usize)as*mut u8,();
 (MapUIUnitIndexAsUV2)__receiver)}
 }
 #[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <MapUIUnitIndexAsUV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202b2e0usize)as*mut u8,();
-(MapUIUnitIndexAsUV2)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh))}
+__MapUIUnitIndexAsUV2_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)}
 }
 #[doc="`SetUnitIndex(i32)` overload"]fn set_unit_index(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapUIUnitIndexAsUV2 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x202b400usize)as*mut u8,();

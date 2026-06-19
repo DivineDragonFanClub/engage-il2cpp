@@ -31,6 +31,39 @@ impl::unity2::IlType for MapImage_BackupTerrain{fn il_type()-> &'static::unity2:
 #[cfg(feature = "app-mapimage-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapimage")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapImage_unity2_raw{use super:: * ;
+pub unsafe fn get_version(this:MapImage,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapImage as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let inner:extern "C" fn(MapImage, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_serialize(this:MapImage,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapImage as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let inner:extern "C" fn(MapImage,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn on_deserialize(this:MapImage,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapImage as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let inner:extern "C" fn(MapImage,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,version,__mi)}
+}
+
 #[cfg(feature="app-mapimage")]impl MapImage{#[doc="`GetPutTerrain(::unity2::Il2CppString, bool)` overload"]pub fn get_put_terrain(tid:impl::core::convert::Into< ::unity2::Il2CppString> ,nullable:impl::core::convert::Into<bool>)->crate::app::terraindata_2::TerrainData_2{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1de2240usize)as*mut u8,crate::app::terraindata_2::TerrainData_2;
 (::unity2::Il2CppString)::core::convert::Into::into(tid),(bool)::core::convert::Into::into(nullable))}
 }
@@ -69,16 +102,13 @@ pub use __types::*;
 (MapImage)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(bool)::core::convert::Into::into(is_consider_not_target))}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3050usize)as*mut u8,i32;
-(MapImage)__receiver)}
+__MapImage_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3060usize)as*mut u8,();
-(MapImage)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__MapImage_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de3570usize)as*mut u8,();
-(MapImage)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+__MapImage_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
 }
 #[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapImage as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1de38f0usize)as*mut u8,i32;

@@ -50,6 +50,19 @@ pub fn closing()->Self{Self{value:3}
 #[cfg(feature = "app-relayreplayplayername-types")]
 pub use __types::*;
 
+#[cfg(feature="app-relayreplayplayername")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RelayReplayPlayerName_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:RelayReplayPlayerName,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RelayReplayPlayerName as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(RelayReplayPlayerName, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-relayreplayplayername")]impl RelayReplayPlayerName{#[doc="`TryShow()` overload"]pub fn try_show()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2003a30usize)as*mut u8,();
 )}
 }
@@ -74,8 +87,7 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-relayreplayplayername")]pub trait IRelayReplayPlayerNameMethods:IRelayReplayPlayerName{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2002bd0usize)as*mut u8,();
-(RelayReplayPlayerName)__receiver)}
+__RelayReplayPlayerName_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <RelayReplayPlayerName as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2002ca0usize)as*mut u8,();

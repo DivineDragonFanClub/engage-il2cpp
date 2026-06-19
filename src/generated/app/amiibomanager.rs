@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))]#[::unity2::class(namespace="App",name="AmiiboManager.AmiiboInfo")]#[parent(crate::system::object::Object)]pub struct AmiiboManager_AmiiboInfo{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibomanager/AmiiboManager_Sequence.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AmiiboManager_Sequence{pub value:i32,}
 impl::unity2::ClassIdentity for AmiiboManager_Sequence{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AmiiboManager.Sequence";
@@ -44,63 +41,13 @@ pub fn sequence_deactive()->Self{Self{value:5}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibomanager/AmiiboManager.md"))]#[::unity2::class(namespace="App",name="AmiiboManager")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::amiibomanager::AmiiboManager>)]pub struct AmiiboManager{#[static_field]#[rename(name="DeviceCountMax")]pub device_count_max:i32, #[offset(40)]#[rename(name="m_DeviceCount")]pub m_device_count:i32, #[offset(44)]#[rename(name="m_SelectDeviceIndex")]pub m_select_device_index:i32, #[offset(48)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::amiibomanager::AmiiboManager_Sequence, #[offset(52)]#[rename(name="m_ActivateEventIndex")]pub m_activate_event_index:u32, #[offset(56)]#[rename(name="m_DeactivateEventIndex")]pub m_deactivate_event_index:u32, #[offset(60)]#[rename(name="m_AttachedEvent")]pub m_attached_event:bool, #[offset(64)]#[rename(name="m_NpadId")]pub m_npad_id:crate::nn::hid::npadid::NpadId,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiibomanager/AmiiboManager_AmiiboInfo.md"))]#[::unity2::class(namespace="App",name="AmiiboManager.AmiiboInfo")]#[parent(crate::system::object::Object)]pub struct AmiiboManager_AmiiboInfo{}
+
 }
 
 #[cfg(feature = "app-amiibomanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-amiibomanager")]pub trait IAmiiboManager_AmiiboInfoMethods:IAmiiboManager_AmiiboInfo{#[doc="`GetCharacterId()` overload"]fn get_character_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3310usize)as*mut u8,i32;
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-#[doc="`GetCharacterBaseId()` overload"]fn get_character_base_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3360usize)as*mut u8,i32;
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-#[doc="`GetCharacterBaseUpperId()` overload"]fn get_character_base_upper_id(self,)->u8{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba33a0usize)as*mut u8,u8;
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-#[doc="`GetCharacterBaseLowerId()` overload"]fn get_character_base_lower_id(self,)->u8{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba33d0usize)as*mut u8,u8;
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-#[doc="`GetCharacterDetailId()` overload"]fn get_character_detail_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3400usize)as*mut u8,i32;
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-#[doc="`GetSeriesId()` overload"]fn get_series_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3430usize)as*mut u8,i32;
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-#[doc="`GetNumberingId()` overload"]fn get_numbering_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3440usize)as*mut u8,i32;
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3450usize)as*mut u8,();
-(AmiiboManager_AmiiboInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-amiibomanager")]impl<__T:IAmiiboManager_AmiiboInfo>IAmiiboManager_AmiiboInfoMethods for __T{}
-
-#[cfg(feature="app-amiibomanager")]impl AmiiboManager_AmiiboInfo{pub fn get_character_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_character_base_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_character_base_upper_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_character_base_lower_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_character_detail_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_series_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_numbering_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-amiibomanager")]impl AmiiboManager_AmiiboInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AmiiboManager_AmiiboInfo), ::core::stringify!(new),));
- <Self as IAmiiboManager_AmiiboInfoMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-amiibomanager")]impl AmiiboManager{#[doc="`get_ReceiveCountMax()` overload"]pub fn get_receive_count_max()->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d32e00usize)as*mut u8,i32;
 )}
@@ -197,16 +144,69 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-amiibomanager")]pub trait IAmiiboManager_AmiiboInfoMethods:IAmiiboManager_AmiiboInfo{#[doc="`GetCharacterId()` overload"]fn get_character_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3310usize)as*mut u8,i32;
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+#[doc="`GetCharacterBaseId()` overload"]fn get_character_base_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3360usize)as*mut u8,i32;
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+#[doc="`GetCharacterBaseUpperId()` overload"]fn get_character_base_upper_id(self,)->u8{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba33a0usize)as*mut u8,u8;
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+#[doc="`GetCharacterBaseLowerId()` overload"]fn get_character_base_lower_id(self,)->u8{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba33d0usize)as*mut u8,u8;
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+#[doc="`GetCharacterDetailId()` overload"]fn get_character_detail_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3400usize)as*mut u8,i32;
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+#[doc="`GetSeriesId()` overload"]fn get_series_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3430usize)as*mut u8,i32;
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+#[doc="`GetNumberingId()` overload"]fn get_numbering_id(self,)->i32{unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3440usize)as*mut u8,i32;
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboManager_AmiiboInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3450usize)as*mut u8,();
+(AmiiboManager_AmiiboInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-amiibomanager")]impl<__T:IAmiiboManager_AmiiboInfo>IAmiiboManager_AmiiboInfoMethods for __T{}
+
+#[cfg(feature="app-amiibomanager")]impl AmiiboManager_AmiiboInfo{pub fn get_character_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_character_base_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_character_base_upper_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_character_base_lower_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_character_detail_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_series_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_numbering_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-amiibomanager")]impl AmiiboManager_AmiiboInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboManager_AmiiboInfo), ::core::stringify!(new),));
+ <Self as IAmiiboManager_AmiiboInfoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-amiibomanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AmiiboManager_AmiiboInfo;
-    pub use super::IAmiiboManager_AmiiboInfo;
-    pub use super::IAmiiboManager_AmiiboInfoMethods;
     pub use super::AmiiboManager_Sequence;
     pub use super::AmiiboManager;
     pub use super::IAmiiboManager;
     pub use super::IAmiiboManagerMethods;
+    pub use super::AmiiboManager_AmiiboInfo;
+    pub use super::IAmiiboManager_AmiiboInfo;
+    pub use super::IAmiiboManager_AmiiboInfoMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

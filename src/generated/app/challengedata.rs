@@ -22,6 +22,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-challengedata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-challengedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ChallengeData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:ChallengeData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ChallengeData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(ChallengeData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:ChallengeData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ChallengeData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(ChallengeData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_completed(this:ChallengeData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ChallengeData as::unity2::ClassIdentity> ::NAME,"OnCompleted",));
+let inner:extern "C" fn(ChallengeData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_release(this:ChallengeData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ChallengeData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let inner:extern "C" fn(ChallengeData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-challengedata")]impl ChallengeData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c1100usize)as*mut u8,();
 )}
 }
@@ -98,20 +141,16 @@ pub use __types::*;
 (ChallengeData)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChallengeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c1320usize)as*mut u8, ::unity2::Il2CppString;
-(ChallengeData)__receiver)}
+__ChallengeData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <ChallengeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c1330usize)as*mut u8,();
-(ChallengeData)__receiver)}
+__ChallengeData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCompleted()` overload"]fn on_completed(self,)->(){unsafe{let __receiver= <ChallengeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c1410usize)as*mut u8,();
-(ChallengeData)__receiver)}
+__ChallengeData_unity2_raw::on_completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <ChallengeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c1420usize)as*mut u8,();
-(ChallengeData)__receiver)}
+__ChallengeData_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRewardList()` overload"]fn get_reward_list(self,)->crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::rewarddata::RewardData>{unsafe{let __receiver= <ChallengeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25c1430usize)as*mut u8,crate::app::structdataarraylist_1::StructDataArrayList_1<crate::app::rewarddata::RewardData> ;

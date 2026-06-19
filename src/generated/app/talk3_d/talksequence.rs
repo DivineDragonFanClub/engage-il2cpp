@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkSequence.ReplaceText")]#[parent(crate::system::object::Object)]pub struct TalkSequence_ReplaceText{#[offset(16)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Index")]pub m_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence_PlayMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkSequence_PlayMode{pub value:i32,}
 impl::unity2::ClassIdentity for TalkSequence_PlayMode{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkSequence.PlayMode";
@@ -34,9 +31,6 @@ impl TalkSequence_PlayMode{pub fn manual()->Self{Self{value:0}
 pub fn auto_play()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::talk3_d::talksequence::TalkSequence>)]pub struct TalkSequence{#[static_field]#[rename(name="sm_IsContinue")]pub sm_is_continue:bool, #[static_field]#[rename(name="sm_ReservedPrefabRootObject")]pub sm_reserved_prefab_root_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_PrefabRootObject")]pub m_prefab_root_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_TalkSound")]pub m_talk_sound:crate::app::talksound::TalkSound, #[offset(136)]#[rename(name="m_TagParser")]pub m_tag_parser:crate::app::talk3_d::talktagparser::TalkTagParser, #[offset(144)]#[rename(name="m_TalkPtr")]pub m_talk_ptr:crate::app::talk3_d::talkptr::TalkPtr, #[offset(152)]#[rename(name="m_ReservedTag")]pub m_reserved_tag:crate::app::talk3_d::talktag::TalkTag, #[offset(160)]#[rename(name="m_ReplaceText")]pub m_replace_text:crate::app::talk3_d::talksequence::TalkSequence_ReplaceText, #[offset(168)]#[rename(name="m_BindProc")]pub m_bind_proc:crate::app::procinst::ProcInst, #[offset(176)]#[rename(name="m_ErrorMessageBuilder")]pub m_error_message_builder:crate::app::talk3_d::talkbuilder::TalkBuilder, #[offset(184)]#[rename(name="m_IsStartByContinuousNumber")]pub m_is_start_by_continuous_number:bool, #[offset(185)]#[rename(name="m_IsFlushedSoundList")]pub m_is_flushed_sound_list:bool, #[offset(186)]#[rename(name="m_IsShowMapTerrainInfo")]pub m_is_show_map_terrain_info:bool, #[offset(187)]#[rename(name="m_IsBindMapCamera")]pub m_is_bind_map_camera:bool, #[offset(188)]#[rename(name="m_IsPushedUnitInfo")]pub m_is_pushed_unit_info:bool, #[offset(192)]#[rename(name="m_LoadedSoundBankNameList")]pub m_loaded_sound_bank_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(227)]#[rename(name="m_IsLoadingCharacter")]pub m_is_loading_character:bool, #[static_field]#[rename(name="LoadingCharacterTimeoutCounterMax")]pub loading_character_timeout_counter_max:f32, #[offset(228)]#[rename(name="m_LoadingCharacterTimeoutCounter")]pub m_loading_character_timeout_counter:f32, #[offset(232)]#[rename(name="m_ReplaceTalkerNameDictionary")]pub m_replace_talker_name_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkSequence_Label{pub value:i32,}
@@ -69,6 +63,12 @@ pub fn skip_wait_to_end()->Self{Self{value:8}
 pub fn end()->Self{Self{value:9}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence_ReplaceText.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkSequence.ReplaceText")]#[parent(crate::system::object::Object)]pub struct TalkSequence_ReplaceText{#[offset(16)]#[rename(name="m_Text")]pub m_text: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Index")]pub m_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talksequence/TalkSequence.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::talk3_d::talksequence::TalkSequence>)]pub struct TalkSequence{#[static_field]#[rename(name="sm_IsContinue")]pub sm_is_continue:bool, #[static_field]#[rename(name="sm_ReservedPrefabRootObject")]pub sm_reserved_prefab_root_object:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_PrefabRootObject")]pub m_prefab_root_object:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_TalkSound")]pub m_talk_sound:crate::app::talksound::TalkSound, #[offset(136)]#[rename(name="m_TagParser")]pub m_tag_parser:crate::app::talk3_d::talktagparser::TalkTagParser, #[offset(144)]#[rename(name="m_TalkPtr")]pub m_talk_ptr:crate::app::talk3_d::talkptr::TalkPtr, #[offset(152)]#[rename(name="m_ReservedTag")]pub m_reserved_tag:crate::app::talk3_d::talktag::TalkTag, #[offset(160)]#[rename(name="m_ReplaceText")]pub m_replace_text:crate::app::talk3_d::talksequence::TalkSequence_ReplaceText, #[offset(168)]#[rename(name="m_BindProc")]pub m_bind_proc:crate::app::procinst::ProcInst, #[offset(176)]#[rename(name="m_ErrorMessageBuilder")]pub m_error_message_builder:crate::app::talk3_d::talkbuilder::TalkBuilder, #[offset(184)]#[rename(name="m_IsStartByContinuousNumber")]pub m_is_start_by_continuous_number:bool, #[offset(185)]#[rename(name="m_IsFlushedSoundList")]pub m_is_flushed_sound_list:bool, #[offset(186)]#[rename(name="m_IsShowMapTerrainInfo")]pub m_is_show_map_terrain_info:bool, #[offset(187)]#[rename(name="m_IsBindMapCamera")]pub m_is_bind_map_camera:bool, #[offset(188)]#[rename(name="m_IsPushedUnitInfo")]pub m_is_pushed_unit_info:bool, #[offset(192)]#[rename(name="m_LoadedSoundBankNameList")]pub m_loaded_sound_bank_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[offset(227)]#[rename(name="m_IsLoadingCharacter")]pub m_is_loading_character:bool, #[static_field]#[rename(name="LoadingCharacterTimeoutCounterMax")]pub loading_character_timeout_counter_max:f32, #[offset(228)]#[rename(name="m_LoadingCharacterTimeoutCounter")]pub m_loading_character_timeout_counter:f32, #[offset(232)]#[rename(name="m_ReplaceTalkerNameDictionary")]pub m_replace_talker_name_dictionary:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString, ::unity2::Il2CppString> ,}
 
 }
 
@@ -116,6 +116,39 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
  failed to instantiate", ::core::stringify!(TalkSequence_ReplaceText), ::core::stringify!(new),));
  <Self as ITalkSequence_ReplaceTextMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="app-talk3_d-talksequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:TalkSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TalkSequence as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(TalkSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:TalkSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TalkSequence as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(TalkSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_shutdown(this:TalkSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <TalkSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(TalkSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-talk3_d-talksequence")]impl TalkSequence{#[doc="`ReserveTalkPrefab()` overload"]pub fn reserve_talk_prefab()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x20c5770usize)as*mut u8,();
@@ -358,16 +391,13 @@ this}
 (TalkSequence)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9410usize)as*mut u8,();
-(TalkSequence)__receiver)}
+__TalkSequence_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9430usize)as*mut u8,();
-(TalkSequence)__receiver)}
+__TalkSequence_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20c95b0usize)as*mut u8,();
-(TalkSequence)__receiver)}
+__TalkSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20c9270usize)as*mut u8,();
@@ -454,14 +484,14 @@ this}
 #[cfg(feature = "app-talk3_d-talksequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkSequence_PlayMode;
+    pub use super::TalkSequence_Label;
     pub use super::TalkSequence_ReplaceText;
     pub use super::ITalkSequence_ReplaceText;
     pub use super::ITalkSequence_ReplaceTextMethods;
-    pub use super::TalkSequence_PlayMode;
     pub use super::TalkSequence;
     pub use super::ITalkSequence;
     pub use super::ITalkSequenceMethods;
-    pub use super::TalkSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

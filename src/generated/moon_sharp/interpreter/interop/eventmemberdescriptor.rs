@@ -13,291 +13,196 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper06.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper06")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper06{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper02.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper02")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper02{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper14.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper14")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper14{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper15.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper15")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper15{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper11.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper11")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper11{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper16.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper16")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper16{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper13.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper13")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper13{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor")]#[parent(crate::system::object::Object)]pub struct EventMemberDescriptor{#[static_field]#[rename(name="MAX_ARGS_IN_DELEGATE")]pub max_args_in_delegate:i32, #[offset(16)]#[rename(name="m_Lock")]pub m_lock: ::unity2::IlInstance, #[offset(24)]#[rename(name="m_Callbacks")]pub m_callbacks:crate::moon_sharp::interpreter::data_structs::multidictionary_2::MultiDictionary_2<crate::system::object::Object,crate::moon_sharp::interpreter::closure::Closure> , #[offset(32)]#[rename(name="m_Delegates")]pub m_delegates:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::system::object::Object,crate::system::delegate::Delegate> , #[offset(56)]#[rename(name="m_Add")]pub m_add:crate::system::reflection::methodinfo::MethodInfo, #[offset(64)]#[rename(name="m_Remove")]pub m_remove:crate::system::reflection::methodinfo::MethodInfo,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper08.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper08")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper08{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper03.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper03")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper03{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper10.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper10")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper10{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper09.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper09")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper09{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper08.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper08")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper08{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper12.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper12")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper12{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper07.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper07")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper07{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper00.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper00")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper00{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper16.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper16")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper16{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper15.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper15")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper15{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor")]#[parent(crate::system::object::Object)]pub struct EventMemberDescriptor{#[static_field]#[rename(name="MAX_ARGS_IN_DELEGATE")]pub max_args_in_delegate:i32, #[offset(16)]#[rename(name="m_Lock")]pub m_lock: ::unity2::IlInstance, #[offset(24)]#[rename(name="m_Callbacks")]pub m_callbacks:crate::moon_sharp::interpreter::data_structs::multidictionary_2::MultiDictionary_2<crate::system::object::Object,crate::moon_sharp::interpreter::closure::Closure> , #[offset(32)]#[rename(name="m_Delegates")]pub m_delegates:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::system::object::Object,crate::system::delegate::Delegate> , #[offset(56)]#[rename(name="m_Add")]pub m_add:crate::system::reflection::methodinfo::MethodInfo, #[offset(64)]#[rename(name="m_Remove")]pub m_remove:crate::system::reflection::methodinfo::MethodInfo,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper06.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper06")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper06{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper10.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper10")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper10{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper02.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper02")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper02{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper01.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper01")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper01{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper14.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper14")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper14{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper13.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper13")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper13{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper05.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper05")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper05{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper11.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper11")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper11{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper00.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper00")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper00{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper12.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper12")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper12{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper04.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper04")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper04{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/moon_sharp/interpreter/interop/eventmemberdescriptor/EventMemberDescriptor_EventWrapper09.md"))]#[::unity2::class(namespace="MoonSharp.Interpreter.Interop",name="EventMemberDescriptor.EventWrapper09")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct EventMemberDescriptor_EventWrapper09{}
 
 }
 
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor-types")]
 pub use __types::*;
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper06_unity2_raw{use super:: * ;
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper08_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper06 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper08 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
 );
 pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
 ::{}
 : {}
-", <EventMemberDescriptor_EventWrapper06 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+", <EventMemberDescriptor_EventWrapper08 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper06 as::unity2::ClassIdentity> ::class(),"Invoke",6,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper06 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper08,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper08 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper08,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,__mi)}
 }
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper08Methods:IEventMemberDescriptor_EventWrapper08{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper08 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper08_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper08)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper08 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper08_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper06Methods:IEventMemberDescriptor_EventWrapper06{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper06 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper06_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper06)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper06 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper06_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper06)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6))}
-}
-}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper08>IEventMemberDescriptor_EventWrapper08Methods for __T{}
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper06>IEventMemberDescriptor_EventWrapper06Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper06{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper08{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper06{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper08{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper06), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper06Methods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper08), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper08Methods> ::ctor(this,object,method);
 this}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper02_unity2_raw{use super:: * ;
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper03_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper02 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper03 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
 );
 pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
 ::{}
 : {}
-", <EventMemberDescriptor_EventWrapper02 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+", <EventMemberDescriptor_EventWrapper03 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper02 as::unity2::ClassIdentity> ::class(),"Invoke",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper02 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper03,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper03 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper03,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,__mi)}
 }
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper03Methods:IEventMemberDescriptor_EventWrapper03{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper03 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper03_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper03)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper03 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper03_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper02Methods:IEventMemberDescriptor_EventWrapper02{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper02 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper02_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper02)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper02 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper02_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper02)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2))}
-}
-}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper03>IEventMemberDescriptor_EventWrapper03Methods for __T{}
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper02>IEventMemberDescriptor_EventWrapper02Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper02{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper03{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper02{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper03{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper02), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper02Methods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper03), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper03Methods> ::ctor(this,object,method);
 this}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper14_unity2_raw{use super:: * ;
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper07_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper14 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper07 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
 );
 pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
 ::{}
 : {}
-", <EventMemberDescriptor_EventWrapper14 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+", <EventMemberDescriptor_EventWrapper07 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper14 as::unity2::ClassIdentity> ::class(),"Invoke",14,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper14 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper07,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper07 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper07,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,__mi)}
 }
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper07Methods:IEventMemberDescriptor_EventWrapper07{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper07 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper07_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper07)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper07 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper07_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper14Methods:IEventMemberDescriptor_EventWrapper14{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper14 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper14_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper14)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object> ,o13:impl::core::convert::Into<crate::system::object::Object> ,o14:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper14 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper14_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper14)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9),(crate::system::object::Object)::core::convert::Into::into(o10),(crate::system::object::Object)::core::convert::Into::into(o11),(crate::system::object::Object)::core::convert::Into::into(o12),(crate::system::object::Object)::core::convert::Into::into(o13),(crate::system::object::Object)::core::convert::Into::into(o14))}
-}
-}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper07>IEventMemberDescriptor_EventWrapper07Methods for __T{}
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper14>IEventMemberDescriptor_EventWrapper14Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper14{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper07{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper14{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper07{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper14), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper14Methods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper15_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper15 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper15 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper15 as::unity2::ClassIdentity> ::class(),"Invoke",15,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper15 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper15Methods:IEventMemberDescriptor_EventWrapper15{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper15 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper15_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper15)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object> ,o13:impl::core::convert::Into<crate::system::object::Object> ,o14:impl::core::convert::Into<crate::system::object::Object> ,o15:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper15 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper15_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper15)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9),(crate::system::object::Object)::core::convert::Into::into(o10),(crate::system::object::Object)::core::convert::Into::into(o11),(crate::system::object::Object)::core::convert::Into::into(o12),(crate::system::object::Object)::core::convert::Into::into(o13),(crate::system::object::Object)::core::convert::Into::into(o14),(crate::system::object::Object)::core::convert::Into::into(o15))}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper15>IEventMemberDescriptor_EventWrapper15Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper15{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper15{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper15), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper15Methods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper11_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper11 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper11 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper11 as::unity2::ClassIdentity> ::class(),"Invoke",11,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper11 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper11Methods:IEventMemberDescriptor_EventWrapper11{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper11 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper11_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper11)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper11 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper11_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper11)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9),(crate::system::object::Object)::core::convert::Into::into(o10),(crate::system::object::Object)::core::convert::Into::into(o11))}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper11>IEventMemberDescriptor_EventWrapper11Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper11{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper11{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper11), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper11Methods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper07), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper07Methods> ::ctor(this,object,method);
 this}
 }
 
@@ -312,16 +217,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor_EventWrapper16 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper16 as::unity2::ClassIdentity> ::class(),"Invoke",16,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper16 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper16,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,o10:crate::system::object::Object,o11:crate::system::object::Object,o12:crate::system::object::Object,o13:crate::system::object::Object,o14:crate::system::object::Object,o15:crate::system::object::Object,o16:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper16 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper16,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,o16,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper16Methods:IEventMemberDescriptor_EventWrapper16{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper16 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -329,8 +234,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (EventMemberDescriptor_EventWrapper16)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object> ,o13:impl::core::convert::Into<crate::system::object::Object> ,o14:impl::core::convert::Into<crate::system::object::Object> ,o15:impl::core::convert::Into<crate::system::object::Object> ,o16:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper16 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper16_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper16)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9),(crate::system::object::Object)::core::convert::Into::into(o10),(crate::system::object::Object)::core::convert::Into::into(o11),(crate::system::object::Object)::core::convert::Into::into(o12),(crate::system::object::Object)::core::convert::Into::into(o13),(crate::system::object::Object)::core::convert::Into::into(o14),(crate::system::object::Object)::core::convert::Into::into(o15),(crate::system::object::Object)::core::convert::Into::into(o16))}
+__EventMemberDescriptor_EventWrapper16_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::convert::Into::into(o10), ::core::convert::Into::into(o11), ::core::convert::Into::into(o12), ::core::convert::Into::into(o13), ::core::convert::Into::into(o14), ::core::convert::Into::into(o15), ::core::convert::Into::into(o16), ::core::option::Option::None)}
 }
 }
 
@@ -347,49 +251,48 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper13_unity2_raw{use super:: * ;
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper15_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper13 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper15 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
 );
 pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
 ::{}
 : {}
-", <EventMemberDescriptor_EventWrapper13 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+", <EventMemberDescriptor_EventWrapper15 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper13 as::unity2::ClassIdentity> ::class(),"Invoke",13,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper13 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper15,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,o10:crate::system::object::Object,o11:crate::system::object::Object,o12:crate::system::object::Object,o13:crate::system::object::Object,o14:crate::system::object::Object,o15:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper15 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper15,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,o15,__mi)}
 }
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper15Methods:IEventMemberDescriptor_EventWrapper15{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper15 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper15_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper15)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object> ,o13:impl::core::convert::Into<crate::system::object::Object> ,o14:impl::core::convert::Into<crate::system::object::Object> ,o15:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper15 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper15_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::convert::Into::into(o10), ::core::convert::Into::into(o11), ::core::convert::Into::into(o12), ::core::convert::Into::into(o13), ::core::convert::Into::into(o14), ::core::convert::Into::into(o15), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper13Methods:IEventMemberDescriptor_EventWrapper13{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper13 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper13_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper13)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object> ,o13:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper13 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper13_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper13)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9),(crate::system::object::Object)::core::convert::Into::into(o10),(crate::system::object::Object)::core::convert::Into::into(o11),(crate::system::object::Object)::core::convert::Into::into(o12),(crate::system::object::Object)::core::convert::Into::into(o13))}
-}
-}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper15>IEventMemberDescriptor_EventWrapper15Methods for __T{}
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper13>IEventMemberDescriptor_EventWrapper13Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper13{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper15{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper13{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper15{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper13), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper13Methods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper15), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper15Methods> ::ctor(this,object,method);
 this}
 }
 
@@ -444,16 +347,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"set_EventInfo",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_static{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_IsStatic",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_IsStatic",e),}
-}
-}
+pub unsafe fn get_is_static(this:EventMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_IsStatic",));
+let inner:extern "C" fn(EventMemberDescriptor, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_is_static{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<bool as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor as::unity2::ClassIdentity> ::class(),"set_IsStatic",1,param_types,false,)}
@@ -464,16 +367,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"set_IsStatic",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor as::unity2::ClassIdentity> ::class(),"GetValue",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetValue",e),}
-}
-}
+pub unsafe fn get_value(this:EventMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(EventMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_add_callback{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor as::unity2::ClassIdentity> ::class(),"AddCallback",3,param_types,false,)}
@@ -534,36 +437,36 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"DispatchEvent",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_name{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_Name",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_member_access{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_MemberAccess",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor as::unity2::ClassIdentity> ::class(),"SetValue",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"SetValue",e),}
-}
-}
+pub unsafe fn get_name(this:EventMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(EventMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_member_access(this:EventMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",));
+let inner:extern "C" fn(EventMemberDescriptor, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_value(this:EventMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,v:crate::moon_sharp::interpreter::dynvalue::DynValue,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <EventMemberDescriptor as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(EventMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,v,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor{#[doc="`TryCreateIfVisible(crate::system::reflection::eventinfo::EventInfo, crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode)` overload"]pub fn try_create_if_visible(ei:impl::core::convert::Into<crate::system::reflection::eventinfo::EventInfo> ,access_mode:impl::core::convert::Into<crate::moon_sharp::interpreter::interopaccessmode::InteropAccessMode>)->crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor{unsafe{::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_try_create_if_visible::get_method_info().method_ptr,crate::moon_sharp::interpreter::interop::eventmemberdescriptor::EventMemberDescriptor;
@@ -587,16 +490,14 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (EventMemberDescriptor)__receiver,(crate::system::reflection::eventinfo::EventInfo)::core::convert::Into::into(value))}
 }
 #[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <EventMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_get_is_static::get_method_info().method_ptr,bool;
-(EventMemberDescriptor)__receiver)}
+__EventMemberDescriptor_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_IsStatic(bool)` overload"]fn set_is_static(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_set_is_static::get_method_info().method_ptr,();
 (EventMemberDescriptor)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]fn get_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_get_value::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(EventMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__EventMemberDescriptor_unity2_raw::get_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`AddCallback(crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]fn add_callback(self,o:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <EventMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_add_callback::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
@@ -623,16 +524,13 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (EventMemberDescriptor)__receiver,(crate::system::object::Object)::core::convert::Into::into(sender),(::unity2::IlInstance)::core::convert::Into::into(o01),(::unity2::IlInstance)::core::convert::Into::into(o02),(::unity2::IlInstance)::core::convert::Into::into(o03),(::unity2::IlInstance)::core::convert::Into::into(o04),(::unity2::IlInstance)::core::convert::Into::into(o05),(::unity2::IlInstance)::core::convert::Into::into(o06),(::unity2::IlInstance)::core::convert::Into::into(o07),(::unity2::IlInstance)::core::convert::Into::into(o08),(::unity2::IlInstance)::core::convert::Into::into(o09),(::unity2::IlInstance)::core::convert::Into::into(o10),(::unity2::IlInstance)::core::convert::Into::into(o11),(::unity2::IlInstance)::core::convert::Into::into(o12),(::unity2::IlInstance)::core::convert::Into::into(o13),(::unity2::IlInstance)::core::convert::Into::into(o14),(::unity2::IlInstance)::core::convert::Into::into(o15),(::unity2::IlInstance)::core::convert::Into::into(o16))}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_get_name::get_method_info().method_ptr, ::unity2::Il2CppString;
-(EventMemberDescriptor)__receiver)}
+__EventMemberDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_MemberAccess()` overload"]fn get_member_access(self,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{unsafe{let __receiver= <EventMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_get_member_access::get_method_info().method_ptr,crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess;
-(EventMemberDescriptor)__receiver)}
+__EventMemberDescriptor_unity2_raw::get_member_access(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,v:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <EventMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_unity2_raw::__lookup_set_value::get_method_info().method_ptr,();
-(EventMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj),(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(v))}
+__EventMemberDescriptor_unity2_raw::set_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(v), ::core::option::Option::None)}
 }
 }
 
@@ -664,49 +562,48 @@ pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper03_unity2_raw{use super:: * ;
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper06_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper03 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper06 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
 );
 pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
 ::{}
 : {}
-", <EventMemberDescriptor_EventWrapper03 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+", <EventMemberDescriptor_EventWrapper06 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper03 as::unity2::ClassIdentity> ::class(),"Invoke",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper03 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper06,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper06 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper06,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,__mi)}
 }
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper06Methods:IEventMemberDescriptor_EventWrapper06{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper06 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper06_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper06)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper06 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper06_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper03Methods:IEventMemberDescriptor_EventWrapper03{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper03 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper03_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper03)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper03 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper03_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper03)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3))}
-}
-}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper06>IEventMemberDescriptor_EventWrapper06Methods for __T{}
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper03>IEventMemberDescriptor_EventWrapper03Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper03{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper06{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper03{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper06{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper03), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper03Methods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper06), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper06Methods> ::ctor(this,object,method);
 this}
 }
 
@@ -721,16 +618,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor_EventWrapper10 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper10 as::unity2::ClassIdentity> ::class(),"Invoke",10,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper10 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper10,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,o10:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper10 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper10,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper10Methods:IEventMemberDescriptor_EventWrapper10{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper10 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -738,8 +635,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (EventMemberDescriptor_EventWrapper10)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper10 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper10_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper10)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9),(crate::system::object::Object)::core::convert::Into::into(o10))}
+__EventMemberDescriptor_EventWrapper10_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::convert::Into::into(o10), ::core::option::Option::None)}
 }
 }
 
@@ -756,233 +652,48 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper09_unity2_raw{use super:: * ;
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper02_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper09 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper02 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
 );
 pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
 ::{}
 : {}
-", <EventMemberDescriptor_EventWrapper09 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+", <EventMemberDescriptor_EventWrapper02 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper09 as::unity2::ClassIdentity> ::class(),"Invoke",9,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper09 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper02,o1:crate::system::object::Object,o2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper02 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper02,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,__mi)}
 }
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper02Methods:IEventMemberDescriptor_EventWrapper02{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper02 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper02_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper02)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper02 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper02_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper09Methods:IEventMemberDescriptor_EventWrapper09{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper09 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper09_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper09)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper09 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper09_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper09)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9))}
-}
-}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper02>IEventMemberDescriptor_EventWrapper02Methods for __T{}
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper09>IEventMemberDescriptor_EventWrapper09Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper09{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper02{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper09{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper02{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper09), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper09Methods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper08_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper08 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper08 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper08 as::unity2::ClassIdentity> ::class(),"Invoke",8,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper08 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper08Methods:IEventMemberDescriptor_EventWrapper08{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper08 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper08_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper08)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper08 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper08_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper08)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8))}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper08>IEventMemberDescriptor_EventWrapper08Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper08{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper08{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper08), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper08Methods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper12_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper12 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper12 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper12 as::unity2::ClassIdentity> ::class(),"Invoke",12,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper12 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper12Methods:IEventMemberDescriptor_EventWrapper12{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper12 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper12_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper12)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper12 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper12_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper12)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7),(crate::system::object::Object)::core::convert::Into::into(o8),(crate::system::object::Object)::core::convert::Into::into(o9),(crate::system::object::Object)::core::convert::Into::into(o10),(crate::system::object::Object)::core::convert::Into::into(o11),(crate::system::object::Object)::core::convert::Into::into(o12))}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper12>IEventMemberDescriptor_EventWrapper12Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper12{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper12{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper12), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper12Methods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper07_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper07 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper07 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper07 as::unity2::ClassIdentity> ::class(),"Invoke",7,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper07 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper07Methods:IEventMemberDescriptor_EventWrapper07{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper07 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper07_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper07)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper07 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper07_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper07)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5),(crate::system::object::Object)::core::convert::Into::into(o6),(crate::system::object::Object)::core::convert::Into::into(o7))}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper07>IEventMemberDescriptor_EventWrapper07Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper07{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper07{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper07), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper07Methods> ::ctor(this,object,method);
-this}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper00_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper00 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper00 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper00 as::unity2::ClassIdentity> ::class(),"Invoke",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper00 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper00Methods:IEventMemberDescriptor_EventWrapper00{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper00 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper00_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper00)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper00 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper00_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper00)__receiver)}
-}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper00>IEventMemberDescriptor_EventWrapper00Methods for __T{}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper00{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper00{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper00), ::core::stringify!(new),));
- <Self as IEventMemberDescriptor_EventWrapper00Methods> ::ctor(this,object,method);
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper02), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper02Methods> ::ctor(this,object,method);
 this}
 }
 
@@ -997,16 +708,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor_EventWrapper01 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper01 as::unity2::ClassIdentity> ::class(),"Invoke",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper01 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper01,o1:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper01 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper01,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper01Methods:IEventMemberDescriptor_EventWrapper01{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper01 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1014,8 +725,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (EventMemberDescriptor_EventWrapper01)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper01 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper01_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper01)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1))}
+__EventMemberDescriptor_EventWrapper01_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::option::Option::None)}
 }
 }
 
@@ -1032,6 +742,96 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper14_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper14 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <EventMemberDescriptor_EventWrapper14 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper14,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,o10:crate::system::object::Object,o11:crate::system::object::Object,o12:crate::system::object::Object,o13:crate::system::object::Object,o14:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper14 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper14,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,o14,__mi)}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper14Methods:IEventMemberDescriptor_EventWrapper14{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper14 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper14_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper14)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object> ,o13:impl::core::convert::Into<crate::system::object::Object> ,o14:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper14 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper14_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::convert::Into::into(o10), ::core::convert::Into::into(o11), ::core::convert::Into::into(o12), ::core::convert::Into::into(o13), ::core::convert::Into::into(o14), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper14>IEventMemberDescriptor_EventWrapper14Methods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper14{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper14{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper14), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper14Methods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper13_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper13 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <EventMemberDescriptor_EventWrapper13 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper13,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,o10:crate::system::object::Object,o11:crate::system::object::Object,o12:crate::system::object::Object,o13:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper13 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper13,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,o13,__mi)}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper13Methods:IEventMemberDescriptor_EventWrapper13{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper13 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper13_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper13)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object> ,o13:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper13 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper13_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::convert::Into::into(o10), ::core::convert::Into::into(o11), ::core::convert::Into::into(o12), ::core::convert::Into::into(o13), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper13>IEventMemberDescriptor_EventWrapper13Methods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper13{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper13{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper13), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper13Methods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper05_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
@@ -1043,16 +843,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor_EventWrapper05 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper05 as::unity2::ClassIdentity> ::class(),"Invoke",5,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper05 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper05,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper05 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper05,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper05Methods:IEventMemberDescriptor_EventWrapper05{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper05 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1060,8 +860,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (EventMemberDescriptor_EventWrapper05)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper05 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper05_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper05)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4),(crate::system::object::Object)::core::convert::Into::into(o5))}
+__EventMemberDescriptor_EventWrapper05_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::option::Option::None)}
 }
 }
 
@@ -1078,6 +877,141 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper11_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper11 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <EventMemberDescriptor_EventWrapper11 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper11,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,o10:crate::system::object::Object,o11:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper11 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper11,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,__mi)}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper11Methods:IEventMemberDescriptor_EventWrapper11{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper11 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper11_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper11)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper11 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper11_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::convert::Into::into(o10), ::core::convert::Into::into(o11), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper11>IEventMemberDescriptor_EventWrapper11Methods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper11{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper11{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper11), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper11Methods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper00_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper00 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <EventMemberDescriptor_EventWrapper00 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper00,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper00 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper00, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper00Methods:IEventMemberDescriptor_EventWrapper00{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper00 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper00_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper00)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper00 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper00_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper00>IEventMemberDescriptor_EventWrapper00Methods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper00{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper00{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper00), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper00Methods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper12_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper12 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <EventMemberDescriptor_EventWrapper12 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper12,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,o10:crate::system::object::Object,o11:crate::system::object::Object,o12:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper12 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper12,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,o10,o11,o12,__mi)}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper12Methods:IEventMemberDescriptor_EventWrapper12{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper12 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper12_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper12)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object> ,o10:impl::core::convert::Into<crate::system::object::Object> ,o11:impl::core::convert::Into<crate::system::object::Object> ,o12:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper12 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper12_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::convert::Into::into(o10), ::core::convert::Into::into(o11), ::core::convert::Into::into(o12), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper12>IEventMemberDescriptor_EventWrapper12Methods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper12{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper12{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper12), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper12Methods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper04_unity2_raw{use super:: * ;
  #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
@@ -1089,16 +1023,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <EventMemberDescriptor_EventWrapper04 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper04 as::unity2::ClassIdentity> ::class(),"Invoke",4,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <EventMemberDescriptor_EventWrapper04 as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper04,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper04 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper04,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper04Methods:IEventMemberDescriptor_EventWrapper04{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper04 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1106,8 +1040,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (EventMemberDescriptor_EventWrapper04)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper04 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper04_unity2_raw::__lookup_invoke::get_method_info().method_ptr,();
-(EventMemberDescriptor_EventWrapper04)__receiver,(crate::system::object::Object)::core::convert::Into::into(o1),(crate::system::object::Object)::core::convert::Into::into(o2),(crate::system::object::Object)::core::convert::Into::into(o3),(crate::system::object::Object)::core::convert::Into::into(o4))}
+__EventMemberDescriptor_EventWrapper04_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::option::Option::None)}
 }
 }
 
@@ -1124,63 +1057,108 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventMemberDescriptor_EventWrapper09_unity2_raw{use super:: * ;
+ #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
+static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type(), < ::unity2::IntPtr as::unity2::IlType> ::il_type()];
+ ::unity2::lookup::method_info_on_class_with_signature(<EventMemberDescriptor_EventWrapper09 as::unity2::ClassIdentity> ::class(),".ctor",2,param_types,false,)}
+);
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
+::{}
+: {}
+", <EventMemberDescriptor_EventWrapper09 as::unity2::ClassIdentity> ::NAME,".ctor",e),}
+}
+}
+pub unsafe fn invoke(this:EventMemberDescriptor_EventWrapper09,o1:crate::system::object::Object,o2:crate::system::object::Object,o3:crate::system::object::Object,o4:crate::system::object::Object,o5:crate::system::object::Object,o6:crate::system::object::Object,o7:crate::system::object::Object,o8:crate::system::object::Object,o9:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <EventMemberDescriptor_EventWrapper09 as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(EventMemberDescriptor_EventWrapper09,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,o1,o2,o3,o4,o5,o6,o7,o8,o9,__mi)}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]pub trait IEventMemberDescriptor_EventWrapper09Methods:IEventMemberDescriptor_EventWrapper09{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper09 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!(__EventMemberDescriptor_EventWrapper09_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
+(EventMemberDescriptor_EventWrapper09)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object, crate::system::object::Object)` overload"]fn invoke(self,o1:impl::core::convert::Into<crate::system::object::Object> ,o2:impl::core::convert::Into<crate::system::object::Object> ,o3:impl::core::convert::Into<crate::system::object::Object> ,o4:impl::core::convert::Into<crate::system::object::Object> ,o5:impl::core::convert::Into<crate::system::object::Object> ,o6:impl::core::convert::Into<crate::system::object::Object> ,o7:impl::core::convert::Into<crate::system::object::Object> ,o8:impl::core::convert::Into<crate::system::object::Object> ,o9:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <EventMemberDescriptor_EventWrapper09 as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EventMemberDescriptor_EventWrapper09_unity2_raw::invoke(__receiver, ::core::convert::Into::into(o1), ::core::convert::Into::into(o2), ::core::convert::Into::into(o3), ::core::convert::Into::into(o4), ::core::convert::Into::into(o5), ::core::convert::Into::into(o6), ::core::convert::Into::into(o7), ::core::convert::Into::into(o8), ::core::convert::Into::into(o9), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl<__T:IEventMemberDescriptor_EventWrapper09>IEventMemberDescriptor_EventWrapper09Methods for __T{}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper09{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="moon_sharp-interpreter-interop-eventmemberdescriptor")]impl EventMemberDescriptor_EventWrapper09{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EventMemberDescriptor_EventWrapper09), ::core::stringify!(new),));
+ <Self as IEventMemberDescriptor_EventWrapper09Methods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "moon_sharp-interpreter-interop-eventmemberdescriptor")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EventMemberDescriptor_EventWrapper06;
-    pub use super::IEventMemberDescriptor_EventWrapper06;
-    pub use super::IEventMemberDescriptor_EventWrapper06Methods;
-    pub use super::EventMemberDescriptor_EventWrapper02;
-    pub use super::IEventMemberDescriptor_EventWrapper02;
-    pub use super::IEventMemberDescriptor_EventWrapper02Methods;
-    pub use super::EventMemberDescriptor_EventWrapper14;
-    pub use super::IEventMemberDescriptor_EventWrapper14;
-    pub use super::IEventMemberDescriptor_EventWrapper14Methods;
-    pub use super::EventMemberDescriptor_EventWrapper15;
-    pub use super::IEventMemberDescriptor_EventWrapper15;
-    pub use super::IEventMemberDescriptor_EventWrapper15Methods;
-    pub use super::EventMemberDescriptor_EventWrapper11;
-    pub use super::IEventMemberDescriptor_EventWrapper11;
-    pub use super::IEventMemberDescriptor_EventWrapper11Methods;
-    pub use super::EventMemberDescriptor_EventWrapper16;
-    pub use super::IEventMemberDescriptor_EventWrapper16;
-    pub use super::IEventMemberDescriptor_EventWrapper16Methods;
-    pub use super::EventMemberDescriptor_EventWrapper13;
-    pub use super::IEventMemberDescriptor_EventWrapper13;
-    pub use super::IEventMemberDescriptor_EventWrapper13Methods;
-    pub use super::EventMemberDescriptor;
-    pub use super::IEventMemberDescriptor;
-    pub use super::IEventMemberDescriptorMethods;
-    pub use super::EventMemberDescriptor_EventWrapper03;
-    pub use super::IEventMemberDescriptor_EventWrapper03;
-    pub use super::IEventMemberDescriptor_EventWrapper03Methods;
-    pub use super::EventMemberDescriptor_EventWrapper10;
-    pub use super::IEventMemberDescriptor_EventWrapper10;
-    pub use super::IEventMemberDescriptor_EventWrapper10Methods;
-    pub use super::EventMemberDescriptor_EventWrapper09;
-    pub use super::IEventMemberDescriptor_EventWrapper09;
-    pub use super::IEventMemberDescriptor_EventWrapper09Methods;
     pub use super::EventMemberDescriptor_EventWrapper08;
     pub use super::IEventMemberDescriptor_EventWrapper08;
     pub use super::IEventMemberDescriptor_EventWrapper08Methods;
-    pub use super::EventMemberDescriptor_EventWrapper12;
-    pub use super::IEventMemberDescriptor_EventWrapper12;
-    pub use super::IEventMemberDescriptor_EventWrapper12Methods;
+    pub use super::EventMemberDescriptor_EventWrapper03;
+    pub use super::IEventMemberDescriptor_EventWrapper03;
+    pub use super::IEventMemberDescriptor_EventWrapper03Methods;
     pub use super::EventMemberDescriptor_EventWrapper07;
     pub use super::IEventMemberDescriptor_EventWrapper07;
     pub use super::IEventMemberDescriptor_EventWrapper07Methods;
-    pub use super::EventMemberDescriptor_EventWrapper00;
-    pub use super::IEventMemberDescriptor_EventWrapper00;
-    pub use super::IEventMemberDescriptor_EventWrapper00Methods;
+    pub use super::EventMemberDescriptor_EventWrapper16;
+    pub use super::IEventMemberDescriptor_EventWrapper16;
+    pub use super::IEventMemberDescriptor_EventWrapper16Methods;
+    pub use super::EventMemberDescriptor_EventWrapper15;
+    pub use super::IEventMemberDescriptor_EventWrapper15;
+    pub use super::IEventMemberDescriptor_EventWrapper15Methods;
+    pub use super::EventMemberDescriptor;
+    pub use super::IEventMemberDescriptor;
+    pub use super::IEventMemberDescriptorMethods;
+    pub use super::EventMemberDescriptor_EventWrapper06;
+    pub use super::IEventMemberDescriptor_EventWrapper06;
+    pub use super::IEventMemberDescriptor_EventWrapper06Methods;
+    pub use super::EventMemberDescriptor_EventWrapper10;
+    pub use super::IEventMemberDescriptor_EventWrapper10;
+    pub use super::IEventMemberDescriptor_EventWrapper10Methods;
+    pub use super::EventMemberDescriptor_EventWrapper02;
+    pub use super::IEventMemberDescriptor_EventWrapper02;
+    pub use super::IEventMemberDescriptor_EventWrapper02Methods;
     pub use super::EventMemberDescriptor_EventWrapper01;
     pub use super::IEventMemberDescriptor_EventWrapper01;
     pub use super::IEventMemberDescriptor_EventWrapper01Methods;
+    pub use super::EventMemberDescriptor_EventWrapper14;
+    pub use super::IEventMemberDescriptor_EventWrapper14;
+    pub use super::IEventMemberDescriptor_EventWrapper14Methods;
+    pub use super::EventMemberDescriptor_EventWrapper13;
+    pub use super::IEventMemberDescriptor_EventWrapper13;
+    pub use super::IEventMemberDescriptor_EventWrapper13Methods;
     pub use super::EventMemberDescriptor_EventWrapper05;
     pub use super::IEventMemberDescriptor_EventWrapper05;
     pub use super::IEventMemberDescriptor_EventWrapper05Methods;
+    pub use super::EventMemberDescriptor_EventWrapper11;
+    pub use super::IEventMemberDescriptor_EventWrapper11;
+    pub use super::IEventMemberDescriptor_EventWrapper11Methods;
+    pub use super::EventMemberDescriptor_EventWrapper00;
+    pub use super::IEventMemberDescriptor_EventWrapper00;
+    pub use super::IEventMemberDescriptor_EventWrapper00Methods;
+    pub use super::EventMemberDescriptor_EventWrapper12;
+    pub use super::IEventMemberDescriptor_EventWrapper12;
+    pub use super::IEventMemberDescriptor_EventWrapper12Methods;
     pub use super::EventMemberDescriptor_EventWrapper04;
     pub use super::IEventMemberDescriptor_EventWrapper04;
     pub use super::IEventMemberDescriptor_EventWrapper04Methods;
+    pub use super::EventMemberDescriptor_EventWrapper09;
+    pub use super::IEventMemberDescriptor_EventWrapper09;
+    pub use super::IEventMemberDescriptor_EventWrapper09Methods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

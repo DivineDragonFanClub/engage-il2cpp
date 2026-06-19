@@ -9,27 +9,63 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_List_1.md"))]#[::unity2::class(namespace="App",name="Pool.List`1")]#[parent(crate::system::object::Object)]pub struct Pool_List_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<T0> , #[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::stack_1::Stack_1<T0> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_Hierarchy_1.md"))]#[::unity2::class(namespace="App",name="Pool.Hierarchy`1")]#[parent(crate::system::object::Object)]pub struct Pool_Hierarchy_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::stack_1::Stack_1<T0> , #[rename(name="m_Used")]pub m_used:crate::system::collections::generic::stack_1::Stack_1<T0> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_LockStack_1.md"))]#[::unity2::class(namespace="App",name="Pool.LockStack`1")]#[parent(crate::app::pool::Pool_Stack_1<T0>)]#[parent(crate::system::object::Object)]pub struct Pool_LockStack_1<T0: ::unity2::ClassIdentity>{#[rename(name="lockObject")]pub lock_object: ::unity2::IlInstance,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_Stack_1.md"))]#[::unity2::class(namespace="App",name="Pool.Stack`1")]#[parent(crate::system::object::Object)]pub struct Pool_Stack_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::stack_1::Stack_1<T0> ,}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_List_1.md"))]#[::unity2::class(namespace="App",name="Pool.List`1")]#[parent(crate::system::object::Object)]pub struct Pool_List_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<T0> , #[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::stack_1::Stack_1<T0> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_Node.md"))]#[::unity2::class(namespace="App",name="Pool.Node")]#[parent(crate::system::object::Object)]pub struct Pool_Node{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_Hierarchy_1.md"))]#[::unity2::class(namespace="App",name="Pool.Hierarchy`1")]#[parent(crate::system::object::Object)]pub struct Pool_Hierarchy_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::stack_1::Stack_1<T0> , #[rename(name="m_Used")]pub m_used:crate::system::collections::generic::stack_1::Stack_1<T0> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool.md"))]#[::unity2::class(namespace="App",name="Pool")]#[parent(crate::system::object::Object)]pub struct Pool{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/pool/Pool_LockStack_1.md"))]#[::unity2::class(namespace="App",name="Pool.LockStack`1")]#[parent(crate::app::pool::Pool_Stack_1<T0>)]#[parent(crate::system::object::Object)]pub struct Pool_LockStack_1<T0: ::unity2::ClassIdentity>{#[rename(name="lockObject")]pub lock_object: ::unity2::IlInstance,}
 
 }
 
 #[cfg(feature = "app-pool-types")]
 pub use __types::*;
+
+#[cfg(feature="app-pool")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Pool_Hierarchy_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,max:i32)->();
+ #[doc="`Push()` overload"]#[method(name="Push",args=0)]pub fn push(self,)->T0;
+ #[doc="`Pop()` overload"]#[method(name="Pop",args=0)]pub fn pop(self,)->T0;
+}
+
+#[cfg(feature="app-pool")]impl<T0: ::unity2::ClassIdentity>Pool_Hierarchy_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Pool_Hierarchy_1), ::core::stringify!(new),));
+ <Self as IPool_Hierarchy_1Methods<T0> > ::ctor(this,max);
+this}
+}
+
+#[cfg(feature="app-pool")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Pool_LockStack_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,max:i32)->();
+ #[doc="`Pop()` overload"]#[method(name="Pop",args=0)]pub fn pop(self,)->T0;
+ #[doc="`Push(T0)` overload"]#[method(name="Push",args=1)]pub fn push(self,p:T0)->();
+}
+
+#[cfg(feature="app-pool")]impl<T0: ::unity2::ClassIdentity>Pool_LockStack_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Pool_LockStack_1), ::core::stringify!(new),));
+ <Self as IPool_LockStack_1Methods<T0> > ::ctor(this,max);
+this}
+}
+
+#[cfg(feature="app-pool")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Pool_Stack_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,max:i32)->();
+ #[doc="`Pop()` overload"]#[method(name="Pop",args=0)]pub fn pop(self,)->T0;
+ #[doc="`Push(T0)` overload"]#[method(name="Push",args=1)]pub fn push(self,p:T0)->();
+}
+
+#[cfg(feature="app-pool")]impl<T0: ::unity2::ClassIdentity>Pool_Stack_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Pool_Stack_1), ::core::stringify!(new),));
+ <Self as IPool_Stack_1Methods<T0> > ::ctor(this,max);
+this}
+}
 
 #[cfg(feature="app-pool")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Pool_List_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,max:i32)->();
  #[doc="`get_Count()` overload"]#[method(name="get_Count",args=0)]pub fn get_count(self,)->i32;
@@ -50,30 +86,34 @@ pub use __types::*;
 this}
 }
 
-#[cfg(feature="app-pool")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Pool_Stack_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,max:i32)->();
- #[doc="`Pop()` overload"]#[method(name="Pop",args=0)]pub fn pop(self,)->T0;
- #[doc="`Push(T0)` overload"]#[method(name="Push",args=1)]pub fn push(self,p:T0)->();
-}
-
-#[cfg(feature="app-pool")]impl<T0: ::unity2::ClassIdentity>Pool_Stack_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Pool_Stack_1), ::core::stringify!(new),));
- <Self as IPool_Stack_1Methods<T0> > ::ctor(this,max);
-this}
-}
-
 #[cfg(feature="app-pool")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Pool_Node_unity2_raw{use super:: * ;
-pub unsafe fn on_enter(this:Pool_Node,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnEnter").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnEnter", <Pool_Node as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_enter(this:Pool_Node,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Pool_Node as::unity2::ClassIdentity> ::NAME,"OnEnter",));
 let inner:extern "C" fn(Pool_Node, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn on_exit(this:Pool_Node,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnExit").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnExit", <Pool_Node as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_exit(this:Pool_Node,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Pool_Node as::unity2::ClassIdentity> ::NAME,"OnExit",));
 let inner:extern "C" fn(Pool_Node, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sort_key(this:Pool_Node,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Pool_Node as::unity2::ClassIdentity> ::NAME,"get_SortKey",));
+let inner:extern "C" fn(Pool_Node, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -86,8 +126,7 @@ __Pool_Node_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 __Pool_Node_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_SortKey()` overload"]fn get_sort_key(self,)->i32{unsafe{let __receiver= <Pool_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2264ca0usize)as*mut u8,i32;
-(Pool_Node)__receiver)}
+__Pool_Node_unity2_raw::get_sort_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Pool_Node as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2264cb0usize)as*mut u8,();
@@ -110,18 +149,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-pool")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Pool_Hierarchy_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,max:i32)->();
- #[doc="`Push()` overload"]#[method(name="Push",args=0)]pub fn push(self,)->T0;
- #[doc="`Pop()` overload"]#[method(name="Pop",args=0)]pub fn pop(self,)->T0;
-}
-
-#[cfg(feature="app-pool")]impl<T0: ::unity2::ClassIdentity>Pool_Hierarchy_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Pool_Hierarchy_1), ::core::stringify!(new),));
- <Self as IPool_Hierarchy_1Methods<T0> > ::ctor(this,max);
-this}
-}
-
 #[cfg(feature="app-pool")]pub trait IPoolMethods:IPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Pool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2815560usize)as*mut u8,();
 (Pool)__receiver)}
@@ -140,39 +167,27 @@ this}
 this}
 }
 
-#[cfg(feature="app-pool")]#[::unity2::methods]impl<T0: ::unity2::ClassIdentity>Pool_LockStack_1<T0>{#[doc="`.ctor(i32)` overload"]#[method(name=".ctor",args=1)]pub fn ctor(self,max:i32)->();
- #[doc="`Pop()` overload"]#[method(name="Pop",args=0)]pub fn pop(self,)->T0;
- #[doc="`Push(T0)` overload"]#[method(name="Push",args=1)]pub fn push(self,p:T0)->();
-}
-
-#[cfg(feature="app-pool")]impl<T0: ::unity2::ClassIdentity>Pool_LockStack_1<T0>{#[doc="`.ctor(i32)` — overload selector"]pub fn new(max:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Pool_LockStack_1), ::core::stringify!(new),));
- <Self as IPool_LockStack_1Methods<T0> > ::ctor(this,max);
-this}
-}
-
 #[cfg(feature = "app-pool")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Pool_List_1;
-    pub use super::IPool_List_1;
-    pub use super::IPool_List_1Methods;
-    pub use super::Pool_Stack_1;
-    pub use super::IPool_Stack_1;
-    pub use super::IPool_Stack_1Methods;
-    pub use super::Pool_Node;
-    pub use super::IPool_Node;
-    pub use super::IPool_NodeMethods;
     pub use super::Pool_Hierarchy_1;
     pub use super::IPool_Hierarchy_1;
     pub use super::IPool_Hierarchy_1Methods;
-    pub use super::Pool;
-    pub use super::IPool;
-    pub use super::IPoolMethods;
     pub use super::Pool_LockStack_1;
     pub use super::IPool_LockStack_1;
     pub use super::IPool_LockStack_1Methods;
+    pub use super::Pool_Stack_1;
+    pub use super::IPool_Stack_1;
+    pub use super::IPool_Stack_1Methods;
+    pub use super::Pool_List_1;
+    pub use super::IPool_List_1;
+    pub use super::IPool_List_1Methods;
+    pub use super::Pool_Node;
+    pub use super::IPool_Node;
+    pub use super::IPool_NodeMethods;
+    pub use super::Pool;
+    pub use super::IPool;
+    pub use super::IPoolMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

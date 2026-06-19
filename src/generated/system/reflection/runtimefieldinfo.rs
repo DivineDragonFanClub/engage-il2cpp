@@ -20,13 +20,25 @@ use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
 #[cfg(feature = "system-reflection-runtimefieldinfo-types")]
 pub use __types::*;
 
+#[cfg(feature="system-reflection-runtimefieldinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RuntimeFieldInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_module(this:RuntimeFieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::module::Module{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <RuntimeFieldInfo as::unity2::ClassIdentity> ::NAME,"get_Module",));
+let inner:extern "C" fn(RuntimeFieldInfo, ::unity2::OptionalMethod,)->crate::system::reflection::module::Module= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-reflection-runtimefieldinfo")]pub trait IRuntimeFieldInfoMethods:IRuntimeFieldInfo{#[doc="`get_BindingFlags()` overload"]fn get_binding_flags(self,)->crate::system::reflection::bindingflags::BindingFlags{unsafe{let __receiver= <RuntimeFieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd49e0usize)as*mut u8,crate::system::reflection::bindingflags::BindingFlags;
 (RuntimeFieldInfo)__receiver)}
 }
 #[doc="`get_Module()` overload"]fn get_module(self,)->crate::system::reflection::module::Module{unsafe{let __receiver= <RuntimeFieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd49f0usize)as*mut u8,crate::system::reflection::module::Module;
-(RuntimeFieldInfo)__receiver)}
+__RuntimeFieldInfo_unity2_raw::get_module(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDeclaringTypeInternal()` overload"]fn get_declaring_type_internal(self,)->crate::system::runtimetype::RuntimeType{unsafe{let __receiver= <RuntimeFieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2fd4b10usize)as*mut u8,crate::system::runtimetype::RuntimeType;

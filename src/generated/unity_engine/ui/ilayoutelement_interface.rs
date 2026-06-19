@@ -15,65 +15,92 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-ui-ilayoutelement_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ILayoutElement_Interface_unity2_raw{use super:: * ;
-pub unsafe fn calculate_layout_input_horizontal(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CalculateLayoutInputHorizontal").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CalculateLayoutInputHorizontal", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn calculate_layout_input_horizontal(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputHorizontal",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn calculate_layout_input_vertical(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CalculateLayoutInputVertical").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CalculateLayoutInputVertical", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn calculate_layout_input_vertical(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"CalculateLayoutInputVertical",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_min_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_minWidth").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_minWidth", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_min_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_preferred_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_preferredWidth").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_preferredWidth", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_preferred_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_flexible_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_flexibleWidth").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_flexibleWidth", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_flexible_width(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_min_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_minHeight").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_minHeight", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_min_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_preferred_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_preferredHeight").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_preferredHeight", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_preferred_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_flexible_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_flexibleHeight").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_flexibleHeight", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_flexible_height(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_layout_priority(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_layoutPriority").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_layoutPriority", <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_layout_priority(this:ILayoutElement_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ILayoutElement_Interface as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
 let inner:extern "C" fn(ILayoutElement_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

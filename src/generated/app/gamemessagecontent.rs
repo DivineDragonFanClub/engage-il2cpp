@@ -24,6 +24,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-gamemessagecontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-gamemessagecontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameMessageContent_unity2_raw{use super:: * ;
+pub unsafe fn calc_pos_x(this:GameMessageContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"CalcPosX",));
+let inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_pos_y(this:GameMessageContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"CalcPosY",));
+let inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_destroy(this:GameMessageContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GameMessageContent as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(GameMessageContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-gamemessagecontent")]impl GameMessageContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22802c0usize)as*mut u8,();
 )}
 }
@@ -72,16 +105,13 @@ pub use __types::*;
 (GameMessageContent)__receiver)}
 }
 #[doc="`CalcPosX()` overload"]fn calc_pos_x(self,)->f32{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2280220usize)as*mut u8,f32;
-(GameMessageContent)__receiver)}
+__GameMessageContent_unity2_raw::calc_pos_x(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcPosY()` overload"]fn calc_pos_y(self,)->f32{unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2280230usize)as*mut u8,f32;
-(GameMessageContent)__receiver)}
+__GameMessageContent_unity2_raw::calc_pos_y(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2280240usize)as*mut u8,();
-(GameMessageContent)__receiver)}
+__GameMessageContent_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetShadowOff()` overload"]fn set_shadow_off(self,)->(){unsafe{let __receiver= <GameMessageContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x227fc80usize)as*mut u8,();

@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-util-iallocationstrategy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IAllocationStrategy_unity2_raw{use super:: * ;
-pub unsafe fn new(this:IAllocationStrategy,r#type: ::unity2::SystemType,type_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("New").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","New", <IAllocationStrategy as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn new(this:IAllocationStrategy,r#type: ::unity2::SystemType,type_hash:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IAllocationStrategy as::unity2::ClassIdentity> ::NAME,"New",));
 let inner:extern "C" fn(IAllocationStrategy, ::unity2::SystemType,i32, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,r#type,type_hash,__mi)}
-pub unsafe fn release(this:IAllocationStrategy,type_hash:i32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Release").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Release", <IAllocationStrategy as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn release(this:IAllocationStrategy,type_hash:i32,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IAllocationStrategy as::unity2::ClassIdentity> ::NAME,"Release",));
 let inner:extern "C" fn(IAllocationStrategy,i32,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

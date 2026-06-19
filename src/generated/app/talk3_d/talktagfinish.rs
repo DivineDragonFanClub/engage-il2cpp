@@ -18,13 +18,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-talk3_d-talktagfinish-types")]
 pub use __types::*;
 
+#[cfg(feature="app-talk3_d-talktagfinish")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkTagFinish_unity2_raw{use super:: * ;
+pub unsafe fn get_result(this:TalkTagFinish,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TalkTagFinish as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let inner:extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn need_fade_wait(this:TalkTagFinish,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TalkTagFinish as::unity2::ClassIdentity> ::NAME,"NeedFadeWait",));
+let inner:extern "C" fn(TalkTagFinish, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-talk3_d-talktagfinish")]pub trait ITalkTagFinishMethods:ITalkTagFinish{#[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d95e0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
-(TalkTagFinish)__receiver)}
+__TalkTagFinish_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
 }
 #[doc="`NeedFadeWait()` overload"]fn need_fade_wait(self,)->bool{unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d95f0usize)as*mut u8,bool;
-(TalkTagFinish)__receiver)}
+__TalkTagFinish_unity2_raw::need_fade_wait(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkTagFinish as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d9600usize)as*mut u8,();

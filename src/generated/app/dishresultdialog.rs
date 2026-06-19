@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialog/DishResultDialog.md"))]#[::unity2::class(namespace="App",name="DishResultDialog")]#[parent(crate::app::procinst::ProcInst)]pub struct DishResultDialog{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_DishResultRoot")]pub m_dish_result_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_ResultContent")]pub m_result_content:crate::app::dishresultdialogcontent::DishResultDialogContent, #[offset(128)]#[rename(name="m_Dish")]pub m_dish:crate::app::dish::Dish, #[offset(136)]#[rename(name="m_SelectedUnits")]pub m_selected_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialog/DishResultDialog_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct DishResultDialog_Label{pub value:i32,}
 impl::unity2::ClassIdentity for DishResultDialog_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DishResultDialog.Label";
@@ -31,9 +34,6 @@ pub fn tick()->Self{Self{value:1}
 pub fn exit()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dishresultdialog/DishResultDialog.md"))]#[::unity2::class(namespace="App",name="DishResultDialog")]#[parent(crate::app::procinst::ProcInst)]pub struct DishResultDialog{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_DishResultRoot")]pub m_dish_result_root:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_ResultContent")]pub m_result_content:crate::app::dishresultdialogcontent::DishResultDialogContent, #[offset(128)]#[rename(name="m_Dish")]pub m_dish:crate::app::dish::Dish, #[offset(136)]#[rename(name="m_SelectedUnits")]pub m_selected_units:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ,}
 
 }
 
@@ -104,10 +104,10 @@ this}
 #[cfg(feature = "app-dishresultdialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DishResultDialog_Label;
     pub use super::DishResultDialog;
     pub use super::IDishResultDialog;
     pub use super::IDishResultDialogMethods;
+    pub use super::DishResultDialog_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

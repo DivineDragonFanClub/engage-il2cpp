@@ -23,24 +23,43 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 pub use __types::*;
 
 #[cfg(feature="root-wwisegroupvalueobjectreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WwiseGroupValueObjectReference_unity2_raw{use super:: * ;
-pub unsafe fn get_group_object_reference(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjectreference::WwiseObjectReference{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_GroupObjectReference").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_GroupObjectReference", <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_group_object_reference(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjectreference::WwiseObjectReference{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"get_GroupObjectReference",));
 let inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjectreference::WwiseObjectReference= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_group_object_reference(this:WwiseGroupValueObjectReference,value:crate::root::wwiseobjectreference::WwiseObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_GroupObjectReference").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_GroupObjectReference", <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_group_object_reference(this:WwiseGroupValueObjectReference,value:crate::root::wwiseobjectreference::WwiseObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"set_GroupObjectReference",));
 let inner:extern "C" fn(WwiseGroupValueObjectReference,crate::root::wwiseobjectreference::WwiseObjectReference, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_group_wwise_object_type(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_GroupWwiseObjectType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_GroupWwiseObjectType", <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_group_wwise_object_type(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"get_GroupWwiseObjectType",));
 let inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_display_name(this:WwiseGroupValueObjectReference,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <WwiseGroupValueObjectReference as::unity2::ClassIdentity> ::NAME,"get_DisplayName",));
+let inner:extern "C" fn(WwiseGroupValueObjectReference, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -56,8 +75,7 @@ __WwiseGroupValueObjectReference_unity2_raw::set_group_object_reference(__receiv
 __WwiseGroupValueObjectReference_unity2_raw::get_group_wwise_object_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_DisplayName()` overload"]fn get_display_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x293fc30usize)as*mut u8, ::unity2::Il2CppString;
-(WwiseGroupValueObjectReference)__receiver)}
+__WwiseGroupValueObjectReference_unity2_raw::get_display_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseGroupValueObjectReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x293fd00usize)as*mut u8,();

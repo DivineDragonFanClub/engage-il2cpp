@@ -13,15 +13,50 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlemath/BattleMath.md"))]#[::unity2::class(namespace="App",name="BattleMath")]#[parent(crate::system::object::Object)]pub struct BattleMath{#[static_field]#[rename(name="s_CurrentProbability100")]pub s_current_probability100:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_CurrentProbabilityHit")]pub s_current_probability_hit:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_Probability100")]pub s_probability100:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityHit")]pub s_probability_hit:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityTrue")]pub s_probability_true:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityFalse")]pub s_probability_false:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_RandomSeed")]pub s_random_seed:crate::system::collections::generic::stack_1::Stack_1<crate::app::randomseed::RandomSeed> , #[static_field]#[rename(name="s_Simulationed")]pub s_simulationed:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlemath/BattleMath_Probability.md"))]#[::unity2::class(namespace="App",name="BattleMath.Probability")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct BattleMath_Probability{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battlemath/BattleMath.md"))]#[::unity2::class(namespace="App",name="BattleMath")]#[parent(crate::system::object::Object)]pub struct BattleMath{#[static_field]#[rename(name="s_CurrentProbability100")]pub s_current_probability100:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_CurrentProbabilityHit")]pub s_current_probability_hit:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_Probability100")]pub s_probability100:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityHit")]pub s_probability_hit:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityTrue")]pub s_probability_true:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_ProbabilityFalse")]pub s_probability_false:crate::app::battlemath::BattleMath_Probability, #[static_field]#[rename(name="s_RandomSeed")]pub s_random_seed:crate::system::collections::generic::stack_1::Stack_1<crate::app::randomseed::RandomSeed> , #[static_field]#[rename(name="s_Simulationed")]pub s_simulationed:i32,}
 
 }
 
 #[cfg(feature = "app-battlemath-types")]
 pub use __types::*;
+
+#[cfg(feature="app-battlemath")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleMath_Probability_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:BattleMath_Probability,ratio:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BattleMath_Probability as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(BattleMath_Probability,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ratio,__mi)}
+}
+
+#[cfg(feature="app-battlemath")]pub trait IBattleMath_ProbabilityMethods:IBattleMath_Probability{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BattleMath_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb100usize)as*mut u8,();
+(BattleMath_Probability)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,ratio:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BattleMath_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleMath_Probability_unity2_raw::invoke(__receiver, ::core::convert::Into::into(ratio), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-battlemath")]impl<__T:IBattleMath_Probability>IBattleMath_ProbabilityMethods for __T{}
+
+#[cfg(feature="app-battlemath")]impl BattleMath_Probability{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battlemath")]impl BattleMath_Probability{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleMath_Probability), ::core::stringify!(new),));
+ <Self as IBattleMath_ProbabilityMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-battlemath")]impl BattleMath{#[doc="`_IsProbability100(i32)` overload"]pub fn is_probability100(ratio:impl::core::convert::Into<i32>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d0b0usize)as*mut u8,bool;
 (i32)::core::convert::Into::into(ratio))}
@@ -107,38 +142,15 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-battlemath")]pub trait IBattleMath_ProbabilityMethods:IBattleMath_Probability{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <BattleMath_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb100usize)as*mut u8,();
-(BattleMath_Probability)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32)` overload"]fn invoke(self,ratio:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <BattleMath_Probability as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19bb120usize)as*mut u8,bool;
-(BattleMath_Probability)__receiver,(i32)::core::convert::Into::into(ratio))}
-}
-}
-
-#[cfg(feature="app-battlemath")]impl<__T:IBattleMath_Probability>IBattleMath_ProbabilityMethods for __T{}
-
-#[cfg(feature="app-battlemath")]impl BattleMath_Probability{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battlemath")]impl BattleMath_Probability{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleMath_Probability), ::core::stringify!(new),));
- <Self as IBattleMath_ProbabilityMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-battlemath")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleMath;
-    pub use super::IBattleMath;
-    pub use super::IBattleMathMethods;
     pub use super::BattleMath_Probability;
     pub use super::IBattleMath_Probability;
     pub use super::IBattleMath_ProbabilityMethods;
+    pub use super::BattleMath;
+    pub use super::IBattleMath;
+    pub use super::IBattleMathMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -80,6 +80,19 @@ pub fn 敬語_女王()->Self{Self{value:20}
 #[cfg(feature = "app-nametypedata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-nametypedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NameTypeData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:NameTypeData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <NameTypeData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(NameTypeData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-nametypedata")]impl NameTypeData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f0ecb0usize)as*mut u8,();
 )}
 }
@@ -109,8 +122,7 @@ pub use __types::*;
 (NameTypeData)__receiver,(::unity2::Array<crate::app::nametypedata::NameTypeData_Type>)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameTypeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0f590usize)as*mut u8, ::unity2::Il2CppString;
-(NameTypeData)__receiver)}
+__NameTypeData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHubCookSuffix(crate::app::nametypedata::NameTypeData)` overload"]fn get_hub_cook_suffix(self,to_data:impl::core::convert::Into<crate::app::nametypedata::NameTypeData>)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameTypeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1f0f5a0usize)as*mut u8, ::unity2::Il2CppString;

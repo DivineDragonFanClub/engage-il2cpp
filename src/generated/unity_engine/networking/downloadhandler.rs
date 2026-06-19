@@ -16,6 +16,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-networking-downloadhandler-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-networking-downloadhandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DownloadHandler_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:DownloadHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <DownloadHandler as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(DownloadHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:DownloadHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DownloadHandler as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(DownloadHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn receive_content_length_header(this:DownloadHandler,content_length:u64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DownloadHandler as::unity2::ClassIdentity> ::NAME,"ReceiveContentLengthHeader",));
+let inner:extern "C" fn(DownloadHandler,u64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,content_length,__mi)}
+pub unsafe fn receive_content_length(this:DownloadHandler,content_length:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <DownloadHandler as::unity2::ClassIdentity> ::NAME,"ReceiveContentLength",));
+let inner:extern "C" fn(DownloadHandler,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,content_length,__mi)}
+}
+
 #[cfg(feature="unity_engine-networking-downloadhandler")]impl DownloadHandler{#[doc="`InternalGetByteArray(crate::unity_engine::networking::downloadhandler::DownloadHandler)` overload"]pub fn internal_get_byte_array(dh:impl::core::convert::Into<crate::unity_engine::networking::downloadhandler::DownloadHandler>)-> ::unity2::Array<u8>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f18940usize)as*mut u8, ::unity2::Array<u8> ;
 (crate::unity_engine::networking::downloadhandler::DownloadHandler)::core::convert::Into::into(dh))}
 }
@@ -30,12 +73,10 @@ pub use __types::*;
 (DownloadHandler)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18380usize)as*mut u8,();
-(DownloadHandler)__receiver)}
+__DownloadHandler_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18450usize)as*mut u8,();
-(DownloadHandler)__receiver)}
+__DownloadHandler_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_error()` overload"]fn get_error(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f184d0usize)as*mut u8, ::unity2::Il2CppString;
@@ -58,12 +99,10 @@ pub use __types::*;
 (DownloadHandler)__receiver)}
 }
 #[doc="`ReceiveContentLengthHeader(u64)` overload"]fn receive_content_length_header(self,content_length:impl::core::convert::Into<u64>)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18920usize)as*mut u8,();
-(DownloadHandler)__receiver,(u64)::core::convert::Into::into(content_length))}
+__DownloadHandler_unity2_raw::receive_content_length_header(__receiver, ::core::convert::Into::into(content_length), ::core::option::Option::None)}
 }
 #[doc="`ReceiveContentLength(i32)` overload"]fn receive_content_length(self,content_length:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DownloadHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f18930usize)as*mut u8,();
-(DownloadHandler)__receiver,(i32)::core::convert::Into::into(content_length))}
+__DownloadHandler_unity2_raw::receive_content_length(__receiver, ::core::convert::Into::into(content_length), ::core::option::Option::None)}
 }
 }
 

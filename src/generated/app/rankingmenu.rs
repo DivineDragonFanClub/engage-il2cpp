@@ -25,6 +25,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-rankingmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-rankingmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingMenu_RankingMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:RankingMenu_RankingMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RankingMenu_RankingMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(RankingMenu_RankingMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:RankingMenu_RankingMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RankingMenu_RankingMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RankingMenu_RankingMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-rankingmenu")]pub trait IRankingMenu_RankingMenuItemMethods:IRankingMenu_RankingMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RankingMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1af5430usize)as*mut u8,();
 (RankingMenu_RankingMenuItem)__receiver)}
@@ -34,12 +57,10 @@ pub use __types::*;
 (RankingMenu_RankingMenuItem)__receiver,(i32)::core::convert::Into::into(index),(crate::app::nexranking::NexRanking_Data)::core::convert::Into::into(data))}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RankingMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af5520usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RankingMenu_RankingMenuItem)__receiver)}
+__RankingMenu_RankingMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af5530usize)as*mut u8, ::unity2::Il2CppString;
-(RankingMenu_RankingMenuItem)__receiver)}
+__RankingMenu_RankingMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPersonData()` overload"]fn get_person_data(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <RankingMenu_RankingMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1af56c0usize)as*mut u8,crate::app::persondata::PersonData;
@@ -73,6 +94,29 @@ this}
 this}
 }
 
+#[cfg(feature="app-rankingmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RankingMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:RankingMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RankingMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RankingMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RankingMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <RankingMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RankingMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-rankingmenu")]impl RankingMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::chapterdata::ChapterData)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,chapter:impl::core::convert::Into<crate::app::chapterdata::ChapterData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x237a770usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::chapterdata::ChapterData)::core::convert::Into::into(chapter))}
 }
@@ -83,12 +127,10 @@ this}
 (RankingMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::rankingmenucontent::RankingMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RankingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x237ab80usize)as*mut u8, ::unity2::Il2CppString;
-(RankingMenu)__receiver)}
+__RankingMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RankingMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x237abd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RankingMenu)__receiver)}
+__RankingMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 

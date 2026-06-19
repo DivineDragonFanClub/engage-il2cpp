@@ -9,21 +9,21 @@
  #[cfg(feature="unity_engine-switch-fmvtexture")]pub use fmvtexture::{IFMVTextureMethods}
 ;
  #[cfg(any(feature="unity_engine-switch-networkinterfacewrapper-types"))]pub mod networkinterfacewrapper;
- #[cfg(feature="unity_engine-switch-networkinterfacewrapper-types")]pub use networkinterfacewrapper::{NetworkInterfaceWrapper_NetworkConnectedHandler,INetworkInterfaceWrapper_NetworkConnectedHandler,NetworkInterfaceWrapper_NetworkConnectedResult,NetworkInterfaceWrapper,INetworkInterfaceWrapper}
+ #[cfg(feature="unity_engine-switch-networkinterfacewrapper-types")]pub use networkinterfacewrapper::{NetworkInterfaceWrapper_NetworkConnectedHandler,INetworkInterfaceWrapper_NetworkConnectedHandler,NetworkInterfaceWrapper,INetworkInterfaceWrapper,NetworkInterfaceWrapper_NetworkConnectedResult}
 ;
  #[cfg(feature="unity_engine-switch-networkinterfacewrapper")]pub use networkinterfacewrapper::{INetworkInterfaceWrapper_NetworkConnectedHandlerMethods}
 ;
  #[cfg(any(feature="unity_engine-switch-notification-types"))]pub mod notification;
- #[cfg(feature="unity_engine-switch-notification-types")]pub use notification::{Notification_FocusHandlingMode,Notification_FocusState,Notification_Message,Notification,INotification}
+ #[cfg(feature="unity_engine-switch-notification-types")]pub use notification::{Notification_FocusHandlingMode,Notification,INotification,Notification_Message,Notification_FocusState}
 ;
  #[cfg(any(feature="unity_engine-switch-operation-types"))]pub mod operation;
- #[cfg(feature="unity_engine-switch-operation-types")]pub use operation::{Operation_OperationMode,Operation,IOperation}
+ #[cfg(feature="unity_engine-switch-operation-types")]pub use operation::{Operation,IOperation,Operation_OperationMode}
 ;
  #[cfg(any(feature="unity_engine-switch-performance-types"))]pub mod performance;
- #[cfg(feature="unity_engine-switch-performance-types")]pub use performance::{Performance,IPerformance,Performance_PerformanceMode,Performance_Debug,IPerformance_Debug,Performance_Debug_HudMode,Performance_CpuBoostMode}
+ #[cfg(feature="unity_engine-switch-performance-types")]pub use performance::{Performance_Debug,IPerformance_Debug,Performance_PerformanceMode,Performance_Debug_HudMode,Performance,IPerformance,Performance_CpuBoostMode}
 ;
  #[cfg(any(feature="unity_engine-switch-switchvideoplayer-types"))]pub mod switchvideoplayer;
- #[cfg(feature="unity_engine-switch-switchvideoplayer-types")]pub use switchvideoplayer::{SwitchVideoPlayer_Event,SwitchVideoPlayer,ISwitchVideoPlayer,SwitchVideoPlayer_MovieEventDelegate,ISwitchVideoPlayer_MovieEventDelegate}
+ #[cfg(feature="unity_engine-switch-switchvideoplayer-types")]pub use switchvideoplayer::{SwitchVideoPlayer,ISwitchVideoPlayer,SwitchVideoPlayer_Event,SwitchVideoPlayer_MovieEventDelegate,ISwitchVideoPlayer_MovieEventDelegate}
 ;
  #[cfg(feature="unity_engine-switch-switchvideoplayer")]pub use switchvideoplayer::{ISwitchVideoPlayer_MovieEventDelegateMethods}
 ;

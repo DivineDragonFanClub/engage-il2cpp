@@ -19,40 +19,31 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParam.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.EventParam")]#[parent(crate::app::soundwwise::SoundWwise_SoundPrepareManager_Param)]pub struct SoundWwise_SoundPrepareManager_EventParam{#[offset(24)]#[rename(name="m_eventName")]pub m_event_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SoundWwise_SoundBankManager_States{pub value:i32,}
+impl::unity2::ClassIdentity for SoundWwise_SoundBankManager_States{const NAMESPACE: &'static str="App";
+const NAME: &'static str="SoundWwise.SoundBankManager.States";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for SoundWwise_SoundBankManager_States{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl SoundWwise_SoundBankManager_States{pub fn loading()->Self{Self{value:0}
+}
+pub fn loaded()->Self{Self{value:1}
+}
+pub fn unexist()->Self{Self{value:2}
+}
+}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchGroupParamList.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.SwitchGroupParamList")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_SwitchGroupParamList{#[offset(16)]#[rename(name="m_paramListList")]pub m_param_list_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParamList> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundParam.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundParam")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundParam{#[static_field]#[rename(name="MasterVolumeMin")]pub master_volume_min:i32, #[static_field]#[rename(name="MasterVolumeMax")]pub master_volume_max:i32, #[static_field]#[rename(name="ConfigVolumeMin")]pub config_volume_min:i32, #[static_field]#[rename(name="ConfigVolumeMax")]pub config_volume_max:i32, #[static_field]#[rename(name="MasterBgmVolumeName")]pub master_bgm_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MasterEnvVolumeName")]pub master_env_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MasterSeVolumeName")]pub master_se_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MasterVoiceVolumeName")]pub master_voice_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigBgmVolumeName")]pub config_bgm_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigEnvVolumeName")]pub config_env_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigSeVolumeName")]pub config_se_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigVoiceVolumeName")]pub config_voice_volume_name: ::unity2::Il2CppString, #[offset(16)]#[rename(name="m_rootGameObject")]pub m_root_game_object:crate::unity_engine::gameobject::GameObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPlay_GameObjectPool.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPlay.GameObjectPool")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPlay_GameObjectPool{#[static_field]#[rename(name="GameObjectDefaultNum")]pub game_object_default_num:i32, #[offset(16)]#[rename(name="m_objList")]pub m_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchParamList.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.SwitchParamList")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_SwitchParamList{#[offset(16)]#[rename(name="m_switchGroupName")]pub m_switch_group_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_paramList")]pub m_param_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParam> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParamList.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.EventParamList")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_EventParamList{#[offset(16)]#[rename(name="m_paramList")]pub m_param_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParam> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise.md"))]#[::unity2::class(namespace="App",name="SoundWwise")]#[parent(crate::system::object::Object)]pub struct SoundWwise{#[static_field]#[rename(name="WwiseGlobalObjectName")]pub wwise_global_object_name: ::unity2::Il2CppString, #[static_field]#[rename(name="AudioListenerObjectName")]pub audio_listener_object_name: ::unity2::Il2CppString, #[static_field]#[rename(name="s_WwiseGlobalObject")]pub s_wwise_global_object:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="s_audioListenerObject")]pub s_audio_listener_object:crate::unity_engine::gameobject::GameObject,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager_BankHandle.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundBankManager.BankHandle")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundBankManager_BankHandle{#[offset(16)]#[rename(name="m_isPrepareLoad")]pub m_is_prepare_load:bool, #[offset(24)]#[rename(name="m_bankName")]pub m_bank_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_bankID")]pub m_bank_id:u32, #[offset(36)]#[rename(name="m_refCount")]pub m_ref_count:i32, #[offset(40)]#[rename(name="m_state")]pub m_state:crate::app::soundwwise::SoundWwise_SoundBankManager_States, #[offset(44)]#[rename(name="m_internalState")]pub m_internal_state:crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundHandle.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundHandle")]#[parent(crate::app::soundsystem::SoundSystem_SoundHandle)]pub struct SoundWwise_SoundHandle{#[offset(16)]#[rename(name="m_eventName")]pub m_event_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_eventId")]pub m_event_id:u32, #[offset(32)]#[rename(name="m_lipSyncDataFileName")]pub m_lip_sync_data_file_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_gameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_playingId")]pub m_playing_id:u32, #[offset(52)]#[rename(name="m_isPlaying")]pub m_is_playing:bool, #[offset(53)]#[rename(name="m_isTemporaryGameObject")]pub m_is_temporary_game_object:bool, #[offset(56)]#[rename(name="m_character")]pub m_character:crate::combat::character::Character, #[offset(64)]#[rename(name="m_eventCharacterMouthController")]pub m_event_character_mouth_controller:crate::app::eventcharactermouthcontroller::EventCharacterMouthController,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager{#[static_field]#[rename(name="m_eventParamList")]pub m_event_param_list:crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParamList, #[static_field]#[rename(name="m_switchGroupParamList")]pub m_switch_group_param_list:crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchGroupParamList,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager_AsyncBankHandle.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundBankManager.AsyncBankHandle")]#[parent(crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle)]pub struct SoundWwise_SoundBankManager_AsyncBankHandle{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_Param.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.Param")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_Param{#[offset(16)]#[rename(name="m_reference")]pub m_reference:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchParam.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.SwitchParam")]#[parent(crate::app::soundwwise::SoundWwise_SoundPrepareManager_Param)]pub struct SoundWwise_SoundPrepareManager_SwitchParam{#[offset(24)]#[rename(name="m_switchGroupName")]pub m_switch_group_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_switchName")]pub m_switch_name: ::unity2::Il2CppString,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundBankManager")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::soundwwise::SoundWwise_SoundBankManager>)]pub struct SoundWwise_SoundBankManager{#[offset(120)]#[rename(name="m_bankHandles")]pub m_bank_handles:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle> , #[offset(128)]#[rename(name="m_workRemovingHandles")]pub m_work_removing_handles:crate::system::collections::generic::list_1::List_1<crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager_InternalStates.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SoundWwise_SoundBankManager_InternalStates{pub value:i32,}
@@ -73,159 +64,676 @@ pub fn load_failed()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundParam.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundParam")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundParam{#[static_field]#[rename(name="MasterVolumeMin")]pub master_volume_min:i32, #[static_field]#[rename(name="MasterVolumeMax")]pub master_volume_max:i32, #[static_field]#[rename(name="ConfigVolumeMin")]pub config_volume_min:i32, #[static_field]#[rename(name="ConfigVolumeMax")]pub config_volume_max:i32, #[static_field]#[rename(name="MasterBgmVolumeName")]pub master_bgm_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MasterEnvVolumeName")]pub master_env_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MasterSeVolumeName")]pub master_se_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="MasterVoiceVolumeName")]pub master_voice_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigBgmVolumeName")]pub config_bgm_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigEnvVolumeName")]pub config_env_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigSeVolumeName")]pub config_se_volume_name: ::unity2::Il2CppString, #[static_field]#[rename(name="ConfigVoiceVolumeName")]pub config_voice_volume_name: ::unity2::Il2CppString, #[offset(16)]#[rename(name="m_rootGameObject")]pub m_root_game_object:crate::unity_engine::gameobject::GameObject,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchParam.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.SwitchParam")]#[parent(crate::app::soundwwise::SoundWwise_SoundPrepareManager_Param)]pub struct SoundWwise_SoundPrepareManager_SwitchParam{#[offset(24)]#[rename(name="m_switchGroupName")]pub m_switch_group_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_switchName")]pub m_switch_name: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager_States.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct SoundWwise_SoundBankManager_States{pub value:i32,}
-impl::unity2::ClassIdentity for SoundWwise_SoundBankManager_States{const NAMESPACE: &'static str="App";
-const NAME: &'static str="SoundWwise.SoundBankManager.States";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for SoundWwise_SoundBankManager_States{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl SoundWwise_SoundBankManager_States{pub fn loading()->Self{Self{value:0}
-}
-pub fn loaded()->Self{Self{value:1}
-}
-pub fn unexist()->Self{Self{value:2}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager_AsyncBankHandle.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundBankManager.AsyncBankHandle")]#[parent(crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle)]pub struct SoundWwise_SoundBankManager_AsyncBankHandle{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundLoad.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundLoad")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundLoad{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPlay_GameObjectPool.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPlay.GameObjectPool")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPlay_GameObjectPool{#[static_field]#[rename(name="GameObjectDefaultNum")]pub game_object_default_num:i32, #[offset(16)]#[rename(name="m_objList")]pub m_obj_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> ,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPlay.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPlay")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPlay{#[static_field]#[rename(name="DefaultCallbackFlag")]pub default_callback_flag:u32, #[static_field]#[rename(name="GetPositionFlag")]pub get_position_flag:u32, #[offset(16)]#[rename(name="m_rootGameObject")]pub m_root_game_object:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_soundObjects")]pub m_sound_objects:crate::app::soundwwise::SoundWwise_SoundPlay_GameObjectPool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParamList.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.EventParamList")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_EventParamList{#[offset(16)]#[rename(name="m_paramList")]pub m_param_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParam> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundHandle.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundHandle")]#[parent(crate::app::soundsystem::SoundSystem_SoundHandle)]pub struct SoundWwise_SoundHandle{#[offset(16)]#[rename(name="m_eventName")]pub m_event_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_eventId")]pub m_event_id:u32, #[offset(32)]#[rename(name="m_lipSyncDataFileName")]pub m_lip_sync_data_file_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_gameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_playingId")]pub m_playing_id:u32, #[offset(52)]#[rename(name="m_isPlaying")]pub m_is_playing:bool, #[offset(53)]#[rename(name="m_isTemporaryGameObject")]pub m_is_temporary_game_object:bool, #[offset(56)]#[rename(name="m_character")]pub m_character:crate::combat::character::Character, #[offset(64)]#[rename(name="m_eventCharacterMouthController")]pub m_event_character_mouth_controller:crate::app::eventcharactermouthcontroller::EventCharacterMouthController,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_Param.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.Param")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_Param{#[offset(16)]#[rename(name="m_reference")]pub m_reference:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_EventParam.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.EventParam")]#[parent(crate::app::soundwwise::SoundWwise_SoundPrepareManager_Param)]pub struct SoundWwise_SoundPrepareManager_EventParam{#[offset(24)]#[rename(name="m_eventName")]pub m_event_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager{#[static_field]#[rename(name="m_eventParamList")]pub m_event_param_list:crate::app::soundwwise::SoundWwise_SoundPrepareManager_EventParamList, #[static_field]#[rename(name="m_switchGroupParamList")]pub m_switch_group_param_list:crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchGroupParamList,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundBankManager")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::soundwwise::SoundWwise_SoundBankManager>)]pub struct SoundWwise_SoundBankManager{#[offset(120)]#[rename(name="m_bankHandles")]pub m_bank_handles:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle> , #[offset(128)]#[rename(name="m_workRemovingHandles")]pub m_work_removing_handles:crate::system::collections::generic::list_1::List_1<crate::app::soundwwise::SoundWwise_SoundBankManager_BankHandle> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchGroupParamList.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.SwitchGroupParamList")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_SwitchGroupParamList{#[offset(16)]#[rename(name="m_paramListList")]pub m_param_list_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParamList> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundPrepareManager_SwitchParamList.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundPrepareManager.SwitchParamList")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundPrepareManager_SwitchParamList{#[offset(16)]#[rename(name="m_switchGroupName")]pub m_switch_group_name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_paramList")]pub m_param_list:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::soundwwise::SoundWwise_SoundPrepareManager_SwitchParam> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundLoad.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundLoad")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundLoad{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/soundwwise/SoundWwise_SoundBankManager_BankHandle.md"))]#[::unity2::class(namespace="App",name="SoundWwise.SoundBankManager.BankHandle")]#[parent(crate::system::object::Object)]pub struct SoundWwise_SoundBankManager_BankHandle{#[offset(16)]#[rename(name="m_isPrepareLoad")]pub m_is_prepare_load:bool, #[offset(24)]#[rename(name="m_bankName")]pub m_bank_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_bankID")]pub m_bank_id:u32, #[offset(36)]#[rename(name="m_refCount")]pub m_ref_count:i32, #[offset(40)]#[rename(name="m_state")]pub m_state:crate::app::soundwwise::SoundWwise_SoundBankManager_States, #[offset(44)]#[rename(name="m_internalState")]pub m_internal_state:crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates,}
 
 }
 
 #[cfg(feature = "app-soundwwise-types")]
 pub use __types::*;
 
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_EventParamMethods:ISoundWwise_SoundPrepareManager_EventParam{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0010usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_EventParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+#[cfg(feature="app-soundwwise")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundWwise_SoundParam_unity2_raw{use super:: * ;
+pub unsafe fn get_master_bgm_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetMasterBgmVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_master_se_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetMasterSeVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_master_env_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetMasterEnvVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_master_voice_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetMasterVoiceVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_master_bgm_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetMasterBgmVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn set_master_se_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetMasterSeVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn set_master_env_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetMasterEnvVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn set_master_voice_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetMasterVoiceVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn reset_master_bgm_volume(this:SoundWwise_SoundParam,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"ResetMasterBgmVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fade_msec,__mi)}
+pub unsafe fn reset_master_se_volume(this:SoundWwise_SoundParam,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"ResetMasterSeVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fade_msec,__mi)}
+pub unsafe fn reset_master_env_volume(this:SoundWwise_SoundParam,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"ResetMasterEnvVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fade_msec,__mi)}
+pub unsafe fn reset_master_voice_volume(this:SoundWwise_SoundParam,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"ResetMasterVoiceVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fade_msec,__mi)}
+pub unsafe fn get_config_bgm_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetConfigBgmVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_config_se_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetConfigSeVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_config_env_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetConfigEnvVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_config_voice_volume(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetConfigVoiceVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_config_bgm_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetConfigBgmVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn set_config_se_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetConfigSeVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn set_config_env_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetConfigEnvVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn set_config_voice_volume(this:SoundWwise_SoundParam,vol:f32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetConfigVoiceVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,fade_msec,__mi)}
+pub unsafe fn set_volume(this:SoundWwise_SoundParam,vol:f32,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetVolume",));
+let inner:extern "C" fn(SoundWwise_SoundParam,f32,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vol,game_object,__mi)}
+pub unsafe fn get_value(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,is_global:bool,value: *mut u32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,bool, *mut u32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,is_global,value,__mi)}
+pub unsafe fn get_value_2(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,game_object:crate::unity_engine::gameobject::GameObject,is_global:bool,value: *mut u32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,crate::unity_engine::gameobject::GameObject,bool, *mut u32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,game_object,is_global,value,__mi)}
+pub unsafe fn get_value_3(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,value: *mut f32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString, *mut f32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,value,__mi)}
+pub unsafe fn get_value_4(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,game_object:crate::unity_engine::gameobject::GameObject,value: *mut f32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,crate::unity_engine::gameobject::GameObject, *mut f32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,game_object,value,__mi)}
+pub unsafe fn set_value(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,is_global:bool,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,bool, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,is_global,value,__mi)}
+pub unsafe fn set_value_2(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,is_global:bool,value:u32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,bool,u32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,is_global,value,__mi)}
+pub unsafe fn set_value_3(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,is_global:bool,value: ::unity2::Il2CppString,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,bool, ::unity2::Il2CppString,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,is_global,value,game_object,__mi)}
+pub unsafe fn set_value_4(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,is_global:bool,value:u32,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,bool,u32,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,is_global,value,game_object,__mi)}
+pub unsafe fn set_value_5(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,f32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,value,__mi)}
+pub unsafe fn set_value_6(this:SoundWwise_SoundParam,value_name: ::unity2::Il2CppString,value:f32,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::Il2CppString,f32,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value_name,value,game_object,__mi)}
+pub unsafe fn set_position(this:SoundWwise_SoundParam,pos:crate::unity_engine::vector3::Vector3,foward:crate::unity_engine::vector3::Vector3,up:crate::unity_engine::vector3::Vector3,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetPosition",));
+let inner:extern "C" fn(SoundWwise_SoundParam,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,pos,foward,up,game_object,__mi)}
+pub unsafe fn get_audio_listener_object(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetAudioListenerObject",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_audio_listener_posistion(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetAudioListenerPosistion",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_audio_listener_rotation(this:SoundWwise_SoundParam,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(38usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",38usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"GetAudioListenerRotation",));
+let inner:extern "C" fn(SoundWwise_SoundParam, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_audio_listener_position(this:SoundWwise_SoundParam,listener_pos:crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(39usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",39usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetAudioListenerPosition",));
+let inner:extern "C" fn(SoundWwise_SoundParam,crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,listener_pos,__mi)}
+pub unsafe fn set_audio_listener_rotation(this:SoundWwise_SoundParam,listener_rot:crate::unity_engine::quaternion::Quaternion,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <SoundWwise_SoundParam as::unity2::ClassIdentity> ::NAME,"SetAudioListenerRotation",));
+let inner:extern "C" fn(SoundWwise_SoundParam,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,listener_rot,__mi)}
 }
-#[doc="`GetEventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0060usize)as*mut u8, ::unity2::Il2CppString;
-(SoundWwise_SoundPrepareManager_EventParam)__receiver)}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundParam{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f3790usize)as*mut u8,();
+)}
 }
 }
 
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_EventParam>ISoundWwise_SoundPrepareManager_EventParamMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundParamMethods:ISoundWwise_SoundParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f18b0usize)as*mut u8,();
+(SoundWwise_SoundParam)__receiver)}
+}
+#[doc="`GetVolumeCommon(::unity2::Il2CppString, f32, f32)` overload"]fn get_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1940usize)as*mut u8,f32;
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max))}
+}
+#[doc="`SetVolumeCommon(::unity2::Il2CppString, f32, f32, f32, i32)` overload"]fn set_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,vol:impl::core::convert::Into<f32> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1a40usize)as*mut u8,();
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(vol),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max),(i32)::core::convert::Into::into(fade_msec))}
+}
+#[doc="`ResetVolumeCommon(::unity2::Il2CppString, i32)` overload"]fn reset_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1b30usize)as*mut u8,();
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(i32)::core::convert::Into::into(fade_msec))}
+}
+#[doc="`GetMasterVolumeCommon(::unity2::Il2CppString)` overload"]fn get_master_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1bb0usize)as*mut u8,f32;
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name))}
+}
+#[doc="`SetMasterVolumeCommon(::unity2::Il2CppString, f32, i32)` overload"]fn set_master_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1c30usize)as*mut u8,();
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
+}
+#[doc="`ResetMasterVolumeCommon(::unity2::Il2CppString, i32)` overload"]fn reset_master_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1cd0usize)as*mut u8,();
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(i32)::core::convert::Into::into(fade_msec))}
+}
+#[doc="`GetConfigVolumeCommon(::unity2::Il2CppString)` overload"]fn get_config_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1d50usize)as*mut u8,f32;
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name))}
+}
+#[doc="`SetConfigVolumeCommon(::unity2::Il2CppString, f32, i32)` overload"]fn set_config_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1dd0usize)as*mut u8,();
+(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
+}
+#[doc="`GetMasterBgmVolume()` overload"]fn get_master_bgm_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_master_bgm_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetMasterSeVolume()` overload"]fn get_master_se_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_master_se_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetMasterEnvVolume()` overload"]fn get_master_env_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_master_env_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetMasterVoiceVolume()` overload"]fn get_master_voice_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_master_voice_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`SetMasterBgmVolume(f32, i32)` overload"]fn set_master_bgm_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_master_bgm_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`SetMasterSeVolume(f32, i32)` overload"]fn set_master_se_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_master_se_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`SetMasterEnvVolume(f32, i32)` overload"]fn set_master_env_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_master_env_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`SetMasterVoiceVolume(f32, i32)` overload"]fn set_master_voice_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_master_voice_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`ResetMasterBgmVolume(i32)` overload"]fn reset_master_bgm_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::reset_master_bgm_volume(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`ResetMasterSeVolume(i32)` overload"]fn reset_master_se_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::reset_master_se_volume(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`ResetMasterEnvVolume(i32)` overload"]fn reset_master_env_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::reset_master_env_volume(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`ResetMasterVoiceVolume(i32)` overload"]fn reset_master_voice_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::reset_master_voice_volume(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`GetConfigBgmVolume()` overload"]fn get_config_bgm_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_config_bgm_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetConfigSeVolume()` overload"]fn get_config_se_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_config_se_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetConfigEnvVolume()` overload"]fn get_config_env_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_config_env_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetConfigVoiceVolume()` overload"]fn get_config_voice_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_config_voice_volume(__receiver, ::core::option::Option::None)}
+}
+#[doc="`SetConfigBgmVolume(f32, i32)` overload"]fn set_config_bgm_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_config_bgm_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`SetConfigSeVolume(f32, i32)` overload"]fn set_config_se_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_config_se_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`SetConfigEnvVolume(f32, i32)` overload"]fn set_config_env_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_config_env_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`SetConfigVoiceVolume(f32, i32)` overload"]fn set_config_voice_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_config_voice_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`SetVolume(f32, crate::unity_engine::gameobject::GameObject)` overload"]fn set_volume(self,vol:impl::core::convert::Into<f32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_volume(__receiver, ::core::convert::Into::into(vol), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`GetValue(::unity2::Il2CppString, bool, *mutu32)` overload"]fn get_value(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool>)->(bool,u32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
+let __ret={__SoundWwise_SoundParam_unity2_raw::get_value(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(is_global),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetValue(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool, *mutu32)` overload"]fn get_value_2(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,is_global:impl::core::convert::Into<bool>)->(bool,u32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
+let __ret={__SoundWwise_SoundParam_unity2_raw::get_value_2(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(game_object), ::core::convert::Into::into(is_global),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetValue(::unity2::Il2CppString, *mutf32)` overload"]fn get_value_3(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,f32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={__SoundWwise_SoundParam_unity2_raw::get_value_3(__receiver, ::core::convert::Into::into(value_name),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetValue(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, *mutf32)` overload"]fn get_value_4(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(bool,f32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
+let __ret={__SoundWwise_SoundParam_unity2_raw::get_value_4(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(game_object),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SetValue(::unity2::Il2CppString, bool, ::unity2::Il2CppString)` overload"]fn set_value(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(is_global), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`SetValue(::unity2::Il2CppString, bool, u32)` overload"]fn set_value_2(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into<u32>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_value_2(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(is_global), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`SetValue(::unity2::Il2CppString, bool, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]fn set_value_3(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_value_3(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(is_global), ::core::convert::Into::into(value), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`SetValue(::unity2::Il2CppString, bool, u32, crate::unity_engine::gameobject::GameObject)` overload"]fn set_value_4(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into<u32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_value_4(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(is_global), ::core::convert::Into::into(value), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`SetValue(::unity2::Il2CppString, f32)` overload"]fn set_value_5(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_value_5(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`SetValue(::unity2::Il2CppString, f32, crate::unity_engine::gameobject::GameObject)` overload"]fn set_value_6(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_value_6(__receiver, ::core::convert::Into::into(value_name), ::core::convert::Into::into(value), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`SetPosition(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::gameobject::GameObject)` overload"]fn set_position(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,foward:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,up:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_position(__receiver, ::core::convert::Into::into(pos), ::core::convert::Into::into(foward), ::core::convert::Into::into(up), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`GetAudioListenerObject()` overload"]fn get_audio_listener_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_audio_listener_object(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetAudioListenerPosistion()` overload"]fn get_audio_listener_posistion(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_audio_listener_posistion(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetAudioListenerRotation()` overload"]fn get_audio_listener_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::get_audio_listener_rotation(__receiver, ::core::option::Option::None)}
+}
+#[doc="`SetAudioListenerPosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_audio_listener_position(self,listener_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_audio_listener_position(__receiver, ::core::convert::Into::into(listener_pos), ::core::option::Option::None)}
+}
+#[doc="`SetAudioListenerRotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn set_audio_listener_rotation(self,listener_rot:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundParam_unity2_raw::set_audio_listener_rotation(__receiver, ::core::convert::Into::into(listener_rot), ::core::option::Option::None)}
+}
 }
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParam{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(event_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundParam>ISoundWwise_SoundParamMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn reset_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_master_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_master_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn reset_master_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_config_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_config_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_master_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_master_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_master_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn get_master_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn set_master_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn set_master_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn set_master_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn set_master_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn reset_master_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn reset_master_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn reset_master_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+pub fn reset_master_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
+pub fn get_config_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
+pub fn get_config_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
+pub fn get_config_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
+pub fn get_config_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
+pub fn set_config_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
+pub fn set_config_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
+pub fn set_config_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
+pub fn set_config_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
+pub fn set_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
+pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
+pub fn get_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
+pub fn get_value_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
+pub fn get_value_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
+pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
+pub fn set_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
+pub fn set_value_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
+pub fn set_value_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
+pub fn set_value_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
+pub fn set_value_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
+pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
+pub fn get_audio_listener_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
+pub fn get_audio_listener_posistion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
+pub fn get_audio_listener_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
+pub fn set_audio_listener_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
+pub fn set_audio_listener_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_EventParam), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPrepareManager_EventParamMethods> ::ctor(this,event_name);
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundParam), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundParamMethods> ::ctor(this,);
 this}
 }
 
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods:ISoundWwise_SoundPrepareManager_SwitchGroupParamList{#[doc="`IncRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn inc_ref(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0500usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_EventParamListMethods:ISoundWwise_SoundPrepareManager_EventParamList{#[doc="`IncRef(::unity2::Il2CppString)` overload"]fn inc_ref(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0070usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_EventParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
 }
-#[doc="`DecRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn dec_ref(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f07c0usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+#[doc="`DecRef(::unity2::Il2CppString)` overload"]fn dec_ref(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0180usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_EventParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
 }
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0990usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver)}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0260usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_EventParamList)__receiver)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0cf0usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver)}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0470usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_EventParamList)__receiver)}
 }
 }
 
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_SwitchGroupParamList>ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods for __T{}
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_EventParamList>ISoundWwise_SoundPrepareManager_EventParamListMethods for __T{}
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchGroupParamList{pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParamList{pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchGroupParamList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParamList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchGroupParamList), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPlay_GameObjectPoolMethods:ISoundWwise_SoundPlay_GameObjectPool{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay_GameObjectPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efd90usize)as*mut u8,();
-(SoundWwise_SoundPlay_GameObjectPool)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
-}
-#[doc="`Pop()` overload"]fn pop(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundWwise_SoundPlay_GameObjectPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efee0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(SoundWwise_SoundPlay_GameObjectPool)__receiver)}
-}
-#[doc="`Push(crate::unity_engine::gameobject::GameObject)` overload"]fn push(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay_GameObjectPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22eff80usize)as*mut u8,();
-(SoundWwise_SoundPlay_GameObjectPool)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
-}
-}
-
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPlay_GameObjectPool>ISoundWwise_SoundPlay_GameObjectPoolMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay_GameObjectPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay_GameObjectPool{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(parent:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPlay_GameObjectPool), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPlay_GameObjectPoolMethods> ::ctor(this,parent);
-this}
-}
-
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_SwitchParamListMethods:ISoundWwise_SoundPrepareManager_SwitchParamList{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f06f0usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name))}
-}
-#[doc="`IncRef(::unity2::Il2CppString)` overload"]fn inc_ref(self,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f05e0usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
-}
-#[doc="`DecRef(::unity2::Il2CppString)` overload"]fn dec_ref(self,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f08d0usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
-}
-#[doc="`IsEmpty()` overload"]fn is_empty(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0df0usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver)}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0ad0usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_SwitchParamList>ISoundWwise_SoundPrepareManager_SwitchParamListMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParamList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParamList{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(switch_group_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchParamList), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPrepareManager_SwitchParamListMethods> ::ctor(this,switch_group_name);
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_EventParamList), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPrepareManager_EventParamListMethods> ::ctor(this,);
 this}
 }
 
@@ -496,82 +1004,476 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundBankManager_BankHandleMethods:ISoundWwise_SoundBankManager_BankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,bank_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_prepare_load:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef7e0usize)as*mut u8,();
-(SoundWwise_SoundBankManager_BankHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(bank_name),(bool)::core::convert::Into::into(is_prepare_load))}
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_SwitchParamMethods:ISoundWwise_SoundPrepareManager_SwitchParam{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0d80usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_SwitchParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
 }
-#[doc="`LoadBank()` overload"]fn load_bank(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efad0usize)as*mut u8,bool;
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
+#[doc="`GetSwitchGroupName()` overload"]fn get_switch_group_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0dd0usize)as*mut u8, ::unity2::Il2CppString;
+(SoundWwise_SoundPrepareManager_SwitchParam)__receiver)}
 }
-#[doc="`UnloadBank()` overload"]fn unload_bank(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efb90usize)as*mut u8,();
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`IncRef()` overload"]fn inc_ref(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efb80usize)as*mut u8,();
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`DecRef()` overload"]fn dec_ref(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efba0usize)as*mut u8,();
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`get_BankName()` overload"]fn get_bank_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbb0usize)as*mut u8, ::unity2::Il2CppString;
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`get_RefCount()` overload"]fn get_ref_count(self,)->i32{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbc0usize)as*mut u8,i32;
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`get_State()` overload"]fn get_state(self,)->crate::app::soundwwise::SoundWwise_SoundBankManager_States{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbd0usize)as*mut u8,crate::app::soundwwise::SoundWwise_SoundBankManager_States;
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`set_State(crate::app::soundwwise::SoundWwise_SoundBankManager_States)` overload"]fn set_state(self,value:impl::core::convert::Into<crate::app::soundwwise::SoundWwise_SoundBankManager_States>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbe0usize)as*mut u8,();
-(SoundWwise_SoundBankManager_BankHandle)__receiver,(crate::app::soundwwise::SoundWwise_SoundBankManager_States)::core::convert::Into::into(value))}
-}
-#[doc="`get_InternalState()` overload"]fn get_internal_state(self,)->crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbf0usize)as*mut u8,crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates;
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`DoLoadBank()` overload"]fn do_load_bank(self,)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efc00usize)as*mut u8,crate::root::akresult::AKRESULT;
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`DoUnloadBank()` overload"]fn do_unload_bank(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efcd0usize)as*mut u8,();
-(SoundWwise_SoundBankManager_BankHandle)__receiver)}
-}
-#[doc="`LogLoadResult(crate::root::akresult::AKRESULT)` overload"]fn log_load_result(self,result:impl::core::convert::Into<crate::root::akresult::AKRESULT>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22efa40usize)as*mut u8,();
-(SoundWwise_SoundBankManager_BankHandle)__receiver,(crate::root::akresult::AKRESULT)::core::convert::Into::into(result))}
+#[doc="`GetSwitchName()` overload"]fn get_switch_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0de0usize)as*mut u8, ::unity2::Il2CppString;
+(SoundWwise_SoundPrepareManager_SwitchParam)__receiver)}
 }
 }
 
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundBankManager_BankHandle>ISoundWwise_SoundBankManager_BankHandleMethods for __T{}
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_SwitchParam>ISoundWwise_SoundPrepareManager_SwitchParamMethods for __T{}
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_BankHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_bank_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_ref_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_internal_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn do_unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn log_load_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_switch_group_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_switch_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_BankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(bank_name: ::unity2::Il2CppString,is_prepare_load:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParam{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundBankManager_BankHandle), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundBankManager_BankHandleMethods> ::ctor(this,bank_name,is_prepare_load);
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchParam), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPrepareManager_SwitchParamMethods> ::ctor(this,switch_group_name,switch_name);
 this}
+}
+
+#[cfg(feature="app-soundwwise")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundWwise_SoundBankManager_AsyncBankHandle_unity2_raw{use super:: * ;
+pub unsafe fn do_load_bank(this:SoundWwise_SoundBankManager_AsyncBankHandle,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akresult::AKRESULT{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SoundWwise_SoundBankManager_AsyncBankHandle as::unity2::ClassIdentity> ::NAME,"DoLoadBank",));
+let inner:extern "C" fn(SoundWwise_SoundBankManager_AsyncBankHandle, ::unity2::OptionalMethod,)->crate::root::akresult::AKRESULT= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_AsyncBankHandle{#[doc="`GlobalBankCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]pub fn global_bank_callback(bank_id:impl::core::convert::Into<u32> ,p_in_memory_bank_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,load_result:impl::core::convert::Into<crate::root::akresult::AKRESULT> ,cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ef950usize)as*mut u8,();
+(u32)::core::convert::Into::into(bank_id),(::unity2::IntPtr)::core::convert::Into::into(p_in_memory_bank_ptr),(crate::root::akresult::AKRESULT)::core::convert::Into::into(load_result),(crate::system::object::Object)::core::convert::Into::into(cookie))}
+}
+}
+
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundBankManager_AsyncBankHandleMethods:ISoundWwise_SoundBankManager_AsyncBankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_prepare_load:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_AsyncBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef790usize)as*mut u8,();
+(SoundWwise_SoundBankManager_AsyncBankHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(is_prepare_load))}
+}
+#[doc="`DoLoadBank()` overload"]fn do_load_bank(self,)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <SoundWwise_SoundBankManager_AsyncBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundBankManager_AsyncBankHandle_unity2_raw::do_load_bank(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundBankManager_AsyncBankHandle>ISoundWwise_SoundBankManager_AsyncBankHandleMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_AsyncBankHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn global_bank_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_AsyncBankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,is_prepare_load:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundBankManager_AsyncBankHandle), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundBankManager_AsyncBankHandleMethods> ::ctor(this,name,is_prepare_load);
+this}
+}
+
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPlay_GameObjectPoolMethods:ISoundWwise_SoundPlay_GameObjectPool{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay_GameObjectPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efd90usize)as*mut u8,();
+(SoundWwise_SoundPlay_GameObjectPool)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(parent))}
+}
+#[doc="`Pop()` overload"]fn pop(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundWwise_SoundPlay_GameObjectPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efee0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(SoundWwise_SoundPlay_GameObjectPool)__receiver)}
+}
+#[doc="`Push(crate::unity_engine::gameobject::GameObject)` overload"]fn push(self,obj:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay_GameObjectPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22eff80usize)as*mut u8,();
+(SoundWwise_SoundPlay_GameObjectPool)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj))}
+}
+}
+
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPlay_GameObjectPool>ISoundWwise_SoundPlay_GameObjectPoolMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay_GameObjectPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn push_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay_GameObjectPool{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(parent:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPlay_GameObjectPool), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPlay_GameObjectPoolMethods> ::ctor(this,parent);
+this}
+}
+
+#[cfg(feature="app-soundwwise")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundWwise_SoundPlay_unity2_raw{use super:: * ;
+pub unsafe fn pop_temporary_game_object(this:SoundWwise_SoundPlay,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"PopTemporaryGameObject",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn post_event_callback(this:SoundWwise_SoundPlay,cookie:crate::system::object::Object,r#type:crate::root::akcallbacktype::AkCallbackType,callback_info:crate::root::akcallbackinfo::AkCallbackInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"PostEventCallback",));
+let inner:extern "C" fn(SoundWwise_SoundPlay,crate::system::object::Object,crate::root::akcallbacktype::AkCallbackType,crate::root::akcallbackinfo::AkCallbackInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cookie,r#type,callback_info,__mi)}
+pub unsafe fn is_event_loaded(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"IsEventLoaded",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,__mi)}
+pub unsafe fn post_event(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,is_get_position:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::soundsystem::SoundSystem_SoundHandle{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"PostEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,bool, ::unity2::OptionalMethod,)->crate::app::soundsystem::SoundSystem_SoundHandle= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,is_get_position,__mi)}
+pub unsafe fn post_event_2(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,game_object:crate::unity_engine::gameobject::GameObject,is_get_position:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::soundsystem::SoundSystem_SoundHandle{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"PostEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,crate::unity_engine::gameobject::GameObject,bool, ::unity2::OptionalMethod,)->crate::app::soundsystem::SoundSystem_SoundHandle= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,game_object,is_get_position,__mi)}
+pub unsafe fn post_event_with_temporary_game_object(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,temporary_game_object:crate::unity_engine::gameobject::GameObject,is_get_position:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::soundsystem::SoundSystem_SoundHandle{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"PostEventWithTemporaryGameObject",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,crate::unity_engine::gameobject::GameObject,bool, ::unity2::OptionalMethod,)->crate::app::soundsystem::SoundSystem_SoundHandle= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,temporary_game_object,is_get_position,__mi)}
+pub unsafe fn stop_sound_on_event(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"StopSoundOnEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,fade_msec,__mi)}
+pub unsafe fn stop_sound_on_event_2(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,fade_msec:i32,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"StopSoundOnEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,i32,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,fade_msec,game_object,__mi)}
+pub unsafe fn pause_sound_on_event(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"PauseSoundOnEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,fade_msec,__mi)}
+pub unsafe fn pause_sound_on_event_2(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,fade_msec:i32,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"PauseSoundOnEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,i32,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,fade_msec,game_object,__mi)}
+pub unsafe fn resume_sound_on_event(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"ResumeSoundOnEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,fade_msec,__mi)}
+pub unsafe fn resume_sound_on_event_2(this:SoundWwise_SoundPlay,event_name: ::unity2::Il2CppString,fade_msec:i32,game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"ResumeSoundOnEvent",));
+let inner:extern "C" fn(SoundWwise_SoundPlay, ::unity2::Il2CppString,i32,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,fade_msec,game_object,__mi)}
+pub unsafe fn stop_by_playing_id(this:SoundWwise_SoundPlay,playing_id:u32,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"StopByPlayingId",));
+let inner:extern "C" fn(SoundWwise_SoundPlay,u32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playing_id,fade_msec,__mi)}
+pub unsafe fn get_play_position(this:SoundWwise_SoundPlay,playing_id:u32,position_offset:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <SoundWwise_SoundPlay as::unity2::ClassIdentity> ::NAME,"GetPlayPosition",));
+let inner:extern "C" fn(SoundWwise_SoundPlay,u32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,playing_id,position_offset,__mi)}
+}
+
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPlayMethods:ISoundWwise_SoundPlay{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3960usize)as*mut u8,();
+(SoundWwise_SoundPlay)__receiver)}
+}
+#[doc="`PopTemporaryGameObject()` overload"]fn pop_temporary_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::pop_temporary_game_object(__receiver, ::core::option::Option::None)}
+}
+#[doc="`PushTemporaryGameObject(crate::unity_engine::gameobject::GameObject)` overload"]fn push_temporary_game_object(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3a40usize)as*mut u8,();
+(SoundWwise_SoundPlay)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+}
+#[doc="`PostEventCallback(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]fn post_event_callback(self,cookie:impl::core::convert::Into<crate::system::object::Object> ,r#type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,callback_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::post_event_callback(__receiver, ::core::convert::Into::into(cookie), ::core::convert::Into::into(r#type), ::core::convert::Into::into(callback_info), ::core::option::Option::None)}
+}
+#[doc="`GetMarkerCmdArgs(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn get_marker_cmd_args(self,marker_name:impl::core::convert::Into< ::unity2::Il2CppString> ,cmd_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4290usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
+(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(marker_name),(::unity2::Il2CppString)::core::convert::Into::into(cmd_name))}
+}
+#[doc="`IsEventLoaded(::unity2::Il2CppString)` overload"]fn is_event_loaded(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::is_event_loaded(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)}
+}
+#[doc="`IsEventLoaded_Common(::unity2::Il2CppString)` overload"]fn is_event_loaded_common(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x21f44f0usize)as*mut u8,bool;
+(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`PostEvent(::unity2::Il2CppString, bool)` overload"]fn post_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_get_position:impl::core::convert::Into<bool>)->crate::app::soundsystem::SoundSystem_SoundHandle{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::post_event(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(is_get_position), ::core::option::Option::None)}
+}
+#[doc="`PostEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]fn post_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,is_get_position:impl::core::convert::Into<bool>)->crate::app::soundsystem::SoundSystem_SoundHandle{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::post_event_2(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(game_object), ::core::convert::Into::into(is_get_position), ::core::option::Option::None)}
+}
+#[doc="`PostEventWithTemporaryGameObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]fn post_event_with_temporary_game_object(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,temporary_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,is_get_position:impl::core::convert::Into<bool>)->crate::app::soundsystem::SoundSystem_SoundHandle{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::post_event_with_temporary_game_object(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(temporary_game_object), ::core::convert::Into::into(is_get_position), ::core::option::Option::None)}
+}
+#[doc="`StopSoundOnEvent(::unity2::Il2CppString, i32)` overload"]fn stop_sound_on_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::stop_sound_on_event(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`StopSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]fn stop_sound_on_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::stop_sound_on_event_2(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(fade_msec), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`PauseSoundOnEvent(::unity2::Il2CppString, i32)` overload"]fn pause_sound_on_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::pause_sound_on_event(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`PauseSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]fn pause_sound_on_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::pause_sound_on_event_2(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(fade_msec), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`ResumeSoundOnEvent(::unity2::Il2CppString, i32)` overload"]fn resume_sound_on_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::resume_sound_on_event(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`ResumeSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]fn resume_sound_on_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::resume_sound_on_event_2(__receiver, ::core::convert::Into::into(event_name), ::core::convert::Into::into(fade_msec), ::core::convert::Into::into(game_object), ::core::option::Option::None)}
+}
+#[doc="`StopByPlayingId(u32, i32)` overload"]fn stop_by_playing_id(self,playing_id:impl::core::convert::Into<u32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::stop_by_playing_id(__receiver, ::core::convert::Into::into(playing_id), ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
+}
+#[doc="`GetPlayPosition(u32, i32)` overload"]fn get_play_position(self,playing_id:impl::core::convert::Into<u32> ,position_offset:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundPlay_unity2_raw::get_play_position(__receiver, ::core::convert::Into::into(playing_id), ::core::convert::Into::into(position_offset), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPlay>ISoundWwise_SoundPlayMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn pop_temporary_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn push_temporary_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn post_event_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_marker_cmd_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn is_event_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_event_loaded_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn post_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn post_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn post_event_with_temporary_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn stop_sound_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn stop_sound_on_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn pause_sound_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn pause_sound_on_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn resume_sound_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn resume_sound_on_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn stop_by_playing_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn get_play_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPlay), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPlayMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-soundwwise")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundWwise_SoundHandle_unity2_raw{use super:: * ;
+pub unsafe fn get_event_name(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"GetEventName",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_event_id(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"GetEventId",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_playing(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"IsPlaying",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_game_object(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"GetGameObject",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)->crate::unity_engine::gameobject::GameObject= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_playing_id(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"GetPlayingId",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_character(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)->crate::combat::character::Character{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"GetCharacter",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)->crate::combat::character::Character= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_event_character_mouth_controller(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::eventcharactermouthcontroller::EventCharacterMouthController{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"GetEventCharacterMouthController",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)->crate::app::eventcharactermouthcontroller::EventCharacterMouthController= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_character(this:SoundWwise_SoundHandle,character:crate::combat::character::Character,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"SetCharacter",));
+let inner:extern "C" fn(SoundWwise_SoundHandle,crate::combat::character::Character, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,character,__mi)}
+pub unsafe fn set_event_character_mouth_controller(this:SoundWwise_SoundHandle,event_character_mouth_controller:crate::app::eventcharactermouthcontroller::EventCharacterMouthController,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"SetEventCharacterMouthController",));
+let inner:extern "C" fn(SoundWwise_SoundHandle,crate::app::eventcharactermouthcontroller::EventCharacterMouthController, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_character_mouth_controller,__mi)}
+pub unsafe fn get_lip_sync_data_file_name(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"GetLipSyncDataFileName",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_enable(this:SoundWwise_SoundHandle,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let inner:extern "C" fn(SoundWwise_SoundHandle, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn stop(this:SoundWwise_SoundHandle,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"Stop",));
+let inner:extern "C" fn(SoundWwise_SoundHandle,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fade_msec,__mi)}
+pub unsafe fn pause(this:SoundWwise_SoundHandle,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"Pause",));
+let inner:extern "C" fn(SoundWwise_SoundHandle,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fade_msec,__mi)}
+pub unsafe fn resume(this:SoundWwise_SoundHandle,fade_msec:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <SoundWwise_SoundHandle as::unity2::ClassIdentity> ::NAME,"Resume",));
+let inner:extern "C" fn(SoundWwise_SoundHandle,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,fade_msec,__mi)}
 }
 
 #[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundHandleMethods:ISoundWwise_SoundHandle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -583,44 +1485,34 @@ this}
 (SoundWwise_SoundHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(u32)::core::convert::Into::into(playing_id),(bool)::core::convert::Into::into(is_temporary_game_object))}
 }
 #[doc="`GetEventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0dd0usize)as*mut u8, ::unity2::Il2CppString;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::get_event_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetEventId()` overload"]fn get_event_id(self,)->u32{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0de0usize)as*mut u8,u32;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::get_event_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsPlaying()` overload"]fn is_playing(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0df0usize)as*mut u8,bool;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::is_playing(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetGameObject()` overload"]fn get_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e00usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::get_game_object(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPlayingId()` overload"]fn get_playing_id(self,)->u32{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e10usize)as*mut u8,u32;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::get_playing_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCharacter()` overload"]fn get_character(self,)->crate::combat::character::Character{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e20usize)as*mut u8,crate::combat::character::Character;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::get_character(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetEventCharacterMouthController()` overload"]fn get_event_character_mouth_controller(self,)->crate::app::eventcharactermouthcontroller::EventCharacterMouthController{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e30usize)as*mut u8,crate::app::eventcharactermouthcontroller::EventCharacterMouthController;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::get_event_character_mouth_controller(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetCharacter(crate::combat::character::Character)` overload"]fn set_character(self,character:impl::core::convert::Into<crate::combat::character::Character>)->(){unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e40usize)as*mut u8,();
-(SoundWwise_SoundHandle)__receiver,(crate::combat::character::Character)::core::convert::Into::into(character))}
+__SoundWwise_SoundHandle_unity2_raw::set_character(__receiver, ::core::convert::Into::into(character), ::core::option::Option::None)}
 }
 #[doc="`SetEventCharacterMouthController(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)` overload"]fn set_event_character_mouth_controller(self,event_character_mouth_controller:impl::core::convert::Into<crate::app::eventcharactermouthcontroller::EventCharacterMouthController>)->(){unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e50usize)as*mut u8,();
-(SoundWwise_SoundHandle)__receiver,(crate::app::eventcharactermouthcontroller::EventCharacterMouthController)::core::convert::Into::into(event_character_mouth_controller))}
+__SoundWwise_SoundHandle_unity2_raw::set_event_character_mouth_controller(__receiver, ::core::convert::Into::into(event_character_mouth_controller), ::core::option::Option::None)}
 }
 #[doc="`GetLipSyncDataFileName()` overload"]fn get_lip_sync_data_file_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e60usize)as*mut u8, ::unity2::Il2CppString;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::get_lip_sync_data_file_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsTemporaryObject()` overload"]fn is_temporary_object(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0e70usize)as*mut u8,bool;
@@ -635,20 +1527,16 @@ this}
 (SoundWwise_SoundHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(lip_sync_data_file_name))}
 }
 #[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0ea0usize)as*mut u8,bool;
-(SoundWwise_SoundHandle)__receiver)}
+__SoundWwise_SoundHandle_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Stop(i32)` overload"]fn stop(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0f40usize)as*mut u8,();
-(SoundWwise_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
+__SoundWwise_SoundHandle_unity2_raw::stop(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
 }
 #[doc="`Pause(i32)` overload"]fn pause(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f0fd0usize)as*mut u8,();
-(SoundWwise_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
+__SoundWwise_SoundHandle_unity2_raw::pause(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
 }
 #[doc="`Resume(i32)` overload"]fn resume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1060usize)as*mut u8,();
-(SoundWwise_SoundHandle)__receiver,(i32)::core::convert::Into::into(fade_msec))}
+__SoundWwise_SoundHandle_unity2_raw::resume(__receiver, ::core::convert::Into::into(fade_msec), ::core::option::Option::None)}
 }
 }
 
@@ -679,6 +1567,57 @@ pub fn resume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(SoundWwise_SoundHandle), ::core::stringify!(new),));
  <Self as ISoundWwise_SoundHandleMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_ParamMethods:ISoundWwise_SoundPrepareManager_Param{#[doc="`IncRef()` overload"]fn inc_ref(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0160usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_Param)__receiver)}
+}
+#[doc="`DecRef()` overload"]fn dec_ref(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0240usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_Param)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0050usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_Param)__receiver)}
+}
+}
+
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_Param>ISoundWwise_SoundPrepareManager_ParamMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_Param{pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_Param{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_Param), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPrepareManager_ParamMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_EventParamMethods:ISoundWwise_SoundPrepareManager_EventParam{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0010usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_EventParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`GetEventName()` overload"]fn get_event_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0060usize)as*mut u8, ::unity2::Il2CppString;
+(SoundWwise_SoundPrepareManager_EventParam)__receiver)}
+}
+}
+
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_EventParam>ISoundWwise_SoundPrepareManager_EventParamMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_event_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParam{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(event_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_EventParam), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPrepareManager_EventParamMethods> ::ctor(this,event_name);
 this}
 }
 
@@ -726,89 +1665,27 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_AsyncBankHandle{#[doc="`GlobalBankCallback(u32, ::unity2::IntPtr, crate::root::akresult::AKRESULT, crate::system::object::Object)` overload"]pub fn global_bank_callback(bank_id:impl::core::convert::Into<u32> ,p_in_memory_bank_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,load_result:impl::core::convert::Into<crate::root::akresult::AKRESULT> ,cookie:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22ef950usize)as*mut u8,();
-(u32)::core::convert::Into::into(bank_id),(::unity2::IntPtr)::core::convert::Into::into(p_in_memory_bank_ptr),(crate::root::akresult::AKRESULT)::core::convert::Into::into(load_result),(crate::system::object::Object)::core::convert::Into::into(cookie))}
-}
-}
-
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundBankManager_AsyncBankHandleMethods:ISoundWwise_SoundBankManager_AsyncBankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_prepare_load:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_AsyncBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef790usize)as*mut u8,();
-(SoundWwise_SoundBankManager_AsyncBankHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(bool)::core::convert::Into::into(is_prepare_load))}
-}
-#[doc="`DoLoadBank()` overload"]fn do_load_bank(self,)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <SoundWwise_SoundBankManager_AsyncBankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef830usize)as*mut u8,crate::root::akresult::AKRESULT;
-(SoundWwise_SoundBankManager_AsyncBankHandle)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundBankManager_AsyncBankHandle>ISoundWwise_SoundBankManager_AsyncBankHandleMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_AsyncBankHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn global_bank_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_AsyncBankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(name: ::unity2::Il2CppString,is_prepare_load:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundBankManager_AsyncBankHandle), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundBankManager_AsyncBankHandleMethods> ::ctor(this,name,is_prepare_load);
-this}
-}
-
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_ParamMethods:ISoundWwise_SoundPrepareManager_Param{#[doc="`IncRef()` overload"]fn inc_ref(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0160usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_Param)__receiver)}
-}
-#[doc="`DecRef()` overload"]fn dec_ref(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0240usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_Param)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_Param as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0050usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_Param)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_Param>ISoundWwise_SoundPrepareManager_ParamMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_Param{pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_Param{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_Param), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPrepareManager_ParamMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_SwitchParamMethods:ISoundWwise_SoundPrepareManager_SwitchParam{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0d80usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_SwitchParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
-}
-#[doc="`GetSwitchGroupName()` overload"]fn get_switch_group_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0dd0usize)as*mut u8, ::unity2::Il2CppString;
-(SoundWwise_SoundPrepareManager_SwitchParam)__receiver)}
-}
-#[doc="`GetSwitchName()` overload"]fn get_switch_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0de0usize)as*mut u8, ::unity2::Il2CppString;
-(SoundWwise_SoundPrepareManager_SwitchParam)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_SwitchParam>ISoundWwise_SoundPrepareManager_SwitchParamMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_switch_group_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_switch_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParam{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchParam), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPrepareManager_SwitchParamMethods> ::ctor(this,switch_group_name,switch_name);
-this}
+#[cfg(feature="app-soundwwise")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundWwise_SoundBankManager_unity2_raw{use super:: * ;
+pub unsafe fn on_tick(this:SoundWwise_SoundBankManager,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SoundWwise_SoundBankManager as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(SoundWwise_SoundBankManager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:SoundWwise_SoundBankManager,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SoundWwise_SoundBankManager as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(SoundWwise_SoundBankManager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager{#[doc="`Create()` overload"]pub fn create()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e780usize)as*mut u8,();
@@ -841,12 +1718,10 @@ this}
 }
 
 #[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundBankManagerMethods:ISoundWwise_SoundBankManager{#[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7f820usize)as*mut u8,();
-(SoundWwise_SoundBankManager)__receiver)}
+__SoundWwise_SoundBankManager_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7fa70usize)as*mut u8,();
-(SoundWwise_SoundBankManager)__receiver)}
+__SoundWwise_SoundBankManager_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LoadBankImpl(::unity2::Il2CppString)` overload"]fn load_bank_impl(self,bank_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundBankManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d7e9e0usize)as*mut u8,bool;
@@ -922,362 +1797,364 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundParam{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x21f3790usize)as*mut u8,();
-)}
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods:ISoundWwise_SoundPrepareManager_SwitchGroupParamList{#[doc="`IncRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn inc_ref(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0500usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+}
+#[doc="`DecRef(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn dec_ref(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f07c0usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0990usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchGroupParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0cf0usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_SwitchGroupParamList)__receiver)}
 }
 }
 
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundParamMethods:ISoundWwise_SoundParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f18b0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetVolumeCommon(::unity2::Il2CppString, f32, f32)` overload"]fn get_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32>)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1940usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max))}
-}
-#[doc="`SetVolumeCommon(::unity2::Il2CppString, f32, f32, f32, i32)` overload"]fn set_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,vol:impl::core::convert::Into<f32> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1a40usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(vol),(f32)::core::convert::Into::into(min),(f32)::core::convert::Into::into(max),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`ResetVolumeCommon(::unity2::Il2CppString, i32)` overload"]fn reset_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1b30usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`GetMasterVolumeCommon(::unity2::Il2CppString)` overload"]fn get_master_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1bb0usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name))}
-}
-#[doc="`SetMasterVolumeCommon(::unity2::Il2CppString, f32, i32)` overload"]fn set_master_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1c30usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`ResetMasterVolumeCommon(::unity2::Il2CppString, i32)` overload"]fn reset_master_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1cd0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`GetConfigVolumeCommon(::unity2::Il2CppString)` overload"]fn get_config_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1d50usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name))}
-}
-#[doc="`SetConfigVolumeCommon(::unity2::Il2CppString, f32, i32)` overload"]fn set_config_volume_common(self,param_name:impl::core::convert::Into< ::unity2::Il2CppString> ,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1dd0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(param_name),(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`GetMasterBgmVolume()` overload"]fn get_master_bgm_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1e70usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetMasterSeVolume()` overload"]fn get_master_se_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1f30usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetMasterEnvVolume()` overload"]fn get_master_env_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1ff0usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetMasterVoiceVolume()` overload"]fn get_master_voice_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f20b0usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`SetMasterBgmVolume(f32, i32)` overload"]fn set_master_bgm_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2170usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`SetMasterSeVolume(f32, i32)` overload"]fn set_master_se_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2240usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`SetMasterEnvVolume(f32, i32)` overload"]fn set_master_env_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2310usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`SetMasterVoiceVolume(f32, i32)` overload"]fn set_master_voice_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f23e0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`ResetMasterBgmVolume(i32)` overload"]fn reset_master_bgm_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f24b0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`ResetMasterSeVolume(i32)` overload"]fn reset_master_se_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2570usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`ResetMasterEnvVolume(i32)` overload"]fn reset_master_env_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2630usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`ResetMasterVoiceVolume(i32)` overload"]fn reset_master_voice_volume(self,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f26f0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`GetConfigBgmVolume()` overload"]fn get_config_bgm_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f27b0usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetConfigSeVolume()` overload"]fn get_config_se_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2870usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetConfigEnvVolume()` overload"]fn get_config_env_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2930usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetConfigVoiceVolume()` overload"]fn get_config_voice_volume(self,)->f32{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f29f0usize)as*mut u8,f32;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`SetConfigBgmVolume(f32, i32)` overload"]fn set_config_bgm_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2ab0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`SetConfigSeVolume(f32, i32)` overload"]fn set_config_se_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2b80usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`SetConfigEnvVolume(f32, i32)` overload"]fn set_config_env_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2c50usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`SetConfigVoiceVolume(f32, i32)` overload"]fn set_config_voice_volume(self,vol:impl::core::convert::Into<f32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2d20usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`SetVolume(f32, crate::unity_engine::gameobject::GameObject)` overload"]fn set_volume(self,vol:impl::core::convert::Into<f32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f2df0usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(f32)::core::convert::Into::into(vol),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`GetValue(::unity2::Il2CppString, bool, *mutu32)` overload"]fn get_value(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool>)->(bool,u32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f2e70usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(bool)::core::convert::Into::into(is_global),(*mut u32)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`GetValue(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool, *mutu32)` overload"]fn get_value_2(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,is_global:impl::core::convert::Into<bool>)->(bool,u32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f2f30usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(bool)::core::convert::Into::into(is_global),(*mut u32)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`GetValue(::unity2::Il2CppString, *mutf32)` overload"]fn get_value_3(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,f32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f2ff0usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(*mut f32)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`GetValue(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, *mutf32)` overload"]fn get_value_4(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(bool,f32){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f3070usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(*mut f32)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`SetValue(::unity2::Il2CppString, bool, ::unity2::Il2CppString)` overload"]fn set_value(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3100usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(bool)::core::convert::Into::into(is_global),(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`SetValue(::unity2::Il2CppString, bool, u32)` overload"]fn set_value_2(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into<u32>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3200usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(bool)::core::convert::Into::into(is_global),(u32)::core::convert::Into::into(value))}
-}
-#[doc="`SetValue(::unity2::Il2CppString, bool, ::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject)` overload"]fn set_value_3(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3110usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(bool)::core::convert::Into::into(is_global),(::unity2::Il2CppString)::core::convert::Into::into(value),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`SetValue(::unity2::Il2CppString, bool, u32, crate::unity_engine::gameobject::GameObject)` overload"]fn set_value_4(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_global:impl::core::convert::Into<bool> ,value:impl::core::convert::Into<u32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3210usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(bool)::core::convert::Into::into(is_global),(u32)::core::convert::Into::into(value),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`SetValue(::unity2::Il2CppString, f32)` overload"]fn set_value_5(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3300usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(f32)::core::convert::Into::into(value))}
-}
-#[doc="`SetValue(::unity2::Il2CppString, f32, crate::unity_engine::gameobject::GameObject)` overload"]fn set_value_6(self,value_name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into<f32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3380usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value_name),(f32)::core::convert::Into::into(value),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`SetPosition(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, crate::unity_engine::gameobject::GameObject)` overload"]fn set_position(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,foward:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,up:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3410usize)as*mut u8,bool;
-(SoundWwise_SoundParam)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(foward),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(up),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`GetAudioListenerObject()` overload"]fn get_audio_listener_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3520usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetAudioListenerPosistion()` overload"]fn get_audio_listener_posistion(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3590usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`GetAudioListenerRotation()` overload"]fn get_audio_listener_rotation(self,)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3600usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(SoundWwise_SoundParam)__receiver)}
-}
-#[doc="`SetAudioListenerPosition(crate::unity_engine::vector3::Vector3)` overload"]fn set_audio_listener_position(self,listener_pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3670usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(listener_pos))}
-}
-#[doc="`SetAudioListenerRotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn set_audio_listener_rotation(self,listener_rot:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <SoundWwise_SoundParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3700usize)as*mut u8,();
-(SoundWwise_SoundParam)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(listener_rot))}
-}
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_SwitchGroupParamList>ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchGroupParamList{pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundParam>ISoundWwise_SoundParamMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn reset_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_master_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_master_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn reset_master_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_config_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_config_volume_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_master_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_master_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_master_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn get_master_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn set_master_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn set_master_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn set_master_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn set_master_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn reset_master_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn reset_master_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn reset_master_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-pub fn reset_master_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[20]}
-pub fn get_config_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[21]}
-pub fn get_config_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[22]}
-pub fn get_config_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[23]}
-pub fn get_config_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[24]}
-pub fn set_config_bgm_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[25]}
-pub fn set_config_se_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[26]}
-pub fn set_config_env_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[27]}
-pub fn set_config_voice_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[28]}
-pub fn set_volume_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[29]}
-pub fn get_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[30]}
-pub fn get_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[31]}
-pub fn get_value_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[32]}
-pub fn get_value_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[33]}
-pub fn set_value_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[34]}
-pub fn set_value_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[35]}
-pub fn set_value_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[36]}
-pub fn set_value_4_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[37]}
-pub fn set_value_5_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[38]}
-pub fn set_value_6_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[39]}
-pub fn set_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[40]}
-pub fn get_audio_listener_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[41]}
-pub fn get_audio_listener_posistion_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[42]}
-pub fn get_audio_listener_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[43]}
-pub fn set_audio_listener_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[44]}
-pub fn set_audio_listener_rotation_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[45]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[46]}
-}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchGroupParamList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundParam), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundParamMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchGroupParamList), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods> ::ctor(this,);
 this}
 }
 
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_SwitchParamListMethods:ISoundWwise_SoundPrepareManager_SwitchParamList{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f06f0usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name))}
+}
+#[doc="`IncRef(::unity2::Il2CppString)` overload"]fn inc_ref(self,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f05e0usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+}
+#[doc="`DecRef(::unity2::Il2CppString)` overload"]fn dec_ref(self,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f08d0usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+}
+#[doc="`IsEmpty()` overload"]fn is_empty(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0df0usize)as*mut u8,bool;
+(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_SwitchParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0ad0usize)as*mut u8,();
+(SoundWwise_SoundPrepareManager_SwitchParamList)__receiver)}
+}
+}
+
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_SwitchParamList>ISoundWwise_SoundPrepareManager_SwitchParamListMethods for __T{}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParamList{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_empty_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_SwitchParamList{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(switch_group_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_SwitchParamList), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundPrepareManager_SwitchParamListMethods> ::ctor(this,switch_group_name);
+this}
+}
+
+#[cfg(feature="app-soundwwise")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundWwise_SoundLoad_unity2_raw{use super:: * ;
+pub unsafe fn load(this:SoundWwise_SoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"Load",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn load_async(this:SoundWwise_SoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"LoadAsync",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn is_loading(this:SoundWwise_SoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"IsLoading",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_loading_2(this:SoundWwise_SoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"IsLoading",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn is_loaded(this:SoundWwise_SoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"IsLoaded",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn unload(this:SoundWwise_SoundLoad,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"Unload",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn unload_all(this:SoundWwise_SoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"UnloadAll",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reload_by_set_language(this:SoundWwise_SoundLoad,language:crate::app::language::Language_Voices,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"ReloadBySetLanguage",));
+let inner:extern "C" fn(SoundWwise_SoundLoad,crate::app::language::Language_Voices, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,language,__mi)}
+pub unsafe fn prepare_event(this:SoundWwise_SoundLoad,event_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareEvent",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,__mi)}
+pub unsafe fn prepare_event_2(this:SoundWwise_SoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareEvent",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name_array,__mi)}
+pub unsafe fn prepare_event_async(this:SoundWwise_SoundLoad,event_name: ::unity2::Il2CppString,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareEventAsync",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,result_sound_load,__mi)}
+pub unsafe fn prepare_event_async_2(this:SoundWwise_SoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareEventAsync",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Array< ::unity2::Il2CppString> , *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name_array,result_sound_load,__mi)}
+pub unsafe fn unprepare_event(this:SoundWwise_SoundLoad,event_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"UnprepareEvent",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name,__mi)}
+pub unsafe fn unprepare_event_2(this:SoundWwise_SoundLoad,event_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"UnprepareEvent",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,event_name_array,__mi)}
+pub unsafe fn prepare_switch(this:SoundWwise_SoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareSwitch",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name,__mi)}
+pub unsafe fn prepare_switch_2(this:SoundWwise_SoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareSwitch",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name_array,__mi)}
+pub unsafe fn prepare_switch_async(this:SoundWwise_SoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareSwitchAsync",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name,result_sound_load,__mi)}
+pub unsafe fn prepare_switch_async_2(this:SoundWwise_SoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,result_sound_load: *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"PrepareSwitchAsync",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , *mut crate::app::soundsystem::SoundSystem_ResultSoundLoad, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name_array,result_sound_load,__mi)}
+pub unsafe fn unprepare_switch(this:SoundWwise_SoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"UnprepareSwitch",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name,__mi)}
+pub unsafe fn unprepare_switch_2(this:SoundWwise_SoundLoad,switch_group_name: ::unity2::Il2CppString,switch_name_array: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"UnprepareSwitch",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::Il2CppString, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,switch_group_name,switch_name_array,__mi)}
+pub unsafe fn clear_prepare(this:SoundWwise_SoundLoad,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <SoundWwise_SoundLoad as::unity2::ClassIdentity> ::NAME,"ClearPrepare",));
+let inner:extern "C" fn(SoundWwise_SoundLoad, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundLoadMethods:ISoundWwise_SoundLoad{#[doc="`Load(::unity2::Il2CppString)` overload"]fn load(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f10f0usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__SoundWwise_SoundLoad_unity2_raw::load(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`LoadAsync(::unity2::Il2CppString)` overload"]fn load_async(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1100usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__SoundWwise_SoundLoad_unity2_raw::load_async(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1110usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver)}
+__SoundWwise_SoundLoad_unity2_raw::is_loading(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsLoading(::unity2::Il2CppString)` overload"]fn is_loading_2(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1120usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__SoundWwise_SoundLoad_unity2_raw::is_loading_2(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`IsLoaded(::unity2::Il2CppString)` overload"]fn is_loaded(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1150usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__SoundWwise_SoundLoad_unity2_raw::is_loaded(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`Unload(::unity2::Il2CppString)` overload"]fn unload(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1180usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__SoundWwise_SoundLoad_unity2_raw::unload(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`UnloadAll()` overload"]fn unload_all(self,)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1190usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver)}
+__SoundWwise_SoundLoad_unity2_raw::unload_all(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReloadBySetLanguage(crate::app::language::Language_Voices)` overload"]fn reload_by_set_language(self,language:impl::core::convert::Into<crate::app::language::Language_Voices>)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f11a0usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(crate::app::language::Language_Voices)::core::convert::Into::into(language))}
+__SoundWwise_SoundLoad_unity2_raw::reload_by_set_language(__receiver, ::core::convert::Into::into(language), ::core::option::Option::None)}
 }
 #[doc="`PrepareEvent(::unity2::Il2CppString)` overload"]fn prepare_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f11b0usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+__SoundWwise_SoundLoad_unity2_raw::prepare_event(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)}
 }
 #[doc="`PrepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]fn prepare_event_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1240usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(event_name_array))}
+__SoundWwise_SoundLoad_unity2_raw::prepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
 }
 #[doc="`PrepareEventAsync(::unity2::Il2CppString, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_event_async(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f12d0usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(*mut crate::app::soundsystem::SoundSystem_ResultSoundLoad)__out_0.as_mut_ptr())}
+let __ret={__SoundWwise_SoundLoad_unity2_raw::prepare_event_async(__receiver, ::core::convert::Into::into(event_name),__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
 #[doc="`PrepareEventAsync(::unity2::Array<::unity2::Il2CppString>, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_event_async_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f1360usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(event_name_array),(*mut crate::app::soundsystem::SoundSystem_ResultSoundLoad)__out_0.as_mut_ptr())}
+let __ret={__SoundWwise_SoundLoad_unity2_raw::prepare_event_async_2(__receiver, ::core::convert::Into::into(event_name_array),__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
 #[doc="`UnprepareEvent(::unity2::Il2CppString)` overload"]fn unprepare_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f13f0usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+__SoundWwise_SoundLoad_unity2_raw::unprepare_event(__receiver, ::core::convert::Into::into(event_name), ::core::option::Option::None)}
 }
 #[doc="`UnprepareEvent(::unity2::Array<::unity2::Il2CppString>)` overload"]fn unprepare_event_2(self,event_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1460usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(event_name_array))}
+__SoundWwise_SoundLoad_unity2_raw::unprepare_event_2(__receiver, ::core::convert::Into::into(event_name_array), ::core::option::Option::None)}
 }
 #[doc="`PrepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn prepare_switch(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f14d0usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+__SoundWwise_SoundLoad_unity2_raw::prepare_switch(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name), ::core::option::Option::None)}
 }
 #[doc="`PrepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn prepare_switch_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->bool{unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1560usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(switch_name_array))}
+__SoundWwise_SoundLoad_unity2_raw::prepare_switch_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
 }
 #[doc="`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Il2CppString, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_switch_async(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f15f0usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name),(*mut crate::app::soundsystem::SoundSystem_ResultSoundLoad)__out_0.as_mut_ptr())}
+let __ret={__SoundWwise_SoundLoad_unity2_raw::prepare_switch_async(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name),__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
 #[doc="`PrepareSwitchAsync(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>, *mutcrate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn prepare_switch_async_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(bool,crate::app::soundsystem::SoundSystem_ResultSoundLoad){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::soundsystem::SoundSystem_ResultSoundLoad> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x21f1690usize)as*mut u8,bool;
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(switch_name_array),(*mut crate::app::soundsystem::SoundSystem_ResultSoundLoad)__out_0.as_mut_ptr())}
+let __ret={__SoundWwise_SoundLoad_unity2_raw::prepare_switch_async_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array),__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
 #[doc="`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn unprepare_switch(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1730usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Il2CppString)::core::convert::Into::into(switch_name))}
+__SoundWwise_SoundLoad_unity2_raw::unprepare_switch(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name), ::core::option::Option::None)}
 }
 #[doc="`UnprepareSwitch(::unity2::Il2CppString, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn unprepare_switch_2(self,switch_group_name:impl::core::convert::Into< ::unity2::Il2CppString> ,switch_name_array:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f17b0usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(switch_group_name),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(switch_name_array))}
+__SoundWwise_SoundLoad_unity2_raw::unprepare_switch_2(__receiver, ::core::convert::Into::into(switch_group_name), ::core::convert::Into::into(switch_name_array), ::core::option::Option::None)}
 }
 #[doc="`ClearPrepare()` overload"]fn clear_prepare(self,)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f1830usize)as*mut u8,();
-(SoundWwise_SoundLoad)__receiver)}
+__SoundWwise_SoundLoad_unity2_raw::clear_prepare(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21f18a0usize)as*mut u8,();
@@ -1318,195 +2195,158 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPlayMethods:ISoundWwise_SoundPlay{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3960usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver)}
+#[cfg(feature="app-soundwwise")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SoundWwise_SoundBankManager_BankHandle_unity2_raw{use super:: * ;
+pub unsafe fn do_load_bank(this:SoundWwise_SoundBankManager_BankHandle,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akresult::AKRESULT{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SoundWwise_SoundBankManager_BankHandle as::unity2::ClassIdentity> ::NAME,"DoLoadBank",));
+let inner:extern "C" fn(SoundWwise_SoundBankManager_BankHandle, ::unity2::OptionalMethod,)->crate::root::akresult::AKRESULT= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn do_unload_bank(this:SoundWwise_SoundBankManager_BankHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <SoundWwise_SoundBankManager_BankHandle as::unity2::ClassIdentity> ::NAME,"DoUnloadBank",));
+let inner:extern "C" fn(SoundWwise_SoundBankManager_BankHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`PopTemporaryGameObject()` overload"]fn pop_temporary_game_object(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3a30usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(SoundWwise_SoundPlay)__receiver)}
+
+#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundBankManager_BankHandleMethods:ISoundWwise_SoundBankManager_BankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` overload"]fn ctor(self,bank_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_prepare_load:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22ef7e0usize)as*mut u8,();
+(SoundWwise_SoundBankManager_BankHandle)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(bank_name),(bool)::core::convert::Into::into(is_prepare_load))}
 }
-#[doc="`PushTemporaryGameObject(crate::unity_engine::gameobject::GameObject)` overload"]fn push_temporary_game_object(self,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3a40usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+#[doc="`LoadBank()` overload"]fn load_bank(self,)->bool{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efad0usize)as*mut u8,bool;
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`PostEventCallback(crate::system::object::Object, crate::root::akcallbacktype::AkCallbackType, crate::root::akcallbackinfo::AkCallbackInfo)` overload"]fn post_event_callback(self,cookie:impl::core::convert::Into<crate::system::object::Object> ,r#type:impl::core::convert::Into<crate::root::akcallbacktype::AkCallbackType> ,callback_info:impl::core::convert::Into<crate::root::akcallbackinfo::AkCallbackInfo>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f3a50usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(crate::system::object::Object)::core::convert::Into::into(cookie),(crate::root::akcallbacktype::AkCallbackType)::core::convert::Into::into(r#type),(crate::root::akcallbackinfo::AkCallbackInfo)::core::convert::Into::into(callback_info))}
+#[doc="`UnloadBank()` overload"]fn unload_bank(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efb90usize)as*mut u8,();
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`GetMarkerCmdArgs(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn get_marker_cmd_args(self,marker_name:impl::core::convert::Into< ::unity2::Il2CppString> ,cmd_name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4290usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(marker_name),(::unity2::Il2CppString)::core::convert::Into::into(cmd_name))}
+#[doc="`IncRef()` overload"]fn inc_ref(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efb80usize)as*mut u8,();
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`IsEventLoaded(::unity2::Il2CppString)` overload"]fn is_event_loaded(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4480usize)as*mut u8,bool;
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+#[doc="`DecRef()` overload"]fn dec_ref(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efba0usize)as*mut u8,();
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`IsEventLoaded_Common(::unity2::Il2CppString)` overload"]fn is_event_loaded_common(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f44f0usize)as*mut u8,bool;
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+#[doc="`get_BankName()` overload"]fn get_bank_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbb0usize)as*mut u8, ::unity2::Il2CppString;
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`PostEvent(::unity2::Il2CppString, bool)` overload"]fn post_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,is_get_position:impl::core::convert::Into<bool>)->crate::app::soundsystem::SoundSystem_SoundHandle{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4560usize)as*mut u8,crate::app::soundsystem::SoundSystem_SoundHandle;
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(bool)::core::convert::Into::into(is_get_position))}
+#[doc="`get_RefCount()` overload"]fn get_ref_count(self,)->i32{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbc0usize)as*mut u8,i32;
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`PostEvent(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]fn post_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,is_get_position:impl::core::convert::Into<bool>)->crate::app::soundsystem::SoundSystem_SoundHandle{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f46f0usize)as*mut u8,crate::app::soundsystem::SoundSystem_SoundHandle;
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object),(bool)::core::convert::Into::into(is_get_position))}
+#[doc="`get_State()` overload"]fn get_state(self,)->crate::app::soundwwise::SoundWwise_SoundBankManager_States{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbd0usize)as*mut u8,crate::app::soundwwise::SoundWwise_SoundBankManager_States;
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`PostEventWithTemporaryGameObject(::unity2::Il2CppString, crate::unity_engine::gameobject::GameObject, bool)` overload"]fn post_event_with_temporary_game_object(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,temporary_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject> ,is_get_position:impl::core::convert::Into<bool>)->crate::app::soundsystem::SoundSystem_SoundHandle{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4880usize)as*mut u8,crate::app::soundsystem::SoundSystem_SoundHandle;
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(temporary_game_object),(bool)::core::convert::Into::into(is_get_position))}
+#[doc="`set_State(crate::app::soundwwise::SoundWwise_SoundBankManager_States)` overload"]fn set_state(self,value:impl::core::convert::Into<crate::app::soundwwise::SoundWwise_SoundBankManager_States>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbe0usize)as*mut u8,();
+(SoundWwise_SoundBankManager_BankHandle)__receiver,(crate::app::soundwwise::SoundWwise_SoundBankManager_States)::core::convert::Into::into(value))}
 }
-#[doc="`StopSoundOnEvent(::unity2::Il2CppString, i32)` overload"]fn stop_sound_on_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4a70usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(fade_msec))}
+#[doc="`get_InternalState()` overload"]fn get_internal_state(self,)->crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efbf0usize)as*mut u8,crate::app::soundwwise::SoundWwise_SoundBankManager_InternalStates;
+(SoundWwise_SoundBankManager_BankHandle)__receiver)}
 }
-#[doc="`StopSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]fn stop_sound_on_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4b70usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(fade_msec),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
+#[doc="`DoLoadBank()` overload"]fn do_load_bank(self,)->crate::root::akresult::AKRESULT{unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundBankManager_BankHandle_unity2_raw::do_load_bank(__receiver, ::core::option::Option::None)}
 }
-#[doc="`PauseSoundOnEvent(::unity2::Il2CppString, i32)` overload"]fn pause_sound_on_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4c70usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(fade_msec))}
+#[doc="`DoUnloadBank()` overload"]fn do_unload_bank(self,)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__SoundWwise_SoundBankManager_BankHandle_unity2_raw::do_unload_bank(__receiver, ::core::option::Option::None)}
 }
-#[doc="`PauseSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]fn pause_sound_on_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4d70usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(fade_msec),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`ResumeSoundOnEvent(::unity2::Il2CppString, i32)` overload"]fn resume_sound_on_event(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4e70usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`ResumeSoundOnEvent(::unity2::Il2CppString, i32, crate::unity_engine::gameobject::GameObject)` overload"]fn resume_sound_on_event_2(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString> ,fade_msec:impl::core::convert::Into<i32> ,game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f4f70usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name),(i32)::core::convert::Into::into(fade_msec),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(game_object))}
-}
-#[doc="`StopByPlayingId(u32, i32)` overload"]fn stop_by_playing_id(self,playing_id:impl::core::convert::Into<u32> ,fade_msec:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f5070usize)as*mut u8,();
-(SoundWwise_SoundPlay)__receiver,(u32)::core::convert::Into::into(playing_id),(i32)::core::convert::Into::into(fade_msec))}
-}
-#[doc="`GetPlayPosition(u32, i32)` overload"]fn get_play_position(self,playing_id:impl::core::convert::Into<u32> ,position_offset:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <SoundWwise_SoundPlay as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f50f0usize)as*mut u8,i32;
-(SoundWwise_SoundPlay)__receiver,(u32)::core::convert::Into::into(playing_id),(i32)::core::convert::Into::into(position_offset))}
+#[doc="`LogLoadResult(crate::root::akresult::AKRESULT)` overload"]fn log_load_result(self,result:impl::core::convert::Into<crate::root::akresult::AKRESULT>)->(){unsafe{let __receiver= <SoundWwise_SoundBankManager_BankHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x22efa40usize)as*mut u8,();
+(SoundWwise_SoundBankManager_BankHandle)__receiver,(crate::root::akresult::AKRESULT)::core::convert::Into::into(result))}
 }
 }
 
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPlay>ISoundWwise_SoundPlayMethods for __T{}
+#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundBankManager_BankHandle>ISoundWwise_SoundBankManager_BankHandleMethods for __T{}
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn pop_temporary_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn push_temporary_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn post_event_callback_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_marker_cmd_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn is_event_loaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_event_loaded_common_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn post_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn post_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn post_event_with_temporary_game_object_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn stop_sound_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn stop_sound_on_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn pause_sound_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn pause_sound_on_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn resume_sound_on_event_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn resume_sound_on_event_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn stop_by_playing_id_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn get_play_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_BankHandle{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_bank_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_ref_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_internal_state_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn do_load_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn do_unload_bank_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn log_load_result_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 }
 
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPlay{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundBankManager_BankHandle{#[doc="`.ctor(::unity2::Il2CppString, bool)` — overload selector"]pub fn new(bank_name: ::unity2::Il2CppString,is_prepare_load:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPlay), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPlayMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-soundwwise")]pub trait ISoundWwise_SoundPrepareManager_EventParamListMethods:ISoundWwise_SoundPrepareManager_EventParamList{#[doc="`IncRef(::unity2::Il2CppString)` overload"]fn inc_ref(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0070usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_EventParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
-}
-#[doc="`DecRef(::unity2::Il2CppString)` overload"]fn dec_ref(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0180usize)as*mut u8,bool;
-(SoundWwise_SoundPrepareManager_EventParamList)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0260usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_EventParamList)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SoundWwise_SoundPrepareManager_EventParamList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22f0470usize)as*mut u8,();
-(SoundWwise_SoundPrepareManager_EventParamList)__receiver)}
-}
-}
-
-#[cfg(feature="app-soundwwise")]impl<__T:ISoundWwise_SoundPrepareManager_EventParamList>ISoundWwise_SoundPrepareManager_EventParamListMethods for __T{}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParamList{pub fn inc_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dec_ref_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-soundwwise")]impl SoundWwise_SoundPrepareManager_EventParamList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SoundWwise_SoundPrepareManager_EventParamList), ::core::stringify!(new),));
- <Self as ISoundWwise_SoundPrepareManager_EventParamListMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(SoundWwise_SoundBankManager_BankHandle), ::core::stringify!(new),));
+ <Self as ISoundWwise_SoundBankManager_BankHandleMethods> ::ctor(this,bank_name,is_prepare_load);
 this}
 }
 
 #[cfg(feature = "app-soundwwise")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::SoundWwise_SoundPrepareManager_EventParam;
-    pub use super::ISoundWwise_SoundPrepareManager_EventParam;
-    pub use super::ISoundWwise_SoundPrepareManager_EventParamMethods;
-    pub use super::SoundWwise_SoundPrepareManager_SwitchGroupParamList;
-    pub use super::ISoundWwise_SoundPrepareManager_SwitchGroupParamList;
-    pub use super::ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods;
-    pub use super::SoundWwise_SoundPlay_GameObjectPool;
-    pub use super::ISoundWwise_SoundPlay_GameObjectPool;
-    pub use super::ISoundWwise_SoundPlay_GameObjectPoolMethods;
-    pub use super::SoundWwise_SoundPrepareManager_SwitchParamList;
-    pub use super::ISoundWwise_SoundPrepareManager_SwitchParamList;
-    pub use super::ISoundWwise_SoundPrepareManager_SwitchParamListMethods;
-    pub use super::SoundWwise;
-    pub use super::ISoundWwise;
-    pub use super::ISoundWwiseMethods;
-    pub use super::SoundWwise_SoundBankManager_BankHandle;
-    pub use super::ISoundWwise_SoundBankManager_BankHandle;
-    pub use super::ISoundWwise_SoundBankManager_BankHandleMethods;
-    pub use super::SoundWwise_SoundHandle;
-    pub use super::ISoundWwise_SoundHandle;
-    pub use super::ISoundWwise_SoundHandleMethods;
-    pub use super::SoundWwise_SoundPrepareManager;
-    pub use super::ISoundWwise_SoundPrepareManager;
-    pub use super::ISoundWwise_SoundPrepareManagerMethods;
-    pub use super::SoundWwise_SoundBankManager_AsyncBankHandle;
-    pub use super::ISoundWwise_SoundBankManager_AsyncBankHandle;
-    pub use super::ISoundWwise_SoundBankManager_AsyncBankHandleMethods;
-    pub use super::SoundWwise_SoundPrepareManager_Param;
-    pub use super::ISoundWwise_SoundPrepareManager_Param;
-    pub use super::ISoundWwise_SoundPrepareManager_ParamMethods;
-    pub use super::SoundWwise_SoundPrepareManager_SwitchParam;
-    pub use super::ISoundWwise_SoundPrepareManager_SwitchParam;
-    pub use super::ISoundWwise_SoundPrepareManager_SwitchParamMethods;
-    pub use super::SoundWwise_SoundBankManager;
-    pub use super::ISoundWwise_SoundBankManager;
-    pub use super::ISoundWwise_SoundBankManagerMethods;
-    pub use super::SoundWwise_SoundBankManager_InternalStates;
+    pub use super::SoundWwise_SoundBankManager_States;
     pub use super::SoundWwise_SoundParam;
     pub use super::ISoundWwise_SoundParam;
     pub use super::ISoundWwise_SoundParamMethods;
-    pub use super::SoundWwise_SoundBankManager_States;
-    pub use super::SoundWwise_SoundLoad;
-    pub use super::ISoundWwise_SoundLoad;
-    pub use super::ISoundWwise_SoundLoadMethods;
-    pub use super::SoundWwise_SoundPlay;
-    pub use super::ISoundWwise_SoundPlay;
-    pub use super::ISoundWwise_SoundPlayMethods;
     pub use super::SoundWwise_SoundPrepareManager_EventParamList;
     pub use super::ISoundWwise_SoundPrepareManager_EventParamList;
     pub use super::ISoundWwise_SoundPrepareManager_EventParamListMethods;
+    pub use super::SoundWwise;
+    pub use super::ISoundWwise;
+    pub use super::ISoundWwiseMethods;
+    pub use super::SoundWwise_SoundBankManager_InternalStates;
+    pub use super::SoundWwise_SoundPrepareManager_SwitchParam;
+    pub use super::ISoundWwise_SoundPrepareManager_SwitchParam;
+    pub use super::ISoundWwise_SoundPrepareManager_SwitchParamMethods;
+    pub use super::SoundWwise_SoundBankManager_AsyncBankHandle;
+    pub use super::ISoundWwise_SoundBankManager_AsyncBankHandle;
+    pub use super::ISoundWwise_SoundBankManager_AsyncBankHandleMethods;
+    pub use super::SoundWwise_SoundPlay_GameObjectPool;
+    pub use super::ISoundWwise_SoundPlay_GameObjectPool;
+    pub use super::ISoundWwise_SoundPlay_GameObjectPoolMethods;
+    pub use super::SoundWwise_SoundPlay;
+    pub use super::ISoundWwise_SoundPlay;
+    pub use super::ISoundWwise_SoundPlayMethods;
+    pub use super::SoundWwise_SoundHandle;
+    pub use super::ISoundWwise_SoundHandle;
+    pub use super::ISoundWwise_SoundHandleMethods;
+    pub use super::SoundWwise_SoundPrepareManager_Param;
+    pub use super::ISoundWwise_SoundPrepareManager_Param;
+    pub use super::ISoundWwise_SoundPrepareManager_ParamMethods;
+    pub use super::SoundWwise_SoundPrepareManager_EventParam;
+    pub use super::ISoundWwise_SoundPrepareManager_EventParam;
+    pub use super::ISoundWwise_SoundPrepareManager_EventParamMethods;
+    pub use super::SoundWwise_SoundPrepareManager;
+    pub use super::ISoundWwise_SoundPrepareManager;
+    pub use super::ISoundWwise_SoundPrepareManagerMethods;
+    pub use super::SoundWwise_SoundBankManager;
+    pub use super::ISoundWwise_SoundBankManager;
+    pub use super::ISoundWwise_SoundBankManagerMethods;
+    pub use super::SoundWwise_SoundPrepareManager_SwitchGroupParamList;
+    pub use super::ISoundWwise_SoundPrepareManager_SwitchGroupParamList;
+    pub use super::ISoundWwise_SoundPrepareManager_SwitchGroupParamListMethods;
+    pub use super::SoundWwise_SoundPrepareManager_SwitchParamList;
+    pub use super::ISoundWwise_SoundPrepareManager_SwitchParamList;
+    pub use super::ISoundWwise_SoundPrepareManager_SwitchParamListMethods;
+    pub use super::SoundWwise_SoundLoad;
+    pub use super::ISoundWwise_SoundLoad;
+    pub use super::ISoundWwise_SoundLoadMethods;
+    pub use super::SoundWwise_SoundBankManager_BankHandle;
+    pub use super::ISoundWwise_SoundBankManager_BankHandle;
+    pub use super::ISoundWwise_SoundBankManager_BankHandleMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::app::soundsystem::ISoundSystem_SoundHandle;

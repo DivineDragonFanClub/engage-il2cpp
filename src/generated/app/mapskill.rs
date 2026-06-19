@@ -17,6 +17,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_UnitFunc.md"))]#[::unity2::class(namespace="App",name="MapSkill.UnitFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapSkill_UnitFunc{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill.md"))]#[::unity2::class(namespace="App",name="MapSkill")]#[parent(crate::system::object::Object)]pub struct MapSkill{#[static_field]#[rename(name="WaitTime")]pub wait_time:f32, #[static_field]#[rename(name="BeginWaitTime")]pub begin_wait_time:f32, #[static_field]#[rename(name="EndWaitTime")]pub end_wait_time:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_Results.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_Results{pub skill:crate::app::skilldata::SkillData,pub current:crate::app::mapskill::MapSkill_Result,pub reverse:crate::app::mapskill::MapSkill_Result,}
 impl::unity2::ClassIdentity for MapSkill_Results{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSkill.Results";
@@ -25,42 +31,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 )}
 }
 impl::unity2::IlType for MapSkill_Results{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_AroundCalculator_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_AroundCalculator_Result{pub target:crate::app::unit::Unit,pub skill:crate::app::skilldata::SkillData,}
-impl::unity2::ClassIdentity for MapSkill_AroundCalculator_Result{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapSkill.AroundCalculator.Result";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapSkill_AroundCalculator_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_FixedCalculator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_FixedCalculator{pub m_unit:crate::app::unit::Unit,pub m_skill:crate::app::skilldata::SkillData,pub m_targets:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,}
-impl::unity2::ClassIdentity for MapSkill_FixedCalculator{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapSkill.FixedCalculator";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapSkill_FixedCalculator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_UnitFunc.md"))]#[::unity2::class(namespace="App",name="MapSkill.UnitFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapSkill_UnitFunc{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_HistoryScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_HistoryScope{pub m_unit:crate::app::unit::Unit,pub m_prev_hp:i32,pub m_prev_count:i32,}
-impl::unity2::ClassIdentity for MapSkill_HistoryScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapSkill.HistoryScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapSkill_HistoryScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 
@@ -75,10 +45,26 @@ impl::unity2::IlType for MapSkill_SkillCalculator{fn il_type()-> &'static::unity
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill.md"))]#[::unity2::class(namespace="App",name="MapSkill")]#[parent(crate::system::object::Object)]pub struct MapSkill{#[static_field]#[rename(name="WaitTime")]pub wait_time:f32, #[static_field]#[rename(name="BeginWaitTime")]pub begin_wait_time:f32, #[static_field]#[rename(name="EndWaitTime")]pub end_wait_time:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_FixedCalculator.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_FixedCalculator{pub m_unit:crate::app::unit::Unit,pub m_skill:crate::app::skilldata::SkillData,pub m_targets:crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>,}
+impl::unity2::ClassIdentity for MapSkill_FixedCalculator{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSkill.FixedCalculator";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSkill_FixedCalculator{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_SkillCalculator_UnitList.md"))]#[::unity2::class(namespace="App",name="MapSkill.SkillCalculator.UnitList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)]pub struct MapSkill_SkillCalculator_UnitList{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_AroundCalculator_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_AroundCalculator_Result{pub target:crate::app::unit::Unit,pub skill:crate::app::skilldata::SkillData,}
+impl::unity2::ClassIdentity for MapSkill_AroundCalculator_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSkill.AroundCalculator.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSkill_AroundCalculator_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_TerrainFunc.md"))]#[::unity2::class(namespace="App",name="MapSkill.TerrainFunc")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MapSkill_TerrainFunc{}
@@ -95,6 +81,9 @@ impl::unity2::IlType for MapSkill_AroundCalculator{fn il_type()-> &'static::unit
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_SkillCalculator_UnitList.md"))]#[::unity2::class(namespace="App",name="MapSkill.SkillCalculator.UnitList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>)]pub struct MapSkill_SkillCalculator_UnitList{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_Result{pub moved:bool,pub unit:crate::app::unit::Unit,pub x:i32,pub z:i32,}
 impl::unity2::ClassIdentity for MapSkill_Result{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSkill.Result";
@@ -105,57 +94,33 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for MapSkill_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapskill/MapSkill_HistoryScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct MapSkill_HistoryScope{pub m_unit:crate::app::unit::Unit,pub m_prev_hp:i32,pub m_prev_count:i32,}
+impl::unity2::ClassIdentity for MapSkill_HistoryScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapSkill.HistoryScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapSkill_HistoryScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
 }
 
 #[cfg(feature = "app-mapskill-types")]
 pub use __types::*;
 
-#[cfg(feature="app-mapskill")]impl MapSkill_Results{#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c4f0usize)as*mut u8,();
-(*mut MapSkill_Results)self as*mut MapSkill_Results)}
-}
-#[doc="`IsEnable()` overload"]pub fn is_enable(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c540usize)as*mut u8,bool;
-(*mut MapSkill_Results)self as*mut MapSkill_Results)}
-}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_Results{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_AroundCalculator_Result{#[doc="`Commit(crate::app::unit::Unit)` overload"]pub fn commit(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b70890usize)as*mut u8,();
-(*mut MapSkill_AroundCalculator_Result)self as*mut MapSkill_AroundCalculator_Result,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_AroundCalculator_Result{pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_FixedCalculator{#[doc="`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e38a00usize)as*mut u8,();
-(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
-}
-#[doc="`IsIgnore(crate::app::skilldata::SkillData)` overload"]pub fn is_ignore(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bf90usize)as*mut u8,bool;
-(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
-}
-#[doc="`Enumerate()` overload"]pub fn enumerate(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e38ab0usize)as*mut u8,bool;
-(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator)}
-}
-#[doc="`ExecuteAct(crate::app::unit::Unit)` overload"]pub fn execute_act(&mut self,target:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c060usize)as*mut u8,bool;
-(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::unit::Unit)::core::convert::Into::into(target))}
-}
-#[doc="`Commit(crate::app::procinst::ProcInst)` overload"]pub fn commit(&mut self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e39810usize)as*mut u8,();
-(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e39cf0usize)as*mut u8,();
-(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator)}
-}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_FixedCalculator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_ignore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn enumerate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn execute_act_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+#[cfg(feature="app-mapskill")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSkill_UnitFunc_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:MapSkill_UnitFunc,x:i32,z:i32,target:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapSkill_UnitFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(MapSkill_UnitFunc,i32,i32,crate::app::unit::Unit, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,z,target,__mi)}
 }
 
 #[cfg(feature="app-mapskill")]pub trait IMapSkill_UnitFuncMethods:IMapSkill_UnitFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapSkill_UnitFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -163,8 +128,7 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 (MapSkill_UnitFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(i32, i32, crate::app::unit::Unit)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <MapSkill_UnitFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e540usize)as*mut u8,();
-(MapSkill_UnitFunc)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+__MapSkill_UnitFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(target), ::core::option::Option::None)}
 }
 }
 
@@ -179,38 +143,6 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
  failed to instantiate", ::core::stringify!(MapSkill_UnitFunc), ::core::stringify!(new),));
  <Self as IMapSkill_UnitFuncMethods> ::ctor(this,object,method);
 this}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_HistoryScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c200usize)as*mut u8,();
-(*mut MapSkill_HistoryScope)self as*mut MapSkill_HistoryScope,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c250usize)as*mut u8,();
-(*mut MapSkill_HistoryScope)self as*mut MapSkill_HistoryScope)}
-}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_HistoryScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator{#[doc="`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData, crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c550usize)as*mut u8,();
-(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(crate::app::unit::Unit)::core::convert::Into::into(target))}
-}
-#[doc="`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]pub fn enumerate(&mut self,frequency:impl::core::convert::Into<crate::app::skilldata::SkillData_Frequencies>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c600usize)as*mut u8,bool;
-(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator,(crate::app::skilldata::SkillData_Frequencies)::core::convert::Into::into(frequency))}
-}
-#[doc="`Commit()` overload"]pub fn commit(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3dc60usize)as*mut u8,();
-(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator)}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e1c0usize)as*mut u8,();
-(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator)}
-}
-}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn enumerate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
 #[cfg(feature="app-mapskill")]impl MapSkill{#[doc="`Prediction(crate::app::unit::Unit, crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]pub fn prediction(current:impl::core::convert::Into<crate::app::unit::Unit> ,reverse:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f4e120usize)as*mut u8,bool;
@@ -332,27 +264,85 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapskill")]pub trait IMapSkill_SkillCalculator_UnitListMethods:IMapSkill_SkillCalculator_UnitList{#[doc="`TryAdd(crate::app::unit::Unit)` overload"]fn try_add(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSkill_SkillCalculator_UnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71510usize)as*mut u8,bool;
-(MapSkill_SkillCalculator_UnitList)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+#[cfg(feature="app-mapskill")]impl MapSkill_Results{#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c4f0usize)as*mut u8,();
+(*mut MapSkill_Results)self as*mut MapSkill_Results)}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSkill_SkillCalculator_UnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71650usize)as*mut u8,();
-(MapSkill_SkillCalculator_UnitList)__receiver)}
+#[doc="`IsEnable()` overload"]pub fn is_enable(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c540usize)as*mut u8,bool;
+(*mut MapSkill_Results)self as*mut MapSkill_Results)}
 }
 }
 
-#[cfg(feature="app-mapskill")]impl<__T:IMapSkill_SkillCalculator_UnitList>IMapSkill_SkillCalculator_UnitListMethods for __T{}
-
-#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator_UnitList{pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-mapskill")]impl MapSkill_Results{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator_UnitList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapSkill_SkillCalculator_UnitList), ::core::stringify!(new),));
- <Self as IMapSkill_SkillCalculator_UnitListMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator{#[doc="`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData, crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData> ,target:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c550usize)as*mut u8,();
+(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill),(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`Enumerate(crate::app::skilldata::SkillData_Frequencies)` overload"]pub fn enumerate(&mut self,frequency:impl::core::convert::Into<crate::app::skilldata::SkillData_Frequencies>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c600usize)as*mut u8,bool;
+(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator,(crate::app::skilldata::SkillData_Frequencies)::core::convert::Into::into(frequency))}
+}
+#[doc="`Commit()` overload"]pub fn commit(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3dc60usize)as*mut u8,();
+(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator)}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e1c0usize)as*mut u8,();
+(*mut MapSkill_SkillCalculator)self as*mut MapSkill_SkillCalculator)}
+}
+}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn enumerate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_FixedCalculator{#[doc="`.ctor(crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e38a00usize)as*mut u8,();
+(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`IsIgnore(crate::app::skilldata::SkillData)` overload"]pub fn is_ignore(&mut self,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3bf90usize)as*mut u8,bool;
+(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`Enumerate()` overload"]pub fn enumerate(&mut self,)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e38ab0usize)as*mut u8,bool;
+(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator)}
+}
+#[doc="`ExecuteAct(crate::app::unit::Unit)` overload"]pub fn execute_act(&mut self,target:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c060usize)as*mut u8,bool;
+(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::unit::Unit)::core::convert::Into::into(target))}
+}
+#[doc="`Commit(crate::app::procinst::ProcInst)` overload"]pub fn commit(&mut self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e39810usize)as*mut u8,();
+(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e39cf0usize)as*mut u8,();
+(*mut MapSkill_FixedCalculator)self as*mut MapSkill_FixedCalculator)}
+}
+}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_FixedCalculator{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_ignore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn enumerate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn execute_act_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_AroundCalculator_Result{#[doc="`Commit(crate::app::unit::Unit)` overload"]pub fn commit(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b70890usize)as*mut u8,();
+(*mut MapSkill_AroundCalculator_Result)self as*mut MapSkill_AroundCalculator_Result,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_AroundCalculator_Result{pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapskill")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSkill_TerrainFunc_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:MapSkill_TerrainFunc,x:i32,z:i32,terrain:crate::app::terraindata_2::TerrainData_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapSkill_TerrainFunc as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(MapSkill_TerrainFunc,i32,i32,crate::app::terraindata_2::TerrainData_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,z,terrain,__mi)}
 }
 
 #[cfg(feature="app-mapskill")]pub trait IMapSkill_TerrainFuncMethods:IMapSkill_TerrainFunc{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MapSkill_TerrainFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -360,8 +350,7 @@ this}
 (MapSkill_TerrainFunc)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(i32, i32, crate::app::terraindata_2::TerrainData_2)` overload"]fn invoke(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,terrain:impl::core::convert::Into<crate::app::terraindata_2::TerrainData_2>)->(){unsafe{let __receiver= <MapSkill_TerrainFunc as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e3e220usize)as*mut u8,();
-(MapSkill_TerrainFunc)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(crate::app::terraindata_2::TerrainData_2)::core::convert::Into::into(terrain))}
+__MapSkill_TerrainFunc_unity2_raw::invoke(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(z), ::core::convert::Into::into(terrain), ::core::option::Option::None)}
 }
 }
 
@@ -398,6 +387,29 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn get_results_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
+#[cfg(feature="app-mapskill")]pub trait IMapSkill_SkillCalculator_UnitListMethods:IMapSkill_SkillCalculator_UnitList{#[doc="`TryAdd(crate::app::unit::Unit)` overload"]fn try_add(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapSkill_SkillCalculator_UnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71510usize)as*mut u8,bool;
+(MapSkill_SkillCalculator_UnitList)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapSkill_SkillCalculator_UnitList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b71650usize)as*mut u8,();
+(MapSkill_SkillCalculator_UnitList)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapskill")]impl<__T:IMapSkill_SkillCalculator_UnitList>IMapSkill_SkillCalculator_UnitListMethods for __T{}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator_UnitList{pub fn try_add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_SkillCalculator_UnitList{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapSkill_SkillCalculator_UnitList), ::core::stringify!(new),));
+ <Self as IMapSkill_SkillCalculator_UnitListMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-mapskill")]impl MapSkill_Result{#[doc="`Reset()` overload"]pub fn reset(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c4c0usize)as*mut u8,();
 (*mut MapSkill_Result)self as*mut MapSkill_Result)}
 }
@@ -406,28 +418,40 @@ pub fn get_results_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 #[cfg(feature="app-mapskill")]impl MapSkill_Result{pub fn reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
+#[cfg(feature="app-mapskill")]impl MapSkill_HistoryScope{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c200usize)as*mut u8,();
+(*mut MapSkill_HistoryScope)self as*mut MapSkill_HistoryScope,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e3c250usize)as*mut u8,();
+(*mut MapSkill_HistoryScope)self as*mut MapSkill_HistoryScope)}
+}
+}
+
+#[cfg(feature="app-mapskill")]impl MapSkill_HistoryScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
 #[cfg(feature = "app-mapskill")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapSkill_Results;
-    pub use super::MapSkill_AroundCalculator_Result;
-    pub use super::MapSkill_FixedCalculator;
     pub use super::MapSkill_UnitFunc;
     pub use super::IMapSkill_UnitFunc;
     pub use super::IMapSkill_UnitFuncMethods;
-    pub use super::MapSkill_HistoryScope;
-    pub use super::MapSkill_SkillCalculator;
     pub use super::MapSkill;
     pub use super::IMapSkill;
     pub use super::IMapSkillMethods;
-    pub use super::MapSkill_SkillCalculator_UnitList;
-    pub use super::IMapSkill_SkillCalculator_UnitList;
-    pub use super::IMapSkill_SkillCalculator_UnitListMethods;
+    pub use super::MapSkill_Results;
+    pub use super::MapSkill_SkillCalculator;
+    pub use super::MapSkill_FixedCalculator;
+    pub use super::MapSkill_AroundCalculator_Result;
     pub use super::MapSkill_TerrainFunc;
     pub use super::IMapSkill_TerrainFunc;
     pub use super::IMapSkill_TerrainFuncMethods;
     pub use super::MapSkill_AroundCalculator;
+    pub use super::MapSkill_SkillCalculator_UnitList;
+    pub use super::IMapSkill_SkillCalculator_UnitList;
+    pub use super::IMapSkill_SkillCalculator_UnitListMethods;
     pub use super::MapSkill_Result;
+    pub use super::MapSkill_HistoryScope;
     pub use crate::system::collections::generic::list_1::IList_1;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

@@ -22,29 +22,77 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actionobservable-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actionobservable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionObservable_unity2_raw{use super:: * ;
+pub unsafe fn on_enter(this:ActionObservable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ActionObservable as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(ActionObservable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:ActionObservable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ActionObservable as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(ActionObservable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_exit(this:ActionObservable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ActionObservable as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let inner:extern "C" fn(ActionObservable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enter_attack(this:ActionObservable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ActionObservable as::unity2::ClassIdentity> ::NAME,"OnEnterAttack",));
+let inner:extern "C" fn(ActionObservable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_hit_passed(this:ActionObservable,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ActionObservable as::unity2::ClassIdentity> ::NAME,"OnHitPassed",));
+let inner:extern "C" fn(ActionObservable,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ev,__mi)}
+}
+
 #[cfg(feature="combat-actionobservable")]pub trait IActionObservableMethods:IActionObservable{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bbef90usize)as*mut u8,();
 (ActionObservable)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc08f0usize)as*mut u8,();
-(ActionObservable)__receiver)}
+__ActionObservable_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0af0usize)as*mut u8,();
-(ActionObservable)__receiver)}
+__ActionObservable_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc0f20usize)as*mut u8,();
-(ActionObservable)__receiver)}
+__ActionObservable_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnterAttack()` overload"]fn on_enter_attack(self,)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc3950usize)as*mut u8,();
-(ActionObservable)__receiver)}
+__ActionObservable_unity2_raw::on_enter_attack(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnHitPassed(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_hit_passed(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <ActionObservable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7f20usize)as*mut u8,();
-(ActionObservable)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+__ActionObservable_unity2_raw::on_hit_passed(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
 }
 }
 

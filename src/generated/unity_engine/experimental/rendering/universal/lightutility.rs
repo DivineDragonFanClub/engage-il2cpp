@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="LightUtility")]#[parent(crate::system::object::Object)]pub struct LightUtility{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility_SpriteLightMeshVertex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct LightUtility_SpriteLightMeshVertex{pub position:crate::unity_engine::vector3::Vector3,pub color:crate::unity_engine::color::Color,pub uv:crate::unity_engine::vector2::Vector2,}
 impl::unity2::ClassIdentity for LightUtility_SpriteLightMeshVertex{const NAMESPACE: &'static str="UnityEngine.Experimental.Rendering.Universal";
 const NAME: &'static str="LightUtility.SpriteLightMeshVertex";
@@ -48,29 +51,10 @@ let __offset= ::unity2::cached_field_offset_static::<Self>(&OFFSET,"VertexLayout
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/experimental/rendering/universal/lightutility/LightUtility.md"))]#[::unity2::class(namespace="UnityEngine.Experimental.Rendering.Universal",name="LightUtility")]#[parent(crate::system::object::Object)]pub struct LightUtility{}
-
 }
 
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility-types")]
 pub use __types::*;
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_SpriteLightMeshVertex{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7140usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_SpriteLightMeshVertex{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_ParametricLightMeshVertex{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7050usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_ParametricLightMeshVertex{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility{#[doc="`CheckForChange(i32, *muti32)` overload"]pub fn check_for_change(a:impl::core::convert::Into<i32>)->(bool,i32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
 let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2ef4200usize)as*mut u8,bool;
@@ -113,13 +97,29 @@ pub fn get_falloff_shape_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<
 pub fn generate_shape_mesh_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
 }
 
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_SpriteLightMeshVertex{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7140usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_SpriteLightMeshVertex{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_ParametricLightMeshVertex{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2cb7050usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="unity_engine-experimental-rendering-universal-lightutility")]impl LightUtility_ParametricLightMeshVertex{pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-experimental-rendering-universal-lightutility")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::LightUtility_SpriteLightMeshVertex;
-    pub use super::LightUtility_ParametricLightMeshVertex;
     pub use super::LightUtility;
     pub use super::ILightUtility;
+    pub use super::LightUtility_SpriteLightMeshVertex;
+    pub use super::LightUtility_ParametricLightMeshVertex;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

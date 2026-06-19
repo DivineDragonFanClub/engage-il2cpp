@@ -25,16 +25,42 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="app-helpitembase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HelpItemBase_unity2_raw{use super:: * ;
-pub unsafe fn set_contents(this:HelpItemBase,setter:crate::app::helpparamsetter::HelpParamSetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetContents").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetContents", <HelpItemBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_help_item_type(this:HelpItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HelpItemBase as::unity2::ClassIdentity> ::NAME,"get_HelpItemType",));
+let inner:extern "C" fn(HelpItemBase, ::unity2::OptionalMethod,)->crate::app::helpmanager::HelpManager_HelpItemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_start_item_const_priority(this:HelpItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <HelpItemBase as::unity2::ClassIdentity> ::NAME,"get_StartItemConstPriority",));
+let inner:extern "C" fn(HelpItemBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_contents(this:HelpItemBase,setter:crate::app::helpparamsetter::HelpParamSetter,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <HelpItemBase as::unity2::ClassIdentity> ::NAME,"SetContents",));
 let inner:extern "C" fn(HelpItemBase,crate::app::helpparamsetter::HelpParamSetter, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,setter,__mi)}
-pub unsafe fn is_valid(this:HelpItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsValid").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsValid", <HelpItemBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn is_valid(this:HelpItemBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HelpItemBase as::unity2::ClassIdentity> ::NAME,"IsValid",));
 let inner:extern "C" fn(HelpItemBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -46,12 +72,10 @@ inner(this,__mi)}
 (HelpItemBase)__receiver)}
 }
 #[doc="`get_HelpItemType()` overload"]fn get_help_item_type(self,)->crate::app::helpmanager::HelpManager_HelpItemType{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297bf70usize)as*mut u8,crate::app::helpmanager::HelpManager_HelpItemType;
-(HelpItemBase)__receiver)}
+__HelpItemBase_unity2_raw::get_help_item_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_StartItemConstPriority()` overload"]fn get_start_item_const_priority(self,)->i32{unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297bf80usize)as*mut u8,i32;
-(HelpItemBase)__receiver)}
+__HelpItemBase_unity2_raw::get_start_item_const_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetContents(crate::app::helpparamsetter::HelpParamSetter)` overload"]fn set_contents(self,setter:impl::core::convert::Into<crate::app::helpparamsetter::HelpParamSetter>)->(){unsafe{let __receiver= <HelpItemBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __HelpItemBase_unity2_raw::set_contents(__receiver, ::core::convert::Into::into(setter), ::core::option::Option::None)}

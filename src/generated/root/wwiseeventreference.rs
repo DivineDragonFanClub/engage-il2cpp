@@ -22,9 +22,21 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "root-wwiseeventreference-types")]
 pub use __types::*;
 
+#[cfg(feature="root-wwiseeventreference")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WwiseEventReference_unity2_raw{use super:: * ;
+pub unsafe fn get_wwise_object_type(this:WwiseEventReference,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <WwiseEventReference as::unity2::ClassIdentity> ::NAME,"get_WwiseObjectType",));
+let inner:extern "C" fn(WwiseEventReference, ::unity2::OptionalMethod,)->crate::root::wwiseobjecttype::WwiseObjectType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-wwiseeventreference")]pub trait IWwiseEventReferenceMethods:IWwiseEventReference{#[doc="`get_WwiseObjectType()` overload"]fn get_wwise_object_type(self,)->crate::root::wwiseobjecttype::WwiseObjectType{unsafe{let __receiver= <WwiseEventReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x293fb90usize)as*mut u8,crate::root::wwiseobjecttype::WwiseObjectType;
-(WwiseEventReference)__receiver)}
+__WwiseEventReference_unity2_raw::get_wwise_object_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WwiseEventReference as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x293fba0usize)as*mut u8,();

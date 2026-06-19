@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapminimap/MapMiniMap.md"))]#[::unity2::class(namespace="App",name="MapMiniMap")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapminimap::MapMiniMap>)]pub struct MapMiniMap{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(128)]#[rename(name="m_MiniMapObject")]pub m_mini_map_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_ModeStack")]pub m_mode_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::minimapcontroller::MiniMapController_Mode> , #[offset(144)]#[rename(name="m_MiniMapMode")]pub m_mini_map_mode:crate::app::minimapcontroller::MiniMapController_Mode,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapminimap/MapMiniMap_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapMiniMap_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapMiniMap_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapMiniMap.Label";
@@ -32,13 +35,33 @@ pub fn measure()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapminimap/MapMiniMap.md"))]#[::unity2::class(namespace="App",name="MapMiniMap")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::mapminimap::MapMiniMap>)]pub struct MapMiniMap{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(120)]#[rename(name="m_PrefabHandle")]pub m_prefab_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::gameobject::GameObject> , #[offset(128)]#[rename(name="m_MiniMapObject")]pub m_mini_map_object:crate::unity_engine::gameobject::GameObject, #[offset(136)]#[rename(name="m_ModeStack")]pub m_mode_stack:crate::system::collections::generic::stack_1::Stack_1<crate::app::minimapcontroller::MiniMapController_Mode> , #[offset(144)]#[rename(name="m_MiniMapMode")]pub m_mini_map_mode:crate::app::minimapcontroller::MiniMapController_Mode,}
-
 }
 
 #[cfg(feature = "app-mapminimap-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapminimap")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapMiniMap_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MapMiniMap,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapMiniMap as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapMiniMap, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapMiniMap,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapMiniMap as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapMiniMap, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-mapminimap")]impl MapMiniMap{#[doc="`CreateAsync(crate::app::procinst::ProcInst)` overload"]pub fn create_async(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1df5840usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -77,12 +100,10 @@ pub use __types::*;
 (MapMiniMap)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5bf0usize)as*mut u8,();
-(MapMiniMap)__receiver)}
+__MapMiniMap_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5d30usize)as*mut u8,();
-(MapMiniMap)__receiver)}
+__MapMiniMap_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateImpl()` overload"]fn create_impl(self,)->(){unsafe{let __receiver= <MapMiniMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1df5e30usize)as*mut u8,();
@@ -158,10 +179,10 @@ this}
 #[cfg(feature = "app-mapminimap")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapMiniMap_Label;
     pub use super::MapMiniMap;
     pub use super::IMapMiniMap;
     pub use super::IMapMiniMapMethods;
+    pub use super::MapMiniMap_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

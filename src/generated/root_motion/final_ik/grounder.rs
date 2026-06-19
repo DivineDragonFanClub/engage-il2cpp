@@ -21,57 +21,43 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounder/Grounder_GrounderDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounder.GrounderDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Grounder_GrounderDelegate{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounder/Grounder.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounder")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct Grounder{#[offset(24)]#[rename(name="weight")]pub weight:f32, #[offset(32)]#[rename(name="solver")]pub solver:crate::root_motion::final_ik::grounding::Grounding, #[offset(40)]#[rename(name="OnPreGrounder")]pub on_pre_grounder:crate::root_motion::final_ik::grounder::Grounder_GrounderDelegate, #[offset(48)]#[rename(name="OnPostGrounder")]pub on_post_grounder:crate::root_motion::final_ik::grounder::Grounder_GrounderDelegate,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/grounder/Grounder_GrounderDelegate.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Grounder.GrounderDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Grounder_GrounderDelegate{}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-grounder-types")]
 pub use __types::*;
 
-#[cfg(feature="root_motion-final_ik-grounder")]pub trait IGrounder_GrounderDelegateMethods:IGrounder_GrounderDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Grounder_GrounderDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb500usize)as*mut u8,();
-(Grounder_GrounderDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Grounder_GrounderDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb520usize)as*mut u8,();
-(Grounder_GrounderDelegate)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-grounder")]impl<__T:IGrounder_GrounderDelegate>IGrounder_GrounderDelegateMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-grounder")]impl Grounder_GrounderDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="root_motion-final_ik-grounder")]impl Grounder_GrounderDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Grounder_GrounderDelegate), ::core::stringify!(new),));
- <Self as IGrounder_GrounderDelegateMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature="root_motion-final_ik-grounder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Grounder_unity2_raw{use super:: * ;
-pub unsafe fn reset_position(this:Grounder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ResetPosition").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ResetPosition", <Grounder as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn reset_position(this:Grounder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Grounder as::unity2::ClassIdentity> ::NAME,"ResetPosition",));
 let inner:extern "C" fn(Grounder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn open_user_manual(this:Grounder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OpenUserManual").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OpenUserManual", <Grounder as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn open_user_manual(this:Grounder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Grounder as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
 let inner:extern "C" fn(Grounder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn open_script_reference(this:Grounder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OpenScriptReference").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OpenScriptReference", <Grounder as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn open_script_reference(this:Grounder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Grounder as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
 let inner:extern "C" fn(Grounder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -138,15 +124,50 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root_motion-final_ik-grounder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Grounder_GrounderDelegate_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:Grounder_GrounderDelegate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Grounder_GrounderDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(Grounder_GrounderDelegate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-grounder")]pub trait IGrounder_GrounderDelegateMethods:IGrounder_GrounderDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Grounder_GrounderDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb500usize)as*mut u8,();
+(Grounder_GrounderDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Grounder_GrounderDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__Grounder_GrounderDelegate_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-grounder")]impl<__T:IGrounder_GrounderDelegate>IGrounder_GrounderDelegateMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-grounder")]impl Grounder_GrounderDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="root_motion-final_ik-grounder")]impl Grounder_GrounderDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Grounder_GrounderDelegate), ::core::stringify!(new),));
+ <Self as IGrounder_GrounderDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "root_motion-final_ik-grounder")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Grounder_GrounderDelegate;
-    pub use super::IGrounder_GrounderDelegate;
-    pub use super::IGrounder_GrounderDelegateMethods;
     pub use super::Grounder;
     pub use super::IGrounder;
     pub use super::IGrounderMethods;
+    pub use super::Grounder_GrounderDelegate;
+    pub use super::IGrounder_GrounderDelegate;
+    pub use super::IGrounder_GrounderDelegateMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -20,14 +20,55 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-tilemaps-tilebase-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-tilemaps-tilebase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TileBase_unity2_raw{use super:: * ;
+pub unsafe fn refresh_tile(this:TileBase,position:crate::unity_engine::vector3int::Vector3Int,tilemap:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TileBase as::unity2::ClassIdentity> ::NAME,"RefreshTile",));
+let inner:extern "C" fn(TileBase,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,position,tilemap,__mi)}
+pub unsafe fn get_tile_data(this:TileBase,position:crate::unity_engine::vector3int::Vector3Int,tilemap:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,tile_data: *mut crate::unity_engine::tilemaps::tiledata::TileData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TileBase as::unity2::ClassIdentity> ::NAME,"GetTileData",));
+let inner:extern "C" fn(TileBase,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mut crate::unity_engine::tilemaps::tiledata::TileData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,position,tilemap,tile_data,__mi)}
+pub unsafe fn get_tile_animation_data(this:TileBase,position:crate::unity_engine::vector3int::Vector3Int,tilemap:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,tile_animation_data: *mut crate::unity_engine::tilemaps::tileanimationdata::TileAnimationData,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TileBase as::unity2::ClassIdentity> ::NAME,"GetTileAnimationData",));
+let inner:extern "C" fn(TileBase,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mut crate::unity_engine::tilemaps::tileanimationdata::TileAnimationData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,position,tilemap,tile_animation_data,__mi)}
+pub unsafe fn start_up(this:TileBase,position:crate::unity_engine::vector3int::Vector3Int,tilemap:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,go:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TileBase as::unity2::ClassIdentity> ::NAME,"StartUp",));
+let inner:extern "C" fn(TileBase,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,position,tilemap,go,__mi)}
+}
+
 #[cfg(feature="unity_engine-tilemaps-tilebase")]pub trait ITileBaseMethods:ITileBase{#[doc="`RefreshTile(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)` overload"]fn refresh_tile(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,tilemap:impl::core::convert::Into<crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface>)->(){unsafe{let __receiver= <TileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42de0usize)as*mut u8,();
-(TileBase)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position),(crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)::core::convert::Into::into(tilemap))}
+__TileBase_unity2_raw::refresh_tile(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(tilemap), ::core::option::Option::None)}
 }
 #[doc="`GetTileData(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mutcrate::unity_engine::tilemaps::tiledata::TileData)` overload"]fn get_tile_data(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,tilemap:impl::core::convert::Into<crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface>)->crate::unity_engine::tilemaps::tiledata::TileData{unsafe{let __receiver= <TileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::tilemaps::tiledata::TileData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42e40usize)as*mut u8,();
-(TileBase)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position),(crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)::core::convert::Into::into(tilemap),(*mut crate::unity_engine::tilemaps::tiledata::TileData)__out_0.as_mut_ptr());
+__TileBase_unity2_raw::get_tile_data(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(tilemap),__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`GetTileDataNoRef(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)` overload"]fn get_tile_data_no_ref(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,tilemap:impl::core::convert::Into<crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface>)->crate::unity_engine::tilemaps::tiledata::TileData{unsafe{let __receiver= <TileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -36,8 +77,7 @@ __out_0.assume_init()}
 }
 #[doc="`GetTileAnimationData(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mutcrate::unity_engine::tilemaps::tileanimationdata::TileAnimationData)` overload"]fn get_tile_animation_data(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,tilemap:impl::core::convert::Into<crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface>)->(bool,crate::unity_engine::tilemaps::tileanimationdata::TileAnimationData){unsafe{let __receiver= <TileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::tilemaps::tileanimationdata::TileAnimationData> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f42ee0usize)as*mut u8,bool;
-(TileBase)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position),(crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)::core::convert::Into::into(tilemap),(*mut crate::unity_engine::tilemaps::tileanimationdata::TileAnimationData)__out_0.as_mut_ptr())}
+let __ret={__TileBase_unity2_raw::get_tile_animation_data(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(tilemap),__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
@@ -46,8 +86,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3f42ee0usize)as*mut
 (TileBase)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position),(crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)::core::convert::Into::into(tilemap))}
 }
 #[doc="`StartUp(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, crate::unity_engine::gameobject::GameObject)` overload"]fn start_up(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,tilemap:impl::core::convert::Into<crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->bool{unsafe{let __receiver= <TileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42f30usize)as*mut u8,bool;
-(TileBase)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position),(crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)::core::convert::Into::into(tilemap),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+__TileBase_unity2_raw::start_up(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(tilemap), ::core::convert::Into::into(go), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TileBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42dd0usize)as*mut u8,();

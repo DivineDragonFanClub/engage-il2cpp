@@ -18,13 +18,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-talkcommand-types")]
 pub use __types::*;
 
+#[cfg(feature="app-talkcommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkCommand_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:TalkCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TalkCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(TalkCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn func(this:TalkCommand,arg: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <TalkCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(TalkCommand, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg,__mi)}
+}
+
 #[cfg(feature="app-talkcommand")]pub trait ITalkCommandMethods:ITalkCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20beb10usize)as*mut u8, ::unity2::Il2CppString;
-(TalkCommand)__receiver)}
+__TalkCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Func(::unity2::Il2CppString)` overload"]fn func(self,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->f32{unsafe{let __receiver= <TalkCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20beb60usize)as*mut u8,f32;
-(TalkCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(arg))}
+__TalkCommand_unity2_raw::func(__receiver, ::core::convert::Into::into(arg), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TalkCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20bebe0usize)as*mut u8,();

@@ -20,9 +20,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapimagecoresbyte-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapimagecoresbyte")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapImageCoreSbyte_unity2_raw{use super:: * ;
+pub unsafe fn add(this:MapImageCoreSbyte,index:i32,v:i8,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapImageCoreSbyte as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(MapImageCoreSbyte,i32,i8, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,v,__mi)}
+}
+
 #[cfg(feature="app-mapimagecoresbyte")]pub trait IMapImageCoreSbyteMethods:IMapImageCoreSbyte{#[doc="`Add(i32, i8)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i8>)->(){unsafe{let __receiver= <MapImageCoreSbyte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x205f950usize)as*mut u8,();
-(MapImageCoreSbyte)__receiver,(i32)::core::convert::Into::into(index),(i8)::core::convert::Into::into(v))}
+__MapImageCoreSbyte_unity2_raw::add(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(v), ::core::option::Option::None)}
 }
 #[doc="`GetMin()` overload"]fn get_min(self,)->i32{unsafe{let __receiver= <MapImageCoreSbyte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x205f990usize)as*mut u8,i32;

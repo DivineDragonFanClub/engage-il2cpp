@@ -18,13 +18,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-generic-nonrandomizedstringequalitycomparer-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-generic-nonrandomizedstringequalitycomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NonRandomizedStringEqualityComparer_unity2_raw{use super:: * ;
+pub unsafe fn equals(this:NonRandomizedStringEqualityComparer,x: ::unity2::Il2CppString,y: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <NonRandomizedStringEqualityComparer as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(NonRandomizedStringEqualityComparer, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+pub unsafe fn get_hash_code(this:NonRandomizedStringEqualityComparer,obj: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <NonRandomizedStringEqualityComparer as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(NonRandomizedStringEqualityComparer, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+}
+
 #[cfg(feature="system-collections-generic-nonrandomizedstringequalitycomparer")]pub trait INonRandomizedStringEqualityComparerMethods:INonRandomizedStringEqualityComparer{#[doc="`Equals(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn equals(self,x:impl::core::convert::Into< ::unity2::Il2CppString> ,y:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <NonRandomizedStringEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3385cf0usize)as*mut u8,bool;
-(NonRandomizedStringEqualityComparer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(x),(::unity2::Il2CppString)::core::convert::Into::into(y))}
+__NonRandomizedStringEqualityComparer_unity2_raw::equals(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode(::unity2::Il2CppString)` overload"]fn get_hash_code(self,obj:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <NonRandomizedStringEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3385d00usize)as*mut u8,i32;
-(NonRandomizedStringEqualityComparer)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(obj))}
+__NonRandomizedStringEqualityComparer_unity2_raw::get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <NonRandomizedStringEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3385d20usize)as*mut u8,();

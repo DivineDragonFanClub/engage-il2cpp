@@ -15,38 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_Error.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_Error{pub value:i32,}
-impl::unity2::ClassIdentity for Versus_Error{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Versus.Error";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for Versus_Error{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl Versus_Error{pub fn none()->Self{Self{value: -1}
-}
-pub fn ranked_report()->Self{Self{value:101}
-}
-pub fn ranked_offence_unit_none()->Self{Self{value:102}
-}
-pub fn invalid_data()->Self{Self{value:103}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus.md"))]#[::unity2::class(namespace="App",name="Versus")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::versus::Versus>)]pub struct Versus{#[offset(32)]#[rename(name="m_PlayerMetaData")]pub m_player_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(40)]#[rename(name="m_PlayerData")]pub m_player_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(48)]#[rename(name="m_PlayerRatingList")]pub m_player_rating_list:crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> , #[offset(56)]#[rename(name="m_OpponentMetaData")]pub m_opponent_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(64)]#[rename(name="m_OpponentData")]pub m_opponent_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(72)]#[rename(name="m_ReplayData")]pub m_replay_data:crate::app::versusserverreplaydata::VersusServerReplayData, #[offset(80)]#[rename(name="m_ReplayMetaData")]pub m_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(88)]#[rename(name="m_CasualOpponentMetaData")]pub m_casual_opponent_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(96)]#[rename(name="m_CasualOpponentData")]pub m_casual_opponent_data:crate::app::versusservercasualdata::VersusServerCasualData, #[offset(104)]#[rename(name="m_CasualPlayerData")]pub m_casual_player_data:crate::app::versusservercasualdata::VersusServerCasualData, #[offset(112)]#[rename(name="m_CasualPlayerMetaData")]pub m_casual_player_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(120)]#[rename(name="m_BackupData")]pub m_backup_data:crate::app::versusbackupdata::VersusBackupData, #[offset(128)]#[rename(name="m_EditBackupData")]pub m_edit_backup_data:crate::app::versuseditmodebackupdata::VersusEditModeBackupData, #[offset(136)]#[rename(name="m_Mode")]pub m_mode:crate::app::versus::Versus_Mode, #[offset(140)]#[rename(name="m_MatchingType")]pub m_matching_type:crate::app::versus::Versus_MatchingType, #[offset(144)]#[rename(name="m_Error")]pub m_error:crate::app::versus::Versus_Error, #[offset(148)]#[rename(name="m_Result")]pub m_result:crate::app::versus::Versus_MapResult, #[offset(152)]#[rename(name="m_IsSurrender")]pub m_is_surrender:bool, #[offset(156)]#[rename(name="m_CasualMapNumber")]pub m_casual_map_number:i32, #[static_field]#[rename(name="ReplaySlotCount")]pub replay_slot_count:i32, #[offset(169)]#[rename(name="m_IsExistOnServer")]pub m_is_exist_on_server:bool, #[offset(176)]#[rename(name="m_History")]pub m_history:crate::app::versus::Versus_DownloadHistory,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_DownloadHistory.md"))]#[::unity2::class(namespace="App",name="Versus.DownloadHistory")]#[parent(crate::system::object::Object)]pub struct Versus_DownloadHistory{#[static_field]#[rename(name="CoolTimeSecond")]pub cool_time_second:i64, #[offset(16)]#[rename(name="m_DownloadedDataList")]pub m_downloaded_data_list:crate::system::collections::generic::list_1::List_1<crate::app::versus::Versus_DownloadHistory_CheckData> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_VersusCheck.md"))]#[::unity2::class(namespace="App",name="Versus.VersusCheck")]#[parent(crate::system::object::Object)]pub struct Versus_VersusCheck{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_DownloadHistory_CheckData.md"))]#[::unity2::class(namespace="App",name="Versus.DownloadHistory.CheckData")]#[parent(crate::system::object::Object)]pub struct Versus_DownloadHistory_CheckData{#[offset(16)]#[rename(name="m_IsDownloaded")]pub m_is_downloaded:bool, #[offset(24)]#[rename(name="m_DataTime")]pub m_data_time:i64,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_MatchingType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_MatchingType{pub value:i32,}
 impl::unity2::ClassIdentity for Versus_MatchingType{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Versus.MatchingType";
@@ -70,26 +38,48 @@ pub fn profile()->Self{Self{value:3}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_MapObjectCounter.md"))]#[::unity2::class(namespace="App",name="Versus.MapObjectCounter")]#[parent(crate::system::object::Object)]pub struct Versus_MapObjectCounter{#[offset(16)]#[rename(name="m_Dict")]pub m_dict:crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_Mode{pub value:i32,}
-impl::unity2::ClassIdentity for Versus_Mode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Versus.Mode";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus.md"))]#[::unity2::class(namespace="App",name="Versus")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::versus::Versus>)]pub struct Versus{#[offset(32)]#[rename(name="m_PlayerMetaData")]pub m_player_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(40)]#[rename(name="m_PlayerData")]pub m_player_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(48)]#[rename(name="m_PlayerRatingList")]pub m_player_rating_list:crate::system::collections::generic::list_1::List_1<crate::app::nexversus::NexVersus_RatingData> , #[offset(56)]#[rename(name="m_OpponentMetaData")]pub m_opponent_meta_data:crate::app::versusserverrankedmetadata::VersusServerRankedMetaData, #[offset(64)]#[rename(name="m_OpponentData")]pub m_opponent_data:crate::app::versusserverrankeddata::VersusServerRankedData, #[offset(72)]#[rename(name="m_ReplayData")]pub m_replay_data:crate::app::versusserverreplaydata::VersusServerReplayData, #[offset(80)]#[rename(name="m_ReplayMetaData")]pub m_replay_meta_data:crate::app::versusserverreplaymetadata::VersusServerReplayMetaData, #[offset(88)]#[rename(name="m_CasualOpponentMetaData")]pub m_casual_opponent_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(96)]#[rename(name="m_CasualOpponentData")]pub m_casual_opponent_data:crate::app::versusservercasualdata::VersusServerCasualData, #[offset(104)]#[rename(name="m_CasualPlayerData")]pub m_casual_player_data:crate::app::versusservercasualdata::VersusServerCasualData, #[offset(112)]#[rename(name="m_CasualPlayerMetaData")]pub m_casual_player_meta_data:crate::app::versusservercasualmetadata::VersusServerCasualMetaData, #[offset(120)]#[rename(name="m_BackupData")]pub m_backup_data:crate::app::versusbackupdata::VersusBackupData, #[offset(128)]#[rename(name="m_EditBackupData")]pub m_edit_backup_data:crate::app::versuseditmodebackupdata::VersusEditModeBackupData, #[offset(136)]#[rename(name="m_Mode")]pub m_mode:crate::app::versus::Versus_Mode, #[offset(140)]#[rename(name="m_MatchingType")]pub m_matching_type:crate::app::versus::Versus_MatchingType, #[offset(144)]#[rename(name="m_Error")]pub m_error:crate::app::versus::Versus_Error, #[offset(148)]#[rename(name="m_Result")]pub m_result:crate::app::versus::Versus_MapResult, #[offset(152)]#[rename(name="m_IsSurrender")]pub m_is_surrender:bool, #[offset(156)]#[rename(name="m_CasualMapNumber")]pub m_casual_map_number:i32, #[static_field]#[rename(name="ReplaySlotCount")]pub replay_slot_count:i32, #[offset(169)]#[rename(name="m_IsExistOnServer")]pub m_is_exist_on_server:bool, #[offset(176)]#[rename(name="m_History")]pub m_history:crate::app::versus::Versus_DownloadHistory,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_MapResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_MapResult{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_MapResult{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.MapResult";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for Versus_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for Versus_MapResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl Versus_Mode{pub fn none()->Self{Self{value:0}
+impl Versus_MapResult{pub fn win()->Self{Self{value:0}
 }
-pub fn edit()->Self{Self{value:1}
+pub fn lose()->Self{Self{value:1}
 }
-pub fn casual()->Self{Self{value:2}
+pub fn none()->Self{Self{value:2}
 }
-pub fn ranked()->Self{Self{value:3}
+pub fn abort()->Self{Self{value:3}
 }
-pub fn replay()->Self{Self{value:4}
 }
-pub fn mock_battle()->Self{Self{value:5}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_VersusCheck.md"))]#[::unity2::class(namespace="App",name="Versus.VersusCheck")]#[parent(crate::system::object::Object)]pub struct Versus_VersusCheck{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_Error.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_Error{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_Error{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.Error";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for Versus_Error{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl Versus_Error{pub fn none()->Self{Self{value: -1}
+}
+pub fn ranked_report()->Self{Self{value:101}
+}
+pub fn ranked_offence_unit_none()->Self{Self{value:102}
+}
+pub fn invalid_data()->Self{Self{value:103}
 }
 }
 
@@ -124,29 +114,90 @@ pub fn num()->Self{Self{value:7}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_MapResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_MapResult{pub value:i32,}
-impl::unity2::ClassIdentity for Versus_MapResult{const NAMESPACE: &'static str="App";
-const NAME: &'static str="Versus.MapResult";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Versus_Mode{pub value:i32,}
+impl::unity2::ClassIdentity for Versus_Mode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="Versus.Mode";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for Versus_MapResult{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for Versus_Mode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl Versus_MapResult{pub fn win()->Self{Self{value:0}
+impl Versus_Mode{pub fn none()->Self{Self{value:0}
 }
-pub fn lose()->Self{Self{value:1}
+pub fn edit()->Self{Self{value:1}
 }
-pub fn none()->Self{Self{value:2}
+pub fn casual()->Self{Self{value:2}
 }
-pub fn abort()->Self{Self{value:3}
+pub fn ranked()->Self{Self{value:3}
+}
+pub fn replay()->Self{Self{value:4}
+}
+pub fn mock_battle()->Self{Self{value:5}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_DownloadHistory.md"))]#[::unity2::class(namespace="App",name="Versus.DownloadHistory")]#[parent(crate::system::object::Object)]pub struct Versus_DownloadHistory{#[static_field]#[rename(name="CoolTimeSecond")]pub cool_time_second:i64, #[offset(16)]#[rename(name="m_DownloadedDataList")]pub m_downloaded_data_list:crate::system::collections::generic::list_1::List_1<crate::app::versus::Versus_DownloadHistory_CheckData> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/versus/Versus_DownloadHistory_CheckData.md"))]#[::unity2::class(namespace="App",name="Versus.DownloadHistory.CheckData")]#[parent(crate::system::object::Object)]pub struct Versus_DownloadHistory_CheckData{#[offset(16)]#[rename(name="m_IsDownloaded")]pub m_is_downloaded:bool, #[offset(24)]#[rename(name="m_DataTime")]pub m_data_time:i64,}
 
 }
 
 #[cfg(feature = "app-versus-types")]
 pub use __types::*;
+
+#[cfg(feature="app-versus")]pub trait IVersus_MapObjectCounterMethods:IVersus_MapObjectCounter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f950usize)as*mut u8,();
+(Versus_MapObjectCounter)__receiver)}
+}
+#[doc="`Add(::unity2::Il2CppString)` overload"]fn add(self,obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f9e0usize)as*mut u8,();
+(Versus_MapObjectCounter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(obj_name))}
+}
+#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32>{unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fb30usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32> ;
+(Versus_MapObjectCounter)__receiver)}
+}
+}
+
+#[cfg(feature="app-versus")]impl<__T:IVersus_MapObjectCounter>IVersus_MapObjectCounterMethods for __T{}
+
+#[cfg(feature="app-versus")]impl Versus_MapObjectCounter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-versus")]impl Versus_MapObjectCounter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Versus_MapObjectCounter), ::core::stringify!(new),));
+ <Self as IVersus_MapObjectCounterMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-versus")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Versus_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:Versus,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Versus as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(Versus, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:Versus,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Versus as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(Versus, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-versus")]impl Versus{#[doc="`IsValid()` overload"]pub fn is_valid()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26a67a0usize)as*mut u8,bool;
 )}
@@ -193,12 +244,10 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-versus")]pub trait IVersusMethods:IVersus{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26a5f30usize)as*mut u8,();
-(Versus)__receiver)}
+__Versus_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6740usize)as*mut u8,();
-(Versus)__receiver)}
+__Versus_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanSortieRanked(crate::app::unit::Unit)` overload"]fn can_sortie_ranked(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <Versus as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26a6e90usize)as*mut u8,bool;
@@ -548,55 +597,6 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-versus")]impl Versus_DownloadHistory{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f900usize)as*mut u8,();
-)}
-}
-}
-
-#[cfg(feature="app-versus")]pub trait IVersus_DownloadHistoryMethods:IVersus_DownloadHistory{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f2e0usize)as*mut u8,();
-(Versus_DownloadHistory)__receiver)}
-}
-#[doc="`InitializeCheckData()` overload"]fn initialize_check_data(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f380usize)as*mut u8,();
-(Versus_DownloadHistory)__receiver)}
-}
-#[doc="`SetDonwloaded(crate::app::versus::Versus_CheckDataType)` overload"]fn set_donwloaded(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f570usize)as*mut u8,();
-(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
-}
-#[doc="`IsDownloaded(crate::app::versus::Versus_CheckDataType)` overload"]fn is_downloaded(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->bool{unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f620usize)as*mut u8,bool;
-(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
-}
-#[doc="`ResetCheckData(crate::app::versus::Versus_CheckDataType)` overload"]fn reset_check_data(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f690usize)as*mut u8,();
-(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
-}
-#[doc="`AllReset()` overload"]fn all_reset(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f700usize)as*mut u8,();
-(Versus_DownloadHistory)__receiver)}
-}
-}
-
-#[cfg(feature="app-versus")]impl<__T:IVersus_DownloadHistory>IVersus_DownloadHistoryMethods for __T{}
-
-#[cfg(feature="app-versus")]impl Versus_DownloadHistory{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn initialize_check_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_donwloaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_downloaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn reset_check_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn all_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-versus")]impl Versus_DownloadHistory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Versus_DownloadHistory), ::core::stringify!(new),));
- <Self as IVersus_DownloadHistoryMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-versus")]impl Versus_VersusCheck{#[doc="`Validate()` overload"]pub fn validate()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fbb0usize)as*mut u8,bool;
 )}
 }
@@ -692,6 +692,55 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f900usize)as*mut u8,();
+)}
+}
+}
+
+#[cfg(feature="app-versus")]pub trait IVersus_DownloadHistoryMethods:IVersus_DownloadHistory{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f2e0usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver)}
+}
+#[doc="`InitializeCheckData()` overload"]fn initialize_check_data(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f380usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver)}
+}
+#[doc="`SetDonwloaded(crate::app::versus::Versus_CheckDataType)` overload"]fn set_donwloaded(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f570usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`IsDownloaded(crate::app::versus::Versus_CheckDataType)` overload"]fn is_downloaded(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->bool{unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f620usize)as*mut u8,bool;
+(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`ResetCheckData(crate::app::versus::Versus_CheckDataType)` overload"]fn reset_check_data(self,data_type:impl::core::convert::Into<crate::app::versus::Versus_CheckDataType>)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f690usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver,(crate::app::versus::Versus_CheckDataType)::core::convert::Into::into(data_type))}
+}
+#[doc="`AllReset()` overload"]fn all_reset(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f700usize)as*mut u8,();
+(Versus_DownloadHistory)__receiver)}
+}
+}
+
+#[cfg(feature="app-versus")]impl<__T:IVersus_DownloadHistory>IVersus_DownloadHistoryMethods for __T{}
+
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initialize_check_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_donwloaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_downloaded_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn reset_check_data_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn all_reset_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-versus")]impl Versus_DownloadHistory{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Versus_DownloadHistory), ::core::stringify!(new),));
+ <Self as IVersus_DownloadHistoryMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-versus")]pub trait IVersus_DownloadHistory_CheckDataMethods:IVersus_DownloadHistory_CheckData{#[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Versus_DownloadHistory_CheckData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22f6370usize)as*mut u8,();
 (Versus_DownloadHistory_CheckData)__receiver)}
@@ -725,57 +774,29 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-versus")]pub trait IVersus_MapObjectCounterMethods:IVersus_MapObjectCounter{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f950usize)as*mut u8,();
-(Versus_MapObjectCounter)__receiver)}
-}
-#[doc="`Add(::unity2::Il2CppString)` overload"]fn add(self,obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5f9e0usize)as*mut u8,();
-(Versus_MapObjectCounter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(obj_name))}
-}
-#[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32>{unsafe{let __receiver= <Versus_MapObjectCounter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b5fb30usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2_Enumerator<crate::app::mapeditorcategorydata::MapEditorCategoryData,i32> ;
-(Versus_MapObjectCounter)__receiver)}
-}
-}
-
-#[cfg(feature="app-versus")]impl<__T:IVersus_MapObjectCounter>IVersus_MapObjectCounterMethods for __T{}
-
-#[cfg(feature="app-versus")]impl Versus_MapObjectCounter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_enumerator_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-versus")]impl Versus_MapObjectCounter{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Versus_MapObjectCounter), ::core::stringify!(new),));
- <Self as IVersus_MapObjectCounterMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-versus")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Versus_Error;
-    pub use super::Versus;
-    pub use super::IVersus;
-    pub use super::IVersusMethods;
-    pub use super::Versus_DownloadHistory;
-    pub use super::IVersus_DownloadHistory;
-    pub use super::IVersus_DownloadHistoryMethods;
-    pub use super::Versus_VersusCheck;
-    pub use super::IVersus_VersusCheck;
-    pub use super::IVersus_VersusCheckMethods;
-    pub use super::Versus_DownloadHistory_CheckData;
-    pub use super::IVersus_DownloadHistory_CheckData;
-    pub use super::IVersus_DownloadHistory_CheckDataMethods;
     pub use super::Versus_MatchingType;
     pub use super::Versus_MapObjectCounter;
     pub use super::IVersus_MapObjectCounter;
     pub use super::IVersus_MapObjectCounterMethods;
-    pub use super::Versus_Mode;
-    pub use super::Versus_CheckDataType;
+    pub use super::Versus;
+    pub use super::IVersus;
+    pub use super::IVersusMethods;
     pub use super::Versus_MapResult;
+    pub use super::Versus_VersusCheck;
+    pub use super::IVersus_VersusCheck;
+    pub use super::IVersus_VersusCheckMethods;
+    pub use super::Versus_Error;
+    pub use super::Versus_CheckDataType;
+    pub use super::Versus_Mode;
+    pub use super::Versus_DownloadHistory;
+    pub use super::IVersus_DownloadHistory;
+    pub use super::IVersus_DownloadHistoryMethods;
+    pub use super::Versus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckData;
+    pub use super::IVersus_DownloadHistory_CheckDataMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

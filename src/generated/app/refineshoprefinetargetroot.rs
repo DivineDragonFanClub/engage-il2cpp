@@ -21,15 +21,50 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinetargetroot/RefineShopRefineTargetRoot.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineTargetRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineShopRefineTargetRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_RefineShopRefineTargetMenuObject")]pub m_refine_shop_refine_target_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_ItemDetailWindowBase")]pub m_item_detail_window_base:crate::app::refineitemdetailwindow::RefineItemDetailWindow, #[offset(40)]#[rename(name="m_ItemDetailWindowTarget")]pub m_item_detail_window_target:crate::app::refineitemdetailwindow::RefineItemDetailWindow, #[offset(48)]#[rename(name="m_ArrowObject")]pub m_arrow_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot_ReturnEventHandler, #[offset(64)]#[rename(name="m_RefineShopRefineTargetMenu")]pub m_refine_shop_refine_target_menu:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu, #[offset(72)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(80)]#[rename(name="m_ItemIndex")]pub m_item_index:i32, #[offset(88)]#[rename(name="m_BaseUnitItem")]pub m_base_unit_item:crate::app::unititem::UnitItem, #[offset(96)]#[rename(name="m_RefineLevel")]pub m_refine_level:i32, #[offset(100)]#[rename(name="m_EvolveIndex")]pub m_evolve_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinetargetroot/RefineShopRefineTargetRoot_ReturnEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineTargetRoot.ReturnEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineShopRefineTargetRoot_ReturnEventHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refineshoprefinetargetroot/RefineShopRefineTargetRoot.md"))]#[::unity2::class(namespace="App",name="RefineShopRefineTargetRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct RefineShopRefineTargetRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_RefineShopRefineTargetMenuObject")]pub m_refine_shop_refine_target_menu_object:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_ItemDetailWindowBase")]pub m_item_detail_window_base:crate::app::refineitemdetailwindow::RefineItemDetailWindow, #[offset(40)]#[rename(name="m_ItemDetailWindowTarget")]pub m_item_detail_window_target:crate::app::refineitemdetailwindow::RefineItemDetailWindow, #[offset(48)]#[rename(name="m_ArrowObject")]pub m_arrow_object:crate::unity_engine::gameobject::GameObject, #[offset(56)]#[rename(name="m_ReturnEventHandler")]pub m_return_event_handler:crate::app::refineshoprefinetargetroot::RefineShopRefineTargetRoot_ReturnEventHandler, #[offset(64)]#[rename(name="m_RefineShopRefineTargetMenu")]pub m_refine_shop_refine_target_menu:crate::app::refineshoprefinetargetmenu::RefineShopRefineTargetMenu, #[offset(72)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(80)]#[rename(name="m_ItemIndex")]pub m_item_index:i32, #[offset(88)]#[rename(name="m_BaseUnitItem")]pub m_base_unit_item:crate::app::unititem::UnitItem, #[offset(96)]#[rename(name="m_RefineLevel")]pub m_refine_level:i32, #[offset(100)]#[rename(name="m_EvolveIndex")]pub m_evolve_index:i32,}
 
 }
 
 #[cfg(feature = "app-refineshoprefinetargetroot-types")]
 pub use __types::*;
+
+#[cfg(feature="app-refineshoprefinetargetroot")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopRefineTargetRoot_ReturnEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefineShopRefineTargetRoot_ReturnEventHandler,unit_item:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineShopRefineTargetRoot_ReturnEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefineShopRefineTargetRoot_ReturnEventHandler,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit_item,__mi)}
+}
+
+#[cfg(feature="app-refineshoprefinetargetroot")]pub trait IRefineShopRefineTargetRoot_ReturnEventHandlerMethods:IRefineShopRefineTargetRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopRefineTargetRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1afd990usize)as*mut u8,();
+(RefineShopRefineTargetRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopRefineTargetRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RefineShopRefineTargetRoot_ReturnEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(unit_item), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-refineshoprefinetargetroot")]impl<__T:IRefineShopRefineTargetRoot_ReturnEventHandler>IRefineShopRefineTargetRoot_ReturnEventHandlerMethods for __T{}
+
+#[cfg(feature="app-refineshoprefinetargetroot")]impl RefineShopRefineTargetRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refineshoprefinetargetroot")]impl RefineShopRefineTargetRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineShopRefineTargetRoot_ReturnEventHandler), ::core::stringify!(new),));
+ <Self as IRefineShopRefineTargetRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="app-refineshoprefinetargetroot")]impl RefineShopRefineTargetRoot{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22b4290usize)as*mut u8,();
 )}
@@ -121,38 +156,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-refineshoprefinetargetroot")]pub trait IRefineShopRefineTargetRoot_ReturnEventHandlerMethods:IRefineShopRefineTargetRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineShopRefineTargetRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afd990usize)as*mut u8,();
-(RefineShopRefineTargetRoot_ReturnEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(crate::app::unititem::UnitItem)` overload"]fn invoke(self,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopRefineTargetRoot_ReturnEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1afd9b0usize)as*mut u8,();
-(RefineShopRefineTargetRoot_ReturnEventHandler)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
-}
-}
-
-#[cfg(feature="app-refineshoprefinetargetroot")]impl<__T:IRefineShopRefineTargetRoot_ReturnEventHandler>IRefineShopRefineTargetRoot_ReturnEventHandlerMethods for __T{}
-
-#[cfg(feature="app-refineshoprefinetargetroot")]impl RefineShopRefineTargetRoot_ReturnEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refineshoprefinetargetroot")]impl RefineShopRefineTargetRoot_ReturnEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefineShopRefineTargetRoot_ReturnEventHandler), ::core::stringify!(new),));
- <Self as IRefineShopRefineTargetRoot_ReturnEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-refineshoprefinetargetroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineShopRefineTargetRoot;
-    pub use super::IRefineShopRefineTargetRoot;
-    pub use super::IRefineShopRefineTargetRootMethods;
     pub use super::RefineShopRefineTargetRoot_ReturnEventHandler;
     pub use super::IRefineShopRefineTargetRoot_ReturnEventHandler;
     pub use super::IRefineShopRefineTargetRoot_ReturnEventHandlerMethods;
+    pub use super::RefineShopRefineTargetRoot;
+    pub use super::IRefineShopRefineTargetRoot;
+    pub use super::IRefineShopRefineTargetRootMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

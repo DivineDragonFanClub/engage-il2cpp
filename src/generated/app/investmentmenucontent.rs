@@ -25,15 +25,68 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_BattleEnemyInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.BattleEnemyInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_BattleEnemyInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(32)]#[rename(name="m_current")]pub m_current:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_next")]pub m_next:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_nextPercent")]pub m_next_percent:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_AnimalInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.AnimalInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_AnimalInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_DropItemInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.DropItemInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_DropItemInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_current")]pub m_current:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(48)]#[rename(name="m_nextCode")]pub m_next_code:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(56)]#[rename(name="m_next")]pub m_next:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/investmentmenucontent/InvestmentMenuContent_AnimalInfo.md"))]#[::unity2::class(namespace="App",name="InvestmentMenuContent.AnimalInfo")]#[parent(crate::system::object::Object)]pub struct InvestmentMenuContent_AnimalInfo{#[offset(16)]#[rename(name="m_root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_text")]pub m_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-investmentmenucontent-types")]
 pub use __types::*;
+
+#[cfg(feature="app-investmentmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvestmentMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn calc_cursor_moved_pos_y(this:InvestmentMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <InvestmentMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(InvestmentMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn update(this:InvestmentMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <InvestmentMenuContent as::unity2::ClassIdentity> ::NAME,"Update",));
+let inner:extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_menu_item_content_max(this:InvestmentMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InvestmentMenuContent as::unity2::ClassIdentity> ::NAME,"GetMenuItemContentMax",));
+let inner:extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_w(this:InvestmentMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <InvestmentMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:InvestmentMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <InvestmentMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(InvestmentMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x27a27f0usize)as*mut u8,();
 )}
@@ -57,24 +110,19 @@ pub use __types::*;
 (InvestmentMenuContent)__receiver)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <InvestmentMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27a1710usize)as*mut u8,f32;
-(InvestmentMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__InvestmentMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <InvestmentMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27a17e0usize)as*mut u8,();
-(InvestmentMenuContent)__receiver)}
+__InvestmentMenuContent_unity2_raw::update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <InvestmentMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27a2a10usize)as*mut u8,i32;
-(InvestmentMenuContent)__receiver)}
+__InvestmentMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <InvestmentMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27a2a20usize)as*mut u8,f32;
-(InvestmentMenuContent)__receiver)}
+__InvestmentMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <InvestmentMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27a2a90usize)as*mut u8,f32;
-(InvestmentMenuContent)__receiver)}
+__InvestmentMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetNationData(crate::app::hubnationdata::HubNationData)` overload"]fn set_nation_data(self,data:impl::core::convert::Into<crate::app::hubnationdata::HubNationData>)->(){unsafe{let __receiver= <InvestmentMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x27a15b0usize)as*mut u8,();
@@ -158,44 +206,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_AnimalInfoMethods:IInvestmentMenuContent_AnimalInfo{#[doc="`SetupObj()` overload"]fn setup_obj(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd1d0usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver)}
-}
-#[doc="`Set(::unity2::Il2CppString)` overload"]fn set(self,animal_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd380usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(animal_id))}
-}
-#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd580usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd500usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd660usize)as*mut u8,();
-(InvestmentMenuContent_AnimalInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_AnimalInfo>IInvestmentMenuContent_AnimalInfoMethods for __T{}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{pub fn setup_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(InvestmentMenuContent_AnimalInfo), ::core::stringify!(new),));
- <Self as IInvestmentMenuContent_AnimalInfoMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_DropItemInfoMethods:IInvestmentMenuContent_DropItemInfo{#[doc="`SetupObj()` overload"]fn setup_obj(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_DropItemInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd990usize)as*mut u8,();
 (InvestmentMenuContent_DropItemInfo)__receiver)}
@@ -244,6 +254,44 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-investmentmenucontent")]pub trait IInvestmentMenuContent_AnimalInfoMethods:IInvestmentMenuContent_AnimalInfo{#[doc="`SetupObj()` overload"]fn setup_obj(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd1d0usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver)}
+}
+#[doc="`Set(::unity2::Il2CppString)` overload"]fn set(self,animal_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd380usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(animal_id))}
+}
+#[doc="`SetIcon(::unity2::Il2CppString)` overload"]fn set_icon(self,icon_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd580usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(icon_name))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd500usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <InvestmentMenuContent_AnimalInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fcd660usize)as*mut u8,();
+(InvestmentMenuContent_AnimalInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl<__T:IInvestmentMenuContent_AnimalInfo>IInvestmentMenuContent_AnimalInfoMethods for __T{}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{pub fn setup_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-investmentmenucontent")]impl InvestmentMenuContent_AnimalInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(InvestmentMenuContent_AnimalInfo), ::core::stringify!(new),));
+ <Self as IInvestmentMenuContent_AnimalInfoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-investmentmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
@@ -253,12 +301,12 @@ pub mod prelude {
     pub use super::InvestmentMenuContent_BattleEnemyInfo;
     pub use super::IInvestmentMenuContent_BattleEnemyInfo;
     pub use super::IInvestmentMenuContent_BattleEnemyInfoMethods;
-    pub use super::InvestmentMenuContent_AnimalInfo;
-    pub use super::IInvestmentMenuContent_AnimalInfo;
-    pub use super::IInvestmentMenuContent_AnimalInfoMethods;
     pub use super::InvestmentMenuContent_DropItemInfo;
     pub use super::IInvestmentMenuContent_DropItemInfo;
     pub use super::IInvestmentMenuContent_DropItemInfoMethods;
+    pub use super::InvestmentMenuContent_AnimalInfo;
+    pub use super::IInvestmentMenuContent_AnimalInfo;
+    pub use super::IInvestmentMenuContent_AnimalInfoMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

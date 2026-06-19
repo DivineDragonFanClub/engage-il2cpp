@@ -16,6 +16,89 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-delegate-types")]
 pub use __types::*;
 
+#[cfg(feature="system-delegate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Delegate_unity2_raw{use super:: * ;
+pub unsafe fn dynamic_invoke_impl(this:Delegate,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"DynamicInvokeImpl",));
+let inner:extern "C" fn(Delegate, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,__mi)}
+pub unsafe fn clone(this:Delegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(Delegate, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn equals(this:Delegate,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(Delegate,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn get_hash_code(this:Delegate,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(Delegate, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_method_impl(this:Delegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"GetMethodImpl",));
+let inner:extern "C" fn(Delegate, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_invocation_list(this:Delegate,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::delegate::Delegate>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"GetInvocationList",));
+let inner:extern "C" fn(Delegate, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::delegate::Delegate> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn combine_impl(this:Delegate,d:crate::system::delegate::Delegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"CombineImpl",));
+let inner:extern "C" fn(Delegate,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,d,__mi)}
+pub unsafe fn remove_impl(this:Delegate,d:crate::system::delegate::Delegate,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::delegate::Delegate{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Delegate as::unity2::ClassIdentity> ::NAME,"RemoveImpl",));
+let inner:extern "C" fn(Delegate,crate::system::delegate::Delegate, ::unity2::OptionalMethod,)->crate::system::delegate::Delegate= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,d,__mi)}
+}
+
 #[cfg(feature="system-delegate")]impl Delegate{#[doc="`CreateDelegate_internal(::unity2::SystemType, crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo, bool)` overload"]pub fn create_delegate_internal(r#type:impl::core::convert::Into< ::unity2::SystemType> ,target:impl::core::convert::Into<crate::system::object::Object> ,info:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo> ,throw_on_bind_failure:impl::core::convert::Into<bool>)->crate::system::delegate::Delegate{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3639bb0usize)as*mut u8,crate::system::delegate::Delegate;
 (::unity2::SystemType)::core::convert::Into::into(r#type),(crate::system::object::Object)::core::convert::Into::into(target),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(info),(bool)::core::convert::Into::into(throw_on_bind_failure))}
 }
@@ -102,36 +185,28 @@ pub use __types::*;
 (Delegate)__receiver)}
 }
 #[doc="`DynamicInvokeImpl(::unity2::Array<crate::system::object::Object>)` overload"]fn dynamic_invoke_impl(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363b140usize)as*mut u8,crate::system::object::Object;
-(Delegate)__receiver,(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+__Delegate_unity2_raw::dynamic_invoke_impl(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363b440usize)as*mut u8,crate::system::object::Object;
-(Delegate)__receiver)}
+__Delegate_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363b450usize)as*mut u8,bool;
-(Delegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__Delegate_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363b620usize)as*mut u8,i32;
-(Delegate)__receiver)}
+__Delegate_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMethodImpl()` overload"]fn get_method_impl(self,)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363b6a0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(Delegate)__receiver)}
+__Delegate_unity2_raw::get_method_impl(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetInvocationList()` overload"]fn get_invocation_list(self,)-> ::unity2::Array<crate::system::delegate::Delegate>{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363ba20usize)as*mut u8, ::unity2::Array<crate::system::delegate::Delegate> ;
-(Delegate)__receiver)}
+__Delegate_unity2_raw::get_invocation_list(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CombineImpl(crate::system::delegate::Delegate)` overload"]fn combine_impl(self,d:impl::core::convert::Into<crate::system::delegate::Delegate>)->crate::system::delegate::Delegate{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363bd10usize)as*mut u8,crate::system::delegate::Delegate;
-(Delegate)__receiver,(crate::system::delegate::Delegate)::core::convert::Into::into(d))}
+__Delegate_unity2_raw::combine_impl(__receiver, ::core::convert::Into::into(d), ::core::option::Option::None)}
 }
 #[doc="`RemoveImpl(crate::system::delegate::Delegate)` overload"]fn remove_impl(self,d:impl::core::convert::Into<crate::system::delegate::Delegate>)->crate::system::delegate::Delegate{unsafe{let __receiver= <Delegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x363bf20usize)as*mut u8,crate::system::delegate::Delegate;
-(Delegate)__receiver,(crate::system::delegate::Delegate)::core::convert::Into::into(d))}
+__Delegate_unity2_raw::remove_impl(__receiver, ::core::convert::Into::into(d), ::core::option::Option::None)}
 }
 }
 

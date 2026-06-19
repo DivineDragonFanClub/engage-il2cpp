@@ -16,9 +16,21 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-rendering-universal-internal-sortprepunctuallight-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-universal-internal-sortprepunctuallight")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SortPrePunctualLight_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:SortPrePunctualLight,a:crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight,b:crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SortPrePunctualLight as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(SortPrePunctualLight,crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight,crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-universal-internal-sortprepunctuallight")]pub trait ISortPrePunctualLightMethods:ISortPrePunctualLight{#[doc="`Compare(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight, crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)` overload"]fn compare(self,a:impl::core::convert::Into<crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight> ,b:impl::core::convert::Into<crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight>)->i32{unsafe{let __receiver= <SortPrePunctualLight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2edda30usize)as*mut u8,i32;
-(SortPrePunctualLight)__receiver,(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)::core::convert::Into::into(a),(crate::unity_engine::rendering::universal::internal::deferredtiler::DeferredTiler_PrePunctualLight)::core::convert::Into::into(b))}
+__SortPrePunctualLight_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortPrePunctualLight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2edda50usize)as*mut u8,();

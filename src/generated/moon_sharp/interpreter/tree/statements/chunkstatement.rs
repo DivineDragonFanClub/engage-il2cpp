@@ -31,26 +31,26 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ChunkStatement as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ChunkStatement as::unity2::ClassIdentity> ::class(),"Compile",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ChunkStatement as::unity2::ClassIdentity> ::NAME,"Compile",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_create_upvalue{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::symbolref::SymbolRef as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ChunkStatement as::unity2::ClassIdentity> ::class(),"CreateUpvalue",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ChunkStatement as::unity2::ClassIdentity> ::NAME,"CreateUpvalue",e),}
-}
-}
+pub unsafe fn compile(this:ChunkStatement,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ChunkStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
+let inner:extern "C" fn(ChunkStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,__mi)}
+pub unsafe fn create_upvalue(this:ChunkStatement,scope:crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,symbol:crate::moon_sharp::interpreter::symbolref::SymbolRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ChunkStatement as::unity2::ClassIdentity> ::NAME,"CreateUpvalue",));
+let inner:extern "C" fn(ChunkStatement,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,scope,symbol,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-chunkstatement")]pub trait IChunkStatementMethods:IChunkStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext>)->(){unsafe{let __receiver= <ChunkStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -58,12 +58,10 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ChunkStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <ChunkStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ChunkStatement_unity2_raw::__lookup_compile::get_method_info().method_ptr,();
-(ChunkStatement)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+__ChunkStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
 }
 #[doc="`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]fn create_upvalue(self,scope:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope> ,symbol:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <ChunkStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ChunkStatement_unity2_raw::__lookup_create_upvalue::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
-(ChunkStatement)__receiver,(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope)::core::convert::Into::into(scope),(crate::moon_sharp::interpreter::symbolref::SymbolRef)::core::convert::Into::into(symbol))}
+__ChunkStatement_unity2_raw::create_upvalue(__receiver, ::core::convert::Into::into(scope), ::core::convert::Into::into(symbol), ::core::option::Option::None)}
 }
 }
 

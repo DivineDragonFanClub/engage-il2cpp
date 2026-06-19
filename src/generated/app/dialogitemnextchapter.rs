@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-dialogitemnextchapter-types")]
 pub use __types::*;
 
+#[cfg(feature="app-dialogitemnextchapter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DialogItemNextChapter_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:DialogItemNextChapter,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <DialogItemNextChapter as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DialogItemNextChapter, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-dialogitemnextchapter")]pub trait IDialogItemNextChapterMethods:IDialogItemNextChapter{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,func:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <DialogItemNextChapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cec9f0usize)as*mut u8,();
 (DialogItemNextChapter)__receiver,(crate::system::action::Action)::core::convert::Into::into(func))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <DialogItemNextChapter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cecaa0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(DialogItemNextChapter)__receiver)}
+__DialogItemNextChapter_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 

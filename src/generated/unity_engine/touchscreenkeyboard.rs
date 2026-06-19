@@ -40,6 +40,19 @@ pub fn lost_focus()->Self{Self{value:3}
 #[cfg(feature = "unity_engine-touchscreenkeyboard-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-touchscreenkeyboard")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TouchScreenKeyboard_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:TouchScreenKeyboard,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <TouchScreenKeyboard as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(TouchScreenKeyboard, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-touchscreenkeyboard")]impl TouchScreenKeyboard{#[doc="`Internal_Destroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x378ec60usize)as*mut u8,();
 (::unity2::IntPtr)::core::convert::Into::into(ptr))}
 }
@@ -77,8 +90,7 @@ let mut __out_1= ::core::mem::MaybeUninit:: <i32> ::uninit();
 (TouchScreenKeyboard)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <TouchScreenKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x378ed70usize)as*mut u8,();
-(TouchScreenKeyboard)__receiver)}
+__TouchScreenKeyboard_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(::unity2::Il2CppString, crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType, bool, bool, bool, bool, ::unity2::Il2CppString, i32)` overload"]fn ctor(self,text:impl::core::convert::Into< ::unity2::Il2CppString> ,keyboard_type:impl::core::convert::Into<crate::unity_engine::touchscreenkeyboardtype::TouchScreenKeyboardType> ,autocorrection:impl::core::convert::Into<bool> ,multiline:impl::core::convert::Into<bool> ,secure:impl::core::convert::Into<bool> ,alert:impl::core::convert::Into<bool> ,text_placeholder:impl::core::convert::Into< ::unity2::Il2CppString> ,character_limit:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TouchScreenKeyboard as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x378ede0usize)as*mut u8,();

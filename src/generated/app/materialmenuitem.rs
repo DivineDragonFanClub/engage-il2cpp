@@ -15,26 +15,73 @@ use crate::system::object::{IObject,Object}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MaterialMenuItem.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MaterialMenuItem_DecideEventHandler{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materialmenuitem/MaterialMenuItem_SelectEventHandler.md"))]#[::unity2::class(namespace="App",name="MaterialMenuItem.SelectEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MaterialMenuItem_SelectEventHandler{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materialmenuitem/MaterialMenuItem.md"))]#[::unity2::class(namespace="App",name="MaterialMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MaterialMenuItem{#[offset(112)]#[rename(name="m_SelectEventHandler")]pub m_select_event_handler:crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler, #[offset(120)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/materialmenuitem/MaterialMenuItem_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MaterialMenuItem.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MaterialMenuItem_DecideEventHandler{}
 
 }
 
 #[cfg(feature = "app-materialmenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-materialmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaterialMenuItem_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:MaterialMenuItem_DecideEventHandler,material_id: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MaterialMenuItem_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(MaterialMenuItem_DecideEventHandler, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,material_id,__mi)}
+}
+
+#[cfg(feature="app-materialmenuitem")]pub trait IMaterialMenuItem_DecideEventHandlerMethods:IMaterialMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MaterialMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d590usize)as*mut u8,();
+(MaterialMenuItem_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MaterialMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MaterialMenuItem_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(material_id), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-materialmenuitem")]impl<__T:IMaterialMenuItem_DecideEventHandler>IMaterialMenuItem_DecideEventHandlerMethods for __T{}
+
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialMenuItem_DecideEventHandler), ::core::stringify!(new),));
+ <Self as IMaterialMenuItem_DecideEventHandlerMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="app-materialmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaterialMenuItem_SelectEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:MaterialMenuItem_SelectEventHandler,material_id: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MaterialMenuItem_SelectEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(MaterialMenuItem_SelectEventHandler, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,material_id,__mi)}
+}
+
 #[cfg(feature="app-materialmenuitem")]pub trait IMaterialMenuItem_SelectEventHandlerMethods:IMaterialMenuItem_SelectEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MaterialMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x208d950usize)as*mut u8,();
 (MaterialMenuItem_SelectEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MaterialMenuItem_SelectEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d970usize)as*mut u8,();
-(MaterialMenuItem_SelectEventHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_id))}
+__MaterialMenuItem_SelectEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(material_id), ::core::option::Option::None)}
 }
 }
 
@@ -51,6 +98,39 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-materialmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaterialMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MaterialMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MaterialMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MaterialMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:MaterialMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MaterialMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(MaterialMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MaterialMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MaterialMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MaterialMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-materialmenuitem")]pub trait IMaterialMenuItemMethods:IMaterialMenuItem{#[doc="`get_m_ItemRefineExchangeData()` overload"]fn get_m_item_refine_exchange_data(self,)->crate::app::itemrefineexchangedata::ItemRefineExchangeData{unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca0d0usize)as*mut u8,crate::app::itemrefineexchangedata::ItemRefineExchangeData;
 (MaterialMenuItem)__receiver)}
@@ -64,20 +144,17 @@ this}
 (MaterialMenuItem)__receiver,(crate::app::itemrefineexchangedata::ItemRefineExchangeData)::core::convert::Into::into(item_refine_exchange_data),(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::materialmenuitem::MaterialMenuItem_DecideEventHandler)::core::convert::Into::into(decide_event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca160usize)as*mut u8, ::unity2::Il2CppString;
-(MaterialMenuItem)__receiver)}
+__MaterialMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetSelectEventHandler(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)` overload"]fn set_select_event_handler(self,select_event_handler:impl::core::convert::Into<crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler>)->(){unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca170usize)as*mut u8,();
 (MaterialMenuItem)__receiver,(crate::app::materialmenuitem::MaterialMenuItem_SelectEventHandler)::core::convert::Into::into(select_event_handler))}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca180usize)as*mut u8,();
-(MaterialMenuItem)__receiver)}
+__MaterialMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MaterialMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25ca1d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MaterialMenuItem)__receiver)}
+__MaterialMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -99,41 +176,18 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-materialmenuitem")]pub trait IMaterialMenuItem_DecideEventHandlerMethods:IMaterialMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MaterialMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d590usize)as*mut u8,();
-(MaterialMenuItem_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Il2CppString)` overload"]fn invoke(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MaterialMenuItem_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d5b0usize)as*mut u8,();
-(MaterialMenuItem_DecideEventHandler)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(material_id))}
-}
-}
-
-#[cfg(feature="app-materialmenuitem")]impl<__T:IMaterialMenuItem_DecideEventHandler>IMaterialMenuItem_DecideEventHandlerMethods for __T{}
-
-#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_DecideEventHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-materialmenuitem")]impl MaterialMenuItem_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MaterialMenuItem_DecideEventHandler), ::core::stringify!(new),));
- <Self as IMaterialMenuItem_DecideEventHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-materialmenuitem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MaterialMenuItem_DecideEventHandler;
+    pub use super::IMaterialMenuItem_DecideEventHandler;
+    pub use super::IMaterialMenuItem_DecideEventHandlerMethods;
     pub use super::MaterialMenuItem_SelectEventHandler;
     pub use super::IMaterialMenuItem_SelectEventHandler;
     pub use super::IMaterialMenuItem_SelectEventHandlerMethods;
     pub use super::MaterialMenuItem;
     pub use super::IMaterialMenuItem;
     pub use super::IMaterialMenuItemMethods;
-    pub use super::MaterialMenuItem_DecideEventHandler;
-    pub use super::IMaterialMenuItem_DecideEventHandler;
-    pub use super::IMaterialMenuItem_DecideEventHandlerMethods;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;

@@ -18,29 +18,77 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akexternalsourceinfoarray-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akexternalsourceinfoarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkExternalSourceInfoArray_unity2_raw{use super:: * ;
+pub unsafe fn get_structure_size(this:AkExternalSourceInfoArray,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkExternalSourceInfoArray as::unity2::ClassIdentity> ::NAME,"get_StructureSize",));
+let inner:extern "C" fn(AkExternalSourceInfoArray, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn default_construct_at_int_ptr(this:AkExternalSourceInfoArray,address: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AkExternalSourceInfoArray as::unity2::ClassIdentity> ::NAME,"DefaultConstructAtIntPtr",));
+let inner:extern "C" fn(AkExternalSourceInfoArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,__mi)}
+pub unsafe fn release_allocated_memory_from_reference_at_int_ptr(this:AkExternalSourceInfoArray,address: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AkExternalSourceInfoArray as::unity2::ClassIdentity> ::NAME,"ReleaseAllocatedMemoryFromReferenceAtIntPtr",));
+let inner:extern "C" fn(AkExternalSourceInfoArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,__mi)}
+pub unsafe fn create_new_reference_from_int_ptr(this:AkExternalSourceInfoArray,address: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::akexternalsourceinfo::AkExternalSourceInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AkExternalSourceInfoArray as::unity2::ClassIdentity> ::NAME,"CreateNewReferenceFromIntPtr",));
+let inner:extern "C" fn(AkExternalSourceInfoArray, ::unity2::IntPtr, ::unity2::OptionalMethod,)->crate::root::akexternalsourceinfo::AkExternalSourceInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,__mi)}
+pub unsafe fn clone_into_reference_from_int_ptr(this:AkExternalSourceInfoArray,address: ::unity2::IntPtr,other:crate::root::akexternalsourceinfo::AkExternalSourceInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <AkExternalSourceInfoArray as::unity2::ClassIdentity> ::NAME,"CloneIntoReferenceFromIntPtr",));
+let inner:extern "C" fn(AkExternalSourceInfoArray, ::unity2::IntPtr,crate::root::akexternalsourceinfo::AkExternalSourceInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,address,other,__mi)}
+}
+
 #[cfg(feature="root-akexternalsourceinfoarray")]pub trait IAkExternalSourceInfoArrayMethods:IAkExternalSourceInfoArray{#[doc="`.ctor(i32)` overload"]fn ctor(self,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d6c0usize)as*mut u8,();
 (AkExternalSourceInfoArray)__receiver,(i32)::core::convert::Into::into(count))}
 }
 #[doc="`get_StructureSize()` overload"]fn get_structure_size(self,)->i32{unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d720usize)as*mut u8,i32;
-(AkExternalSourceInfoArray)__receiver)}
+__AkExternalSourceInfoArray_unity2_raw::get_structure_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DefaultConstructAtIntPtr(::unity2::IntPtr)` overload"]fn default_construct_at_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d790usize)as*mut u8,();
-(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+__AkExternalSourceInfoArray_unity2_raw::default_construct_at_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::option::Option::None)}
 }
 #[doc="`ReleaseAllocatedMemoryFromReferenceAtIntPtr(::unity2::IntPtr)` overload"]fn release_allocated_memory_from_reference_at_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d800usize)as*mut u8,();
-(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+__AkExternalSourceInfoArray_unity2_raw::release_allocated_memory_from_reference_at_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::option::Option::None)}
 }
 #[doc="`CreateNewReferenceFromIntPtr(::unity2::IntPtr)` overload"]fn create_new_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr>)->crate::root::akexternalsourceinfo::AkExternalSourceInfo{unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d870usize)as*mut u8,crate::root::akexternalsourceinfo::AkExternalSourceInfo;
-(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address))}
+__AkExternalSourceInfoArray_unity2_raw::create_new_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::option::Option::None)}
 }
 #[doc="`CloneIntoReferenceFromIntPtr(::unity2::IntPtr, crate::root::akexternalsourceinfo::AkExternalSourceInfo)` overload"]fn clone_into_reference_from_int_ptr(self,address:impl::core::convert::Into< ::unity2::IntPtr> ,other:impl::core::convert::Into<crate::root::akexternalsourceinfo::AkExternalSourceInfo>)->(){unsafe{let __receiver= <AkExternalSourceInfoArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1d8e0usize)as*mut u8,();
-(AkExternalSourceInfoArray)__receiver,(::unity2::IntPtr)::core::convert::Into::into(address),(crate::root::akexternalsourceinfo::AkExternalSourceInfo)::core::convert::Into::into(other))}
+__AkExternalSourceInfoArray_unity2_raw::clone_into_reference_from_int_ptr(__receiver, ::core::convert::Into::into(address), ::core::convert::Into::into(other), ::core::option::Option::None)}
 }
 }
 

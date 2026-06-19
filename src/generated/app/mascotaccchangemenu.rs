@@ -20,6 +20,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mascotaccchangemenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mascotaccchangemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MascotAccChangeMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MascotAccChangeMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MascotAccChangeMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MascotAccChangeMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:MascotAccChangeMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MascotAccChangeMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(MascotAccChangeMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_left(this:MascotAccChangeMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <MascotAccChangeMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(MascotAccChangeMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:MascotAccChangeMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <MascotAccChangeMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(MascotAccChangeMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+}
+
 #[cfg(feature="app-mascotaccchangemenu")]impl MascotAccChangeMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::mascotaccdata::MascotAccData_PartsType)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,r#type:impl::core::convert::Into<crate::app::mascotaccdata::MascotAccData_PartsType>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2030760usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::mascotaccdata::MascotAccData_PartsType)::core::convert::Into::into(r#type))}
 }
@@ -41,12 +84,10 @@ pub use __types::*;
 (MascotAccChangeMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MascotAccChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20309a0usize)as*mut u8, ::unity2::Il2CppString;
-(MascotAccChangeMenu)__receiver)}
+__MascotAccChangeMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MascotAccChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20309f0usize)as*mut u8,();
-(MascotAccChangeMenu)__receiver)}
+__MascotAccChangeMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ChangePartsType(i32, bool)` overload"]fn change_parts_type(self,directional:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <MascotAccChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2030680usize)as*mut u8,bool;
@@ -65,12 +106,10 @@ pub use __types::*;
 (MascotAccChangeMenu)__receiver,(crate::app::mascotaccdata::MascotAccData_PartsType)::core::convert::Into::into(r#type))}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MascotAccChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2030e60usize)as*mut u8,();
-(MascotAccChangeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__MascotAccChangeMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MascotAccChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2031080usize)as*mut u8,();
-(MascotAccChangeMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__MascotAccChangeMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`SetHelpText(crate::app::mascotaccdata::MascotAccData, crate::app::accessorydata::AccessoryData)` overload"]fn set_help_text(self,mascot_data:impl::core::convert::Into<crate::app::mascotaccdata::MascotAccData> ,acc_data:impl::core::convert::Into<crate::app::accessorydata::AccessoryData>)->(){unsafe{let __receiver= <MascotAccChangeMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x20312a0usize)as*mut u8,();

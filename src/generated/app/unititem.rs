@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititem/UnitItem.md"))]#[::unity2::class(namespace="App",name="UnitItem")]#[parent(crate::system::object::Object)]pub struct UnitItem{#[static_field]#[rename(name="NoItemIndex")]pub no_item_index:i32, #[static_field]#[rename(name="EngageStockIndex")]pub engage_stock_index:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Index")]pub m_index:i32, #[offset(24)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData, #[offset(32)]#[rename(name="m_Endurance")]pub m_endurance:u8, #[offset(33)]#[rename(name="m_RefineLevel")]pub m_refine_level:u8, #[offset(36)]#[rename(name="m_Flags")]pub m_flags:crate::app::unititem::UnitItem_Flags, #[offset(40)]#[rename(name="m_Engrave")]pub m_engrave:crate::app::goddata::GodData, #[offset(48)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[static_field]#[rename(name="s_EnchantHash")]pub s_enchant_hash:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititem/UnitItem_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitItem_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for UnitItem_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="UnitItem.Flags";
@@ -33,10 +30,46 @@ pub fn skip_log()->Self{Self{value:4}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unititem/UnitItem.md"))]#[::unity2::class(namespace="App",name="UnitItem")]#[parent(crate::system::object::Object)]pub struct UnitItem{#[static_field]#[rename(name="NoItemIndex")]pub no_item_index:i32, #[static_field]#[rename(name="EngageStockIndex")]pub engage_stock_index:i32, #[static_field]#[rename(name="Version")]pub version:i32, #[offset(16)]#[rename(name="m_Index")]pub m_index:i32, #[offset(24)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData, #[offset(32)]#[rename(name="m_Endurance")]pub m_endurance:u8, #[offset(33)]#[rename(name="m_RefineLevel")]pub m_refine_level:u8, #[offset(36)]#[rename(name="m_Flags")]pub m_flags:crate::app::unititem::UnitItem_Flags, #[offset(40)]#[rename(name="m_Engrave")]pub m_engrave:crate::app::goddata::GodData, #[offset(48)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[static_field]#[rename(name="s_EnchantHash")]pub s_enchant_hash:i32,}
+
 }
 
 #[cfg(feature = "app-unititem-types")]
 pub use __types::*;
+
+#[cfg(feature="app-unititem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitItem_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnitItem as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn equals(this:UnitItem,rhs_obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <UnitItem as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(UnitItem,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,rhs_obj,__mi)}
+pub unsafe fn get_hash_code(this:UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <UnitItem as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(UnitItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-unititem")]impl UnitItem{#[doc="`op_Implicit(crate::app::unititem::UnitItem)` overload"]pub fn op_implicit(p:impl::core::convert::Into<crate::app::unititem::UnitItem>)->crate::app::itemdata::ItemData{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1f95d60usize)as*mut u8,crate::app::itemdata::ItemData;
 (crate::app::unititem::UnitItem)::core::convert::Into::into(p))}
@@ -88,8 +121,7 @@ pub use __types::*;
 (UnitItem)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <UnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fae010usize)as*mut u8,();
-(UnitItem)__receiver)}
+__UnitItem_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`New(crate::app::itemdata::ItemData)` overload"]fn new(self,item:impl::core::convert::Into<crate::app::itemdata::ItemData>)->(){unsafe{let __receiver= <UnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fae0d0usize)as*mut u8,();
@@ -504,16 +536,14 @@ let mut __out_2= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit()
 (UnitItem)__receiver,(bool)::core::convert::Into::into(is_active))}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,rhs_obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <UnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb3010usize)as*mut u8,bool;
-(UnitItem)__receiver,(crate::system::object::Object)::core::convert::Into::into(rhs_obj))}
+__UnitItem_unity2_raw::equals(__receiver, ::core::convert::Into::into(rhs_obj), ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::app::unititem::UnitItem)` overload"]fn equals_2(self,rhs:impl::core::convert::Into<crate::app::unititem::UnitItem>)->bool{unsafe{let __receiver= <UnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb30e0usize)as*mut u8,bool;
 (UnitItem)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(rhs))}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <UnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb3170usize)as*mut u8,i32;
-(UnitItem)__receiver)}
+__UnitItem_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`EqualsImpl(crate::app::unititem::UnitItem)` overload"]fn equals_impl(self,rhs:impl::core::convert::Into<crate::app::unititem::UnitItem>)->bool{unsafe{let __receiver= <UnitItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fb2e80usize)as*mut u8,bool;
@@ -656,10 +686,10 @@ this}
 #[cfg(feature = "app-unititem")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitItem_Flags;
     pub use super::UnitItem;
     pub use super::IUnitItem;
     pub use super::IUnitItemMethods;
-    pub use super::UnitItem_Flags;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

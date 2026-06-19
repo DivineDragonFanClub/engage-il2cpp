@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagwindow/TalkTagWindow.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagWindow")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagWindow{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PidForCreate")]pub m_pid_for_create: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_LocationName")]pub m_location_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ReplaceName")]pub m_replace_name: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagwindow/TalkTagWindow_TagID.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TalkTagWindow_TagID{pub value:i32,}
 impl::unity2::ClassIdentity for TalkTagWindow_TagID{const NAMESPACE: &'static str="App.Talk3D";
 const NAME: &'static str="TalkTagWindow.TagID";
@@ -49,26 +46,68 @@ pub fn hide_bg()->Self{Self{value:9}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/talk3_d/talktagwindow/TalkTagWindow.md"))]#[::unity2::class(namespace="App.Talk3D",name="TalkTagWindow")]#[parent(crate::app::talk3_d::talktag::TalkTag)]pub struct TalkTagWindow{#[offset(16)]#[rename(name="m_TagID")]pub m_tag_id:crate::app::talk3_d::talktagwindow::TalkTagWindow_TagID, #[offset(24)]#[rename(name="m_Pid")]pub m_pid: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_PidForCreate")]pub m_pid_for_create: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_LocationName")]pub m_location_name: ::unity2::Il2CppString, #[offset(48)]#[rename(name="m_ReplaceName")]pub m_replace_name: ::unity2::Il2CppString,}
+
 }
 
 #[cfg(feature = "app-talk3_d-talktagwindow-types")]
 pub use __types::*;
 
+#[cfg(feature="app-talk3_d-talktagwindow")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TalkTagWindow_unity2_raw{use super:: * ;
+pub unsafe fn initialize(this:TalkTagWindow,talk_ptr:crate::app::talk3_d::talkptr::TalkPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TalkTagWindow as::unity2::ClassIdentity> ::NAME,"Initialize",));
+let inner:extern "C" fn(TalkTagWindow,crate::app::talk3_d::talkptr::TalkPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,talk_ptr,__mi)}
+pub unsafe fn execute(this:TalkTagWindow,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TalkTagWindow as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(TalkTagWindow, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn execute_for_character_pre_load(this:TalkTagWindow,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TalkTagWindow as::unity2::ClassIdentity> ::NAME,"ExecuteForCharacterPreLoad",));
+let inner:extern "C" fn(TalkTagWindow, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_result(this:TalkTagWindow,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TalkTagWindow as::unity2::ClassIdentity> ::NAME,"GetResult",));
+let inner:extern "C" fn(TalkTagWindow, ::unity2::OptionalMethod,)->crate::app::talk3_d::talktag::TalkTag_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-talk3_d-talktagwindow")]pub trait ITalkTagWindowMethods:ITalkTagWindow{#[doc="`Initialize(crate::app::talk3_d::talkptr::TalkPtr)` overload"]fn initialize(self,talk_ptr:impl::core::convert::Into<crate::app::talk3_d::talkptr::TalkPtr>)->(){unsafe{let __receiver= <TalkTagWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21db860usize)as*mut u8,();
-(TalkTagWindow)__receiver,(crate::app::talk3_d::talkptr::TalkPtr)::core::convert::Into::into(talk_ptr))}
+__TalkTagWindow_unity2_raw::initialize(__receiver, ::core::convert::Into::into(talk_ptr), ::core::option::Option::None)}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <TalkTagWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21db9d0usize)as*mut u8,();
-(TalkTagWindow)__receiver)}
+__TalkTagWindow_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ExecuteForCharacterPreLoad()` overload"]fn execute_for_character_pre_load(self,)->(){unsafe{let __receiver= <TalkTagWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21dc900usize)as*mut u8,();
-(TalkTagWindow)__receiver)}
+__TalkTagWindow_unity2_raw::execute_for_character_pre_load(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetResult()` overload"]fn get_result(self,)->crate::app::talk3_d::talktag::TalkTag_Result{unsafe{let __receiver= <TalkTagWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21dcac0usize)as*mut u8,crate::app::talk3_d::talktag::TalkTag_Result;
-(TalkTagWindow)__receiver)}
+__TalkTagWindow_unity2_raw::get_result(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPID()` overload"]fn get_pid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TalkTagWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21dcae0usize)as*mut u8, ::unity2::Il2CppString;
@@ -100,10 +139,10 @@ this}
 #[cfg(feature = "app-talk3_d-talktagwindow")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::TalkTagWindow_TagID;
     pub use super::TalkTagWindow;
     pub use super::ITalkTagWindow;
     pub use super::ITalkTagWindowMethods;
-    pub use super::TalkTagWindow_TagID;
     pub use crate::app::talk3_d::talktag::ITalkTag;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

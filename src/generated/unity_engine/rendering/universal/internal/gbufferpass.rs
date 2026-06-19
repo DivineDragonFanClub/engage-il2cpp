@@ -18,6 +18,39 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptabl
 #[cfg(feature = "unity_engine-rendering-universal-internal-gbufferpass-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-universal-internal-gbufferpass")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GBufferPass_unity2_raw{use super:: * ;
+pub unsafe fn configure(this:GBufferPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,camera_texture_descriptor:crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GBufferPass as::unity2::ClassIdentity> ::NAME,"Configure",));
+let inner:extern "C" fn(GBufferPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer,crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cmd,camera_texture_descriptor,__mi)}
+pub unsafe fn execute(this:GBufferPass,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <GBufferPass as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(GBufferPass,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,context,rendering_data,__mi)}
+pub unsafe fn on_camera_cleanup(this:GBufferPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GBufferPass as::unity2::ClassIdentity> ::NAME,"OnCameraCleanup",));
+let inner:extern "C" fn(GBufferPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cmd,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-universal-internal-gbufferpass")]impl GBufferPass{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ef09e0usize)as*mut u8,();
 )}
 }
@@ -28,18 +61,15 @@ pub use __types::*;
 (GBufferPass)__receiver,(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)::core::convert::Into::into(evt),(crate::unity_engine::rendering::renderqueuerange::RenderQueueRange)::core::convert::Into::into(render_queue_range),(crate::unity_engine::layermask::LayerMask)::core::convert::Into::into(layer_mask),(crate::unity_engine::rendering::stencilstate::StencilState)::core::convert::Into::into(stencil_state),(i32)::core::convert::Into::into(stencil_reference),(crate::unity_engine::rendering::universal::internal::deferredlights::DeferredLights)::core::convert::Into::into(deferred_lights))}
 }
 #[doc="`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]fn configure(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,camera_texture_descriptor:impl::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>)->(){unsafe{let __receiver= <GBufferPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef04f0usize)as*mut u8,();
-(GBufferPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)::core::convert::Into::into(camera_texture_descriptor))}
+__GBufferPass_unity2_raw::configure(__receiver, ::core::convert::Into::into(cmd), ::core::convert::Into::into(camera_texture_descriptor), ::core::option::Option::None)}
 }
 #[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <GBufferPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0680usize)as*mut u8,();
-(GBufferPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__GBufferPass_unity2_raw::execute(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn on_camera_cleanup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <GBufferPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ef0930usize)as*mut u8,();
-(GBufferPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd))}
+__GBufferPass_unity2_raw::on_camera_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
 }
 }
 

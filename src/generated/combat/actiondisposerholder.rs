@@ -20,17 +20,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actiondisposerholder-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actiondisposerholder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionDisposerHolder_unity2_raw{use super:: * ;
+pub unsafe fn on_exit(this:ActionDisposerHolder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ActionDisposerHolder as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let inner:extern "C" fn(ActionDisposerHolder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:ActionDisposerHolder,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ActionDisposerHolder as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(ActionDisposerHolder, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actiondisposerholder")]pub trait IActionDisposerHolderMethods:IActionDisposerHolder{#[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase>)->(){unsafe{let __receiver= <ActionDisposerHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4940usize)as*mut u8,();
 (ActionDisposerHolder)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase))}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <ActionDisposerHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc49f0usize)as*mut u8,();
-(ActionDisposerHolder)__receiver)}
+__ActionDisposerHolder_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <ActionDisposerHolder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc4a00usize)as*mut u8,();
-(ActionDisposerHolder)__receiver)}
+__ActionDisposerHolder_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 }
 

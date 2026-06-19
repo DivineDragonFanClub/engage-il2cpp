@@ -20,13 +20,54 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-cstreamwriter-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-cstreamwriter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CStreamWriter_unity2_raw{use super:: * ;
+pub unsafe fn write(this:CStreamWriter,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <CStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(CStreamWriter, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn write_2(this:CStreamWriter,val:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <CStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(CStreamWriter,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,val,__mi)}
+pub unsafe fn write_3(this:CStreamWriter,val: ::unity2::Array<u16> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <CStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(CStreamWriter, ::unity2::Array<u16> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,val,__mi)}
+pub unsafe fn write_4(this:CStreamWriter,val: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <CStreamWriter as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(CStreamWriter, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,val,__mi)}
+}
+
 #[cfg(feature="system-io-cstreamwriter")]pub trait ICStreamWriterMethods:ICStreamWriter{#[doc="`Write(::unity2::Array<u16>, i32, i32)` overload"]fn write(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x339a760usize)as*mut u8,();
-(CStreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__CStreamWriter_unity2_raw::write(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`Write(u16)` overload"]fn write_2(self,val:impl::core::convert::Into<u16>)->(){unsafe{let __receiver= <CStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x339ab00usize)as*mut u8,();
-(CStreamWriter)__receiver,(u16)::core::convert::Into::into(val))}
+__CStreamWriter_unity2_raw::write_2(__receiver, ::core::convert::Into::into(val), ::core::option::Option::None)}
 }
 #[doc="`InternalWriteString(::unity2::Il2CppString)` overload"]fn internal_write_string(self,val:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x339ad30usize)as*mut u8,();
@@ -41,12 +82,10 @@ pub use __types::*;
 (CStreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(n))}
 }
 #[doc="`Write(::unity2::Array<u16>)` overload"]fn write_3(self,val:impl::core::convert::Into< ::unity2::Array<u16> >)->(){unsafe{let __receiver= <CStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x339ae70usize)as*mut u8,();
-(CStreamWriter)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(val))}
+__CStreamWriter_unity2_raw::write_3(__receiver, ::core::convert::Into::into(val), ::core::option::Option::None)}
 }
 #[doc="`Write(::unity2::Il2CppString)` overload"]fn write_4(self,val:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <CStreamWriter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x339ae90usize)as*mut u8,();
-(CStreamWriter)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(val))}
+__CStreamWriter_unity2_raw::write_4(__receiver, ::core::convert::Into::into(val), ::core::option::Option::None)}
 }
 }
 

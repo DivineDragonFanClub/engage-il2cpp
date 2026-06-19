@@ -20,6 +20,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-unitselectmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-unitselectmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitSelectMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:UnitSelectMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <UnitSelectMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(UnitSelectMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-unitselectmenu")]impl UnitSelectMenu{#[doc="`Create(crate::app::procinst::ProcInst, crate::app::unitselectmenucontent::UnitSelectMenuContent)` overload"]pub fn create(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::unitselectmenucontent::UnitSelectMenuContent>)->crate::app::unitselectmenu::UnitSelectMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5de60usize)as*mut u8,crate::app::unitselectmenu::UnitSelectMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unitselectmenucontent::UnitSelectMenuContent)::core::convert::Into::into(menu_content))}
 }
@@ -34,8 +47,7 @@ pub use __types::*;
 (UnitSelectMenu)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <UnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5dfe0usize)as*mut u8, ::unity2::Il2CppString;
-(UnitSelectMenu)__receiver)}
+__UnitSelectMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetSelectIndexFromUnit(crate::app::unit::Unit)` overload"]fn set_select_index_from_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <UnitSelectMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5e030usize)as*mut u8,();

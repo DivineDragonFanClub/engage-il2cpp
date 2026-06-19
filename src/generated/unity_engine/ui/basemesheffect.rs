@@ -27,9 +27,52 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-ui-basemesheffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseMeshEffect_unity2_raw{use super:: * ;
-pub unsafe fn modify_mesh_2(this:BaseMeshEffect,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ModifyMesh").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ModifyMesh", <BaseMeshEffect as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_enable(this:BaseMeshEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BaseMeshEffect as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(BaseMeshEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:BaseMeshEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BaseMeshEffect as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(BaseMeshEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_did_apply_animation_properties(this:BaseMeshEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BaseMeshEffect as::unity2::ClassIdentity> ::NAME,"OnDidApplyAnimationProperties",));
+let inner:extern "C" fn(BaseMeshEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn modify_mesh(this:BaseMeshEffect,mesh:crate::unity_engine::mesh::Mesh,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BaseMeshEffect as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
+let inner:extern "C" fn(BaseMeshEffect,crate::unity_engine::mesh::Mesh, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mesh,__mi)}
+pub unsafe fn modify_mesh_2(this:BaseMeshEffect,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BaseMeshEffect as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
 let inner:extern "C" fn(BaseMeshEffect,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -41,20 +84,16 @@ inner(this,vh,__mi)}
 (BaseMeshEffect)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b860usize)as*mut u8,();
-(BaseMeshEffect)__receiver)}
+__BaseMeshEffect_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b920usize)as*mut u8,();
-(BaseMeshEffect)__receiver)}
+__BaseMeshEffect_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDidApplyAnimationProperties()` overload"]fn on_did_apply_animation_properties(self,)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317b9d0usize)as*mut u8,();
-(BaseMeshEffect)__receiver)}
+__BaseMeshEffect_unity2_raw::on_did_apply_animation_properties(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ModifyMesh(crate::unity_engine::mesh::Mesh)` overload"]fn modify_mesh(self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317ba80usize)as*mut u8,();
-(BaseMeshEffect)__receiver,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh))}
+__BaseMeshEffect_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(mesh), ::core::option::Option::None)}
 }
 #[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh_2(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <BaseMeshEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __BaseMeshEffect_unity2_raw::modify_mesh_2(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)}

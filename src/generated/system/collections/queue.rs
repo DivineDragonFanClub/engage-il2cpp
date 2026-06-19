@@ -9,18 +9,111 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/queue/Queue_QueueDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="Queue.QueueDebugView")]#[parent(crate::system::object::Object)]pub struct Queue_QueueDebugView{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/queue/Queue.md"))]#[::unity2::class(namespace="System.Collections",name="Queue")]#[parent(crate::system::object::Object)]pub struct Queue{#[offset(16)]#[rename(name="_array")]pub array: ::unity2::Array<crate::system::object::Object> , #[offset(24)]#[rename(name="_head")]pub head:i32, #[offset(28)]#[rename(name="_tail")]pub tail:i32, #[offset(32)]#[rename(name="_size")]pub size:i32, #[offset(36)]#[rename(name="_growFactor")]pub grow_factor:i32, #[offset(40)]#[rename(name="_version")]pub version:i32, #[offset(48)]#[rename(name="_syncRoot")]pub sync_root: ::unity2::IlInstance,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/queue/Queue_QueueEnumerator.md"))]#[::unity2::class(namespace="System.Collections",name="Queue.QueueEnumerator")]#[parent(crate::system::object::Object)]pub struct Queue_QueueEnumerator{#[offset(16)]#[rename(name="_q")]pub q:crate::system::collections::queue::Queue, #[offset(24)]#[rename(name="_index")]pub index:i32, #[offset(28)]#[rename(name="_version")]pub version:i32, #[offset(32)]#[rename(name="currentElement")]pub current_element: ::unity2::IlInstance,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/collections/queue/Queue_QueueDebugView.md"))]#[::unity2::class(namespace="System.Collections",name="Queue.QueueDebugView")]#[parent(crate::system::object::Object)]pub struct Queue_QueueDebugView{}
+
 }
 
 #[cfg(feature = "system-collections-queue-types")]
 pub use __types::*;
+
+#[cfg(feature="system-collections-queue")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Queue_unity2_raw{use super:: * ;
+pub unsafe fn get_count(this:Queue,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"get_Count",));
+let inner:extern "C" fn(Queue, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clone(this:Queue,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(Queue, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_synchronized(this:Queue,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"get_IsSynchronized",));
+let inner:extern "C" fn(Queue, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sync_root(this:Queue,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"get_SyncRoot",));
+let inner:extern "C" fn(Queue, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn copy_to(this:Queue,array: ::unity2::IlInstance,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(Queue, ::unity2::IlInstance,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,index,__mi)}
+pub unsafe fn enqueue(this:Queue,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"Enqueue",));
+let inner:extern "C" fn(Queue,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn get_enumerator(this:Queue,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"GetEnumerator",));
+let inner:extern "C" fn(Queue, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dequeue(this:Queue,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"Dequeue",));
+let inner:extern "C" fn(Queue, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn peek(this:Queue,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <Queue as::unity2::ClassIdentity> ::NAME,"Peek",));
+let inner:extern "C" fn(Queue, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="system-collections-queue")]pub trait IQueueMethods:IQueue{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9ea0usize)as*mut u8,();
@@ -39,40 +132,31 @@ pub use __types::*;
 (Queue)__receiver,(crate::system::collections::icollection::ICollection)::core::convert::Into::into(col))}
 }
 #[doc="`get_Count()` overload"]fn get_count(self,)->i32{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada3c0usize)as*mut u8,i32;
-(Queue)__receiver)}
+__Queue_unity2_raw::get_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada3d0usize)as*mut u8,crate::system::object::Object;
-(Queue)__receiver)}
+__Queue_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSynchronized()` overload"]fn get_is_synchronized(self,)->bool{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada4b0usize)as*mut u8,bool;
-(Queue)__receiver)}
+__Queue_unity2_raw::get_is_synchronized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_SyncRoot()` overload"]fn get_sync_root(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada4c0usize)as*mut u8,crate::system::object::Object;
-(Queue)__receiver)}
+__Queue_unity2_raw::get_sync_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CopyTo(::unity2::IlInstance, i32)` overload"]fn copy_to(self,array:impl::core::convert::Into< ::unity2::IlInstance> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada550usize)as*mut u8,();
-(Queue)__receiver,(::unity2::IlInstance)::core::convert::Into::into(array),(i32)::core::convert::Into::into(index))}
+__Queue_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`Enqueue(crate::system::object::Object)` overload"]fn enqueue(self,obj:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada720usize)as*mut u8,();
-(Queue)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__Queue_unity2_raw::enqueue(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`GetEnumerator()` overload"]fn get_enumerator(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada920usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(Queue)__receiver)}
+__Queue_unity2_raw::get_enumerator(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dequeue()` overload"]fn dequeue(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ada990usize)as*mut u8,crate::system::object::Object;
-(Queue)__receiver)}
+__Queue_unity2_raw::dequeue(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Peek()` overload"]fn peek(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3adaa80usize)as*mut u8,crate::system::object::Object;
-(Queue)__receiver)}
+__Queue_unity2_raw::peek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetElement(i32)` overload"]fn get_element(self,i:impl::core::convert::Into<i32>)->crate::system::object::Object{unsafe{let __receiver= <Queue as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3adab30usize)as*mut u8,crate::system::object::Object;
@@ -125,25 +209,64 @@ this}
 this}
 }
 
+#[cfg(feature="system-collections-queue")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Queue_QueueEnumerator_unity2_raw{use super:: * ;
+pub unsafe fn clone(this:Queue_QueueEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <Queue_QueueEnumerator as::unity2::ClassIdentity> ::NAME,"Clone",));
+let inner:extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn move_next(this:Queue_QueueEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <Queue_QueueEnumerator as::unity2::ClassIdentity> ::NAME,"MoveNext",));
+let inner:extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_current(this:Queue_QueueEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <Queue_QueueEnumerator as::unity2::ClassIdentity> ::NAME,"get_Current",));
+let inner:extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset(this:Queue_QueueEnumerator,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <Queue_QueueEnumerator as::unity2::ClassIdentity> ::NAME,"Reset",));
+let inner:extern "C" fn(Queue_QueueEnumerator, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-collections-queue")]pub trait IQueue_QueueEnumeratorMethods:IQueue_QueueEnumerator{#[doc="`.ctor(crate::system::collections::queue::Queue)` overload"]fn ctor(self,q:impl::core::convert::Into<crate::system::collections::queue::Queue>)->(){unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x34dd9f0usize)as*mut u8,();
 (Queue_QueueEnumerator)__receiver,(crate::system::collections::queue::Queue)::core::convert::Into::into(q))}
 }
 #[doc="`Clone()` overload"]fn clone(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34dda80usize)as*mut u8,crate::system::object::Object;
-(Queue_QueueEnumerator)__receiver)}
+__Queue_QueueEnumerator_unity2_raw::clone(__receiver, ::core::option::Option::None)}
 }
 #[doc="`MoveNext()` overload"]fn move_next(self,)->bool{unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34dda90usize)as*mut u8,bool;
-(Queue_QueueEnumerator)__receiver)}
+__Queue_QueueEnumerator_unity2_raw::move_next(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Current()` overload"]fn get_current(self,)->crate::system::object::Object{unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34ddb80usize)as*mut u8,crate::system::object::Object;
-(Queue_QueueEnumerator)__receiver)}
+__Queue_QueueEnumerator_unity2_raw::get_current(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <Queue_QueueEnumerator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34ddc20usize)as*mut u8,();
-(Queue_QueueEnumerator)__receiver)}
+__Queue_QueueEnumerator_unity2_raw::reset(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -166,14 +289,14 @@ this}
 #[cfg(feature = "system-collections-queue")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Queue_QueueDebugView;
-    pub use super::IQueue_QueueDebugView;
     pub use super::Queue;
     pub use super::IQueue;
     pub use super::IQueueMethods;
     pub use super::Queue_QueueEnumerator;
     pub use super::IQueue_QueueEnumerator;
     pub use super::IQueue_QueueEnumeratorMethods;
+    pub use super::Queue_QueueDebugView;
+    pub use super::IQueue_QueueDebugView;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

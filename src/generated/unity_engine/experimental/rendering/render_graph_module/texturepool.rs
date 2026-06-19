@@ -18,25 +18,73 @@ use crate::unity_engine::experimental::rendering::render_graph_module::rendergra
 #[cfg(feature = "unity_engine-experimental-rendering-render_graph_module-texturepool-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-experimental-rendering-render_graph_module-texturepool")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TexturePool_unity2_raw{use super:: * ;
+pub unsafe fn release_internal_resource(this:TexturePool,res:crate::unity_engine::rendering::rthandle::RTHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TexturePool as::unity2::ClassIdentity> ::NAME,"ReleaseInternalResource",));
+let inner:extern "C" fn(TexturePool,crate::unity_engine::rendering::rthandle::RTHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,res,__mi)}
+pub unsafe fn get_resource_name(this:TexturePool,res:crate::unity_engine::rendering::rthandle::RTHandle,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TexturePool as::unity2::ClassIdentity> ::NAME,"GetResourceName",));
+let inner:extern "C" fn(TexturePool,crate::unity_engine::rendering::rthandle::RTHandle, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,res,__mi)}
+pub unsafe fn get_resource_size(this:TexturePool,res:crate::unity_engine::rendering::rthandle::RTHandle,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TexturePool as::unity2::ClassIdentity> ::NAME,"GetResourceSize",));
+let inner:extern "C" fn(TexturePool,crate::unity_engine::rendering::rthandle::RTHandle, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,res,__mi)}
+pub unsafe fn get_resource_type_name(this:TexturePool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TexturePool as::unity2::ClassIdentity> ::NAME,"GetResourceTypeName",));
+let inner:extern "C" fn(TexturePool, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn purge_unused_resources(this:TexturePool,current_frame_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TexturePool as::unity2::ClassIdentity> ::NAME,"PurgeUnusedResources",));
+let inner:extern "C" fn(TexturePool,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,current_frame_index,__mi)}
+}
+
 #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-texturepool")]pub trait ITexturePoolMethods:ITexturePool{#[doc="`ReleaseInternalResource(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]fn release_internal_resource(self,res:impl::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>)->(){unsafe{let __receiver= <TexturePool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e25a0usize)as*mut u8,();
-(TexturePool)__receiver,(crate::unity_engine::rendering::rthandle::RTHandle)::core::convert::Into::into(res))}
+__TexturePool_unity2_raw::release_internal_resource(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)}
 }
 #[doc="`GetResourceName(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]fn get_resource_name(self,res:impl::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>)-> ::unity2::Il2CppString{unsafe{let __receiver= <TexturePool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e25b0usize)as*mut u8, ::unity2::Il2CppString;
-(TexturePool)__receiver,(crate::unity_engine::rendering::rthandle::RTHandle)::core::convert::Into::into(res))}
+__TexturePool_unity2_raw::get_resource_name(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)}
 }
 #[doc="`GetResourceSize(crate::unity_engine::rendering::rthandle::RTHandle)` overload"]fn get_resource_size(self,res:impl::core::convert::Into<crate::unity_engine::rendering::rthandle::RTHandle>)->i64{unsafe{let __receiver= <TexturePool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e25c0usize)as*mut u8,i64;
-(TexturePool)__receiver,(crate::unity_engine::rendering::rthandle::RTHandle)::core::convert::Into::into(res))}
+__TexturePool_unity2_raw::get_resource_size(__receiver, ::core::convert::Into::into(res), ::core::option::Option::None)}
 }
 #[doc="`GetResourceTypeName()` overload"]fn get_resource_type_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TexturePool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e25d0usize)as*mut u8, ::unity2::Il2CppString;
-(TexturePool)__receiver)}
+__TexturePool_unity2_raw::get_resource_type_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PurgeUnusedResources(i32)` overload"]fn purge_unused_resources(self,current_frame_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TexturePool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e2620usize)as*mut u8,();
-(TexturePool)__receiver,(i32)::core::convert::Into::into(current_frame_index))}
+__TexturePool_unity2_raw::purge_unused_resources(__receiver, ::core::convert::Into::into(current_frame_index), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TexturePool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33dcb60usize)as*mut u8,();

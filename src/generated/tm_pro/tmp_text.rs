@@ -27,17 +27,6 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_Text_UnicodeChar{pub unicode:i32,pub string_index:i32,pub length:i32,}
-impl::unity2::ClassIdentity for TMP_Text_UnicodeChar{const NAMESPACE: &'static str="TMPro";
-const NAME: &'static str="TMP_Text.UnicodeChar";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TMP_Text_UnicodeChar{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text_SpecialCharacter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_Text_SpecialCharacter{pub character:crate::tm_pro::tmp_character::TMP_Character,pub font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset,pub material:crate::unity_engine::material::Material,pub material_index:i32,}
 impl::unity2::ClassIdentity for TMP_Text_SpecialCharacter{const NAMESPACE: &'static str="TMPro";
 const NAME: &'static str="TMP_Text.SpecialCharacter";
@@ -49,7 +38,24 @@ impl::unity2::IlType for TMP_Text_SpecialCharacter{fn il_type()-> &'static::unit
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Text")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct TMP_Text{#[offset(208)]#[rename(name="m_text")]pub m_text: ::unity2::Il2CppString, #[offset(216)]#[rename(name="m_IsTextBackingStringDirty")]pub m_is_text_backing_string_dirty:bool, #[offset(224)]#[rename(name="m_TextPreprocessor")]pub m_text_preprocessor:crate::tm_pro::itextpreprocessor::ITextPreprocessor, #[offset(232)]#[rename(name="m_isRightToLeft")]pub m_is_right_to_left:bool, #[offset(240)]#[rename(name="m_fontAsset")]pub m_font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset, #[offset(248)]#[rename(name="m_currentFontAsset")]pub m_current_font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset, #[offset(256)]#[rename(name="m_isSDFShader")]pub m_is_sdf_shader:bool, #[offset(264)]#[rename(name="m_sharedMaterial")]pub m_shared_material:crate::unity_engine::material::Material, #[offset(272)]#[rename(name="m_currentMaterial")]pub m_current_material:crate::unity_engine::material::Material, #[static_field]#[rename(name="m_materialReferences")]pub m_material_references: ::unity2::Array<crate::tm_pro::materialreference::MaterialReference> , #[static_field]#[rename(name="m_materialReferenceIndexLookup")]pub m_material_reference_index_lookup:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,i32> , #[static_field]#[rename(name="m_materialReferenceStack")]pub m_material_reference_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::materialreference::MaterialReference> , #[offset(280)]#[rename(name="m_currentMaterialIndex")]pub m_current_material_index:i32, #[offset(288)]#[rename(name="m_fontSharedMaterials")]pub m_font_shared_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(296)]#[rename(name="m_fontMaterial")]pub m_font_material:crate::unity_engine::material::Material, #[offset(304)]#[rename(name="m_fontMaterials")]pub m_font_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(312)]#[rename(name="m_isMaterialDirty")]pub m_is_material_dirty:bool, #[offset(316)]#[rename(name="m_fontColor32")]pub m_font_color32:crate::unity_engine::color32::Color32, #[offset(320)]#[rename(name="m_fontColor")]pub m_font_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="s_colorWhite")]pub s_color_white:crate::unity_engine::color32::Color32, #[offset(336)]#[rename(name="m_underlineColor")]pub m_underline_color:crate::unity_engine::color32::Color32, #[offset(340)]#[rename(name="m_strikethroughColor")]pub m_strikethrough_color:crate::unity_engine::color32::Color32, #[offset(344)]#[rename(name="m_enableVertexGradient")]pub m_enable_vertex_gradient:bool, #[offset(348)]#[rename(name="m_colorMode")]pub m_color_mode:crate::tm_pro::colormode::ColorMode, #[offset(352)]#[rename(name="m_fontColorGradient")]pub m_font_color_gradient:crate::tm_pro::vertexgradient::VertexGradient, #[offset(416)]#[rename(name="m_fontColorGradientPreset")]pub m_font_color_gradient_preset:crate::tm_pro::tmp_colorgradient::TMP_ColorGradient, #[offset(424)]#[rename(name="m_spriteAsset")]pub m_sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, #[offset(432)]#[rename(name="m_tintAllSprites")]pub m_tint_all_sprites:bool, #[offset(433)]#[rename(name="m_tintSprite")]pub m_tint_sprite:bool, #[offset(436)]#[rename(name="m_spriteColor")]pub m_sprite_color:crate::unity_engine::color32::Color32, #[offset(440)]#[rename(name="m_StyleSheet")]pub m_style_sheet:crate::tm_pro::tmp_stylesheet::TMP_StyleSheet, #[offset(448)]#[rename(name="m_TextStyle")]pub m_text_style:crate::tm_pro::tmp_style::TMP_Style, #[offset(456)]#[rename(name="m_TextStyleHashCode")]pub m_text_style_hash_code:i32, #[offset(460)]#[rename(name="m_overrideHtmlColors")]pub m_override_html_colors:bool, #[offset(464)]#[rename(name="m_faceColor")]pub m_face_color:crate::unity_engine::color32::Color32, #[offset(468)]#[rename(name="m_outlineColor")]pub m_outline_color:crate::unity_engine::color32::Color32, #[offset(472)]#[rename(name="m_outlineWidth")]pub m_outline_width:f32, #[offset(476)]#[rename(name="m_fontSize")]pub m_font_size:f32, #[offset(480)]#[rename(name="m_currentFontSize")]pub m_current_font_size:f32, #[offset(484)]#[rename(name="m_fontSizeBase")]pub m_font_size_base:f32, #[offset(488)]#[rename(name="m_sizeStack")]pub m_size_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32> , #[offset(520)]#[rename(name="m_fontWeight")]pub m_font_weight:crate::tm_pro::fontweight::FontWeight, #[offset(524)]#[rename(name="m_FontWeightInternal")]pub m_font_weight_internal:crate::tm_pro::fontweight::FontWeight, #[offset(528)]#[rename(name="m_FontWeightStack")]pub m_font_weight_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::fontweight::FontWeight> , #[offset(560)]#[rename(name="m_enableAutoSizing")]pub m_enable_auto_sizing:bool, #[offset(564)]#[rename(name="m_maxFontSize")]pub m_max_font_size:f32, #[offset(568)]#[rename(name="m_minFontSize")]pub m_min_font_size:f32, #[offset(572)]#[rename(name="m_AutoSizeIterationCount")]pub m_auto_size_iteration_count:i32, #[offset(576)]#[rename(name="m_AutoSizeMaxIterationCount")]pub m_auto_size_max_iteration_count:i32, #[offset(580)]#[rename(name="m_IsAutoSizePointSizeSet")]pub m_is_auto_size_point_size_set:bool, #[offset(584)]#[rename(name="m_fontSizeMin")]pub m_font_size_min:f32, #[offset(588)]#[rename(name="m_fontSizeMax")]pub m_font_size_max:f32, #[offset(592)]#[rename(name="m_fontStyle")]pub m_font_style:crate::tm_pro::fontstyles::FontStyles, #[offset(596)]#[rename(name="m_FontStyleInternal")]pub m_font_style_internal:crate::tm_pro::fontstyles::FontStyles, #[offset(600)]#[rename(name="m_fontStyleStack")]pub m_font_style_stack:crate::tm_pro::tmp_fontstylestack::TMP_FontStyleStack, #[offset(610)]#[rename(name="m_isUsingBold")]pub m_is_using_bold:bool, #[offset(612)]#[rename(name="m_HorizontalAlignment")]pub m_horizontal_alignment:crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions, #[offset(616)]#[rename(name="m_VerticalAlignment")]pub m_vertical_alignment:crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions, #[offset(620)]#[rename(name="m_textAlignment")]pub m_text_alignment:crate::tm_pro::textalignmentoptions::TextAlignmentOptions, #[offset(624)]#[rename(name="m_lineJustification")]pub m_line_justification:crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions, #[offset(632)]#[rename(name="m_lineJustificationStack")]pub m_line_justification_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions> , #[offset(664)]#[rename(name="m_textContainerLocalCorners")]pub m_text_container_local_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(672)]#[rename(name="m_characterSpacing")]pub m_character_spacing:f32, #[offset(676)]#[rename(name="m_cSpacing")]pub m_c_spacing:f32, #[offset(680)]#[rename(name="m_monoSpacing")]pub m_mono_spacing:f32, #[offset(684)]#[rename(name="m_wordSpacing")]pub m_word_spacing:f32, #[offset(688)]#[rename(name="m_lineSpacing")]pub m_line_spacing:f32, #[offset(692)]#[rename(name="m_lineSpacingDelta")]pub m_line_spacing_delta:f32, #[offset(696)]#[rename(name="m_lineHeight")]pub m_line_height:f32, #[offset(700)]#[rename(name="m_IsDrivenLineSpacing")]pub m_is_driven_line_spacing:bool, #[offset(704)]#[rename(name="m_lineSpacingMax")]pub m_line_spacing_max:f32, #[offset(708)]#[rename(name="m_paragraphSpacing")]pub m_paragraph_spacing:f32, #[offset(712)]#[rename(name="m_charWidthMaxAdj")]pub m_char_width_max_adj:f32, #[offset(716)]#[rename(name="m_charWidthAdjDelta")]pub m_char_width_adj_delta:f32, #[offset(720)]#[rename(name="m_enableWordWrapping")]pub m_enable_word_wrapping:bool, #[offset(721)]#[rename(name="m_isCharacterWrappingEnabled")]pub m_is_character_wrapping_enabled:bool, #[offset(722)]#[rename(name="m_isNonBreakingSpace")]pub m_is_non_breaking_space:bool, #[offset(723)]#[rename(name="m_isIgnoringAlignment")]pub m_is_ignoring_alignment:bool, #[offset(724)]#[rename(name="m_wordWrappingRatios")]pub m_word_wrapping_ratios:f32, #[offset(728)]#[rename(name="m_overflowMode")]pub m_overflow_mode:crate::tm_pro::textoverflowmodes::TextOverflowModes, #[offset(732)]#[rename(name="m_firstOverflowCharacterIndex")]pub m_first_overflow_character_index:i32, #[offset(736)]#[rename(name="m_linkedTextComponent")]pub m_linked_text_component:crate::tm_pro::tmp_text::TMP_Text, #[offset(744)]#[rename(name="parentLinkedComponent")]pub parent_linked_component:crate::tm_pro::tmp_text::TMP_Text, #[offset(752)]#[rename(name="m_isTextTruncated")]pub m_is_text_truncated:bool, #[offset(753)]#[rename(name="m_enableKerning")]pub m_enable_kerning:bool, #[offset(756)]#[rename(name="m_GlyphHorizontalAdvanceAdjustment")]pub m_glyph_horizontal_advance_adjustment:f32, #[offset(760)]#[rename(name="m_enableExtraPadding")]pub m_enable_extra_padding:bool, #[offset(761)]#[rename(name="checkPaddingRequired")]pub check_padding_required:bool, #[offset(762)]#[rename(name="m_isRichText")]pub m_is_rich_text:bool, #[offset(763)]#[rename(name="m_parseCtrlCharacters")]pub m_parse_ctrl_characters:bool, #[offset(764)]#[rename(name="m_isOverlay")]pub m_is_overlay:bool, #[offset(765)]#[rename(name="m_isOrthographic")]pub m_is_orthographic:bool, #[offset(766)]#[rename(name="m_isCullingEnabled")]pub m_is_culling_enabled:bool, #[offset(767)]#[rename(name="m_isMaskingEnabled")]pub m_is_masking_enabled:bool, #[offset(768)]#[rename(name="isMaskUpdateRequired")]pub is_mask_update_required:bool, #[offset(769)]#[rename(name="m_ignoreCulling")]pub m_ignore_culling:bool, #[offset(772)]#[rename(name="m_horizontalMapping")]pub m_horizontal_mapping:crate::tm_pro::texturemappingoptions::TextureMappingOptions, #[offset(776)]#[rename(name="m_verticalMapping")]pub m_vertical_mapping:crate::tm_pro::texturemappingoptions::TextureMappingOptions, #[offset(780)]#[rename(name="m_uvLineOffset")]pub m_uv_line_offset:f32, #[offset(784)]#[rename(name="m_renderMode")]pub m_render_mode:crate::tm_pro::textrenderflags::TextRenderFlags, #[offset(788)]#[rename(name="m_geometrySortingOrder")]pub m_geometry_sorting_order:crate::tm_pro::vertexsortingorder::VertexSortingOrder, #[offset(792)]#[rename(name="m_IsTextObjectScaleStatic")]pub m_is_text_object_scale_static:bool, #[offset(793)]#[rename(name="m_VertexBufferAutoSizeReduction")]pub m_vertex_buffer_auto_size_reduction:bool, #[offset(796)]#[rename(name="m_firstVisibleCharacter")]pub m_first_visible_character:i32, #[offset(800)]#[rename(name="m_maxVisibleCharacters")]pub m_max_visible_characters:i32, #[offset(804)]#[rename(name="m_maxVisibleWords")]pub m_max_visible_words:i32, #[offset(808)]#[rename(name="m_maxVisibleLines")]pub m_max_visible_lines:i32, #[offset(812)]#[rename(name="m_useMaxVisibleDescender")]pub m_use_max_visible_descender:bool, #[offset(816)]#[rename(name="m_pageToDisplay")]pub m_page_to_display:i32, #[offset(820)]#[rename(name="m_isNewPage")]pub m_is_new_page:bool, #[offset(824)]#[rename(name="m_margin")]pub m_margin:crate::unity_engine::vector4::Vector4, #[offset(840)]#[rename(name="m_marginLeft")]pub m_margin_left:f32, #[offset(844)]#[rename(name="m_marginRight")]pub m_margin_right:f32, #[offset(848)]#[rename(name="m_marginWidth")]pub m_margin_width:f32, #[offset(852)]#[rename(name="m_marginHeight")]pub m_margin_height:f32, #[offset(856)]#[rename(name="m_width")]pub m_width:f32, #[offset(864)]#[rename(name="m_textInfo")]pub m_text_info:crate::tm_pro::tmp_textinfo::TMP_TextInfo, #[offset(872)]#[rename(name="m_havePropertiesChanged")]pub m_have_properties_changed:bool, #[offset(873)]#[rename(name="m_isUsingLegacyAnimationComponent")]pub m_is_using_legacy_animation_component:bool, #[offset(880)]#[rename(name="m_transform")]pub m_transform:crate::unity_engine::transform::Transform, #[offset(888)]#[rename(name="m_rectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(896)]#[rename(name="m_PreviousRectTransformSize")]pub m_previous_rect_transform_size:crate::unity_engine::vector2::Vector2, #[offset(904)]#[rename(name="m_PreviousPivotPosition")]pub m_previous_pivot_position:crate::unity_engine::vector2::Vector2, #[offset(913)]#[rename(name="m_autoSizeTextContainer")]pub m_auto_size_text_container:bool, #[offset(920)]#[rename(name="m_mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(928)]#[rename(name="m_isVolumetricText")]pub m_is_volumetric_text:bool, #[static_field]#[rename(name="OnFontAssetRequest")]pub on_font_asset_request:crate::system::func_3::Func_3<i32, ::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset> , #[static_field]#[rename(name="OnSpriteAssetRequest")]pub on_sprite_asset_request:crate::system::func_3::Func_3<i32, ::unity2::Il2CppString,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset> , #[offset(936)]#[rename(name="OnPreRenderText")]pub on_pre_render_text:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , #[offset(944)]#[rename(name="m_spriteAnimator")]pub m_sprite_animator:crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator, #[offset(952)]#[rename(name="m_flexibleHeight")]pub m_flexible_height:f32, #[offset(956)]#[rename(name="m_flexibleWidth")]pub m_flexible_width:f32, #[offset(960)]#[rename(name="m_minWidth")]pub m_min_width:f32, #[offset(964)]#[rename(name="m_minHeight")]pub m_min_height:f32, #[offset(968)]#[rename(name="m_maxWidth")]pub m_max_width:f32, #[offset(972)]#[rename(name="m_maxHeight")]pub m_max_height:f32, #[offset(976)]#[rename(name="m_LayoutElement")]pub m_layout_element:crate::unity_engine::ui::layoutelement::LayoutElement, #[offset(984)]#[rename(name="m_preferredWidth")]pub m_preferred_width:f32, #[offset(988)]#[rename(name="m_renderedWidth")]pub m_rendered_width:f32, #[offset(992)]#[rename(name="m_isPreferredWidthDirty")]pub m_is_preferred_width_dirty:bool, #[offset(996)]#[rename(name="m_preferredHeight")]pub m_preferred_height:f32, #[offset(1000)]#[rename(name="m_renderedHeight")]pub m_rendered_height:f32, #[offset(1004)]#[rename(name="m_isPreferredHeightDirty")]pub m_is_preferred_height_dirty:bool, #[offset(1005)]#[rename(name="m_isCalculatingPreferredValues")]pub m_is_calculating_preferred_values:bool, #[offset(1008)]#[rename(name="m_layoutPriority")]pub m_layout_priority:i32, #[offset(1012)]#[rename(name="m_isLayoutDirty")]pub m_is_layout_dirty:bool, #[offset(1013)]#[rename(name="m_isAwake")]pub m_is_awake:bool, #[offset(1014)]#[rename(name="m_isWaitingOnResourceLoad")]pub m_is_waiting_on_resource_load:bool, #[offset(1016)]#[rename(name="m_inputSource")]pub m_input_source:crate::tm_pro::tmp_text::TMP_Text_TextInputSources, #[offset(1020)]#[rename(name="m_fontScaleMultiplier")]pub m_font_scale_multiplier:f32, #[static_field]#[rename(name="m_htmlTag")]pub m_html_tag: ::unity2::Array<u16> , #[static_field]#[rename(name="m_xmlAttribute")]pub m_xml_attribute: ::unity2::Array<crate::tm_pro::richtexttagattribute::RichTextTagAttribute> , #[static_field]#[rename(name="m_attributeParameterValues")]pub m_attribute_parameter_values: ::unity2::Array<f32> , #[offset(1024)]#[rename(name="tag_LineIndent")]pub tag_line_indent:f32, #[offset(1028)]#[rename(name="tag_Indent")]pub tag_indent:f32, #[offset(1032)]#[rename(name="m_indentStack")]pub m_indent_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32> , #[offset(1064)]#[rename(name="tag_NoParsing")]pub tag_no_parsing:bool, #[offset(1065)]#[rename(name="m_isParsingText")]pub m_is_parsing_text:bool, #[offset(1068)]#[rename(name="m_FXMatrix")]pub m_fx_matrix:crate::unity_engine::matrix4x4::Matrix4x4, #[offset(1132)]#[rename(name="m_isFXMatrixSet")]pub m_is_fx_matrix_set:bool, #[offset(1136)]#[rename(name="m_TextProcessingArray")]pub m_text_processing_array: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> , #[offset(1144)]#[rename(name="m_InternalTextProcessingArraySize")]pub m_internal_text_processing_array_size:i32, #[offset(1152)]#[rename(name="m_internalCharacterInfo")]pub m_internal_character_info: ::unity2::Array<crate::tm_pro::tmp_characterinfo::TMP_CharacterInfo> , #[offset(1160)]#[rename(name="m_totalCharacterCount")]pub m_total_character_count:i32, #[static_field]#[rename(name="m_SavedWordWrapState")]pub m_saved_word_wrap_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedLineState")]pub m_saved_line_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedEllipsisState")]pub m_saved_ellipsis_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedLastValidState")]pub m_saved_last_valid_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedSoftLineBreakState")]pub m_saved_soft_line_break_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_EllipsisInsertionCandidateStack")]pub m_ellipsis_insertion_candidate_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::wordwrapstate::WordWrapState> , #[offset(1164)]#[rename(name="m_characterCount")]pub m_character_count:i32, #[offset(1168)]#[rename(name="m_firstCharacterOfLine")]pub m_first_character_of_line:i32, #[offset(1172)]#[rename(name="m_firstVisibleCharacterOfLine")]pub m_first_visible_character_of_line:i32, #[offset(1176)]#[rename(name="m_lastCharacterOfLine")]pub m_last_character_of_line:i32, #[offset(1180)]#[rename(name="m_lastVisibleCharacterOfLine")]pub m_last_visible_character_of_line:i32, #[offset(1184)]#[rename(name="m_lineNumber")]pub m_line_number:i32, #[offset(1188)]#[rename(name="m_lineVisibleCharacterCount")]pub m_line_visible_character_count:i32, #[offset(1192)]#[rename(name="m_pageNumber")]pub m_page_number:i32, #[offset(1196)]#[rename(name="m_PageAscender")]pub m_page_ascender:f32, #[offset(1200)]#[rename(name="m_maxTextAscender")]pub m_max_text_ascender:f32, #[offset(1204)]#[rename(name="m_maxCapHeight")]pub m_max_cap_height:f32, #[offset(1208)]#[rename(name="m_ElementAscender")]pub m_element_ascender:f32, #[offset(1212)]#[rename(name="m_ElementDescender")]pub m_element_descender:f32, #[offset(1216)]#[rename(name="m_maxLineAscender")]pub m_max_line_ascender:f32, #[offset(1220)]#[rename(name="m_maxLineDescender")]pub m_max_line_descender:f32, #[offset(1224)]#[rename(name="m_startOfLineAscender")]pub m_start_of_line_ascender:f32, #[offset(1228)]#[rename(name="m_startOfLineDescender")]pub m_start_of_line_descender:f32, #[offset(1232)]#[rename(name="m_lineOffset")]pub m_line_offset:f32, #[offset(1236)]#[rename(name="m_meshExtents")]pub m_mesh_extents:crate::tm_pro::extents::Extents, #[offset(1252)]#[rename(name="m_htmlColor")]pub m_html_color:crate::unity_engine::color32::Color32, #[offset(1256)]#[rename(name="m_colorStack")]pub m_color_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32> , #[offset(1288)]#[rename(name="m_underlineColorStack")]pub m_underline_color_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32> , #[offset(1320)]#[rename(name="m_strikethroughColorStack")]pub m_strikethrough_color_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32> , #[offset(1352)]#[rename(name="m_HighlightStateStack")]pub m_highlight_state_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::highlightstate::HighlightState> , #[offset(1400)]#[rename(name="m_colorGradientPreset")]pub m_color_gradient_preset:crate::tm_pro::tmp_colorgradient::TMP_ColorGradient, #[offset(1408)]#[rename(name="m_colorGradientStack")]pub m_color_gradient_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient> , #[offset(1448)]#[rename(name="m_colorGradientPresetIsTinted")]pub m_color_gradient_preset_is_tinted:bool, #[offset(1452)]#[rename(name="m_tabSpacing")]pub m_tab_spacing:f32, #[offset(1456)]#[rename(name="m_spacing")]pub m_spacing:f32, #[offset(1464)]#[rename(name="m_TextStyleStacks")]pub m_text_style_stacks: ::unity2::Array<crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32> > , #[offset(1472)]#[rename(name="m_TextStyleStackDepth")]pub m_text_style_stack_depth:i32, #[offset(1480)]#[rename(name="m_ItalicAngleStack")]pub m_italic_angle_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32> , #[offset(1512)]#[rename(name="m_ItalicAngle")]pub m_italic_angle:i32, #[offset(1520)]#[rename(name="m_actionStack")]pub m_action_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32> , #[offset(1552)]#[rename(name="m_padding")]pub m_padding:f32, #[offset(1556)]#[rename(name="m_baselineOffset")]pub m_baseline_offset:f32, #[offset(1560)]#[rename(name="m_baselineOffsetStack")]pub m_baseline_offset_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32> , #[offset(1592)]#[rename(name="m_xAdvance")]pub m_x_advance:f32, #[offset(1596)]#[rename(name="m_textElementType")]pub m_text_element_type:crate::tm_pro::tmp_textelementtype::TMP_TextElementType, #[offset(1600)]#[rename(name="m_cached_TextElement")]pub m_cached_text_element:crate::tm_pro::tmp_textelement::TMP_TextElement, #[offset(1608)]#[rename(name="m_Ellipsis")]pub m_ellipsis:crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter, #[offset(1640)]#[rename(name="m_Underline")]pub m_underline:crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter, #[offset(1672)]#[rename(name="m_defaultSpriteAsset")]pub m_default_sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, #[offset(1680)]#[rename(name="m_currentSpriteAsset")]pub m_current_sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, #[offset(1688)]#[rename(name="m_spriteCount")]pub m_sprite_count:i32, #[offset(1692)]#[rename(name="m_spriteIndex")]pub m_sprite_index:i32, #[offset(1696)]#[rename(name="m_spriteAnimationID")]pub m_sprite_animation_id:i32, #[offset(1700)]#[rename(name="m_ignoreActiveState")]pub m_ignore_active_state:bool, #[offset(1704)]#[rename(name="m_TextBackingArray")]pub m_text_backing_array:crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, #[static_field]#[rename(name="k_LargePositiveVector2")]pub k_large_positive_vector2:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="k_LargeNegativeVector2")]pub k_large_negative_vector2:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="k_LargePositiveFloat")]pub k_large_positive_float:f32, #[static_field]#[rename(name="k_LargeNegativeFloat")]pub k_large_negative_float:f32, #[static_field]#[rename(name="k_LargePositiveInt")]pub k_large_positive_int:i32, #[static_field]#[rename(name="k_LargeNegativeInt")]pub k_large_negative_int:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_Text_TextInputSources{pub value:i32,}
+impl::unity2::ClassIdentity for TMP_Text_TextInputSources{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_Text.TextInputSources";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TMP_Text_TextInputSources{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TMP_Text_TextInputSources{pub fn text_input_box()->Self{Self{value:0}
+}
+pub fn set_text()->Self{Self{value:1}
+}
+pub fn set_text_array()->Self{Self{value:2}
+}
+pub fn text_string()->Self{Self{value:3}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text_CharacterSubstitution.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_Text_CharacterSubstitution{pub index:i32,pub unicode:u32,}
@@ -74,23 +80,17 @@ impl::unity2::IlType for TMP_Text_TextBackingContainer{fn il_type()-> &'static::
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text_TextInputSources.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TMP_Text_TextInputSources{pub value:i32,}
-impl::unity2::ClassIdentity for TMP_Text_TextInputSources{const NAMESPACE: &'static str="TMPro";
-const NAME: &'static str="TMP_Text.TextInputSources";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text.md"))]#[::unity2::class(namespace="TMPro",name="TMP_Text")]#[parent(crate::unity_engine::ui::maskablegraphic::MaskableGraphic)]pub struct TMP_Text{#[offset(208)]#[rename(name="m_text")]pub m_text: ::unity2::Il2CppString, #[offset(216)]#[rename(name="m_IsTextBackingStringDirty")]pub m_is_text_backing_string_dirty:bool, #[offset(224)]#[rename(name="m_TextPreprocessor")]pub m_text_preprocessor:crate::tm_pro::itextpreprocessor::ITextPreprocessor, #[offset(232)]#[rename(name="m_isRightToLeft")]pub m_is_right_to_left:bool, #[offset(240)]#[rename(name="m_fontAsset")]pub m_font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset, #[offset(248)]#[rename(name="m_currentFontAsset")]pub m_current_font_asset:crate::tm_pro::tmp_fontasset::TMP_FontAsset, #[offset(256)]#[rename(name="m_isSDFShader")]pub m_is_sdf_shader:bool, #[offset(264)]#[rename(name="m_sharedMaterial")]pub m_shared_material:crate::unity_engine::material::Material, #[offset(272)]#[rename(name="m_currentMaterial")]pub m_current_material:crate::unity_engine::material::Material, #[static_field]#[rename(name="m_materialReferences")]pub m_material_references: ::unity2::Array<crate::tm_pro::materialreference::MaterialReference> , #[static_field]#[rename(name="m_materialReferenceIndexLookup")]pub m_material_reference_index_lookup:crate::system::collections::generic::dictionary_2::Dictionary_2<i32,i32> , #[static_field]#[rename(name="m_materialReferenceStack")]pub m_material_reference_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::materialreference::MaterialReference> , #[offset(280)]#[rename(name="m_currentMaterialIndex")]pub m_current_material_index:i32, #[offset(288)]#[rename(name="m_fontSharedMaterials")]pub m_font_shared_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(296)]#[rename(name="m_fontMaterial")]pub m_font_material:crate::unity_engine::material::Material, #[offset(304)]#[rename(name="m_fontMaterials")]pub m_font_materials: ::unity2::Array<crate::unity_engine::material::Material> , #[offset(312)]#[rename(name="m_isMaterialDirty")]pub m_is_material_dirty:bool, #[offset(316)]#[rename(name="m_fontColor32")]pub m_font_color32:crate::unity_engine::color32::Color32, #[offset(320)]#[rename(name="m_fontColor")]pub m_font_color:crate::unity_engine::color::Color, #[static_field]#[rename(name="s_colorWhite")]pub s_color_white:crate::unity_engine::color32::Color32, #[offset(336)]#[rename(name="m_underlineColor")]pub m_underline_color:crate::unity_engine::color32::Color32, #[offset(340)]#[rename(name="m_strikethroughColor")]pub m_strikethrough_color:crate::unity_engine::color32::Color32, #[offset(344)]#[rename(name="m_enableVertexGradient")]pub m_enable_vertex_gradient:bool, #[offset(348)]#[rename(name="m_colorMode")]pub m_color_mode:crate::tm_pro::colormode::ColorMode, #[offset(352)]#[rename(name="m_fontColorGradient")]pub m_font_color_gradient:crate::tm_pro::vertexgradient::VertexGradient, #[offset(416)]#[rename(name="m_fontColorGradientPreset")]pub m_font_color_gradient_preset:crate::tm_pro::tmp_colorgradient::TMP_ColorGradient, #[offset(424)]#[rename(name="m_spriteAsset")]pub m_sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, #[offset(432)]#[rename(name="m_tintAllSprites")]pub m_tint_all_sprites:bool, #[offset(433)]#[rename(name="m_tintSprite")]pub m_tint_sprite:bool, #[offset(436)]#[rename(name="m_spriteColor")]pub m_sprite_color:crate::unity_engine::color32::Color32, #[offset(440)]#[rename(name="m_StyleSheet")]pub m_style_sheet:crate::tm_pro::tmp_stylesheet::TMP_StyleSheet, #[offset(448)]#[rename(name="m_TextStyle")]pub m_text_style:crate::tm_pro::tmp_style::TMP_Style, #[offset(456)]#[rename(name="m_TextStyleHashCode")]pub m_text_style_hash_code:i32, #[offset(460)]#[rename(name="m_overrideHtmlColors")]pub m_override_html_colors:bool, #[offset(464)]#[rename(name="m_faceColor")]pub m_face_color:crate::unity_engine::color32::Color32, #[offset(468)]#[rename(name="m_outlineColor")]pub m_outline_color:crate::unity_engine::color32::Color32, #[offset(472)]#[rename(name="m_outlineWidth")]pub m_outline_width:f32, #[offset(476)]#[rename(name="m_fontSize")]pub m_font_size:f32, #[offset(480)]#[rename(name="m_currentFontSize")]pub m_current_font_size:f32, #[offset(484)]#[rename(name="m_fontSizeBase")]pub m_font_size_base:f32, #[offset(488)]#[rename(name="m_sizeStack")]pub m_size_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32> , #[offset(520)]#[rename(name="m_fontWeight")]pub m_font_weight:crate::tm_pro::fontweight::FontWeight, #[offset(524)]#[rename(name="m_FontWeightInternal")]pub m_font_weight_internal:crate::tm_pro::fontweight::FontWeight, #[offset(528)]#[rename(name="m_FontWeightStack")]pub m_font_weight_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::fontweight::FontWeight> , #[offset(560)]#[rename(name="m_enableAutoSizing")]pub m_enable_auto_sizing:bool, #[offset(564)]#[rename(name="m_maxFontSize")]pub m_max_font_size:f32, #[offset(568)]#[rename(name="m_minFontSize")]pub m_min_font_size:f32, #[offset(572)]#[rename(name="m_AutoSizeIterationCount")]pub m_auto_size_iteration_count:i32, #[offset(576)]#[rename(name="m_AutoSizeMaxIterationCount")]pub m_auto_size_max_iteration_count:i32, #[offset(580)]#[rename(name="m_IsAutoSizePointSizeSet")]pub m_is_auto_size_point_size_set:bool, #[offset(584)]#[rename(name="m_fontSizeMin")]pub m_font_size_min:f32, #[offset(588)]#[rename(name="m_fontSizeMax")]pub m_font_size_max:f32, #[offset(592)]#[rename(name="m_fontStyle")]pub m_font_style:crate::tm_pro::fontstyles::FontStyles, #[offset(596)]#[rename(name="m_FontStyleInternal")]pub m_font_style_internal:crate::tm_pro::fontstyles::FontStyles, #[offset(600)]#[rename(name="m_fontStyleStack")]pub m_font_style_stack:crate::tm_pro::tmp_fontstylestack::TMP_FontStyleStack, #[offset(610)]#[rename(name="m_isUsingBold")]pub m_is_using_bold:bool, #[offset(612)]#[rename(name="m_HorizontalAlignment")]pub m_horizontal_alignment:crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions, #[offset(616)]#[rename(name="m_VerticalAlignment")]pub m_vertical_alignment:crate::tm_pro::verticalalignmentoptions::VerticalAlignmentOptions, #[offset(620)]#[rename(name="m_textAlignment")]pub m_text_alignment:crate::tm_pro::textalignmentoptions::TextAlignmentOptions, #[offset(624)]#[rename(name="m_lineJustification")]pub m_line_justification:crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions, #[offset(632)]#[rename(name="m_lineJustificationStack")]pub m_line_justification_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::horizontalalignmentoptions::HorizontalAlignmentOptions> , #[offset(664)]#[rename(name="m_textContainerLocalCorners")]pub m_text_container_local_corners: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(672)]#[rename(name="m_characterSpacing")]pub m_character_spacing:f32, #[offset(676)]#[rename(name="m_cSpacing")]pub m_c_spacing:f32, #[offset(680)]#[rename(name="m_monoSpacing")]pub m_mono_spacing:f32, #[offset(684)]#[rename(name="m_wordSpacing")]pub m_word_spacing:f32, #[offset(688)]#[rename(name="m_lineSpacing")]pub m_line_spacing:f32, #[offset(692)]#[rename(name="m_lineSpacingDelta")]pub m_line_spacing_delta:f32, #[offset(696)]#[rename(name="m_lineHeight")]pub m_line_height:f32, #[offset(700)]#[rename(name="m_IsDrivenLineSpacing")]pub m_is_driven_line_spacing:bool, #[offset(704)]#[rename(name="m_lineSpacingMax")]pub m_line_spacing_max:f32, #[offset(708)]#[rename(name="m_paragraphSpacing")]pub m_paragraph_spacing:f32, #[offset(712)]#[rename(name="m_charWidthMaxAdj")]pub m_char_width_max_adj:f32, #[offset(716)]#[rename(name="m_charWidthAdjDelta")]pub m_char_width_adj_delta:f32, #[offset(720)]#[rename(name="m_enableWordWrapping")]pub m_enable_word_wrapping:bool, #[offset(721)]#[rename(name="m_isCharacterWrappingEnabled")]pub m_is_character_wrapping_enabled:bool, #[offset(722)]#[rename(name="m_isNonBreakingSpace")]pub m_is_non_breaking_space:bool, #[offset(723)]#[rename(name="m_isIgnoringAlignment")]pub m_is_ignoring_alignment:bool, #[offset(724)]#[rename(name="m_wordWrappingRatios")]pub m_word_wrapping_ratios:f32, #[offset(728)]#[rename(name="m_overflowMode")]pub m_overflow_mode:crate::tm_pro::textoverflowmodes::TextOverflowModes, #[offset(732)]#[rename(name="m_firstOverflowCharacterIndex")]pub m_first_overflow_character_index:i32, #[offset(736)]#[rename(name="m_linkedTextComponent")]pub m_linked_text_component:crate::tm_pro::tmp_text::TMP_Text, #[offset(744)]#[rename(name="parentLinkedComponent")]pub parent_linked_component:crate::tm_pro::tmp_text::TMP_Text, #[offset(752)]#[rename(name="m_isTextTruncated")]pub m_is_text_truncated:bool, #[offset(753)]#[rename(name="m_enableKerning")]pub m_enable_kerning:bool, #[offset(756)]#[rename(name="m_GlyphHorizontalAdvanceAdjustment")]pub m_glyph_horizontal_advance_adjustment:f32, #[offset(760)]#[rename(name="m_enableExtraPadding")]pub m_enable_extra_padding:bool, #[offset(761)]#[rename(name="checkPaddingRequired")]pub check_padding_required:bool, #[offset(762)]#[rename(name="m_isRichText")]pub m_is_rich_text:bool, #[offset(763)]#[rename(name="m_parseCtrlCharacters")]pub m_parse_ctrl_characters:bool, #[offset(764)]#[rename(name="m_isOverlay")]pub m_is_overlay:bool, #[offset(765)]#[rename(name="m_isOrthographic")]pub m_is_orthographic:bool, #[offset(766)]#[rename(name="m_isCullingEnabled")]pub m_is_culling_enabled:bool, #[offset(767)]#[rename(name="m_isMaskingEnabled")]pub m_is_masking_enabled:bool, #[offset(768)]#[rename(name="isMaskUpdateRequired")]pub is_mask_update_required:bool, #[offset(769)]#[rename(name="m_ignoreCulling")]pub m_ignore_culling:bool, #[offset(772)]#[rename(name="m_horizontalMapping")]pub m_horizontal_mapping:crate::tm_pro::texturemappingoptions::TextureMappingOptions, #[offset(776)]#[rename(name="m_verticalMapping")]pub m_vertical_mapping:crate::tm_pro::texturemappingoptions::TextureMappingOptions, #[offset(780)]#[rename(name="m_uvLineOffset")]pub m_uv_line_offset:f32, #[offset(784)]#[rename(name="m_renderMode")]pub m_render_mode:crate::tm_pro::textrenderflags::TextRenderFlags, #[offset(788)]#[rename(name="m_geometrySortingOrder")]pub m_geometry_sorting_order:crate::tm_pro::vertexsortingorder::VertexSortingOrder, #[offset(792)]#[rename(name="m_IsTextObjectScaleStatic")]pub m_is_text_object_scale_static:bool, #[offset(793)]#[rename(name="m_VertexBufferAutoSizeReduction")]pub m_vertex_buffer_auto_size_reduction:bool, #[offset(796)]#[rename(name="m_firstVisibleCharacter")]pub m_first_visible_character:i32, #[offset(800)]#[rename(name="m_maxVisibleCharacters")]pub m_max_visible_characters:i32, #[offset(804)]#[rename(name="m_maxVisibleWords")]pub m_max_visible_words:i32, #[offset(808)]#[rename(name="m_maxVisibleLines")]pub m_max_visible_lines:i32, #[offset(812)]#[rename(name="m_useMaxVisibleDescender")]pub m_use_max_visible_descender:bool, #[offset(816)]#[rename(name="m_pageToDisplay")]pub m_page_to_display:i32, #[offset(820)]#[rename(name="m_isNewPage")]pub m_is_new_page:bool, #[offset(824)]#[rename(name="m_margin")]pub m_margin:crate::unity_engine::vector4::Vector4, #[offset(840)]#[rename(name="m_marginLeft")]pub m_margin_left:f32, #[offset(844)]#[rename(name="m_marginRight")]pub m_margin_right:f32, #[offset(848)]#[rename(name="m_marginWidth")]pub m_margin_width:f32, #[offset(852)]#[rename(name="m_marginHeight")]pub m_margin_height:f32, #[offset(856)]#[rename(name="m_width")]pub m_width:f32, #[offset(864)]#[rename(name="m_textInfo")]pub m_text_info:crate::tm_pro::tmp_textinfo::TMP_TextInfo, #[offset(872)]#[rename(name="m_havePropertiesChanged")]pub m_have_properties_changed:bool, #[offset(873)]#[rename(name="m_isUsingLegacyAnimationComponent")]pub m_is_using_legacy_animation_component:bool, #[offset(880)]#[rename(name="m_transform")]pub m_transform:crate::unity_engine::transform::Transform, #[offset(888)]#[rename(name="m_rectTransform")]pub m_rect_transform:crate::unity_engine::recttransform::RectTransform, #[offset(896)]#[rename(name="m_PreviousRectTransformSize")]pub m_previous_rect_transform_size:crate::unity_engine::vector2::Vector2, #[offset(904)]#[rename(name="m_PreviousPivotPosition")]pub m_previous_pivot_position:crate::unity_engine::vector2::Vector2, #[offset(913)]#[rename(name="m_autoSizeTextContainer")]pub m_auto_size_text_container:bool, #[offset(920)]#[rename(name="m_mesh")]pub m_mesh:crate::unity_engine::mesh::Mesh, #[offset(928)]#[rename(name="m_isVolumetricText")]pub m_is_volumetric_text:bool, #[static_field]#[rename(name="OnFontAssetRequest")]pub on_font_asset_request:crate::system::func_3::Func_3<i32, ::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset> , #[static_field]#[rename(name="OnSpriteAssetRequest")]pub on_sprite_asset_request:crate::system::func_3::Func_3<i32, ::unity2::Il2CppString,crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset> , #[offset(936)]#[rename(name="OnPreRenderText")]pub on_pre_render_text:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , #[offset(944)]#[rename(name="m_spriteAnimator")]pub m_sprite_animator:crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator, #[offset(952)]#[rename(name="m_flexibleHeight")]pub m_flexible_height:f32, #[offset(956)]#[rename(name="m_flexibleWidth")]pub m_flexible_width:f32, #[offset(960)]#[rename(name="m_minWidth")]pub m_min_width:f32, #[offset(964)]#[rename(name="m_minHeight")]pub m_min_height:f32, #[offset(968)]#[rename(name="m_maxWidth")]pub m_max_width:f32, #[offset(972)]#[rename(name="m_maxHeight")]pub m_max_height:f32, #[offset(976)]#[rename(name="m_LayoutElement")]pub m_layout_element:crate::unity_engine::ui::layoutelement::LayoutElement, #[offset(984)]#[rename(name="m_preferredWidth")]pub m_preferred_width:f32, #[offset(988)]#[rename(name="m_renderedWidth")]pub m_rendered_width:f32, #[offset(992)]#[rename(name="m_isPreferredWidthDirty")]pub m_is_preferred_width_dirty:bool, #[offset(996)]#[rename(name="m_preferredHeight")]pub m_preferred_height:f32, #[offset(1000)]#[rename(name="m_renderedHeight")]pub m_rendered_height:f32, #[offset(1004)]#[rename(name="m_isPreferredHeightDirty")]pub m_is_preferred_height_dirty:bool, #[offset(1005)]#[rename(name="m_isCalculatingPreferredValues")]pub m_is_calculating_preferred_values:bool, #[offset(1008)]#[rename(name="m_layoutPriority")]pub m_layout_priority:i32, #[offset(1012)]#[rename(name="m_isLayoutDirty")]pub m_is_layout_dirty:bool, #[offset(1013)]#[rename(name="m_isAwake")]pub m_is_awake:bool, #[offset(1014)]#[rename(name="m_isWaitingOnResourceLoad")]pub m_is_waiting_on_resource_load:bool, #[offset(1016)]#[rename(name="m_inputSource")]pub m_input_source:crate::tm_pro::tmp_text::TMP_Text_TextInputSources, #[offset(1020)]#[rename(name="m_fontScaleMultiplier")]pub m_font_scale_multiplier:f32, #[static_field]#[rename(name="m_htmlTag")]pub m_html_tag: ::unity2::Array<u16> , #[static_field]#[rename(name="m_xmlAttribute")]pub m_xml_attribute: ::unity2::Array<crate::tm_pro::richtexttagattribute::RichTextTagAttribute> , #[static_field]#[rename(name="m_attributeParameterValues")]pub m_attribute_parameter_values: ::unity2::Array<f32> , #[offset(1024)]#[rename(name="tag_LineIndent")]pub tag_line_indent:f32, #[offset(1028)]#[rename(name="tag_Indent")]pub tag_indent:f32, #[offset(1032)]#[rename(name="m_indentStack")]pub m_indent_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32> , #[offset(1064)]#[rename(name="tag_NoParsing")]pub tag_no_parsing:bool, #[offset(1065)]#[rename(name="m_isParsingText")]pub m_is_parsing_text:bool, #[offset(1068)]#[rename(name="m_FXMatrix")]pub m_fx_matrix:crate::unity_engine::matrix4x4::Matrix4x4, #[offset(1132)]#[rename(name="m_isFXMatrixSet")]pub m_is_fx_matrix_set:bool, #[offset(1136)]#[rename(name="m_TextProcessingArray")]pub m_text_processing_array: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> , #[offset(1144)]#[rename(name="m_InternalTextProcessingArraySize")]pub m_internal_text_processing_array_size:i32, #[offset(1152)]#[rename(name="m_internalCharacterInfo")]pub m_internal_character_info: ::unity2::Array<crate::tm_pro::tmp_characterinfo::TMP_CharacterInfo> , #[offset(1160)]#[rename(name="m_totalCharacterCount")]pub m_total_character_count:i32, #[static_field]#[rename(name="m_SavedWordWrapState")]pub m_saved_word_wrap_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedLineState")]pub m_saved_line_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedEllipsisState")]pub m_saved_ellipsis_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedLastValidState")]pub m_saved_last_valid_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_SavedSoftLineBreakState")]pub m_saved_soft_line_break_state:crate::tm_pro::wordwrapstate::WordWrapState, #[static_field]#[rename(name="m_EllipsisInsertionCandidateStack")]pub m_ellipsis_insertion_candidate_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::wordwrapstate::WordWrapState> , #[offset(1164)]#[rename(name="m_characterCount")]pub m_character_count:i32, #[offset(1168)]#[rename(name="m_firstCharacterOfLine")]pub m_first_character_of_line:i32, #[offset(1172)]#[rename(name="m_firstVisibleCharacterOfLine")]pub m_first_visible_character_of_line:i32, #[offset(1176)]#[rename(name="m_lastCharacterOfLine")]pub m_last_character_of_line:i32, #[offset(1180)]#[rename(name="m_lastVisibleCharacterOfLine")]pub m_last_visible_character_of_line:i32, #[offset(1184)]#[rename(name="m_lineNumber")]pub m_line_number:i32, #[offset(1188)]#[rename(name="m_lineVisibleCharacterCount")]pub m_line_visible_character_count:i32, #[offset(1192)]#[rename(name="m_pageNumber")]pub m_page_number:i32, #[offset(1196)]#[rename(name="m_PageAscender")]pub m_page_ascender:f32, #[offset(1200)]#[rename(name="m_maxTextAscender")]pub m_max_text_ascender:f32, #[offset(1204)]#[rename(name="m_maxCapHeight")]pub m_max_cap_height:f32, #[offset(1208)]#[rename(name="m_ElementAscender")]pub m_element_ascender:f32, #[offset(1212)]#[rename(name="m_ElementDescender")]pub m_element_descender:f32, #[offset(1216)]#[rename(name="m_maxLineAscender")]pub m_max_line_ascender:f32, #[offset(1220)]#[rename(name="m_maxLineDescender")]pub m_max_line_descender:f32, #[offset(1224)]#[rename(name="m_startOfLineAscender")]pub m_start_of_line_ascender:f32, #[offset(1228)]#[rename(name="m_startOfLineDescender")]pub m_start_of_line_descender:f32, #[offset(1232)]#[rename(name="m_lineOffset")]pub m_line_offset:f32, #[offset(1236)]#[rename(name="m_meshExtents")]pub m_mesh_extents:crate::tm_pro::extents::Extents, #[offset(1252)]#[rename(name="m_htmlColor")]pub m_html_color:crate::unity_engine::color32::Color32, #[offset(1256)]#[rename(name="m_colorStack")]pub m_color_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32> , #[offset(1288)]#[rename(name="m_underlineColorStack")]pub m_underline_color_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32> , #[offset(1320)]#[rename(name="m_strikethroughColorStack")]pub m_strikethrough_color_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::unity_engine::color32::Color32> , #[offset(1352)]#[rename(name="m_HighlightStateStack")]pub m_highlight_state_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::highlightstate::HighlightState> , #[offset(1400)]#[rename(name="m_colorGradientPreset")]pub m_color_gradient_preset:crate::tm_pro::tmp_colorgradient::TMP_ColorGradient, #[offset(1408)]#[rename(name="m_colorGradientStack")]pub m_color_gradient_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient> , #[offset(1448)]#[rename(name="m_colorGradientPresetIsTinted")]pub m_color_gradient_preset_is_tinted:bool, #[offset(1452)]#[rename(name="m_tabSpacing")]pub m_tab_spacing:f32, #[offset(1456)]#[rename(name="m_spacing")]pub m_spacing:f32, #[offset(1464)]#[rename(name="m_TextStyleStacks")]pub m_text_style_stacks: ::unity2::Array<crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32> > , #[offset(1472)]#[rename(name="m_TextStyleStackDepth")]pub m_text_style_stack_depth:i32, #[offset(1480)]#[rename(name="m_ItalicAngleStack")]pub m_italic_angle_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32> , #[offset(1512)]#[rename(name="m_ItalicAngle")]pub m_italic_angle:i32, #[offset(1520)]#[rename(name="m_actionStack")]pub m_action_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<i32> , #[offset(1552)]#[rename(name="m_padding")]pub m_padding:f32, #[offset(1556)]#[rename(name="m_baselineOffset")]pub m_baseline_offset:f32, #[offset(1560)]#[rename(name="m_baselineOffsetStack")]pub m_baseline_offset_stack:crate::tm_pro::tmp_textprocessingstack_1::TMP_TextProcessingStack_1<f32> , #[offset(1592)]#[rename(name="m_xAdvance")]pub m_x_advance:f32, #[offset(1596)]#[rename(name="m_textElementType")]pub m_text_element_type:crate::tm_pro::tmp_textelementtype::TMP_TextElementType, #[offset(1600)]#[rename(name="m_cached_TextElement")]pub m_cached_text_element:crate::tm_pro::tmp_textelement::TMP_TextElement, #[offset(1608)]#[rename(name="m_Ellipsis")]pub m_ellipsis:crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter, #[offset(1640)]#[rename(name="m_Underline")]pub m_underline:crate::tm_pro::tmp_text::TMP_Text_SpecialCharacter, #[offset(1672)]#[rename(name="m_defaultSpriteAsset")]pub m_default_sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, #[offset(1680)]#[rename(name="m_currentSpriteAsset")]pub m_current_sprite_asset:crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset, #[offset(1688)]#[rename(name="m_spriteCount")]pub m_sprite_count:i32, #[offset(1692)]#[rename(name="m_spriteIndex")]pub m_sprite_index:i32, #[offset(1696)]#[rename(name="m_spriteAnimationID")]pub m_sprite_animation_id:i32, #[offset(1700)]#[rename(name="m_ignoreActiveState")]pub m_ignore_active_state:bool, #[offset(1704)]#[rename(name="m_TextBackingArray")]pub m_text_backing_array:crate::tm_pro::tmp_text::TMP_Text_TextBackingContainer, #[static_field]#[rename(name="k_LargePositiveVector2")]pub k_large_positive_vector2:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="k_LargeNegativeVector2")]pub k_large_negative_vector2:crate::unity_engine::vector2::Vector2, #[static_field]#[rename(name="k_LargePositiveFloat")]pub k_large_positive_float:f32, #[static_field]#[rename(name="k_LargeNegativeFloat")]pub k_large_negative_float:f32, #[static_field]#[rename(name="k_LargePositiveInt")]pub k_large_positive_int:i32, #[static_field]#[rename(name="k_LargeNegativeInt")]pub k_large_negative_int:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/tm_pro/tmp_text/TMP_Text_UnicodeChar.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct TMP_Text_UnicodeChar{pub unicode:i32,pub string_index:i32,pub length:i32,}
+impl::unity2::ClassIdentity for TMP_Text_UnicodeChar{const NAMESPACE: &'static str="TMPro";
+const NAME: &'static str="TMP_Text.UnicodeChar";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for TMP_Text_TextInputSources{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TMP_Text_TextInputSources{pub fn text_input_box()->Self{Self{value:0}
-}
-pub fn set_text()->Self{Self{value:1}
-}
-pub fn set_text_array()->Self{Self{value:2}
-}
-pub fn text_string()->Self{Self{value:3}
-}
+impl::unity2::IlType for TMP_Text_UnicodeChar{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
 }
@@ -104,6 +104,749 @@ pub use __types::*;
 }
 
 #[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_SpecialCharacter{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_CharacterSubstitution{#[doc="`.ctor(i32, u32)` overload"]pub fn ctor(&mut self,index:impl::core::convert::Into<i32> ,unicode:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa2c0usize)as*mut u8,();
+(*mut TMP_Text_CharacterSubstitution)self as*mut TMP_Text_CharacterSubstitution,(i32)::core::convert::Into::into(index),(u32)::core::convert::Into::into(unicode))}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_CharacterSubstitution{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_TextBackingContainer{#[doc="`get_Capacity()` overload"]pub fn get_capacity(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa3f0usize)as*mut u8,i32;
+(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer)}
+}
+#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa400usize)as*mut u8,i32;
+(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer)}
+}
+#[doc="`set_Count(i32)` overload"]pub fn set_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa410usize)as*mut u8,();
+(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(value))}
+}
+#[doc="`get_Item(i32)` overload"]pub fn get_item(&mut self,index:impl::core::convert::Into<i32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa420usize)as*mut u8,u32;
+(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`set_Item(i32, u32)` overload"]pub fn set_item(&mut self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa460usize)as*mut u8,();
+(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(index),(u32)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,size:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa580usize)as*mut u8,();
+(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(size))}
+}
+#[doc="`Resize(i32)` overload"]pub fn resize(&mut self,size:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa510usize)as*mut u8,();
+(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(size))}
+}
+}
+
+#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_TextBackingContainer{pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn resize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="tm_pro-tmp_text")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_Text_unity2_raw{use super:: * ;
+pub unsafe fn get_text(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(65usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",65usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_text",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_text(this:TMP_Text,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(66usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",66usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"set_text",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_font_shared_material(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(67usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",67usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_fontSharedMaterial",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_font_shared_material(this:TMP_Text,value:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"set_fontSharedMaterial",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_font_shared_materials(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(69usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",69usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_fontSharedMaterials",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_font_shared_materials(this:TMP_Text,value: ::unity2::Array<crate::unity_engine::material::Material> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",70usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"set_fontSharedMaterials",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_font_materials(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(71usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",71usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_fontMaterials",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_font_materials(this:TMP_Text,value: ::unity2::Array<crate::unity_engine::material::Material> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(72usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",72usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"set_fontMaterials",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_color(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_color",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_color(this:TMP_Text,value:crate::unity_engine::color::Color,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"set_color",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_margin(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector4::Vector4{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(73usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",73usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_margin",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->crate::unity_engine::vector4::Vector4= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_margin(this:TMP_Text,value:crate::unity_engine::vector4::Vector4,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(74usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",74usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"set_margin",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::vector4::Vector4, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_auto_size_text_container(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(75usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",75usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_autoSizeTextContainer",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_auto_size_text_container(this:TMP_Text,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(76usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",76usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"set_autoSizeTextContainer",));
+let inner:extern "C" fn(TMP_Text,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_mesh(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::mesh::Mesh{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(77usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",77usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_mesh",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->crate::unity_engine::mesh::Mesh= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn add_on_pre_render_text(this:TMP_Text,value:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(78usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",78usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"add_OnPreRenderText",));
+let inner:extern "C" fn(TMP_Text,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn remove_on_pre_render_text(this:TMP_Text,value:crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(79usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",79usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"remove_OnPreRenderText",));
+let inner:extern "C" fn(TMP_Text,crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_flexible_height(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(80usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",80usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_flexibleHeight",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_flexible_width(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(81usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",81usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_flexibleWidth",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_width(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(82usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",82usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_minWidth",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_height(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(83usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",83usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_minHeight",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_width(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(84usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",84usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_preferredWidth",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_preferred_height(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(85usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",85usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_preferredHeight",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_rendered_width(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(86usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",86usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_renderedWidth",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_rendered_height(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(87usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",87usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_renderedHeight",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_layout_priority(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(88usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",88usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"get_layoutPriority",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn load_font_asset(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(89usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",89usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"LoadFontAsset",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_shared_material(this:TMP_Text,mat:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(90usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",90usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetSharedMaterial",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mat,__mi)}
+pub unsafe fn get_material(this:TMP_Text,mat:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(91usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",91usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetMaterial",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mat,__mi)}
+pub unsafe fn set_font_base_material(this:TMP_Text,mat:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(92usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",92usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetFontBaseMaterial",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mat,__mi)}
+pub unsafe fn get_shared_materials(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(93usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",93usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetSharedMaterials",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_shared_materials(this:TMP_Text,materials: ::unity2::Array<crate::unity_engine::material::Material> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(94usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",94usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetSharedMaterials",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,materials,__mi)}
+pub unsafe fn get_materials(this:TMP_Text,mats: ::unity2::Array<crate::unity_engine::material::Material> ,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(95usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",95usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetMaterials",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Array<crate::unity_engine::material::Material> , ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mats,__mi)}
+pub unsafe fn create_material_instance(this:TMP_Text,source:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(96usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",96usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"CreateMaterialInstance",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,source,__mi)}
+pub unsafe fn set_outline_thickness(this:TMP_Text,thickness:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(99usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",99usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetOutlineThickness",));
+let inner:extern "C" fn(TMP_Text,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,thickness,__mi)}
+pub unsafe fn set_shader_depth(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(100usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",100usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetShaderDepth",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_culling(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(101usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",101usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetCulling",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_culling(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(102usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",102usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"UpdateCulling",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_padding_for_material(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(103usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",103usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetPaddingForMaterial",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_padding_for_material_2(this:TMP_Text,mat:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(104usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",104usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetPaddingForMaterial",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mat,__mi)}
+pub unsafe fn get_text_container_local_corners(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(105usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",105usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetTextContainerLocalCorners",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn force_mesh_update(this:TMP_Text,ignore_active_state:bool,force_text_reparsing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(106usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",106usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"ForceMeshUpdate",));
+let inner:extern "C" fn(TMP_Text,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ignore_active_state,force_text_reparsing,__mi)}
+pub unsafe fn update_geometry(this:TMP_Text,mesh:crate::unity_engine::mesh::Mesh,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(107usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",107usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::mesh::Mesh,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,mesh,index,__mi)}
+pub unsafe fn update_vertex_data(this:TMP_Text,flags:crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(108usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",108usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"UpdateVertexData",));
+let inner:extern "C" fn(TMP_Text,crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,flags,__mi)}
+pub unsafe fn update_vertex_data_2(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(109usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",109usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"UpdateVertexData",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_vertices(this:TMP_Text,vertices: ::unity2::Array<crate::unity_engine::vector3::Vector3> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(110usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",110usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetVertices",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Array<crate::unity_engine::vector3::Vector3> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vertices,__mi)}
+pub unsafe fn update_mesh_padding(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(111usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",111usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"UpdateMeshPadding",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn cross_fade_color(this:TMP_Text,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(47usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",47usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"CrossFadeColor",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,target_color,duration,ignore_time_scale,use_alpha,__mi)}
+pub unsafe fn cross_fade_alpha(this:TMP_Text,alpha:f32,duration:f32,ignore_time_scale:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(49usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",49usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"CrossFadeAlpha",));
+let inner:extern "C" fn(TMP_Text,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,alpha,duration,ignore_time_scale,__mi)}
+pub unsafe fn internal_cross_fade_color(this:TMP_Text,target_color:crate::unity_engine::color::Color,duration:f32,ignore_time_scale:bool,use_alpha:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(112usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",112usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"InternalCrossFadeColor",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::color::Color,f32,bool,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,target_color,duration,ignore_time_scale,use_alpha,__mi)}
+pub unsafe fn internal_cross_fade_alpha(this:TMP_Text,alpha:f32,duration:f32,ignore_time_scale:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(113usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",113usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"InternalCrossFadeAlpha",));
+let inner:extern "C" fn(TMP_Text,f32,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,alpha,duration,ignore_time_scale,__mi)}
+pub unsafe fn set_array_sizes(this:TMP_Text,unicode_chars: ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> ,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(114usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",114usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetArraySizes",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> , ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unicode_chars,__mi)}
+pub unsafe fn calculate_preferred_values(this:TMP_Text,font_size: *mut f32,margin_size:crate::unity_engine::vector2::Vector2,is_text_auto_sizing_enabled:bool,is_word_wrapping_enabled:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(115usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",115usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"CalculatePreferredValues",));
+let inner:extern "C" fn(TMP_Text, *mut f32,crate::unity_engine::vector2::Vector2,bool,bool, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,font_size,margin_size,is_text_auto_sizing_enabled,is_word_wrapping_enabled,__mi)}
+pub unsafe fn get_compound_bounds(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::bounds::Bounds{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(116usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",116usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetCompoundBounds",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->crate::unity_engine::bounds::Bounds= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_canvas_space_clipping_rect(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rect::Rect{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(117usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",117usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetCanvasSpaceClippingRect",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->crate::unity_engine::rect::Rect= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_text_info_2(this:TMP_Text,text: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(118usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",118usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetTextInfo",));
+let inner:extern "C" fn(TMP_Text, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,text,__mi)}
+pub unsafe fn compute_margin_size(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(119usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",119usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"ComputeMarginSize",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn save_glyph_vertex_info(this:TMP_Text,padding:f32,style_padding:f32,vertex_color:crate::unity_engine::color32::Color32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(120usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",120usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SaveGlyphVertexInfo",));
+let inner:extern "C" fn(TMP_Text,f32,f32,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,padding,style_padding,vertex_color,__mi)}
+pub unsafe fn save_sprite_vertex_info(this:TMP_Text,vertex_color:crate::unity_engine::color32::Color32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(121usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",121usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SaveSpriteVertexInfo",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vertex_color,__mi)}
+pub unsafe fn fill_character_vertex_buffers(this:TMP_Text,i:i32,index_x4:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(122usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",122usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"FillCharacterVertexBuffers",));
+let inner:extern "C" fn(TMP_Text,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,i,index_x4,__mi)}
+pub unsafe fn fill_character_vertex_buffers_2(this:TMP_Text,i:i32,index_x4:i32,is_volumetric:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(123usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",123usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"FillCharacterVertexBuffers",));
+let inner:extern "C" fn(TMP_Text,i32,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,i,index_x4,is_volumetric,__mi)}
+pub unsafe fn fill_sprite_vertex_buffers(this:TMP_Text,i:i32,index_x4:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(124usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",124usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"FillSpriteVertexBuffers",));
+let inner:extern "C" fn(TMP_Text,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,i,index_x4,__mi)}
+pub unsafe fn draw_underline_mesh(this:TMP_Text,start:crate::unity_engine::vector3::Vector3,end:crate::unity_engine::vector3::Vector3,index: *mut i32,start_scale:f32,end_scale:f32,max_scale:f32,sdf_scale:f32,underline_color:crate::unity_engine::color32::Color32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(125usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",125usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"DrawUnderlineMesh",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3, *mut i32,f32,f32,f32,f32,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,start,end,index,start_scale,end_scale,max_scale,sdf_scale,underline_color,__mi)}
+pub unsafe fn draw_text_highlight(this:TMP_Text,start:crate::unity_engine::vector3::Vector3,end:crate::unity_engine::vector3::Vector3,index: *mut i32,highlight_color:crate::unity_engine::color32::Color32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(126usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",126usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"DrawTextHighlight",));
+let inner:extern "C" fn(TMP_Text,crate::unity_engine::vector3::Vector3,crate::unity_engine::vector3::Vector3, *mut i32,crate::unity_engine::color32::Color32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,start,end,index,highlight_color,__mi)}
+pub unsafe fn set_active_sub_meshes(this:TMP_Text,state:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(127usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",127usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"SetActiveSubMeshes",));
+let inner:extern "C" fn(TMP_Text,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,__mi)}
+pub unsafe fn destroy_sub_mesh_objects(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(128usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",128usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"DestroySubMeshObjects",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clear_mesh(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(129usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",129usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"ClearMesh",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn clear_mesh_2(this:TMP_Text,upload_geometry:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(130usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",130usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"ClearMesh",));
+let inner:extern "C" fn(TMP_Text,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,upload_geometry,__mi)}
+pub unsafe fn get_parsed_text(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(131usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",131usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"GetParsedText",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn internal_update(this:TMP_Text,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(132usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",132usize,__vt.len(), <TMP_Text as::unity2::ClassIdentity> ::NAME,"InternalUpdate",));
+let inner:extern "C" fn(TMP_Text, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="tm_pro-tmp_text")]impl TMP_Text{#[doc="`add_OnFontAssetRequest(crate::system::func_3::Func_3<i32,::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset>)` overload"]pub fn add_on_font_asset_request(value:impl::core::convert::Into<crate::system::func_3::Func_3<i32, ::unity2::Il2CppString,crate::tm_pro::tmp_fontasset::TMP_FontAsset> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2834080usize)as*mut u8,();
@@ -124,12 +867,10 @@ pub use __types::*;
 }
 
 #[cfg(feature="tm_pro-tmp_text")]pub trait ITMP_TextMethods:ITMP_Text{#[doc="`get_text()` overload"]fn get_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28316d0usize)as*mut u8, ::unity2::Il2CppString;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_text(::unity2::Il2CppString)` overload"]fn set_text(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28317d0usize)as*mut u8,();
-(TMP_Text)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::set_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_textPreprocessor()` overload"]fn get_text_preprocessor(self,)->crate::tm_pro::itextpreprocessor::ITextPreprocessor{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2831880usize)as*mut u8,crate::tm_pro::itextpreprocessor::ITextPreprocessor;
@@ -156,20 +897,16 @@ pub use __types::*;
 (TMP_Text)__receiver,(crate::tm_pro::tmp_fontasset::TMP_FontAsset)::core::convert::Into::into(value))}
 }
 #[doc="`get_fontSharedMaterial()` overload"]fn get_font_shared_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831a20usize)as*mut u8,crate::unity_engine::material::Material;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_font_shared_material(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_fontSharedMaterial(crate::unity_engine::material::Material)` overload"]fn set_font_shared_material(self,value:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831a30usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::set_font_shared_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_fontSharedMaterials()` overload"]fn get_font_shared_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831b10usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_font_shared_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_fontSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn set_font_shared_materials(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831b20usize)as*mut u8,();
-(TMP_Text)__receiver,(::unity2::Array<crate::unity_engine::material::Material>)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::set_font_shared_materials(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_fontMaterial()` overload"]fn get_font_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2831b80usize)as*mut u8,crate::unity_engine::material::Material;
@@ -180,20 +917,16 @@ pub use __types::*;
 (TMP_Text)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
 }
 #[doc="`get_fontMaterials()` overload"]fn get_font_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831cb0usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_font_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_fontMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn set_font_materials(self,value:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831cd0usize)as*mut u8,();
-(TMP_Text)__receiver,(::unity2::Array<crate::unity_engine::material::Material>)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::set_font_materials(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831d30usize)as*mut u8,crate::unity_engine::color::Color;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_color(crate::unity_engine::color::Color)` overload"]fn set_color(self,value:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831d50usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::set_color(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_alpha()` overload"]fn get_alpha(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2831e00usize)as*mut u8,f32;
@@ -632,12 +1365,10 @@ pub use __types::*;
 (TMP_Text)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`get_margin()` overload"]fn get_margin(self,)->crate::unity_engine::vector4::Vector4{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2833b90usize)as*mut u8,crate::unity_engine::vector4::Vector4;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_margin(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_margin(crate::unity_engine::vector4::Vector4)` overload"]fn set_margin(self,value:impl::core::convert::Into<crate::unity_engine::vector4::Vector4>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2833bb0usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::vector4::Vector4)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::set_margin(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_textInfo()` overload"]fn get_text_info(self,)->crate::tm_pro::tmp_textinfo::TMP_TextInfo{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2833c60usize)as*mut u8,crate::tm_pro::tmp_textinfo::TMP_TextInfo;
@@ -668,16 +1399,13 @@ pub use __types::*;
 (TMP_Text)__receiver)}
 }
 #[doc="`get_autoSizeTextContainer()` overload"]fn get_auto_size_text_container(self,)->bool{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2833ca0usize)as*mut u8,bool;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_auto_size_text_container(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_autoSizeTextContainer(bool)` overload"]fn set_auto_size_text_container(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2833cb0usize)as*mut u8,();
-(TMP_Text)__receiver,(bool)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::set_auto_size_text_container(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_mesh()` overload"]fn get_mesh(self,)->crate::unity_engine::mesh::Mesh{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2833cc0usize)as*mut u8,crate::unity_engine::mesh::Mesh;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_mesh(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_isVolumetricText()` overload"]fn get_is_volumetric_text(self,)->bool{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2833cd0usize)as*mut u8,bool;
@@ -696,32 +1424,26 @@ pub use __types::*;
 (TMP_Text)__receiver)}
 }
 #[doc="`add_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]fn add_on_pre_render_text(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> >)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834480usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::add_on_pre_render_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`remove_OnPreRenderText(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)` overload"]fn remove_on_pre_render_text(self,value:impl::core::convert::Into<crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo> >)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834530usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::system::action_1::Action_1<crate::tm_pro::tmp_textinfo::TMP_TextInfo>)::core::convert::Into::into(value))}
+__TMP_Text_unity2_raw::remove_on_pre_render_text(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_spriteAnimator()` overload"]fn get_sprite_animator(self,)->crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28345e0usize)as*mut u8,crate::tm_pro::tmp_spriteanimator::TMP_SpriteAnimator;
 (TMP_Text)__receiver)}
 }
 #[doc="`get_flexibleHeight()` overload"]fn get_flexible_height(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834700usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_flexible_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_flexibleWidth()` overload"]fn get_flexible_width(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834710usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_flexible_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minWidth()` overload"]fn get_min_width(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834720usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_min_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minHeight()` overload"]fn get_min_height(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834730usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_min_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_maxWidth()` overload"]fn get_max_width(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2834740usize)as*mut u8,f32;
@@ -736,56 +1458,43 @@ pub use __types::*;
 (TMP_Text)__receiver)}
 }
 #[doc="`get_preferredWidth()` overload"]fn get_preferred_width(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834820usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_preferred_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_preferredHeight()` overload"]fn get_preferred_height(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28349a0usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_preferred_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_renderedWidth()` overload"]fn get_rendered_width(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834b70usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_rendered_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_renderedHeight()` overload"]fn get_rendered_height(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834c10usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_rendered_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_layoutPriority()` overload"]fn get_layout_priority(self,)->i32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834cb0usize)as*mut u8,i32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_layout_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LoadFontAsset()` overload"]fn load_font_asset(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834cc0usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::load_font_asset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetSharedMaterial(crate::unity_engine::material::Material)` overload"]fn set_shared_material(self,mat:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834cd0usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(mat))}
+__TMP_Text_unity2_raw::set_shared_material(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)}
 }
 #[doc="`GetMaterial(crate::unity_engine::material::Material)` overload"]fn get_material(self,mat:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834ce0usize)as*mut u8,crate::unity_engine::material::Material;
-(TMP_Text)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(mat))}
+__TMP_Text_unity2_raw::get_material(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)}
 }
 #[doc="`SetFontBaseMaterial(crate::unity_engine::material::Material)` overload"]fn set_font_base_material(self,mat:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834cf0usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(mat))}
+__TMP_Text_unity2_raw::set_font_base_material(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)}
 }
 #[doc="`GetSharedMaterials()` overload"]fn get_shared_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834d00usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_shared_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetSharedMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn set_shared_materials(self,materials:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834d10usize)as*mut u8,();
-(TMP_Text)__receiver,(::unity2::Array<crate::unity_engine::material::Material>)::core::convert::Into::into(materials))}
+__TMP_Text_unity2_raw::set_shared_materials(__receiver, ::core::convert::Into::into(materials), ::core::option::Option::None)}
 }
 #[doc="`GetMaterials(::unity2::Array<crate::unity_engine::material::Material>)` overload"]fn get_materials(self,mats:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::material::Material> >)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834d20usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(TMP_Text)__receiver,(::unity2::Array<crate::unity_engine::material::Material>)::core::convert::Into::into(mats))}
+__TMP_Text_unity2_raw::get_materials(__receiver, ::core::convert::Into::into(mats), ::core::option::Option::None)}
 }
 #[doc="`CreateMaterialInstance(crate::unity_engine::material::Material)` overload"]fn create_material_instance(self,source:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834d30usize)as*mut u8,crate::unity_engine::material::Material;
-(TMP_Text)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(source))}
+__TMP_Text_unity2_raw::create_material_instance(__receiver, ::core::convert::Into::into(source), ::core::option::Option::None)}
 }
 #[doc="`SetVertexColorGradient(crate::tm_pro::tmp_colorgradient::TMP_ColorGradient)` overload"]fn set_vertex_color_gradient(self,gradient:impl::core::convert::Into<crate::tm_pro::tmp_colorgradient::TMP_ColorGradient>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2834df0usize)as*mut u8,();
@@ -800,72 +1509,55 @@ pub use __types::*;
 (TMP_Text)__receiver,(::unity2::Array<i32>)::core::convert::Into::into(order))}
 }
 #[doc="`SetOutlineThickness(f32)` overload"]fn set_outline_thickness(self,thickness:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834f20usize)as*mut u8,();
-(TMP_Text)__receiver,(f32)::core::convert::Into::into(thickness))}
+__TMP_Text_unity2_raw::set_outline_thickness(__receiver, ::core::convert::Into::into(thickness), ::core::option::Option::None)}
 }
 #[doc="`SetShaderDepth()` overload"]fn set_shader_depth(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834f30usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::set_shader_depth(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetCulling()` overload"]fn set_culling(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834f40usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::set_culling(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateCulling()` overload"]fn update_culling(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834f50usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::update_culling(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPaddingForMaterial()` overload"]fn get_padding_for_material(self,)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2834f60usize)as*mut u8,f32;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_padding_for_material(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPaddingForMaterial(crate::unity_engine::material::Material)` overload"]fn get_padding_for_material_2(self,mat:impl::core::convert::Into<crate::unity_engine::material::Material>)->f32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28350a0usize)as*mut u8,f32;
-(TMP_Text)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(mat))}
+__TMP_Text_unity2_raw::get_padding_for_material_2(__receiver, ::core::convert::Into::into(mat), ::core::option::Option::None)}
 }
 #[doc="`GetTextContainerLocalCorners()` overload"]fn get_text_container_local_corners(self,)-> ::unity2::Array<crate::unity_engine::vector3::Vector3>{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28351c0usize)as*mut u8, ::unity2::Array<crate::unity_engine::vector3::Vector3> ;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_text_container_local_corners(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ForceMeshUpdate(bool, bool)` overload"]fn force_mesh_update(self,ignore_active_state:impl::core::convert::Into<bool> ,force_text_reparsing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28351d0usize)as*mut u8,();
-(TMP_Text)__receiver,(bool)::core::convert::Into::into(ignore_active_state),(bool)::core::convert::Into::into(force_text_reparsing))}
+__TMP_Text_unity2_raw::force_mesh_update(__receiver, ::core::convert::Into::into(ignore_active_state), ::core::convert::Into::into(force_text_reparsing), ::core::option::Option::None)}
 }
 #[doc="`UpdateGeometry(crate::unity_engine::mesh::Mesh, i32)` overload"]fn update_geometry(self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28351e0usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(i32)::core::convert::Into::into(index))}
+__TMP_Text_unity2_raw::update_geometry(__receiver, ::core::convert::Into::into(mesh), ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`UpdateVertexData(crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags)` overload"]fn update_vertex_data(self,flags:impl::core::convert::Into<crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28351f0usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::tm_pro::tmp_vertexdataupdateflags::TMP_VertexDataUpdateFlags)::core::convert::Into::into(flags))}
+__TMP_Text_unity2_raw::update_vertex_data(__receiver, ::core::convert::Into::into(flags), ::core::option::Option::None)}
 }
 #[doc="`UpdateVertexData()` overload"]fn update_vertex_data_2(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2835200usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::update_vertex_data_2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetVertices(::unity2::Array<crate::unity_engine::vector3::Vector3>)` overload"]fn set_vertices(self,vertices:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::vector3::Vector3> >)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2835210usize)as*mut u8,();
-(TMP_Text)__receiver,(::unity2::Array<crate::unity_engine::vector3::Vector3>)::core::convert::Into::into(vertices))}
+__TMP_Text_unity2_raw::set_vertices(__receiver, ::core::convert::Into::into(vertices), ::core::option::Option::None)}
 }
 #[doc="`UpdateMeshPadding()` overload"]fn update_mesh_padding(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2835220usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::update_mesh_padding(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]fn cross_fade_color(self,target_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool> ,use_alpha:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2835230usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(target_color),(f32)::core::convert::Into::into(duration),(bool)::core::convert::Into::into(ignore_time_scale),(bool)::core::convert::Into::into(use_alpha))}
+__TMP_Text_unity2_raw::cross_fade_color(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha), ::core::option::Option::None)}
 }
 #[doc="`CrossFadeAlpha(f32, f32, bool)` overload"]fn cross_fade_alpha(self,alpha:impl::core::convert::Into<f32> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28352d0usize)as*mut u8,();
-(TMP_Text)__receiver,(f32)::core::convert::Into::into(alpha),(f32)::core::convert::Into::into(duration),(bool)::core::convert::Into::into(ignore_time_scale))}
+__TMP_Text_unity2_raw::cross_fade_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::option::Option::None)}
 }
 #[doc="`InternalCrossFadeColor(crate::unity_engine::color::Color, f32, bool, bool)` overload"]fn internal_cross_fade_color(self,target_color:impl::core::convert::Into<crate::unity_engine::color::Color> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool> ,use_alpha:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2835330usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(target_color),(f32)::core::convert::Into::into(duration),(bool)::core::convert::Into::into(ignore_time_scale),(bool)::core::convert::Into::into(use_alpha))}
+__TMP_Text_unity2_raw::internal_cross_fade_color(__receiver, ::core::convert::Into::into(target_color), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::convert::Into::into(use_alpha), ::core::option::Option::None)}
 }
 #[doc="`InternalCrossFadeAlpha(f32, f32, bool)` overload"]fn internal_cross_fade_alpha(self,alpha:impl::core::convert::Into<f32> ,duration:impl::core::convert::Into<f32> ,ignore_time_scale:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2835340usize)as*mut u8,();
-(TMP_Text)__receiver,(f32)::core::convert::Into::into(alpha),(f32)::core::convert::Into::into(duration),(bool)::core::convert::Into::into(ignore_time_scale))}
+__TMP_Text_unity2_raw::internal_cross_fade_alpha(__receiver, ::core::convert::Into::into(alpha), ::core::convert::Into::into(duration), ::core::convert::Into::into(ignore_time_scale), ::core::option::Option::None)}
 }
 #[doc="`ParseInputText()` overload"]fn parse_input_text(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2835350usize)as*mut u8,();
@@ -1081,8 +1773,7 @@ __out_0.assume_init()}
 (TMP_Text)__receiver)}
 }
 #[doc="`SetArraySizes(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>)` overload"]fn set_array_sizes(self,unicode_chars:impl::core::convert::Into< ::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar> >)->i32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2838f20usize)as*mut u8,i32;
-(TMP_Text)__receiver,(::unity2::Array<crate::tm_pro::tmp_text::TMP_Text_UnicodeChar>)::core::convert::Into::into(unicode_chars))}
+__TMP_Text_unity2_raw::set_array_sizes(__receiver, ::core::convert::Into::into(unicode_chars), ::core::option::Option::None)}
 }
 #[doc="`GetPreferredValues()` overload"]fn get_preferred_values(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2838f30usize)as*mut u8,crate::unity_engine::vector2::Vector2;
@@ -1126,18 +1817,15 @@ __out_0.assume_init()}
 }
 #[doc="`CalculatePreferredValues(*mutf32, crate::unity_engine::vector2::Vector2, bool, bool)` overload"]fn calculate_preferred_values(self,margin_size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,is_text_auto_sizing_enabled:impl::core::convert::Into<bool> ,is_word_wrapping_enabled:impl::core::convert::Into<bool>)->(crate::unity_engine::vector2::Vector2,f32){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <f32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x28399b0usize)as*mut u8,crate::unity_engine::vector2::Vector2;
-(TMP_Text)__receiver,(*mut f32)__out_0.as_mut_ptr(),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(margin_size),(bool)::core::convert::Into::into(is_text_auto_sizing_enabled),(bool)::core::convert::Into::into(is_word_wrapping_enabled))}
+let __ret={__TMP_Text_unity2_raw::calculate_preferred_values(__receiver,__out_0.as_mut_ptr(), ::core::convert::Into::into(margin_size), ::core::convert::Into::into(is_text_auto_sizing_enabled), ::core::convert::Into::into(is_word_wrapping_enabled), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }
 #[doc="`GetCompoundBounds()` overload"]fn get_compound_bounds(self,)->crate::unity_engine::bounds::Bounds{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2842ca0usize)as*mut u8,crate::unity_engine::bounds::Bounds;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_compound_bounds(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetCanvasSpaceClippingRect()` overload"]fn get_canvas_space_clipping_rect(self,)->crate::unity_engine::rect::Rect{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2842cb0usize)as*mut u8,crate::unity_engine::rect::Rect;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_canvas_space_clipping_rect(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetTextBounds(bool)` overload"]fn get_text_bounds_2(self,only_visible_characters:impl::core::convert::Into<bool>)->crate::unity_engine::bounds::Bounds{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28395c0usize)as*mut u8,crate::unity_engine::bounds::Bounds;
@@ -1152,12 +1840,10 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x28399b0usize)as*mut
 (TMP_Text)__receiver,(i32)::core::convert::Into::into(size))}
 }
 #[doc="`GetTextInfo(::unity2::Il2CppString)` overload"]fn get_text_info_2(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::tm_pro::tmp_textinfo::TMP_TextInfo{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28430b0usize)as*mut u8,crate::tm_pro::tmp_textinfo::TMP_TextInfo;
-(TMP_Text)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(text))}
+__TMP_Text_unity2_raw::get_text_info_2(__receiver, ::core::convert::Into::into(text), ::core::option::Option::None)}
 }
 #[doc="`ComputeMarginSize()` overload"]fn compute_margin_size(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28430c0usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::compute_margin_size(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InsertNewLine(i32, f32, f32, f32, f32, f32, f32, f32, f32, *mutbool, *mutf32)` overload"]fn insert_new_line(self,i:impl::core::convert::Into<i32> ,base_scale:impl::core::convert::Into<f32> ,current_element_scale:impl::core::convert::Into<f32> ,current_em_scale:impl::core::convert::Into<f32> ,glyph_adjustment:impl::core::convert::Into<f32> ,bold_spacing_adjustment:impl::core::convert::Into<f32> ,character_spacing_adjustment:impl::core::convert::Into<f32> ,width:impl::core::convert::Into<f32> ,line_gap:impl::core::convert::Into<f32>)->(bool,f32){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <bool> ::uninit();
@@ -1180,35 +1866,28 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2842350usize)as*mut
 (__ret,__out_0.assume_init())}
 }
 #[doc="`SaveGlyphVertexInfo(f32, f32, crate::unity_engine::color32::Color32)` overload"]fn save_glyph_vertex_info(self,padding:impl::core::convert::Into<f32> ,style_padding:impl::core::convert::Into<f32> ,vertex_color:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2843720usize)as*mut u8,();
-(TMP_Text)__receiver,(f32)::core::convert::Into::into(padding),(f32)::core::convert::Into::into(style_padding),(crate::unity_engine::color32::Color32)::core::convert::Into::into(vertex_color))}
+__TMP_Text_unity2_raw::save_glyph_vertex_info(__receiver, ::core::convert::Into::into(padding), ::core::convert::Into::into(style_padding), ::core::convert::Into::into(vertex_color), ::core::option::Option::None)}
 }
 #[doc="`SaveSpriteVertexInfo(crate::unity_engine::color32::Color32)` overload"]fn save_sprite_vertex_info(self,vertex_color:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2844130usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::color32::Color32)::core::convert::Into::into(vertex_color))}
+__TMP_Text_unity2_raw::save_sprite_vertex_info(__receiver, ::core::convert::Into::into(vertex_color), ::core::option::Option::None)}
 }
 #[doc="`FillCharacterVertexBuffers(i32, i32)` overload"]fn fill_character_vertex_buffers(self,i:impl::core::convert::Into<i32> ,index_x4:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28447f0usize)as*mut u8,();
-(TMP_Text)__receiver,(i32)::core::convert::Into::into(i),(i32)::core::convert::Into::into(index_x4))}
+__TMP_Text_unity2_raw::fill_character_vertex_buffers(__receiver, ::core::convert::Into::into(i), ::core::convert::Into::into(index_x4), ::core::option::Option::None)}
 }
 #[doc="`FillCharacterVertexBuffers(i32, i32, bool)` overload"]fn fill_character_vertex_buffers_2(self,i:impl::core::convert::Into<i32> ,index_x4:impl::core::convert::Into<i32> ,is_volumetric:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2844e10usize)as*mut u8,();
-(TMP_Text)__receiver,(i32)::core::convert::Into::into(i),(i32)::core::convert::Into::into(index_x4),(bool)::core::convert::Into::into(is_volumetric))}
+__TMP_Text_unity2_raw::fill_character_vertex_buffers_2(__receiver, ::core::convert::Into::into(i), ::core::convert::Into::into(index_x4), ::core::convert::Into::into(is_volumetric), ::core::option::Option::None)}
 }
 #[doc="`FillSpriteVertexBuffers(i32, i32)` overload"]fn fill_sprite_vertex_buffers(self,i:impl::core::convert::Into<i32> ,index_x4:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2845830usize)as*mut u8,();
-(TMP_Text)__receiver,(i32)::core::convert::Into::into(i),(i32)::core::convert::Into::into(index_x4))}
+__TMP_Text_unity2_raw::fill_sprite_vertex_buffers(__receiver, ::core::convert::Into::into(i), ::core::convert::Into::into(index_x4), ::core::option::Option::None)}
 }
 #[doc="`DrawUnderlineMesh(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *muti32, f32, f32, f32, f32, crate::unity_engine::color32::Color32)` overload"]fn draw_underline_mesh(self,start:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,end:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,start_scale:impl::core::convert::Into<f32> ,end_scale:impl::core::convert::Into<f32> ,max_scale:impl::core::convert::Into<f32> ,sdf_scale:impl::core::convert::Into<f32> ,underline_color:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->i32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2845e50usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(start),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(end),(*mut i32)__out_0.as_mut_ptr(),(f32)::core::convert::Into::into(start_scale),(f32)::core::convert::Into::into(end_scale),(f32)::core::convert::Into::into(max_scale),(f32)::core::convert::Into::into(sdf_scale),(crate::unity_engine::color32::Color32)::core::convert::Into::into(underline_color));
+__TMP_Text_unity2_raw::draw_underline_mesh(__receiver, ::core::convert::Into::into(start), ::core::convert::Into::into(end),__out_0.as_mut_ptr(), ::core::convert::Into::into(start_scale), ::core::convert::Into::into(end_scale), ::core::convert::Into::into(max_scale), ::core::convert::Into::into(sdf_scale), ::core::convert::Into::into(underline_color), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`DrawTextHighlight(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, *muti32, crate::unity_engine::color32::Color32)` overload"]fn draw_text_highlight(self,start:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,end:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,highlight_color:impl::core::convert::Into<crate::unity_engine::color32::Color32>)->i32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2846e20usize)as*mut u8,();
-(TMP_Text)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(start),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(end),(*mut i32)__out_0.as_mut_ptr(),(crate::unity_engine::color32::Color32)::core::convert::Into::into(highlight_color));
+__TMP_Text_unity2_raw::draw_text_highlight(__receiver, ::core::convert::Into::into(start), ::core::convert::Into::into(end),__out_0.as_mut_ptr(), ::core::convert::Into::into(highlight_color), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`LoadDefaultSettings()` overload"]fn load_default_settings(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -1243,24 +1922,19 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x28478d0usize)as*mut
 (__ret,__out_0.assume_init())}
 }
 #[doc="`SetActiveSubMeshes(bool)` overload"]fn set_active_sub_meshes(self,state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2847cf0usize)as*mut u8,();
-(TMP_Text)__receiver,(bool)::core::convert::Into::into(state))}
+__TMP_Text_unity2_raw::set_active_sub_meshes(__receiver, ::core::convert::Into::into(state), ::core::option::Option::None)}
 }
 #[doc="`DestroySubMeshObjects()` overload"]fn destroy_sub_mesh_objects(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2847d00usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::destroy_sub_mesh_objects(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ClearMesh()` overload"]fn clear_mesh(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2847d10usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::clear_mesh(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ClearMesh(bool)` overload"]fn clear_mesh_2(self,upload_geometry:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2847d20usize)as*mut u8,();
-(TMP_Text)__receiver,(bool)::core::convert::Into::into(upload_geometry))}
+__TMP_Text_unity2_raw::clear_mesh_2(__receiver, ::core::convert::Into::into(upload_geometry), ::core::option::Option::None)}
 }
 #[doc="`GetParsedText()` overload"]fn get_parsed_text(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2847d30usize)as*mut u8, ::unity2::Il2CppString;
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::get_parsed_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsSelfOrLinkedAncestor(crate::tm_pro::tmp_text::TMP_Text)` overload"]fn is_self_or_linked_ancestor(self,target_text_component:impl::core::convert::Into<crate::tm_pro::tmp_text::TMP_Text>)->bool{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2833370usize)as*mut u8,bool;
@@ -1279,8 +1953,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x28478d0usize)as*mut
 (TMP_Text)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
 }
 #[doc="`InternalUpdate()` overload"]fn internal_update(self,)->(){unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2847ea0usize)as*mut u8,();
-(TMP_Text)__receiver)}
+__TMP_Text_unity2_raw::internal_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`HexToInt(u16)` overload"]fn hex_to_int(self,hex:impl::core::convert::Into<u16>)->i32{unsafe{let __receiver= <TMP_Text as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2847eb0usize)as*mut u8,i32;
@@ -1654,57 +2327,17 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_CharacterSubstitution{#[doc="`.ctor(i32, u32)` overload"]pub fn ctor(&mut self,index:impl::core::convert::Into<i32> ,unicode:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa2c0usize)as*mut u8,();
-(*mut TMP_Text_CharacterSubstitution)self as*mut TMP_Text_CharacterSubstitution,(i32)::core::convert::Into::into(index),(u32)::core::convert::Into::into(unicode))}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_CharacterSubstitution{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_TextBackingContainer{#[doc="`get_Capacity()` overload"]pub fn get_capacity(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa3f0usize)as*mut u8,i32;
-(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer)}
-}
-#[doc="`get_Count()` overload"]pub fn get_count(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa400usize)as*mut u8,i32;
-(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer)}
-}
-#[doc="`set_Count(i32)` overload"]pub fn set_count(&mut self,value:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa410usize)as*mut u8,();
-(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(value))}
-}
-#[doc="`get_Item(i32)` overload"]pub fn get_item(&mut self,index:impl::core::convert::Into<i32>)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa420usize)as*mut u8,u32;
-(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`set_Item(i32, u32)` overload"]pub fn set_item(&mut self,index:impl::core::convert::Into<i32> ,value:impl::core::convert::Into<u32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa460usize)as*mut u8,();
-(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(index),(u32)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor(i32)` overload"]pub fn ctor(&mut self,size:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa580usize)as*mut u8,();
-(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(size))}
-}
-#[doc="`Resize(i32)` overload"]pub fn resize(&mut self,size:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3eaa510usize)as*mut u8,();
-(*mut TMP_Text_TextBackingContainer)self as*mut TMP_Text_TextBackingContainer,(i32)::core::convert::Into::into(size))}
-}
-}
-
-#[cfg(feature="tm_pro-tmp_text")]impl TMP_Text_TextBackingContainer{pub fn get_capacity_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn resize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
 #[cfg(feature = "tm_pro-tmp_text")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TMP_Text_UnicodeChar;
     pub use super::TMP_Text_SpecialCharacter;
+    pub use super::TMP_Text_TextInputSources;
+    pub use super::TMP_Text_CharacterSubstitution;
+    pub use super::TMP_Text_TextBackingContainer;
     pub use super::TMP_Text;
     pub use super::ITMP_Text;
     pub use super::ITMP_TextMethods;
-    pub use super::TMP_Text_CharacterSubstitution;
-    pub use super::TMP_Text_TextBackingContainer;
-    pub use super::TMP_Text_TextInputSources;
+    pub use super::TMP_Text_UnicodeChar;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -17,6 +17,9 @@ use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI.CoroutineTween",name="ColorTween.ColorTweenCallback")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::color::Color>)]pub struct ColorTween_ColorTweenCallback{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ColorTween_ColorTweenMode{pub value:i32,}
 impl::unity2::ClassIdentity for ColorTween_ColorTweenMode{const NAMESPACE: &'static str="UnityEngine.UI.CoroutineTween";
 const NAME: &'static str="ColorTween.ColorTweenMode";
@@ -33,9 +36,6 @@ pub fn rgb()->Self{Self{value:1}
 pub fn alpha()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/colortween/ColorTween_ColorTweenCallback.md"))]#[::unity2::class(namespace="UnityEngine.UI.CoroutineTween",name="ColorTween.ColorTweenCallback")]#[parent(crate::unity_engine::events::unityevent_1::UnityEvent_1<crate::unity_engine::color::Color>)]pub struct ColorTween_ColorTweenCallback{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/ui/coroutine_tween/colortween/ColorTween.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct ColorTween{pub m_target:crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenCallback,pub m_start_color:crate::unity_engine::color::Color,pub m_target_color:crate::unity_engine::color::Color,pub m_tween_mode:crate::unity_engine::ui::coroutine_tween::colortween::ColorTween_ColorTweenMode,pub m_duration:f32,pub m_ignore_time_scale:bool,}
@@ -134,10 +134,10 @@ pub fn valid_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 #[cfg(feature = "unity_engine-ui-coroutine_tween-colortween")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ColorTween_ColorTweenMode;
     pub use super::ColorTween_ColorTweenCallback;
     pub use super::IColorTween_ColorTweenCallback;
     pub use super::IColorTween_ColorTweenCallbackMethods;
+    pub use super::ColorTween_ColorTweenMode;
     pub use super::ColorTween;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

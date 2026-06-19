@@ -22,6 +22,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-itemrefineexchangedata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-itemrefineexchangedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ItemRefineExchangeData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:ItemRefineExchangeData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ItemRefineExchangeData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(ItemRefineExchangeData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-itemrefineexchangedata")]impl ItemRefineExchangeData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2049d80usize)as*mut u8,();
 )}
 }
@@ -100,8 +113,7 @@ pub use __types::*;
 (ItemRefineExchangeData)__receiver,(u16)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2049f50usize)as*mut u8, ::unity2::Il2CppString;
-(ItemRefineExchangeData)__receiver)}
+__ItemRefineExchangeData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetExchangeCost(::unity2::Il2CppString, *muti32, *muti32)` overload"]fn get_exchange_cost(self,material_id:impl::core::convert::Into< ::unity2::Il2CppString>)->(i32,i32){unsafe{let __receiver= <ItemRefineExchangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <i32> ::uninit();

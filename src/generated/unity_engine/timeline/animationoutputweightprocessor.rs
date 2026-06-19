@@ -29,6 +29,19 @@ impl::unity2::IlType for AnimationOutputWeightProcessor_WeightInfo{fn il_type()-
 #[cfg(feature = "unity_engine-timeline-animationoutputweightprocessor-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-timeline-animationoutputweightprocessor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimationOutputWeightProcessor_unity2_raw{use super:: * ;
+pub unsafe fn evaluate(this:AnimationOutputWeightProcessor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AnimationOutputWeightProcessor as::unity2::ClassIdentity> ::NAME,"Evaluate",));
+let inner:extern "C" fn(AnimationOutputWeightProcessor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-timeline-animationoutputweightprocessor")]pub trait IAnimationOutputWeightProcessorMethods:IAnimationOutputWeightProcessor{#[doc="`.ctor(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)` overload"]fn ctor(self,output:impl::core::convert::Into<crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput>)->(){unsafe{let __receiver= <AnimationOutputWeightProcessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35cf5b0usize)as*mut u8,();
 (AnimationOutputWeightProcessor)__receiver,(crate::unity_engine::animations::animationplayableoutput::AnimationPlayableOutput)::core::convert::Into::into(output))}
@@ -42,8 +55,7 @@ pub use __types::*;
 (AnimationOutputWeightProcessor)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(parent),(i32)::core::convert::Into::into(port),(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(node))}
 }
 #[doc="`Evaluate()` overload"]fn evaluate(self,)->(){unsafe{let __receiver= <AnimationOutputWeightProcessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35cfa00usize)as*mut u8,();
-(AnimationOutputWeightProcessor)__receiver)}
+__AnimationOutputWeightProcessor_unity2_raw::evaluate(__receiver, ::core::option::Option::None)}
 }
 }
 

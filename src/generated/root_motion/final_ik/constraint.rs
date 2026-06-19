@@ -17,9 +17,12 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="root_motion-final_ik-constraint")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Constraint_unity2_raw{use super:: * ;
-pub unsafe fn update_constraint(this:Constraint,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UpdateConstraint").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UpdateConstraint", <Constraint as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn update_constraint(this:Constraint,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Constraint as::unity2::ClassIdentity> ::NAME,"UpdateConstraint",));
 let inner:extern "C" fn(Constraint, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

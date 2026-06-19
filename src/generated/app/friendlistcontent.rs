@@ -17,15 +17,118 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistcontent/FriendListContent.md"))]#[::unity2::class(namespace="App",name="FriendListContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FriendListContent{#[offset(32)]#[rename(name="m_FriendContentArray")]pub m_friend_content_array: ::unity2::Array<crate::app::friendlistcontent::FriendListContent_FriendContent> , #[offset(40)]#[rename(name="m_ActiveFriendContentIndex")]pub m_active_friend_content_index:i32, #[offset(48)]#[rename(name="m_IndexAnimatorArray")]pub m_index_animator_array: ::unity2::Array<crate::unity_engine::animator::Animator> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistcontent/FriendListContent_FriendContent.md"))]#[::unity2::class(namespace="App",name="FriendListContent.FriendContent")]#[parent(crate::system::object::Object)]pub struct FriendListContent_FriendContent{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/friendlistcontent/FriendListContent.md"))]#[::unity2::class(namespace="App",name="FriendListContent")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct FriendListContent{#[offset(32)]#[rename(name="m_FriendContentArray")]pub m_friend_content_array: ::unity2::Array<crate::app::friendlistcontent::FriendListContent_FriendContent> , #[offset(40)]#[rename(name="m_ActiveFriendContentIndex")]pub m_active_friend_content_index:i32, #[offset(48)]#[rename(name="m_IndexAnimatorArray")]pub m_index_animator_array: ::unity2::Array<crate::unity_engine::animator::Animator> ,}
 
 }
 
 #[cfg(feature = "app-friendlistcontent-types")]
 pub use __types::*;
+
+#[cfg(feature="app-friendlistcontent")]pub trait IFriendListContent_FriendContentMethods:IFriendListContent_FriendContent{#[doc="`get_TitleObj()` overload"]fn get_title_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e648e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(FriendListContent_FriendContent)__receiver)}
+}
+#[doc="`set_TitleObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_title_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e648f0usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_MessageObj()` overload"]fn get_message_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64900usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(FriendListContent_FriendContent)__receiver)}
+}
+#[doc="`set_MessageObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_message_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64910usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_StampObj()` overload"]fn get_stamp_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64920usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(FriendListContent_FriendContent)__receiver)}
+}
+#[doc="`set_StampObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_stamp_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64930usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`get_PictureObj()` overload"]fn get_picture_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64940usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
+(FriendListContent_FriendContent)__receiver)}
+}
+#[doc="`set_PictureObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_picture_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64950usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
+}
+#[doc="`SetTextObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_text_obj(self,text_root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64960usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(text_root))}
+}
+#[doc="`SetTitle(::unity2::Il2CppString)` overload"]fn set_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64a40usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
+}
+#[doc="`SetMessage(::unity2::Il2CppString)` overload"]fn set_message(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64ac0usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`SetStamp(crate::unity_engine::sprite::Sprite)` overload"]fn set_stamp(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64b40usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`SetImage(crate::unity_engine::sprite::Sprite)` overload"]fn set_image(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64be0usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
+}
+#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64c80usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver)}
+}
+#[doc="`StartShow()` overload"]fn start_show(self,)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64d40usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver)}
+}
+#[doc="`StartHide(bool)` overload"]fn start_hide(self,is_chara_change:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64ea0usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver,(bool)::core::convert::Into::into(is_chara_change))}
+}
+#[doc="`IsChanging()` overload"]fn is_changing(self,)->bool{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65000usize)as*mut u8,bool;
+(FriendListContent_FriendContent)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e650f0usize)as*mut u8,();
+(FriendListContent_FriendContent)__receiver)}
+}
+}
+
+#[cfg(feature="app-friendlistcontent")]impl<__T:IFriendListContent_FriendContent>IFriendListContent_FriendContentMethods for __T{}
+
+#[cfg(feature="app-friendlistcontent")]impl FriendListContent_FriendContent{pub fn get_title_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_title_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_message_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn set_message_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_stamp_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_stamp_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_picture_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_picture_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_text_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn set_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn set_stamp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn start_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn start_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn is_changing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+}
+
+#[cfg(feature="app-friendlistcontent")]impl FriendListContent_FriendContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FriendListContent_FriendContent), ::core::stringify!(new),));
+ <Self as IFriendListContent_FriendContentMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-friendlistcontent")]pub trait IFriendListContentMethods:IFriendListContent{#[doc="`set_IsInitialized(bool)` overload"]fn set_is_initialized(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FriendListContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x261dd90usize)as*mut u8,();
@@ -135,118 +238,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-friendlistcontent")]pub trait IFriendListContent_FriendContentMethods:IFriendListContent_FriendContent{#[doc="`get_TitleObj()` overload"]fn get_title_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e648e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(FriendListContent_FriendContent)__receiver)}
-}
-#[doc="`set_TitleObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_title_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e648f0usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`get_MessageObj()` overload"]fn get_message_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64900usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(FriendListContent_FriendContent)__receiver)}
-}
-#[doc="`set_MessageObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_message_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64910usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`get_StampObj()` overload"]fn get_stamp_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64920usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(FriendListContent_FriendContent)__receiver)}
-}
-#[doc="`set_StampObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_stamp_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64930usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`get_PictureObj()` overload"]fn get_picture_obj(self,)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64940usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
-(FriendListContent_FriendContent)__receiver)}
-}
-#[doc="`set_PictureObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_picture_obj(self,value:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64950usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(value))}
-}
-#[doc="`SetTextObj(crate::unity_engine::gameobject::GameObject)` overload"]fn set_text_obj(self,text_root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64960usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(text_root))}
-}
-#[doc="`SetTitle(::unity2::Il2CppString)` overload"]fn set_title(self,title:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64a40usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(title))}
-}
-#[doc="`SetMessage(::unity2::Il2CppString)` overload"]fn set_message(self,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64ac0usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-#[doc="`SetStamp(crate::unity_engine::sprite::Sprite)` overload"]fn set_stamp(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64b40usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
-}
-#[doc="`SetImage(crate::unity_engine::sprite::Sprite)` overload"]fn set_image(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64be0usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite))}
-}
-#[doc="`Show()` overload"]fn show(self,)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64c80usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver)}
-}
-#[doc="`StartShow()` overload"]fn start_show(self,)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64d40usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver)}
-}
-#[doc="`StartHide(bool)` overload"]fn start_hide(self,is_chara_change:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e64ea0usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver,(bool)::core::convert::Into::into(is_chara_change))}
-}
-#[doc="`IsChanging()` overload"]fn is_changing(self,)->bool{unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e65000usize)as*mut u8,bool;
-(FriendListContent_FriendContent)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FriendListContent_FriendContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e650f0usize)as*mut u8,();
-(FriendListContent_FriendContent)__receiver)}
-}
-}
-
-#[cfg(feature="app-friendlistcontent")]impl<__T:IFriendListContent_FriendContent>IFriendListContent_FriendContentMethods for __T{}
-
-#[cfg(feature="app-friendlistcontent")]impl FriendListContent_FriendContent{pub fn get_title_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_title_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_message_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn set_message_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_stamp_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_stamp_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_picture_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_picture_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_text_obj_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_title_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn set_message_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn set_stamp_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn set_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn start_show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn start_hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn is_changing_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-}
-
-#[cfg(feature="app-friendlistcontent")]impl FriendListContent_FriendContent{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FriendListContent_FriendContent), ::core::stringify!(new),));
- <Self as IFriendListContent_FriendContentMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-friendlistcontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FriendListContent;
-    pub use super::IFriendListContent;
-    pub use super::IFriendListContentMethods;
     pub use super::FriendListContent_FriendContent;
     pub use super::IFriendListContent_FriendContent;
     pub use super::IFriendListContent_FriendContentMethods;
+    pub use super::FriendListContent;
+    pub use super::IFriendListContent;
+    pub use super::IFriendListContentMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

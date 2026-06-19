@@ -24,9 +24,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontarget/InteractionTarget.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTarget")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct InteractionTarget{#[offset(24)]#[rename(name="effectorType")]pub effector_type:crate::root_motion::final_ik::fullbodybipedeffector::FullBodyBipedEffector, #[offset(32)]#[rename(name="multipliers")]pub multipliers: ::unity2::Array<crate::root_motion::final_ik::interactiontarget::InteractionTarget_Multiplier> , #[offset(40)]#[rename(name="interactionSpeedMlp")]pub interaction_speed_mlp:f32, #[offset(48)]#[rename(name="pivot")]pub pivot:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="rotationMode")]pub rotation_mode:crate::root_motion::final_ik::interactiontarget::InteractionTarget_RotationMode, #[offset(60)]#[rename(name="twistAxis")]pub twist_axis:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="twistWeight")]pub twist_weight:f32, #[offset(76)]#[rename(name="swingWeight")]pub swing_weight:f32, #[offset(80)]#[rename(name="threeDOFWeight")]pub three_dof_weight:f32, #[offset(84)]#[rename(name="rotateOnce")]pub rotate_once:bool, #[offset(88)]#[rename(name="defaultLocalRotation")]pub default_local_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(104)]#[rename(name="lastPivot")]pub last_pivot:crate::unity_engine::transform::Transform,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontarget/InteractionTarget_Multiplier.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTarget.Multiplier")]#[parent(crate::system::object::Object)]pub struct InteractionTarget_Multiplier{#[offset(16)]#[rename(name="curve")]pub curve:crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type, #[offset(20)]#[rename(name="multiplier")]pub multiplier:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontarget/InteractionTarget_RotationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct InteractionTarget_RotationMode{pub value:i32,}
 impl::unity2::ClassIdentity for InteractionTarget_RotationMode{const NAMESPACE: &'static str="RootMotion.FinalIK";
 const NAME: &'static str="InteractionTarget.RotationMode";
@@ -41,6 +38,9 @@ impl InteractionTarget_RotationMode{pub fn two_dof()->Self{Self{value:0}
 pub fn three_dof()->Self{Self{value:1}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/interactiontarget/InteractionTarget_Multiplier.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="InteractionTarget.Multiplier")]#[parent(crate::system::object::Object)]pub struct InteractionTarget_Multiplier{#[offset(16)]#[rename(name="curve")]pub curve:crate::root_motion::final_ik::interactionobject::InteractionObject_WeightCurve_Type, #[offset(20)]#[rename(name="multiplier")]pub multiplier:f32,}
 
 }
 
@@ -144,10 +144,10 @@ pub mod prelude {
     pub use super::InteractionTarget;
     pub use super::IInteractionTarget;
     pub use super::IInteractionTargetMethods;
+    pub use super::InteractionTarget_RotationMode;
     pub use super::InteractionTarget_Multiplier;
     pub use super::IInteractionTarget_Multiplier;
     pub use super::IInteractionTarget_MultiplierMethods;
-    pub use super::InteractionTarget_RotationMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

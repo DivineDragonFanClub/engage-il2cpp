@@ -49,9 +49,9 @@
  #[cfg(feature="system-collections-hashhelpers-types")]pub use hashhelpers::{HashHelpers,IHashHelpers}
 ;
  #[cfg(any(feature="system-collections-hashtable-types"))]pub mod hashtable;
- #[cfg(feature="system-collections-hashtable-types")]pub use hashtable::{Hashtable_bucket,Hashtable_KeyCollection,IHashtable_KeyCollection,Hashtable_ValueCollection,IHashtable_ValueCollection,Hashtable_SyncHashtable,IHashtable_SyncHashtable,Hashtable_HashtableEnumerator,IHashtable_HashtableEnumerator,Hashtable_HashtableDebugView,IHashtable_HashtableDebugView,Hashtable,IHashtable}
+ #[cfg(feature="system-collections-hashtable-types")]pub use hashtable::{Hashtable_bucket,Hashtable,IHashtable,Hashtable_KeyCollection,IHashtable_KeyCollection,Hashtable_HashtableDebugView,IHashtable_HashtableDebugView,Hashtable_HashtableEnumerator,IHashtable_HashtableEnumerator,Hashtable_ValueCollection,IHashtable_ValueCollection,Hashtable_SyncHashtable,IHashtable_SyncHashtable}
 ;
- #[cfg(feature="system-collections-hashtable")]pub use hashtable::{IHashtable_KeyCollectionMethods,IHashtable_ValueCollectionMethods,IHashtable_SyncHashtableMethods,IHashtable_HashtableEnumeratorMethods,IHashtableMethods}
+ #[cfg(feature="system-collections-hashtable")]pub use hashtable::{IHashtableMethods,IHashtable_KeyCollectionMethods,IHashtable_HashtableEnumeratorMethods,IHashtable_ValueCollectionMethods,IHashtable_SyncHashtableMethods}
 ;
  #[cfg(any(feature="system-collections-icollection-types"))]pub mod icollection;
  #[cfg(feature="system-collections-icollection-types")]pub use icollection::{ICollection,IICollection}
@@ -109,9 +109,9 @@
  #[cfg(feature="system-collections-istructuralequatable")]pub use istructuralequatable::{IIStructuralEquatableMethods}
 ;
  #[cfg(any(feature="system-collections-listdictionaryinternal-types"))]pub mod listdictionaryinternal;
- #[cfg(feature="system-collections-listdictionaryinternal-types")]pub use listdictionaryinternal::{ListDictionaryInternal,IListDictionaryInternal,ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator,IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator,ListDictionaryInternal_DictionaryNode,IListDictionaryInternal_DictionaryNode,ListDictionaryInternal_NodeKeyValueCollection,IListDictionaryInternal_NodeKeyValueCollection,ListDictionaryInternal_NodeEnumerator,IListDictionaryInternal_NodeEnumerator}
+ #[cfg(feature="system-collections-listdictionaryinternal-types")]pub use listdictionaryinternal::{ListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator,IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumerator,ListDictionaryInternal,IListDictionaryInternal,ListDictionaryInternal_NodeEnumerator,IListDictionaryInternal_NodeEnumerator,ListDictionaryInternal_DictionaryNode,IListDictionaryInternal_DictionaryNode,ListDictionaryInternal_NodeKeyValueCollection,IListDictionaryInternal_NodeKeyValueCollection}
 ;
- #[cfg(feature="system-collections-listdictionaryinternal")]pub use listdictionaryinternal::{IListDictionaryInternalMethods,IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,IListDictionaryInternal_DictionaryNodeMethods,IListDictionaryInternal_NodeKeyValueCollectionMethods,IListDictionaryInternal_NodeEnumeratorMethods}
+ #[cfg(feature="system-collections-listdictionaryinternal")]pub use listdictionaryinternal::{IListDictionaryInternal_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,IListDictionaryInternalMethods,IListDictionaryInternal_NodeEnumeratorMethods,IListDictionaryInternal_DictionaryNodeMethods,IListDictionaryInternal_NodeKeyValueCollectionMethods}
 ;
  #[cfg(any(feature="system-collections-lowlevelcomparer-types"))]pub mod lowlevelcomparer;
  #[cfg(feature="system-collections-lowlevelcomparer-types")]pub use lowlevelcomparer::{LowLevelComparer,ILowLevelComparer}
@@ -120,7 +120,7 @@
 ;
  #[cfg(any(feature="system-collections-object_model-collection_1-types",feature="system-collections-object_model-readonlycollection_1-types"))]pub mod object_model;
  #[cfg(any(feature="system-collections-queue-types"))]pub mod queue;
- #[cfg(feature="system-collections-queue-types")]pub use queue::{Queue_QueueDebugView,IQueue_QueueDebugView,Queue,IQueue,Queue_QueueEnumerator,IQueue_QueueEnumerator}
+ #[cfg(feature="system-collections-queue-types")]pub use queue::{Queue,IQueue,Queue_QueueEnumerator,IQueue_QueueEnumerator,Queue_QueueDebugView,IQueue_QueueDebugView}
 ;
  #[cfg(feature="system-collections-queue")]pub use queue::{IQueueMethods,IQueue_QueueEnumeratorMethods}
 ;
@@ -130,13 +130,13 @@
  #[cfg(feature="system-collections-readonlycollectionbase")]pub use readonlycollectionbase::{IReadOnlyCollectionBaseMethods}
 ;
  #[cfg(any(feature="system-collections-sortedlist-types"))]pub mod sortedlist;
- #[cfg(feature="system-collections-sortedlist-types")]pub use sortedlist::{SortedList_SyncSortedList,ISortedList_SyncSortedList,SortedList,ISortedList,SortedList_SortedListEnumerator,ISortedList_SortedListEnumerator,SortedList_SortedListDebugView,ISortedList_SortedListDebugView,SortedList_ValueList,ISortedList_ValueList,SortedList_KeyList,ISortedList_KeyList}
+ #[cfg(feature="system-collections-sortedlist-types")]pub use sortedlist::{SortedList_ValueList,ISortedList_ValueList,SortedList,ISortedList,SortedList_SortedListDebugView,ISortedList_SortedListDebugView,SortedList_SyncSortedList,ISortedList_SyncSortedList,SortedList_SortedListEnumerator,ISortedList_SortedListEnumerator,SortedList_KeyList,ISortedList_KeyList}
 ;
- #[cfg(feature="system-collections-sortedlist")]pub use sortedlist::{ISortedList_SyncSortedListMethods,ISortedListMethods,ISortedList_SortedListEnumeratorMethods,ISortedList_ValueListMethods,ISortedList_KeyListMethods}
+ #[cfg(feature="system-collections-sortedlist")]pub use sortedlist::{ISortedList_ValueListMethods,ISortedListMethods,ISortedList_SyncSortedListMethods,ISortedList_SortedListEnumeratorMethods,ISortedList_KeyListMethods}
 ;
  #[cfg(any(feature="system-collections-specialized-casesensitivestringdictionary-types",feature="system-collections-specialized-compatiblecomparer_2-types",feature="system-collections-specialized-hybriddictionary-types",feature="system-collections-specialized-listdictionary-types",feature="system-collections-specialized-nameobjectcollectionbase-types",feature="system-collections-specialized-namevaluecollection-types",feature="system-collections-specialized-ordereddictionary-types",feature="system-collections-specialized-stringcollection-types",feature="system-collections-specialized-stringdictionary-types"))]pub mod specialized;
  #[cfg(any(feature="system-collections-stack-types"))]pub mod stack;
- #[cfg(feature="system-collections-stack-types")]pub use stack::{Stack_StackDebugView,IStack_StackDebugView,Stack_StackEnumerator,IStack_StackEnumerator,Stack,IStack}
+ #[cfg(feature="system-collections-stack-types")]pub use stack::{Stack_StackDebugView,IStack_StackDebugView,Stack,IStack,Stack_StackEnumerator,IStack_StackEnumerator}
 ;
- #[cfg(feature="system-collections-stack")]pub use stack::{IStack_StackEnumeratorMethods,IStackMethods}
+ #[cfg(feature="system-collections-stack")]pub use stack::{IStackMethods,IStack_StackEnumeratorMethods}
 ;

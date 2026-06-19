@@ -20,6 +20,19 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-colorparameter-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-colorparameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ColorParameter_unity2_raw{use super:: * ;
+pub unsafe fn interp(this:ColorParameter,from:crate::unity_engine::color::Color,to:crate::unity_engine::color::Color,t:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <ColorParameter as::unity2::ClassIdentity> ::NAME,"Interp",));
+let inner:extern "C" fn(ColorParameter,crate::unity_engine::color::Color,crate::unity_engine::color::Color,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,from,to,t,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-colorparameter")]pub trait IColorParameterMethods:IColorParameter{#[doc="`.ctor(crate::unity_engine::color::Color, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::color::Color> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ColorParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x352f690usize)as*mut u8,();
 (ColorParameter)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value),(bool)::core::convert::Into::into(override_state))}
@@ -29,8 +42,7 @@ pub use __types::*;
 (ColorParameter)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(value),(bool)::core::convert::Into::into(hdr),(bool)::core::convert::Into::into(show_alpha),(bool)::core::convert::Into::into(show_eye_dropper),(bool)::core::convert::Into::into(override_state))}
 }
 #[doc="`Interp(crate::unity_engine::color::Color, crate::unity_engine::color::Color, f32)` overload"]fn interp(self,from:impl::core::convert::Into<crate::unity_engine::color::Color> ,to:impl::core::convert::Into<crate::unity_engine::color::Color> ,t:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ColorParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x352f810usize)as*mut u8,();
-(ColorParameter)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(from),(crate::unity_engine::color::Color)::core::convert::Into::into(to),(f32)::core::convert::Into::into(t))}
+__ColorParameter_unity2_raw::interp(__receiver, ::core::convert::Into::into(from), ::core::convert::Into::into(to), ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 }
 

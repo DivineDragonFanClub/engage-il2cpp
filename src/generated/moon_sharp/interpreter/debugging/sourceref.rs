@@ -207,16 +207,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <SourceRef as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<SourceRef as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <SourceRef as::unity2::ClassIdentity> ::NAME,"ToString",e),}
-}
-}
+pub unsafe fn to_string(this:SourceRef,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <SourceRef as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(SourceRef, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_location_distance{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type(), <i32 as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<SourceRef as::unity2::ClassIdentity> ::class(),"GetLocationDistance",3,param_types,false,)}
@@ -337,8 +337,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (SourceRef)__receiver,(i32)::core::convert::Into::into(source_idx),(i32)::core::convert::Into::into(from),(i32)::core::convert::Into::into(to),(i32)::core::convert::Into::into(fromline),(i32)::core::convert::Into::into(toline),(bool)::core::convert::Into::into(is_step_stop))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SourceRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__SourceRef_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
-(SourceRef)__receiver)}
+__SourceRef_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetLocationDistance(i32, i32, i32)` overload"]fn get_location_distance(self,source_idx:impl::core::convert::Into<i32> ,line:impl::core::convert::Into<i32> ,col:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <SourceRef as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__SourceRef_unity2_raw::__lookup_get_location_distance::get_method_info().method_ptr,i32;

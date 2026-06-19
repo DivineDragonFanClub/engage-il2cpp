@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/random_2/Random_2.md"))]#[::unity2::class(namespace="App",name="Random")]#[parent(crate::system::object::Object)]pub struct Random_2{#[static_field]#[rename(name="s_Rand")]pub s_rand: ::unity2::Array<crate::app::random_2::Random_2> , #[offset(16)]#[rename(name="m_Seed")]pub m_seed:crate::app::randomseed::RandomSeed,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/random_2/Random_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Random_Type{pub value:i32,}
 impl::unity2::ClassIdentity for Random_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Random.Type";
@@ -42,6 +39,9 @@ pub fn combat()->Self{Self{value:6}
 pub fn num()->Self{Self{value:7}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/random_2/Random_2.md"))]#[::unity2::class(namespace="App",name="Random")]#[parent(crate::system::object::Object)]pub struct Random_2{#[static_field]#[rename(name="s_Rand")]pub s_rand: ::unity2::Array<crate::app::random_2::Random_2> , #[offset(16)]#[rename(name="m_Seed")]pub m_seed:crate::app::randomseed::RandomSeed,}
 
 }
 
@@ -239,10 +239,10 @@ this}
 #[cfg(feature = "app-random_2")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Random_Type;
     pub use super::Random_2;
     pub use super::IRandom_2;
     pub use super::IRandom_2Methods;
-    pub use super::Random_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

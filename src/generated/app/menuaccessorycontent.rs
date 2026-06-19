@@ -24,6 +24,79 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-menuaccessorycontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-menuaccessorycontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MenuAccessoryContent_unity2_raw{use super:: * ;
+pub unsafe fn is_opening(this:MenuAccessoryContent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MenuAccessoryContent as::unity2::ClassIdentity> ::NAME,"IsOpening",));
+let inner:extern "C" fn(MenuAccessoryContent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_closing(this:MenuAccessoryContent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MenuAccessoryContent as::unity2::ClassIdentity> ::NAME,"IsClosing",));
+let inner:extern "C" fn(MenuAccessoryContent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_closed(this:MenuAccessoryContent,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MenuAccessoryContent as::unity2::ClassIdentity> ::NAME,"IsClosed",));
+let inner:extern "C" fn(MenuAccessoryContent, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn awake(this:MenuAccessoryContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MenuAccessoryContent as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(MenuAccessoryContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn open_anime(this:MenuAccessoryContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MenuAccessoryContent as::unity2::ClassIdentity> ::NAME,"OpenAnime",));
+let inner:extern "C" fn(MenuAccessoryContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn close_anime(this:MenuAccessoryContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MenuAccessoryContent as::unity2::ClassIdentity> ::NAME,"CloseAnime",));
+let inner:extern "C" fn(MenuAccessoryContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update(this:MenuAccessoryContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MenuAccessoryContent as::unity2::ClassIdentity> ::NAME,"Update",));
+let inner:extern "C" fn(MenuAccessoryContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-menuaccessorycontent")]pub trait IMenuAccessoryContentMethods:IMenuAccessoryContent{#[doc="`GetMenu()` overload"]fn get_menu(self,)->crate::app::basicmenu::BasicMenu{unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc3f0usize)as*mut u8,crate::app::basicmenu::BasicMenu;
 (MenuAccessoryContent)__receiver)}
@@ -33,32 +106,25 @@ pub use __types::*;
 (MenuAccessoryContent)__receiver,(crate::app::basicmenu::BasicMenu)::core::convert::Into::into(menu))}
 }
 #[doc="`IsOpening()` overload"]fn is_opening(self,)->bool{unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc410usize)as*mut u8,bool;
-(MenuAccessoryContent)__receiver)}
+__MenuAccessoryContent_unity2_raw::is_opening(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsClosing()` overload"]fn is_closing(self,)->bool{unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc4c0usize)as*mut u8,bool;
-(MenuAccessoryContent)__receiver)}
+__MenuAccessoryContent_unity2_raw::is_closing(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsClosed()` overload"]fn is_closed(self,)->bool{unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc570usize)as*mut u8,bool;
-(MenuAccessoryContent)__receiver)}
+__MenuAccessoryContent_unity2_raw::is_closed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc620usize)as*mut u8,();
-(MenuAccessoryContent)__receiver)}
+__MenuAccessoryContent_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenAnime()` overload"]fn open_anime(self,)->(){unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc690usize)as*mut u8,();
-(MenuAccessoryContent)__receiver)}
+__MenuAccessoryContent_unity2_raw::open_anime(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CloseAnime()` overload"]fn close_anime(self,)->(){unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc700usize)as*mut u8,();
-(MenuAccessoryContent)__receiver)}
+__MenuAccessoryContent_unity2_raw::close_anime(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc7e0usize)as*mut u8,();
-(MenuAccessoryContent)__receiver)}
+__MenuAccessoryContent_unity2_raw::update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MenuAccessoryContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25cc8c0usize)as*mut u8,();

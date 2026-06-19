@@ -20,6 +20,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-animalinsidemenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-animalinsidemenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimalInsideMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:AnimalInsideMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <AnimalInsideMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(AnimalInsideMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_left(this:AnimalInsideMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <AnimalInsideMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(AnimalInsideMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+}
+
 #[cfg(feature="app-animalinsidemenu")]impl AnimalInsideMenu{#[doc="`Create(crate::app::animalinsidemenucontent::AnimalInsideMenuContent)` overload"]pub fn create(menu_content:impl::core::convert::Into<crate::app::animalinsidemenucontent::AnimalInsideMenuContent>)->crate::app::animalinsidemenu::AnimalInsideMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c933a0usize)as*mut u8,crate::app::animalinsidemenu::AnimalInsideMenu;
 (crate::app::animalinsidemenucontent::AnimalInsideMenuContent)::core::convert::Into::into(menu_content))}
 }
@@ -30,8 +53,7 @@ pub use __types::*;
 (AnimalInsideMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <AnimalInsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c935e0usize)as*mut u8, ::unity2::Il2CppString;
-(AnimalInsideMenu)__receiver)}
+__AnimalInsideMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PublicBuild()` overload"]fn public_build(self,)->(){unsafe{let __receiver= <AnimalInsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1c93630usize)as*mut u8,();
@@ -54,8 +76,7 @@ pub use __types::*;
 (AnimalInsideMenu)__receiver)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AnimalInsideMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c938d0usize)as*mut u8,();
-(AnimalInsideMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__AnimalInsideMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 }
 

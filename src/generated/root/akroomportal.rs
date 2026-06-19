@@ -46,6 +46,59 @@ pub fn open()->Self{Self{value:1}
 #[cfg(feature = "root-akroomportal-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akroomportal")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkRoomPortal_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:AkRoomPortal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkRoomPortal as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(AkRoomPortal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start(this:AkRoomPortal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkRoomPortal as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(AkRoomPortal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn handle_event(this:AkRoomPortal,in_game_object:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkRoomPortal as::unity2::ClassIdentity> ::NAME,"HandleEvent",));
+let inner:extern "C" fn(AkRoomPortal,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,in_game_object,__mi)}
+pub unsafe fn on_destroy(this:AkRoomPortal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AkRoomPortal as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(AkRoomPortal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:AkRoomPortal,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AkRoomPortal as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(AkRoomPortal, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-akroomportal")]pub trait IAkRoomPortalMethods:IAkRoomPortal{#[doc="`get_portalActive()` overload"]fn get_portal_active(self,)->bool{unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f35a00usize)as*mut u8,bool;
 (AkRoomPortal)__receiver)}
@@ -95,28 +148,23 @@ pub use __types::*;
 (AkRoomPortal)__receiver)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36410usize)as*mut u8,();
-(AkRoomPortal)__receiver)}
+__AkRoomPortal_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36550usize)as*mut u8,();
-(AkRoomPortal)__receiver)}
+__AkRoomPortal_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`HandleEvent(crate::unity_engine::gameobject::GameObject)` overload"]fn handle_event(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f365f0usize)as*mut u8,();
-(AkRoomPortal)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
+__AkRoomPortal_unity2_raw::handle_event(__receiver, ::core::convert::Into::into(in_game_object), ::core::option::Option::None)}
 }
 #[doc="`ClosePortal(crate::unity_engine::gameobject::GameObject)` overload"]fn close_portal(self,in_game_object:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f365e0usize)as*mut u8,();
 (AkRoomPortal)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(in_game_object))}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f36620usize)as*mut u8,();
-(AkRoomPortal)__receiver)}
+__AkRoomPortal_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f366c0usize)as*mut u8,();
-(AkRoomPortal)__receiver)}
+__AkRoomPortal_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <AkRoomPortal as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f366f0usize)as*mut u8,();

@@ -18,6 +18,29 @@ use crate::unity_engine::events::unityeventbase::{IUnityEventBase,UnityEventBase
 #[cfg(feature = "unity_engine-events-unityevent-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-events-unityevent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnityEvent_unity2_raw{use super:: * ;
+pub unsafe fn find_method_impl(this:UnityEvent,name: ::unity2::Il2CppString,target_obj_type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <UnityEvent as::unity2::ClassIdentity> ::NAME,"FindMethod_Impl",));
+let inner:extern "C" fn(UnityEvent, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,target_obj_type,__mi)}
+pub unsafe fn get_delegate(this:UnityEvent,target:crate::system::object::Object,the_function:crate::system::reflection::methodinfo::MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <UnityEvent as::unity2::ClassIdentity> ::NAME,"GetDelegate",));
+let inner:extern "C" fn(UnityEvent,crate::system::object::Object,crate::system::reflection::methodinfo::MethodInfo, ::unity2::OptionalMethod,)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,target,the_function,__mi)}
+}
+
 #[cfg(feature="unity_engine-events-unityevent")]impl UnityEvent{#[doc="`GetDelegate(crate::unity_engine::events::unityaction::UnityAction)` overload"]pub fn get_delegate_2(action:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3793bf0usize)as*mut u8,crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
 (crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(action))}
 }
@@ -36,12 +59,10 @@ pub use __types::*;
 (UnityEvent)__receiver,(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(call))}
 }
 #[doc="`FindMethod_Impl(::unity2::Il2CppString, ::unity2::SystemType)` overload"]fn find_method_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,target_obj_type:impl::core::convert::Into< ::unity2::SystemType>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3793cc0usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(UnityEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::SystemType)::core::convert::Into::into(target_obj_type))}
+__UnityEvent_unity2_raw::find_method_impl(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(target_obj_type), ::core::option::Option::None)}
 }
 #[doc="`GetDelegate(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]fn get_delegate(self,target:impl::core::convert::Into<crate::system::object::Object> ,the_function:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->crate::unity_engine::events::baseinvokablecall::BaseInvokableCall{unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3793ee0usize)as*mut u8,crate::unity_engine::events::baseinvokablecall::BaseInvokableCall;
-(UnityEvent)__receiver,(crate::system::object::Object)::core::convert::Into::into(target),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(the_function))}
+__UnityEvent_unity2_raw::get_delegate(__receiver, ::core::convert::Into::into(target), ::core::convert::Into::into(the_function), ::core::option::Option::None)}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <UnityEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3793f50usize)as*mut u8,();

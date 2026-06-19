@@ -13,10 +13,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect_LocationNode.md"))]#[::unity2::class(namespace="App",name="MapEffect.LocationNode")]#[parent(crate::app::pool::Pool_Node)]pub struct MapEffect_LocationNode{#[offset(16)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Position")]pub position:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="Rotation")]pub rotation:crate::unity_engine::quaternion::Quaternion, #[offset(56)]#[rename(name="Effect")]pub effect:crate::app::resourceobject::ResourceObject,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect_LocationPool.md"))]#[::unity2::class(namespace="App",name="MapEffect.LocationPool")]#[parent(crate::app::pool::Pool_List_1<crate::app::mapeffect::MapEffect_LocationNode>)]pub struct MapEffect_LocationPool{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect_LocationNode.md"))]#[::unity2::class(namespace="App",name="MapEffect.LocationNode")]#[parent(crate::app::pool::Pool_Node)]pub struct MapEffect_LocationNode{#[offset(16)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Position")]pub position:crate::unity_engine::vector3::Vector3, #[offset(36)]#[rename(name="Rotation")]pub rotation:crate::unity_engine::quaternion::Quaternion, #[offset(56)]#[rename(name="Effect")]pub effect:crate::app::resourceobject::ResourceObject,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapeffect/MapEffect.md"))]#[::unity2::class(namespace="App",name="MapEffect")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapeffect::MapEffect>)]pub struct MapEffect{#[static_field]#[rename(name="s_Root")]pub s_root:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_Pool")]pub m_pool:crate::app::mapeffect::MapEffect_LocationPool,}
@@ -26,13 +26,52 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapeffect-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapeffect")]pub trait IMapEffect_LocationPoolMethods:IMapEffect_LocationPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEffect_LocationPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c47f0usize)as*mut u8,();
+(MapEffect_LocationPool)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapeffect")]impl<__T:IMapEffect_LocationPool>IMapEffect_LocationPoolMethods for __T{}
+
+#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEffect_LocationPool), ::core::stringify!(new),));
+ <Self as IMapEffect_LocationPoolMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapeffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEffect_LocationNode_unity2_raw{use super:: * ;
+pub unsafe fn on_enter(this:MapEffect_LocationNode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapEffect_LocationNode as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(MapEffect_LocationNode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_exit(this:MapEffect_LocationNode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEffect_LocationNode as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let inner:extern "C" fn(MapEffect_LocationNode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapeffect")]pub trait IMapEffect_LocationNodeMethods:IMapEffect_LocationNode{#[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <MapEffect_LocationNode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c4480usize)as*mut u8,();
-(MapEffect_LocationNode)__receiver)}
+__MapEffect_LocationNode_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <MapEffect_LocationNode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c4490usize)as*mut u8,();
-(MapEffect_LocationNode)__receiver)}
+__MapEffect_LocationNode_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsMatch(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3)` overload"]fn is_match(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->bool{unsafe{let __receiver= <MapEffect_LocationNode as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24c44f0usize)as*mut u8,bool;
@@ -69,22 +108,67 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapeffect")]pub trait IMapEffect_LocationPoolMethods:IMapEffect_LocationPool{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapEffect_LocationPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c47f0usize)as*mut u8,();
-(MapEffect_LocationPool)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapeffect")]impl<__T:IMapEffect_LocationPool>IMapEffect_LocationPoolMethods for __T{}
-
-#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-mapeffect")]impl MapEffect_LocationPool{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEffect_LocationPool), ::core::stringify!(new),));
- <Self as IMapEffect_LocationPoolMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-mapeffect")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEffect_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MapEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEffect as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapEffect as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:MapEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapEffect as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(MapEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_version(this:MapEffect,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapEffect as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let inner:extern "C" fn(MapEffect, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_serialize(this:MapEffect,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapEffect as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let inner:extern "C" fn(MapEffect,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn on_deserialize(this:MapEffect,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapEffect as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let inner:extern "C" fn(MapEffect,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,version,__mi)}
 }
 
 #[cfg(feature="app-mapeffect")]impl MapEffect{#[doc="`FindRoot()` overload"]pub fn find_root()->crate::unity_engine::gameobject::GameObject{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1db8a00usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
@@ -156,16 +240,13 @@ this}
 }
 
 #[cfg(feature="app-mapeffect")]pub trait IMapEffectMethods:IMapEffect{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1db8d80usize)as*mut u8,();
-(MapEffect)__receiver)}
+__MapEffect_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1db9010usize)as*mut u8,();
-(MapEffect)__receiver)}
+__MapEffect_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1db9270usize)as*mut u8,();
-(MapEffect)__receiver)}
+__MapEffect_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateImpl(::unity2::Il2CppString, crate::unity_engine::vector3::Vector3, crate::unity_engine::quaternion::Quaternion)` overload"]fn create_impl(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,position:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->(){unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbd650usize)as*mut u8,();
@@ -180,16 +261,13 @@ this}
 (MapEffect)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(position))}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbe510usize)as*mut u8,i32;
-(MapEffect)__receiver)}
+__MapEffect_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbe520usize)as*mut u8,();
-(MapEffect)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__MapEffect_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbe680usize)as*mut u8,();
-(MapEffect)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+__MapEffect_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
 }
 #[doc="`Resume()` overload"]fn resume(self,)->(){unsafe{let __receiver= <MapEffect as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1dbeea0usize)as*mut u8,();
@@ -248,12 +326,12 @@ this}
 #[cfg(feature = "app-mapeffect")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapEffect_LocationNode;
-    pub use super::IMapEffect_LocationNode;
-    pub use super::IMapEffect_LocationNodeMethods;
     pub use super::MapEffect_LocationPool;
     pub use super::IMapEffect_LocationPool;
     pub use super::IMapEffect_LocationPoolMethods;
+    pub use super::MapEffect_LocationNode;
+    pub use super::IMapEffect_LocationNode;
+    pub use super::IMapEffect_LocationNodeMethods;
     pub use super::MapEffect;
     pub use super::IMapEffect;
     pub use super::IMapEffectMethods;

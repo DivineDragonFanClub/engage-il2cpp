@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-caseinsensitivecomparer-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-caseinsensitivecomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CaseInsensitiveComparer_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:CaseInsensitiveComparer,a:crate::system::object::Object,b:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CaseInsensitiveComparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(CaseInsensitiveComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="system-collections-caseinsensitivecomparer")]impl CaseInsensitiveComparer{#[doc="`get_Default()` overload"]pub fn get_default()->crate::system::collections::caseinsensitivecomparer::CaseInsensitiveComparer{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x33a1080usize)as*mut u8,crate::system::collections::caseinsensitivecomparer::CaseInsensitiveComparer;
 )}
 }
@@ -26,8 +39,7 @@ pub use __types::*;
 (CaseInsensitiveComparer)__receiver)}
 }
 #[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <CaseInsensitiveComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33a1110usize)as*mut u8,i32;
-(CaseInsensitiveComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
+__CaseInsensitiveComparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 }
 

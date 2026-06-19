@@ -26,17 +26,47 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root-akdragdroptriggerhandler-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akdragdroptriggerhandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkDragDropTriggerHandler_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:AkDragDropTriggerHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkDragDropTriggerHandler as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(AkDragDropTriggerHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start(this:AkDragDropTriggerHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkDragDropTriggerHandler as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(AkDragDropTriggerHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_destroy(this:AkDragDropTriggerHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AkDragDropTriggerHandler as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(AkDragDropTriggerHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-akdragdroptriggerhandler")]pub trait IAkDragDropTriggerHandlerMethods:IAkDragDropTriggerHandler{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <AkDragDropTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18530usize)as*mut u8,();
-(AkDragDropTriggerHandler)__receiver)}
+__AkDragDropTriggerHandler_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <AkDragDropTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18540usize)as*mut u8,();
-(AkDragDropTriggerHandler)__receiver)}
+__AkDragDropTriggerHandler_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <AkDragDropTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18550usize)as*mut u8,();
-(AkDragDropTriggerHandler)__receiver)}
+__AkDragDropTriggerHandler_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkDragDropTriggerHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f18560usize)as*mut u8,();

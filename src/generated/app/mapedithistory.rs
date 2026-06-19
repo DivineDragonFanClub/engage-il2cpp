@@ -11,19 +11,19 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory.md"))]#[::unity2::class(namespace="App",name="MapEditHistory")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapedithistory::MapEditHistory>)]pub struct MapEditHistory{#[static_field]#[rename(name="MaxCommandCount")]pub max_command_count:i32, #[offset(32)]#[rename(name="m_CommandList")]pub m_command_list:crate::system::collections::generic::list_1::List_1<crate::app::mapedithistory::MapEditHistory_MapEditCommand> , #[offset(40)]#[rename(name="m_Index")]pub m_index:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_MapEditCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.MapEditCommand")]#[parent(crate::system::object::Object)]pub struct MapEditHistory_MapEditCommand{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_ReplaceObjectCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.ReplaceObjectCommand")]#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]pub struct MapEditHistory_ReplaceObjectCommand{#[offset(16)]#[rename(name="m_X")]pub m_x:i32, #[offset(20)]#[rename(name="m_Z")]pub m_z:i32, #[offset(24)]#[rename(name="m_DeleteRotate")]pub m_delete_rotate:i32, #[offset(32)]#[rename(name="m_DeleteObjName")]pub m_delete_obj_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_CreateObjName")]pub m_create_obj_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_DeleteObjectCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.DeleteObjectCommand")]#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]pub struct MapEditHistory_DeleteObjectCommand{#[offset(16)]#[rename(name="m_X")]pub m_x:i32, #[offset(20)]#[rename(name="m_Z")]pub m_z:i32, #[offset(24)]#[rename(name="m_DeleteObjectName")]pub m_delete_object_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Rotate")]pub m_rotate:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_CreateObjectCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.CreateObjectCommand")]#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]pub struct MapEditHistory_CreateObjectCommand{#[offset(16)]#[rename(name="m_X")]pub m_x:i32, #[offset(20)]#[rename(name="m_Z")]pub m_z:i32, #[offset(24)]#[rename(name="m_ObjectName")]pub m_object_name: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_DeleteObjectCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.DeleteObjectCommand")]#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]pub struct MapEditHistory_DeleteObjectCommand{#[offset(16)]#[rename(name="m_X")]pub m_x:i32, #[offset(20)]#[rename(name="m_Z")]pub m_z:i32, #[offset(24)]#[rename(name="m_DeleteObjectName")]pub m_delete_object_name: ::unity2::Il2CppString, #[offset(32)]#[rename(name="m_Rotate")]pub m_rotate:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory.md"))]#[::unity2::class(namespace="App",name="MapEditHistory")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapedithistory::MapEditHistory>)]pub struct MapEditHistory{#[static_field]#[rename(name="MaxCommandCount")]pub max_command_count:i32, #[offset(32)]#[rename(name="m_CommandList")]pub m_command_list:crate::system::collections::generic::list_1::List_1<crate::app::mapedithistory::MapEditHistory_MapEditCommand> , #[offset(40)]#[rename(name="m_Index")]pub m_index:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_ReplaceObjectCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.ReplaceObjectCommand")]#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]pub struct MapEditHistory_ReplaceObjectCommand{#[offset(16)]#[rename(name="m_X")]pub m_x:i32, #[offset(20)]#[rename(name="m_Z")]pub m_z:i32, #[offset(24)]#[rename(name="m_DeleteRotate")]pub m_delete_rotate:i32, #[offset(32)]#[rename(name="m_DeleteObjName")]pub m_delete_obj_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_CreateObjName")]pub m_create_obj_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_MapEditCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.MapEditCommand")]#[parent(crate::system::object::Object)]pub struct MapEditHistory_MapEditCommand{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapedithistory/MapEditHistory_RotateObjectCommand.md"))]#[::unity2::class(namespace="App",name="MapEditHistory.RotateObjectCommand")]#[parent(crate::app::mapedithistory::MapEditHistory_MapEditCommand)]pub struct MapEditHistory_RotateObjectCommand{#[offset(16)]#[rename(name="m_X")]pub m_x:i32, #[offset(20)]#[rename(name="m_Z")]pub m_z:i32, #[offset(24)]#[rename(name="m_PrevRotate")]pub m_prev_rotate:i32, #[offset(28)]#[rename(name="m_NextRotate")]pub m_next_rotate:i32,}
@@ -33,13 +33,160 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapedithistory-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapedithistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEditHistory_DeleteObjectCommand_unity2_raw{use super:: * ;
+pub unsafe fn r#do(this:MapEditHistory_DeleteObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapEditHistory_DeleteObjectCommand as::unity2::ClassIdentity> ::NAME,"Do",));
+let inner:extern "C" fn(MapEditHistory_DeleteObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn undo(this:MapEditHistory_DeleteObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEditHistory_DeleteObjectCommand as::unity2::ClassIdentity> ::NAME,"Undo",));
+let inner:extern "C" fn(MapEditHistory_DeleteObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:MapEditHistory_DeleteObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <MapEditHistory_DeleteObjectCommand as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(MapEditHistory_DeleteObjectCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-mapedithistory")]pub trait IMapEditHistory_DeleteObjectCommandMethods:IMapEditHistory_DeleteObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString, i32)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,delete_object_name:impl::core::convert::Into< ::unity2::Il2CppString> ,rotate:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3870usize)as*mut u8,();
+(MapEditHistory_DeleteObjectCommand)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(delete_object_name),(i32)::core::convert::Into::into(rotate))}
+}
+#[doc="`Do()` overload"]fn r#do(self,)->(){unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_DeleteObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Undo()` overload"]fn undo(self,)->(){unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_DeleteObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_DeleteObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-mapedithistory")]impl<__T:IMapEditHistory_DeleteObjectCommand>IMapEditHistory_DeleteObjectCommandMethods for __T{}
+
+#[cfg(feature="app-mapedithistory")]impl MapEditHistory_DeleteObjectCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn undo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapedithistory")]impl MapEditHistory_DeleteObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString, i32)` — overload selector"]pub fn new(x:i32,z:i32,delete_object_name: ::unity2::Il2CppString,rotate:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEditHistory_DeleteObjectCommand), ::core::stringify!(new),));
+ <Self as IMapEditHistory_DeleteObjectCommandMethods> ::ctor(this,x,z,delete_object_name,rotate);
+this}
+}
+
+#[cfg(feature="app-mapedithistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEditHistory_CreateObjectCommand_unity2_raw{use super:: * ;
+pub unsafe fn r#do(this:MapEditHistory_CreateObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapEditHistory_CreateObjectCommand as::unity2::ClassIdentity> ::NAME,"Do",));
+let inner:extern "C" fn(MapEditHistory_CreateObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn undo(this:MapEditHistory_CreateObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEditHistory_CreateObjectCommand as::unity2::ClassIdentity> ::NAME,"Undo",));
+let inner:extern "C" fn(MapEditHistory_CreateObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:MapEditHistory_CreateObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <MapEditHistory_CreateObjectCommand as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(MapEditHistory_CreateObjectCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-mapedithistory")]pub trait IMapEditHistory_CreateObjectCommandMethods:IMapEditHistory_CreateObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,object_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3680usize)as*mut u8,();
+(MapEditHistory_CreateObjectCommand)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(object_name))}
+}
+#[doc="`Do()` overload"]fn r#do(self,)->(){unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_CreateObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Undo()` overload"]fn undo(self,)->(){unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_CreateObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_CreateObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-mapedithistory")]impl<__T:IMapEditHistory_CreateObjectCommand>IMapEditHistory_CreateObjectCommandMethods for __T{}
+
+#[cfg(feature="app-mapedithistory")]impl MapEditHistory_CreateObjectCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn undo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapedithistory")]impl MapEditHistory_CreateObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString)` — overload selector"]pub fn new(x:i32,z:i32,object_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEditHistory_CreateObjectCommand), ::core::stringify!(new),));
+ <Self as IMapEditHistory_CreateObjectCommandMethods> ::ctor(this,x,z,object_name);
+this}
+}
+
+#[cfg(feature="app-mapedithistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEditHistory_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MapEditHistory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEditHistory as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapEditHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapEditHistory,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapEditHistory as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapEditHistory, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapedithistory")]pub trait IMapEditHistoryMethods:IMapEditHistory{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapEditHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1db14f0usize)as*mut u8,();
-(MapEditHistory)__receiver)}
+__MapEditHistory_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapEditHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1db1610usize)as*mut u8,();
-(MapEditHistory)__receiver)}
+__MapEditHistory_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Undo()` overload"]fn undo(self,)->bool{unsafe{let __receiver= <MapEditHistory as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1db1620usize)as*mut u8,bool;
@@ -116,17 +263,86 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-mapedithistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEditHistory_ReplaceObjectCommand_unity2_raw{use super:: * ;
+pub unsafe fn r#do(this:MapEditHistory_ReplaceObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapEditHistory_ReplaceObjectCommand as::unity2::ClassIdentity> ::NAME,"Do",));
+let inner:extern "C" fn(MapEditHistory_ReplaceObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn undo(this:MapEditHistory_ReplaceObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEditHistory_ReplaceObjectCommand as::unity2::ClassIdentity> ::NAME,"Undo",));
+let inner:extern "C" fn(MapEditHistory_ReplaceObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:MapEditHistory_ReplaceObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <MapEditHistory_ReplaceObjectCommand as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(MapEditHistory_ReplaceObjectCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-mapedithistory")]pub trait IMapEditHistory_ReplaceObjectCommandMethods:IMapEditHistory_ReplaceObjectCommand{#[doc="`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,delete_rotate:impl::core::convert::Into<i32> ,delete_obj_name:impl::core::convert::Into< ::unity2::Il2CppString> ,create_obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3bf0usize)as*mut u8,();
+(MapEditHistory_ReplaceObjectCommand)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(delete_rotate),(::unity2::Il2CppString)::core::convert::Into::into(delete_obj_name),(::unity2::Il2CppString)::core::convert::Into::into(create_obj_name))}
+}
+#[doc="`Do()` overload"]fn r#do(self,)->(){unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_ReplaceObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Undo()` overload"]fn undo(self,)->(){unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_ReplaceObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MapEditHistory_ReplaceObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-mapedithistory")]impl<__T:IMapEditHistory_ReplaceObjectCommand>IMapEditHistory_ReplaceObjectCommandMethods for __T{}
+
+#[cfg(feature="app-mapedithistory")]impl MapEditHistory_ReplaceObjectCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn undo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-mapedithistory")]impl MapEditHistory_ReplaceObjectCommand{#[doc="`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(x:i32,z:i32,delete_rotate:i32,delete_obj_name: ::unity2::Il2CppString,create_obj_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapEditHistory_ReplaceObjectCommand), ::core::stringify!(new),));
+ <Self as IMapEditHistory_ReplaceObjectCommandMethods> ::ctor(this,x,z,delete_rotate,delete_obj_name,create_obj_name);
+this}
+}
+
 #[cfg(feature="app-mapedithistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEditHistory_MapEditCommand_unity2_raw{use super:: * ;
-pub unsafe fn r#do(this:MapEditHistory_MapEditCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Do").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Do", <MapEditHistory_MapEditCommand as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn r#do(this:MapEditHistory_MapEditCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapEditHistory_MapEditCommand as::unity2::ClassIdentity> ::NAME,"Do",));
 let inner:extern "C" fn(MapEditHistory_MapEditCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn undo(this:MapEditHistory_MapEditCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Undo").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Undo", <MapEditHistory_MapEditCommand as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn undo(this:MapEditHistory_MapEditCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEditHistory_MapEditCommand as::unity2::ClassIdentity> ::NAME,"Undo",));
 let inner:extern "C" fn(MapEditHistory_MapEditCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -159,103 +375,37 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-mapedithistory")]pub trait IMapEditHistory_ReplaceObjectCommandMethods:IMapEditHistory_ReplaceObjectCommand{#[doc="`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,delete_rotate:impl::core::convert::Into<i32> ,delete_obj_name:impl::core::convert::Into< ::unity2::Il2CppString> ,create_obj_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3bf0usize)as*mut u8,();
-(MapEditHistory_ReplaceObjectCommand)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(delete_rotate),(::unity2::Il2CppString)::core::convert::Into::into(delete_obj_name),(::unity2::Il2CppString)::core::convert::Into::into(create_obj_name))}
-}
-#[doc="`Do()` overload"]fn r#do(self,)->(){unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3c60usize)as*mut u8,();
-(MapEditHistory_ReplaceObjectCommand)__receiver)}
-}
-#[doc="`Undo()` overload"]fn undo(self,)->(){unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3ca0usize)as*mut u8,();
-(MapEditHistory_ReplaceObjectCommand)__receiver)}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditHistory_ReplaceObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3dd0usize)as*mut u8, ::unity2::Il2CppString;
-(MapEditHistory_ReplaceObjectCommand)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapedithistory")]impl<__T:IMapEditHistory_ReplaceObjectCommand>IMapEditHistory_ReplaceObjectCommandMethods for __T{}
-
-#[cfg(feature="app-mapedithistory")]impl MapEditHistory_ReplaceObjectCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn undo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapedithistory")]impl MapEditHistory_ReplaceObjectCommand{#[doc="`.ctor(i32, i32, i32, ::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(x:i32,z:i32,delete_rotate:i32,delete_obj_name: ::unity2::Il2CppString,create_obj_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEditHistory_ReplaceObjectCommand), ::core::stringify!(new),));
- <Self as IMapEditHistory_ReplaceObjectCommandMethods> ::ctor(this,x,z,delete_rotate,delete_obj_name,create_obj_name);
-this}
-}
-
-#[cfg(feature="app-mapedithistory")]pub trait IMapEditHistory_CreateObjectCommandMethods:IMapEditHistory_CreateObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,object_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3680usize)as*mut u8,();
-(MapEditHistory_CreateObjectCommand)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(object_name))}
-}
-#[doc="`Do()` overload"]fn r#do(self,)->(){unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c36e0usize)as*mut u8,();
-(MapEditHistory_CreateObjectCommand)__receiver)}
-}
-#[doc="`Undo()` overload"]fn undo(self,)->(){unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3720usize)as*mut u8,();
-(MapEditHistory_CreateObjectCommand)__receiver)}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditHistory_CreateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c37c0usize)as*mut u8, ::unity2::Il2CppString;
-(MapEditHistory_CreateObjectCommand)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapedithistory")]impl<__T:IMapEditHistory_CreateObjectCommand>IMapEditHistory_CreateObjectCommandMethods for __T{}
-
-#[cfg(feature="app-mapedithistory")]impl MapEditHistory_CreateObjectCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn undo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapedithistory")]impl MapEditHistory_CreateObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString)` — overload selector"]pub fn new(x:i32,z:i32,object_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEditHistory_CreateObjectCommand), ::core::stringify!(new),));
- <Self as IMapEditHistory_CreateObjectCommandMethods> ::ctor(this,x,z,object_name);
-this}
-}
-
-#[cfg(feature="app-mapedithistory")]pub trait IMapEditHistory_DeleteObjectCommandMethods:IMapEditHistory_DeleteObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString, i32)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,delete_object_name:impl::core::convert::Into< ::unity2::Il2CppString> ,rotate:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3870usize)as*mut u8,();
-(MapEditHistory_DeleteObjectCommand)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(::unity2::Il2CppString)::core::convert::Into::into(delete_object_name),(i32)::core::convert::Into::into(rotate))}
-}
-#[doc="`Do()` overload"]fn r#do(self,)->(){unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c38d0usize)as*mut u8,();
-(MapEditHistory_DeleteObjectCommand)__receiver)}
-}
-#[doc="`Undo()` overload"]fn undo(self,)->(){unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3910usize)as*mut u8,();
-(MapEditHistory_DeleteObjectCommand)__receiver)}
-}
-#[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditHistory_DeleteObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c3a20usize)as*mut u8, ::unity2::Il2CppString;
-(MapEditHistory_DeleteObjectCommand)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapedithistory")]impl<__T:IMapEditHistory_DeleteObjectCommand>IMapEditHistory_DeleteObjectCommandMethods for __T{}
-
-#[cfg(feature="app-mapedithistory")]impl MapEditHistory_DeleteObjectCommand{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn do_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn undo_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-mapedithistory")]impl MapEditHistory_DeleteObjectCommand{#[doc="`.ctor(i32, i32, ::unity2::Il2CppString, i32)` — overload selector"]pub fn new(x:i32,z:i32,delete_object_name: ::unity2::Il2CppString,rotate:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapEditHistory_DeleteObjectCommand), ::core::stringify!(new),));
- <Self as IMapEditHistory_DeleteObjectCommandMethods> ::ctor(this,x,z,delete_object_name,rotate);
-this}
+#[cfg(feature="app-mapedithistory")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapEditHistory_RotateObjectCommand_unity2_raw{use super:: * ;
+pub unsafe fn r#do(this:MapEditHistory_RotateObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapEditHistory_RotateObjectCommand as::unity2::ClassIdentity> ::NAME,"Do",));
+let inner:extern "C" fn(MapEditHistory_RotateObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn undo(this:MapEditHistory_RotateObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapEditHistory_RotateObjectCommand as::unity2::ClassIdentity> ::NAME,"Undo",));
+let inner:extern "C" fn(MapEditHistory_RotateObjectCommand, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:MapEditHistory_RotateObjectCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <MapEditHistory_RotateObjectCommand as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(MapEditHistory_RotateObjectCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-mapedithistory")]pub trait IMapEditHistory_RotateObjectCommandMethods:IMapEditHistory_RotateObjectCommand{#[doc="`.ctor(i32, i32, i32, i32)` overload"]fn ctor(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,prev_rotate:impl::core::convert::Into<i32> ,next_rotate:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapEditHistory_RotateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -263,16 +413,13 @@ this}
 (MapEditHistory_RotateObjectCommand)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(prev_rotate),(i32)::core::convert::Into::into(next_rotate))}
 }
 #[doc="`Do()` overload"]fn r#do(self,)->(){unsafe{let __receiver= <MapEditHistory_RotateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c4030usize)as*mut u8,();
-(MapEditHistory_RotateObjectCommand)__receiver)}
+__MapEditHistory_RotateObjectCommand_unity2_raw::r#do(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Undo()` overload"]fn undo(self,)->(){unsafe{let __receiver= <MapEditHistory_RotateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c4070usize)as*mut u8,();
-(MapEditHistory_RotateObjectCommand)__receiver)}
+__MapEditHistory_RotateObjectCommand_unity2_raw::undo(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapEditHistory_RotateObjectCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c4100usize)as*mut u8, ::unity2::Il2CppString;
-(MapEditHistory_RotateObjectCommand)__receiver)}
+__MapEditHistory_RotateObjectCommand_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -294,21 +441,21 @@ this}
 #[cfg(feature = "app-mapedithistory")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapEditHistory;
-    pub use super::IMapEditHistory;
-    pub use super::IMapEditHistoryMethods;
-    pub use super::MapEditHistory_MapEditCommand;
-    pub use super::IMapEditHistory_MapEditCommand;
-    pub use super::IMapEditHistory_MapEditCommandMethods;
-    pub use super::MapEditHistory_ReplaceObjectCommand;
-    pub use super::IMapEditHistory_ReplaceObjectCommand;
-    pub use super::IMapEditHistory_ReplaceObjectCommandMethods;
-    pub use super::MapEditHistory_CreateObjectCommand;
-    pub use super::IMapEditHistory_CreateObjectCommand;
-    pub use super::IMapEditHistory_CreateObjectCommandMethods;
     pub use super::MapEditHistory_DeleteObjectCommand;
     pub use super::IMapEditHistory_DeleteObjectCommand;
     pub use super::IMapEditHistory_DeleteObjectCommandMethods;
+    pub use super::MapEditHistory_CreateObjectCommand;
+    pub use super::IMapEditHistory_CreateObjectCommand;
+    pub use super::IMapEditHistory_CreateObjectCommandMethods;
+    pub use super::MapEditHistory;
+    pub use super::IMapEditHistory;
+    pub use super::IMapEditHistoryMethods;
+    pub use super::MapEditHistory_ReplaceObjectCommand;
+    pub use super::IMapEditHistory_ReplaceObjectCommand;
+    pub use super::IMapEditHistory_ReplaceObjectCommandMethods;
+    pub use super::MapEditHistory_MapEditCommand;
+    pub use super::IMapEditHistory_MapEditCommand;
+    pub use super::IMapEditHistory_MapEditCommandMethods;
     pub use super::MapEditHistory_RotateObjectCommand;
     pub use super::IMapEditHistory_RotateObjectCommand;
     pub use super::IMapEditHistory_RotateObjectCommandMethods;

@@ -16,13 +16,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "nintendo-message_studio-lib-rubytaginfo-types")]
 pub use __types::*;
 
+#[cfg(feature="nintendo-message_studio-lib-rubytaginfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RubyTagInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_tag(this:RubyTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RubyTagInfo as::unity2::ClassIdentity> ::NAME,"get_Tag",));
+let inner:extern "C" fn(RubyTagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_tag_group(this:RubyTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RubyTagInfo as::unity2::ClassIdentity> ::NAME,"get_TagGroup",));
+let inner:extern "C" fn(RubyTagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="nintendo-message_studio-lib-rubytaginfo")]pub trait IRubyTagInfoMethods:IRubyTagInfo{#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <RubyTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec33b0usize)as*mut u8,u16;
-(RubyTagInfo)__receiver)}
+__RubyTagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <RubyTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec33c0usize)as*mut u8,u16;
-(RubyTagInfo)__receiver)}
+__RubyTagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ParentLength()` overload"]fn get_parent_length(self,)->u16{unsafe{let __receiver= <RubyTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec33d0usize)as*mut u8,u16;

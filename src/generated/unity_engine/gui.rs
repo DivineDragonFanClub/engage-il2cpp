@@ -13,18 +13,130 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gui/GUI.md"))]#[::unity2::class(namespace="UnityEngine",name="GUI")]#[parent(crate::system::object::Object)]pub struct GUI{#[static_field]#[rename(name="s_ScrollControlId")]pub s_scroll_control_id:i32, #[static_field]#[rename(name="s_HotTextField")]pub s_hot_text_field:i32, #[static_field]#[rename(name="s_BoxHash")]pub s_box_hash:i32, #[static_field]#[rename(name="s_ButonHash")]pub s_buton_hash:i32, #[static_field]#[rename(name="s_RepeatButtonHash")]pub s_repeat_button_hash:i32, #[static_field]#[rename(name="s_ToggleHash")]pub s_toggle_hash:i32, #[static_field]#[rename(name="s_ButtonGridHash")]pub s_button_grid_hash:i32, #[static_field]#[rename(name="s_SliderHash")]pub s_slider_hash:i32, #[static_field]#[rename(name="s_BeginGroupHash")]pub s_begin_group_hash:i32, #[static_field]#[rename(name="s_ScrollviewHash")]pub s_scrollview_hash:i32, #[static_field]#[rename(name="s_Skin")]pub s_skin:crate::unity_engine::guiskin::GUISkin, #[static_field]#[rename(name="s_ToolTipRect")]pub s_tool_tip_rect:crate::unity_engine::rect::Rect,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gui/GUI_WindowFunction.md"))]#[::unity2::class(namespace="UnityEngine",name="GUI.WindowFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GUI_WindowFunction{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gui/GUI_Scope.md"))]#[::unity2::class(namespace="UnityEngine",name="GUI.Scope")]#[parent(crate::system::object::Object)]pub struct GUI_Scope{#[offset(16)]#[rename(name="m_Disposed")]pub m_disposed:bool,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gui/GUI_WindowFunction.md"))]#[::unity2::class(namespace="UnityEngine",name="GUI.WindowFunction")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct GUI_WindowFunction{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/gui/GUI.md"))]#[::unity2::class(namespace="UnityEngine",name="GUI")]#[parent(crate::system::object::Object)]pub struct GUI{#[static_field]#[rename(name="s_ScrollControlId")]pub s_scroll_control_id:i32, #[static_field]#[rename(name="s_HotTextField")]pub s_hot_text_field:i32, #[static_field]#[rename(name="s_BoxHash")]pub s_box_hash:i32, #[static_field]#[rename(name="s_ButonHash")]pub s_buton_hash:i32, #[static_field]#[rename(name="s_RepeatButtonHash")]pub s_repeat_button_hash:i32, #[static_field]#[rename(name="s_ToggleHash")]pub s_toggle_hash:i32, #[static_field]#[rename(name="s_ButtonGridHash")]pub s_button_grid_hash:i32, #[static_field]#[rename(name="s_SliderHash")]pub s_slider_hash:i32, #[static_field]#[rename(name="s_BeginGroupHash")]pub s_begin_group_hash:i32, #[static_field]#[rename(name="s_ScrollviewHash")]pub s_scrollview_hash:i32, #[static_field]#[rename(name="s_Skin")]pub s_skin:crate::unity_engine::guiskin::GUISkin, #[static_field]#[rename(name="s_ToolTipRect")]pub s_tool_tip_rect:crate::unity_engine::rect::Rect,}
 
 }
 
 #[cfg(feature = "unity_engine-gui-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-gui")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUI_WindowFunction_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:GUI_WindowFunction,id:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <GUI_WindowFunction as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(GUI_WindowFunction,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,id,__mi)}
+}
+
+#[cfg(feature="unity_engine-gui")]pub trait IGUI_WindowFunctionMethods:IGUI_WindowFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GUI_WindowFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c450usize)as*mut u8,();
+(GUI_WindowFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUI_WindowFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GUI_WindowFunction_unity2_raw::invoke(__receiver, ::core::convert::Into::into(id), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="unity_engine-gui")]impl<__T:IGUI_WindowFunction>IGUI_WindowFunctionMethods for __T{}
+
+#[cfg(feature="unity_engine-gui")]impl GUI_WindowFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-gui")]impl GUI_WindowFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUI_WindowFunction), ::core::stringify!(new),));
+ <Self as IGUI_WindowFunctionMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="unity_engine-gui")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUI_Scope_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:GUI_Scope,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GUI_Scope as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(GUI_Scope,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn finalize(this:GUI_Scope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <GUI_Scope as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(GUI_Scope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose_2(this:GUI_Scope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GUI_Scope as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(GUI_Scope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn close_scope(this:GUI_Scope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GUI_Scope as::unity2::ClassIdentity> ::NAME,"CloseScope",));
+let inner:extern "C" fn(GUI_Scope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="unity_engine-gui")]pub trait IGUI_ScopeMethods:IGUI_Scope{#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GUI_Scope_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
+}
+#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GUI_Scope_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GUI_Scope_unity2_raw::dispose_2(__receiver, ::core::option::Option::None)}
+}
+#[doc="`CloseScope()` overload"]fn close_scope(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GUI_Scope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3c53f60usize)as*mut u8,();
+(GUI_Scope)__receiver)}
+}
+}
+
+#[cfg(feature="unity_engine-gui")]impl<__T:IGUI_Scope>IGUI_ScopeMethods for __T{}
+
+#[cfg(feature="unity_engine-gui")]impl GUI_Scope{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn close_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="unity_engine-gui")]impl GUI_Scope{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GUI_Scope), ::core::stringify!(new),));
+ <Self as IGUI_ScopeMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="unity_engine-gui")]impl GUI{#[doc="`get_color()` overload"]pub fn get_color()->crate::unity_engine::color::Color{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c39510usize)as*mut u8,crate::unity_engine::color::Color;
 )}
@@ -307,88 +419,18 @@ pub fn internal_do_window_injected_method_info()-> & 'static::unity2::il2cpp::Me
 this}
 }
 
-#[cfg(feature="unity_engine-gui")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUI_Scope_unity2_raw{use super:: * ;
-pub unsafe fn close_scope(this:GUI_Scope,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CloseScope").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CloseScope", <GUI_Scope as::unity2::ClassIdentity> ::NAME,));
-let inner:extern "C" fn(GUI_Scope, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
-let _=__unity2_method_info;
-let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
-inner(this,__mi)}
-}
-
-#[cfg(feature="unity_engine-gui")]pub trait IGUI_ScopeMethods:IGUI_Scope{#[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c53cf0usize)as*mut u8,();
-(GUI_Scope)__receiver,(bool)::core::convert::Into::into(disposing))}
-}
-#[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c53d80usize)as*mut u8,();
-(GUI_Scope)__receiver)}
-}
-#[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c53ee0usize)as*mut u8,();
-(GUI_Scope)__receiver)}
-}
-#[doc="`CloseScope()` overload"]fn close_scope(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-__GUI_Scope_unity2_raw::close_scope(__receiver, ::core::option::Option::None)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GUI_Scope as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c53f60usize)as*mut u8,();
-(GUI_Scope)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-gui")]impl<__T:IGUI_Scope>IGUI_ScopeMethods for __T{}
-
-#[cfg(feature="unity_engine-gui")]impl GUI_Scope{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn finalize_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dispose_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn close_scope_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="unity_engine-gui")]impl GUI_Scope{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GUI_Scope), ::core::stringify!(new),));
- <Self as IGUI_ScopeMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="unity_engine-gui")]pub trait IGUI_WindowFunctionMethods:IGUI_WindowFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <GUI_WindowFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c450usize)as*mut u8,();
-(GUI_WindowFunction)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32)` overload"]fn invoke(self,id:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GUI_WindowFunction as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f3c470usize)as*mut u8,();
-(GUI_WindowFunction)__receiver,(i32)::core::convert::Into::into(id))}
-}
-}
-
-#[cfg(feature="unity_engine-gui")]impl<__T:IGUI_WindowFunction>IGUI_WindowFunctionMethods for __T{}
-
-#[cfg(feature="unity_engine-gui")]impl GUI_WindowFunction{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-gui")]impl GUI_WindowFunction{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GUI_WindowFunction), ::core::stringify!(new),));
- <Self as IGUI_WindowFunctionMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "unity_engine-gui")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GUI;
-    pub use super::IGUI;
-    pub use super::IGUIMethods;
-    pub use super::GUI_Scope;
-    pub use super::IGUI_Scope;
-    pub use super::IGUI_ScopeMethods;
     pub use super::GUI_WindowFunction;
     pub use super::IGUI_WindowFunction;
     pub use super::IGUI_WindowFunctionMethods;
+    pub use super::GUI_Scope;
+    pub use super::IGUI_Scope;
+    pub use super::IGUI_ScopeMethods;
+    pub use super::GUI;
+    pub use super::IGUI;
+    pub use super::IGUIMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

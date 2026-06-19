@@ -26,6 +26,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-mapunitcommandmenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapunitcommandmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapUnitCommandMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn build(this:MapUnitCommandMenuItemContent,menu_item:crate::app::basicmenuitem::BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapUnitCommandMenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(MapUnitCommandMenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item,__mi)}
+pub unsafe fn build_text(this:MapUnitCommandMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapUnitCommandMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
+let inner:extern "C" fn(MapUnitCommandMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_text_mesh_pro_component(this:MapUnitCommandMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapUnitCommandMenuItemContent as::unity2::ClassIdentity> ::NAME,"GetTextMeshProComponent",));
+let inner:extern "C" fn(MapUnitCommandMenuItemContent, ::unity2::OptionalMethod,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapunitcommandmenuitemcontent")]pub trait IMapUnitCommandMenuItemContentMethods:IMapUnitCommandMenuItemContent{#[doc="`FindGameObject(::unity2::Il2CppString)` overload"]fn find_game_object(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::gameobject::GameObject{unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x202d7e0usize)as*mut u8,crate::unity_engine::gameobject::GameObject;
 (MapUnitCommandMenuItemContent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
@@ -35,12 +68,10 @@ pub use __types::*;
 (MapUnitCommandMenuItemContent)__receiver)}
 }
 #[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202da60usize)as*mut u8,();
-(MapUnitCommandMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+__MapUnitCommandMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)}
 }
 #[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202da90usize)as*mut u8,();
-(MapUnitCommandMenuItemContent)__receiver)}
+__MapUnitCommandMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetHelpText(::unity2::Il2CppString, crate::unity_engine::color::Color)` overload"]fn set_help_text(self,help:impl::core::convert::Into< ::unity2::Il2CppString> ,c:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x202db20usize)as*mut u8,();
@@ -51,8 +82,7 @@ pub use __types::*;
 (MapUnitCommandMenuItemContent)__receiver,(f32)::core::convert::Into::into(alpha))}
 }
 #[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x202dbf0usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
-(MapUnitCommandMenuItemContent)__receiver)}
+__MapUnitCommandMenuItemContent_unity2_raw::get_text_mesh_pro_component(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapUnitCommandMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x202dc00usize)as*mut u8,();

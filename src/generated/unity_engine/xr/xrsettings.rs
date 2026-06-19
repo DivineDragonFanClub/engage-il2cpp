@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrsettings/XRSettings.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="XRSettings")]#[parent(crate::system::object::Object)]pub struct XRSettings{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrsettings/XRSettings_StereoRenderingMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct XRSettings_StereoRenderingMode{pub value:i32,}
 impl::unity2::ClassIdentity for XRSettings_StereoRenderingMode{const NAMESPACE: &'static str="UnityEngine.XR";
 const NAME: &'static str="XRSettings.StereoRenderingMode";
@@ -31,9 +34,6 @@ pub fn single_pass_instanced()->Self{Self{value:2}
 pub fn single_pass_multiview()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/xr/xrsettings/XRSettings.md"))]#[::unity2::class(namespace="UnityEngine.XR",name="XRSettings")]#[parent(crate::system::object::Object)]pub struct XRSettings{}
 
 }
 
@@ -101,9 +101,9 @@ pub fn get_eye_texture_desc_injected_method_info()-> & 'static::unity2::il2cpp::
 #[cfg(feature = "unity_engine-xr-xrsettings")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::XRSettings_StereoRenderingMode;
     pub use super::XRSettings;
     pub use super::IXRSettings;
+    pub use super::XRSettings_StereoRenderingMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

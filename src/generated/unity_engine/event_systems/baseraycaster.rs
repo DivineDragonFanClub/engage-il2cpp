@@ -27,17 +27,103 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-event_systems-baseraycaster")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseRaycaster_unity2_raw{use super:: * ;
-pub unsafe fn raycast(this:BaseRaycaster,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Raycast").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Raycast", <BaseRaycaster as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn raycast(this:BaseRaycaster,event_data:crate::unity_engine::event_systems::pointereventdata::PointerEventData,result_append_list:crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"Raycast",));
 let inner:extern "C" fn(BaseRaycaster,crate::unity_engine::event_systems::pointereventdata::PointerEventData,crate::system::collections::generic::list_1::List_1<crate::unity_engine::event_systems::raycastresult::RaycastResult> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,event_data,result_append_list,__mi)}
-pub unsafe fn get_event_camera(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_eventCamera").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_eventCamera", <BaseRaycaster as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_event_camera(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"get_eventCamera",));
 let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->crate::unity_engine::camera::Camera= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_priority(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"get_priority",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sort_order_priority(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"get_sortOrderPriority",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_render_order_priority(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"get_renderOrderPriority",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_canvas_hierarchy_changed(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"OnCanvasHierarchyChanged",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_transform_parent_changed(this:BaseRaycaster,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <BaseRaycaster as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let inner:extern "C" fn(BaseRaycaster, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
@@ -50,40 +136,32 @@ __BaseRaycaster_unity2_raw::raycast(__receiver, ::core::convert::Into::into(even
 __BaseRaycaster_unity2_raw::get_event_camera(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_priority()` overload"]fn get_priority(self,)->i32{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc10usize)as*mut u8,i32;
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::get_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_sortOrderPriority()` overload"]fn get_sort_order_priority(self,)->i32{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc20usize)as*mut u8,i32;
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::get_sort_order_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_renderOrderPriority()` overload"]fn get_render_order_priority(self,)->i32{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc30usize)as*mut u8,i32;
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::get_render_order_priority(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_rootRaycaster()` overload"]fn get_root_raycaster(self,)->crate::unity_engine::event_systems::baseraycaster::BaseRaycaster{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317bc40usize)as*mut u8,crate::unity_engine::event_systems::baseraycaster::BaseRaycaster;
 (BaseRaycaster)__receiver)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317bd20usize)as*mut u8, ::unity2::Il2CppString;
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317c0c0usize)as*mut u8,();
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317c140usize)as*mut u8,();
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCanvasHierarchyChanged()` overload"]fn on_canvas_hierarchy_changed(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317c1c0usize)as*mut u8,();
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::on_canvas_hierarchy_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x317c1f0usize)as*mut u8,();
-(BaseRaycaster)__receiver)}
+__BaseRaycaster_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BaseRaycaster as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x317c220usize)as*mut u8,();

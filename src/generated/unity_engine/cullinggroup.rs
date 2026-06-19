@@ -13,22 +13,27 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cullinggroup/CullingGroup.md"))]#[::unity2::class(namespace="UnityEngine",name="CullingGroup")]#[parent(crate::system::object::Object)]pub struct CullingGroup{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_OnStateChanged")]pub m_on_state_changed:crate::unity_engine::cullinggroup::CullingGroup_StateChanged,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cullinggroup/CullingGroup_StateChanged.md"))]#[::unity2::class(namespace="UnityEngine",name="CullingGroup.StateChanged")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct CullingGroup_StateChanged{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/cullinggroup/CullingGroup.md"))]#[::unity2::class(namespace="UnityEngine",name="CullingGroup")]#[parent(crate::system::object::Object)]pub struct CullingGroup{#[offset(16)]#[rename(name="m_Ptr")]pub m_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_OnStateChanged")]pub m_on_state_changed:crate::unity_engine::cullinggroup::CullingGroup_StateChanged,}
 
 }
 
 #[cfg(feature = "unity_engine-cullinggroup-types")]
 pub use __types::*;
 
-#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup{#[doc="`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]pub fn send_events(culling_group:impl::core::convert::Into<crate::unity_engine::cullinggroup::CullingGroup> ,events_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c494a0usize)as*mut u8,();
-(crate::unity_engine::cullinggroup::CullingGroup)::core::convert::Into::into(culling_group),(::unity2::IntPtr)::core::convert::Into::into(events_ptr),(i32)::core::convert::Into::into(count))}
-}
-}
-
-#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup{pub fn send_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="unity_engine-cullinggroup")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CullingGroup_StateChanged_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:CullingGroup_StateChanged,sphere:crate::unity_engine::cullinggroupevent::CullingGroupEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <CullingGroup_StateChanged as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(CullingGroup_StateChanged,crate::unity_engine::cullinggroupevent::CullingGroupEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,sphere,__mi)}
 }
 
 #[cfg(feature="unity_engine-cullinggroup")]pub trait ICullingGroup_StateChangedMethods:ICullingGroup_StateChanged{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <CullingGroup_StateChanged as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -36,8 +41,7 @@ pub use __types::*;
 (CullingGroup_StateChanged)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::cullinggroupevent::CullingGroupEvent)` overload"]fn invoke(self,sphere:impl::core::convert::Into<crate::unity_engine::cullinggroupevent::CullingGroupEvent>)->(){unsafe{let __receiver= <CullingGroup_StateChanged as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x379bdb0usize)as*mut u8,();
-(CullingGroup_StateChanged)__receiver,(crate::unity_engine::cullinggroupevent::CullingGroupEvent)::core::convert::Into::into(sphere))}
+__CullingGroup_StateChanged_unity2_raw::invoke(__receiver, ::core::convert::Into::into(sphere), ::core::option::Option::None)}
 }
 }
 
@@ -54,14 +58,22 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup{#[doc="`SendEvents(crate::unity_engine::cullinggroup::CullingGroup, ::unity2::IntPtr, i32)` overload"]pub fn send_events(culling_group:impl::core::convert::Into<crate::unity_engine::cullinggroup::CullingGroup> ,events_ptr:impl::core::convert::Into< ::unity2::IntPtr> ,count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c494a0usize)as*mut u8,();
+(crate::unity_engine::cullinggroup::CullingGroup)::core::convert::Into::into(culling_group),(::unity2::IntPtr)::core::convert::Into::into(events_ptr),(i32)::core::convert::Into::into(count))}
+}
+}
+
+#[cfg(feature="unity_engine-cullinggroup")]impl CullingGroup{pub fn send_events_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "unity_engine-cullinggroup")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CullingGroup;
-    pub use super::ICullingGroup;
     pub use super::CullingGroup_StateChanged;
     pub use super::ICullingGroup_StateChanged;
     pub use super::ICullingGroup_StateChangedMethods;
+    pub use super::CullingGroup;
+    pub use super::ICullingGroup;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

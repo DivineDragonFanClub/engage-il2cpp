@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayappearancesequence/RelayAppearanceSequence.md"))]#[::unity2::class(namespace="App",name="RelayAppearanceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayappearancesequence::RelayAppearanceSequence>)]pub struct RelayAppearanceSequence{#[offset(116)]#[rename(name="m_Index")]pub m_index:i32, #[offset(120)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_ReplayAppearanceIndexes")]pub m_replay_appearance_indexes: ::unity2::Array<i32> , #[offset(136)]#[rename(name="m_ReplayLeavingIndexes")]pub m_replay_leaving_indexes: ::unity2::Array<i32> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayappearancesequence/RelayAppearanceSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RelayAppearanceSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for RelayAppearanceSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RelayAppearanceSequence.Label";
@@ -37,9 +40,6 @@ pub fn appearance_loop()->Self{Self{value:3}
 pub fn end()->Self{Self{value:4}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/relayappearancesequence/RelayAppearanceSequence.md"))]#[::unity2::class(namespace="App",name="RelayAppearanceSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::relayappearancesequence::RelayAppearanceSequence>)]pub struct RelayAppearanceSequence{#[offset(116)]#[rename(name="m_Index")]pub m_index:i32, #[offset(120)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(128)]#[rename(name="m_ReplayAppearanceIndexes")]pub m_replay_appearance_indexes: ::unity2::Array<i32> , #[offset(136)]#[rename(name="m_ReplayLeavingIndexes")]pub m_replay_leaving_indexes: ::unity2::Array<i32> ,}
 
 }
 
@@ -136,10 +136,10 @@ this}
 #[cfg(feature = "app-relayappearancesequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RelayAppearanceSequence_Label;
     pub use super::RelayAppearanceSequence;
     pub use super::IRelayAppearanceSequence;
     pub use super::IRelayAppearanceSequenceMethods;
+    pub use super::RelayAppearanceSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

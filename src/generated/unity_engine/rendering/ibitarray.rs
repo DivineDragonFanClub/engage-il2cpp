@@ -15,65 +15,92 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-rendering-ibitarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IBitArray_unity2_raw{use super:: * ;
-pub unsafe fn get_capacity(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_capacity").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_capacity", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_capacity(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"get_capacity",));
 let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_all_false(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_allFalse").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_allFalse", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_all_false(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"get_allFalse",));
 let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_all_true(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_allTrue").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_allTrue", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_all_true(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"get_allTrue",));
 let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_item(this:IBitArray,index:u32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Item", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_item(this:IBitArray,index:u32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"get_Item",));
 let inner:extern "C" fn(IBitArray,u32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,index,__mi)}
-pub unsafe fn set_item(this:IBitArray,index:u32,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_Item").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_Item", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_item(this:IBitArray,index:u32,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"set_Item",));
 let inner:extern "C" fn(IBitArray,u32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,index,value,__mi)}
-pub unsafe fn get_humanized_data(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_humanizedData").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_humanizedData", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_humanized_data(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"get_humanizedData",));
 let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn bit_and(this:IBitArray,other:crate::unity_engine::rendering::ibitarray::IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("BitAnd").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","BitAnd", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn bit_and(this:IBitArray,other:crate::unity_engine::rendering::ibitarray::IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"BitAnd",));
 let inner:extern "C" fn(IBitArray,crate::unity_engine::rendering::ibitarray::IBitArray, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,other,__mi)}
-pub unsafe fn bit_or(this:IBitArray,other:crate::unity_engine::rendering::ibitarray::IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("BitOr").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","BitOr", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn bit_or(this:IBitArray,other:crate::unity_engine::rendering::ibitarray::IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"BitOr",));
 let inner:extern "C" fn(IBitArray,crate::unity_engine::rendering::ibitarray::IBitArray, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,other,__mi)}
-pub unsafe fn bit_not(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("BitNot").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","BitNot", <IBitArray as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn bit_not(this:IBitArray,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IBitArray as::unity2::ClassIdentity> ::NAME,"BitNot",));
 let inner:extern "C" fn(IBitArray, ::unity2::OptionalMethod,)->crate::unity_engine::rendering::ibitarray::IBitArray= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

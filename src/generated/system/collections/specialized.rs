@@ -16,14 +16,14 @@
  #[cfg(feature="system-collections-specialized-hybriddictionary")]pub use hybriddictionary::{IHybridDictionaryMethods}
 ;
  #[cfg(any(feature="system-collections-specialized-listdictionary-types"))]pub mod listdictionary;
- #[cfg(feature="system-collections-specialized-listdictionary-types")]pub use listdictionary::{ListDictionary_DictionaryNode,IListDictionary_DictionaryNode,ListDictionary,IListDictionary,ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,ListDictionary_NodeKeyValueCollection,IListDictionary_NodeKeyValueCollection,ListDictionary_NodeEnumerator,IListDictionary_NodeEnumerator}
+ #[cfg(feature="system-collections-specialized-listdictionary-types")]pub use listdictionary::{ListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumerator,ListDictionary_NodeEnumerator,IListDictionary_NodeEnumerator,ListDictionary,IListDictionary,ListDictionary_DictionaryNode,IListDictionary_DictionaryNode,ListDictionary_NodeKeyValueCollection,IListDictionary_NodeKeyValueCollection}
 ;
- #[cfg(feature="system-collections-specialized-listdictionary")]pub use listdictionary::{IListDictionary_DictionaryNodeMethods,IListDictionaryMethods,IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,IListDictionary_NodeKeyValueCollectionMethods,IListDictionary_NodeEnumeratorMethods}
+ #[cfg(feature="system-collections-specialized-listdictionary")]pub use listdictionary::{IListDictionary_NodeKeyValueCollection_NodeKeyValueEnumeratorMethods,IListDictionary_NodeEnumeratorMethods,IListDictionaryMethods,IListDictionary_DictionaryNodeMethods,IListDictionary_NodeKeyValueCollectionMethods}
 ;
  #[cfg(any(feature="system-collections-specialized-nameobjectcollectionbase-types"))]pub mod nameobjectcollectionbase;
- #[cfg(feature="system-collections-specialized-nameobjectcollectionbase-types")]pub use nameobjectcollectionbase::{NameObjectCollectionBase_NameObjectEntry,INameObjectCollectionBase_NameObjectEntry,NameObjectCollectionBase_NameObjectKeysEnumerator,INameObjectCollectionBase_NameObjectKeysEnumerator,NameObjectCollectionBase,INameObjectCollectionBase}
+ #[cfg(feature="system-collections-specialized-nameobjectcollectionbase-types")]pub use nameobjectcollectionbase::{NameObjectCollectionBase_NameObjectKeysEnumerator,INameObjectCollectionBase_NameObjectKeysEnumerator,NameObjectCollectionBase_NameObjectEntry,INameObjectCollectionBase_NameObjectEntry,NameObjectCollectionBase,INameObjectCollectionBase}
 ;
- #[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub use nameobjectcollectionbase::{INameObjectCollectionBase_NameObjectEntryMethods,INameObjectCollectionBase_NameObjectKeysEnumeratorMethods,INameObjectCollectionBaseMethods}
+ #[cfg(feature="system-collections-specialized-nameobjectcollectionbase")]pub use nameobjectcollectionbase::{INameObjectCollectionBase_NameObjectKeysEnumeratorMethods,INameObjectCollectionBase_NameObjectEntryMethods,INameObjectCollectionBaseMethods}
 ;
  #[cfg(any(feature="system-collections-specialized-namevaluecollection-types"))]pub mod namevaluecollection;
  #[cfg(feature="system-collections-specialized-namevaluecollection-types")]pub use namevaluecollection::{NameValueCollection,INameValueCollection}
@@ -31,9 +31,9 @@
  #[cfg(feature="system-collections-specialized-namevaluecollection")]pub use namevaluecollection::{INameValueCollectionMethods}
 ;
  #[cfg(any(feature="system-collections-specialized-ordereddictionary-types"))]pub mod ordereddictionary;
- #[cfg(feature="system-collections-specialized-ordereddictionary-types")]pub use ordereddictionary::{OrderedDictionary_OrderedDictionaryKeyValueCollection,IOrderedDictionary_OrderedDictionaryKeyValueCollection,OrderedDictionary_OrderedDictionaryEnumerator,IOrderedDictionary_OrderedDictionaryEnumerator,OrderedDictionary,IOrderedDictionary}
+ #[cfg(feature="system-collections-specialized-ordereddictionary-types")]pub use ordereddictionary::{OrderedDictionary,IOrderedDictionary,OrderedDictionary_OrderedDictionaryKeyValueCollection,IOrderedDictionary_OrderedDictionaryKeyValueCollection,OrderedDictionary_OrderedDictionaryEnumerator,IOrderedDictionary_OrderedDictionaryEnumerator}
 ;
- #[cfg(feature="system-collections-specialized-ordereddictionary")]pub use ordereddictionary::{IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods,IOrderedDictionary_OrderedDictionaryEnumeratorMethods,IOrderedDictionaryMethods}
+ #[cfg(feature="system-collections-specialized-ordereddictionary")]pub use ordereddictionary::{IOrderedDictionaryMethods,IOrderedDictionary_OrderedDictionaryKeyValueCollectionMethods,IOrderedDictionary_OrderedDictionaryEnumeratorMethods}
 ;
  #[cfg(any(feature="system-collections-specialized-stringcollection-types"))]pub mod stringcollection;
  #[cfg(feature="system-collections-specialized-stringcollection-types")]pub use stringcollection::{StringCollection,IStringCollection}

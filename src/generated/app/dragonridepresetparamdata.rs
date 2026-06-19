@@ -17,9 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))]#[::unity2::class(namespace="App",name="DragonRidePresetParamData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::dragonridepresetparamdata::DragonRidePresetParamData>)]pub struct DragonRidePresetParamData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridepresetparamdata/DragonRidePresetParamData_CourseData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct DragonRidePresetParamData_CourseData{pub course_id:i32,pub suicide_time:f32,pub suicide_random:f32,}
 impl::unity2::ClassIdentity for DragonRidePresetParamData_CourseData{const NAMESPACE: &'static str="App";
 const NAME: &'static str="DragonRidePresetParamData.CourseData";
@@ -30,10 +27,26 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for DragonRidePresetParamData_CourseData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/dragonridepresetparamdata/DragonRidePresetParamData.md"))]#[::unity2::class(namespace="App",name="DragonRidePresetParamData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::dragonridepresetparamdata::DragonRidePresetParamData>)]pub struct DragonRidePresetParamData{}
+
 }
 
 #[cfg(feature = "app-dragonridepresetparamdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-dragonridepresetparamdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRidePresetParamData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:DragonRidePresetParamData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DragonRidePresetParamData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(DragonRidePresetParamData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-dragonridepresetparamdata")]impl DragonRidePresetParamData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ad31b0usize)as*mut u8,();
 )}
@@ -269,8 +282,7 @@ pub use __types::*;
 (DragonRidePresetParamData)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <DragonRidePresetParamData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad3260usize)as*mut u8,();
-(DragonRidePresetParamData)__receiver)}
+__DragonRidePresetParamData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -347,10 +359,10 @@ this}
 #[cfg(feature = "app-dragonridepresetparamdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::DragonRidePresetParamData_CourseData;
     pub use super::DragonRidePresetParamData;
     pub use super::IDragonRidePresetParamData;
     pub use super::IDragonRidePresetParamDataMethods;
-    pub use super::DragonRidePresetParamData_CourseData;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

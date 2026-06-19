@@ -22,6 +22,9 @@ impl::unity2::IlType for CoreUnsafeUtils_FixedBufferStringQueue{fn il_type()-> &
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="CoreUnsafeUtils")]#[parent(crate::system::object::Object)]pub struct CoreUnsafeUtils{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_UintKeyGetter.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CoreUnsafeUtils_UintKeyGetter{}
 impl::unity2::ClassIdentity for CoreUnsafeUtils_UintKeyGetter{const NAMESPACE: &'static str="UnityEngine.Rendering";
 const NAME: &'static str="CoreUnsafeUtils.UintKeyGetter";
@@ -31,9 +34,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for CoreUnsafeUtils_UintKeyGetter{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils.md"))]#[::unity2::class(namespace="UnityEngine.Rendering",name="CoreUnsafeUtils")]#[parent(crate::system::object::Object)]pub struct CoreUnsafeUtils{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/coreunsafeutils/CoreUnsafeUtils_DefaultKeyGetter_1.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CoreUnsafeUtils_DefaultKeyGetter_1<T0>{pub _phantom: ::core::marker::PhantomData<(T0,)>}
@@ -81,17 +81,6 @@ pub fn try_pop_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="unity_engine-rendering-coreunsafeutils")]impl CoreUnsafeUtils_UintKeyGetter{#[doc="`Get(*mutu32)` overload"]pub fn get(&mut self,)->(u32,u32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x33e9b60usize)as*mut u8,u32;
-(*mut CoreUnsafeUtils_UintKeyGetter)self as*mut CoreUnsafeUtils_UintKeyGetter,(*mut u32)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-}
-
-#[cfg(feature="unity_engine-rendering-coreunsafeutils")]impl CoreUnsafeUtils_UintKeyGetter{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature="unity_engine-rendering-coreunsafeutils")]impl CoreUnsafeUtils{#[doc="`QuickSort(::unity2::Array<u32>, i32, i32)` overload"]pub fn quick_sort(arr:impl::core::convert::Into< ::unity2::Array<u32> > ,left:impl::core::convert::Into<i32> ,right:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3531800usize)as*mut u8,();
 (::unity2::Array<u32>)::core::convert::Into::into(arr),(i32)::core::convert::Into::into(left),(i32)::core::convert::Into::into(right))}
 }
@@ -104,6 +93,17 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x33e9b60usize)as*mut
 pub fn have_duplicates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
 }
 
+#[cfg(feature="unity_engine-rendering-coreunsafeutils")]impl CoreUnsafeUtils_UintKeyGetter{#[doc="`Get(*mutu32)` overload"]pub fn get(&mut self,)->(u32,u32){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <u32> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x33e9b60usize)as*mut u8,u32;
+(*mut CoreUnsafeUtils_UintKeyGetter)self as*mut CoreUnsafeUtils_UintKeyGetter,(*mut u32)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+}
+
+#[cfg(feature="unity_engine-rendering-coreunsafeutils")]impl CoreUnsafeUtils_UintKeyGetter{pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature="unity_engine-rendering-coreunsafeutils")]#[::unity2::methods(value)]impl<T0: ::unity2::ClassIdentity>CoreUnsafeUtils_DefaultKeyGetter_1<T0>{#[doc="`Get(*mutT0)` overload"]#[method(name="Get",args=1)]pub fn get(self,v: *mut T0)->T0;
 }
 
@@ -114,9 +114,9 @@ pub fn have_duplicates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 #[doc(hidden)]
 pub mod prelude {
     pub use super::CoreUnsafeUtils_FixedBufferStringQueue;
-    pub use super::CoreUnsafeUtils_UintKeyGetter;
     pub use super::CoreUnsafeUtils;
     pub use super::ICoreUnsafeUtils;
+    pub use super::CoreUnsafeUtils_UintKeyGetter;
     pub use super::CoreUnsafeUtils_DefaultKeyGetter_1;
     pub use super::CoreUnsafeUtils_IKeyGetter_2;
     pub use super::ICoreUnsafeUtils_IKeyGetter_2;

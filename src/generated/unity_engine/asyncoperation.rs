@@ -18,6 +18,19 @@ use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
 #[cfg(feature = "unity_engine-asyncoperation-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-asyncoperation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AsyncOperation_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:AsyncOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AsyncOperation as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AsyncOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-asyncoperation")]impl AsyncOperation{#[doc="`InternalDestroy(::unity2::IntPtr)` overload"]pub fn internal_destroy(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c363b0usize)as*mut u8,();
 (::unity2::IntPtr)::core::convert::Into::into(ptr))}
 }
@@ -44,8 +57,7 @@ pub use __types::*;
 (AsyncOperation)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36590usize)as*mut u8,();
-(AsyncOperation)__receiver)}
+__AsyncOperation_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InvokeCompletionEvent()` overload"]fn invoke_completion_event(self,)->(){unsafe{let __receiver= <AsyncOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c36630usize)as*mut u8,();

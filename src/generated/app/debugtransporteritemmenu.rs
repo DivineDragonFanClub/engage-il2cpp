@@ -11,78 +11,327 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_EditMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu.EditMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugTransporterItemMenu_EditMenuItem{#[offset(32)]#[rename(name="m_TransporterIndex")]pub m_transporter_index:i32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu")]#[parent(crate::system::object::Object)]pub struct DebugTransporterItemMenu{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_SelectMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu.SelectMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugTransporterItemMenu_SelectMenuItem{#[offset(32)]#[rename(name="m_TransporterIndex")]pub m_transporter_index:i32, #[offset(36)]#[rename(name="m_ItemIndex")]pub m_item_index:i32,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu")]#[parent(crate::system::object::Object)]pub struct DebugTransporterItemMenu{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/debugtransporteritemmenu/DebugTransporterItemMenu_EditMenuItem.md"))]#[::unity2::class(namespace="App",name="DebugTransporterItemMenu.EditMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct DebugTransporterItemMenu_EditMenuItem{#[offset(32)]#[rename(name="m_TransporterIndex")]pub m_transporter_index:i32,}
 
 }
 
 #[cfg(feature = "app-debugtransporteritemmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a107c0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenuMethods:IDebugTransporterItemMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a10940usize)as*mut u8,();
+(DebugTransporterItemMenu)__receiver)}
+}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl<__T:IDebugTransporterItemMenu>IDebugTransporterItemMenuMethods for __T{}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterItemMenu), ::core::stringify!(new),));
+ <Self as IDebugTransporterItemMenuMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterItemMenu_SelectMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_column_count(this:DebugTransporterItemMenu_SelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <DebugTransporterItemMenu_SelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
+let inner:extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width0(this:DebugTransporterItemMenu_SelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <DebugTransporterItemMenu_SelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
+let inner:extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width1(this:DebugTransporterItemMenu_SelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <DebugTransporterItemMenu_SelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
+let inner:extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name0(this:DebugTransporterItemMenu_SelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <DebugTransporterItemMenu_SelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name1(this:DebugTransporterItemMenu_SelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <DebugTransporterItemMenu_SelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let inner:extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugTransporterItemMenu_SelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugTransporterItemMenu_SelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugTransporterItemMenu_SelectMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenu_SelectMenuItemMethods:IDebugTransporterItemMenu_SelectMenuItem{#[doc="`.ctor(i32, i32)` overload"]fn ctor(self,transporter_index:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba400usize)as*mut u8,();
+(DebugTransporterItemMenu_SelectMenuItem)__receiver,(i32)::core::convert::Into::into(transporter_index),(i32)::core::convert::Into::into(item_index))}
+}
+#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterItemMenu_SelectMenuItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__DebugTransporterItemMenu_SelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl<__T:IDebugTransporterItemMenu_SelectMenuItem>IDebugTransporterItemMenu_SelectMenuItemMethods for __T{}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu_SelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu_SelectMenuItem{#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new(transporter_index:i32,item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DebugTransporterItemMenu_SelectMenuItem), ::core::stringify!(new),));
+ <Self as IDebugTransporterItemMenu_SelectMenuItemMethods> ::ctor(this,transporter_index,item_index);
+this}
+}
+
+#[cfg(feature="app-debugtransporteritemmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugTransporterItemMenu_EditMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_column_count(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width0(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width1(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width2(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth2",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name0(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name1(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name2(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_align0(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(53usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",53usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnAlign0",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_align1(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(54usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",54usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnAlign1",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_align2(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",55usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetColumnAlign2",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn x_call(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_help(this:DebugTransporterItemMenu_EditMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DebugTransporterItemMenu_EditMenuItem as::unity2::ClassIdentity> ::NAME,"GetHelp",));
+let inner:extern "C" fn(DebugTransporterItemMenu_EditMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenu_EditMenuItemMethods:IDebugTransporterItemMenu_EditMenuItem{#[doc="`.ctor(i32)` overload"]fn ctor(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9ee0usize)as*mut u8,();
 (DebugTransporterItemMenu_EditMenuItem)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9f10usize)as*mut u8,i32;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9f20usize)as*mut u8,f32;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9f30usize)as*mut u8,f32;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9f40usize)as*mut u8,f32;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_width2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9f50usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetUnitItem()` overload"]fn get_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9f60usize)as*mut u8,crate::app::unititem::UnitItem;
 (DebugTransporterItemMenu_EditMenuItem)__receiver)}
 }
 #[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bb9fe0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba100usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnAlign0()` overload"]fn get_column_align0(self,)->crate::app::menuitem::MenuItem_Align{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba1f0usize)as*mut u8,crate::app::menuitem::MenuItem_Align;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align0(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnAlign1()` overload"]fn get_column_align1(self,)->crate::app::menuitem::MenuItem_Align{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba200usize)as*mut u8,crate::app::menuitem::MenuItem_Align;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetColumnAlign2()` overload"]fn get_column_align2(self,)->crate::app::menuitem::MenuItem_Align{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba210usize)as*mut u8,crate::app::menuitem::MenuItem_Align;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_column_align2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba220usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba440usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetHelp()` overload"]fn get_help(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_EditMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba460usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterItemMenu_EditMenuItem)__receiver)}
+__DebugTransporterItemMenu_EditMenuItem_unity2_raw::get_help(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -112,90 +361,18 @@ pub fn get_help_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenu_SelectMenuItemMethods:IDebugTransporterItemMenu_SelectMenuItem{#[doc="`.ctor(i32, i32)` overload"]fn ctor(self,transporter_index:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba400usize)as*mut u8,();
-(DebugTransporterItemMenu_SelectMenuItem)__receiver,(i32)::core::convert::Into::into(transporter_index),(i32)::core::convert::Into::into(item_index))}
-}
-#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba4b0usize)as*mut u8,i32;
-(DebugTransporterItemMenu_SelectMenuItem)__receiver)}
-}
-#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba4c0usize)as*mut u8,f32;
-(DebugTransporterItemMenu_SelectMenuItem)__receiver)}
-}
-#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba4d0usize)as*mut u8,f32;
-(DebugTransporterItemMenu_SelectMenuItem)__receiver)}
-}
-#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba4e0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterItemMenu_SelectMenuItem)__receiver)}
-}
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba4f0usize)as*mut u8, ::unity2::Il2CppString;
-(DebugTransporterItemMenu_SelectMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <DebugTransporterItemMenu_SelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bba580usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(DebugTransporterItemMenu_SelectMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl<__T:IDebugTransporterItemMenu_SelectMenuItem>IDebugTransporterItemMenu_SelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu_SelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu_SelectMenuItem{#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new(transporter_index:i32,item_index:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterItemMenu_SelectMenuItem), ::core::stringify!(new),));
- <Self as IDebugTransporterItemMenu_SelectMenuItemMethods> ::ctor(this,transporter_index,item_index);
-this}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a107c0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]pub trait IDebugTransporterItemMenuMethods:IDebugTransporterItemMenu{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugTransporterItemMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a10940usize)as*mut u8,();
-(DebugTransporterItemMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl<__T:IDebugTransporterItemMenu>IDebugTransporterItemMenuMethods for __T{}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-debugtransporteritemmenu")]impl DebugTransporterItemMenu{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DebugTransporterItemMenu), ::core::stringify!(new),));
- <Self as IDebugTransporterItemMenuMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-debugtransporteritemmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DebugTransporterItemMenu_EditMenuItem;
-    pub use super::IDebugTransporterItemMenu_EditMenuItem;
-    pub use super::IDebugTransporterItemMenu_EditMenuItemMethods;
-    pub use super::DebugTransporterItemMenu_SelectMenuItem;
-    pub use super::IDebugTransporterItemMenu_SelectMenuItem;
-    pub use super::IDebugTransporterItemMenu_SelectMenuItemMethods;
     pub use super::DebugTransporterItemMenu;
     pub use super::IDebugTransporterItemMenu;
     pub use super::IDebugTransporterItemMenuMethods;
+    pub use super::DebugTransporterItemMenu_SelectMenuItem;
+    pub use super::IDebugTransporterItemMenu_SelectMenuItem;
+    pub use super::IDebugTransporterItemMenu_SelectMenuItemMethods;
+    pub use super::DebugTransporterItemMenu_EditMenuItem;
+    pub use super::IDebugTransporterItemMenu_EditMenuItem;
+    pub use super::IDebugTransporterItemMenu_EditMenuItemMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-menuitem")] pub use crate::app::menuitem::IMenuItemMethods;

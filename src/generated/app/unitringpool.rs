@@ -20,6 +20,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-unitringpool-types")]
 pub use __types::*;
 
+#[cfg(feature="app-unitringpool")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitRingPool_unity2_raw{use super:: * ;
+pub unsafe fn get_version(this:UnitRingPool,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnitRingPool as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let inner:extern "C" fn(UnitRingPool, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-unitringpool")]impl UnitRingPool{#[doc="`TryGet(::unity2::Il2CppString, crate::app::unit::Unit)` overload"]pub fn try_get(rnid:impl::core::convert::Into< ::unity2::Il2CppString> ,owner:impl::core::convert::Into<crate::app::unit::Unit>)->crate::app::unitring::UnitRing{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1c5cc60usize)as*mut u8,crate::app::unitring::UnitRing;
 (::unity2::Il2CppString)::core::convert::Into::into(rnid),(crate::app::unit::Unit)::core::convert::Into::into(owner))}
 }
@@ -84,8 +97,7 @@ pub use __types::*;
 (UnitRingPool)__receiver)}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <UnitRingPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1c5cc50usize)as*mut u8,i32;
-(UnitRingPool)__receiver)}
+__UnitRingPool_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
 }
 }
 

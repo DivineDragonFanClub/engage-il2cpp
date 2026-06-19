@@ -20,6 +20,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-battletalkevent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-battletalkevent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleTalkEvent_unity2_raw{use super:: * ;
+pub unsafe fn on_tick(this:BattleTalkEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleTalkEvent as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(BattleTalkEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-battletalkevent")]impl BattleTalkEvent{#[doc="`IsEnable(crate::app::battlecalculator::BattleCalculator)` overload"]pub fn is_enable(calculator:impl::core::convert::Into<crate::app::battlecalculator::BattleCalculator>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e93810usize)as*mut u8,bool;
 (crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator))}
 }
@@ -39,8 +52,7 @@ pub use __types::*;
 (BattleTalkEvent)__receiver,(crate::app::battlecalculator::BattleCalculator)::core::convert::Into::into(calculator),(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(target),(crate::system::action::Action)::core::convert::Into::into(completed))}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <BattleTalkEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e937e0usize)as*mut u8,();
-(BattleTalkEvent)__receiver)}
+__BattleTalkEvent_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 }
 

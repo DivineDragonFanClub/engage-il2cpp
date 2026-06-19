@@ -22,21 +22,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-wellitemselectmenublankitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-wellitemselectmenublankitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WellItemSelectMenuBlankItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:WellItemSelectMenuBlankItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <WellItemSelectMenuBlankItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(WellItemSelectMenuBlankItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:WellItemSelectMenuBlankItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <WellItemSelectMenuBlankItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(WellItemSelectMenuBlankItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_visible_item_icon_on_blank(this:WellItemSelectMenuBlankItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <WellItemSelectMenuBlankItem as::unity2::ClassIdentity> ::NAME,"IsVisibleItemIconOnBlank",));
+let inner:extern "C" fn(WellItemSelectMenuBlankItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-wellitemselectmenublankitem")]pub trait IWellItemSelectMenuBlankItemMethods:IWellItemSelectMenuBlankItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <WellItemSelectMenuBlankItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7630usize)as*mut u8,();
 (WellItemSelectMenuBlankItem)__receiver)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <WellItemSelectMenuBlankItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7af0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(WellItemSelectMenuBlankItem)__receiver)}
+__WellItemSelectMenuBlankItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <WellItemSelectMenuBlankItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7b00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(WellItemSelectMenuBlankItem)__receiver)}
+__WellItemSelectMenuBlankItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsVisibleItemIconOnBlank()` overload"]fn is_visible_item_icon_on_blank(self,)->bool{unsafe{let __receiver= <WellItemSelectMenuBlankItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21d7b10usize)as*mut u8,bool;
-(WellItemSelectMenuBlankItem)__receiver)}
+__WellItemSelectMenuBlankItem_unity2_raw::is_visible_item_icon_on_blank(__receiver, ::core::option::Option::None)}
 }
 }
 

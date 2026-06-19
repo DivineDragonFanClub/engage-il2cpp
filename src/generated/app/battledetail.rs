@@ -17,27 +17,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_DetailParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.DetailParam")]#[parent(crate::app::battledetail::BattleDetail_CommandParam)]pub struct BattleDetail_DetailParam{#[offset(40)]#[rename(name="m_Detail")]pub m_detail:crate::app::battledetail::BattleDetail,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_HitParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.HitParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_HitParam{#[offset(48)]#[rename(name="m_InterferenceRod")]pub m_interference_rod:crate::app::calculatorcommand::CalculatorCommand,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail.md"))]#[::unity2::class(namespace="App",name="BattleDetail")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleDetail{#[offset(24)]#[rename(name="m_BaseParams")]pub m_base_params: ::unity2::Array<i32> , #[offset(32)]#[rename(name="m_BattleParams")]pub m_battle_params: ::unity2::Array<crate::app::battleparam::BattleParam> , #[offset(48)]#[rename(name="m_ActiveSkill")]pub m_active_skill:crate::app::skillarray::SkillArray,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_SimpleCriticalParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.SimpleCriticalParam")]#[parent(crate::app::battledetail::BattleDetail_CommandParam)]pub struct BattleDetail_SimpleCriticalParam{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_AvoidParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.AvoidParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_AvoidParam{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_DefenseParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.DefenseParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_DefenseParam{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_UnitAttackParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.UnitAttackParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_UnitAttackParam{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_BaseParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleDetail_BaseParams{pub value:i32,}
 impl::unity2::ClassIdentity for BattleDetail_BaseParams{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleDetail.BaseParams";
@@ -92,19 +71,46 @@ pub fn num()->Self{Self{value:20}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_CriticalParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.CriticalParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_CriticalParam{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_AttackParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.AttackParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_AttackParam{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_ContinuousParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.ContinuousParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_ContinuousParam{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_SecureParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.SecureParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_SecureParam{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_AvoidParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.AvoidParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_AvoidParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_CommandParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.CommandParam")]#[parent(crate::app::battleparam::BattleParam)]pub struct BattleDetail_CommandParam{#[offset(32)]#[rename(name="m_Command")]pub m_command:crate::app::calculatorcommand::CalculatorCommand,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail.md"))]#[::unity2::class(namespace="App",name="BattleDetail")]#[parent(crate::app::pool::Pool_Node)]pub struct BattleDetail{#[offset(24)]#[rename(name="m_BaseParams")]pub m_base_params: ::unity2::Array<i32> , #[offset(32)]#[rename(name="m_BattleParams")]pub m_battle_params: ::unity2::Array<crate::app::battleparam::BattleParam> , #[offset(48)]#[rename(name="m_ActiveSkill")]pub m_active_skill:crate::app::skillarray::SkillArray,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_DetailParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.DetailParam")]#[parent(crate::app::battledetail::BattleDetail_CommandParam)]pub struct BattleDetail_DetailParam{#[offset(40)]#[rename(name="m_Detail")]pub m_detail:crate::app::battledetail::BattleDetail,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_SimpleHitParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.SimpleHitParam")]#[parent(crate::app::battledetail::BattleDetail_CommandParam)]pub struct BattleDetail_SimpleHitParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_SimpleCriticalParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.SimpleCriticalParam")]#[parent(crate::app::battledetail::BattleDetail_CommandParam)]pub struct BattleDetail_SimpleCriticalParam{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_SimplePowerParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.SimplePowerParam")]#[parent(crate::app::battledetail::BattleDetail_CommandParam)]pub struct BattleDetail_SimplePowerParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_DefenseParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.DefenseParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_DefenseParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_HitParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.HitParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_HitParam{#[offset(48)]#[rename(name="m_InterferenceRod")]pub m_interference_rod:crate::app::calculatorcommand::CalculatorCommand,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_CriticalParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.CriticalParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_CriticalParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_UnitAttackParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.UnitAttackParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_UnitAttackParam{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_SecureParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.SecureParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_SecureParam{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_BattleParams.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleDetail_BattleParams{pub value:i32,}
@@ -147,66 +153,165 @@ pub fn num()->Self{Self{value:12}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_UnitDefenseParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.UnitDefenseParam")]#[parent(crate::app::battledetail::BattleDetail_DetailParam)]pub struct BattleDetail_UnitDefenseParam{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_CommandParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.CommandParam")]#[parent(crate::app::battleparam::BattleParam)]pub struct BattleDetail_CommandParam{#[offset(32)]#[rename(name="m_Command")]pub m_command:crate::app::calculatorcommand::CalculatorCommand,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battledetail/BattleDetail_SimpleHitParam.md"))]#[::unity2::class(namespace="App",name="BattleDetail.SimpleHitParam")]#[parent(crate::app::battledetail::BattleDetail_CommandParam)]pub struct BattleDetail_SimpleHitParam{}
-
 }
 
 #[cfg(feature = "app-battledetail-types")]
 pub use __types::*;
 
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_DetailParamMethods:IBattleDetail_DetailParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail> ,command:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BattleDetail_DetailParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7270usize)as*mut u8,();
-(BattleDetail_DetailParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail),(::unity2::Il2CppString)::core::convert::Into::into(command))}
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_AttackParam_unity2_raw{use super:: * ;
+pub unsafe fn calculate(this:BattleDetail_AttackParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_AttackParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_AttackParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
 }
-#[doc="`get_Detail()` overload"]fn get_detail(self,)->crate::app::battledetail::BattleDetail{unsafe{let __receiver= <BattleDetail_DetailParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b77b0usize)as*mut u8,crate::app::battledetail::BattleDetail;
-(BattleDetail_DetailParam)__receiver)}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_AttackParamMethods:IBattleDetail_AttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_AttackParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7200usize)as*mut u8,();
+(BattleDetail_AttackParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
 }
-#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_DetailParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b77c0usize)as*mut u8,f32;
-(BattleDetail_DetailParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_AttackParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_AttackParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_DetailParam>IBattleDetail_DetailParamMethods for __T{}
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_AttackParam>IBattleDetail_AttackParamMethods for __T{}
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_DetailParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_DetailParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail,command: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleDetail_DetailParam), ::core::stringify!(new),));
- <Self as IBattleDetail_DetailParamMethods> ::ctor(this,detail,command);
-this}
-}
-
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_HitParamMethods:IBattleDetail_HitParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_HitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b77e0usize)as*mut u8,();
-(BattleDetail_HitParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
-}
-#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_HitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7850usize)as*mut u8,f32;
-(BattleDetail_HitParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
-}
-}
-
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_HitParam>IBattleDetail_HitParamMethods for __T{}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_HitParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-battledetail")]impl BattleDetail_AttackParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_HitParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-battledetail")]impl BattleDetail_AttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(BattleDetail_HitParam), ::core::stringify!(new),));
- <Self as IBattleDetail_HitParamMethods> ::ctor(this,detail);
+ failed to instantiate", ::core::stringify!(BattleDetail_AttackParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_AttackParamMethods> ::ctor(this,detail);
 this}
+}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_ContinuousParamMethods:IBattleDetail_ContinuousParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_ContinuousParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7660usize)as*mut u8,();
+(BattleDetail_ContinuousParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
+}
+}
+
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_ContinuousParam>IBattleDetail_ContinuousParamMethods for __T{}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_ContinuousParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_ContinuousParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleDetail_ContinuousParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_ContinuousParamMethods> ::ctor(this,detail);
+this}
+}
+
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_AvoidParam_unity2_raw{use super:: * ;
+pub unsafe fn calculate(this:BattleDetail_AvoidParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_AvoidParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_AvoidParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
+}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_AvoidParamMethods:IBattleDetail_AvoidParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_AvoidParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7350usize)as*mut u8,();
+(BattleDetail_AvoidParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
+}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_AvoidParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_AvoidParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_AvoidParam>IBattleDetail_AvoidParamMethods for __T{}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_AvoidParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_AvoidParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleDetail_AvoidParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_AvoidParamMethods> ::ctor(this,detail);
+this}
+}
+
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_CommandParam_unity2_raw{use super:: * ;
+pub unsafe fn calculate(this:BattleDetail_CommandParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_CommandParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_CommandParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
+}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_CommandParamMethods:IBattleDetail_CommandParam{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,command:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7530usize)as*mut u8,();
+(BattleDetail_CommandParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(command))}
+}
+#[doc="`get_Command()` overload"]fn get_command(self,)->crate::app::calculatorcommand::CalculatorCommand{unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7630usize)as*mut u8,crate::app::calculatorcommand::CalculatorCommand;
+(BattleDetail_CommandParam)__receiver)}
+}
+#[doc="`Get(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide)` overload"]fn get(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7470usize)as*mut u8,f32;
+(BattleDetail_CommandParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_CommandParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_CommandParam>IBattleDetail_CommandParamMethods for __T{}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_CommandParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_CommandParam{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(command: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleDetail_CommandParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_CommandParamMethods> ::ctor(this,command);
+this}
+}
+
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_unity2_raw{use super:: * ;
+pub unsafe fn on_enter(this:BattleDetail,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleDetail as::unity2::ClassIdentity> ::NAME,"OnEnter",));
+let inner:extern "C" fn(BattleDetail, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_exit(this:BattleDetail,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleDetail as::unity2::ClassIdentity> ::NAME,"OnExit",));
+let inner:extern "C" fn(BattleDetail, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-battledetail")]pub trait IBattleDetailMethods:IBattleDetail{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -214,12 +319,10 @@ this}
 (BattleDetail)__receiver)}
 }
 #[doc="`OnEnter()` overload"]fn on_enter(self,)->(){unsafe{let __receiver= <BattleDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e739c0usize)as*mut u8,();
-(BattleDetail)__receiver)}
+__BattleDetail_unity2_raw::on_enter(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnExit()` overload"]fn on_exit(self,)->(){unsafe{let __receiver= <BattleDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e739d0usize)as*mut u8,();
-(BattleDetail)__receiver)}
+__BattleDetail_unity2_raw::on_exit(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <BattleDetail as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e73660usize)as*mut u8,();
@@ -607,17 +710,127 @@ pub fn add_active_skill_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<S
 this}
 }
 
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_DetailParam_unity2_raw{use super:: * ;
+pub unsafe fn calculate(this:BattleDetail_DetailParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_DetailParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_DetailParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
+}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_DetailParamMethods:IBattleDetail_DetailParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail> ,command:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BattleDetail_DetailParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7270usize)as*mut u8,();
+(BattleDetail_DetailParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail),(::unity2::Il2CppString)::core::convert::Into::into(command))}
+}
+#[doc="`get_Detail()` overload"]fn get_detail(self,)->crate::app::battledetail::BattleDetail{unsafe{let __receiver= <BattleDetail_DetailParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b77b0usize)as*mut u8,crate::app::battledetail::BattleDetail;
+(BattleDetail_DetailParam)__receiver)}
+}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_DetailParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_DetailParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_DetailParam>IBattleDetail_DetailParamMethods for __T{}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_DetailParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_detail_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_DetailParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail, ::unity2::Il2CppString)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail,command: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleDetail_DetailParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_DetailParamMethods> ::ctor(this,detail,command);
+this}
+}
+
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_SimpleHitParam_unity2_raw{use super:: * ;
+pub unsafe fn get_kind(this:BattleDetail_SimpleHitParam,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::battleparam::BattleParam_Kinds{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleDetail_SimpleHitParam as::unity2::ClassIdentity> ::NAME,"get_Kind",));
+let inner:extern "C" fn(BattleDetail_SimpleHitParam, ::unity2::OptionalMethod,)->crate::app::battleparam::BattleParam_Kinds= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate(this:BattleDetail_SimpleHitParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_SimpleHitParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_SimpleHitParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
+}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_SimpleHitParamMethods:IBattleDetail_SimpleHitParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleDetail_SimpleHitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7b30usize)as*mut u8,();
+(BattleDetail_SimpleHitParam)__receiver)}
+}
+#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::battleparam::BattleParam_Kinds{unsafe{let __receiver= <BattleDetail_SimpleHitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_SimpleHitParam_unity2_raw::get_kind(__receiver, ::core::option::Option::None)}
+}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_SimpleHitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_SimpleHitParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_SimpleHitParam>IBattleDetail_SimpleHitParamMethods for __T{}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_SimpleHitParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-battledetail")]impl BattleDetail_SimpleHitParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleDetail_SimpleHitParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_SimpleHitParamMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_SimpleCriticalParam_unity2_raw{use super:: * ;
+pub unsafe fn get_kind(this:BattleDetail_SimpleCriticalParam,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::battleparam::BattleParam_Kinds{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleDetail_SimpleCriticalParam as::unity2::ClassIdentity> ::NAME,"get_Kind",));
+let inner:extern "C" fn(BattleDetail_SimpleCriticalParam, ::unity2::OptionalMethod,)->crate::app::battleparam::BattleParam_Kinds= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate(this:BattleDetail_SimpleCriticalParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_SimpleCriticalParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_SimpleCriticalParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
+}
+
 #[cfg(feature="app-battledetail")]pub trait IBattleDetail_SimpleCriticalParamMethods:IBattleDetail_SimpleCriticalParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleDetail_SimpleCriticalParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19b79b0usize)as*mut u8,();
 (BattleDetail_SimpleCriticalParam)__receiver)}
 }
 #[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::battleparam::BattleParam_Kinds{unsafe{let __receiver= <BattleDetail_SimpleCriticalParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7a10usize)as*mut u8,crate::app::battleparam::BattleParam_Kinds;
-(BattleDetail_SimpleCriticalParam)__receiver)}
+__BattleDetail_SimpleCriticalParam_unity2_raw::get_kind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_SimpleCriticalParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7a20usize)as*mut u8,f32;
-(BattleDetail_SimpleCriticalParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+__BattleDetail_SimpleCriticalParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
 }
 }
 
@@ -635,26 +848,38 @@ pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_AvoidParamMethods:IBattleDetail_AvoidParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_AvoidParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7350usize)as*mut u8,();
-(BattleDetail_AvoidParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_SimplePowerParam_unity2_raw{use super:: * ;
+pub unsafe fn calculate(this:BattleDetail_SimplePowerParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_SimplePowerParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_SimplePowerParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
 }
-#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_AvoidParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b73c0usize)as*mut u8,f32;
-(BattleDetail_AvoidParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_SimplePowerParamMethods:IBattleDetail_SimplePowerParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleDetail_SimplePowerParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7c80usize)as*mut u8,();
+(BattleDetail_SimplePowerParam)__receiver)}
+}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_SimplePowerParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_SimplePowerParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_AvoidParam>IBattleDetail_AvoidParamMethods for __T{}
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_SimplePowerParam>IBattleDetail_SimplePowerParamMethods for __T{}
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_AvoidParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-battledetail")]impl BattleDetail_SimplePowerParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_AvoidParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-battledetail")]impl BattleDetail_SimplePowerParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(BattleDetail_AvoidParam), ::core::stringify!(new),));
- <Self as IBattleDetail_AvoidParamMethods> ::ctor(this,detail);
+ failed to instantiate", ::core::stringify!(BattleDetail_SimplePowerParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_SimplePowerParamMethods> ::ctor(this,);
 this}
 }
 
@@ -676,21 +901,38 @@ this}
 this}
 }
 
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_UnitAttackParamMethods:IBattleDetail_UnitAttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_UnitAttackParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7e20usize)as*mut u8,();
-(BattleDetail_UnitAttackParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
+#[cfg(feature="app-battledetail")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleDetail_HitParam_unity2_raw{use super:: * ;
+pub unsafe fn calculate(this:BattleDetail_HitParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleDetail_HitParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleDetail_HitParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
+}
+
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_HitParamMethods:IBattleDetail_HitParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_HitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b77e0usize)as*mut u8,();
+(BattleDetail_HitParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
+}
+#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_HitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleDetail_HitParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_UnitAttackParam>IBattleDetail_UnitAttackParamMethods for __T{}
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_HitParam>IBattleDetail_HitParamMethods for __T{}
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_UnitAttackParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-battledetail")]impl BattleDetail_HitParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_UnitAttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-battledetail")]impl BattleDetail_HitParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(BattleDetail_UnitAttackParam), ::core::stringify!(new),));
- <Self as IBattleDetail_UnitAttackParamMethods> ::ctor(this,detail);
+ failed to instantiate", ::core::stringify!(BattleDetail_HitParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_HitParamMethods> ::ctor(this,detail);
 this}
 }
 
@@ -712,44 +954,21 @@ this}
 this}
 }
 
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_AttackParamMethods:IBattleDetail_AttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_AttackParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7200usize)as*mut u8,();
-(BattleDetail_AttackParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
-}
-#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_AttackParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b72b0usize)as*mut u8,f32;
-(BattleDetail_AttackParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+#[cfg(feature="app-battledetail")]pub trait IBattleDetail_UnitAttackParamMethods:IBattleDetail_UnitAttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_UnitAttackParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7e20usize)as*mut u8,();
+(BattleDetail_UnitAttackParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
 }
 }
 
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_AttackParam>IBattleDetail_AttackParamMethods for __T{}
+#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_UnitAttackParam>IBattleDetail_UnitAttackParamMethods for __T{}
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_AttackParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+#[cfg(feature="app-battledetail")]impl BattleDetail_UnitAttackParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 }
 
-#[cfg(feature="app-battledetail")]impl BattleDetail_AttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-battledetail")]impl BattleDetail_UnitAttackParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(BattleDetail_AttackParam), ::core::stringify!(new),));
- <Self as IBattleDetail_AttackParamMethods> ::ctor(this,detail);
-this}
-}
-
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_ContinuousParamMethods:IBattleDetail_ContinuousParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_ContinuousParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7660usize)as*mut u8,();
-(BattleDetail_ContinuousParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
-}
-}
-
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_ContinuousParam>IBattleDetail_ContinuousParamMethods for __T{}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_ContinuousParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_ContinuousParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` — overload selector"]pub fn new(detail:crate::app::battledetail::BattleDetail)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleDetail_ContinuousParam), ::core::stringify!(new),));
- <Self as IBattleDetail_ContinuousParamMethods> ::ctor(this,detail);
+ failed to instantiate", ::core::stringify!(BattleDetail_UnitAttackParam), ::core::stringify!(new),));
+ <Self as IBattleDetail_UnitAttackParamMethods> ::ctor(this,detail);
 this}
 }
 
@@ -771,29 +990,6 @@ this}
 this}
 }
 
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_SimplePowerParamMethods:IBattleDetail_SimplePowerParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleDetail_SimplePowerParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7c80usize)as*mut u8,();
-(BattleDetail_SimplePowerParam)__receiver)}
-}
-#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_SimplePowerParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7ce0usize)as*mut u8,f32;
-(BattleDetail_SimplePowerParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
-}
-}
-
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_SimplePowerParam>IBattleDetail_SimplePowerParamMethods for __T{}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_SimplePowerParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_SimplePowerParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleDetail_SimplePowerParam), ::core::stringify!(new),));
- <Self as IBattleDetail_SimplePowerParamMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-battledetail")]pub trait IBattleDetail_UnitDefenseParamMethods:IBattleDetail_UnitDefenseParam{#[doc="`.ctor(crate::app::battledetail::BattleDetail)` overload"]fn ctor(self,detail:impl::core::convert::Into<crate::app::battledetail::BattleDetail>)->(){unsafe{let __receiver= <BattleDetail_UnitDefenseParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7e90usize)as*mut u8,();
 (BattleDetail_UnitDefenseParam)__receiver,(crate::app::battledetail::BattleDetail)::core::convert::Into::into(detail))}
@@ -812,117 +1008,56 @@ this}
 this}
 }
 
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_CommandParamMethods:IBattleDetail_CommandParam{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,command:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7530usize)as*mut u8,();
-(BattleDetail_CommandParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(command))}
-}
-#[doc="`get_Command()` overload"]fn get_command(self,)->crate::app::calculatorcommand::CalculatorCommand{unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7630usize)as*mut u8,crate::app::calculatorcommand::CalculatorCommand;
-(BattleDetail_CommandParam)__receiver)}
-}
-#[doc="`Get(::unity2::Il2CppString, crate::app::battleinfoside::BattleInfoSide)` overload"]fn get(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7470usize)as*mut u8,f32;
-(BattleDetail_CommandParam)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
-}
-#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_CommandParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7640usize)as*mut u8,f32;
-(BattleDetail_CommandParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
-}
-}
-
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_CommandParam>IBattleDetail_CommandParamMethods for __T{}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_CommandParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_command_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_CommandParam{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(command: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleDetail_CommandParam), ::core::stringify!(new),));
- <Self as IBattleDetail_CommandParamMethods> ::ctor(this,command);
-this}
-}
-
-#[cfg(feature="app-battledetail")]pub trait IBattleDetail_SimpleHitParamMethods:IBattleDetail_SimpleHitParam{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleDetail_SimpleHitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7b30usize)as*mut u8,();
-(BattleDetail_SimpleHitParam)__receiver)}
-}
-#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::battleparam::BattleParam_Kinds{unsafe{let __receiver= <BattleDetail_SimpleHitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7b90usize)as*mut u8,crate::app::battleparam::BattleParam_Kinds;
-(BattleDetail_SimpleHitParam)__receiver)}
-}
-#[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleDetail_SimpleHitParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7ba0usize)as*mut u8,f32;
-(BattleDetail_SimpleHitParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
-}
-}
-
-#[cfg(feature="app-battledetail")]impl<__T:IBattleDetail_SimpleHitParam>IBattleDetail_SimpleHitParamMethods for __T{}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_SimpleHitParam{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_kind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn calculate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-battledetail")]impl BattleDetail_SimpleHitParam{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleDetail_SimpleHitParam), ::core::stringify!(new),));
- <Self as IBattleDetail_SimpleHitParamMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-battledetail")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleDetail_DetailParam;
-    pub use super::IBattleDetail_DetailParam;
-    pub use super::IBattleDetail_DetailParamMethods;
-    pub use super::BattleDetail_HitParam;
-    pub use super::IBattleDetail_HitParam;
-    pub use super::IBattleDetail_HitParamMethods;
-    pub use super::BattleDetail;
-    pub use super::IBattleDetail;
-    pub use super::IBattleDetailMethods;
-    pub use super::BattleDetail_SimpleCriticalParam;
-    pub use super::IBattleDetail_SimpleCriticalParam;
-    pub use super::IBattleDetail_SimpleCriticalParamMethods;
-    pub use super::BattleDetail_AvoidParam;
-    pub use super::IBattleDetail_AvoidParam;
-    pub use super::IBattleDetail_AvoidParamMethods;
-    pub use super::BattleDetail_DefenseParam;
-    pub use super::IBattleDetail_DefenseParam;
-    pub use super::IBattleDetail_DefenseParamMethods;
-    pub use super::BattleDetail_UnitAttackParam;
-    pub use super::IBattleDetail_UnitAttackParam;
-    pub use super::IBattleDetail_UnitAttackParamMethods;
     pub use super::BattleDetail_BaseParams;
-    pub use super::BattleDetail_CriticalParam;
-    pub use super::IBattleDetail_CriticalParam;
-    pub use super::IBattleDetail_CriticalParamMethods;
     pub use super::BattleDetail_AttackParam;
     pub use super::IBattleDetail_AttackParam;
     pub use super::IBattleDetail_AttackParamMethods;
     pub use super::BattleDetail_ContinuousParam;
     pub use super::IBattleDetail_ContinuousParam;
     pub use super::IBattleDetail_ContinuousParamMethods;
-    pub use super::BattleDetail_SecureParam;
-    pub use super::IBattleDetail_SecureParam;
-    pub use super::IBattleDetail_SecureParamMethods;
+    pub use super::BattleDetail_AvoidParam;
+    pub use super::IBattleDetail_AvoidParam;
+    pub use super::IBattleDetail_AvoidParamMethods;
+    pub use super::BattleDetail_CommandParam;
+    pub use super::IBattleDetail_CommandParam;
+    pub use super::IBattleDetail_CommandParamMethods;
+    pub use super::BattleDetail;
+    pub use super::IBattleDetail;
+    pub use super::IBattleDetailMethods;
+    pub use super::BattleDetail_DetailParam;
+    pub use super::IBattleDetail_DetailParam;
+    pub use super::IBattleDetail_DetailParamMethods;
+    pub use super::BattleDetail_SimpleHitParam;
+    pub use super::IBattleDetail_SimpleHitParam;
+    pub use super::IBattleDetail_SimpleHitParamMethods;
+    pub use super::BattleDetail_SimpleCriticalParam;
+    pub use super::IBattleDetail_SimpleCriticalParam;
+    pub use super::IBattleDetail_SimpleCriticalParamMethods;
     pub use super::BattleDetail_SimplePowerParam;
     pub use super::IBattleDetail_SimplePowerParam;
     pub use super::IBattleDetail_SimplePowerParamMethods;
+    pub use super::BattleDetail_DefenseParam;
+    pub use super::IBattleDetail_DefenseParam;
+    pub use super::IBattleDetail_DefenseParamMethods;
+    pub use super::BattleDetail_HitParam;
+    pub use super::IBattleDetail_HitParam;
+    pub use super::IBattleDetail_HitParamMethods;
+    pub use super::BattleDetail_CriticalParam;
+    pub use super::IBattleDetail_CriticalParam;
+    pub use super::IBattleDetail_CriticalParamMethods;
+    pub use super::BattleDetail_UnitAttackParam;
+    pub use super::IBattleDetail_UnitAttackParam;
+    pub use super::IBattleDetail_UnitAttackParamMethods;
+    pub use super::BattleDetail_SecureParam;
+    pub use super::IBattleDetail_SecureParam;
+    pub use super::IBattleDetail_SecureParamMethods;
     pub use super::BattleDetail_BattleParams;
     pub use super::BattleDetail_UnitDefenseParam;
     pub use super::IBattleDetail_UnitDefenseParam;
     pub use super::IBattleDetail_UnitDefenseParamMethods;
-    pub use super::BattleDetail_CommandParam;
-    pub use super::IBattleDetail_CommandParam;
-    pub use super::IBattleDetail_CommandParamMethods;
-    pub use super::BattleDetail_SimpleHitParam;
-    pub use super::IBattleDetail_SimpleHitParam;
-    pub use super::IBattleDetail_SimpleHitParamMethods;
     pub use crate::app::battleparam::IBattleParam;
     pub use crate::app::pool::IPool_Node;
     pub use crate::system::object::IObject;

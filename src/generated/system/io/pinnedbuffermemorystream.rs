@@ -20,17 +20,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-pinnedbuffermemorystream-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-pinnedbuffermemorystream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PinnedBufferMemoryStream_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:PinnedBufferMemoryStream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <PinnedBufferMemoryStream as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(PinnedBufferMemoryStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:PinnedBufferMemoryStream,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <PinnedBufferMemoryStream as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(PinnedBufferMemoryStream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+}
+
 #[cfg(feature="system-io-pinnedbuffermemorystream")]pub trait IPinnedBufferMemoryStreamMethods:IPinnedBufferMemoryStream{#[doc="`.ctor(::unity2::Array<u8>)` overload"]fn ctor(self,array:impl::core::convert::Into< ::unity2::Array<u8> >)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x376a1c0usize)as*mut u8,();
 (PinnedBufferMemoryStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array))}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376a2b0usize)as*mut u8,();
-(PinnedBufferMemoryStream)__receiver)}
+__PinnedBufferMemoryStream_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PinnedBufferMemoryStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376a330usize)as*mut u8,();
-(PinnedBufferMemoryStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+__PinnedBufferMemoryStream_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 }
 

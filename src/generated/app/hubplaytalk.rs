@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]#[::unity2::class(namespace="App",name="HubPlayTalk.CallPuppetEvent")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalk_CallPuppetEvent{#[offset(112)]#[rename(name="File")]pub file: ::unity2::Il2CppString, #[offset(120)]#[rename(name="Mid")]pub mid: ::unity2::Il2CppString,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalk/HubPlayTalk.md"))]#[::unity2::class(namespace="App",name="HubPlayTalk")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalk{#[static_field]#[rename(name="GiveAccessoryFlag1")]pub give_accessory_flag1: ::unity2::Il2CppString, #[static_field]#[rename(name="GiveAccessoryFlag2")]pub give_accessory_flag2: ::unity2::Il2CppString,}
 
 
@@ -38,54 +35,13 @@ pub fn event()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubplaytalk/HubPlayTalk_CallPuppetEvent.md"))]#[::unity2::class(namespace="App",name="HubPlayTalk.CallPuppetEvent")]#[parent(crate::app::procinst::ProcInst)]pub struct HubPlayTalk_CallPuppetEvent{#[offset(112)]#[rename(name="File")]pub file: ::unity2::Il2CppString, #[offset(120)]#[rename(name="Mid")]pub mid: ::unity2::Il2CppString,}
+
 }
 
 #[cfg(feature = "app-hubplaytalk-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hubplaytalk")]impl HubPlayTalk_CallPuppetEvent{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,file:impl::core::convert::Into< ::unity2::Il2CppString> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae26f0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(file),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
-}
-}
-
-#[cfg(feature="app-hubplaytalk")]pub trait IHubPlayTalk_CallPuppetEventMethods:IHubPlayTalk_CallPuppetEvent{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,file:impl::core::convert::Into< ::unity2::Il2CppString> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae27a0usize)as*mut u8,();
-(HubPlayTalk_CallPuppetEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
-}
-#[doc="`Entry()` overload"]fn entry(self,)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2a90usize)as*mut u8,();
-(HubPlayTalk_CallPuppetEvent)__receiver)}
-}
-#[doc="`Main()` overload"]fn main(self,)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2ab0usize)as*mut u8,();
-(HubPlayTalk_CallPuppetEvent)__receiver)}
-}
-#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2ac0usize)as*mut u8,();
-(HubPlayTalk_CallPuppetEvent)__receiver)}
-}
-#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae27f0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(HubPlayTalk_CallPuppetEvent)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubplaytalk")]impl<__T:IHubPlayTalk_CallPuppetEvent>IHubPlayTalk_CallPuppetEventMethods for __T{}
-
-#[cfg(feature="app-hubplaytalk")]impl HubPlayTalk_CallPuppetEvent{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-hubplaytalk")]impl HubPlayTalk_CallPuppetEvent{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(file: ::unity2::Il2CppString,mid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubPlayTalk_CallPuppetEvent), ::core::stringify!(new),));
- <Self as IHubPlayTalk_CallPuppetEventMethods> ::ctor(this,file,mid);
-this}
-}
 
 #[cfg(feature="app-hubplaytalk")]impl HubPlayTalk{#[doc="`GetMessPID(::unity2::Il2CppString)` overload"]pub fn get_mess_pid(mid:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23d8ae0usize)as*mut u8, ::unity2::Il2CppString;
 (::unity2::Il2CppString)::core::convert::Into::into(mid))}
@@ -408,16 +364,60 @@ this}
 this}
 }
 
+#[cfg(feature="app-hubplaytalk")]impl HubPlayTalk_CallPuppetEvent{#[doc="`CreateBind(crate::app::procinst::ProcInst, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,file:impl::core::convert::Into< ::unity2::Il2CppString> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ae26f0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(::unity2::Il2CppString)::core::convert::Into::into(file),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+}
+
+#[cfg(feature="app-hubplaytalk")]pub trait IHubPlayTalk_CallPuppetEventMethods:IHubPlayTalk_CallPuppetEvent{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn ctor(self,file:impl::core::convert::Into< ::unity2::Il2CppString> ,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae27a0usize)as*mut u8,();
+(HubPlayTalk_CallPuppetEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file),(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`Entry()` overload"]fn entry(self,)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2a90usize)as*mut u8,();
+(HubPlayTalk_CallPuppetEvent)__receiver)}
+}
+#[doc="`Main()` overload"]fn main(self,)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2ab0usize)as*mut u8,();
+(HubPlayTalk_CallPuppetEvent)__receiver)}
+}
+#[doc="`Exit()` overload"]fn exit(self,)->(){unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae2ac0usize)as*mut u8,();
+(HubPlayTalk_CallPuppetEvent)__receiver)}
+}
+#[doc="`CreateDesc()` overload"]fn create_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <HubPlayTalk_CallPuppetEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2ae27f0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
+(HubPlayTalk_CallPuppetEvent)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubplaytalk")]impl<__T:IHubPlayTalk_CallPuppetEvent>IHubPlayTalk_CallPuppetEventMethods for __T{}
+
+#[cfg(feature="app-hubplaytalk")]impl HubPlayTalk_CallPuppetEvent{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn entry_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn main_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn exit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn create_desc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+}
+
+#[cfg(feature="app-hubplaytalk")]impl HubPlayTalk_CallPuppetEvent{#[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString)` — overload selector"]pub fn new(file: ::unity2::Il2CppString,mid: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubPlayTalk_CallPuppetEvent), ::core::stringify!(new),));
+ <Self as IHubPlayTalk_CallPuppetEventMethods> ::ctor(this,file,mid);
+this}
+}
+
 #[cfg(feature = "app-hubplaytalk")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubPlayTalk_CallPuppetEvent;
-    pub use super::IHubPlayTalk_CallPuppetEvent;
-    pub use super::IHubPlayTalk_CallPuppetEventMethods;
     pub use super::HubPlayTalk;
     pub use super::IHubPlayTalk;
     pub use super::IHubPlayTalkMethods;
     pub use super::HubPlayTalk_TalkType;
+    pub use super::HubPlayTalk_CallPuppetEvent;
+    pub use super::IHubPlayTalk_CallPuppetEvent;
+    pub use super::IHubPlayTalk_CallPuppetEventMethods;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

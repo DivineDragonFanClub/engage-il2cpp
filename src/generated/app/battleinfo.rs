@@ -23,26 +23,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_SupportList.md"))]#[::unity2::class(namespace="App",name="BattleInfo.SupportList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::battleinfo::BattleInfo_SupportData>)]pub struct BattleInfo_SupportList{#[offset(40)]#[rename(name="m_Offense")]pub m_offense:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_Defense")]pub m_defense:crate::app::unit::Unit, #[offset(56)]#[rename(name="m_Compare")]pub m_compare:crate::system::comparison_1::Comparison_1<crate::app::battleinfo::BattleInfo_SupportData> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]#[::unity2::class(namespace="App",name="BattleInfo.BattleInfoSideArray")]#[parent(crate::app::battleside::BattleSide_ContainerArray_1<crate::app::battleinfoside::BattleInfoSide>)]pub struct BattleInfo_BattleInfoSideArray{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_SetupScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleInfo_SetupScope{pub m_info:crate::app::battleinfo::BattleInfo,pub m_offense:crate::app::unit::Unit,pub m_defense:crate::app::unit::Unit,pub m_updated:u8,}
-impl::unity2::ClassIdentity for BattleInfo_SetupScope{const NAMESPACE: &'static str="App";
-const NAME: &'static str="BattleInfo.SetupScope";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for BattleInfo_SetupScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo.md"))]#[::unity2::class(namespace="App",name="BattleInfo")]#[parent(crate::system::object::Object)]pub struct BattleInfo{#[static_field]#[rename(name="CriticalFactor")]pub critical_factor:i32, #[offset(16)]#[rename(name="m_Flag")]pub m_flag:crate::app::battleinfo::BattleInfo_FlagField, #[offset(24)]#[rename(name="m_Sides")]pub m_sides:crate::app::battleinfo::BattleInfo_BattleInfoSideArray, #[offset(32)]#[rename(name="m_Supports")]pub m_supports:crate::app::battleinfo::BattleInfo_SupportList, #[offset(40)]#[rename(name="m_MainUnitEnum")]pub m_main_unit_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(64)]#[rename(name="m_WholeUnitEnum")]pub m_whole_unit_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(88)]#[rename(name="m_ChainOffenseEnum")]pub m_chain_offense_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(112)]#[rename(name="m_ChainDefenseEnum")]pub m_chain_defense_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(136)]#[rename(name="m_ChainUnitEnum")]pub m_chain_unit_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(160)]#[rename(name="m_TempSkills")]pub m_temp_skills:crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData> , #[offset(216)]#[rename(name="m_GuardSide")]pub m_guard_side:crate::app::battleside::BattleSide_Type, #[offset(224)]#[rename(name="m_GuardFunc")]pub m_guard_func:crate::app::mapfor::MapFor_RangeFunction,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleInfo_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for BattleInfo_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleInfo.Flags";
@@ -115,6 +95,26 @@ pub fn cannon_mask()->Self{Self{value:3584}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_BattleInfoSideArray.md"))]#[::unity2::class(namespace="App",name="BattleInfo.BattleInfoSideArray")]#[parent(crate::app::battleside::BattleSide_ContainerArray_1<crate::app::battleinfoside::BattleInfoSide>)]pub struct BattleInfo_BattleInfoSideArray{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_FlagField.md"))]#[::unity2::class(namespace="App",name="BattleInfo.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battleinfo::BattleInfo_Flags>)]pub struct BattleInfo_FlagField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_SetupScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleInfo_SetupScope{pub m_info:crate::app::battleinfo::BattleInfo,pub m_offense:crate::app::unit::Unit,pub m_defense:crate::app::unit::Unit,pub m_updated:u8,}
+impl::unity2::ClassIdentity for BattleInfo_SetupScope{const NAMESPACE: &'static str="App";
+const NAME: &'static str="BattleInfo.SetupScope";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for BattleInfo_SetupScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_SupportList.md"))]#[::unity2::class(namespace="App",name="BattleInfo.SupportList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::battleinfo::BattleInfo_SupportData>)]pub struct BattleInfo_SupportList{#[offset(40)]#[rename(name="m_Offense")]pub m_offense:crate::app::unit::Unit, #[offset(48)]#[rename(name="m_Defense")]pub m_defense:crate::app::unit::Unit, #[offset(56)]#[rename(name="m_Compare")]pub m_compare:crate::system::comparison_1::Comparison_1<crate::app::battleinfo::BattleInfo_SupportData> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_MindScope.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleInfo_MindScope{pub m_unit:crate::app::unit::Unit,pub m_skill:crate::app::skilldata::SkillData,pub m_mind:crate::app::mapmind::MapMind_Type,}
 impl::unity2::ClassIdentity for BattleInfo_MindScope{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleInfo.MindScope";
@@ -124,9 +124,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl::unity2::IlType for BattleInfo_MindScope{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_FlagField.md"))]#[::unity2::class(namespace="App",name="BattleInfo.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::battleinfo::BattleInfo_Flags>)]pub struct BattleInfo_FlagField{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo_SupportData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct BattleInfo_SupportData{pub unit:crate::app::unit::Unit,pub status:crate::app::battleinfoside::BattleInfoSide_Status,}
@@ -139,10 +136,82 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for BattleInfo_SupportData{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleinfo/BattleInfo.md"))]#[::unity2::class(namespace="App",name="BattleInfo")]#[parent(crate::system::object::Object)]pub struct BattleInfo{#[static_field]#[rename(name="CriticalFactor")]pub critical_factor:i32, #[offset(16)]#[rename(name="m_Flag")]pub m_flag:crate::app::battleinfo::BattleInfo_FlagField, #[offset(24)]#[rename(name="m_Sides")]pub m_sides:crate::app::battleinfo::BattleInfo_BattleInfoSideArray, #[offset(32)]#[rename(name="m_Supports")]pub m_supports:crate::app::battleinfo::BattleInfo_SupportList, #[offset(40)]#[rename(name="m_MainUnitEnum")]pub m_main_unit_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(64)]#[rename(name="m_WholeUnitEnum")]pub m_whole_unit_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(88)]#[rename(name="m_ChainOffenseEnum")]pub m_chain_offense_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(112)]#[rename(name="m_ChainDefenseEnum")]pub m_chain_defense_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(136)]#[rename(name="m_ChainUnitEnum")]pub m_chain_unit_enum:crate::app::battleinfoenum::BattleInfoEnum, #[offset(160)]#[rename(name="m_TempSkills")]pub m_temp_skills:crate::system::collections::generic::list_1::List_1<crate::app::skilldata::SkillData> , #[offset(216)]#[rename(name="m_GuardSide")]pub m_guard_side:crate::app::battleside::BattleSide_Type, #[offset(224)]#[rename(name="m_GuardFunc")]pub m_guard_func:crate::app::mapfor::MapFor_RangeFunction,}
+
 }
 
 #[cfg(feature = "app-battleinfo-types")]
 pub use __types::*;
+
+#[cfg(feature="app-battleinfo")]pub trait IBattleInfo_BattleInfoSideArrayMethods:IBattleInfo_BattleInfoSideArray{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleInfo_BattleInfoSideArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7f00usize)as*mut u8,();
+(BattleInfo_BattleInfoSideArray)__receiver)}
+}
+}
+
+#[cfg(feature="app-battleinfo")]impl<__T:IBattleInfo_BattleInfoSideArray>IBattleInfo_BattleInfoSideArrayMethods for __T{}
+
+#[cfg(feature="app-battleinfo")]impl BattleInfo_BattleInfoSideArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-battleinfo")]impl BattleInfo_BattleInfoSideArray{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleInfo_BattleInfoSideArray), ::core::stringify!(new),));
+ <Self as IBattleInfo_BattleInfoSideArrayMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-battleinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleInfo_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:BattleInfo_FlagField,value:crate::app::battleinfo::BattleInfo_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleInfo_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(BattleInfo_FlagField,crate::app::battleinfo::BattleInfo_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-battleinfo")]pub trait IBattleInfo_FlagFieldMethods:IBattleInfo_FlagField{#[doc="`ToInt(crate::app::battleinfo::BattleInfo_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battleinfo::BattleInfo_Flags>)->i32{unsafe{let __receiver= <BattleInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__BattleInfo_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7f70usize)as*mut u8,();
+(BattleInfo_FlagField)__receiver)}
+}
+}
+
+#[cfg(feature="app-battleinfo")]impl<__T:IBattleInfo_FlagField>IBattleInfo_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-battleinfo")]impl BattleInfo_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battleinfo")]impl BattleInfo_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(BattleInfo_FlagField), ::core::stringify!(new),));
+ <Self as IBattleInfo_FlagFieldMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-battleinfo")]impl BattleInfo_SetupScope{#[doc="`GetSide(crate::app::battleside::BattleSide_Type)` overload"]pub fn get_side(&mut self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->crate::app::battleinfoside::BattleInfoSide{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b8050usize)as*mut u8,crate::app::battleinfoside::BattleInfoSide;
+(*mut BattleInfo_SetupScope)self as*mut BattleInfo_SetupScope,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
+}
+#[doc="`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]pub fn ctor(&mut self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,offense:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,defense:impl::core::convert::Into<crate::app::unit::Unit> ,revenge_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b80b0usize)as*mut u8,();
+(*mut BattleInfo_SetupScope)self as*mut BattleInfo_SetupScope,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::unit::Unit)::core::convert::Into::into(offense),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(crate::app::unit::Unit)::core::convert::Into::into(defense),(crate::app::unititem::UnitItem)::core::convert::Into::into(revenge_item),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b9760usize)as*mut u8,();
+(*mut BattleInfo_SetupScope)self as*mut BattleInfo_SetupScope)}
+}
+}
+
+#[cfg(feature="app-battleinfo")]impl BattleInfo_SetupScope{pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
 
 #[cfg(feature="app-battleinfo")]pub trait IBattleInfo_SupportListMethods:IBattleInfo_SupportList{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleInfo_SupportList as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x19b9810usize)as*mut u8,();
@@ -182,38 +251,51 @@ pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-battleinfo")]pub trait IBattleInfo_BattleInfoSideArrayMethods:IBattleInfo_BattleInfoSideArray{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleInfo_BattleInfoSideArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7f00usize)as*mut u8,();
-(BattleInfo_BattleInfoSideArray)__receiver)}
+#[cfg(feature="app-battleinfo")]impl BattleInfo_MindScope{#[doc="`.ctor(crate::app::unit::Unit, crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b7fd0usize)as*mut u8,();
+(*mut BattleInfo_MindScope)self as*mut BattleInfo_MindScope,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b8030usize)as*mut u8,();
+(*mut BattleInfo_MindScope)self as*mut BattleInfo_MindScope)}
 }
 }
 
-#[cfg(feature="app-battleinfo")]impl<__T:IBattleInfo_BattleInfoSideArray>IBattleInfo_BattleInfoSideArrayMethods for __T{}
-
-#[cfg(feature="app-battleinfo")]impl BattleInfo_BattleInfoSideArray{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-battleinfo")]impl BattleInfo_MindScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 }
 
-#[cfg(feature="app-battleinfo")]impl BattleInfo_BattleInfoSideArray{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleInfo_BattleInfoSideArray), ::core::stringify!(new),));
- <Self as IBattleInfo_BattleInfoSideArrayMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-battleinfo")]impl BattleInfo_SupportData{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b97b0usize)as*mut u8,();
+(*mut BattleInfo_SupportData)self as*mut BattleInfo_SupportData,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
-
-#[cfg(feature="app-battleinfo")]impl BattleInfo_SetupScope{#[doc="`GetSide(crate::app::battleside::BattleSide_Type)` overload"]pub fn get_side(&mut self,side:impl::core::convert::Into<crate::app::battleside::BattleSide_Type>)->crate::app::battleinfoside::BattleInfoSide{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b8050usize)as*mut u8,crate::app::battleinfoside::BattleInfoSide;
-(*mut BattleInfo_SetupScope)self as*mut BattleInfo_SetupScope,(crate::app::battleside::BattleSide_Type)::core::convert::Into::into(side))}
-}
-#[doc="`.ctor(crate::app::battleinfo::BattleInfo, crate::app::unit::Unit, crate::app::unititem::UnitItem, crate::app::unit::Unit, crate::app::unititem::UnitItem, i32, i32, i32, i32)` overload"]pub fn ctor(&mut self,info:impl::core::convert::Into<crate::app::battleinfo::BattleInfo> ,offense:impl::core::convert::Into<crate::app::unit::Unit> ,unit_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,defense:impl::core::convert::Into<crate::app::unit::Unit> ,revenge_item:impl::core::convert::Into<crate::app::unititem::UnitItem> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b80b0usize)as*mut u8,();
-(*mut BattleInfo_SetupScope)self as*mut BattleInfo_SetupScope,(crate::app::battleinfo::BattleInfo)::core::convert::Into::into(info),(crate::app::unit::Unit)::core::convert::Into::into(offense),(crate::app::unititem::UnitItem)::core::convert::Into::into(unit_item),(crate::app::unit::Unit)::core::convert::Into::into(defense),(crate::app::unititem::UnitItem)::core::convert::Into::into(revenge_item),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b9760usize)as*mut u8,();
-(*mut BattleInfo_SetupScope)self as*mut BattleInfo_SetupScope)}
+#[doc="`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]pub fn ctor_2(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,status:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide_Status>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b97e0usize)as*mut u8,();
+(*mut BattleInfo_SupportData)self as*mut BattleInfo_SupportData,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::battleinfoside::BattleInfoSide_Status)::core::convert::Into::into(status))}
 }
 }
 
-#[cfg(feature="app-battleinfo")]impl BattleInfo_SetupScope{pub fn get_side_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-battleinfo")]impl BattleInfo_SupportData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-battleinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleInfo_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:BattleInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <BattleInfo as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(BattleInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:BattleInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleInfo as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BattleInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-battleinfo")]impl BattleInfo{#[doc="`GetResetFlag(crate::app::battleinfo::BattleInfo_Flags, crate::app::unit::Unit, crate::app::skilldata::SkillData)` overload"]pub fn get_reset_flag(flags:impl::core::convert::Into<crate::app::battleinfo::BattleInfo_Flags> ,offense:impl::core::convert::Into<crate::app::unit::Unit> ,commmand_skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->crate::app::battleinfo::BattleInfo_Flags{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e78590usize)as*mut u8,crate::app::battleinfo::BattleInfo_Flags;
@@ -341,12 +423,10 @@ pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 (BattleInfo)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <BattleInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e78120usize)as*mut u8,();
-(BattleInfo)__receiver)}
+__BattleInfo_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <BattleInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e78220usize)as*mut u8,();
-(BattleInfo)__receiver)}
+__BattleInfo_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset(crate::app::battleinfo::BattleInfo_Flags)` overload"]fn reset(self,flags:impl::core::convert::Into<crate::app::battleinfo::BattleInfo_Flags>)->(){unsafe{let __receiver= <BattleInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e78070usize)as*mut u8,();
@@ -630,72 +710,25 @@ pub fn can_join_chain_attack_method_info()-> & 'static::unity2::il2cpp::MethodIn
 this}
 }
 
-#[cfg(feature="app-battleinfo")]impl BattleInfo_MindScope{#[doc="`.ctor(crate::app::unit::Unit, crate::app::mapmind::MapMind_Type, crate::app::skilldata::SkillData)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,mind:impl::core::convert::Into<crate::app::mapmind::MapMind_Type> ,skill:impl::core::convert::Into<crate::app::skilldata::SkillData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b7fd0usize)as*mut u8,();
-(*mut BattleInfo_MindScope)self as*mut BattleInfo_MindScope,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::mapmind::MapMind_Type)::core::convert::Into::into(mind),(crate::app::skilldata::SkillData)::core::convert::Into::into(skill))}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b8030usize)as*mut u8,();
-(*mut BattleInfo_MindScope)self as*mut BattleInfo_MindScope)}
-}
-}
-
-#[cfg(feature="app-battleinfo")]impl BattleInfo_MindScope{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battleinfo")]pub trait IBattleInfo_FlagFieldMethods:IBattleInfo_FlagField{#[doc="`ToInt(crate::app::battleinfo::BattleInfo_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::battleinfo::BattleInfo_Flags>)->i32{unsafe{let __receiver= <BattleInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7f60usize)as*mut u8,i32;
-(BattleInfo_FlagField)__receiver,(crate::app::battleinfo::BattleInfo_Flags)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleInfo_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19b7f70usize)as*mut u8,();
-(BattleInfo_FlagField)__receiver)}
-}
-}
-
-#[cfg(feature="app-battleinfo")]impl<__T:IBattleInfo_FlagField>IBattleInfo_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-battleinfo")]impl BattleInfo_FlagField{pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-battleinfo")]impl BattleInfo_FlagField{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(BattleInfo_FlagField), ::core::stringify!(new),));
- <Self as IBattleInfo_FlagFieldMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-battleinfo")]impl BattleInfo_SupportData{#[doc="`.ctor(crate::app::unit::Unit)` overload"]pub fn ctor(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b97b0usize)as*mut u8,();
-(*mut BattleInfo_SupportData)self as*mut BattleInfo_SupportData,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`.ctor(crate::app::unit::Unit, crate::app::battleinfoside::BattleInfoSide_Status)` overload"]pub fn ctor_2(&mut self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,status:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide_Status>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x19b97e0usize)as*mut u8,();
-(*mut BattleInfo_SupportData)self as*mut BattleInfo_SupportData,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::battleinfoside::BattleInfoSide_Status)::core::convert::Into::into(status))}
-}
-}
-
-#[cfg(feature="app-battleinfo")]impl BattleInfo_SupportData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
 #[cfg(feature = "app-battleinfo")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleInfo_SupportList;
-    pub use super::IBattleInfo_SupportList;
-    pub use super::IBattleInfo_SupportListMethods;
+    pub use super::BattleInfo_Flags;
     pub use super::BattleInfo_BattleInfoSideArray;
     pub use super::IBattleInfo_BattleInfoSideArray;
     pub use super::IBattleInfo_BattleInfoSideArrayMethods;
-    pub use super::BattleInfo_SetupScope;
-    pub use super::BattleInfo;
-    pub use super::IBattleInfo;
-    pub use super::IBattleInfoMethods;
-    pub use super::BattleInfo_Flags;
-    pub use super::BattleInfo_MindScope;
     pub use super::BattleInfo_FlagField;
     pub use super::IBattleInfo_FlagField;
     pub use super::IBattleInfo_FlagFieldMethods;
+    pub use super::BattleInfo_SetupScope;
+    pub use super::BattleInfo_SupportList;
+    pub use super::IBattleInfo_SupportList;
+    pub use super::IBattleInfo_SupportListMethods;
+    pub use super::BattleInfo_MindScope;
     pub use super::BattleInfo_SupportData;
+    pub use super::BattleInfo;
+    pub use super::IBattleInfo;
+    pub use super::IBattleInfoMethods;
     pub use crate::app::battleside::IBattleSide_ContainerArray_1;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;

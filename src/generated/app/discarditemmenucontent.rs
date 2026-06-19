@@ -19,27 +19,75 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenucontent/DiscardItemMenuContent.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct DiscardItemMenuContent{#[offset(232)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::discarditemmenucontent::DiscardItemMenuContent_KindIcon> , #[offset(240)]#[rename(name="m_MenuTitleText")]pub m_menu_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_TransporterText")]pub m_transporter_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_StockValueText")]pub m_stock_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_StockValueMaxText")]pub m_stock_value_max_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenucontent/DiscardItemMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct DiscardItemMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/discarditemmenucontent/DiscardItemMenuContent.md"))]#[::unity2::class(namespace="App",name="DiscardItemMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct DiscardItemMenuContent{#[offset(232)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::discarditemmenucontent::DiscardItemMenuContent_KindIcon> , #[offset(240)]#[rename(name="m_MenuTitleText")]pub m_menu_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_TransporterText")]pub m_transporter_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_StockValueText")]pub m_stock_value_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_StockValueMaxText")]pub m_stock_value_max_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
 #[cfg(feature = "app-discarditemmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-discarditemmenucontent")]pub trait IDiscardItemMenuContent_KindIconMethods:IDiscardItemMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DiscardItemMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0850usize)as*mut u8,();
+(DiscardItemMenuContent_KindIcon)__receiver)}
+}
+}
+
+#[cfg(feature="app-discarditemmenucontent")]impl<__T:IDiscardItemMenuContent_KindIcon>IDiscardItemMenuContent_KindIconMethods for __T{}
+
+#[cfg(feature="app-discarditemmenucontent")]impl DiscardItemMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-discarditemmenucontent")]impl DiscardItemMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(DiscardItemMenuContent_KindIcon), ::core::stringify!(new),));
+ <Self as IDiscardItemMenuContent_KindIconMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-discarditemmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DiscardItemMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn build_menu_item_content(this:DiscardItemMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <DiscardItemMenuContent as::unity2::ClassIdentity> ::NAME,"BuildMenuItemContent",));
+let inner:extern "C" fn(DiscardItemMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn start(this:DiscardItemMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <DiscardItemMenuContent as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(DiscardItemMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:DiscardItemMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <DiscardItemMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(DiscardItemMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+}
+
 #[cfg(feature="app-discarditemmenucontent")]pub trait IDiscardItemMenuContentMethods:IDiscardItemMenuContent{#[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <DiscardItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf0610usize)as*mut u8,();
-(DiscardItemMenuContent)__receiver)}
+__DiscardItemMenuContent_unity2_raw::build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <DiscardItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf07e0usize)as*mut u8,();
-(DiscardItemMenuContent)__receiver)}
+__DiscardItemMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <DiscardItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf0a20usize)as*mut u8,f32;
-(DiscardItemMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__DiscardItemMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn set_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <DiscardItemMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1cf0b10usize)as*mut u8,();
@@ -92,33 +140,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-discarditemmenucontent")]pub trait IDiscardItemMenuContent_KindIconMethods:IDiscardItemMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DiscardItemMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd0850usize)as*mut u8,();
-(DiscardItemMenuContent_KindIcon)__receiver)}
-}
-}
-
-#[cfg(feature="app-discarditemmenucontent")]impl<__T:IDiscardItemMenuContent_KindIcon>IDiscardItemMenuContent_KindIconMethods for __T{}
-
-#[cfg(feature="app-discarditemmenucontent")]impl DiscardItemMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-discarditemmenucontent")]impl DiscardItemMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(DiscardItemMenuContent_KindIcon), ::core::stringify!(new),));
- <Self as IDiscardItemMenuContent_KindIconMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-discarditemmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::DiscardItemMenuContent;
-    pub use super::IDiscardItemMenuContent;
-    pub use super::IDiscardItemMenuContentMethods;
     pub use super::DiscardItemMenuContent_KindIcon;
     pub use super::IDiscardItemMenuContent_KindIcon;
     pub use super::IDiscardItemMenuContent_KindIconMethods;
+    pub use super::DiscardItemMenuContent;
+    pub use super::IDiscardItemMenuContent;
+    pub use super::IDiscardItemMenuContentMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

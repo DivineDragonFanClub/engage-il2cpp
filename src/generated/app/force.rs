@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/force/Force.md"))]#[::unity2::class(namespace="App",name="Force")]#[parent(crate::system::object::Object)]pub struct Force{#[offset(16)]#[rename(name="m_Head")]pub m_head:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_Tail")]pub m_tail:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_Type")]pub m_type:crate::app::force::Force_Type,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/force/Force_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Force_Type{pub value:i32,}
 impl::unity2::ClassIdentity for Force_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="Force.Type";
@@ -51,9 +54,6 @@ pub fn map_num()->Self{Self{value:3}
 pub fn used_num()->Self{Self{value:7}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/force/Force.md"))]#[::unity2::class(namespace="App",name="Force")]#[parent(crate::system::object::Object)]pub struct Force{#[offset(16)]#[rename(name="m_Head")]pub m_head:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_Tail")]pub m_tail:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_Type")]pub m_type:crate::app::force::Force_Type,}
 
 }
 
@@ -247,10 +247,10 @@ this}
 #[cfg(feature = "app-force")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Force_Type;
     pub use super::Force;
     pub use super::IForce;
     pub use super::IForceMethods;
+    pub use super::Force_Type;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -22,17 +22,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-actionknockoff-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-actionknockoff")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ActionKnockoff_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ActionKnockoff,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ActionKnockoff as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ActionKnockoff, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:ActionKnockoff,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ActionKnockoff as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(ActionKnockoff, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-actionknockoff")]pub trait IActionKnockoffMethods:IActionKnockoff{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ActionKnockoff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7e70usize)as*mut u8, ::unity2::Il2CppString;
-(ActionKnockoff)__receiver)}
+__ActionKnockoff_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::combat::character::Character, crate::combat::phase::Phase, f32)` overload"]fn ctor(self,chr:impl::core::convert::Into<crate::combat::character::Character> ,phase:impl::core::convert::Into<crate::combat::phase::Phase> ,world_hit_time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ActionKnockoff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc1790usize)as*mut u8,();
 (ActionKnockoff)__receiver,(crate::combat::character::Character)::core::convert::Into::into(chr),(crate::combat::phase::Phase)::core::convert::Into::into(phase),(f32)::core::convert::Into::into(world_hit_time))}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <ActionKnockoff as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bc7ec0usize)as*mut u8,();
-(ActionKnockoff)__receiver)}
+__ActionKnockoff_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 }
 

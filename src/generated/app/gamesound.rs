@@ -17,13 +17,33 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_ProcDescPostEvent.md"))]#[::unity2::class(namespace="App",name="GameSound.ProcDescPostEvent")]#[parent(crate::app::procdescuser::ProcDescUser)]pub struct GameSound_ProcDescPostEvent{#[offset(24)]#[rename(name="m_eventName")]pub m_event_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound.md"))]#[::unity2::class(namespace="App",name="GameSound")]#[parent(crate::system::object::Object)]pub struct GameSound{#[static_field]#[rename(name="DefaultBankNameArray")]pub default_bank_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="DefaultDLCBankNameArray")]pub default_dlc_bank_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="EventName_SystemVoice")]pub event_name_system_voice: ::unity2::Il2CppString, #[static_field]#[rename(name="EventName_UnitPickVoice")]pub event_name_unit_pick_voice: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchGroupName_Person")]pub switch_group_name_person: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchGroupName_Engage")]pub switch_group_name_engage: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchGroupName_SystemVoice")]pub switch_group_name_system_voice: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchNameArray_SystemVoice")]pub switch_name_array_system_voice: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="SwitchGroupName_UnitHp")]pub switch_group_name_unit_hp: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchNameArray_UnitHp")]pub switch_name_array_unit_hp: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_initialized")]pub s_initialized:bool, #[static_field]#[rename(name="s_LoadedPackageFileNameList")]pub s_loaded_package_file_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_chapterBankName")]pub s_chapter_bank_name: ::unity2::Il2CppString, #[static_field]#[rename(name="strLevelTable")]pub str_level_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="strPatternTable")]pub str_pattern_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="strSituationTable")]pub str_situation_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="strRingCleaningPatternTable")]pub str_ring_cleaning_pattern_table: ::unity2::Array< ::unity2::Il2CppString> ,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_LipSyncData.md"))]#[::unity2::class(namespace="App",name="GameSound.LipSyncData")]#[parent(crate::system::object::Object)]pub struct GameSound_LipSyncData{#[offset(16)]#[rename(name="m_data")]pub m_data:crate::app::soundsystem::SoundSystem_LipSyncData,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_RingCleaningVoicePattern.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSound_RingCleaningVoicePattern{pub value:i32,}
+impl::unity2::ClassIdentity for GameSound_RingCleaningVoicePattern{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSound.RingCleaningVoicePattern";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSound_RingCleaningVoicePattern{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSound_RingCleaningVoicePattern{pub fn touch()->Self{Self{value:0}
+}
+pub fn dirt()->Self{Self{value:1}
+}
+pub fn thanks()->Self{Self{value:2}
+}
+pub fn num()->Self{Self{value:3}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_ResultLoad.md"))]#[::unity2::class(namespace="App",name="GameSound.ResultLoad")]#[parent(crate::system::object::Object)]pub struct GameSound_ResultLoad{#[offset(16)]#[rename(name="m_resultList")]pub m_result_list:crate::app::soundsystem::SoundSystem_ResultSoundLoadList,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_LipSyncData.md"))]#[::unity2::class(namespace="App",name="GameSound.LipSyncData")]#[parent(crate::system::object::Object)]pub struct GameSound_LipSyncData{#[offset(16)]#[rename(name="m_data")]pub m_data:crate::app::soundsystem::SoundSystem_LipSyncData,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_UnitHP.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSound_UnitHP{pub value:i32,}
@@ -46,24 +66,7 @@ pub fn low()->Self{Self{value:3}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_RingCleaningVoicePattern.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSound_RingCleaningVoicePattern{pub value:i32,}
-impl::unity2::ClassIdentity for GameSound_RingCleaningVoicePattern{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameSound.RingCleaningVoicePattern";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameSound_RingCleaningVoicePattern{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameSound_RingCleaningVoicePattern{pub fn touch()->Self{Self{value:0}
-}
-pub fn dirt()->Self{Self{value:1}
-}
-pub fn thanks()->Self{Self{value:2}
-}
-pub fn num()->Self{Self{value:3}
-}
-}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_ProcDescPostEvent.md"))]#[::unity2::class(namespace="App",name="GameSound.ProcDescPostEvent")]#[parent(crate::app::procdescuser::ProcDescUser)]pub struct GameSound_ProcDescPostEvent{#[offset(24)]#[rename(name="m_eventName")]pub m_event_name: ::unity2::Il2CppString,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_FadeSpeedType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSound_FadeSpeedType{pub value:i32,}
@@ -108,7 +111,7 @@ pub fn max()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound.md"))]#[::unity2::class(namespace="App",name="GameSound")]#[parent(crate::system::object::Object)]pub struct GameSound{#[static_field]#[rename(name="DefaultBankNameArray")]pub default_bank_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="DefaultDLCBankNameArray")]pub default_dlc_bank_name_array: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="EventName_SystemVoice")]pub event_name_system_voice: ::unity2::Il2CppString, #[static_field]#[rename(name="EventName_UnitPickVoice")]pub event_name_unit_pick_voice: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchGroupName_Person")]pub switch_group_name_person: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchGroupName_Engage")]pub switch_group_name_engage: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchGroupName_SystemVoice")]pub switch_group_name_system_voice: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchNameArray_SystemVoice")]pub switch_name_array_system_voice: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="SwitchGroupName_UnitHp")]pub switch_group_name_unit_hp: ::unity2::Il2CppString, #[static_field]#[rename(name="SwitchNameArray_UnitHp")]pub switch_name_array_unit_hp: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_initialized")]pub s_initialized:bool, #[static_field]#[rename(name="s_LoadedPackageFileNameList")]pub s_loaded_package_file_name_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> , #[static_field]#[rename(name="s_chapterBankName")]pub s_chapter_bank_name: ::unity2::Il2CppString, #[static_field]#[rename(name="strLevelTable")]pub str_level_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="strPatternTable")]pub str_pattern_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="strSituationTable")]pub str_situation_table: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="strRingCleaningPatternTable")]pub str_ring_cleaning_pattern_table: ::unity2::Array< ::unity2::Il2CppString> ,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_Handle.md"))]#[::unity2::class(namespace="App",name="GameSound.Handle")]#[parent(crate::system::object::Object)]pub struct GameSound_Handle{#[offset(16)]#[rename(name="m_soundHandle")]pub m_sound_handle:crate::app::soundsystem::SoundSystem_SoundHandle,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_WakeupVoiceSituation.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSound_WakeupVoiceSituation{pub value:i32,}
@@ -132,132 +135,10 @@ pub fn max()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gamesound/GameSound_Handle.md"))]#[::unity2::class(namespace="App",name="GameSound.Handle")]#[parent(crate::system::object::Object)]pub struct GameSound_Handle{#[offset(16)]#[rename(name="m_soundHandle")]pub m_sound_handle:crate::app::soundsystem::SoundSystem_SoundHandle,}
-
 }
 
 #[cfg(feature = "app-gamesound-types")]
 pub use __types::*;
-
-#[cfg(feature="app-gamesound")]pub trait IGameSound_ProcDescPostEventMethods:IGameSound_ProcDescPostEvent{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameSound_ProcDescPostEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df40usize)as*mut u8,();
-(GameSound_ProcDescPostEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
-}
-#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <GameSound_ProcDescPostEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df80usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
-(GameSound_ProcDescPostEvent)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
-}
-}
-
-#[cfg(feature="app-gamesound")]impl<__T:IGameSound_ProcDescPostEvent>IGameSound_ProcDescPostEventMethods for __T{}
-
-#[cfg(feature="app-gamesound")]impl GameSound_ProcDescPostEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-gamesound")]impl GameSound_ProcDescPostEvent{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(event_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameSound_ProcDescPostEvent), ::core::stringify!(new),));
- <Self as IGameSound_ProcDescPostEventMethods> ::ctor(this,event_name);
-this}
-}
-
-#[cfg(feature="app-gamesound")]pub trait IGameSound_LipSyncDataMethods:IGameSound_LipSyncData{#[doc="`.ctor(crate::app::soundsystem::SoundSystem_LipSyncData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_LipSyncData>)->(){unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6de60usize)as*mut u8,();
-(GameSound_LipSyncData)__receiver,(crate::app::soundsystem::SoundSystem_LipSyncData)::core::convert::Into::into(data))}
-}
-#[doc="`get_Msec()` overload"]fn get_msec(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6dea0usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_A()` overload"]fn get_a(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6dec0usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_I()` overload"]fn get_i(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ded0usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_U()` overload"]fn get_u(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6dee0usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_E()` overload"]fn get_e(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6def0usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_O()` overload"]fn get_o(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df00usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_Vol()` overload"]fn get_vol(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df10usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_Width()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df20usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-#[doc="`get_Height()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df30usize)as*mut u8,f32;
-(GameSound_LipSyncData)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamesound")]impl<__T:IGameSound_LipSyncData>IGameSound_LipSyncDataMethods for __T{}
-
-#[cfg(feature="app-gamesound")]impl GameSound_LipSyncData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_msec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_i_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_u_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_e_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_o_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_vol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-gamesound")]impl GameSound_LipSyncData{#[doc="`.ctor(crate::app::soundsystem::SoundSystem_LipSyncData)` — overload selector"]pub fn new(data:crate::app::soundsystem::SoundSystem_LipSyncData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameSound_LipSyncData), ::core::stringify!(new),));
- <Self as IGameSound_LipSyncDataMethods> ::ctor(this,data);
-this}
-}
-
-#[cfg(feature="app-gamesound")]pub trait IGameSound_ResultLoadMethods:IGameSound_ResultLoad{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e000usize)as*mut u8,();
-(GameSound_ResultLoad)__receiver)}
-}
-#[doc="`Add(crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn add(self,result:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_ResultSoundLoad>)->(){unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e080usize)as*mut u8,();
-(GameSound_ResultLoad)__receiver,(crate::app::soundsystem::SoundSystem_ResultSoundLoad)::core::convert::Into::into(result))}
-}
-#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e090usize)as*mut u8,bool;
-(GameSound_ResultLoad)__receiver)}
-}
-#[doc="`IsLoadSuccess()` overload"]fn is_load_success(self,)->bool{unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e0a0usize)as*mut u8,bool;
-(GameSound_ResultLoad)__receiver)}
-}
-}
-
-#[cfg(feature="app-gamesound")]impl<__T:IGameSound_ResultLoad>IGameSound_ResultLoadMethods for __T{}
-
-#[cfg(feature="app-gamesound")]impl GameSound_ResultLoad{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_load_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-}
-
-#[cfg(feature="app-gamesound")]impl GameSound_ResultLoad{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GameSound_ResultLoad), ::core::stringify!(new),));
- <Self as IGameSound_ResultLoadMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-gamesound")]impl GameSound{#[doc="`GetFadeMsecByFadeSpeedType(crate::app::gamesound::GameSound_FadeSpeedType)` overload"]pub fn get_fade_msec_by_fade_speed_type(fade_speed_type:impl::core::convert::Into<crate::app::gamesound::GameSound_FadeSpeedType>)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2287070usize)as*mut u8,i32;
 (crate::app::gamesound::GameSound_FadeSpeedType)::core::convert::Into::into(fade_speed_type))}
@@ -991,6 +872,137 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-gamesound")]pub trait IGameSound_ResultLoadMethods:IGameSound_ResultLoad{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e000usize)as*mut u8,();
+(GameSound_ResultLoad)__receiver)}
+}
+#[doc="`Add(crate::app::soundsystem::SoundSystem_ResultSoundLoad)` overload"]fn add(self,result:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_ResultSoundLoad>)->(){unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e080usize)as*mut u8,();
+(GameSound_ResultLoad)__receiver,(crate::app::soundsystem::SoundSystem_ResultSoundLoad)::core::convert::Into::into(result))}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e090usize)as*mut u8,bool;
+(GameSound_ResultLoad)__receiver)}
+}
+#[doc="`IsLoadSuccess()` overload"]fn is_load_success(self,)->bool{unsafe{let __receiver= <GameSound_ResultLoad as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e0a0usize)as*mut u8,bool;
+(GameSound_ResultLoad)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesound")]impl<__T:IGameSound_ResultLoad>IGameSound_ResultLoadMethods for __T{}
+
+#[cfg(feature="app-gamesound")]impl GameSound_ResultLoad{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_load_success_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+}
+
+#[cfg(feature="app-gamesound")]impl GameSound_ResultLoad{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSound_ResultLoad), ::core::stringify!(new),));
+ <Self as IGameSound_ResultLoadMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-gamesound")]pub trait IGameSound_LipSyncDataMethods:IGameSound_LipSyncData{#[doc="`.ctor(crate::app::soundsystem::SoundSystem_LipSyncData)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::soundsystem::SoundSystem_LipSyncData>)->(){unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6de60usize)as*mut u8,();
+(GameSound_LipSyncData)__receiver,(crate::app::soundsystem::SoundSystem_LipSyncData)::core::convert::Into::into(data))}
+}
+#[doc="`get_Msec()` overload"]fn get_msec(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6dea0usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_A()` overload"]fn get_a(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6dec0usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_I()` overload"]fn get_i(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6ded0usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_U()` overload"]fn get_u(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6dee0usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_E()` overload"]fn get_e(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6def0usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_O()` overload"]fn get_o(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df00usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_Vol()` overload"]fn get_vol(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df10usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_Width()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df20usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+#[doc="`get_Height()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <GameSound_LipSyncData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df30usize)as*mut u8,f32;
+(GameSound_LipSyncData)__receiver)}
+}
+}
+
+#[cfg(feature="app-gamesound")]impl<__T:IGameSound_LipSyncData>IGameSound_LipSyncDataMethods for __T{}
+
+#[cfg(feature="app-gamesound")]impl GameSound_LipSyncData{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_msec_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_a_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_i_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_u_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_e_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_o_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_vol_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-gamesound")]impl GameSound_LipSyncData{#[doc="`.ctor(crate::app::soundsystem::SoundSystem_LipSyncData)` — overload selector"]pub fn new(data:crate::app::soundsystem::SoundSystem_LipSyncData)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSound_LipSyncData), ::core::stringify!(new),));
+ <Self as IGameSound_LipSyncDataMethods> ::ctor(this,data);
+this}
+}
+
+#[cfg(feature="app-gamesound")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSound_ProcDescPostEvent_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:GameSound_ProcDescPostEvent,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GameSound_ProcDescPostEvent as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(GameSound_ProcDescPostEvent,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+}
+
+#[cfg(feature="app-gamesound")]pub trait IGameSound_ProcDescPostEventMethods:IGameSound_ProcDescPostEvent{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,event_name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GameSound_ProcDescPostEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6df40usize)as*mut u8,();
+(GameSound_ProcDescPostEvent)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(event_name))}
+}
+#[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <GameSound_ProcDescPostEvent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__GameSound_ProcDescPostEvent_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-gamesound")]impl<__T:IGameSound_ProcDescPostEvent>IGameSound_ProcDescPostEventMethods for __T{}
+
+#[cfg(feature="app-gamesound")]impl GameSound_ProcDescPostEvent{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn execute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-gamesound")]impl GameSound_ProcDescPostEvent{#[doc="`.ctor(::unity2::Il2CppString)` — overload selector"]pub fn new(event_name: ::unity2::Il2CppString)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GameSound_ProcDescPostEvent), ::core::stringify!(new),));
+ <Self as IGameSound_ProcDescPostEventMethods> ::ctor(this,event_name);
+this}
+}
+
 #[cfg(feature="app-gamesound")]pub trait IGameSound_HandleMethods:IGameSound_Handle{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSound_Handle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6daa0usize)as*mut u8,();
 (GameSound_Handle)__receiver)}
@@ -1082,26 +1094,26 @@ this}
 #[cfg(feature = "app-gamesound")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameSound_ProcDescPostEvent;
-    pub use super::IGameSound_ProcDescPostEvent;
-    pub use super::IGameSound_ProcDescPostEventMethods;
-    pub use super::GameSound_LipSyncData;
-    pub use super::IGameSound_LipSyncData;
-    pub use super::IGameSound_LipSyncDataMethods;
-    pub use super::GameSound_ResultLoad;
-    pub use super::IGameSound_ResultLoad;
-    pub use super::IGameSound_ResultLoadMethods;
-    pub use super::GameSound_UnitHP;
-    pub use super::GameSound_RingCleaningVoicePattern;
-    pub use super::GameSound_FadeSpeedType;
-    pub use super::GameSound_WakeupVoicePattern;
     pub use super::GameSound;
     pub use super::IGameSound;
     pub use super::IGameSoundMethods;
-    pub use super::GameSound_WakeupVoiceSituation;
+    pub use super::GameSound_RingCleaningVoicePattern;
+    pub use super::GameSound_ResultLoad;
+    pub use super::IGameSound_ResultLoad;
+    pub use super::IGameSound_ResultLoadMethods;
+    pub use super::GameSound_LipSyncData;
+    pub use super::IGameSound_LipSyncData;
+    pub use super::IGameSound_LipSyncDataMethods;
+    pub use super::GameSound_UnitHP;
+    pub use super::GameSound_ProcDescPostEvent;
+    pub use super::IGameSound_ProcDescPostEvent;
+    pub use super::IGameSound_ProcDescPostEventMethods;
+    pub use super::GameSound_FadeSpeedType;
+    pub use super::GameSound_WakeupVoicePattern;
     pub use super::GameSound_Handle;
     pub use super::IGameSound_Handle;
     pub use super::IGameSound_HandleMethods;
+    pub use super::GameSound_WakeupVoiceSituation;
     pub use crate::app::procdesc::IProcDesc;
     pub use crate::app::procdescuser::IProcDescUser;
     pub use crate::system::object::IObject;

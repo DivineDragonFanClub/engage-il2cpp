@@ -15,58 +15,82 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-rendering-look_dev-idataprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDataProvider_unity2_raw{use super:: * ;
-pub unsafe fn first_init_scene(this:IDataProvider,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("FirstInitScene").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","FirstInitScene", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn first_init_scene(this:IDataProvider,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"FirstInitScene",));
 let inner:extern "C" fn(IDataProvider,crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,stage,__mi)}
-pub unsafe fn update_sky(this:IDataProvider,camera:crate::unity_engine::camera::Camera,sky:crate::unity_engine::rendering::look_dev::sky::Sky,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UpdateSky").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UpdateSky", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn update_sky(this:IDataProvider,camera:crate::unity_engine::camera::Camera,sky:crate::unity_engine::rendering::look_dev::sky::Sky,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"UpdateSky",));
 let inner:extern "C" fn(IDataProvider,crate::unity_engine::camera::Camera,crate::unity_engine::rendering::look_dev::sky::Sky,crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,camera,sky,stage,__mi)}
-pub unsafe fn get_supported_debug_modes(this:IDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_supportedDebugModes").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_supportedDebugModes", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_supported_debug_modes(this:IDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"get_supportedDebugModes",));
 let inner:extern "C" fn(IDataProvider, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1< ::unity2::Il2CppString> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn update_debug_mode(this:IDataProvider,debug_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("UpdateDebugMode").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","UpdateDebugMode", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn update_debug_mode(this:IDataProvider,debug_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"UpdateDebugMode",));
 let inner:extern "C" fn(IDataProvider,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,debug_index,__mi)}
-pub unsafe fn get_shadow_mask(this:IDataProvider,output: *mut crate::unity_engine::rendertexture::RenderTexture,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetShadowMask").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetShadowMask", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_shadow_mask(this:IDataProvider,output: *mut crate::unity_engine::rendertexture::RenderTexture,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"GetShadowMask",));
 let inner:extern "C" fn(IDataProvider, *mut crate::unity_engine::rendertexture::RenderTexture,crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,output,stage,__mi)}
-pub unsafe fn on_begin_rendering(this:IDataProvider,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnBeginRendering").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnBeginRendering", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_begin_rendering(this:IDataProvider,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"OnBeginRendering",));
 let inner:extern "C" fn(IDataProvider,crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,stage,__mi)}
-pub unsafe fn on_end_rendering(this:IDataProvider,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnEndRendering").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnEndRendering", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_end_rendering(this:IDataProvider,stage:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"OnEndRendering",));
 let inner:extern "C" fn(IDataProvider,crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,stage,__mi)}
-pub unsafe fn cleanup(this:IDataProvider,sri:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Cleanup").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Cleanup", <IDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn cleanup(this:IDataProvider,sri:crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IDataProvider as::unity2::ClassIdentity> ::NAME,"Cleanup",));
 let inner:extern "C" fn(IDataProvider,crate::unity_engine::rendering::look_dev::stageruntimeinterface::StageRuntimeInterface, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

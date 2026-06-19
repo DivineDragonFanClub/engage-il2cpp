@@ -16,10 +16,10 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/libms/Libms.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="Libms")]#[parent(crate::system::object::Object)]pub struct Libms{#[static_field]#[rename(name="LibmsDllFileName")]pub libms_dll_file_name: ::unity2::Il2CppString,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/libms/Libms_LMSMallocPtr.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="Libms.LMSMallocPtr")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Libms_LMSMallocPtr{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/libms/Libms_LMSFreePtr.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="Libms.LMSFreePtr")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Libms_LMSFreePtr{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/nintendo/message_studio/lib/libms/Libms_LMSMallocPtr.md"))]#[::unity2::class(namespace="Nintendo.MessageStudio.Lib",name="Libms.LMSMallocPtr")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Libms_LMSMallocPtr{}
 
 }
 
@@ -292,27 +292,17 @@ pub fn lms_get_case_indexes_from_branch_node_method_info()-> & 'static::unity2::
 pub fn lms_get_flow_param_text_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[64]}
 }
 
-#[cfg(feature="nintendo-message_studio-lib-libms")]pub trait ILibms_LMSMallocPtrMethods:ILibms_LMSMallocPtr{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Libms_LMSMallocPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7810usize)as*mut u8,();
-(Libms_LMSMallocPtr)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(i32)` overload"]fn invoke(self,size:impl::core::convert::Into<i32>)-> ::unity2::IntPtr{unsafe{let __receiver= <Libms_LMSMallocPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7830usize)as*mut u8, ::unity2::IntPtr;
-(Libms_LMSMallocPtr)__receiver,(i32)::core::convert::Into::into(size))}
-}
-}
-
-#[cfg(feature="nintendo-message_studio-lib-libms")]impl<__T:ILibms_LMSMallocPtr>ILibms_LMSMallocPtrMethods for __T{}
-
-#[cfg(feature="nintendo-message_studio-lib-libms")]impl Libms_LMSMallocPtr{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="nintendo-message_studio-lib-libms")]impl Libms_LMSMallocPtr{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Libms_LMSMallocPtr), ::core::stringify!(new),));
- <Self as ILibms_LMSMallocPtrMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="nintendo-message_studio-lib-libms")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Libms_LMSFreePtr_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:Libms_LMSFreePtr,ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Libms_LMSFreePtr as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(Libms_LMSFreePtr, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ptr,__mi)}
 }
 
 #[cfg(feature="nintendo-message_studio-lib-libms")]pub trait ILibms_LMSFreePtrMethods:ILibms_LMSFreePtr{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Libms_LMSFreePtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -320,8 +310,7 @@ this}
 (Libms_LMSFreePtr)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(::unity2::IntPtr)` overload"]fn invoke(self,ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Libms_LMSFreePtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7540usize)as*mut u8,();
-(Libms_LMSFreePtr)__receiver,(::unity2::IntPtr)::core::convert::Into::into(ptr))}
+__Libms_LMSFreePtr_unity2_raw::invoke(__receiver, ::core::convert::Into::into(ptr), ::core::option::Option::None)}
 }
 }
 
@@ -338,17 +327,52 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="nintendo-message_studio-lib-libms")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Libms_LMSMallocPtr_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:Libms_LMSMallocPtr,size:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::IntPtr{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Libms_LMSMallocPtr as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(Libms_LMSMallocPtr,i32, ::unity2::OptionalMethod,)-> ::unity2::IntPtr= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,size,__mi)}
+}
+
+#[cfg(feature="nintendo-message_studio-lib-libms")]pub trait ILibms_LMSMallocPtrMethods:ILibms_LMSMallocPtr{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Libms_LMSMallocPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1fd7810usize)as*mut u8,();
+(Libms_LMSMallocPtr)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(i32)` overload"]fn invoke(self,size:impl::core::convert::Into<i32>)-> ::unity2::IntPtr{unsafe{let __receiver= <Libms_LMSMallocPtr as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__Libms_LMSMallocPtr_unity2_raw::invoke(__receiver, ::core::convert::Into::into(size), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="nintendo-message_studio-lib-libms")]impl<__T:ILibms_LMSMallocPtr>ILibms_LMSMallocPtrMethods for __T{}
+
+#[cfg(feature="nintendo-message_studio-lib-libms")]impl Libms_LMSMallocPtr{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="nintendo-message_studio-lib-libms")]impl Libms_LMSMallocPtr{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Libms_LMSMallocPtr), ::core::stringify!(new),));
+ <Self as ILibms_LMSMallocPtrMethods> ::ctor(this,object,method);
+this}
+}
+
 #[cfg(feature = "nintendo-message_studio-lib-libms")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::Libms;
     pub use super::ILibms;
-    pub use super::Libms_LMSMallocPtr;
-    pub use super::ILibms_LMSMallocPtr;
-    pub use super::ILibms_LMSMallocPtrMethods;
     pub use super::Libms_LMSFreePtr;
     pub use super::ILibms_LMSFreePtr;
     pub use super::ILibms_LMSFreePtrMethods;
+    pub use super::Libms_LMSMallocPtr;
+    pub use super::ILibms_LMSMallocPtr;
+    pub use super::ILibms_LMSMallocPtrMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

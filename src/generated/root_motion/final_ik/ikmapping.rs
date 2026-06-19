@@ -9,15 +9,80 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/ikmapping/IKMapping_BoneMap.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKMapping.BoneMap")]#[parent(crate::system::object::Object)]pub struct IKMapping_BoneMap{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="chainIndex")]pub chain_index:i32, #[offset(28)]#[rename(name="nodeIndex")]pub node_index:i32, #[offset(32)]#[rename(name="defaultLocalPosition")]pub default_local_position:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="defaultLocalRotation")]pub default_local_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(60)]#[rename(name="localSwingAxis")]pub local_swing_axis_field:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="localTwistAxis")]pub local_twist_axis_field:crate::unity_engine::vector3::Vector3, #[offset(84)]#[rename(name="planePosition")]pub plane_position:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="ikPosition")]pub ik_position_field:crate::unity_engine::vector3::Vector3, #[offset(108)]#[rename(name="defaultLocalTargetRotation")]pub default_local_target_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(124)]#[rename(name="maintainRotation")]pub maintain_rotation_field:crate::unity_engine::quaternion::Quaternion, #[offset(140)]#[rename(name="length")]pub length_field:f32, #[offset(144)]#[rename(name="animatedRotation")]pub animated_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(160)]#[rename(name="planeBone1")]pub plane_bone1:crate::unity_engine::transform::Transform, #[offset(168)]#[rename(name="planeBone2")]pub plane_bone2:crate::unity_engine::transform::Transform, #[offset(176)]#[rename(name="planeBone3")]pub plane_bone3:crate::unity_engine::transform::Transform, #[offset(184)]#[rename(name="plane1ChainIndex")]pub plane1_chain_index:i32, #[offset(188)]#[rename(name="plane1NodeIndex")]pub plane1_node_index:i32, #[offset(192)]#[rename(name="plane2ChainIndex")]pub plane2_chain_index:i32, #[offset(196)]#[rename(name="plane2NodeIndex")]pub plane2_node_index:i32, #[offset(200)]#[rename(name="plane3ChainIndex")]pub plane3_chain_index:i32, #[offset(204)]#[rename(name="plane3NodeIndex")]pub plane3_node_index:i32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/ikmapping/IKMapping.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKMapping")]#[parent(crate::system::object::Object)]pub struct IKMapping{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/ikmapping/IKMapping_BoneMap.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="IKMapping.BoneMap")]#[parent(crate::system::object::Object)]pub struct IKMapping_BoneMap{#[offset(16)]#[rename(name="transform")]pub transform:crate::unity_engine::transform::Transform, #[offset(24)]#[rename(name="chainIndex")]pub chain_index:i32, #[offset(28)]#[rename(name="nodeIndex")]pub node_index:i32, #[offset(32)]#[rename(name="defaultLocalPosition")]pub default_local_position:crate::unity_engine::vector3::Vector3, #[offset(44)]#[rename(name="defaultLocalRotation")]pub default_local_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(60)]#[rename(name="localSwingAxis")]pub local_swing_axis_field:crate::unity_engine::vector3::Vector3, #[offset(72)]#[rename(name="localTwistAxis")]pub local_twist_axis_field:crate::unity_engine::vector3::Vector3, #[offset(84)]#[rename(name="planePosition")]pub plane_position:crate::unity_engine::vector3::Vector3, #[offset(96)]#[rename(name="ikPosition")]pub ik_position_field:crate::unity_engine::vector3::Vector3, #[offset(108)]#[rename(name="defaultLocalTargetRotation")]pub default_local_target_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(124)]#[rename(name="maintainRotation")]pub maintain_rotation_field:crate::unity_engine::quaternion::Quaternion, #[offset(140)]#[rename(name="length")]pub length_field:f32, #[offset(144)]#[rename(name="animatedRotation")]pub animated_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(160)]#[rename(name="planeBone1")]pub plane_bone1:crate::unity_engine::transform::Transform, #[offset(168)]#[rename(name="planeBone2")]pub plane_bone2:crate::unity_engine::transform::Transform, #[offset(176)]#[rename(name="planeBone3")]pub plane_bone3:crate::unity_engine::transform::Transform, #[offset(184)]#[rename(name="plane1ChainIndex")]pub plane1_chain_index:i32, #[offset(188)]#[rename(name="plane1NodeIndex")]pub plane1_node_index:i32, #[offset(192)]#[rename(name="plane2ChainIndex")]pub plane2_chain_index:i32, #[offset(196)]#[rename(name="plane2NodeIndex")]pub plane2_node_index:i32, #[offset(200)]#[rename(name="plane3ChainIndex")]pub plane3_chain_index:i32, #[offset(204)]#[rename(name="plane3NodeIndex")]pub plane3_node_index:i32,}
 
 }
 
 #[cfg(feature = "root_motion-final_ik-ikmapping-types")]
 pub use __types::*;
+
+#[cfg(feature="root_motion-final_ik-ikmapping")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKMapping_unity2_raw{use super:: * ;
+pub unsafe fn is_valid(this:IKMapping,solver:crate::root_motion::final_ik::iksolver::IKSolver,message: *mut::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IKMapping as::unity2::ClassIdentity> ::NAME,"IsValid",));
+let inner:extern "C" fn(IKMapping,crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,solver,message,__mi)}
+pub unsafe fn initiate(this:IKMapping,solver:crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IKMapping as::unity2::ClassIdentity> ::NAME,"Initiate",));
+let inner:extern "C" fn(IKMapping,crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,solver,__mi)}
+}
+
+#[cfg(feature="root_motion-final_ik-ikmapping")]pub trait IIKMappingMethods:IIKMapping{#[doc="`IsValid(crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString)` overload"]fn is_valid(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={__IKMapping_unity2_raw::is_valid(__receiver, ::core::convert::Into::into(solver),__out_0.as_mut_ptr(), ::core::option::Option::None)}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`Initiate(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__IKMapping_unity2_raw::initiate(__receiver, ::core::convert::Into::into(solver), ::core::option::Option::None)}
+}
+#[doc="`BoneIsValid(crate::unity_engine::transform::Transform, crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, crate::root_motion::warning::Warning_Logger)` overload"]fn bone_is_valid(self,bone:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver> ,logger:impl::core::convert::Into<crate::root_motion::warning::Warning_Logger>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a799d0usize)as*mut u8,bool;
+(IKMapping)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone),(crate::root_motion::final_ik::iksolver::IKSolver)::core::convert::Into::into(solver),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(crate::root_motion::warning::Warning_Logger)::core::convert::Into::into(logger))}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`SolveFABRIKJoint(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn solve_fabrik_joint(self,pos1:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,pos2:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,length:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a79b20usize)as*mut u8,crate::unity_engine::vector3::Vector3;
+(IKMapping)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos1),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos2),(f32)::core::convert::Into::into(length))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2a79b90usize)as*mut u8,();
+(IKMapping)__receiver)}
+}
+}
+
+#[cfg(feature="root_motion-final_ik-ikmapping")]impl<__T:IIKMapping>IIKMappingMethods for __T{}
+
+#[cfg(feature="root_motion-final_ik-ikmapping")]impl IKMapping{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn bone_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn solve_fabrik_joint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="root_motion-final_ik-ikmapping")]impl IKMapping{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(IKMapping), ::core::stringify!(new),));
+ <Self as IIKMappingMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="root_motion-final_ik-ikmapping")]pub trait IIKMapping_BoneMapMethods:IIKMapping_BoneMap{#[doc="`Initiate(crate::unity_engine::transform::Transform, crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <IKMapping_BoneMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2af0060usize)as*mut u8,();
@@ -162,59 +227,15 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="root_motion-final_ik-ikmapping")]pub trait IIKMappingMethods:IIKMapping{#[doc="`IsValid(crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString)` overload"]fn is_valid(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a799b0usize)as*mut u8,bool;
-(IKMapping)__receiver,(crate::root_motion::final_ik::iksolver::IKSolver)::core::convert::Into::into(solver),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`Initiate(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)` overload"]fn initiate(self,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody>)->(){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a799c0usize)as*mut u8,();
-(IKMapping)__receiver,(crate::root_motion::final_ik::iksolverfullbody::IKSolverFullBody)::core::convert::Into::into(solver))}
-}
-#[doc="`BoneIsValid(crate::unity_engine::transform::Transform, crate::root_motion::final_ik::iksolver::IKSolver, *mut::unity2::Il2CppString, crate::root_motion::warning::Warning_Logger)` overload"]fn bone_is_valid(self,bone:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,solver:impl::core::convert::Into<crate::root_motion::final_ik::iksolver::IKSolver> ,logger:impl::core::convert::Into<crate::root_motion::warning::Warning_Logger>)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a799d0usize)as*mut u8,bool;
-(IKMapping)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(bone),(crate::root_motion::final_ik::iksolver::IKSolver)::core::convert::Into::into(solver),(*mut::unity2::Il2CppString)__out_0.as_mut_ptr(),(crate::root_motion::warning::Warning_Logger)::core::convert::Into::into(logger))}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`SolveFABRIKJoint(crate::unity_engine::vector3::Vector3, crate::unity_engine::vector3::Vector3, f32)` overload"]fn solve_fabrik_joint(self,pos1:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,pos2:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,length:impl::core::convert::Into<f32>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a79b20usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKMapping)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos1),(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos2),(f32)::core::convert::Into::into(length))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKMapping as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a79b90usize)as*mut u8,();
-(IKMapping)__receiver)}
-}
-}
-
-#[cfg(feature="root_motion-final_ik-ikmapping")]impl<__T:IIKMapping>IIKMappingMethods for __T{}
-
-#[cfg(feature="root_motion-final_ik-ikmapping")]impl IKMapping{pub fn is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn initiate_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn bone_is_valid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn solve_fabrik_joint_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="root_motion-final_ik-ikmapping")]impl IKMapping{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(IKMapping), ::core::stringify!(new),));
- <Self as IIKMappingMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "root_motion-final_ik-ikmapping")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::IKMapping_BoneMap;
-    pub use super::IIKMapping_BoneMap;
-    pub use super::IIKMapping_BoneMapMethods;
     pub use super::IKMapping;
     pub use super::IIKMapping;
     pub use super::IIKMappingMethods;
+    pub use super::IKMapping_BoneMap;
+    pub use super::IIKMapping_BoneMap;
+    pub use super::IIKMapping_BoneMapMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

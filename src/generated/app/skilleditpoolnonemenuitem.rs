@@ -20,45 +20,120 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-skilleditpoolnonemenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-skilleditpoolnonemenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SkillEditPoolNoneMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn custom_call(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"CustomCall",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_skill(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::skilldata::SkillData{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"GetSkill",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)->crate::app::skilldata::SkillData= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_active_skill_icon(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"IsActiveSkillIcon",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sub_text(this:SkillEditPoolNoneMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicskillmenuitemcontent::BasicSkillMenuItemContent_SubText{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <SkillEditPoolNoneMenuItem as::unity2::ClassIdentity> ::NAME,"GetSubText",));
+let inner:extern "C" fn(SkillEditPoolNoneMenuItem, ::unity2::OptionalMethod,)->crate::app::basicskillmenuitemcontent::BasicSkillMenuItemContent_SubText= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-skilleditpoolnonemenuitem")]pub trait ISkillEditPoolNoneMenuItemMethods:ISkillEditPoolNoneMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x249db30usize)as*mut u8,();
 (SkillEditPoolNoneMenuItem)__receiver)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249db40usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249db70usize)as*mut u8, ::unity2::Il2CppString;
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249dbf0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CustomCall()` overload"]fn custom_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249dde0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::custom_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249e7e0usize)as*mut u8,();
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`HoldSelection()` overload"]fn hold_selection(self,)->(){unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x249e8e0usize)as*mut u8,();
 (SkillEditPoolNoneMenuItem)__receiver)}
 }
 #[doc="`GetSkill()` overload"]fn get_skill(self,)->crate::app::skilldata::SkillData{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249e990usize)as*mut u8,crate::app::skilldata::SkillData;
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::get_skill(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsActiveSkillIcon()` overload"]fn is_active_skill_icon(self,)->bool{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249e9a0usize)as*mut u8,bool;
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::is_active_skill_icon(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetSubText()` overload"]fn get_sub_text(self,)->crate::app::basicskillmenuitemcontent::BasicSkillMenuItemContent_SubText{unsafe{let __receiver= <SkillEditPoolNoneMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x249e9b0usize)as*mut u8,crate::app::basicskillmenuitemcontent::BasicSkillMenuItemContent_SubText;
-(SkillEditPoolNoneMenuItem)__receiver)}
+__SkillEditPoolNoneMenuItem_unity2_raw::get_sub_text(__receiver, ::core::option::Option::None)}
 }
 }
 

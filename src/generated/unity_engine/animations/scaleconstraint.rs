@@ -22,6 +22,149 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-animations-scaleconstraint-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-animations-scaleconstraint")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScaleConstraint_unity2_raw{use super:: * ;
+pub unsafe fn get_weight(this:ScaleConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"get_weight",));
+let inner:extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_weight(this:ScaleConstraint,value:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"set_weight",));
+let inner:extern "C" fn(ScaleConstraint,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_constraint_active(this:ScaleConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"get_constraintActive",));
+let inner:extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_constraint_active(this:ScaleConstraint,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"set_constraintActive",));
+let inner:extern "C" fn(ScaleConstraint,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_locked(this:ScaleConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"get_locked",));
+let inner:extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_locked(this:ScaleConstraint,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"set_locked",));
+let inner:extern "C" fn(ScaleConstraint,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_source_count(this:ScaleConstraint,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"get_sourceCount",));
+let inner:extern "C" fn(ScaleConstraint, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_sources(this:ScaleConstraint,sources:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"GetSources",));
+let inner:extern "C" fn(ScaleConstraint,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,sources,__mi)}
+pub unsafe fn set_sources(this:ScaleConstraint,sources:crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"SetSources",));
+let inner:extern "C" fn(ScaleConstraint,crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,sources,__mi)}
+pub unsafe fn add_source(this:ScaleConstraint,source:crate::unity_engine::animations::constraintsource::ConstraintSource,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"AddSource",));
+let inner:extern "C" fn(ScaleConstraint,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,source,__mi)}
+pub unsafe fn remove_source(this:ScaleConstraint,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"RemoveSource",));
+let inner:extern "C" fn(ScaleConstraint,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn get_source(this:ScaleConstraint,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::animations::constraintsource::ConstraintSource{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"GetSource",));
+let inner:extern "C" fn(ScaleConstraint,i32, ::unity2::OptionalMethod,)->crate::unity_engine::animations::constraintsource::ConstraintSource= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn set_source(this:ScaleConstraint,index:i32,source:crate::unity_engine::animations::constraintsource::ConstraintSource,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"SetSource",));
+let inner:extern "C" fn(ScaleConstraint,i32,crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,source,__mi)}
+pub unsafe fn add_source_injected(this:ScaleConstraint,source: *mut crate::unity_engine::animations::constraintsource::ConstraintSource,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <ScaleConstraint as::unity2::ClassIdentity> ::NAME,"AddSource_Injected",));
+let inner:extern "C" fn(ScaleConstraint, *mut crate::unity_engine::animations::constraintsource::ConstraintSource, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,source,__mi)}
+}
+
 #[cfg(feature="unity_engine-animations-scaleconstraint")]impl ScaleConstraint{#[doc="`Internal_Create(crate::unity_engine::animations::scaleconstraint::ScaleConstraint)` overload"]pub fn internal_create(self_:impl::core::convert::Into<crate::unity_engine::animations::scaleconstraint::ScaleConstraint>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ebaec0usize)as*mut u8,();
 (crate::unity_engine::animations::scaleconstraint::ScaleConstraint)::core::convert::Into::into(self_))}
 }
@@ -38,12 +181,10 @@ pub use __types::*;
 (ScaleConstraint)__receiver)}
 }
 #[doc="`get_weight()` overload"]fn get_weight(self,)->f32{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebaf10usize)as*mut u8,f32;
-(ScaleConstraint)__receiver)}
+__ScaleConstraint_unity2_raw::get_weight(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_weight(f32)` overload"]fn set_weight(self,value:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebaf60usize)as*mut u8,();
-(ScaleConstraint)__receiver,(f32)::core::convert::Into::into(value))}
+__ScaleConstraint_unity2_raw::set_weight(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_scaleAtRest()` overload"]fn get_scale_at_rest(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebafb0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
@@ -70,56 +211,45 @@ pub use __types::*;
 (ScaleConstraint)__receiver,(crate::unity_engine::animations::axis::Axis)::core::convert::Into::into(value))}
 }
 #[doc="`get_constraintActive()` overload"]fn get_constraint_active(self,)->bool{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb310usize)as*mut u8,bool;
-(ScaleConstraint)__receiver)}
+__ScaleConstraint_unity2_raw::get_constraint_active(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_constraintActive(bool)` overload"]fn set_constraint_active(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb360usize)as*mut u8,();
-(ScaleConstraint)__receiver,(bool)::core::convert::Into::into(value))}
+__ScaleConstraint_unity2_raw::set_constraint_active(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_locked()` overload"]fn get_locked(self,)->bool{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb3b0usize)as*mut u8,bool;
-(ScaleConstraint)__receiver)}
+__ScaleConstraint_unity2_raw::get_locked(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_locked(bool)` overload"]fn set_locked(self,value:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb400usize)as*mut u8,();
-(ScaleConstraint)__receiver,(bool)::core::convert::Into::into(value))}
+__ScaleConstraint_unity2_raw::set_locked(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_sourceCount()` overload"]fn get_source_count(self,)->i32{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb450usize)as*mut u8,i32;
-(ScaleConstraint)__receiver)}
+__ScaleConstraint_unity2_raw::get_source_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetSources(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)` overload"]fn get_sources(self,sources:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> >)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb4f0usize)as*mut u8,();
-(ScaleConstraint)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)::core::convert::Into::into(sources))}
+__ScaleConstraint_unity2_raw::get_sources(__receiver, ::core::convert::Into::into(sources), ::core::option::Option::None)}
 }
 #[doc="`SetSources(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)` overload"]fn set_sources(self,sources:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource> >)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb540usize)as*mut u8,();
-(ScaleConstraint)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::animations::constraintsource::ConstraintSource>)::core::convert::Into::into(sources))}
+__ScaleConstraint_unity2_raw::set_sources(__receiver, ::core::convert::Into::into(sources), ::core::option::Option::None)}
 }
 #[doc="`AddSource(crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn add_source(self,source:impl::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>)->i32{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb630usize)as*mut u8,i32;
-(ScaleConstraint)__receiver,(crate::unity_engine::animations::constraintsource::ConstraintSource)::core::convert::Into::into(source))}
+__ScaleConstraint_unity2_raw::add_source(__receiver, ::core::convert::Into::into(source), ::core::option::Option::None)}
 }
 #[doc="`RemoveSource(i32)` overload"]fn remove_source(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb6e0usize)as*mut u8,();
-(ScaleConstraint)__receiver,(i32)::core::convert::Into::into(index))}
+__ScaleConstraint_unity2_raw::remove_source(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`RemoveSourceInternal(i32)` overload"]fn remove_source_internal(self,index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb8c0usize)as*mut u8,();
 (ScaleConstraint)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`GetSource(i32)` overload"]fn get_source(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::animations::constraintsource::ConstraintSource{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb910usize)as*mut u8,crate::unity_engine::animations::constraintsource::ConstraintSource;
-(ScaleConstraint)__receiver,(i32)::core::convert::Into::into(index))}
+__ScaleConstraint_unity2_raw::get_source(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`GetSourceInternal(i32)` overload"]fn get_source_internal(self,index:impl::core::convert::Into<i32>)->crate::unity_engine::animations::constraintsource::ConstraintSource{unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb980usize)as*mut u8,crate::unity_engine::animations::constraintsource::ConstraintSource;
 (ScaleConstraint)__receiver,(i32)::core::convert::Into::into(index))}
 }
 #[doc="`SetSource(i32, crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn set_source(self,index:impl::core::convert::Into<i32> ,source:impl::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebba50usize)as*mut u8,();
-(ScaleConstraint)__receiver,(i32)::core::convert::Into::into(index),(crate::unity_engine::animations::constraintsource::ConstraintSource)::core::convert::Into::into(source))}
+__ScaleConstraint_unity2_raw::set_source(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(source), ::core::option::Option::None)}
 }
 #[doc="`SetSourceInternal(i32, crate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn set_source_internal(self,index:impl::core::convert::Into<i32> ,source:impl::core::convert::Into<crate::unity_engine::animations::constraintsource::ConstraintSource>)->(){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ebbac0usize)as*mut u8,();
@@ -155,8 +285,7 @@ __out_0.assume_init()}
 }
 #[doc="`AddSource_Injected(*mutcrate::unity_engine::animations::constraintsource::ConstraintSource)` overload"]fn add_source_injected(self,)->(i32,crate::unity_engine::animations::constraintsource::ConstraintSource){unsafe{let __receiver= <ScaleConstraint as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::animations::constraintsource::ConstraintSource> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x3ebb690usize)as*mut u8,i32;
-(ScaleConstraint)__receiver,(*mut crate::unity_engine::animations::constraintsource::ConstraintSource)__out_0.as_mut_ptr())}
+let __ret={__ScaleConstraint_unity2_raw::add_source_injected(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None)}
 ;
 (__ret,__out_0.assume_init())}
 }

@@ -26,9 +26,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomtopmenu/MyRoomTopMenu_DecideEventHandler.md"))]#[::unity2::class(namespace="App",name="MyRoomTopMenu.DecideEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct MyRoomTopMenu_DecideEventHandler{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomtopmenu/MyRoomTopMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomTopMenu{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomtopmenu/MyRoomTopMenu_SetDifficultySelectMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomTopMenu.SetDifficultySelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomTopMenu_SetDifficultySelectMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,}
 
 
@@ -57,18 +54,33 @@ pub fn end()->Self{Self{value:3}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomtopmenu/MyRoomTopMenu_RecallSelectMenuItem.md"))]#[::unity2::class(namespace="App",name="MyRoomTopMenu.RecallSelectMenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct MyRoomTopMenu_RecallSelectMenuItem{#[offset(104)]#[rename(name="m_DecideEventHandler")]pub m_decide_event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/myroomtopmenu/MyRoomTopMenu.md"))]#[::unity2::class(namespace="App",name="MyRoomTopMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct MyRoomTopMenu{}
+
 }
 
 #[cfg(feature = "app-myroomtopmenu-types")]
 pub use __types::*;
+
+#[cfg(feature="app-myroomtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomTopMenu_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:MyRoomTopMenu_DecideEventHandler,result:crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MyRoomTopMenu_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(MyRoomTopMenu_DecideEventHandler,crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,__mi)}
+}
 
 #[cfg(feature="app-myroomtopmenu")]pub trait IMyRoomTopMenu_DecideEventHandlerMethods:IMyRoomTopMenu_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <MyRoomTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x209a610usize)as*mut u8,();
 (MyRoomTopMenu_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult>)->(){unsafe{let __receiver= <MyRoomTopMenu_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a630usize)as*mut u8,();
-(MyRoomTopMenu_DecideEventHandler)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult)::core::convert::Into::into(result))}
+__MyRoomTopMenu_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
 }
 }
 
@@ -85,6 +97,270 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
+#[cfg(feature="app-myroomtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomTopMenu_SetDifficultySelectMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MyRoomTopMenu_SetDifficultySelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MyRoomTopMenu_SetDifficultySelectMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:MyRoomTopMenu_SetDifficultySelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(MyRoomTopMenu_SetDifficultySelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MyRoomTopMenu_SetDifficultySelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MyRoomTopMenu_SetDifficultySelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:MyRoomTopMenu_SetDifficultySelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(MyRoomTopMenu_SetDifficultySelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-myroomtopmenu")]pub trait IMyRoomTopMenu_SetDifficultySelectMenuItemMethods:IMyRoomTopMenu_SetDifficultySelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209aa40usize)as*mut u8,();
+(MyRoomTopMenu_SetDifficultySelectMenuItem)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SetDifficultySelectMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SetDifficultySelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SetDifficultySelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SetDifficultySelectMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-myroomtopmenu")]impl<__T:IMyRoomTopMenu_SetDifficultySelectMenuItem>IMyRoomTopMenu_SetDifficultySelectMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SetDifficultySelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SetDifficultySelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomTopMenu_SetDifficultySelectMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomTopMenu_SetDifficultySelectMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
+#[cfg(feature="app-myroomtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomTopMenu_SleepSelectMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MyRoomTopMenu_SleepSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MyRoomTopMenu_SleepSelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MyRoomTopMenu_SleepSelectMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:MyRoomTopMenu_SleepSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MyRoomTopMenu_SleepSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(MyRoomTopMenu_SleepSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MyRoomTopMenu_SleepSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomTopMenu_SleepSelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MyRoomTopMenu_SleepSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:MyRoomTopMenu_SleepSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MyRoomTopMenu_SleepSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(MyRoomTopMenu_SleepSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-myroomtopmenu")]pub trait IMyRoomTopMenu_SleepSelectMenuItemMethods:IMyRoomTopMenu_SleepSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209ab50usize)as*mut u8,();
+(MyRoomTopMenu_SleepSelectMenuItem)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SleepSelectMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SleepSelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SleepSelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_SleepSelectMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-myroomtopmenu")]impl<__T:IMyRoomTopMenu_SleepSelectMenuItem>IMyRoomTopMenu_SleepSelectMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SleepSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SleepSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomTopMenu_SleepSelectMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomTopMenu_SleepSelectMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
+#[cfg(feature="app-myroomtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomTopMenu_RecallSelectMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:MyRoomTopMenu_RecallSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MyRoomTopMenu_RecallSelectMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MyRoomTopMenu_RecallSelectMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:MyRoomTopMenu_RecallSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MyRoomTopMenu_RecallSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(MyRoomTopMenu_RecallSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:MyRoomTopMenu_RecallSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MyRoomTopMenu_RecallSelectMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(MyRoomTopMenu_RecallSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:MyRoomTopMenu_RecallSelectMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MyRoomTopMenu_RecallSelectMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(MyRoomTopMenu_RecallSelectMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-myroomtopmenu")]pub trait IMyRoomTopMenu_RecallSelectMenuItemMethods:IMyRoomTopMenu_RecallSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x209a930usize)as*mut u8,();
+(MyRoomTopMenu_RecallSelectMenuItem)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_RecallSelectMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_RecallSelectMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_RecallSelectMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__MyRoomTopMenu_RecallSelectMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-myroomtopmenu")]impl<__T:IMyRoomTopMenu_RecallSelectMenuItem>IMyRoomTopMenu_RecallSelectMenuItemMethods for __T{}
+
+#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_RecallSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_RecallSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MyRoomTopMenu_RecallSelectMenuItem), ::core::stringify!(new),));
+ <Self as IMyRoomTopMenu_RecallSelectMenuItemMethods> ::ctor(this,event_handler);
+this}
+}
+
+#[cfg(feature="app-myroomtopmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomTopMenu_unity2_raw{use super:: * ;
+pub unsafe fn b_call(this:MyRoomTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <MyRoomTopMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(MyRoomTopMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:MyRoomTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MyRoomTopMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(MyRoomTopMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:MyRoomTopMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MyRoomTopMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(MyRoomTopMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult, crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,initial_selected:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult> ,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x239bed0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult)::core::convert::Into::into(initial_selected),(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
@@ -99,20 +375,17 @@ this}
 (MyRoomTopMenu)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(value))}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2490usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomTopMenu)__receiver)}
+__MyRoomTopMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult, crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,initial_selected:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult> ,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2530usize)as*mut u8,();
 (MyRoomTopMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::myroomtopmenu::MyRoomTopMenu_MenuResult)::core::convert::Into::into(initial_selected),(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a25d0usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomTopMenu)__receiver)}
+__MyRoomTopMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <MyRoomTopMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23a2650usize)as*mut u8,();
-(MyRoomTopMenu)__receiver)}
+__MyRoomTopMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -134,129 +407,12 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-myroomtopmenu")]pub trait IMyRoomTopMenu_SetDifficultySelectMenuItemMethods:IMyRoomTopMenu_SetDifficultySelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209aa40usize)as*mut u8,();
-(MyRoomTopMenu_SetDifficultySelectMenuItem)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209aa80usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomTopMenu_SetDifficultySelectMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ab00usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomTopMenu_SetDifficultySelectMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ab10usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomTopMenu_SetDifficultySelectMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SetDifficultySelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ab40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomTopMenu_SetDifficultySelectMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomtopmenu")]impl<__T:IMyRoomTopMenu_SetDifficultySelectMenuItem>IMyRoomTopMenu_SetDifficultySelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SetDifficultySelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SetDifficultySelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomTopMenu_SetDifficultySelectMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomTopMenu_SetDifficultySelectMenuItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-myroomtopmenu")]pub trait IMyRoomTopMenu_SleepSelectMenuItemMethods:IMyRoomTopMenu_SleepSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ab50usize)as*mut u8,();
-(MyRoomTopMenu_SleepSelectMenuItem)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ab90usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomTopMenu_SleepSelectMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ac10usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomTopMenu_SleepSelectMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ac20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomTopMenu_SleepSelectMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_SleepSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209ac50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomTopMenu_SleepSelectMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomtopmenu")]impl<__T:IMyRoomTopMenu_SleepSelectMenuItem>IMyRoomTopMenu_SleepSelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SleepSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_SleepSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomTopMenu_SleepSelectMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomTopMenu_SleepSelectMenuItemMethods> ::ctor(this,event_handler);
-this}
-}
-
-#[cfg(feature="app-myroomtopmenu")]pub trait IMyRoomTopMenu_RecallSelectMenuItemMethods:IMyRoomTopMenu_RecallSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` overload"]fn ctor(self,event_handler:impl::core::convert::Into<crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler>)->(){unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a930usize)as*mut u8,();
-(MyRoomTopMenu_RecallSelectMenuItem)__receiver,(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)::core::convert::Into::into(event_handler))}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a970usize)as*mut u8, ::unity2::Il2CppString;
-(MyRoomTopMenu_RecallSelectMenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209a9f0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(MyRoomTopMenu_RecallSelectMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209aa00usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomTopMenu_RecallSelectMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <MyRoomTopMenu_RecallSelectMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x209aa30usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(MyRoomTopMenu_RecallSelectMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-myroomtopmenu")]impl<__T:IMyRoomTopMenu_RecallSelectMenuItem>IMyRoomTopMenu_RecallSelectMenuItemMethods for __T{}
-
-#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_RecallSelectMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-myroomtopmenu")]impl MyRoomTopMenu_RecallSelectMenuItem{#[doc="`.ctor(crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)` — overload selector"]pub fn new(event_handler:crate::app::myroomtopmenu::MyRoomTopMenu_DecideEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MyRoomTopMenu_RecallSelectMenuItem), ::core::stringify!(new),));
- <Self as IMyRoomTopMenu_RecallSelectMenuItemMethods> ::ctor(this,event_handler);
-this}
-}
-
 #[cfg(feature = "app-myroomtopmenu")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::MyRoomTopMenu_DecideEventHandler;
     pub use super::IMyRoomTopMenu_DecideEventHandler;
     pub use super::IMyRoomTopMenu_DecideEventHandlerMethods;
-    pub use super::MyRoomTopMenu;
-    pub use super::IMyRoomTopMenu;
-    pub use super::IMyRoomTopMenuMethods;
     pub use super::MyRoomTopMenu_SetDifficultySelectMenuItem;
     pub use super::IMyRoomTopMenu_SetDifficultySelectMenuItem;
     pub use super::IMyRoomTopMenu_SetDifficultySelectMenuItemMethods;
@@ -267,6 +423,9 @@ pub mod prelude {
     pub use super::MyRoomTopMenu_RecallSelectMenuItem;
     pub use super::IMyRoomTopMenu_RecallSelectMenuItem;
     pub use super::IMyRoomTopMenu_RecallSelectMenuItemMethods;
+    pub use super::MyRoomTopMenu;
+    pub use super::IMyRoomTopMenu;
+    pub use super::IMyRoomTopMenuMethods;
     pub use crate::app::basicmenu::IBasicMenu;
     pub use crate::app::basicmenuitem::IBasicMenuItem;
     pub use crate::app::procinst::IProcInst;

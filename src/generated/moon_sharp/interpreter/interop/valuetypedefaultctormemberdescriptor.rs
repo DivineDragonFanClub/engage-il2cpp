@@ -17,26 +17,26 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ValueTypeDefaultCtorMemberDescriptor_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_is_static{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_IsStatic",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_IsStatic",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_name{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_Name",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",e),}
-}
-}
+pub unsafe fn get_is_static(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_IsStatic",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_name{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"set_Name",1,param_types,false,)}
@@ -67,16 +67,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"set_ValueTypeDefaultCtor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_parameters{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_Parameters",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Parameters",e),}
-}
-}
+pub unsafe fn get_parameters(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Parameters",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_parameters{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"set_Parameters",1,param_types,false,)}
@@ -87,36 +87,36 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"set_Parameters",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_extension_method_type{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_ExtensionMethodType",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_ExtensionMethodType",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_var_args_array_type{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_VarArgsArrayType",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_VarArgsArrayType",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_var_args_element_type{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_VarArgsElementType",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_VarArgsElementType",e),}
-}
-}
+pub unsafe fn get_extension_method_type(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_ExtensionMethodType",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_var_args_array_type(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_VarArgsArrayType",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_var_args_element_type(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_VarArgsElementType",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),".ctor",1,param_types,false,)}
@@ -127,75 +127,73 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_execute{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::callbackarguments::CallbackArguments as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"Execute",4,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Execute",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_sort_discriminant{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_SortDiscriminant",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_SortDiscriminant",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_member_access{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"get_MemberAccess",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"GetValue",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetValue",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_value{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::script::Script as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::dynvalue::DynValue as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"SetValue",3,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"SetValue",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_prepare_for_wiring{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::table::Table as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::class(),"PrepareForWiring",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",e),}
-}
-}
+pub unsafe fn execute(this:ValueTypeDefaultCtorMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,context,args,__mi)}
+pub unsafe fn get_sort_discriminant(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_SortDiscriminant",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_member_access(this:ValueTypeDefaultCtorMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_MemberAccess",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_value(this:ValueTypeDefaultCtorMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"GetValue",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,__mi)}
+pub unsafe fn set_value(this:ValueTypeDefaultCtorMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,value:crate::moon_sharp::interpreter::dynvalue::DynValue,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::dynvalue::DynValue, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,script,obj,value,__mi)}
+pub unsafe fn prepare_for_wiring(this:ValueTypeDefaultCtorMemberDescriptor,t:crate::moon_sharp::interpreter::table::Table,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <ValueTypeDefaultCtorMemberDescriptor as::unity2::ClassIdentity> ::NAME,"PrepareForWiring",));
+let inner:extern "C" fn(ValueTypeDefaultCtorMemberDescriptor,crate::moon_sharp::interpreter::table::Table, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-interop-valuetypedefaultctormemberdescriptor")]pub trait IValueTypeDefaultCtorMemberDescriptorMethods:IValueTypeDefaultCtorMemberDescriptor{#[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_is_static::get_method_info().method_ptr,bool;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_name::get_method_info().method_ptr, ::unity2::Il2CppString;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Name(::unity2::Il2CppString)` overload"]fn set_name(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_set_name::get_method_info().method_ptr,();
@@ -210,52 +208,42 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ValueTypeDefaultCtorMemberDescriptor)__receiver,(::unity2::SystemType)::core::convert::Into::into(value))}
 }
 #[doc="`get_Parameters()` overload"]fn get_parameters(self,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_parameters::get_method_info().method_ptr, ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> ;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_parameters(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Parameters(::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)` overload"]fn set_parameters(self,value:impl::core::convert::Into< ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> >)->(){unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_set_parameters::get_method_info().method_ptr,();
 (ValueTypeDefaultCtorMemberDescriptor)__receiver,(::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>)::core::convert::Into::into(value))}
 }
 #[doc="`get_ExtensionMethodType()` overload"]fn get_extension_method_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_extension_method_type::get_method_info().method_ptr, ::unity2::SystemType;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_extension_method_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_VarArgsArrayType()` overload"]fn get_var_args_array_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_var_args_array_type::get_method_info().method_ptr, ::unity2::SystemType;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_var_args_array_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_VarArgsElementType()` overload"]fn get_var_args_element_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_var_args_element_type::get_method_info().method_ptr, ::unity2::SystemType;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_var_args_element_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(::unity2::SystemType)` overload"]fn ctor(self,value_type:impl::core::convert::Into< ::unity2::SystemType>)->(){unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();
 (ValueTypeDefaultCtorMemberDescriptor)__receiver,(::unity2::SystemType)::core::convert::Into::into(value_type))}
 }
 #[doc="`Execute(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)` overload"]fn execute(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext> ,args:impl::core::convert::Into<crate::moon_sharp::interpreter::callbackarguments::CallbackArguments>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_execute::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj),(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(context),(crate::moon_sharp::interpreter::callbackarguments::CallbackArguments)::core::convert::Into::into(args))}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::execute(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(context), ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`get_SortDiscriminant()` overload"]fn get_sort_discriminant(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_sort_discriminant::get_method_info().method_ptr, ::unity2::Il2CppString;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_sort_discriminant(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_MemberAccess()` overload"]fn get_member_access(self,)->crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_member_access::get_method_info().method_ptr,crate::moon_sharp::interpreter::interop::basic_descriptors::memberdescriptoraccess::MemberDescriptorAccess;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver)}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_member_access(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object)` overload"]fn get_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_get_value::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(ValueTypeDefaultCtorMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj))}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::get_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`SetValue(crate::moon_sharp::interpreter::script::Script, crate::system::object::Object, crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_value(self,script:impl::core::convert::Into<crate::moon_sharp::interpreter::script::Script> ,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_set_value::get_method_info().method_ptr,();
-(ValueTypeDefaultCtorMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::script::Script)::core::convert::Into::into(script),(crate::system::object::Object)::core::convert::Into::into(obj),(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(value))}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::set_value(__receiver, ::core::convert::Into::into(script), ::core::convert::Into::into(obj), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`PrepareForWiring(crate::moon_sharp::interpreter::table::Table)` overload"]fn prepare_for_wiring(self,t:impl::core::convert::Into<crate::moon_sharp::interpreter::table::Table>)->(){unsafe{let __receiver= <ValueTypeDefaultCtorMemberDescriptor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::__lookup_prepare_for_wiring::get_method_info().method_ptr,();
-(ValueTypeDefaultCtorMemberDescriptor)__receiver,(crate::moon_sharp::interpreter::table::Table)::core::convert::Into::into(t))}
+__ValueTypeDefaultCtorMemberDescriptor_unity2_raw::prepare_for_wiring(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 }
 

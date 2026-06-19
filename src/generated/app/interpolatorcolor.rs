@@ -20,17 +20,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-interpolatorcolor-types")]
 pub use __types::*;
 
+#[cfg(feature="app-interpolatorcolor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InterpolatorColor_unity2_raw{use super:: * ;
+pub unsafe fn get_value(this:InterpolatorColor,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InterpolatorColor as::unity2::ClassIdentity> ::NAME,"get_Value",));
+let inner:extern "C" fn(InterpolatorColor, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_equal(this:InterpolatorColor,a:crate::unity_engine::color::Color,b:crate::unity_engine::color::Color,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InterpolatorColor as::unity2::ClassIdentity> ::NAME,"IsEqual",));
+let inner:extern "C" fn(InterpolatorColor,crate::unity_engine::color::Color,crate::unity_engine::color::Color, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="app-interpolatorcolor")]pub trait IInterpolatorColorMethods:IInterpolatorColor{#[doc="`.ctor(crate::app::curve::Curve_Type, i32)` overload"]fn ctor(self,r#type:impl::core::convert::Into<crate::app::curve::Curve_Type> ,num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2794970usize)as*mut u8,();
 (InterpolatorColor)__receiver,(crate::app::curve::Curve_Type)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(num))}
 }
 #[doc="`get_Value()` overload"]fn get_value(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x27949e0usize)as*mut u8,crate::unity_engine::color::Color;
-(InterpolatorColor)__receiver)}
+__InterpolatorColor_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsEqual(crate::unity_engine::color::Color, crate::unity_engine::color::Color)` overload"]fn is_equal(self,a:impl::core::convert::Into<crate::unity_engine::color::Color> ,b:impl::core::convert::Into<crate::unity_engine::color::Color>)->bool{unsafe{let __receiver= <InterpolatorColor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2794b40usize)as*mut u8,bool;
-(InterpolatorColor)__receiver,(crate::unity_engine::color::Color)::core::convert::Into::into(a),(crate::unity_engine::color::Color)::core::convert::Into::into(b))}
+__InterpolatorColor_unity2_raw::is_equal(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 }
 

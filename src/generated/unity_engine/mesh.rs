@@ -13,9 +13,6 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/mesh/Mesh.md"))]#[::unity2::class(namespace="UnityEngine",name="Mesh")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct Mesh{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/mesh/Mesh_MeshData.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct Mesh_MeshData{pub m_ptr: ::unity2::IntPtr,}
 impl::unity2::ClassIdentity for Mesh_MeshData{const NAMESPACE: &'static str="UnityEngine";
 const NAME: &'static str="Mesh.MeshData";
@@ -37,10 +34,51 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for Mesh_MeshDataArray{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/mesh/Mesh.md"))]#[::unity2::class(namespace="UnityEngine",name="Mesh")]#[parent(crate::unity_engine::object_2::Object_2)]pub struct Mesh{}
+
 }
 
 #[cfg(feature = "unity_engine-mesh-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-mesh")]impl Mesh_MeshDataArray{#[doc="`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]pub fn apply_to_mesh_impl(mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,data:impl::core::convert::Into< ::unity2::IntPtr> ,flags:impl::core::convert::Into<crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cca0usize)as*mut u8,();
+(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(::unity2::IntPtr)::core::convert::Into::into(data),(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)::core::convert::Into::into(flags))}
+}
+}
+
+#[cfg(feature="unity_engine-mesh")]impl Mesh_MeshDataArray{#[doc="`get_Length()` overload"]pub fn get_length(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cd00usize)as*mut u8,i32;
+(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray)}
+}
+#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cd10usize)as*mut u8,();
+(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray)}
+}
+#[doc="`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]pub fn apply_to_mesh_and_dispose(&mut self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,flags:impl::core::convert::Into<crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cdb0usize)as*mut u8,();
+(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)::core::convert::Into::into(flags))}
+}
+#[doc="`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]pub fn apply_to_meshes_and_dispose(&mut self,meshes:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::mesh::Mesh> > ,flags:impl::core::convert::Into<crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cf20usize)as*mut u8,();
+(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(::unity2::Array<crate::unity_engine::mesh::Mesh>)::core::convert::Into::into(meshes),(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)::core::convert::Into::into(flags))}
+}
+#[doc="`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]pub fn ctor(&mut self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,check_read_write:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379d1a0usize)as*mut u8,();
+(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(bool)::core::convert::Into::into(check_read_write))}
+}
+#[doc="`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]pub fn ctor_2(&mut self,meshes:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::mesh::Mesh> > ,meshes_count:impl::core::convert::Into<i32> ,check_read_write:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379d3c0usize)as*mut u8,();
+(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(::unity2::Array<crate::unity_engine::mesh::Mesh>)::core::convert::Into::into(meshes),(i32)::core::convert::Into::into(meshes_count),(bool)::core::convert::Into::into(check_read_write))}
+}
+#[doc="`.ctor(i32)` overload"]pub fn ctor_3(&mut self,meshes_count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379d720usize)as*mut u8,();
+(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(i32)::core::convert::Into::into(meshes_count))}
+}
+}
+
+#[cfg(feature="unity_engine-mesh")]impl Mesh_MeshDataArray{pub fn apply_to_mesh_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn apply_to_mesh_and_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn apply_to_meshes_and_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+}
 
 #[cfg(feature="unity_engine-mesh")]impl Mesh{#[doc="`Internal_Create(crate::unity_engine::mesh::Mesh)` overload"]pub fn internal_create(mono:impl::core::convert::Into<crate::unity_engine::mesh::Mesh>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x32e2cd0usize)as*mut u8,();
 (crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mono))}
@@ -1640,52 +1678,14 @@ pub fn set_bounds_injected_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 this}
 }
 
-#[cfg(feature="unity_engine-mesh")]impl Mesh_MeshDataArray{#[doc="`ApplyToMeshImpl(crate::unity_engine::mesh::Mesh, ::unity2::IntPtr, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]pub fn apply_to_mesh_impl(mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,data:impl::core::convert::Into< ::unity2::IntPtr> ,flags:impl::core::convert::Into<crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cca0usize)as*mut u8,();
-(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(::unity2::IntPtr)::core::convert::Into::into(data),(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)::core::convert::Into::into(flags))}
-}
-}
-
-#[cfg(feature="unity_engine-mesh")]impl Mesh_MeshDataArray{#[doc="`get_Length()` overload"]pub fn get_length(&mut self,)->i32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cd00usize)as*mut u8,i32;
-(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray)}
-}
-#[doc="`Dispose()` overload"]pub fn dispose(&mut self,)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cd10usize)as*mut u8,();
-(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray)}
-}
-#[doc="`ApplyToMeshAndDispose(crate::unity_engine::mesh::Mesh, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]pub fn apply_to_mesh_and_dispose(&mut self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,flags:impl::core::convert::Into<crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cdb0usize)as*mut u8,();
-(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)::core::convert::Into::into(flags))}
-}
-#[doc="`ApplyToMeshesAndDispose(::unity2::Array<crate::unity_engine::mesh::Mesh>, crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)` overload"]pub fn apply_to_meshes_and_dispose(&mut self,meshes:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::mesh::Mesh> > ,flags:impl::core::convert::Into<crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379cf20usize)as*mut u8,();
-(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(::unity2::Array<crate::unity_engine::mesh::Mesh>)::core::convert::Into::into(meshes),(crate::unity_engine::rendering::meshupdateflags::MeshUpdateFlags)::core::convert::Into::into(flags))}
-}
-#[doc="`.ctor(crate::unity_engine::mesh::Mesh, bool)` overload"]pub fn ctor(&mut self,mesh:impl::core::convert::Into<crate::unity_engine::mesh::Mesh> ,check_read_write:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379d1a0usize)as*mut u8,();
-(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(crate::unity_engine::mesh::Mesh)::core::convert::Into::into(mesh),(bool)::core::convert::Into::into(check_read_write))}
-}
-#[doc="`.ctor(::unity2::Array<crate::unity_engine::mesh::Mesh>, i32, bool)` overload"]pub fn ctor_2(&mut self,meshes:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::mesh::Mesh> > ,meshes_count:impl::core::convert::Into<i32> ,check_read_write:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379d3c0usize)as*mut u8,();
-(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(::unity2::Array<crate::unity_engine::mesh::Mesh>)::core::convert::Into::into(meshes),(i32)::core::convert::Into::into(meshes_count),(bool)::core::convert::Into::into(check_read_write))}
-}
-#[doc="`.ctor(i32)` overload"]pub fn ctor_3(&mut self,meshes_count:impl::core::convert::Into<i32>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x379d720usize)as*mut u8,();
-(*mut Mesh_MeshDataArray)self as*mut Mesh_MeshDataArray,(i32)::core::convert::Into::into(meshes_count))}
-}
-}
-
-#[cfg(feature="unity_engine-mesh")]impl Mesh_MeshDataArray{pub fn apply_to_mesh_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_length_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn apply_to_mesh_and_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn apply_to_meshes_and_dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn ctor_3_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-}
-
 #[cfg(feature = "unity_engine-mesh")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::Mesh_MeshData;
+    pub use super::Mesh_MeshDataArray;
     pub use super::Mesh;
     pub use super::IMesh;
     pub use super::IMeshMethods;
-    pub use super::Mesh_MeshData;
-    pub use super::Mesh_MeshDataArray;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     pub use crate::unity_engine::object_2::IObject_2;

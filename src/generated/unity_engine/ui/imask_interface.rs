@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-ui-imask_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IMask_Interface_unity2_raw{use super:: * ;
-pub unsafe fn enabled(this:IMask_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Enabled").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Enabled", <IMask_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn enabled(this:IMask_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IMask_Interface as::unity2::ClassIdentity> ::NAME,"Enabled",));
 let inner:extern "C" fn(IMask_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_rect_transform(this:IMask_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_rectTransform").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_rectTransform", <IMask_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_rect_transform(this:IMask_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IMask_Interface as::unity2::ClassIdentity> ::NAME,"get_rectTransform",));
 let inner:extern "C" fn(IMask_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::recttransform::RectTransform= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

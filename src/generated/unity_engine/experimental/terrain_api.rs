@@ -6,7 +6,7 @@
  #[cfg(feature="unity_engine-experimental-terrain_api-terraincallbacks")]pub use terraincallbacks::{ITerrainCallbacks_HeightmapChangedCallbackMethods,ITerrainCallbacks_TextureChangedCallbackMethods}
 ;
  #[cfg(any(feature="unity_engine-experimental-terrain_api-terrainutility-types"))]pub mod terrainutility;
- #[cfg(feature="unity_engine-experimental-terrain_api-terrainutility-types")]pub use terrainutility::{TerrainUtility_TerrainMap_TileCoord,TerrainUtility_TerrainMap_TerrainFilter,ITerrainUtility_TerrainMap_TerrainFilter,TerrainUtility,ITerrainUtility,TerrainUtility_TerrainGroups,ITerrainUtility_TerrainGroups,TerrainUtility_TerrainMap,ITerrainUtility_TerrainMap,TerrainUtility_TerrainMap_ErrorCode}
+ #[cfg(feature="unity_engine-experimental-terrain_api-terrainutility-types")]pub use terrainutility::{TerrainUtility_TerrainMap,ITerrainUtility_TerrainMap,TerrainUtility_TerrainMap_TerrainFilter,ITerrainUtility_TerrainMap_TerrainFilter,TerrainUtility_TerrainMap_ErrorCode,TerrainUtility,ITerrainUtility,TerrainUtility_TerrainMap_TileCoord,TerrainUtility_TerrainGroups,ITerrainUtility_TerrainGroups}
 ;
- #[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]pub use terrainutility::{ITerrainUtility_TerrainMap_TerrainFilterMethods,ITerrainUtility_TerrainGroupsMethods,ITerrainUtility_TerrainMapMethods}
+ #[cfg(feature="unity_engine-experimental-terrain_api-terrainutility")]pub use terrainutility::{ITerrainUtility_TerrainMapMethods,ITerrainUtility_TerrainMap_TerrainFilterMethods,ITerrainUtility_TerrainGroupsMethods}
 ;

@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-levelupsequnece-types")]
 pub use __types::*;
 
+#[cfg(feature="app-levelupsequnece")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LevelUpSequnece_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:LevelUpSequnece,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <LevelUpSequnece as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:LevelUpSequnece,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <LevelUpSequnece as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(LevelUpSequnece, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-levelupsequnece")]impl LevelUpSequnece{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::unit::Unit, i32, bool, bool)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,level:impl::core::convert::Into<i32> ,is_show_chara_image:impl::core::convert::Into<bool> ,is_talk:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1be9600usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(level),(bool)::core::convert::Into::into(is_show_chara_image),(bool)::core::convert::Into::into(is_talk))}
 }
@@ -35,12 +58,10 @@ pub use __types::*;
 (LevelUpSequnece)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::unit::Unit)::core::convert::Into::into(grow))}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1220usize)as*mut u8,();
-(LevelUpSequnece)__receiver)}
+__LevelUpSequnece_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1230usize)as*mut u8,();
-(LevelUpSequnece)__receiver)}
+__LevelUpSequnece_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetResName()` overload"]fn get_res_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LevelUpSequnece as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1be1240usize)as*mut u8, ::unity2::Il2CppString;

@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponlevel/WeaponLevel.md"))]#[::unity2::class(namespace="App",name="WeaponLevel")]#[parent(crate::system::object::Object)]pub struct WeaponLevel{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponlevel/WeaponLevel_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct WeaponLevel_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for WeaponLevel_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="WeaponLevel.Kind";
@@ -38,6 +35,9 @@ pub fn a()->Self{Self{value:4}
 pub fn s()->Self{Self{value:5}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/weaponlevel/WeaponLevel.md"))]#[::unity2::class(namespace="App",name="WeaponLevel")]#[parent(crate::system::object::Object)]pub struct WeaponLevel{}
 
 }
 
@@ -71,10 +71,10 @@ this}
 #[cfg(feature = "app-weaponlevel")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::WeaponLevel_Kind;
     pub use super::WeaponLevel;
     pub use super::IWeaponLevel;
     pub use super::IWeaponLevelMethods;
-    pub use super::WeaponLevel_Kind;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

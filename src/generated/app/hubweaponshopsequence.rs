@@ -48,6 +48,29 @@ pub fn end()->Self{Self{value:6}
 #[cfg(feature = "app-hubweaponshopsequence-types")]
 pub use __types::*;
 
+#[cfg(feature="app-hubweaponshopsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubWeaponShopSequence_unity2_raw{use super:: * ;
+pub unsafe fn create_weapon_shop_top_menu(this:HubWeaponShopSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubWeaponShopSequence as::unity2::ClassIdentity> ::NAME,"CreateWeaponShopTopMenu",));
+let inner:extern "C" fn(HubWeaponShopSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_weapon_shop_buy_menu(this:HubWeaponShopSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <HubWeaponShopSequence as::unity2::ClassIdentity> ::NAME,"CreateWeaponShopBuyMenu",));
+let inner:extern "C" fn(HubWeaponShopSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-hubweaponshopsequence")]impl HubWeaponShopSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2a744f0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -74,8 +97,7 @@ pub use __types::*;
 (HubWeaponShopSequence)__receiver)}
 }
 #[doc="`CreateWeaponShopTopMenu()` overload"]fn create_weapon_shop_top_menu(self,)->(){unsafe{let __receiver= <HubWeaponShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a756a0usize)as*mut u8,();
-(HubWeaponShopSequence)__receiver)}
+__HubWeaponShopSequence_unity2_raw::create_weapon_shop_top_menu(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateShopUnitSelectMenu()` overload"]fn create_shop_unit_select_menu(self,)->(){unsafe{let __receiver= <HubWeaponShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a758d0usize)as*mut u8,();
@@ -86,8 +108,7 @@ pub use __types::*;
 (HubWeaponShopSequence)__receiver)}
 }
 #[doc="`CreateWeaponShopBuyMenu()` overload"]fn create_weapon_shop_buy_menu(self,)->(){unsafe{let __receiver= <HubWeaponShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a75ba0usize)as*mut u8,();
-(HubWeaponShopSequence)__receiver)}
+__HubWeaponShopSequence_unity2_raw::create_weapon_shop_buy_menu(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DestroyWeaponShopBuyMenu()` overload"]fn destroy_weapon_shop_buy_menu(self,)->(){unsafe{let __receiver= <HubWeaponShopSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a75d70usize)as*mut u8,();

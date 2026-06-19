@@ -20,6 +20,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-profilecardvisualcharacterstampmenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-profilecardvisualcharacterstampmenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardVisualCharacterStampMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn on_build_menu_item_content(this:ProfileCardVisualCharacterStampMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ProfileCardVisualCharacterStampMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(ProfileCardVisualCharacterStampMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_new_arrival(this:ProfileCardVisualCharacterStampMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <ProfileCardVisualCharacterStampMenuItem as::unity2::ClassIdentity> ::NAME,"IsNewArrival",));
+let inner:extern "C" fn(ProfileCardVisualCharacterStampMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_already_read(this:ProfileCardVisualCharacterStampMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <ProfileCardVisualCharacterStampMenuItem as::unity2::ClassIdentity> ::NAME,"SetAlreadyRead",));
+let inner:extern "C" fn(ProfileCardVisualCharacterStampMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-profilecardvisualcharacterstampmenuitem")]pub trait IProfileCardVisualCharacterStampMenuItemMethods:IProfileCardVisualCharacterStampMenuItem{#[doc="`get_m_CharacterStampData()` overload"]fn get_m_character_stamp_data(self,)->crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData{unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04370usize)as*mut u8,crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData;
 (ProfileCardVisualCharacterStampMenuItem)__receiver)}
@@ -33,16 +66,13 @@ pub use __types::*;
 (ProfileCardVisualCharacterStampMenuItem)__receiver,(crate::app::profilecardcharacterstampdata::ProfileCardCharacterStampData)::core::convert::Into::into(character_stamp_data),(bool)::core::convert::Into::into(initial_select))}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04100usize)as*mut u8,();
-(ProfileCardVisualCharacterStampMenuItem)__receiver)}
+__ProfileCardVisualCharacterStampMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04390usize)as*mut u8,bool;
-(ProfileCardVisualCharacterStampMenuItem)__receiver)}
+__ProfileCardVisualCharacterStampMenuItem_unity2_raw::is_new_arrival(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualCharacterStampMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c04430usize)as*mut u8,();
-(ProfileCardVisualCharacterStampMenuItem)__receiver)}
+__ProfileCardVisualCharacterStampMenuItem_unity2_raw::set_already_read(__receiver, ::core::option::Option::None)}
 }
 }
 

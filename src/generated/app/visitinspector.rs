@@ -22,25 +22,64 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-visitinspector-types")]
 pub use __types::*;
 
+#[cfg(feature="app-visitinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VisitInspector_unity2_raw{use super:: * ;
+pub unsafe fn get_label(this:VisitInspector,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <VisitInspector as::unity2::ClassIdentity> ::NAME,"GetLabel",));
+let inner:extern "C" fn(VisitInspector, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_range(this:VisitInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <VisitInspector as::unity2::ClassIdentity> ::NAME,"GetRange",));
+let inner:extern "C" fn(VisitInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_color(this:VisitInspector,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <VisitInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
+let inner:extern "C" fn(VisitInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn post_call(this:VisitInspector,super_:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <VisitInspector as::unity2::ClassIdentity> ::NAME,"PostCall",));
+let inner:extern "C" fn(VisitInspector,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,super_,__mi)}
+}
+
 #[cfg(feature="app-visitinspector")]pub trait IVisitInspectorMethods:IVisitInspector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VisitInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21c3810usize)as*mut u8,();
 (VisitInspector)__receiver)}
 }
 #[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VisitInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21c3820usize)as*mut u8, ::unity2::Il2CppString;
-(VisitInspector)__receiver)}
+__VisitInspector_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <VisitInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21c3870usize)as*mut u8,i32;
-(VisitInspector)__receiver)}
+__VisitInspector_unity2_raw::get_range(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <VisitInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21c3880usize)as*mut u8,crate::unity_engine::color::Color;
-(VisitInspector)__receiver)}
+__VisitInspector_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PostCall(crate::app::procinst::ProcInst)` overload"]fn post_call(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <VisitInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21c38c0usize)as*mut u8,();
-(VisitInspector)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+__VisitInspector_unity2_raw::post_call(__receiver, ::core::convert::Into::into(super_), ::core::option::Option::None)}
 }
 }
 

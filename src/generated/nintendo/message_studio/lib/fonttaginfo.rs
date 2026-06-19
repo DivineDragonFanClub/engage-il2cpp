@@ -16,13 +16,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "nintendo-message_studio-lib-fonttaginfo-types")]
 pub use __types::*;
 
+#[cfg(feature="nintendo-message_studio-lib-fonttaginfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FontTagInfo_unity2_raw{use super:: * ;
+pub unsafe fn get_tag(this:FontTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FontTagInfo as::unity2::ClassIdentity> ::NAME,"get_Tag",));
+let inner:extern "C" fn(FontTagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_tag_group(this:FontTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FontTagInfo as::unity2::ClassIdentity> ::NAME,"get_TagGroup",));
+let inner:extern "C" fn(FontTagInfo, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="nintendo-message_studio-lib-fonttaginfo")]pub trait IFontTagInfoMethods:IFontTagInfo{#[doc="`get_Tag()` overload"]fn get_tag(self,)->u16{unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26106a0usize)as*mut u8,u16;
-(FontTagInfo)__receiver)}
+__FontTagInfo_unity2_raw::get_tag(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_TagGroup()` overload"]fn get_tag_group(self,)->u16{unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26106b0usize)as*mut u8,u16;
-(FontTagInfo)__receiver)}
+__FontTagInfo_unity2_raw::get_tag_group(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Index()` overload"]fn get_index(self,)->u16{unsafe{let __receiver= <FontTagInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26106c0usize)as*mut u8,u16;

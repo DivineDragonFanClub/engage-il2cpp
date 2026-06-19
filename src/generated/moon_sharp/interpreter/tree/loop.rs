@@ -17,26 +17,26 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-tree-loop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Loop_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile_break{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<Loop as::unity2::ClassIdentity> ::class(),"CompileBreak",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <Loop as::unity2::ClassIdentity> ::NAME,"CompileBreak",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_is_boundary{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<Loop as::unity2::ClassIdentity> ::class(),"IsBoundary",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <Loop as::unity2::ClassIdentity> ::NAME,"IsBoundary",e),}
-}
-}
+pub unsafe fn compile_break(this:Loop,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Loop as::unity2::ClassIdentity> ::NAME,"CompileBreak",));
+let inner:extern "C" fn(Loop,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,__mi)}
+pub unsafe fn is_boundary(this:Loop,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Loop as::unity2::ClassIdentity> ::NAME,"IsBoundary",));
+let inner:extern "C" fn(Loop, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<Loop as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -50,12 +50,10 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-loop")]pub trait ILoopMethods:ILoop{#[doc="`CompileBreak(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile_break(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <Loop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__Loop_unity2_raw::__lookup_compile_break::get_method_info().method_ptr,();
-(Loop)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+__Loop_unity2_raw::compile_break(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
 }
 #[doc="`IsBoundary()` overload"]fn is_boundary(self,)->bool{unsafe{let __receiver= <Loop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__Loop_unity2_raw::__lookup_is_boundary::get_method_info().method_ptr,bool;
-(Loop)__receiver)}
+__Loop_unity2_raw::is_boundary(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Loop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__Loop_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

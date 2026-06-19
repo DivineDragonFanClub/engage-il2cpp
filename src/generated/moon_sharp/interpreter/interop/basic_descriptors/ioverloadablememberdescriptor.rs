@@ -15,44 +15,62 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-basic_descriptors-ioverloadablememberdescriptor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IOverloadableMemberDescriptor_unity2_raw{use super:: * ;
-pub unsafe fn execute(this:IOverloadableMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Execute").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Execute", <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn execute(this:IOverloadableMemberDescriptor,script:crate::moon_sharp::interpreter::script::Script,obj:crate::system::object::Object,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,args:crate::moon_sharp::interpreter::callbackarguments::CallbackArguments,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,"Execute",));
 let inner:extern "C" fn(IOverloadableMemberDescriptor,crate::moon_sharp::interpreter::script::Script,crate::system::object::Object,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,crate::moon_sharp::interpreter::callbackarguments::CallbackArguments, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,script,obj,context,args,__mi)}
-pub unsafe fn get_extension_method_type(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_ExtensionMethodType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_ExtensionMethodType", <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_extension_method_type(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_ExtensionMethodType",));
 let inner:extern "C" fn(IOverloadableMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_parameters(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Parameters").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Parameters", <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_parameters(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_Parameters",));
 let inner:extern "C" fn(IOverloadableMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::moon_sharp::interpreter::interop::basic_descriptors::parameterdescriptor::ParameterDescriptor> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_var_args_array_type(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_VarArgsArrayType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_VarArgsArrayType", <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_var_args_array_type(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_VarArgsArrayType",));
 let inner:extern "C" fn(IOverloadableMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_var_args_element_type(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_VarArgsElementType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_VarArgsElementType", <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_var_args_element_type(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_VarArgsElementType",));
 let inner:extern "C" fn(IOverloadableMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_sort_discriminant(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_SortDiscriminant").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_SortDiscriminant", <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_sort_discriminant(this:IOverloadableMemberDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IOverloadableMemberDescriptor as::unity2::ClassIdentity> ::NAME,"get_SortDiscriminant",));
 let inner:extern "C" fn(IOverloadableMemberDescriptor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

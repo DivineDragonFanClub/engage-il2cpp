@@ -13,10 +13,7 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_GoldItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.GoldItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_GoldItem{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece.md"))]#[::unity2::class(namespace="App",name="ShopSequnece")]#[parent(crate::app::procinst::ProcInst)]pub struct ShopSequnece{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_ShopItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.ShopItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_ShopItem{#[offset(32)]#[rename(name="m_Data")]pub m_data:crate::app::shopdata::ShopData, #[offset(40)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData, #[offset(48)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(56)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_StockItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.StockItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_StockItem{#[offset(32)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
@@ -25,38 +22,286 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_ParamItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.ParamItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct ShopSequnece_ParamItem{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_ShopItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.ShopItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_ShopItem{#[offset(32)]#[rename(name="m_Data")]pub m_data:crate::app::shopdata::ShopData, #[offset(40)]#[rename(name="m_Item")]pub m_item:crate::app::itemdata::ItemData, #[offset(48)]#[rename(name="m_UnitItem")]pub m_unit_item:crate::app::unititem::UnitItem, #[offset(56)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece.md"))]#[::unity2::class(namespace="App",name="ShopSequnece")]#[parent(crate::app::procinst::ProcInst)]pub struct ShopSequnece{#[offset(112)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(120)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsequnece/ShopSequnece_GoldItem.md"))]#[::unity2::class(namespace="App",name="ShopSequnece.GoldItem")]#[parent(crate::app::shopsequnece::ShopSequnece_ParamItem)]pub struct ShopSequnece_GoldItem{}
 
 }
 
 #[cfg(feature = "app-shopsequnece-types")]
 pub use __types::*;
 
-#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_GoldItemMethods:IShopSequnece_GoldItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_GoldItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cae0usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_GoldItem)__receiver)}
+#[cfg(feature="app-shopsequnece")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShopSequnece_ShopItem_unity2_raw{use super:: * ;
+pub unsafe fn is_enable(this:ShopSequnece_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <ShopSequnece_ShopItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let inner:extern "C" fn(ShopSequnece_ShopItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name0(this:ShopSequnece_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <ShopSequnece_ShopItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(ShopSequnece_ShopItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name1(this:ShopSequnece_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <ShopSequnece_ShopItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let inner:extern "C" fn(ShopSequnece_ShopItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name2(this:ShopSequnece_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <ShopSequnece_ShopItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let inner:extern "C" fn(ShopSequnece_ShopItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:ShopSequnece_ShopItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ShopSequnece_ShopItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(ShopSequnece_ShopItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_GoldItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cb30usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_GoldItem)__receiver)}
+
+#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_ShopItemMethods:IShopSequnece_ShopItem{#[doc="`.ctor(crate::app::shopdata::ShopData, crate::app::unit::Unit)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::shopdata::ShopData> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cd50usize)as*mut u8,();
+(ShopSequnece_ShopItem)__receiver,(crate::app::shopdata::ShopData)::core::convert::Into::into(data),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSequnece_GoldItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cbf0usize)as*mut u8,();
-(ShopSequnece_GoldItem)__receiver)}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ShopItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ShopItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ShopItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ShopItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ShopItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_GoldItem>IShopSequnece_GoldItemMethods for __T{}
+#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_ShopItem>IShopSequnece_ShopItemMethods for __T{}
 
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_GoldItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ShopItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
 }
 
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_GoldItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ShopItem{#[doc="`.ctor(crate::app::shopdata::ShopData, crate::app::unit::Unit)` — overload selector"]pub fn new(data:crate::app::shopdata::ShopData,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(ShopSequnece_GoldItem), ::core::stringify!(new),));
- <Self as IShopSequnece_GoldItemMethods> ::ctor(this,);
+ failed to instantiate", ::core::stringify!(ShopSequnece_ShopItem), ::core::stringify!(new),));
+ <Self as IShopSequnece_ShopItemMethods> ::ctor(this,data,unit);
+this}
+}
+
+#[cfg(feature="app-shopsequnece")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShopSequnece_StockItem_unity2_raw{use super:: * ;
+pub unsafe fn get_column_name0(this:ShopSequnece_StockItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <ShopSequnece_StockItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(ShopSequnece_StockItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name2(this:ShopSequnece_StockItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <ShopSequnece_StockItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let inner:extern "C" fn(ShopSequnece_StockItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_StockItemMethods:IShopSequnece_StockItem{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ShopSequnece_StockItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6d1e0usize)as*mut u8,();
+(ShopSequnece_StockItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_StockItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_StockItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_StockItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_StockItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_StockItem>IShopSequnece_StockItemMethods for __T{}
+
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_StockItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_StockItem{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSequnece_StockItem), ::core::stringify!(new),));
+ <Self as IShopSequnece_StockItemMethods> ::ctor(this,unit);
+this}
+}
+
+#[cfg(feature="app-shopsequnece")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShopSequnece_ParamItem_unity2_raw{use super:: * ;
+pub unsafe fn get_column_count(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnCount",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width0(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth0",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width1(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth1",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_width2(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnWidth2",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name0(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name1(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name2(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_align2(this:ShopSequnece_ParamItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(55usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",55usize,__vt.len(), <ShopSequnece_ParamItem as::unity2::ClassIdentity> ::NAME,"GetColumnAlign2",));
+let inner:extern "C" fn(ShopSequnece_ParamItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Align= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_ParamItemMethods:IShopSequnece_ParamItem{#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_count(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_width0(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_width1(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_width2(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetColumnAlign2()` overload"]fn get_column_align2(self,)->crate::app::menuitem::MenuItem_Align{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_ParamItem_unity2_raw::get_column_align2(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cc00usize)as*mut u8,();
+(ShopSequnece_ParamItem)__receiver)}
+}
+}
+
+#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_ParamItem>IShopSequnece_ParamItemMethods for __T{}
+
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ParamItem{pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_column_width2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn get_column_align2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+}
+
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ParamItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSequnece_ParamItem), ::core::stringify!(new),));
+ <Self as IShopSequnece_ParamItemMethods> ::ctor(this,);
 this}
 }
 
@@ -89,153 +334,73 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_StockItemMethods:IShopSequnece_StockItem{#[doc="`.ctor(crate::app::unit::Unit)` overload"]fn ctor(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ShopSequnece_StockItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6d1e0usize)as*mut u8,();
-(ShopSequnece_StockItem)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+#[cfg(feature="app-shopsequnece")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShopSequnece_GoldItem_unity2_raw{use super:: * ;
+pub unsafe fn get_column_name0(this:ShopSequnece_GoldItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <ShopSequnece_GoldItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(ShopSequnece_GoldItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name2(this:ShopSequnece_GoldItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(44usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",44usize,__vt.len(), <ShopSequnece_GoldItem as::unity2::ClassIdentity> ::NAME,"GetColumnName2",));
+let inner:extern "C" fn(ShopSequnece_GoldItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_StockItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6d220usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_StockItem)__receiver)}
+
+#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_GoldItemMethods:IShopSequnece_GoldItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_GoldItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_GoldItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
 }
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_StockItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6d280usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_StockItem)__receiver)}
+#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_GoldItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ShopSequnece_GoldItem_unity2_raw::get_column_name2(__receiver, ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSequnece_GoldItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cbf0usize)as*mut u8,();
+(ShopSequnece_GoldItem)__receiver)}
 }
 }
 
-#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_StockItem>IShopSequnece_StockItemMethods for __T{}
+#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_GoldItem>IShopSequnece_GoldItemMethods for __T{}
 
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_StockItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_GoldItem{pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_StockItem{#[doc="`.ctor(crate::app::unit::Unit)` — overload selector"]pub fn new(unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-shopsequnece")]impl ShopSequnece_GoldItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(ShopSequnece_StockItem), ::core::stringify!(new),));
- <Self as IShopSequnece_StockItemMethods> ::ctor(this,unit);
-this}
-}
-
-#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_ParamItemMethods:IShopSequnece_ParamItem{#[doc="`GetColumnCount()` overload"]fn get_column_count(self,)->i32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cc10usize)as*mut u8,i32;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`GetColumnWidth0()` overload"]fn get_column_width0(self,)->f32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cc20usize)as*mut u8,f32;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`GetColumnWidth1()` overload"]fn get_column_width1(self,)->f32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cc30usize)as*mut u8,f32;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`GetColumnWidth2()` overload"]fn get_column_width2(self,)->f32{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cc40usize)as*mut u8,f32;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cc50usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cca0usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6ccf0usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`GetColumnAlign2()` overload"]fn get_column_align2(self,)->crate::app::menuitem::MenuItem_Align{unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cd40usize)as*mut u8,crate::app::menuitem::MenuItem_Align;
-(ShopSequnece_ParamItem)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSequnece_ParamItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cc00usize)as*mut u8,();
-(ShopSequnece_ParamItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_ParamItem>IShopSequnece_ParamItemMethods for __T{}
-
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ParamItem{pub fn get_column_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_column_width0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_width1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_column_width2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn get_column_align2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-}
-
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ParamItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ShopSequnece_ParamItem), ::core::stringify!(new),));
- <Self as IShopSequnece_ParamItemMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-shopsequnece")]pub trait IShopSequnece_ShopItemMethods:IShopSequnece_ShopItem{#[doc="`.ctor(crate::app::shopdata::ShopData, crate::app::unit::Unit)` overload"]fn ctor(self,data:impl::core::convert::Into<crate::app::shopdata::ShopData> ,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cd50usize)as*mut u8,();
-(ShopSequnece_ShopItem)__receiver,(crate::app::shopdata::ShopData)::core::convert::Into::into(data),(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6ce80usize)as*mut u8,bool;
-(ShopSequnece_ShopItem)__receiver)}
-}
-#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cf80usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_ShopItem)__receiver)}
-}
-#[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6cf90usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_ShopItem)__receiver)}
-}
-#[doc="`GetColumnName2()` overload"]fn get_column_name2(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6d060usize)as*mut u8, ::unity2::Il2CppString;
-(ShopSequnece_ShopItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ShopSequnece_ShopItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6d0d0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ShopSequnece_ShopItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-shopsequnece")]impl<__T:IShopSequnece_ShopItem>IShopSequnece_ShopItemMethods for __T{}
-
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ShopItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_column_name0_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_column_name1_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_column_name2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-}
-
-#[cfg(feature="app-shopsequnece")]impl ShopSequnece_ShopItem{#[doc="`.ctor(crate::app::shopdata::ShopData, crate::app::unit::Unit)` — overload selector"]pub fn new(data:crate::app::shopdata::ShopData,unit:crate::app::unit::Unit)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ShopSequnece_ShopItem), ::core::stringify!(new),));
- <Self as IShopSequnece_ShopItemMethods> ::ctor(this,data,unit);
+ failed to instantiate", ::core::stringify!(ShopSequnece_GoldItem), ::core::stringify!(new),));
+ <Self as IShopSequnece_GoldItemMethods> ::ctor(this,);
 this}
 }
 
 #[cfg(feature = "app-shopsequnece")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShopSequnece_GoldItem;
-    pub use super::IShopSequnece_GoldItem;
-    pub use super::IShopSequnece_GoldItemMethods;
-    pub use super::ShopSequnece;
-    pub use super::IShopSequnece;
-    pub use super::IShopSequneceMethods;
+    pub use super::ShopSequnece_ShopItem;
+    pub use super::IShopSequnece_ShopItem;
+    pub use super::IShopSequnece_ShopItemMethods;
     pub use super::ShopSequnece_StockItem;
     pub use super::IShopSequnece_StockItem;
     pub use super::IShopSequnece_StockItemMethods;
     pub use super::ShopSequnece_ParamItem;
     pub use super::IShopSequnece_ParamItem;
     pub use super::IShopSequnece_ParamItemMethods;
-    pub use super::ShopSequnece_ShopItem;
-    pub use super::IShopSequnece_ShopItem;
-    pub use super::IShopSequnece_ShopItemMethods;
+    pub use super::ShopSequnece;
+    pub use super::IShopSequnece;
+    pub use super::IShopSequneceMethods;
+    pub use super::ShopSequnece_GoldItem;
+    pub use super::IShopSequnece_GoldItem;
+    pub use super::IShopSequnece_GoldItemMethods;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;

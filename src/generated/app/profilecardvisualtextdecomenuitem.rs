@@ -20,6 +20,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-profilecardvisualtextdecomenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-profilecardvisualtextdecomenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardVisualTextDecoMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn on_build_menu_item_content(this:ProfileCardVisualTextDecoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ProfileCardVisualTextDecoMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(ProfileCardVisualTextDecoMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_new_arrival(this:ProfileCardVisualTextDecoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <ProfileCardVisualTextDecoMenuItem as::unity2::ClassIdentity> ::NAME,"IsNewArrival",));
+let inner:extern "C" fn(ProfileCardVisualTextDecoMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_already_read(this:ProfileCardVisualTextDecoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <ProfileCardVisualTextDecoMenuItem as::unity2::ClassIdentity> ::NAME,"SetAlreadyRead",));
+let inner:extern "C" fn(ProfileCardVisualTextDecoMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-profilecardvisualtextdecomenuitem")]pub trait IProfileCardVisualTextDecoMenuItemMethods:IProfileCardVisualTextDecoMenuItem{#[doc="`get_m_TextDecoData()` overload"]fn get_m_text_deco_data(self,)->crate::app::profilecardtextdecodata::ProfileCardTextDecoData{unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07530usize)as*mut u8,crate::app::profilecardtextdecodata::ProfileCardTextDecoData;
 (ProfileCardVisualTextDecoMenuItem)__receiver)}
@@ -33,16 +66,13 @@ pub use __types::*;
 (ProfileCardVisualTextDecoMenuItem)__receiver,(crate::app::profilecardtextdecodata::ProfileCardTextDecoData)::core::convert::Into::into(text_deco_data),(bool)::core::convert::Into::into(initial_select))}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07550usize)as*mut u8,();
-(ProfileCardVisualTextDecoMenuItem)__receiver)}
+__ProfileCardVisualTextDecoMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsNewArrival()` overload"]fn is_new_arrival(self,)->bool{unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c07810usize)as*mut u8,bool;
-(ProfileCardVisualTextDecoMenuItem)__receiver)}
+__ProfileCardVisualTextDecoMenuItem_unity2_raw::is_new_arrival(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetAlreadyRead()` overload"]fn set_already_read(self,)->(){unsafe{let __receiver= <ProfileCardVisualTextDecoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c078b0usize)as*mut u8,();
-(ProfileCardVisualTextDecoMenuItem)__receiver)}
+__ProfileCardVisualTextDecoMenuItem_unity2_raw::set_already_read(__receiver, ::core::option::Option::None)}
 }
 }
 

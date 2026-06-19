@@ -31,16 +31,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ScriptFunctionDelegate as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_invoke{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Array<crate::system::object::Object>as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ScriptFunctionDelegate as::unity2::ClassIdentity> ::class(),"Invoke",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ScriptFunctionDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",e),}
-}
-}
+pub unsafe fn invoke(this:ScriptFunctionDelegate,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ScriptFunctionDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(ScriptFunctionDelegate, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-scriptfunctiondelegate")]pub trait IScriptFunctionDelegateMethods:IScriptFunctionDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <ScriptFunctionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -48,8 +48,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ScriptFunctionDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->crate::system::object::Object{unsafe{let __receiver= <ScriptFunctionDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ScriptFunctionDelegate_unity2_raw::__lookup_invoke::get_method_info().method_ptr,crate::system::object::Object;
-(ScriptFunctionDelegate)__receiver,(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+__ScriptFunctionDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 }
 

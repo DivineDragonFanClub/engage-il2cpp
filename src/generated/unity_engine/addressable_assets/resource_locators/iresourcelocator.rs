@@ -15,23 +15,32 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-addressable_assets-resource_locators-iresourcelocator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IResourceLocator_unity2_raw{use super:: * ;
-pub unsafe fn get_locator_id(this:IResourceLocator,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_LocatorId").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_LocatorId", <IResourceLocator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_locator_id(this:IResourceLocator,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IResourceLocator as::unity2::ClassIdentity> ::NAME,"get_LocatorId",));
 let inner:extern "C" fn(IResourceLocator, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_keys(this:IResourceLocator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Keys").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Keys", <IResourceLocator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_keys(this:IResourceLocator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IResourceLocator as::unity2::ClassIdentity> ::NAME,"get_Keys",));
 let inner:extern "C" fn(IResourceLocator, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn locate(this:IResourceLocator,key:crate::system::object::Object,r#type: ::unity2::SystemType,locations: *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Locate").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Locate", <IResourceLocator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn locate(this:IResourceLocator,key:crate::system::object::Object,r#type: ::unity2::SystemType,locations: *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IResourceLocator as::unity2::ClassIdentity> ::NAME,"Locate",));
 let inner:extern "C" fn(IResourceLocator,crate::system::object::Object, ::unity2::SystemType, *mut crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> , ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

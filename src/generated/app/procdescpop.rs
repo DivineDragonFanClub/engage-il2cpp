@@ -18,13 +18,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procdescpop-types")]
 pub use __types::*;
 
+#[cfg(feature="app-procdescpop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescPop_unity2_raw{use super:: * ;
+pub unsafe fn execute(this:ProcDescPop,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProcDescPop as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(ProcDescPop,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procdesc::ProcDesc_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+}
+
 #[cfg(feature="app-procdescpop")]pub trait IProcDescPopMethods:IProcDescPop{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProcDescPop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281b190usize)as*mut u8,();
 (ProcDescPop)__receiver)}
 }
 #[doc="`Execute(crate::app::procinst::ProcInst)` overload"]fn execute(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procdesc::ProcDesc_Result{unsafe{let __receiver= <ProcDescPop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281da60usize)as*mut u8,crate::app::procdesc::ProcDesc_Result;
-(ProcDescPop)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+__ProcDescPop_unity2_raw::execute(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 }
 

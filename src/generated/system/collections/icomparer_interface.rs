@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="system-collections-icomparer_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IComparer_Interface_unity2_raw{use super:: * ;
-pub unsafe fn compare(this:IComparer_Interface,x:crate::system::object::Object,y:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Compare").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Compare", <IComparer_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn compare(this:IComparer_Interface,x:crate::system::object::Object,y:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IComparer_Interface as::unity2::ClassIdentity> ::NAME,"Compare",));
 let inner:extern "C" fn(IComparer_Interface,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

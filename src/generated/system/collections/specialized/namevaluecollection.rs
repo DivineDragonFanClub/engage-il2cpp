@@ -18,6 +18,79 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-specialized-namevaluecollection-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-specialized-namevaluecollection")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NameValueCollection_unity2_raw{use super:: * ;
+pub unsafe fn add(this:NameValueCollection,name: ::unity2::Il2CppString,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <NameValueCollection as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(NameValueCollection, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,value,__mi)}
+pub unsafe fn get(this:NameValueCollection,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <NameValueCollection as::unity2::ClassIdentity> ::NAME,"Get",));
+let inner:extern "C" fn(NameValueCollection, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn get_values(this:NameValueCollection,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <NameValueCollection as::unity2::ClassIdentity> ::NAME,"GetValues",));
+let inner:extern "C" fn(NameValueCollection, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Array< ::unity2::Il2CppString> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn set(this:NameValueCollection,name: ::unity2::Il2CppString,value: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <NameValueCollection as::unity2::ClassIdentity> ::NAME,"Set",));
+let inner:extern "C" fn(NameValueCollection, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,value,__mi)}
+pub unsafe fn remove(this:NameValueCollection,name: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <NameValueCollection as::unity2::ClassIdentity> ::NAME,"Remove",));
+let inner:extern "C" fn(NameValueCollection, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,name,__mi)}
+pub unsafe fn get_2(this:NameValueCollection,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <NameValueCollection as::unity2::ClassIdentity> ::NAME,"Get",));
+let inner:extern "C" fn(NameValueCollection,i32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+pub unsafe fn get_key(this:NameValueCollection,index:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <NameValueCollection as::unity2::ClassIdentity> ::NAME,"GetKey",));
+let inner:extern "C" fn(NameValueCollection,i32, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,__mi)}
+}
+
 #[cfg(feature="system-collections-specialized-namevaluecollection")]impl NameValueCollection{#[doc="`GetAsOneString(crate::system::collections::arraylist::ArrayList)` overload"]pub fn get_as_one_string(list:impl::core::convert::Into<crate::system::collections::arraylist::ArrayList>)-> ::unity2::Il2CppString{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3487030usize)as*mut u8, ::unity2::Il2CppString;
 (crate::system::collections::arraylist::ArrayList)::core::convert::Into::into(list))}
 }
@@ -39,24 +112,19 @@ pub use __types::*;
 (NameValueCollection)__receiver)}
 }
 #[doc="`Add(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn add(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34872a0usize)as*mut u8,();
-(NameValueCollection)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__NameValueCollection_unity2_raw::add(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Get(::unity2::Il2CppString)` overload"]fn get(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34874c0usize)as*mut u8, ::unity2::Il2CppString;
-(NameValueCollection)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__NameValueCollection_unity2_raw::get(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`GetValues(::unity2::Il2CppString)` overload"]fn get_values(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Array< ::unity2::Il2CppString>{unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3487600usize)as*mut u8, ::unity2::Array< ::unity2::Il2CppString> ;
-(NameValueCollection)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__NameValueCollection_unity2_raw::get_values(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`Set(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn set(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34877c0usize)as*mut u8,();
-(NameValueCollection)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(value))}
+__NameValueCollection_unity2_raw::set(__receiver, ::core::convert::Into::into(name), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Remove(::unity2::Il2CppString)` overload"]fn remove(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34878d0usize)as*mut u8,();
-(NameValueCollection)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+__NameValueCollection_unity2_raw::remove(__receiver, ::core::convert::Into::into(name), ::core::option::Option::None)}
 }
 #[doc="`get_Item(::unity2::Il2CppString)` overload"]fn get_item(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3487920usize)as*mut u8, ::unity2::Il2CppString;
@@ -67,12 +135,10 @@ pub use __types::*;
 (NameValueCollection)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`Get(i32)` overload"]fn get_2(self,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3487940usize)as*mut u8, ::unity2::Il2CppString;
-(NameValueCollection)__receiver,(i32)::core::convert::Into::into(index))}
+__NameValueCollection_unity2_raw::get_2(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 #[doc="`GetKey(i32)` overload"]fn get_key(self,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <NameValueCollection as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3487a40usize)as*mut u8, ::unity2::Il2CppString;
-(NameValueCollection)__receiver,(i32)::core::convert::Into::into(index))}
+__NameValueCollection_unity2_raw::get_key(__receiver, ::core::convert::Into::into(index), ::core::option::Option::None)}
 }
 }
 

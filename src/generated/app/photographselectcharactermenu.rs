@@ -20,6 +20,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-photographselectcharactermenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-photographselectcharactermenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectCharacterMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:PhotographSelectCharacterMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <PhotographSelectCharacterMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(PhotographSelectCharacterMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-photographselectcharactermenu")]impl PhotographSelectCharacterMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographdisposmanager::PhotographDisposManager)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2696c10usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager))}
 }
@@ -30,8 +43,7 @@ pub use __types::*;
 (PhotographSelectCharacterMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectCharacterMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2696f90usize)as*mut u8, ::unity2::Il2CppString;
-(PhotographSelectCharacterMenu)__receiver)}
+__PhotographSelectCharacterMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 }
 

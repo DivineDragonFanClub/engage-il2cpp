@@ -20,6 +20,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-giftmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-giftmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GiftMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:GiftMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <GiftMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(GiftMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:GiftMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <GiftMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(GiftMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-giftmenu")]impl GiftMenu{#[doc="`get_CurrentMenuSelect()` overload"]pub fn get_current_menu_select()->crate::app::basicmenuselect::BasicMenuSelect{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2524c50usize)as*mut u8,crate::app::basicmenuselect::BasicMenuSelect;
 )}
 }
@@ -36,12 +59,10 @@ pub use __types::*;
 (GiftMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25252e0usize)as*mut u8, ::unity2::Il2CppString;
-(GiftMenu)__receiver)}
+__GiftMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <GiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2525330usize)as*mut u8,();
-(GiftMenu)__receiver)}
+__GiftMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetHelpText(::unity2::Il2CppString)` overload"]fn set_help_text(self,help_text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <GiftMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25253b0usize)as*mut u8,();

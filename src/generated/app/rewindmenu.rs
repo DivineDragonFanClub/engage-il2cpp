@@ -25,25 +25,7 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_CancelConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RewindMenu.CancelConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RewindMenu_CancelConfirmDialog{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_MenuItem_UnitIconInfo.md"))]#[::unity2::class(namespace="App",name="RewindMenu.MenuItem.UnitIconInfo")]#[parent(crate::system::object::Object)]pub struct RewindMenu_MenuItem_UnitIconInfo{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemYes.md"))]#[::unity2::class(namespace="App",name="RewindMenu.ExecuteConfirmDialog.ItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RewindMenu_ExecuteConfirmDialog_ItemYes{#[offset(112)]#[rename(name="m_IsToPhaseBegin")]pub m_is_to_phase_begin:bool,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemNo.md"))]#[::unity2::class(namespace="App",name="RewindMenu.ExecuteConfirmDialog.ItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct RewindMenu_ExecuteConfirmDialog_ItemNo{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap.md"))]#[::unity2::class(namespace="App",name="RewindMenu.CancelConfirmDialog.ItemYesForChallengeMap")]#[parent(crate::app::rewindmenu::RewindMenu_CancelConfirmDialog_ItemYes)]pub struct RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RewindMenu.ExecuteConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RewindMenu_ExecuteConfirmDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="RewindMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RewindMenu_MenuItem{#[offset(100)]#[rename(name="m_LogIndex")]pub m_log_index:i32, #[offset(104)]#[rename(name="m_LogText")]pub m_log_text: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_CursorX")]pub m_cursor_x:i32, #[offset(116)]#[rename(name="m_CursorZ")]pub m_cursor_z:i32, #[offset(120)]#[rename(name="m_ActorMapHistoryIndex")]pub m_actor_map_history_index:i32, #[offset(128)]#[rename(name="m_UnitIconInfo")]pub m_unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, #[offset(136)]#[rename(name="m_DieUnitIconInfo")]pub m_die_unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, #[offset(144)]#[rename(name="m_ForceType")]pub m_force_type:crate::app::force::Force_Type, #[offset(148)]#[rename(name="m_IsPlayerPhaseBegin")]pub m_is_player_phase_begin:bool, #[offset(152)]#[rename(name="m_prev")]pub m_prev:crate::app::rewindmenu::RewindMenu_MenuItem, #[offset(160)]#[rename(name="m_next")]pub m_next:crate::app::rewindmenu::RewindMenu_MenuItem,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYes.md"))]#[::unity2::class(namespace="App",name="RewindMenu.CancelConfirmDialog.ItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RewindMenu_CancelConfirmDialog_ItemYes{}
@@ -52,36 +34,30 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemNo.md"))]#[::unity2::class(namespace="App",name="RewindMenu.CancelConfirmDialog.ItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct RewindMenu_CancelConfirmDialog_ItemNo{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemYes.md"))]#[::unity2::class(namespace="App",name="RewindMenu.ExecuteConfirmDialog.ItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RewindMenu_ExecuteConfirmDialog_ItemYes{#[offset(112)]#[rename(name="m_IsToPhaseBegin")]pub m_is_to_phase_begin:bool,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_CancelConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RewindMenu.CancelConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RewindMenu_CancelConfirmDialog{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu.md"))]#[::unity2::class(namespace="App",name="RewindMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct RewindMenu{#[offset(208)]#[rename(name="m_scrollNow")]pub m_scroll_now:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_MenuItem.md"))]#[::unity2::class(namespace="App",name="RewindMenu.MenuItem")]#[parent(crate::app::basicmenuitem::BasicMenuItem)]pub struct RewindMenu_MenuItem{#[offset(100)]#[rename(name="m_LogIndex")]pub m_log_index:i32, #[offset(104)]#[rename(name="m_LogText")]pub m_log_text: ::unity2::Il2CppString, #[offset(112)]#[rename(name="m_CursorX")]pub m_cursor_x:i32, #[offset(116)]#[rename(name="m_CursorZ")]pub m_cursor_z:i32, #[offset(120)]#[rename(name="m_ActorMapHistoryIndex")]pub m_actor_map_history_index:i32, #[offset(128)]#[rename(name="m_UnitIconInfo")]pub m_unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, #[offset(136)]#[rename(name="m_DieUnitIconInfo")]pub m_die_unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, #[offset(144)]#[rename(name="m_ForceType")]pub m_force_type:crate::app::force::Force_Type, #[offset(148)]#[rename(name="m_IsPlayerPhaseBegin")]pub m_is_player_phase_begin:bool, #[offset(152)]#[rename(name="m_prev")]pub m_prev:crate::app::rewindmenu::RewindMenu_MenuItem, #[offset(160)]#[rename(name="m_next")]pub m_next:crate::app::rewindmenu::RewindMenu_MenuItem,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog_ItemNo.md"))]#[::unity2::class(namespace="App",name="RewindMenu.ExecuteConfirmDialog.ItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct RewindMenu_ExecuteConfirmDialog_ItemNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_ExecuteConfirmDialog.md"))]#[::unity2::class(namespace="App",name="RewindMenu.ExecuteConfirmDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RewindMenu_ExecuteConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rewindmenu/RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap.md"))]#[::unity2::class(namespace="App",name="RewindMenu.CancelConfirmDialog.ItemYesForChallengeMap")]#[parent(crate::app::rewindmenu::RewindMenu_CancelConfirmDialog_ItemYes)]pub struct RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{}
 
 }
 
 #[cfg(feature = "app-rewindmenu-types")]
 pub use __types::*;
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog{#[doc="`CreateDialog(crate::app::procinst::ProcInst)` overload"]pub fn create_dialog(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ea10usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_CancelConfirmDialogMethods:IRewindMenu_CancelConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <RewindMenu_CancelConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ea00usize)as*mut u8,();
-(RewindMenu_CancelConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_CancelConfirmDialog>IRewindMenu_CancelConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenu_CancelConfirmDialog), ::core::stringify!(new),));
- <Self as IRewindMenu_CancelConfirmDialogMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
 
 #[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_MenuItem_UnitIconInfoMethods:IRewindMenu_MenuItem_UnitIconInfo{#[doc="`get_Person()` overload"]fn get_person(self,)->crate::app::persondata::PersonData{unsafe{let __receiver= <RewindMenu_MenuItem_UnitIconInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c6e0usize)as*mut u8,crate::app::persondata::PersonData;
@@ -161,180 +137,17 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_ExecuteConfirmDialog_ItemYesMethods:IRewindMenu_ExecuteConfirmDialog_ItemYes{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_to_phase_begin:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog_ItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c500usize)as*mut u8,();
-(RewindMenu_ExecuteConfirmDialog_ItemYes)__receiver,(bool)::core::convert::Into::into(is_to_phase_begin))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog_ItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c5a0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RewindMenu_ExecuteConfirmDialog_ItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_ExecuteConfirmDialog_ItemYes>IRewindMenu_ExecuteConfirmDialog_ItemYesMethods for __T{}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemYes{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_to_phase_begin:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemYes), ::core::stringify!(new),));
- <Self as IRewindMenu_ExecuteConfirmDialog_ItemYesMethods> ::ctor(this,is_to_phase_begin);
-this}
-}
-
-#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_ExecuteConfirmDialog_ItemNoMethods:IRewindMenu_ExecuteConfirmDialog_ItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog_ItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c470usize)as*mut u8,();
-(RewindMenu_ExecuteConfirmDialog_ItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_ExecuteConfirmDialog_ItemNo>IRewindMenu_ExecuteConfirmDialog_ItemNoMethods for __T{}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemNo), ::core::stringify!(new),));
- <Self as IRewindMenu_ExecuteConfirmDialog_ItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods:IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c370usize)as*mut u8,();
-(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap>IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods for __T{}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap), ::core::stringify!(new),));
- <Self as IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog{#[doc="`CreateDialog(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_dialog(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_to_phase_begin:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ebf0usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_to_phase_begin))}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_ExecuteConfirmDialogMethods:IRewindMenu_ExecuteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ebe0usize)as*mut u8,();
-(RewindMenu_ExecuteConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_ExecuteConfirmDialog>IRewindMenu_ExecuteConfirmDialogMethods for __T{}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn create_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenu_ExecuteConfirmDialog), ::core::stringify!(new),));
- <Self as IRewindMenu_ExecuteConfirmDialogMethods> ::ctor(this,menu_item_list,menu_content);
-this}
-}
-
-#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_MenuItemMethods:IRewindMenu_MenuItem{#[doc="`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` overload"]fn ctor(self,log_index:impl::core::convert::Into<i32> ,log_text:impl::core::convert::Into< ::unity2::Il2CppString> ,cursor_x:impl::core::convert::Into<i32> ,cursor_z:impl::core::convert::Into<i32> ,actor_map_history_index:impl::core::convert::Into<i32> ,unit_icon_info:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo> ,die_unit_icon_info:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_player_phase_begin:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ecf0usize)as*mut u8,();
-(RewindMenu_MenuItem)__receiver,(i32)::core::convert::Into::into(log_index),(::unity2::Il2CppString)::core::convert::Into::into(log_text),(i32)::core::convert::Into::into(cursor_x),(i32)::core::convert::Into::into(cursor_z),(i32)::core::convert::Into::into(actor_map_history_index),(crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo)::core::convert::Into::into(unit_icon_info),(crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo)::core::convert::Into::into(die_unit_icon_info),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(bool)::core::convert::Into::into(is_player_phase_begin))}
-}
-#[doc="`SetLink(crate::app::rewindmenu::RewindMenu_MenuItem, crate::app::rewindmenu::RewindMenu_MenuItem)` overload"]fn set_link(self,prev:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem> ,next:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem>)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee00usize)as*mut u8,();
-(RewindMenu_MenuItem)__receiver,(crate::app::rewindmenu::RewindMenu_MenuItem)::core::convert::Into::into(prev),(crate::app::rewindmenu::RewindMenu_MenuItem)::core::convert::Into::into(next))}
-}
-#[doc="`GetPrev()` overload"]fn get_prev(self,)->crate::app::rewindmenu::RewindMenu_MenuItem{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee40usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`GetNext()` overload"]fn get_next(self,)->crate::app::rewindmenu::RewindMenu_MenuItem{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee50usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee60usize)as*mut u8, ::unity2::Il2CppString;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`GetWidth()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee70usize)as*mut u8,f32;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`GetHeight()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee80usize)as*mut u8,f32;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee90usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`GetUnitIconInfo()` overload"]fn get_unit_icon_info(self,)->crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eea0usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`GetDieUnitIconInfo()` overload"]fn get_die_unit_icon_info(self,)->crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eeb0usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`GetForceType()` overload"]fn get_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eec0usize)as*mut u8,crate::app::force::Force_Type;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`IsPlayerPhaseBegin()` overload"]fn is_player_phase_begin(self,)->bool{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eed0usize)as*mut u8,bool;
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eee0usize)as*mut u8,();
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f1b0usize)as*mut u8,();
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f1c0usize)as*mut u8,();
-(RewindMenu_MenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0f1d0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RewindMenu_MenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_MenuItem>IRewindMenu_MenuItemMethods for __T{}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_prev_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn get_unit_icon_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_die_unit_icon_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn is_player_phase_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-}
-
-#[cfg(feature="app-rewindmenu")]impl RewindMenu_MenuItem{#[doc="`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` — overload selector"]pub fn new(log_index:i32,log_text: ::unity2::Il2CppString,cursor_x:i32,cursor_z:i32,actor_map_history_index:i32,unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,die_unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,force_type:crate::app::force::Force_Type,is_player_phase_begin:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RewindMenu_MenuItem), ::core::stringify!(new),));
- <Self as IRewindMenu_MenuItemMethods> ::ctor(this,log_index,log_text,cursor_x,cursor_z,actor_map_history_index,unit_icon_info,die_unit_icon_info,force_type,is_player_phase_begin);
-this}
+#[cfg(feature="app-rewindmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:RewindMenu_CancelConfirmDialog_ItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RewindMenu_CancelConfirmDialog_ItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RewindMenu_CancelConfirmDialog_ItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_CancelConfirmDialog_ItemYesMethods:IRewindMenu_CancelConfirmDialog_ItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RewindMenu_CancelConfirmDialog_ItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -342,8 +155,7 @@ this}
 (RewindMenu_CancelConfirmDialog_ItemYes)__receiver)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RewindMenu_CancelConfirmDialog_ItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c2f0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RewindMenu_CancelConfirmDialog_ItemYes)__receiver)}
+__RewindMenu_CancelConfirmDialog_ItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -378,6 +190,168 @@ this}
 this}
 }
 
+#[cfg(feature="app-rewindmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:RewindMenu_ExecuteConfirmDialog_ItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RewindMenu_ExecuteConfirmDialog_ItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RewindMenu_ExecuteConfirmDialog_ItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_ExecuteConfirmDialog_ItemYesMethods:IRewindMenu_ExecuteConfirmDialog_ItemYes{#[doc="`.ctor(bool)` overload"]fn ctor(self,is_to_phase_begin:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog_ItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c500usize)as*mut u8,();
+(RewindMenu_ExecuteConfirmDialog_ItemYes)__receiver,(bool)::core::convert::Into::into(is_to_phase_begin))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog_ItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_ExecuteConfirmDialog_ItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_ExecuteConfirmDialog_ItemYes>IRewindMenu_ExecuteConfirmDialog_ItemYesMethods for __T{}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemYes{#[doc="`.ctor(bool)` — overload selector"]pub fn new(is_to_phase_begin:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemYes), ::core::stringify!(new),));
+ <Self as IRewindMenu_ExecuteConfirmDialog_ItemYesMethods> ::ctor(this,is_to_phase_begin);
+this}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog{#[doc="`CreateDialog(crate::app::procinst::ProcInst)` overload"]pub fn create_dialog(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ea10usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_CancelConfirmDialogMethods:IRewindMenu_CancelConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <RewindMenu_CancelConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ea00usize)as*mut u8,();
+(RewindMenu_CancelConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_CancelConfirmDialog>IRewindMenu_CancelConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenu_CancelConfirmDialog), ::core::stringify!(new),));
+ <Self as IRewindMenu_CancelConfirmDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-rewindmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RewindMenu_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:RewindMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RewindMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn after_build(this:RewindMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(RewindMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:RewindMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(RewindMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_show_row_max(this:RewindMenu,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"GetShowRowMax",));
+let inner:extern "C" fn(RewindMenu, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn adjust_scroll_index(this:RewindMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"AdjustScrollIndex",));
+let inner:extern "C" fn(RewindMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:RewindMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(RewindMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn key_up(this:RewindMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"KeyUp",));
+let inner:extern "C" fn(RewindMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_down(this:RewindMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"KeyDown",));
+let inner:extern "C" fn(RewindMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_left(this:RewindMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(RewindMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:RewindMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <RewindMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(RewindMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+}
+
 #[cfg(feature="app-rewindmenu")]impl RewindMenu{#[doc="`CreateMenu(crate::app::procinst::ProcInst)` overload"]pub fn create_menu(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::rewindmenu::RewindMenu{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x201abf0usize)as*mut u8,crate::app::rewindmenu::RewindMenu;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -396,8 +370,7 @@ this}
 (RewindMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20197f0usize)as*mut u8, ::unity2::Il2CppString;
-(RewindMenu)__receiver)}
+__RewindMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetForcePlayerColor()` overload"]fn get_force_player_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2019840usize)as*mut u8,crate::unity_engine::color::Color;
@@ -412,24 +385,20 @@ this}
 (RewindMenu)__receiver)}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2019a80usize)as*mut u8,();
-(RewindMenu)__receiver)}
+__RewindMenu_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2019aa0usize)as*mut u8,();
-(RewindMenu)__receiver)}
+__RewindMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetShowRowMax()` overload"]fn get_show_row_max(self,)->i32{unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2019b50usize)as*mut u8,i32;
-(RewindMenu)__receiver)}
+__RewindMenu_unity2_raw::get_show_row_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateSelectAndScroll()` overload"]fn update_select_and_scroll(self,)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2019b60usize)as*mut u8,();
 (RewindMenu)__receiver)}
 }
 #[doc="`AdjustScrollIndex()` overload"]fn adjust_scroll_index(self,)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x201a400usize)as*mut u8,();
-(RewindMenu)__receiver)}
+__RewindMenu_unity2_raw::adjust_scroll_index(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateParts(crate::app::force::Force_Type, i32, i32)` overload"]fn update_parts(self,current_force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,turn:impl::core::convert::Into<i32> ,rest_unit_num:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x201a410usize)as*mut u8,();
@@ -440,24 +409,19 @@ this}
 (RewindMenu)__receiver)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x201a740usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RewindMenu)__receiver)}
+__RewindMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x201a860usize)as*mut u8,();
-(RewindMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RewindMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x201a910usize)as*mut u8,();
-(RewindMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RewindMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x201a9c0usize)as*mut u8,();
-(RewindMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RewindMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x201aae0usize)as*mut u8,();
-(RewindMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
+__RewindMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 }
 
@@ -492,39 +456,267 @@ pub fn create_menu_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-rewindmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RewindMenu_MenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_width(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetWidth",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_height(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"GetHeight",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_deselect(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"OnDeselect",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_cursor_move_end(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"OnCursorMoveEnd",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:RewindMenu_MenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RewindMenu_MenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RewindMenu_MenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_MenuItemMethods:IRewindMenu_MenuItem{#[doc="`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` overload"]fn ctor(self,log_index:impl::core::convert::Into<i32> ,log_text:impl::core::convert::Into< ::unity2::Il2CppString> ,cursor_x:impl::core::convert::Into<i32> ,cursor_z:impl::core::convert::Into<i32> ,actor_map_history_index:impl::core::convert::Into<i32> ,unit_icon_info:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo> ,die_unit_icon_info:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo> ,force_type:impl::core::convert::Into<crate::app::force::Force_Type> ,is_player_phase_begin:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ecf0usize)as*mut u8,();
+(RewindMenu_MenuItem)__receiver,(i32)::core::convert::Into::into(log_index),(::unity2::Il2CppString)::core::convert::Into::into(log_text),(i32)::core::convert::Into::into(cursor_x),(i32)::core::convert::Into::into(cursor_z),(i32)::core::convert::Into::into(actor_map_history_index),(crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo)::core::convert::Into::into(unit_icon_info),(crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo)::core::convert::Into::into(die_unit_icon_info),(crate::app::force::Force_Type)::core::convert::Into::into(force_type),(bool)::core::convert::Into::into(is_player_phase_begin))}
+}
+#[doc="`SetLink(crate::app::rewindmenu::RewindMenu_MenuItem, crate::app::rewindmenu::RewindMenu_MenuItem)` overload"]fn set_link(self,prev:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem> ,next:impl::core::convert::Into<crate::app::rewindmenu::RewindMenu_MenuItem>)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee00usize)as*mut u8,();
+(RewindMenu_MenuItem)__receiver,(crate::app::rewindmenu::RewindMenu_MenuItem)::core::convert::Into::into(prev),(crate::app::rewindmenu::RewindMenu_MenuItem)::core::convert::Into::into(next))}
+}
+#[doc="`GetPrev()` overload"]fn get_prev(self,)->crate::app::rewindmenu::RewindMenu_MenuItem{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee40usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem;
+(RewindMenu_MenuItem)__receiver)}
+}
+#[doc="`GetNext()` overload"]fn get_next(self,)->crate::app::rewindmenu::RewindMenu_MenuItem{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ee50usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem;
+(RewindMenu_MenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetWidth()` overload"]fn get_width(self,)->f32{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::get_width(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetHeight()` overload"]fn get_height(self,)->f32{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::get_height(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetUnitIconInfo()` overload"]fn get_unit_icon_info(self,)->crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eea0usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
+(RewindMenu_MenuItem)__receiver)}
+}
+#[doc="`GetDieUnitIconInfo()` overload"]fn get_die_unit_icon_info(self,)->crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eeb0usize)as*mut u8,crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo;
+(RewindMenu_MenuItem)__receiver)}
+}
+#[doc="`GetForceType()` overload"]fn get_force_type(self,)->crate::app::force::Force_Type{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eec0usize)as*mut u8,crate::app::force::Force_Type;
+(RewindMenu_MenuItem)__receiver)}
+}
+#[doc="`IsPlayerPhaseBegin()` overload"]fn is_player_phase_begin(self,)->bool{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0eed0usize)as*mut u8,bool;
+(RewindMenu_MenuItem)__receiver)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnDeselect()` overload"]fn on_deselect(self,)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::on_deselect(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnCursorMoveEnd()` overload"]fn on_cursor_move_end(self,)->(){unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::on_cursor_move_end(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RewindMenu_MenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RewindMenu_MenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_MenuItem>IRewindMenu_MenuItemMethods for __T{}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_MenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_link_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_prev_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_next_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_width_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn build_attribute_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn get_unit_icon_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_die_unit_icon_info_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_force_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn is_player_phase_begin_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn on_deselect_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_cursor_move_end_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_MenuItem{#[doc="`.ctor(i32, ::unity2::Il2CppString, i32, i32, i32, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo, crate::app::force::Force_Type, bool)` — overload selector"]pub fn new(log_index:i32,log_text: ::unity2::Il2CppString,cursor_x:i32,cursor_z:i32,actor_map_history_index:i32,unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,die_unit_icon_info:crate::app::rewindmenu::RewindMenu_MenuItem_UnitIconInfo,force_type:crate::app::force::Force_Type,is_player_phase_begin:bool)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenu_MenuItem), ::core::stringify!(new),));
+ <Self as IRewindMenu_MenuItemMethods> ::ctor(this,log_index,log_text,cursor_x,cursor_z,actor_map_history_index,unit_icon_info,die_unit_icon_info,force_type,is_player_phase_begin);
+this}
+}
+
+#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_ExecuteConfirmDialog_ItemNoMethods:IRewindMenu_ExecuteConfirmDialog_ItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog_ItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c470usize)as*mut u8,();
+(RewindMenu_ExecuteConfirmDialog_ItemNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_ExecuteConfirmDialog_ItemNo>IRewindMenu_ExecuteConfirmDialog_ItemNoMethods for __T{}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog_ItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenu_ExecuteConfirmDialog_ItemNo), ::core::stringify!(new),));
+ <Self as IRewindMenu_ExecuteConfirmDialog_ItemNoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog{#[doc="`CreateDialog(crate::app::procinst::ProcInst, bool)` overload"]pub fn create_dialog(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,is_to_phase_begin:impl::core::convert::Into<bool>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ebf0usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(bool)::core::convert::Into::into(is_to_phase_begin))}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_ExecuteConfirmDialogMethods:IRewindMenu_ExecuteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicdialogcontent::BasicDialogContent>)->(){unsafe{let __receiver= <RewindMenu_ExecuteConfirmDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b0ebe0usize)as*mut u8,();
+(RewindMenu_ExecuteConfirmDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_ExecuteConfirmDialog>IRewindMenu_ExecuteConfirmDialogMethods for __T{}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn create_dialog_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_ExecuteConfirmDialog{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicdialogcontent::BasicDialogContent)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicdialogcontent::BasicDialogContent)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenu_ExecuteConfirmDialog), ::core::stringify!(new),));
+ <Self as IRewindMenu_ExecuteConfirmDialogMethods> ::ctor(this,menu_item_list,menu_content);
+this}
+}
+
+#[cfg(feature="app-rewindmenu")]pub trait IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods:IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b7c370usize)as*mut u8,();
+(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-rewindmenu")]impl<__T:IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap>IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods for __T{}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-rewindmenu")]impl RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap), ::core::stringify!(new),));
+ <Self as IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-rewindmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RewindMenu_CancelConfirmDialog;
-    pub use super::IRewindMenu_CancelConfirmDialog;
-    pub use super::IRewindMenu_CancelConfirmDialogMethods;
     pub use super::RewindMenu_MenuItem_UnitIconInfo;
     pub use super::IRewindMenu_MenuItem_UnitIconInfo;
     pub use super::IRewindMenu_MenuItem_UnitIconInfoMethods;
-    pub use super::RewindMenu_ExecuteConfirmDialog_ItemYes;
-    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemYes;
-    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemYesMethods;
-    pub use super::RewindMenu_ExecuteConfirmDialog_ItemNo;
-    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemNo;
-    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemNoMethods;
-    pub use super::RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap;
-    pub use super::IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap;
-    pub use super::IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods;
-    pub use super::RewindMenu_ExecuteConfirmDialog;
-    pub use super::IRewindMenu_ExecuteConfirmDialog;
-    pub use super::IRewindMenu_ExecuteConfirmDialogMethods;
-    pub use super::RewindMenu_MenuItem;
-    pub use super::IRewindMenu_MenuItem;
-    pub use super::IRewindMenu_MenuItemMethods;
     pub use super::RewindMenu_CancelConfirmDialog_ItemYes;
     pub use super::IRewindMenu_CancelConfirmDialog_ItemYes;
     pub use super::IRewindMenu_CancelConfirmDialog_ItemYesMethods;
     pub use super::RewindMenu_CancelConfirmDialog_ItemNo;
     pub use super::IRewindMenu_CancelConfirmDialog_ItemNo;
     pub use super::IRewindMenu_CancelConfirmDialog_ItemNoMethods;
+    pub use super::RewindMenu_ExecuteConfirmDialog_ItemYes;
+    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemYes;
+    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemYesMethods;
+    pub use super::RewindMenu_CancelConfirmDialog;
+    pub use super::IRewindMenu_CancelConfirmDialog;
+    pub use super::IRewindMenu_CancelConfirmDialogMethods;
     pub use super::RewindMenu;
     pub use super::IRewindMenu;
     pub use super::IRewindMenuMethods;
+    pub use super::RewindMenu_MenuItem;
+    pub use super::IRewindMenu_MenuItem;
+    pub use super::IRewindMenu_MenuItemMethods;
+    pub use super::RewindMenu_ExecuteConfirmDialog_ItemNo;
+    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemNo;
+    pub use super::IRewindMenu_ExecuteConfirmDialog_ItemNoMethods;
+    pub use super::RewindMenu_ExecuteConfirmDialog;
+    pub use super::IRewindMenu_ExecuteConfirmDialog;
+    pub use super::IRewindMenu_ExecuteConfirmDialogMethods;
+    pub use super::RewindMenu_CancelConfirmDialog_ItemYesForChallengeMap;
+    pub use super::IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMap;
+    pub use super::IRewindMenu_CancelConfirmDialog_ItemYesForChallengeMapMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

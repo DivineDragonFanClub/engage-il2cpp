@@ -11,15 +11,48 @@ use crate::unity_engine::rendering::universal::scriptablerenderpass::{IScriptabl
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Internal",name="AdditionalLightsShadowCasterPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct AdditionalLightsShadowCasterPass{#[static_field]#[rename(name="m_AdditionalShadowsBufferId")]pub m_additional_shadows_buffer_id:i32, #[static_field]#[rename(name="m_AdditionalShadowsIndicesId")]pub m_additional_shadows_indices_id:i32, #[offset(112)]#[rename(name="m_UseStructuredBuffer")]pub m_use_structured_buffer:bool, #[static_field]#[rename(name="k_ShadowmapBufferBits")]pub k_shadowmap_buffer_bits:i32, #[offset(120)]#[rename(name="m_AdditionalLightsShadowmap")]pub m_additional_lights_shadowmap:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(168)]#[rename(name="m_AdditionalLightsShadowmapTexture")]pub m_additional_lights_shadowmap_texture:crate::unity_engine::rendertexture::RenderTexture, #[offset(176)]#[rename(name="m_ShadowmapWidth")]pub m_shadowmap_width:i32, #[offset(180)]#[rename(name="m_ShadowmapHeight")]pub m_shadowmap_height:i32, #[offset(184)]#[rename(name="m_AdditionalLightSlices")]pub m_additional_light_slices: ::unity2::Array<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData> , #[offset(192)]#[rename(name="m_AdditionalLightsWorldToShadow")]pub m_additional_lights_world_to_shadow: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> , #[offset(200)]#[rename(name="m_AdditionalLightsShadowParams")]pub m_additional_lights_shadow_params: ::unity2::Array<crate::unity_engine::vector4::Vector4> , #[offset(208)]#[rename(name="m_AdditionalLightsShadowData")]pub m_additional_lights_shadow_data: ::unity2::Array<crate::unity_engine::rendering::universal::shaderinput::ShaderInput_ShadowData> , #[offset(216)]#[rename(name="m_AdditionalShadowCastingLightIndices")]pub m_additional_shadow_casting_light_indices:crate::system::collections::generic::list_1::List_1<i32> , #[offset(224)]#[rename(name="m_AdditionalShadowCastingLightIndicesMap")]pub m_additional_shadow_casting_light_indices_map:crate::system::collections::generic::list_1::List_1<i32> , #[offset(232)]#[rename(name="m_ShadowCastingLightIndicesMap")]pub m_shadow_casting_light_indices_map:crate::system::collections::generic::list_1::List_1<i32> , #[offset(240)]#[rename(name="m_SupportsBoxFilterForShadows")]pub m_supports_box_filter_for_shadows:bool, #[offset(248)]#[rename(name="m_ProfilingSetupSampler")]pub m_profiling_setup_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Internal",name="AdditionalLightsShadowCasterPass.AdditionalShadowsConstantBuffer")]#[parent(crate::system::object::Object)]pub struct AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer{#[static_field]#[rename(name="_AdditionalLightsWorldToShadow")]pub additional_lights_world_to_shadow:i32, #[static_field]#[rename(name="_AdditionalShadowParams")]pub additional_shadow_params:i32, #[static_field]#[rename(name="_AdditionalShadowOffset0")]pub additional_shadow_offset0:i32, #[static_field]#[rename(name="_AdditionalShadowOffset1")]pub additional_shadow_offset1:i32, #[static_field]#[rename(name="_AdditionalShadowOffset2")]pub additional_shadow_offset2:i32, #[static_field]#[rename(name="_AdditionalShadowOffset3")]pub additional_shadow_offset3:i32, #[static_field]#[rename(name="_AdditionalShadowmapSize")]pub additional_shadowmap_size:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/rendering/universal/internal/additionallightsshadowcasterpass/AdditionalLightsShadowCasterPass.md"))]#[::unity2::class(namespace="UnityEngine.Rendering.Universal.Internal",name="AdditionalLightsShadowCasterPass")]#[parent(crate::unity_engine::rendering::universal::scriptablerenderpass::ScriptableRenderPass)]pub struct AdditionalLightsShadowCasterPass{#[static_field]#[rename(name="m_AdditionalShadowsBufferId")]pub m_additional_shadows_buffer_id:i32, #[static_field]#[rename(name="m_AdditionalShadowsIndicesId")]pub m_additional_shadows_indices_id:i32, #[offset(112)]#[rename(name="m_UseStructuredBuffer")]pub m_use_structured_buffer:bool, #[static_field]#[rename(name="k_ShadowmapBufferBits")]pub k_shadowmap_buffer_bits:i32, #[offset(120)]#[rename(name="m_AdditionalLightsShadowmap")]pub m_additional_lights_shadowmap:crate::unity_engine::rendering::universal::rendertargethandle::RenderTargetHandle, #[offset(168)]#[rename(name="m_AdditionalLightsShadowmapTexture")]pub m_additional_lights_shadowmap_texture:crate::unity_engine::rendertexture::RenderTexture, #[offset(176)]#[rename(name="m_ShadowmapWidth")]pub m_shadowmap_width:i32, #[offset(180)]#[rename(name="m_ShadowmapHeight")]pub m_shadowmap_height:i32, #[offset(184)]#[rename(name="m_AdditionalLightSlices")]pub m_additional_light_slices: ::unity2::Array<crate::unity_engine::rendering::universal::shadowslicedata::ShadowSliceData> , #[offset(192)]#[rename(name="m_AdditionalLightsWorldToShadow")]pub m_additional_lights_world_to_shadow: ::unity2::Array<crate::unity_engine::matrix4x4::Matrix4x4> , #[offset(200)]#[rename(name="m_AdditionalLightsShadowParams")]pub m_additional_lights_shadow_params: ::unity2::Array<crate::unity_engine::vector4::Vector4> , #[offset(208)]#[rename(name="m_AdditionalLightsShadowData")]pub m_additional_lights_shadow_data: ::unity2::Array<crate::unity_engine::rendering::universal::shaderinput::ShaderInput_ShadowData> , #[offset(216)]#[rename(name="m_AdditionalShadowCastingLightIndices")]pub m_additional_shadow_casting_light_indices:crate::system::collections::generic::list_1::List_1<i32> , #[offset(224)]#[rename(name="m_AdditionalShadowCastingLightIndicesMap")]pub m_additional_shadow_casting_light_indices_map:crate::system::collections::generic::list_1::List_1<i32> , #[offset(232)]#[rename(name="m_ShadowCastingLightIndicesMap")]pub m_shadow_casting_light_indices_map:crate::system::collections::generic::list_1::List_1<i32> , #[offset(240)]#[rename(name="m_SupportsBoxFilterForShadows")]pub m_supports_box_filter_for_shadows:bool, #[offset(248)]#[rename(name="m_ProfilingSetupSampler")]pub m_profiling_setup_sampler:crate::unity_engine::rendering::profilingsampler::ProfilingSampler,}
 
 }
 
 #[cfg(feature = "unity_engine-rendering-universal-internal-additionallightsshadowcasterpass-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-rendering-universal-internal-additionallightsshadowcasterpass")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AdditionalLightsShadowCasterPass_unity2_raw{use super:: * ;
+pub unsafe fn configure(this:AdditionalLightsShadowCasterPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,camera_texture_descriptor:crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AdditionalLightsShadowCasterPass as::unity2::ClassIdentity> ::NAME,"Configure",));
+let inner:extern "C" fn(AdditionalLightsShadowCasterPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer,crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cmd,camera_texture_descriptor,__mi)}
+pub unsafe fn execute(this:AdditionalLightsShadowCasterPass,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,rendering_data: *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AdditionalLightsShadowCasterPass as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(AdditionalLightsShadowCasterPass,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mut crate::unity_engine::rendering::universal::renderingdata::RenderingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,context,rendering_data,__mi)}
+pub unsafe fn on_camera_cleanup(this:AdditionalLightsShadowCasterPass,cmd:crate::unity_engine::rendering::commandbuffer::CommandBuffer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AdditionalLightsShadowCasterPass as::unity2::ClassIdentity> ::NAME,"OnCameraCleanup",));
+let inner:extern "C" fn(AdditionalLightsShadowCasterPass,crate::unity_engine::rendering::commandbuffer::CommandBuffer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cmd,__mi)}
+}
 
 #[cfg(feature="unity_engine-rendering-universal-internal-additionallightsshadowcasterpass")]pub trait IAdditionalLightsShadowCasterPassMethods:IAdditionalLightsShadowCasterPass{#[doc="`.ctor(crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent)` overload"]fn ctor(self,evt:impl::core::convert::Into<crate::unity_engine::rendering::universal::renderpassevent::RenderPassEvent>)->(){unsafe{let __receiver= <AdditionalLightsShadowCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3afe0usize)as*mut u8,();
@@ -33,18 +66,15 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x2a3b450usize)as*mut
 (__ret,__out_0.assume_init())}
 }
 #[doc="`Configure(crate::unity_engine::rendering::commandbuffer::CommandBuffer, crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)` overload"]fn configure(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer> ,camera_texture_descriptor:impl::core::convert::Into<crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor>)->(){unsafe{let __receiver= <AdditionalLightsShadowCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3c4b0usize)as*mut u8,();
-(AdditionalLightsShadowCasterPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd),(crate::unity_engine::rendertexturedescriptor::RenderTextureDescriptor)::core::convert::Into::into(camera_texture_descriptor))}
+__AdditionalLightsShadowCasterPass_unity2_raw::configure(__receiver, ::core::convert::Into::into(cmd), ::core::convert::Into::into(camera_texture_descriptor), ::core::option::Option::None)}
 }
 #[doc="`Execute(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, *mutcrate::unity_engine::rendering::universal::renderingdata::RenderingData)` overload"]fn execute(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext>)->crate::unity_engine::rendering::universal::renderingdata::RenderingData{unsafe{let __receiver= <AdditionalLightsShadowCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::rendering::universal::renderingdata::RenderingData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3c5b0usize)as*mut u8,();
-(AdditionalLightsShadowCasterPass)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(*mut crate::unity_engine::rendering::universal::renderingdata::RenderingData)__out_0.as_mut_ptr());
+__AdditionalLightsShadowCasterPass_unity2_raw::execute(__receiver, ::core::convert::Into::into(context),__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`OnCameraCleanup(crate::unity_engine::rendering::commandbuffer::CommandBuffer)` overload"]fn on_camera_cleanup(self,cmd:impl::core::convert::Into<crate::unity_engine::rendering::commandbuffer::CommandBuffer>)->(){unsafe{let __receiver= <AdditionalLightsShadowCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3cbb0usize)as*mut u8,();
-(AdditionalLightsShadowCasterPass)__receiver,(crate::unity_engine::rendering::commandbuffer::CommandBuffer)::core::convert::Into::into(cmd))}
+__AdditionalLightsShadowCasterPass_unity2_raw::on_camera_cleanup(__receiver, ::core::convert::Into::into(cmd), ::core::option::Option::None)}
 }
 #[doc="`GetShadowLightIndexFromLightIndex(i32)` overload"]fn get_shadow_light_index_from_light_index(self,visible_light_index:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <AdditionalLightsShadowCasterPass as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2a3ccb0usize)as*mut u8,i32;
@@ -102,11 +132,11 @@ this}
 #[cfg(feature = "unity_engine-rendering-universal-internal-additionallightsshadowcasterpass")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
+    pub use super::IAdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
     pub use super::AdditionalLightsShadowCasterPass;
     pub use super::IAdditionalLightsShadowCasterPass;
     pub use super::IAdditionalLightsShadowCasterPassMethods;
-    pub use super::AdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
-    pub use super::IAdditionalLightsShadowCasterPass_AdditionalShadowsConstantBuffer;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::rendering::universal::scriptablerenderpass::IScriptableRenderPass;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

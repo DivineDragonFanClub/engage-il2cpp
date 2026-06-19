@@ -19,27 +19,206 @@ use crate::system::reflection::memberinfo::{IMemberInfo,MemberInfo}
 pub use __types::*;
 
 #[cfg(feature="system-reflection-fieldinfo")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FieldInfo_unity2_raw{use super:: * ;
-pub unsafe fn get_attributes(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::fieldattributes::FieldAttributes{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Attributes").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Attributes", <FieldInfo as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_attributes(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::fieldattributes::FieldAttributes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_Attributes",));
 let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->crate::system::reflection::fieldattributes::FieldAttributes= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_field_type(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_FieldType").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_FieldType", <FieldInfo as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_field_type(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_FieldType",));
 let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_value(this:FieldInfo,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetValue").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetValue", <FieldInfo as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_value(this:FieldInfo,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"GetValue",));
 let inner:extern "C" fn(FieldInfo,crate::system::object::Object, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,obj,__mi)}
+pub unsafe fn get_member_type(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_MemberType",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->crate::system::reflection::membertypes::MemberTypes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_literal(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsLiteral",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_static(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsStatic",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_init_only(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsInitOnly",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_public(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsPublic",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_private(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsPrivate",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_family(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsFamily",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_assembly(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsAssembly",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_family_and_assembly(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsFamilyAndAssembly",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_family_or_assembly(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsFamilyOrAssembly",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_special_name(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsSpecialName",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_not_serialized(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"get_IsNotSerialized",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_value(this:FieldInfo,obj:crate::system::object::Object,value:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"SetValue",));
+let inner:extern "C" fn(FieldInfo,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,value,__mi)}
+pub unsafe fn get_field_offset(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"GetFieldOffset",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_raw_constant_value(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"GetRawConstantValue",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn equals(this:FieldInfo,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(FieldInfo,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn get_hash_code(this:FieldInfo,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <FieldInfo as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(FieldInfo, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="system-reflection-fieldinfo")]impl FieldInfo{#[doc="`internal_from_handle_type(::unity2::IntPtr, ::unity2::IntPtr)` overload"]pub fn internal_from_handle_type(field_handle:impl::core::convert::Into< ::unity2::IntPtr> ,type_handle:impl::core::convert::Into< ::unity2::IntPtr>)->crate::system::reflection::fieldinfo::FieldInfo{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9720usize)as*mut u8,crate::system::reflection::fieldinfo::FieldInfo;
@@ -67,76 +246,59 @@ __FieldInfo_unity2_raw::get_field_type(__receiver, ::core::option::Option::None)
 __FieldInfo_unity2_raw::get_value(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`get_MemberType()` overload"]fn get_member_type(self,)->crate::system::reflection::membertypes::MemberTypes{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad94e0usize)as*mut u8,crate::system::reflection::membertypes::MemberTypes;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_member_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsLiteral()` overload"]fn get_is_literal(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad94f0usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_literal(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsStatic()` overload"]fn get_is_static(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9520usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_static(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsInitOnly()` overload"]fn get_is_init_only(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9550usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_init_only(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsPublic()` overload"]fn get_is_public(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9580usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_public(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsPrivate()` overload"]fn get_is_private(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad95b0usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_private(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsFamily()` overload"]fn get_is_family(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad95e0usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_family(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsAssembly()` overload"]fn get_is_assembly(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9610usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_assembly(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsFamilyAndAssembly()` overload"]fn get_is_family_and_assembly(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9640usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_family_and_assembly(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsFamilyOrAssembly()` overload"]fn get_is_family_or_assembly(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9670usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_family_or_assembly(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsSpecialName()` overload"]fn get_is_special_name(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad96a0usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_special_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsNotSerialized()` overload"]fn get_is_not_serialized(self,)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad96d0usize)as*mut u8,bool;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_is_not_serialized(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetValue(crate::system::object::Object, crate::system::object::Object)` overload"]fn set_value(self,obj:impl::core::convert::Into<crate::system::object::Object> ,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9700usize)as*mut u8,();
-(FieldInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj),(crate::system::object::Object)::core::convert::Into::into(value))}
+__FieldInfo_unity2_raw::set_value(__receiver, ::core::convert::Into::into(obj), ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`GetFieldOffset()` overload"]fn get_field_offset(self,)->i32{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad98f0usize)as*mut u8,i32;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_field_offset(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetPseudoCustomAttributes()` overload"]fn get_pseudo_custom_attributes(self,)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad99c0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
 (FieldInfo)__receiver)}
 }
 #[doc="`GetRawConstantValue()` overload"]fn get_raw_constant_value(self,)->crate::system::object::Object{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9bf0usize)as*mut u8,crate::system::object::Object;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_raw_constant_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9c50usize)as*mut u8,bool;
-(FieldInfo)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__FieldInfo_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <FieldInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3ad9c60usize)as*mut u8,i32;
-(FieldInfo)__receiver)}
+__FieldInfo_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 }
 

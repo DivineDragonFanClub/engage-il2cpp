@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procinst/ProcInst.md"))]#[::unity2::class(namespace="App",name="ProcInst")]#[parent(crate::system::object::Object)]pub struct ProcInst{#[offset(16)]#[rename(name="m_Descs")]pub m_descs: ::unity2::Array<crate::app::procdesc::ProcDesc> , #[offset(24)]#[rename(name="m_DescIndex")]pub m_desc_index:i32, #[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_HashCode")]pub m_hash_code:i32, #[offset(48)]#[rename(name="m_Super")]pub m_super:crate::app::procinst::ProcInst, #[offset(56)]#[rename(name="m_Child")]pub m_child:crate::app::procinst::ProcInst, #[offset(64)]#[rename(name="m_Prev")]pub m_prev:crate::app::procinst::ProcInst, #[offset(72)]#[rename(name="m_Next")]pub m_next:crate::app::procinst::ProcInst, #[offset(80)]#[rename(name="m_Persistent")]pub m_persistent:crate::app::procvoidmethod::ProcVoidMethod, #[offset(88)]#[rename(name="m_State")]pub m_state:crate::app::procinst::ProcInst_State, #[offset(92)]#[rename(name="m_Suspend")]pub m_suspend:i32, #[offset(96)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(100)]#[rename(name="m_TickTime")]pub m_tick_time:f32, #[offset(104)]#[rename(name="m_Stack")]pub m_stack:crate::app::rawvaluestack::RawValueStack,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procinst/ProcInst_State.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProcInst_State{pub value:i32,}
 impl::unity2::ClassIdentity for ProcInst_State{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProcInst.State";
@@ -37,10 +34,156 @@ pub fn r#yield()->Self{Self{value:16}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/procinst/ProcInst.md"))]#[::unity2::class(namespace="App",name="ProcInst")]#[parent(crate::system::object::Object)]pub struct ProcInst{#[offset(16)]#[rename(name="m_Descs")]pub m_descs: ::unity2::Array<crate::app::procdesc::ProcDesc> , #[offset(24)]#[rename(name="m_DescIndex")]pub m_desc_index:i32, #[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_HashCode")]pub m_hash_code:i32, #[offset(48)]#[rename(name="m_Super")]pub m_super:crate::app::procinst::ProcInst, #[offset(56)]#[rename(name="m_Child")]pub m_child:crate::app::procinst::ProcInst, #[offset(64)]#[rename(name="m_Prev")]pub m_prev:crate::app::procinst::ProcInst, #[offset(72)]#[rename(name="m_Next")]pub m_next:crate::app::procinst::ProcInst, #[offset(80)]#[rename(name="m_Persistent")]pub m_persistent:crate::app::procvoidmethod::ProcVoidMethod, #[offset(88)]#[rename(name="m_State")]pub m_state:crate::app::procinst::ProcInst_State, #[offset(92)]#[rename(name="m_Suspend")]pub m_suspend:i32, #[offset(96)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(100)]#[rename(name="m_TickTime")]pub m_tick_time:f32, #[offset(104)]#[rename(name="m_Stack")]pub m_stack:crate::app::rawvaluestack::RawValueStack,}
+
 }
 
 #[cfg(feature = "app-procinst-types")]
 pub use __types::*;
+
+#[cfg(feature="app-procinst")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcInst_unity2_raw{use super:: * ;
+pub unsafe fn get_can_wait_skip(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"get_CanWaitSkip",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_start(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnStart",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_tick(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_coroutine(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnCoroutine",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->crate::system::collections::ienumerator::IEnumerator= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_persistent(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_create(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_bind(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnBind",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_unbind(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnUnbind",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_singleton_create(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnSingletonCreate",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_singleton_dispose(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnSingletonDispose",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_shutdown(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_draw_monitor(this:ProcInst,monitor:crate::app::debugmonitor::DebugMonitor,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"OnDrawMonitor",));
+let inner:extern "C" fn(ProcInst,crate::app::debugmonitor::DebugMonitor, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,monitor,__mi)}
+pub unsafe fn get_debug_log(this:ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <ProcInst as::unity2::ClassIdentity> ::NAME,"GetDebugLog",));
+let inner:extern "C" fn(ProcInst, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-procinst")]pub trait IProcInstMethods:IProcInst{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x280b9c0usize)as*mut u8,();
@@ -267,60 +410,46 @@ pub use __types::*;
 (ProcInst)__receiver,(bool)::core::convert::Into::into(is_first))}
 }
 #[doc="`get_CanWaitSkip()` overload"]fn get_can_wait_skip(self,)->bool{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f330usize)as*mut u8,bool;
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::get_can_wait_skip(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnStart()` overload"]fn on_start(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f340usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f350usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCoroutine()` overload"]fn on_coroutine(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f360usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_coroutine(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3c0usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3d0usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3e0usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBind()` overload"]fn on_bind(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f3f0usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_bind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUnbind()` overload"]fn on_unbind(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f400usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_unbind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSingletonCreate()` overload"]fn on_singleton_create(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f410usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_singleton_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSingletonDispose()` overload"]fn on_singleton_dispose(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f420usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_singleton_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f430usize)as*mut u8,();
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDrawMonitor(crate::app::debugmonitor::DebugMonitor)` overload"]fn on_draw_monitor(self,monitor:impl::core::convert::Into<crate::app::debugmonitor::DebugMonitor>)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f440usize)as*mut u8,();
-(ProcInst)__receiver,(crate::app::debugmonitor::DebugMonitor)::core::convert::Into::into(monitor))}
+__ProcInst_unity2_raw::on_draw_monitor(__receiver, ::core::convert::Into::into(monitor), ::core::option::Option::None)}
 }
 #[doc="`GetDebugLog()` overload"]fn get_debug_log(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281f450usize)as*mut u8, ::unity2::Il2CppString;
-(ProcInst)__receiver)}
+__ProcInst_unity2_raw::get_debug_log(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Shutdown()` overload"]fn shutdown(self,)->(){unsafe{let __receiver= <ProcInst as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281f460usize)as*mut u8,();
@@ -423,10 +552,10 @@ this}
 #[cfg(feature = "app-procinst")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProcInst_State;
     pub use super::ProcInst;
     pub use super::IProcInst;
     pub use super::IProcInstMethods;
-    pub use super::ProcInst_State;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

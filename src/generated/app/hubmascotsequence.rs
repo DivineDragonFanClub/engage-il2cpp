@@ -29,6 +29,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="HubMascotSequence.NameDecideConfirm.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotsequence/HubMascotSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubMascotSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for HubMascotSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubMascotSequence.Label";
@@ -58,18 +61,64 @@ pub fn exit()->Self{Self{value:6}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotsequence/HubMascotSequence.md"))]#[::unity2::class(namespace="App",name="HubMascotSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct HubMascotSequence{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="HubMascotSequence.NameDecideConfirm.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes.md"))]#[::unity2::class(namespace="App",name="HubMascotSequence.NameDecideConfirm.ConfirmDialogItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm.md"))]#[::unity2::class(namespace="App",name="HubMascotSequence.NameDecideConfirm")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct HubMascotSequence_NameDecideConfirm{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubmascotsequence/HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo.md"))]#[::unity2::class(namespace="App",name="HubMascotSequence.NameDecideConfirm.ConfirmDialogItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{}
 
 }
 
 #[cfg(feature = "app-hubmascotsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-hubmascotsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes_unity2_raw{use super:: * ;
+pub unsafe fn b_call(this:HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-hubmascotsequence")]pub trait IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63c50usize)as*mut u8,();
+(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-hubmascotsequence")]impl<__T:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes>IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods for __T{}
+
+#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes), ::core::stringify!(new),));
+ <Self as IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x28b5e40usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -145,62 +194,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-hubmascotsequence")]pub trait IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63ab0usize)as*mut u8,();
-(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63b40usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63bd0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubmascotsequence")]impl<__T:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo>IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods for __T{}
-
-#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo), ::core::stringify!(new),));
- <Self as IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-hubmascotsequence")]pub trait IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63c50usize)as*mut u8,();
-(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63ce0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63d70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubmascotsequence")]impl<__T:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes>IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods for __T{}
-
-#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes), ::core::stringify!(new),));
- <Self as IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2ade680usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -225,22 +218,71 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
+#[cfg(feature="app-hubmascotsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo_unity2_raw{use super:: * ;
+pub unsafe fn b_call(this:HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-hubmascotsequence")]pub trait IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b63ab0usize)as*mut u8,();
+(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo)__receiver)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-hubmascotsequence")]impl<__T:IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo>IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods for __T{}
+
+#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-hubmascotsequence")]impl HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo), ::core::stringify!(new),));
+ <Self as IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-hubmascotsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes;
+    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes;
+    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods;
     pub use super::HubMascotSequence_Label;
     pub use super::HubMascotSequence;
     pub use super::IHubMascotSequence;
     pub use super::IHubMascotSequenceMethods;
-    pub use super::HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo;
-    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo;
-    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods;
-    pub use super::HubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes;
-    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYes;
-    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemYesMethods;
     pub use super::HubMascotSequence_NameDecideConfirm;
     pub use super::IHubMascotSequence_NameDecideConfirm;
     pub use super::IHubMascotSequence_NameDecideConfirmMethods;
+    pub use super::HubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo;
+    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNo;
+    pub use super::IHubMascotSequence_NameDecideConfirm_ConfirmDialogItemNoMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

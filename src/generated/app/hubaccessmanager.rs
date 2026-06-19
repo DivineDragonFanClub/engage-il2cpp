@@ -13,12 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))]#[::unity2::class(namespace="App",name="HubAccessManager.MaterialCalculator")]#[parent(crate::system::object::Object)]pub struct HubAccessManager_MaterialCalculator{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager.md"))]#[::unity2::class(namespace="App",name="HubAccessManager")]#[parent(crate::system::object::Object)]pub struct HubAccessManager{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubAccessManager_MaterialCalculator_Type{pub value:i32,}
 impl::unity2::ClassIdentity for HubAccessManager_MaterialCalculator_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubAccessManager.MaterialCalculator.Type";
@@ -36,46 +30,16 @@ pub fn silver()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager.md"))]#[::unity2::class(namespace="App",name="HubAccessManager")]#[parent(crate::system::object::Object)]pub struct HubAccessManager{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubaccessmanager/HubAccessManager_MaterialCalculator.md"))]#[::unity2::class(namespace="App",name="HubAccessManager.MaterialCalculator")]#[parent(crate::system::object::Object)]pub struct HubAccessManager_MaterialCalculator{}
+
 }
 
 #[cfg(feature = "app-hubaccessmanager-types")]
 pub use __types::*;
-
-#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{#[doc="`GenerateHigherMaterials(i32)` overload"]pub fn generate_higher_materials(num:impl::core::convert::Into<i32>)->crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2c00usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> ;
-(i32)::core::convert::Into::into(num))}
-}
-#[doc="`GetValidHigherMateriaslType(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]pub fn get_valid_higher_materiasl_type(materials:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> >)->crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3260usize)as*mut u8,crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
-(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)::core::convert::Into::into(materials))}
-}
-#[doc="`ConvertToLowerMaterialType(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)` overload"]pub fn convert_to_lower_material_type(r#type:impl::core::convert::Into<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type>)->crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3330usize)as*mut u8,crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
-(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)::core::convert::Into::into(r#type))}
-}
-#[doc="`FilterLowerMaterials(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]pub fn filter_lower_materials(materials:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3140usize)as*mut u8,();
-(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)::core::convert::Into::into(materials))}
-}
-}
-
-#[cfg(feature="app-hubaccessmanager")]pub trait IHubAccessManager_MaterialCalculatorMethods:IHubAccessManager_MaterialCalculator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAccessManager_MaterialCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3350usize)as*mut u8,();
-(HubAccessManager_MaterialCalculator)__receiver)}
-}
-}
-
-#[cfg(feature="app-hubaccessmanager")]impl<__T:IHubAccessManager_MaterialCalculator>IHubAccessManager_MaterialCalculatorMethods for __T{}
-
-#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{pub fn generate_higher_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_valid_higher_materiasl_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn convert_to_lower_material_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn filter_lower_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-}
-
-#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(HubAccessManager_MaterialCalculator), ::core::stringify!(new),));
- <Self as IHubAccessManager_MaterialCalculatorMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-hubaccessmanager")]impl HubAccessManager{#[doc="`IsItemType(crate::app::hubdisposdata::HubDisposData)` overload"]pub fn is_item_type(dispos:impl::core::convert::Into<crate::app::hubdisposdata::HubDisposData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x216fa20usize)as*mut u8,bool;
 (crate::app::hubdisposdata::HubDisposData)::core::convert::Into::into(dispos))}
@@ -274,16 +238,52 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{#[doc="`GenerateHigherMaterials(i32)` overload"]pub fn generate_higher_materials(num:impl::core::convert::Into<i32>)->crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce2c00usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> ;
+(i32)::core::convert::Into::into(num))}
+}
+#[doc="`GetValidHigherMateriaslType(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]pub fn get_valid_higher_materiasl_type(materials:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> >)->crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3260usize)as*mut u8,crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
+(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)::core::convert::Into::into(materials))}
+}
+#[doc="`ConvertToLowerMaterialType(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)` overload"]pub fn convert_to_lower_material_type(r#type:impl::core::convert::Into<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type>)->crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3330usize)as*mut u8,crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type;
+(crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type)::core::convert::Into::into(r#type))}
+}
+#[doc="`FilterLowerMaterials(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)` overload"]pub fn filter_lower_materials(materials:impl::core::convert::Into<crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3140usize)as*mut u8,();
+(crate::system::collections::generic::dictionary_2::Dictionary_2<crate::app::hubaccessmanager::HubAccessManager_MaterialCalculator_Type,i32>)::core::convert::Into::into(materials))}
+}
+}
+
+#[cfg(feature="app-hubaccessmanager")]pub trait IHubAccessManager_MaterialCalculatorMethods:IHubAccessManager_MaterialCalculator{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubAccessManager_MaterialCalculator as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce3350usize)as*mut u8,();
+(HubAccessManager_MaterialCalculator)__receiver)}
+}
+}
+
+#[cfg(feature="app-hubaccessmanager")]impl<__T:IHubAccessManager_MaterialCalculator>IHubAccessManager_MaterialCalculatorMethods for __T{}
+
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{pub fn generate_higher_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_valid_higher_materiasl_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn convert_to_lower_material_type_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn filter_lower_materials_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+}
+
+#[cfg(feature="app-hubaccessmanager")]impl HubAccessManager_MaterialCalculator{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(HubAccessManager_MaterialCalculator), ::core::stringify!(new),));
+ <Self as IHubAccessManager_MaterialCalculatorMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-hubaccessmanager")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::HubAccessManager_MaterialCalculator;
-    pub use super::IHubAccessManager_MaterialCalculator;
-    pub use super::IHubAccessManager_MaterialCalculatorMethods;
+    pub use super::HubAccessManager_MaterialCalculator_Type;
     pub use super::HubAccessManager;
     pub use super::IHubAccessManager;
     pub use super::IHubAccessManagerMethods;
-    pub use super::HubAccessManager_MaterialCalculator_Type;
+    pub use super::HubAccessManager_MaterialCalculator;
+    pub use super::IHubAccessManager_MaterialCalculator;
+    pub use super::IHubAccessManager_MaterialCalculatorMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

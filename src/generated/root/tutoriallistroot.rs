@@ -21,6 +21,27 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistroot/TutorialListRoot.md"))]#[::unity2::class(namespace="",name="TutorialListRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TutorialListRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Seq")]pub m_seq:crate::root::tutoriallistroot::TutorialListRoot_SequenceType, #[offset(28)]#[rename(name="m_FadeType")]pub m_fade_type:crate::root::tutoriallistroot::TutorialListRoot_FadeType, #[offset(32)]#[rename(name="m_ImageAlpha")]pub m_image_alpha:f32, #[offset(40)]#[rename(name="m_MainHandle")]pub m_main_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[offset(48)]#[rename(name="m_SubHandle")]pub m_sub_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[offset(56)]#[rename(name="m_MainSpriteAtlasPath")]pub m_main_sprite_atlas_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_SubSpriteAtlasPath")]pub m_sub_sprite_atlas_path: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_IsPrepareLoad")]pub m_is_prepare_load:bool, #[offset(80)]#[rename(name="m_MainSpriteAtlas")]pub m_main_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(88)]#[rename(name="m_SubSpriteAtlas")]pub m_sub_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(96)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(104)]#[rename(name="m_MenuContentObject")]pub m_menu_content_object:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_RightArrow")]pub m_right_arrow:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_LeftArrow")]pub m_left_arrow:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_CategoryTitleText")]pub m_category_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(136)]#[rename(name="m_TutorialTitleText")]pub m_tutorial_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_MessageText")]pub m_message_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(152)]#[rename(name="m_Page0Text")]pub m_page0_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_Page1Text")]pub m_page1_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_CaptureImage")]pub m_capture_image:crate::unity_engine::ui::image::Image, #[offset(176)]#[rename(name="m_WdwTutorialAnimator")]pub m_wdw_tutorial_animator:crate::unity_engine::animator::Animator, #[offset(184)]#[rename(name="m_AlphaSpeed")]pub m_alpha_speed:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistroot/TutorialListRoot_FadeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialListRoot_FadeType{pub value:i32,}
+impl::unity2::ClassIdentity for TutorialListRoot_FadeType{const NAMESPACE: &'static str="";
+const NAME: &'static str="TutorialListRoot.FadeType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for TutorialListRoot_FadeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl TutorialListRoot_FadeType{pub fn none()->Self{Self{value:0}
+}
+pub fn fade_in()->Self{Self{value:1}
+}
+pub fn fade_out()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistroot/TutorialListRoot_SequenceType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialListRoot_SequenceType{pub value:i32,}
 impl::unity2::ClassIdentity for TutorialListRoot_SequenceType{const NAMESPACE: &'static str="";
 const NAME: &'static str="TutorialListRoot.SequenceType";
@@ -49,27 +70,6 @@ pub fn prepare_unload()->Self{Self{value:7}
 pub fn unload()->Self{Self{value:8}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistroot/TutorialListRoot_FadeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TutorialListRoot_FadeType{pub value:i32,}
-impl::unity2::ClassIdentity for TutorialListRoot_FadeType{const NAMESPACE: &'static str="";
-const NAME: &'static str="TutorialListRoot.FadeType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for TutorialListRoot_FadeType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl TutorialListRoot_FadeType{pub fn none()->Self{Self{value:0}
-}
-pub fn fade_in()->Self{Self{value:1}
-}
-pub fn fade_out()->Self{Self{value:2}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/tutoriallistroot/TutorialListRoot.md"))]#[::unity2::class(namespace="",name="TutorialListRoot")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct TutorialListRoot{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(24)]#[rename(name="m_Seq")]pub m_seq:crate::root::tutoriallistroot::TutorialListRoot_SequenceType, #[offset(28)]#[rename(name="m_FadeType")]pub m_fade_type:crate::root::tutoriallistroot::TutorialListRoot_FadeType, #[offset(32)]#[rename(name="m_ImageAlpha")]pub m_image_alpha:f32, #[offset(40)]#[rename(name="m_MainHandle")]pub m_main_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[offset(48)]#[rename(name="m_SubHandle")]pub m_sub_handle:crate::app::tresourcehandle_1::TResourceHandle_1<crate::unity_engine::u2d::spriteatlas::SpriteAtlas> , #[offset(56)]#[rename(name="m_MainSpriteAtlasPath")]pub m_main_sprite_atlas_path: ::unity2::Il2CppString, #[offset(64)]#[rename(name="m_SubSpriteAtlasPath")]pub m_sub_sprite_atlas_path: ::unity2::Il2CppString, #[offset(72)]#[rename(name="m_IsPrepareLoad")]pub m_is_prepare_load:bool, #[offset(80)]#[rename(name="m_MainSpriteAtlas")]pub m_main_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(88)]#[rename(name="m_SubSpriteAtlas")]pub m_sub_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(96)]#[rename(name="m_Sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(104)]#[rename(name="m_MenuContentObject")]pub m_menu_content_object:crate::unity_engine::gameobject::GameObject, #[offset(112)]#[rename(name="m_RightArrow")]pub m_right_arrow:crate::unity_engine::gameobject::GameObject, #[offset(120)]#[rename(name="m_LeftArrow")]pub m_left_arrow:crate::unity_engine::gameobject::GameObject, #[offset(128)]#[rename(name="m_CategoryTitleText")]pub m_category_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(136)]#[rename(name="m_TutorialTitleText")]pub m_tutorial_title_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(144)]#[rename(name="m_MessageText")]pub m_message_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(152)]#[rename(name="m_Page0Text")]pub m_page0_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(160)]#[rename(name="m_Page1Text")]pub m_page1_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(168)]#[rename(name="m_CaptureImage")]pub m_capture_image:crate::unity_engine::ui::image::Image, #[offset(176)]#[rename(name="m_WdwTutorialAnimator")]pub m_wdw_tutorial_animator:crate::unity_engine::animator::Animator, #[offset(184)]#[rename(name="m_AlphaSpeed")]pub m_alpha_speed:f32,}
 
 }
 
@@ -285,11 +285,11 @@ this}
 #[cfg(feature = "root-tutoriallistroot")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TutorialListRoot_SequenceType;
-    pub use super::TutorialListRoot_FadeType;
     pub use super::TutorialListRoot;
     pub use super::ITutorialListRoot;
     pub use super::ITutorialListRootMethods;
+    pub use super::TutorialListRoot_FadeType;
+    pub use super::TutorialListRoot_SequenceType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

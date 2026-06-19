@@ -15,114 +15,162 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-experimental-rendering-universal-ipixelperfectcamera_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPixelPerfectCamera_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_assets_ppu(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_assetsPPU").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_assetsPPU", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_assets_ppu(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_assetsPPU",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_assets_ppu(this:IPixelPerfectCamera_Interface,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_assetsPPU").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_assetsPPU", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_assets_ppu(this:IPixelPerfectCamera_Interface,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_assetsPPU",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_ref_resolution_x(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_refResolutionX").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_refResolutionX", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_ref_resolution_x(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_refResolutionX",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_ref_resolution_x(this:IPixelPerfectCamera_Interface,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_refResolutionX").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_refResolutionX", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_ref_resolution_x(this:IPixelPerfectCamera_Interface,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_refResolutionX",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_ref_resolution_y(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_refResolutionY").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_refResolutionY", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_ref_resolution_y(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_refResolutionY",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_ref_resolution_y(this:IPixelPerfectCamera_Interface,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_refResolutionY").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_refResolutionY", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_ref_resolution_y(this:IPixelPerfectCamera_Interface,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_refResolutionY",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_upscale_rt(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_upscaleRT").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_upscaleRT", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_upscale_rt(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_upscaleRT",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_upscale_rt(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_upscaleRT").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_upscaleRT", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_upscale_rt(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_upscaleRT",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_pixel_snapping(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_pixelSnapping").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_pixelSnapping", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_pixel_snapping(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_pixelSnapping",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_pixel_snapping(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_pixelSnapping").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_pixelSnapping", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_pixel_snapping(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_pixelSnapping",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_crop_frame_x(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_cropFrameX").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_cropFrameX", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_crop_frame_x(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_cropFrameX",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_crop_frame_x(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_cropFrameX").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_cropFrameX", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_crop_frame_x(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_cropFrameX",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_crop_frame_y(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_cropFrameY").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_cropFrameY", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_crop_frame_y(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_cropFrameY",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_crop_frame_y(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_cropFrameY").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_cropFrameY", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_crop_frame_y(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_cropFrameY",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,value,__mi)}
-pub unsafe fn get_stretch_fill(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_stretchFill").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_stretchFill", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_stretch_fill(this:IPixelPerfectCamera_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"get_stretchFill",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_stretch_fill(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("set_stretchFill").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","set_stretchFill", <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_stretch_fill(this:IPixelPerfectCamera_Interface,value:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <IPixelPerfectCamera_Interface as::unity2::ClassIdentity> ::NAME,"set_stretchFill",));
 let inner:extern "C" fn(IPixelPerfectCamera_Interface,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

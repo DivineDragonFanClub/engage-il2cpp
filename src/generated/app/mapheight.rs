@@ -15,18 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight_EdgeIndex.md"))]#[::unity2::class(namespace="App",name="MapHeight.EdgeIndex")]#[parent(crate::system::object::Object)]pub struct MapHeight_EdgeIndex{#[offset(16)]#[rename(name="Index1")]pub index1:i32, #[offset(20)]#[rename(name="Index2")]pub index2:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight.md"))]#[::unity2::class(namespace="App",name="MapHeight")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapheight::MapHeight>)]pub struct MapHeight{#[static_field]#[rename(name="R")]pub r:i32, #[static_field]#[rename(name="N")]pub n:i32, #[static_field]#[rename(name="W")]pub w:i32, #[static_field]#[rename(name="H")]pub h:i32, #[offset(32)]#[rename(name="m_CellMaps")]pub m_cell_maps: ::unity2::Array<crate::app::mapheight::MapHeight_CellMap> , #[offset(40)]#[rename(name="m_LayerMasksA")]pub m_layer_masks_a: ::unity2::Array<i32> , #[offset(48)]#[rename(name="m_LayerMasksB")]pub m_layer_masks_b: ::unity2::Array<i32> , #[offset(56)]#[rename(name="m_LayerMaskOver")]pub m_layer_mask_over:i32, #[static_field]#[rename(name="ZERO")]pub zero:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="s_EdgeIndexes")]pub s_edge_indexes: ::unity2::Array<crate::app::mapheight::MapHeight_EdgeIndex> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight_CellMap.md"))]#[::unity2::class(namespace="App",name="MapHeight.CellMap")]#[parent(crate::system::object::Object)]pub struct MapHeight_CellMap{#[offset(16)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo> , #[offset(24)]#[rename(name="m_LayerMaskA")]pub m_layer_mask_a:i32, #[offset(28)]#[rename(name="m_LayerMaskB")]pub m_layer_mask_b:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight_CellInfo.md"))]#[::unity2::class(namespace="App",name="MapHeight.CellInfo")]#[parent(crate::system::object::Object)]pub struct MapHeight_CellInfo{#[offset(16)]#[rename(name="heights")]pub heights: ::unity2::Array<f32> , #[offset(24)]#[rename(name="normals")]pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(32)]#[rename(name="layers")]pub layers: ::unity2::Array<i32> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight_Layers.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapHeight_Layers{pub value:i32,}
 impl::unity2::ClassIdentity for MapHeight_Layers{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapHeight.Layers";
@@ -64,10 +52,85 @@ pub fn right()->Self{Self{value:3}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight_CellMap.md"))]#[::unity2::class(namespace="App",name="MapHeight.CellMap")]#[parent(crate::system::object::Object)]pub struct MapHeight_CellMap{#[offset(16)]#[rename(name="m_Cells")]pub m_cells: ::unity2::Array<crate::app::mapheight::MapHeight_CellInfo> , #[offset(24)]#[rename(name="m_LayerMaskA")]pub m_layer_mask_a:i32, #[offset(28)]#[rename(name="m_LayerMaskB")]pub m_layer_mask_b:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight_EdgeIndex.md"))]#[::unity2::class(namespace="App",name="MapHeight.EdgeIndex")]#[parent(crate::system::object::Object)]pub struct MapHeight_EdgeIndex{#[offset(16)]#[rename(name="Index1")]pub index1:i32, #[offset(20)]#[rename(name="Index2")]pub index2:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight_CellInfo.md"))]#[::unity2::class(namespace="App",name="MapHeight.CellInfo")]#[parent(crate::system::object::Object)]pub struct MapHeight_CellInfo{#[offset(16)]#[rename(name="heights")]pub heights: ::unity2::Array<f32> , #[offset(24)]#[rename(name="normals")]pub normals: ::unity2::Array<crate::unity_engine::vector3::Vector3> , #[offset(32)]#[rename(name="layers")]pub layers: ::unity2::Array<i32> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapheight/MapHeight.md"))]#[::unity2::class(namespace="App",name="MapHeight")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::mapheight::MapHeight>)]pub struct MapHeight{#[static_field]#[rename(name="R")]pub r:i32, #[static_field]#[rename(name="N")]pub n:i32, #[static_field]#[rename(name="W")]pub w:i32, #[static_field]#[rename(name="H")]pub h:i32, #[offset(32)]#[rename(name="m_CellMaps")]pub m_cell_maps: ::unity2::Array<crate::app::mapheight::MapHeight_CellMap> , #[offset(40)]#[rename(name="m_LayerMasksA")]pub m_layer_masks_a: ::unity2::Array<i32> , #[offset(48)]#[rename(name="m_LayerMasksB")]pub m_layer_masks_b: ::unity2::Array<i32> , #[offset(56)]#[rename(name="m_LayerMaskOver")]pub m_layer_mask_over:i32, #[static_field]#[rename(name="ZERO")]pub zero:crate::unity_engine::vector3::Vector3, #[static_field]#[rename(name="s_EdgeIndexes")]pub s_edge_indexes: ::unity2::Array<crate::app::mapheight::MapHeight_EdgeIndex> ,}
+
 }
 
 #[cfg(feature = "app-mapheight-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapheight")]pub trait IMapHeight_CellMapMethods:IMapHeight_CellMap{#[doc="`.ctor(i32, i32)` overload"]fn ctor(self,layer_mask_a:impl::core::convert::Into<i32> ,layer_mask_b:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9210usize)as*mut u8,();
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(layer_mask_a),(i32)::core::convert::Into::into(layer_mask_b))}
+}
+#[doc="`GetX(i32, i32)` overload"]fn get_x(self,x:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9340usize)as*mut u8,f32;
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetZ(i32, i32)` overload"]fn get_z(self,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c93f0usize)as*mut u8,f32;
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetHeight(i32, i32, i32)` overload"]fn get_height(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c94a0usize)as*mut u8,f32;
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
+}
+#[doc="`GetMaxHeight(i32, i32)` overload"]fn get_max_height(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9790usize)as*mut u8,f32;
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`GetMinHeight(i32, i32)` overload"]fn get_min_height(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9d80usize)as*mut u8,f32;
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Get(i32, i32)` overload"]fn get(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapheight::MapHeight_CellInfo{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ca370usize)as*mut u8,crate::app::mapheight::MapHeight_CellInfo;
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`Update(i32, i32)` overload"]fn update(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24ca3b0usize)as*mut u8,();
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
+}
+#[doc="`IsLayerMask(i32, i32, i32)` overload"]fn is_layer_mask(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,layer_mask:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cab60usize)as*mut u8,bool;
+(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(layer_mask))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24cabf0usize)as*mut u8,();
+(MapHeight_CellMap)__receiver)}
+}
+}
+
+#[cfg(feature="app-mapheight")]impl<__T:IMapHeight_CellMap>IMapHeight_CellMapMethods for __T{}
+
+#[cfg(feature="app-mapheight")]impl MapHeight_CellMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_max_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn is_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-mapheight")]impl MapHeight_CellMap{#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new(layer_mask_a:i32,layer_mask_b:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHeight_CellMap), ::core::stringify!(new),));
+ <Self as IMapHeight_CellMapMethods> ::ctor(this,layer_mask_a,layer_mask_b);
+this}
+}
 
 #[cfg(feature="app-mapheight")]pub trait IMapHeight_EdgeIndexMethods:IMapHeight_EdgeIndex{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHeight_EdgeIndex as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24cac50usize)as*mut u8,();
@@ -85,6 +148,82 @@ pub use __types::*;
  failed to instantiate", ::core::stringify!(MapHeight_EdgeIndex), ::core::stringify!(new),));
  <Self as IMapHeight_EdgeIndexMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="app-mapheight")]pub trait IMapHeight_CellInfoMethods:IMapHeight_CellInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8470usize)as*mut u8,();
+(MapHeight_CellInfo)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8560usize)as*mut u8,();
+(MapHeight_CellInfo)__receiver)}
+}
+#[doc="`GetMin()` overload"]fn get_min(self,)->f32{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c86f0usize)as*mut u8,f32;
+(MapHeight_CellInfo)__receiver)}
+}
+#[doc="`GetMax()` overload"]fn get_max(self,)->f32{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8780usize)as*mut u8,f32;
+(MapHeight_CellInfo)__receiver)}
+}
+#[doc="`GetDiff()` overload"]fn get_diff(self,)->f32{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8810usize)as*mut u8,f32;
+(MapHeight_CellInfo)__receiver)}
+}
+#[doc="`Update(i32, f32, f32, i32, i32)` overload"]fn update(self,index:impl::core::convert::Into<i32> ,x:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32> ,layer_mask_a:impl::core::convert::Into<i32> ,layer_mask_b:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8900usize)as*mut u8,();
+(MapHeight_CellInfo)__receiver,(i32)::core::convert::Into::into(index),(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(layer_mask_a),(i32)::core::convert::Into::into(layer_mask_b))}
+}
+#[doc="`IsFlat(i32)` overload"]fn is_flat(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8b20usize)as*mut u8,bool;
+(MapHeight_CellInfo)__receiver,(i32)::core::convert::Into::into(index))}
+}
+#[doc="`IsFlat()` overload"]fn is_flat_2(self,)->bool{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8b70usize)as*mut u8,bool;
+(MapHeight_CellInfo)__receiver)}
+}
+#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8c30usize)as*mut u8,();
+(MapHeight_CellInfo)__receiver)}
+}
+#[doc="`Copy(crate::app::mapheight::MapHeight_CellInfo)` overload"]fn copy(self,src:impl::core::convert::Into<crate::app::mapheight::MapHeight_CellInfo>)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8f80usize)as*mut u8,();
+(MapHeight_CellInfo)__receiver,(crate::app::mapheight::MapHeight_CellInfo)::core::convert::Into::into(src))}
+}
+}
+
+#[cfg(feature="app-mapheight")]impl<__T:IMapHeight_CellInfo>IMapHeight_CellInfoMethods for __T{}
+
+#[cfg(feature="app-mapheight")]impl MapHeight_CellInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn get_diff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn is_flat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn is_flat_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn copy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-mapheight")]impl MapHeight_CellInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MapHeight_CellInfo), ::core::stringify!(new),));
+ <Self as IMapHeight_CellInfoMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-mapheight")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapHeight_unity2_raw{use super:: * ;
+pub unsafe fn on_update(this:MapHeight,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapHeight as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(MapHeight, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-mapheight")]impl MapHeight{#[doc="`CalcRayCast(*mutcrate::unity_engine::raycasthit::RaycastHit, f32, f32, i32, i32)` overload"]pub fn calc_ray_cast(x:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32> ,layer_mask_a:impl::core::convert::Into<i32> ,layer_mask_b:impl::core::convert::Into<i32>)->(bool,crate::unity_engine::raycasthit::RaycastHit){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::raycasthit::RaycastHit> ::uninit();
@@ -150,8 +289,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1dd59a0usize)as*mut
 (MapHeight)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <MapHeight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1dcd730usize)as*mut u8,();
-(MapHeight)__receiver)}
+__MapHeight_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Get(crate::unity_engine::vector3::Vector3, crate::app::mapheight::MapHeight_Layers)` overload"]fn get(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3> ,layer:impl::core::convert::Into<crate::app::mapheight::MapHeight_Layers>)->f32{unsafe{let __receiver= <MapHeight as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1dce9f0usize)as*mut u8,f32;
@@ -242,149 +380,23 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-mapheight")]pub trait IMapHeight_CellMapMethods:IMapHeight_CellMap{#[doc="`.ctor(i32, i32)` overload"]fn ctor(self,layer_mask_a:impl::core::convert::Into<i32> ,layer_mask_b:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9210usize)as*mut u8,();
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(layer_mask_a),(i32)::core::convert::Into::into(layer_mask_b))}
-}
-#[doc="`GetX(i32, i32)` overload"]fn get_x(self,x:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9340usize)as*mut u8,f32;
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetZ(i32, i32)` overload"]fn get_z(self,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c93f0usize)as*mut u8,f32;
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetHeight(i32, i32, i32)` overload"]fn get_height(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c94a0usize)as*mut u8,f32;
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(index))}
-}
-#[doc="`GetMaxHeight(i32, i32)` overload"]fn get_max_height(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9790usize)as*mut u8,f32;
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`GetMinHeight(i32, i32)` overload"]fn get_min_height(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c9d80usize)as*mut u8,f32;
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Get(i32, i32)` overload"]fn get(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->crate::app::mapheight::MapHeight_CellInfo{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ca370usize)as*mut u8,crate::app::mapheight::MapHeight_CellInfo;
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`Update(i32, i32)` overload"]fn update(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ca3b0usize)as*mut u8,();
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
-}
-#[doc="`IsLayerMask(i32, i32, i32)` overload"]fn is_layer_mask(self,x:impl::core::convert::Into<i32> ,z:impl::core::convert::Into<i32> ,layer_mask:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cab60usize)as*mut u8,bool;
-(MapHeight_CellMap)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(layer_mask))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHeight_CellMap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24cabf0usize)as*mut u8,();
-(MapHeight_CellMap)__receiver)}
-}
-}
-
-#[cfg(feature="app-mapheight")]impl<__T:IMapHeight_CellMap>IMapHeight_CellMapMethods for __T{}
-
-#[cfg(feature="app-mapheight")]impl MapHeight_CellMap{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_x_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_z_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_max_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn get_min_height_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn is_layer_mask_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-mapheight")]impl MapHeight_CellMap{#[doc="`.ctor(i32, i32)` — overload selector"]pub fn new(layer_mask_a:i32,layer_mask_b:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHeight_CellMap), ::core::stringify!(new),));
- <Self as IMapHeight_CellMapMethods> ::ctor(this,layer_mask_a,layer_mask_b);
-this}
-}
-
-#[cfg(feature="app-mapheight")]pub trait IMapHeight_CellInfoMethods:IMapHeight_CellInfo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8470usize)as*mut u8,();
-(MapHeight_CellInfo)__receiver)}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8560usize)as*mut u8,();
-(MapHeight_CellInfo)__receiver)}
-}
-#[doc="`GetMin()` overload"]fn get_min(self,)->f32{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c86f0usize)as*mut u8,f32;
-(MapHeight_CellInfo)__receiver)}
-}
-#[doc="`GetMax()` overload"]fn get_max(self,)->f32{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8780usize)as*mut u8,f32;
-(MapHeight_CellInfo)__receiver)}
-}
-#[doc="`GetDiff()` overload"]fn get_diff(self,)->f32{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8810usize)as*mut u8,f32;
-(MapHeight_CellInfo)__receiver)}
-}
-#[doc="`Update(i32, f32, f32, i32, i32)` overload"]fn update(self,index:impl::core::convert::Into<i32> ,x:impl::core::convert::Into<f32> ,z:impl::core::convert::Into<f32> ,layer_mask_a:impl::core::convert::Into<i32> ,layer_mask_b:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8900usize)as*mut u8,();
-(MapHeight_CellInfo)__receiver,(i32)::core::convert::Into::into(index),(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(z),(i32)::core::convert::Into::into(layer_mask_a),(i32)::core::convert::Into::into(layer_mask_b))}
-}
-#[doc="`IsFlat(i32)` overload"]fn is_flat(self,index:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8b20usize)as*mut u8,bool;
-(MapHeight_CellInfo)__receiver,(i32)::core::convert::Into::into(index))}
-}
-#[doc="`IsFlat()` overload"]fn is_flat_2(self,)->bool{unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8b70usize)as*mut u8,bool;
-(MapHeight_CellInfo)__receiver)}
-}
-#[doc="`Commit()` overload"]fn commit(self,)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8c30usize)as*mut u8,();
-(MapHeight_CellInfo)__receiver)}
-}
-#[doc="`Copy(crate::app::mapheight::MapHeight_CellInfo)` overload"]fn copy(self,src:impl::core::convert::Into<crate::app::mapheight::MapHeight_CellInfo>)->(){unsafe{let __receiver= <MapHeight_CellInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24c8f80usize)as*mut u8,();
-(MapHeight_CellInfo)__receiver,(crate::app::mapheight::MapHeight_CellInfo)::core::convert::Into::into(src))}
-}
-}
-
-#[cfg(feature="app-mapheight")]impl<__T:IMapHeight_CellInfo>IMapHeight_CellInfoMethods for __T{}
-
-#[cfg(feature="app-mapheight")]impl MapHeight_CellInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_min_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_max_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn get_diff_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn is_flat_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn is_flat_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn commit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn copy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-mapheight")]impl MapHeight_CellInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MapHeight_CellInfo), ::core::stringify!(new),));
- <Self as IMapHeight_CellInfoMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-mapheight")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapHeight_EdgeIndex;
-    pub use super::IMapHeight_EdgeIndex;
-    pub use super::IMapHeight_EdgeIndexMethods;
-    pub use super::MapHeight;
-    pub use super::IMapHeight;
-    pub use super::IMapHeightMethods;
+    pub use super::MapHeight_Layers;
+    pub use super::MapHeight_Plane;
     pub use super::MapHeight_CellMap;
     pub use super::IMapHeight_CellMap;
     pub use super::IMapHeight_CellMapMethods;
+    pub use super::MapHeight_EdgeIndex;
+    pub use super::IMapHeight_EdgeIndex;
+    pub use super::IMapHeight_EdgeIndexMethods;
     pub use super::MapHeight_CellInfo;
     pub use super::IMapHeight_CellInfo;
     pub use super::IMapHeight_CellInfoMethods;
-    pub use super::MapHeight_Layers;
-    pub use super::MapHeight_Plane;
+    pub use super::MapHeight;
+    pub use super::IMapHeight;
+    pub use super::IMapHeightMethods;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

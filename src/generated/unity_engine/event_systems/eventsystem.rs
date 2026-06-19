@@ -26,6 +26,59 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "unity_engine-event_systems-eventsystem-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-event_systems-eventsystem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EventSystem_unity2_raw{use super:: * ;
+pub unsafe fn on_enable(this:EventSystem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <EventSystem as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(EventSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:EventSystem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <EventSystem as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(EventSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_application_focus(this:EventSystem,has_focus:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <EventSystem as::unity2::ClassIdentity> ::NAME,"OnApplicationFocus",));
+let inner:extern "C" fn(EventSystem,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,has_focus,__mi)}
+pub unsafe fn update(this:EventSystem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <EventSystem as::unity2::ClassIdentity> ::NAME,"Update",));
+let inner:extern "C" fn(EventSystem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:EventSystem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <EventSystem as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(EventSystem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-event_systems-eventsystem")]impl EventSystem{#[doc="`get_current()` overload"]pub fn get_current()->crate::unity_engine::event_systems::eventsystem::EventSystem{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3187980usize)as*mut u8,crate::unity_engine::event_systems::eventsystem::EventSystem;
 )}
 }
@@ -117,32 +170,27 @@ pub use __types::*;
 (EventSystem)__receiver,(i32)::core::convert::Into::into(pointer_id))}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <EventSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3188580usize)as*mut u8,();
-(EventSystem)__receiver)}
+__EventSystem_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <EventSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3188620usize)as*mut u8,();
-(EventSystem)__receiver)}
+__EventSystem_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`TickModules()` overload"]fn tick_modules(self,)->(){unsafe{let __receiver= <EventSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3188730usize)as*mut u8,();
 (EventSystem)__receiver)}
 }
 #[doc="`OnApplicationFocus(bool)` overload"]fn on_application_focus(self,has_focus:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <EventSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3188850usize)as*mut u8,();
-(EventSystem)__receiver,(bool)::core::convert::Into::into(has_focus))}
+__EventSystem_unity2_raw::on_application_focus(__receiver, ::core::convert::Into::into(has_focus), ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EventSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3188870usize)as*mut u8,();
-(EventSystem)__receiver)}
+__EventSystem_unity2_raw::update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ChangeEventModule(crate::unity_engine::event_systems::baseinputmodule::BaseInputModule)` overload"]fn change_event_module(self,module:impl::core::convert::Into<crate::unity_engine::event_systems::baseinputmodule::BaseInputModule>)->(){unsafe{let __receiver= <EventSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3188b20usize)as*mut u8,();
 (EventSystem)__receiver,(crate::unity_engine::event_systems::baseinputmodule::BaseInputModule)::core::convert::Into::into(module))}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EventSystem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3188c40usize)as*mut u8, ::unity2::Il2CppString;
-(EventSystem)__receiver)}
+__EventSystem_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 

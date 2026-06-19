@@ -22,21 +22,51 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-tboxinspector-types")]
 pub use __types::*;
 
+#[cfg(feature="app-tboxinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TboxInspector_unity2_raw{use super:: * ;
+pub unsafe fn get_label(this:TboxInspector,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(36usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",36usize,__vt.len(), <TboxInspector as::unity2::ClassIdentity> ::NAME,"GetLabel",));
+let inner:extern "C" fn(TboxInspector, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_range(this:TboxInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <TboxInspector as::unity2::ClassIdentity> ::NAME,"GetRange",));
+let inner:extern "C" fn(TboxInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_color(this:TboxInspector,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TboxInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
+let inner:extern "C" fn(TboxInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-tboxinspector")]pub trait ITboxInspectorMethods:ITboxInspector{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TboxInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21df550usize)as*mut u8,();
 (TboxInspector)__receiver)}
 }
 #[doc="`GetLabel()` overload"]fn get_label(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TboxInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21df560usize)as*mut u8, ::unity2::Il2CppString;
-(TboxInspector)__receiver)}
+__TboxInspector_unity2_raw::get_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetRange()` overload"]fn get_range(self,)->i32{unsafe{let __receiver= <TboxInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21df5b0usize)as*mut u8,i32;
-(TboxInspector)__receiver)}
+__TboxInspector_unity2_raw::get_range(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <TboxInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21df5c0usize)as*mut u8,crate::unity_engine::color::Color;
-(TboxInspector)__receiver)}
+__TboxInspector_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -26,7 +26,7 @@
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-renderfunc_1")]pub use renderfunc_1::{IRenderFunc_1Methods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph-types"))]pub mod rendergraph;
- #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph-types")]pub use rendergraph::{RenderGraph_CompiledResourceInfo,RenderGraph_CompiledPassInfo,RenderGraph,IRenderGraph,RenderGraph_ProfilingScopePassData,IRenderGraph_ProfilingScopePassData,RenderGraph_OnGraphRegisteredDelegate,IRenderGraph_OnGraphRegisteredDelegate}
+ #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph-types")]pub use rendergraph::{RenderGraph_CompiledPassInfo,RenderGraph,IRenderGraph,RenderGraph_CompiledResourceInfo,RenderGraph_ProfilingScopePassData,IRenderGraph_ProfilingScopePassData,RenderGraph_OnGraphRegisteredDelegate,IRenderGraph_OnGraphRegisteredDelegate}
 ;
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraph")]pub use rendergraph::{IRenderGraphMethods,IRenderGraph_ProfilingScopePassDataMethods,IRenderGraph_OnGraphRegisteredDelegateMethods}
 ;
@@ -39,7 +39,7 @@
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphcontext")]pub use rendergraphcontext::{IRenderGraphContextMethods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types"))]pub mod rendergraphdebugdata;
- #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types")]pub use rendergraphdebugdata::{RenderGraphDebugData_PassDebugData,RenderGraphDebugData,IRenderGraphDebugData,RenderGraphDebugData_ResourceDebugData}
+ #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata-types")]pub use rendergraphdebugdata::{RenderGraphDebugData,IRenderGraphDebugData,RenderGraphDebugData_PassDebugData,RenderGraphDebugData_ResourceDebugData}
 ;
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphdebugdata")]pub use rendergraphdebugdata::{IRenderGraphDebugDataMethods}
 ;
@@ -62,9 +62,9 @@
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphlogindent-types")]pub use rendergraphlogindent::{RenderGraphLogIndent}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool-types"))]pub mod rendergraphobjectpool;
- #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool-types")]pub use rendergraphobjectpool::{RenderGraphObjectPool_SharedObjectPool_1,IRenderGraphObjectPool_SharedObjectPool_1,RenderGraphObjectPool,IRenderGraphObjectPool}
+ #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool-types")]pub use rendergraphobjectpool::{RenderGraphObjectPool,IRenderGraphObjectPool,RenderGraphObjectPool_SharedObjectPool_1,IRenderGraphObjectPool_SharedObjectPool_1}
 ;
- #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]pub use rendergraphobjectpool::{IRenderGraphObjectPool_SharedObjectPool_1Methods,IRenderGraphObjectPoolMethods}
+ #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphobjectpool")]pub use rendergraphobjectpool::{IRenderGraphObjectPoolMethods,IRenderGraphObjectPool_SharedObjectPool_1Methods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphparameters-types"))]pub mod rendergraphparameters;
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphparameters-types")]pub use rendergraphparameters::{RenderGraphParameters}
@@ -91,9 +91,9 @@
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourcepool_1")]pub use rendergraphresourcepool_1::{IRenderGraphResourcePool_1Methods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry-types"))]pub mod rendergraphresourceregistry;
- #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry-types")]pub use rendergraphresourceregistry::{RenderGraphResourceRegistry_RendererListResource,RenderGraphResourceRegistry,IRenderGraphResourceRegistry,RenderGraphResourceRegistry_TextureResource,IRenderGraphResourceRegistry_TextureResource,RenderGraphResourceRegistry_ComputeBufferResource,IRenderGraphResourceRegistry_ComputeBufferResource,RenderGraphResourceRegistry_RenderGraphResource_2,IRenderGraphResourceRegistry_RenderGraphResource_2,RenderGraphResourceRegistry_IRenderGraphResource,IRenderGraphResourceRegistry_IRenderGraphResource}
+ #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry-types")]pub use rendergraphresourceregistry::{RenderGraphResourceRegistry_ComputeBufferResource,IRenderGraphResourceRegistry_ComputeBufferResource,RenderGraphResourceRegistry_TextureResource,IRenderGraphResourceRegistry_TextureResource,RenderGraphResourceRegistry_IRenderGraphResource,IRenderGraphResourceRegistry_IRenderGraphResource,RenderGraphResourceRegistry_RendererListResource,RenderGraphResourceRegistry,IRenderGraphResourceRegistry,RenderGraphResourceRegistry_RenderGraphResource_2,IRenderGraphResourceRegistry_RenderGraphResource_2}
 ;
- #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry")]pub use rendergraphresourceregistry::{IRenderGraphResourceRegistryMethods,IRenderGraphResourceRegistry_TextureResourceMethods,IRenderGraphResourceRegistry_ComputeBufferResourceMethods,IRenderGraphResourceRegistry_RenderGraphResource_2Methods,IRenderGraphResourceRegistry_IRenderGraphResourceMethods}
+ #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourceregistry")]pub use rendergraphresourceregistry::{IRenderGraphResourceRegistry_ComputeBufferResourceMethods,IRenderGraphResourceRegistry_TextureResourceMethods,IRenderGraphResourceRegistry_IRenderGraphResourceMethods,IRenderGraphResourceRegistryMethods,IRenderGraphResourceRegistry_RenderGraphResource_2Methods}
 ;
  #[cfg(any(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourcetype-types"))]pub mod rendergraphresourcetype;
  #[cfg(feature="unity_engine-experimental-rendering-render_graph_module-rendergraphresourcetype-types")]pub use rendergraphresourcetype::{RenderGraphResourceType}

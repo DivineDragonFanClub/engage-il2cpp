@@ -26,6 +26,49 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "tm_pro-textcontainer-types")]
 pub use __types::*;
 
+#[cfg(feature="tm_pro-textcontainer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextContainer_unity2_raw{use super:: * ;
+pub unsafe fn awake(this:TextContainer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TextContainer as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(TextContainer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:TextContainer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TextContainer as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(TextContainer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:TextContainer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TextContainer as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(TextContainer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_rect_transform_dimensions_change(this:TextContainer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TextContainer as::unity2::ClassIdentity> ::NAME,"OnRectTransformDimensionsChange",));
+let inner:extern "C" fn(TextContainer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="tm_pro-textcontainer")]impl TextContainer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2e6aec0usize)as*mut u8,();
 )}
 }
@@ -128,24 +171,20 @@ pub use __types::*;
 (TextContainer)__receiver)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a9d0usize)as*mut u8,();
-(TextContainer)__receiver)}
+__TextContainer_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6aaa0usize)as*mut u8,();
-(TextContainer)__receiver)}
+__TextContainer_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6aab0usize)as*mut u8,();
-(TextContainer)__receiver)}
+__TextContainer_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnContainerChanged()` overload"]fn on_container_changed(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a150usize)as*mut u8,();
 (TextContainer)__receiver)}
 }
 #[doc="`OnRectTransformDimensionsChange()` overload"]fn on_rect_transform_dimensions_change(self,)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6acb0usize)as*mut u8,();
-(TextContainer)__receiver)}
+__TextContainer_unity2_raw::on_rect_transform_dimensions_change(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetRect(crate::unity_engine::vector2::Vector2)` overload"]fn set_rect_2(self,size:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <TextContainer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2e6a560usize)as*mut u8,();

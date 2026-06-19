@@ -15,79 +15,112 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-debugging-idebugger")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IDebugger_unity2_raw{use super:: * ;
-pub unsafe fn get_debugger_caps(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetDebuggerCaps").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetDebuggerCaps", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_debugger_caps(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"GetDebuggerCaps",));
 let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggercaps::DebuggerCaps= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_debug_service(this:IDebugger,debug_service:crate::moon_sharp::interpreter::debugging::debugservice::DebugService,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetDebugService").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetDebugService", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_debug_service(this:IDebugger,debug_service:crate::moon_sharp::interpreter::debugging::debugservice::DebugService,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SetDebugService",));
 let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::debugservice::DebugService, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,debug_service,__mi)}
-pub unsafe fn set_source_code(this:IDebugger,source_code:crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetSourceCode").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetSourceCode", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_source_code(this:IDebugger,source_code:crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SetSourceCode",));
 let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::sourcecode::SourceCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,source_code,__mi)}
-pub unsafe fn set_byte_code(this:IDebugger,byte_code: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetByteCode").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetByteCode", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_byte_code(this:IDebugger,byte_code: ::unity2::Array< ::unity2::Il2CppString> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SetByteCode",));
 let inner:extern "C" fn(IDebugger, ::unity2::Array< ::unity2::Il2CppString> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,byte_code,__mi)}
-pub unsafe fn is_pause_requested(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsPauseRequested").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsPauseRequested", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn is_pause_requested(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"IsPauseRequested",));
 let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn signal_runtime_exception(this:IDebugger,ex:crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SignalRuntimeException").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SignalRuntimeException", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn signal_runtime_exception(this:IDebugger,ex:crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SignalRuntimeException",));
 let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::scriptruntimeexception::ScriptRuntimeException, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,ex,__mi)}
-pub unsafe fn get_action(this:IDebugger,ip:i32,sourceref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetAction").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetAction", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_action(this:IDebugger,ip:i32,sourceref:crate::moon_sharp::interpreter::debugging::sourceref::SourceRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"GetAction",));
 let inner:extern "C" fn(IDebugger,i32,crate::moon_sharp::interpreter::debugging::sourceref::SourceRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::debugging::debuggeraction::DebuggerAction= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,ip,sourceref,__mi)}
-pub unsafe fn signal_execution_ended(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SignalExecutionEnded").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SignalExecutionEnded", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn signal_execution_ended(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"SignalExecutionEnded",));
 let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn update(this:IDebugger,watch_type:crate::moon_sharp::interpreter::debugging::watchtype::WatchType,items:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Update").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Update", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn update(this:IDebugger,watch_type:crate::moon_sharp::interpreter::debugging::watchtype::WatchType,items:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"Update",));
 let inner:extern "C" fn(IDebugger,crate::moon_sharp::interpreter::debugging::watchtype::WatchType,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::watchitem::WatchItem> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,watch_type,items,__mi)}
-pub unsafe fn get_watch_items(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetWatchItems").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetWatchItems", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_watch_items(this:IDebugger,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"GetWatchItems",));
 let inner:extern "C" fn(IDebugger, ::unity2::OptionalMethod,)->crate::system::collections::generic::list_1::List_1<crate::moon_sharp::interpreter::dynamicexpression::DynamicExpression> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn refresh_breakpoints(this:IDebugger,refs:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("RefreshBreakpoints").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","RefreshBreakpoints", <IDebugger as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn refresh_breakpoints(this:IDebugger,refs:crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IDebugger as::unity2::ClassIdentity> ::NAME,"RefreshBreakpoints",));
 let inner:extern "C" fn(IDebugger,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -15,9 +15,12 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-playables-iplayableoutput_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlayableOutput_Interface_unity2_raw{use super:: * ;
-pub unsafe fn get_handle(this:IPlayableOutput_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetHandle").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetHandle", <IPlayableOutput_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_handle(this:IPlayableOutput_Interface,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IPlayableOutput_Interface as::unity2::ClassIdentity> ::NAME,"GetHandle",));
 let inner:extern "C" fn(IPlayableOutput_Interface, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playableoutputhandle::PlayableOutputHandle= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

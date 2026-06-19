@@ -15,93 +15,132 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-platforms-iplatformaccessor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IPlatformAccessor_unity2_raw{use super:: * ;
-pub unsafe fn filter_supported_core_modules(this:IPlatformAccessor,module:crate::moon_sharp::interpreter::coremodules::CoreModules,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("FilterSupportedCoreModules").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","FilterSupportedCoreModules", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn filter_supported_core_modules(this:IPlatformAccessor,module:crate::moon_sharp::interpreter::coremodules::CoreModules,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"FilterSupportedCoreModules",));
 let inner:extern "C" fn(IPlatformAccessor,crate::moon_sharp::interpreter::coremodules::CoreModules, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,module,__mi)}
-pub unsafe fn get_environment_variable(this:IPlatformAccessor,envvarname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetEnvironmentVariable").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetEnvironmentVariable", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_environment_variable(this:IPlatformAccessor,envvarname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"GetEnvironmentVariable",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,envvarname,__mi)}
-pub unsafe fn is_running_on_aot(this:IPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IsRunningOnAOT").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IsRunningOnAOT", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn is_running_on_aot(this:IPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"IsRunningOnAOT",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn get_platform_name(this:IPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("GetPlatformName").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","GetPlatformName", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_platform_name(this:IPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"GetPlatformName",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn default_print(this:IPlatformAccessor,content: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("DefaultPrint").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","DefaultPrint", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn default_print(this:IPlatformAccessor,content: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"DefaultPrint",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,content,__mi)}
-pub unsafe fn default_input(this:IPlatformAccessor,prompt: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("DefaultInput").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","DefaultInput", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn default_input(this:IPlatformAccessor,prompt: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"DefaultInput",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,prompt,__mi)}
-pub unsafe fn io_get_standard_stream(this:IPlatformAccessor,r#type:crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::io::stream::Stream{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IO_GetStandardStream").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IO_GetStandardStream", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn io_get_standard_stream(this:IPlatformAccessor,r#type:crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::io::stream::Stream{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"IO_GetStandardStream",));
 let inner:extern "C" fn(IPlatformAccessor,crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,r#type,__mi)}
-pub unsafe fn io_os_get_temp_filename(this:IPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("IO_OS_GetTempFilename").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","IO_OS_GetTempFilename", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn io_os_get_temp_filename(this:IPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"IO_OS_GetTempFilename",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn os_exit_fast(this:IPlatformAccessor,exit_code:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OS_ExitFast").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OS_ExitFast", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn os_exit_fast(this:IPlatformAccessor,exit_code:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_ExitFast",));
 let inner:extern "C" fn(IPlatformAccessor,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,exit_code,__mi)}
-pub unsafe fn os_file_exists(this:IPlatformAccessor,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OS_FileExists").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OS_FileExists", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn os_file_exists(this:IPlatformAccessor,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileExists",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,file,__mi)}
-pub unsafe fn os_file_delete(this:IPlatformAccessor,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OS_FileDelete").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OS_FileDelete", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn os_file_delete(this:IPlatformAccessor,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileDelete",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,file,__mi)}
-pub unsafe fn os_file_move(this:IPlatformAccessor,src: ::unity2::Il2CppString,dst: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OS_FileMove").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OS_FileMove", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn os_file_move(this:IPlatformAccessor,src: ::unity2::Il2CppString,dst: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileMove",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,src,dst,__mi)}
-pub unsafe fn os_execute(this:IPlatformAccessor,cmdline: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OS_Execute").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OS_Execute", <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn os_execute(this:IPlatformAccessor,cmdline: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <IPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_Execute",));
 let inner:extern "C" fn(IPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

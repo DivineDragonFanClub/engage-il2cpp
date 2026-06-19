@@ -16,17 +16,47 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-filestreamasyncresult-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-filestreamasyncresult")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileStreamAsyncResult_unity2_raw{use super:: * ;
+pub unsafe fn get_async_state(this:FileStreamAsyncResult,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FileStreamAsyncResult as::unity2::ClassIdentity> ::NAME,"get_AsyncState",));
+let inner:extern "C" fn(FileStreamAsyncResult, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_completed_synchronously(this:FileStreamAsyncResult,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FileStreamAsyncResult as::unity2::ClassIdentity> ::NAME,"get_CompletedSynchronously",));
+let inner:extern "C" fn(FileStreamAsyncResult, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_is_completed(this:FileStreamAsyncResult,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FileStreamAsyncResult as::unity2::ClassIdentity> ::NAME,"get_IsCompleted",));
+let inner:extern "C" fn(FileStreamAsyncResult, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-io-filestreamasyncresult")]pub trait IFileStreamAsyncResultMethods:IFileStreamAsyncResult{#[doc="`get_AsyncState()` overload"]fn get_async_state(self,)->crate::system::object::Object{unsafe{let __receiver= <FileStreamAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3812140usize)as*mut u8,crate::system::object::Object;
-(FileStreamAsyncResult)__receiver)}
+__FileStreamAsyncResult_unity2_raw::get_async_state(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CompletedSynchronously()` overload"]fn get_completed_synchronously(self,)->bool{unsafe{let __receiver= <FileStreamAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3812150usize)as*mut u8,bool;
-(FileStreamAsyncResult)__receiver)}
+__FileStreamAsyncResult_unity2_raw::get_completed_synchronously(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_IsCompleted()` overload"]fn get_is_completed(self,)->bool{unsafe{let __receiver= <FileStreamAsyncResult as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3812170usize)as*mut u8,bool;
-(FileStreamAsyncResult)__receiver)}
+__FileStreamAsyncResult_unity2_raw::get_is_completed(__receiver, ::core::option::Option::None)}
 }
 }
 

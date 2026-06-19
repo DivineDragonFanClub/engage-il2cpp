@@ -21,9 +21,12 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 pub use __types::*;
 
 #[cfg(feature="tm_pro-tmp_inputvalidator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_InputValidator_unity2_raw{use super:: * ;
-pub unsafe fn validate(this:TMP_InputValidator,text: *mut::unity2::Il2CppString,pos: *mut i32,ch:u16,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Validate").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Validate", <TMP_InputValidator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn validate(this:TMP_InputValidator,text: *mut::unity2::Il2CppString,pos: *mut i32,ch:u16,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TMP_InputValidator as::unity2::ClassIdentity> ::NAME,"Validate",));
 let inner:extern "C" fn(TMP_InputValidator, *mut::unity2::Il2CppString, *mut i32,u16, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

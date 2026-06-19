@@ -20,6 +20,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-gameclearrewardsequence-types")]
 pub use __types::*;
 
+#[cfg(feature="app-gameclearrewardsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameClearRewardSequence_unity2_raw{use super:: * ;
+pub unsafe fn get_desc(this:GameClearRewardSequence,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <GameClearRewardSequence as::unity2::ClassIdentity> ::NAME,"GetDesc",));
+let inner:extern "C" fn(GameClearRewardSequence, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-gameclearrewardsequence")]impl GameClearRewardSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2279350usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
@@ -38,8 +51,7 @@ pub use __types::*;
 (GameClearRewardSequence)__receiver)}
 }
 #[doc="`GetDesc()` overload"]fn get_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <GameClearRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22797d0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(GameClearRewardSequence)__receiver)}
+__GameClearRewardSequence_unity2_raw::get_desc(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameClearRewardSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2279a30usize)as*mut u8,();

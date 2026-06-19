@@ -19,116 +19,116 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-platforms-limitedplatformaccessor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LimitedPlatformAccessor_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_environment_variable{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"GetEnvironmentVariable",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"GetEnvironmentVariable",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_filter_supported_core_modules{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::coremodules::CoreModules as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"FilterSupportedCoreModules",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"FilterSupportedCoreModules",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_io_get_standard_stream{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"IO_GetStandardStream",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"IO_GetStandardStream",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_io_os_get_temp_filename{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"IO_OS_GetTempFilename",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"IO_OS_GetTempFilename",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_os_exit_fast{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<i32 as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"OS_ExitFast",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_ExitFast",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_os_file_exists{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"OS_FileExists",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileExists",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_os_file_delete{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"OS_FileDelete",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileDelete",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_os_file_move{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"OS_FileMove",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileMove",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_os_execute{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"OS_Execute",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_Execute",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_platform_name_prefix{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"GetPlatformNamePrefix",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"GetPlatformNamePrefix",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_default_print{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),"DefaultPrint",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"DefaultPrint",e),}
-}
-}
+pub unsafe fn get_environment_variable(this:LimitedPlatformAccessor,envvarname: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"GetEnvironmentVariable",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,envvarname,__mi)}
+pub unsafe fn filter_supported_core_modules(this:LimitedPlatformAccessor,module:crate::moon_sharp::interpreter::coremodules::CoreModules,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"FilterSupportedCoreModules",));
+let inner:extern "C" fn(LimitedPlatformAccessor,crate::moon_sharp::interpreter::coremodules::CoreModules, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::coremodules::CoreModules= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,module,__mi)}
+pub unsafe fn io_get_standard_stream(this:LimitedPlatformAccessor,r#type:crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::io::stream::Stream{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"IO_GetStandardStream",));
+let inner:extern "C" fn(LimitedPlatformAccessor,crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,r#type,__mi)}
+pub unsafe fn io_os_get_temp_filename(this:LimitedPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"IO_OS_GetTempFilename",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn os_exit_fast(this:LimitedPlatformAccessor,exit_code:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_ExitFast",));
+let inner:extern "C" fn(LimitedPlatformAccessor,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,exit_code,__mi)}
+pub unsafe fn os_file_exists(this:LimitedPlatformAccessor,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileExists",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,file,__mi)}
+pub unsafe fn os_file_delete(this:LimitedPlatformAccessor,file: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileDelete",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,file,__mi)}
+pub unsafe fn os_file_move(this:LimitedPlatformAccessor,src: ::unity2::Il2CppString,dst: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_FileMove",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,src,dst,__mi)}
+pub unsafe fn os_execute(this:LimitedPlatformAccessor,cmdline: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"OS_Execute",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,cmdline,__mi)}
+pub unsafe fn get_platform_name_prefix(this:LimitedPlatformAccessor,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"GetPlatformNamePrefix",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn default_print(this:LimitedPlatformAccessor,content: ::unity2::Il2CppString,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <LimitedPlatformAccessor as::unity2::ClassIdentity> ::NAME,"DefaultPrint",));
+let inner:extern "C" fn(LimitedPlatformAccessor, ::unity2::Il2CppString, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,content,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<LimitedPlatformAccessor as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -142,48 +142,37 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-platforms-limitedplatformaccessor")]pub trait ILimitedPlatformAccessorMethods:ILimitedPlatformAccessor{#[doc="`GetEnvironmentVariable(::unity2::Il2CppString)` overload"]fn get_environment_variable(self,envvarname:impl::core::convert::Into< ::unity2::Il2CppString>)-> ::unity2::Il2CppString{unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_get_environment_variable::get_method_info().method_ptr, ::unity2::Il2CppString;
-(LimitedPlatformAccessor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(envvarname))}
+__LimitedPlatformAccessor_unity2_raw::get_environment_variable(__receiver, ::core::convert::Into::into(envvarname), ::core::option::Option::None)}
 }
 #[doc="`FilterSupportedCoreModules(crate::moon_sharp::interpreter::coremodules::CoreModules)` overload"]fn filter_supported_core_modules(self,module:impl::core::convert::Into<crate::moon_sharp::interpreter::coremodules::CoreModules>)->crate::moon_sharp::interpreter::coremodules::CoreModules{unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_filter_supported_core_modules::get_method_info().method_ptr,crate::moon_sharp::interpreter::coremodules::CoreModules;
-(LimitedPlatformAccessor)__receiver,(crate::moon_sharp::interpreter::coremodules::CoreModules)::core::convert::Into::into(module))}
+__LimitedPlatformAccessor_unity2_raw::filter_supported_core_modules(__receiver, ::core::convert::Into::into(module), ::core::option::Option::None)}
 }
 #[doc="`IO_GetStandardStream(crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType)` overload"]fn io_get_standard_stream(self,r#type:impl::core::convert::Into<crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType>)->crate::system::io::stream::Stream{unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_io_get_standard_stream::get_method_info().method_ptr,crate::system::io::stream::Stream;
-(LimitedPlatformAccessor)__receiver,(crate::moon_sharp::interpreter::platforms::standardfiletype::StandardFileType)::core::convert::Into::into(r#type))}
+__LimitedPlatformAccessor_unity2_raw::io_get_standard_stream(__receiver, ::core::convert::Into::into(r#type), ::core::option::Option::None)}
 }
 #[doc="`IO_OS_GetTempFilename()` overload"]fn io_os_get_temp_filename(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_io_os_get_temp_filename::get_method_info().method_ptr, ::unity2::Il2CppString;
-(LimitedPlatformAccessor)__receiver)}
+__LimitedPlatformAccessor_unity2_raw::io_os_get_temp_filename(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OS_ExitFast(i32)` overload"]fn os_exit_fast(self,exit_code:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_os_exit_fast::get_method_info().method_ptr,();
-(LimitedPlatformAccessor)__receiver,(i32)::core::convert::Into::into(exit_code))}
+__LimitedPlatformAccessor_unity2_raw::os_exit_fast(__receiver, ::core::convert::Into::into(exit_code), ::core::option::Option::None)}
 }
 #[doc="`OS_FileExists(::unity2::Il2CppString)` overload"]fn os_file_exists(self,file:impl::core::convert::Into< ::unity2::Il2CppString>)->bool{unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_os_file_exists::get_method_info().method_ptr,bool;
-(LimitedPlatformAccessor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file))}
+__LimitedPlatformAccessor_unity2_raw::os_file_exists(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)}
 }
 #[doc="`OS_FileDelete(::unity2::Il2CppString)` overload"]fn os_file_delete(self,file:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_os_file_delete::get_method_info().method_ptr,();
-(LimitedPlatformAccessor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(file))}
+__LimitedPlatformAccessor_unity2_raw::os_file_delete(__receiver, ::core::convert::Into::into(file), ::core::option::Option::None)}
 }
 #[doc="`OS_FileMove(::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn os_file_move(self,src:impl::core::convert::Into< ::unity2::Il2CppString> ,dst:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_os_file_move::get_method_info().method_ptr,();
-(LimitedPlatformAccessor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(src),(::unity2::Il2CppString)::core::convert::Into::into(dst))}
+__LimitedPlatformAccessor_unity2_raw::os_file_move(__receiver, ::core::convert::Into::into(src), ::core::convert::Into::into(dst), ::core::option::Option::None)}
 }
 #[doc="`OS_Execute(::unity2::Il2CppString)` overload"]fn os_execute(self,cmdline:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_os_execute::get_method_info().method_ptr,i32;
-(LimitedPlatformAccessor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(cmdline))}
+__LimitedPlatformAccessor_unity2_raw::os_execute(__receiver, ::core::convert::Into::into(cmdline), ::core::option::Option::None)}
 }
 #[doc="`GetPlatformNamePrefix()` overload"]fn get_platform_name_prefix(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_get_platform_name_prefix::get_method_info().method_ptr, ::unity2::Il2CppString;
-(LimitedPlatformAccessor)__receiver)}
+__LimitedPlatformAccessor_unity2_raw::get_platform_name_prefix(__receiver, ::core::option::Option::None)}
 }
 #[doc="`DefaultPrint(::unity2::Il2CppString)` overload"]fn default_print(self,content:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_default_print::get_method_info().method_ptr,();
-(LimitedPlatformAccessor)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(content))}
+__LimitedPlatformAccessor_unity2_raw::default_print(__receiver, ::core::convert::Into::into(content), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <LimitedPlatformAccessor as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__LimitedPlatformAccessor_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleparam/BattleParam.md"))]#[::unity2::class(namespace="App",name="BattleParam")]#[parent(crate::system::object::Object)]pub struct BattleParam{#[static_field]#[rename(name="INVALID")]pub invalid:f32, #[static_field]#[rename(name="Mins")]pub mins: ::unity2::Array<f32> , #[static_field]#[rename(name="Maxs")]pub maxs: ::unity2::Array<f32> , #[static_field]#[rename(name="Clamps")]pub clamps: ::unity2::Array<f32> , #[offset(16)]#[rename(name="Add")]pub add:f32, #[offset(20)]#[rename(name="Scale")]pub scale:f32, #[offset(24)]#[rename(name="Value")]pub value:f32,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleparam/BattleParam_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct BattleParam_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for BattleParam_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="BattleParam.Kinds";
@@ -30,13 +33,43 @@ pub fn num()->Self{Self{value:2}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/battleparam/BattleParam.md"))]#[::unity2::class(namespace="App",name="BattleParam")]#[parent(crate::system::object::Object)]pub struct BattleParam{#[static_field]#[rename(name="INVALID")]pub invalid:f32, #[static_field]#[rename(name="Mins")]pub mins: ::unity2::Array<f32> , #[static_field]#[rename(name="Maxs")]pub maxs: ::unity2::Array<f32> , #[static_field]#[rename(name="Clamps")]pub clamps: ::unity2::Array<f32> , #[offset(16)]#[rename(name="Add")]pub add:f32, #[offset(20)]#[rename(name="Scale")]pub scale:f32, #[offset(24)]#[rename(name="Value")]pub value:f32,}
-
 }
 
 #[cfg(feature = "app-battleparam-types")]
 pub use __types::*;
+
+#[cfg(feature="app-battleparam")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BattleParam_unity2_raw{use super:: * ;
+pub unsafe fn get_kind(this:BattleParam,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::battleparam::BattleParam_Kinds{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BattleParam as::unity2::ClassIdentity> ::NAME,"get_Kind",));
+let inner:extern "C" fn(BattleParam, ::unity2::OptionalMethod,)->crate::app::battleparam::BattleParam_Kinds= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:BattleParam,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BattleParam as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(BattleParam, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calculate(this:BattleParam,side:crate::app::battleinfoside::BattleInfoSide,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BattleParam as::unity2::ClassIdentity> ::NAME,"Calculate",));
+let inner:extern "C" fn(BattleParam,crate::app::battleinfoside::BattleInfoSide, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,side,__mi)}
+}
 
 #[cfg(feature="app-battleparam")]impl BattleParam{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e8dd60usize)as*mut u8,();
 )}
@@ -44,20 +77,17 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-battleparam")]pub trait IBattleParamMethods:IBattleParam{#[doc="`get_Kind()` overload"]fn get_kind(self,)->crate::app::battleparam::BattleParam_Kinds{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d9d0usize)as*mut u8,crate::app::battleparam::BattleParam_Kinds;
-(BattleParam)__receiver)}
+__BattleParam_unity2_raw::get_kind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8d9e0usize)as*mut u8, ::unity2::Il2CppString;
-(BattleParam)__receiver)}
+__BattleParam_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetResult(crate::app::battleinfoside::BattleInfoSide)` overload"]fn get_result(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8da30usize)as*mut u8,f32;
 (BattleParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
 }
 #[doc="`Calculate(crate::app::battleinfoside::BattleInfoSide)` overload"]fn calculate(self,side:impl::core::convert::Into<crate::app::battleinfoside::BattleInfoSide>)->f32{unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8db60usize)as*mut u8,f32;
-(BattleParam)__receiver,(crate::app::battleinfoside::BattleInfoSide)::core::convert::Into::into(side))}
+__BattleParam_unity2_raw::calculate(__receiver, ::core::convert::Into::into(side), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <BattleParam as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e8db70usize)as*mut u8,();
@@ -105,10 +135,10 @@ this}
 #[cfg(feature = "app-battleparam")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::BattleParam_Kinds;
     pub use super::BattleParam;
     pub use super::IBattleParam;
     pub use super::IBattleParamMethods;
+    pub use super::BattleParam_Kinds;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

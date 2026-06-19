@@ -17,37 +17,72 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="combat-basecombatlocation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseCombatLocation_unity2_raw{use super:: * ;
-pub unsafe fn get_rough_pos_count(this:BaseCombatLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_RoughPosCount").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_RoughPosCount", <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn locate_emblem(this:BaseCombatLocation,master_side:i32,master:crate::combat::character::Character,emblem:crate::combat::character::Character,locate_style:crate::combat::locationparams::LocationParams_LocateStyle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,"LocateEmblem",));
+let inner:extern "C" fn(BaseCombatLocation,i32,crate::combat::character::Character,crate::combat::character::Character,crate::combat::locationparams::LocationParams_LocateStyle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,master_side,master,emblem,locate_style,__mi)}
+pub unsafe fn setup(this:BaseCombatLocation,gs: ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,"Setup",));
+let inner:extern "C" fn(BaseCombatLocation, ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,gs,__mi)}
+pub unsafe fn get_rough_pos_count(this:BaseCombatLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,"get_RoughPosCount",));
 let inner:extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_rough_pos_2(this:BaseCombatLocation,try_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetRoughPos").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetRoughPos", <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_rough_pos_2(this:BaseCombatLocation,try_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,"SetRoughPos",));
 let inner:extern "C" fn(BaseCombatLocation,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,try_count,__mi)}
-pub unsafe fn get_pattern_count(this:BaseCombatLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_PatternCount").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_PatternCount", <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_pattern_count(this:BaseCombatLocation,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,"get_PatternCount",));
 let inner:extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn set_battle_patern(this:BaseCombatLocation,pattern:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("SetBattlePatern").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","SetBattlePatern", <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn set_battle_patern(this:BaseCombatLocation,pattern:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,"SetBattlePatern",));
 let inner:extern "C" fn(BaseCombatLocation,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,pattern,__mi)}
-pub unsafe fn calc_location(this:BaseCombatLocation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CalcLocation").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CalcLocation", <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn calc_location(this:BaseCombatLocation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BaseCombatLocation as::unity2::ClassIdentity> ::NAME,"CalcLocation",));
 let inner:extern "C" fn(BaseCombatLocation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
@@ -130,8 +165,7 @@ inner(this,__mi)}
 (BaseCombatLocation)__receiver,(::unity2::Array<crate::combat::character::Character>)::core::convert::Into::into(chara_array),(crate::combat::locationparams::LocationParams_LocateStyle)::core::convert::Into::into(locate_style))}
 }
 #[doc="`LocateEmblem(i32, crate::combat::character::Character, crate::combat::character::Character, crate::combat::locationparams::LocationParams_LocateStyle)` overload"]fn locate_emblem(self,master_side:impl::core::convert::Into<i32> ,master:impl::core::convert::Into<crate::combat::character::Character> ,emblem:impl::core::convert::Into<crate::combat::character::Character> ,locate_style:impl::core::convert::Into<crate::combat::locationparams::LocationParams_LocateStyle>)->(){unsafe{let __receiver= <BaseCombatLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x212cbb0usize)as*mut u8,();
-(BaseCombatLocation)__receiver,(i32)::core::convert::Into::into(master_side),(crate::combat::character::Character)::core::convert::Into::into(master),(crate::combat::character::Character)::core::convert::Into::into(emblem),(crate::combat::locationparams::LocationParams_LocateStyle)::core::convert::Into::into(locate_style))}
+__BaseCombatLocation_unity2_raw::locate_emblem(__receiver, ::core::convert::Into::into(master_side), ::core::convert::Into::into(master), ::core::convert::Into::into(emblem), ::core::convert::Into::into(locate_style), ::core::option::Option::None)}
 }
 #[doc="`get_Record()` overload"]fn get_record(self,)->crate::combat::combatrecord::CombatRecord{unsafe{let __receiver= <BaseCombatLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x212cdc0usize)as*mut u8,crate::combat::combatrecord::CombatRecord;
@@ -254,8 +288,7 @@ inner(this,__mi)}
 (BaseCombatLocation)__receiver,(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)::core::convert::Into::into(gs))}
 }
 #[doc="`Setup(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)` overload"]fn setup(self,gs:impl::core::convert::Into< ::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus> >)->(){unsafe{let __receiver= <BaseCombatLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x212d250usize)as*mut u8,();
-(BaseCombatLocation)__receiver,(::unity2::Array<crate::combat::charactergamestatus::CharacterGameStatus>)::core::convert::Into::into(gs))}
+__BaseCombatLocation_unity2_raw::setup(__receiver, ::core::convert::Into::into(gs), ::core::option::Option::None)}
 }
 #[doc="`get_RoughPosCount()` overload"]fn get_rough_pos_count(self,)->i32{unsafe{let __receiver= <BaseCombatLocation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 __BaseCombatLocation_unity2_raw::get_rough_pos_count(__receiver, ::core::option::Option::None)}

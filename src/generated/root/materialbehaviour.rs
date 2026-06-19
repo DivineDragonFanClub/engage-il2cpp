@@ -17,15 +17,33 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/materialbehaviour/MaterialBehaviour.md"))]#[::unity2::class(namespace="",name="MaterialBehaviour")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MaterialBehaviour{#[offset(24)]#[rename(name="m_Speed")]pub m_speed:f32, #[offset(28)]#[rename(name="m_Random")]pub m_random:bool, #[offset(32)]#[rename(name="m_Props")]pub m_props:crate::unity_engine::materialpropertyblock::MaterialPropertyBlock, #[offset(40)]#[rename(name="m_Render")]pub m_render:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(48)]#[rename(name="m_Elapsed")]pub m_elapsed:f32, #[static_field]#[rename(name="TIME_HOUR")]pub time_hour:f32, #[static_field]#[rename(name="TIME_DAY")]pub time_day:f32, #[static_field]#[rename(name="TIME_MONTH")]pub time_month:f32, #[offset(56)]#[rename(name="MainTex")]pub main_tex:crate::root::materialbehaviour::MaterialBehaviour_TextureInfo, #[offset(64)]#[rename(name="BumpMap")]pub bump_map:crate::root::materialbehaviour::MaterialBehaviour_TextureInfo, #[offset(72)]#[rename(name="MultiMap")]pub multi_map:crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/materialbehaviour/MaterialBehaviour_TextureInfo.md"))]#[::unity2::class(namespace="",name="MaterialBehaviour.TextureInfo")]#[parent(crate::system::object::Object)]pub struct MaterialBehaviour_TextureInfo{#[offset(16)]#[rename(name="Name")]pub name: ::unity2::Il2CppString, #[offset(24)]#[rename(name="Attr")]pub attr: ::unity2::Il2CppString, #[offset(32)]#[rename(name="Tiling")]pub tiling:crate::unity_engine::vector2::Vector2, #[offset(40)]#[rename(name="Offset")]pub offset:crate::unity_engine::vector2::Vector2,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/materialbehaviour/MaterialBehaviour.md"))]#[::unity2::class(namespace="",name="MaterialBehaviour")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct MaterialBehaviour{#[offset(24)]#[rename(name="m_Speed")]pub m_speed:f32, #[offset(28)]#[rename(name="m_Random")]pub m_random:bool, #[offset(32)]#[rename(name="m_Props")]pub m_props:crate::unity_engine::materialpropertyblock::MaterialPropertyBlock, #[offset(40)]#[rename(name="m_Render")]pub m_render:crate::unity_engine::meshrenderer::MeshRenderer, #[offset(48)]#[rename(name="m_Elapsed")]pub m_elapsed:f32, #[static_field]#[rename(name="TIME_HOUR")]pub time_hour:f32, #[static_field]#[rename(name="TIME_DAY")]pub time_day:f32, #[static_field]#[rename(name="TIME_MONTH")]pub time_month:f32, #[offset(56)]#[rename(name="MainTex")]pub main_tex:crate::root::materialbehaviour::MaterialBehaviour_TextureInfo, #[offset(64)]#[rename(name="BumpMap")]pub bump_map:crate::root::materialbehaviour::MaterialBehaviour_TextureInfo, #[offset(72)]#[rename(name="MultiMap")]pub multi_map:crate::root::materialbehaviour::MaterialBehaviour_TextureInfo,}
 
 }
 
 #[cfg(feature = "root-materialbehaviour-types")]
 pub use __types::*;
+
+#[cfg(feature="root-materialbehaviour")]pub trait IMaterialBehaviour_TextureInfoMethods:IMaterialBehaviour_TextureInfo{#[doc="`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,material:impl::core::convert::Into<crate::unity_engine::material::Material> ,names:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <MaterialBehaviour_TextureInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x208d3f0usize)as*mut u8,();
+(MaterialBehaviour_TextureInfo)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(material),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(names))}
+}
+}
+
+#[cfg(feature="root-materialbehaviour")]impl<__T:IMaterialBehaviour_TextureInfo>IMaterialBehaviour_TextureInfoMethods for __T{}
+
+#[cfg(feature="root-materialbehaviour")]impl MaterialBehaviour_TextureInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="root-materialbehaviour")]impl MaterialBehaviour_TextureInfo{#[doc="`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(material:crate::unity_engine::material::Material,names: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(MaterialBehaviour_TextureInfo), ::core::stringify!(new),));
+ <Self as IMaterialBehaviour_TextureInfoMethods> ::ctor(this,material,names);
+this}
+}
 
 #[cfg(feature="root-materialbehaviour")]impl MaterialBehaviour{#[doc="`SetTilingImpl(crate::unity_engine::meshrenderer::MeshRenderer, crate::unity_engine::materialpropertyblock::MaterialPropertyBlock, crate::root::materialbehaviour::MaterialBehaviour_TextureInfo, crate::unity_engine::vector2::Vector2)` overload"]pub fn set_tiling_impl(render:impl::core::convert::Into<crate::unity_engine::meshrenderer::MeshRenderer> ,property:impl::core::convert::Into<crate::unity_engine::materialpropertyblock::MaterialPropertyBlock> ,info:impl::core::convert::Into<crate::root::materialbehaviour::MaterialBehaviour_TextureInfo> ,tiling:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c6630usize)as*mut u8,();
 (crate::unity_engine::meshrenderer::MeshRenderer)::core::convert::Into::into(render),(crate::unity_engine::materialpropertyblock::MaterialPropertyBlock)::core::convert::Into::into(property),(crate::root::materialbehaviour::MaterialBehaviour_TextureInfo)::core::convert::Into::into(info),(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(tiling))}
@@ -114,33 +132,15 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="root-materialbehaviour")]pub trait IMaterialBehaviour_TextureInfoMethods:IMaterialBehaviour_TextureInfo{#[doc="`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` overload"]fn ctor(self,material:impl::core::convert::Into<crate::unity_engine::material::Material> ,names:impl::core::convert::Into< ::unity2::Array< ::unity2::Il2CppString> >)->(){unsafe{let __receiver= <MaterialBehaviour_TextureInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x208d3f0usize)as*mut u8,();
-(MaterialBehaviour_TextureInfo)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(material),(::unity2::Array< ::unity2::Il2CppString>)::core::convert::Into::into(names))}
-}
-}
-
-#[cfg(feature="root-materialbehaviour")]impl<__T:IMaterialBehaviour_TextureInfo>IMaterialBehaviour_TextureInfoMethods for __T{}
-
-#[cfg(feature="root-materialbehaviour")]impl MaterialBehaviour_TextureInfo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="root-materialbehaviour")]impl MaterialBehaviour_TextureInfo{#[doc="`.ctor(crate::unity_engine::material::Material, ::unity2::Array<::unity2::Il2CppString>)` — overload selector"]pub fn new(material:crate::unity_engine::material::Material,names: ::unity2::Array< ::unity2::Il2CppString>)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(MaterialBehaviour_TextureInfo), ::core::stringify!(new),));
- <Self as IMaterialBehaviour_TextureInfoMethods> ::ctor(this,material,names);
-this}
-}
-
 #[cfg(feature = "root-materialbehaviour")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MaterialBehaviour;
-    pub use super::IMaterialBehaviour;
-    pub use super::IMaterialBehaviourMethods;
     pub use super::MaterialBehaviour_TextureInfo;
     pub use super::IMaterialBehaviour_TextureInfo;
     pub use super::IMaterialBehaviour_TextureInfoMethods;
+    pub use super::MaterialBehaviour;
+    pub use super::IMaterialBehaviour;
+    pub use super::IMaterialBehaviourMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

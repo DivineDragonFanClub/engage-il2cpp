@@ -22,13 +22,13 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenucontent/SolanelInfoMenuContent_HelpFastTravel.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuContent.HelpFastTravel")]#[parent(crate::system::object::Object)]pub struct SolanelInfoMenuContent_HelpFastTravel{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Name")]pub m_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_CheckDone")]pub m_check_done:crate::unity_engine::gameobject::GameObject, #[offset(48)]#[rename(name="m_Value")]pub m_value:crate::unity_engine::gameobject::GameObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenucontent/SolanelInfoMenuContent_Infomation.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuContent.Infomation")]#[parent(crate::system::object::Object)]pub struct SolanelInfoMenuContent_Infomation{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenucontent/SolanelInfoMenuContent.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct SolanelInfoMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasPath")]pub sprite_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_SpriteAtlasManager")]pub s_sprite_atlas_manager:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2, #[offset(232)]#[rename(name="m_MapArrow")]pub m_map_arrow:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_MapArrowMoveFrame")]pub m_map_arrow_move_frame:f32, #[offset(248)]#[rename(name="m_MapPoint")]pub m_map_point:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(256)]#[rename(name="m_AreaName")]pub m_area_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_AreaHelp")]pub m_area_help:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_AreaFastTravelObj")]pub m_area_fast_travel_obj:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(280)]#[rename(name="m_HelpFastTravelList")]pub m_help_fast_travel_list:crate::system::collections::generic::list_1::List_1<crate::app::solanelinfomenucontent::SolanelInfoMenuContent_HelpFastTravel> , #[offset(288)]#[rename(name="m_UnitListObj")]pub m_unit_list_obj:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(296)]#[rename(name="m_SolanelUnitList")]pub m_solanel_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::solanelinfomenucontent::SolanelInfoMenuContent_SolanelUnit> , #[offset(304)]#[rename(name="m_InfomationAbsentObj")]pub m_infomation_absent_obj:crate::unity_engine::gameobject::GameObject, #[offset(312)]#[rename(name="m_InfomationListObj")]pub m_infomation_list_obj:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(320)]#[rename(name="m_Pos")]pub m_pos:crate::unity_engine::vector2::Vector2, #[offset(328)]#[rename(name="m_From")]pub m_from:crate::unity_engine::vector2::Vector2, #[offset(336)]#[rename(name="m_To")]pub m_to:crate::unity_engine::vector2::Vector2, #[offset(344)]#[rename(name="m_MoveTick")]pub m_move_tick:f32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenucontent/SolanelInfoMenuContent_SolanelUnit.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuContent.SolanelUnit")]#[parent(crate::system::object::Object)]pub struct SolanelInfoMenuContent_SolanelUnit{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::gameobject::GameObject, #[offset(32)]#[rename(name="m_UnitName")]pub m_unit_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_TalkIcon")]pub m_talk_icon:crate::unity_engine::gameobject::GameObject,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenucontent/SolanelInfoMenuContent.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct SolanelInfoMenuContent{#[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[static_field]#[rename(name="SpriteAtlasPath")]pub sprite_atlas_path: ::unity2::Il2CppString, #[static_field]#[rename(name="s_SpriteAtlasManager")]pub s_sprite_atlas_manager:crate::app::spriteatlasmanager_2::SpriteAtlasManager_2, #[offset(232)]#[rename(name="m_MapArrow")]pub m_map_arrow:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_MapArrowMoveFrame")]pub m_map_arrow_move_frame:f32, #[offset(248)]#[rename(name="m_MapPoint")]pub m_map_point:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(256)]#[rename(name="m_AreaName")]pub m_area_name:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_AreaHelp")]pub m_area_help:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(272)]#[rename(name="m_AreaFastTravelObj")]pub m_area_fast_travel_obj:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(280)]#[rename(name="m_HelpFastTravelList")]pub m_help_fast_travel_list:crate::system::collections::generic::list_1::List_1<crate::app::solanelinfomenucontent::SolanelInfoMenuContent_HelpFastTravel> , #[offset(288)]#[rename(name="m_UnitListObj")]pub m_unit_list_obj:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(296)]#[rename(name="m_SolanelUnitList")]pub m_solanel_unit_list:crate::system::collections::generic::list_1::List_1<crate::app::solanelinfomenucontent::SolanelInfoMenuContent_SolanelUnit> , #[offset(304)]#[rename(name="m_InfomationAbsentObj")]pub m_infomation_absent_obj:crate::unity_engine::gameobject::GameObject, #[offset(312)]#[rename(name="m_InfomationListObj")]pub m_infomation_list_obj:crate::system::collections::generic::list_1::List_1<crate::unity_engine::gameobject::GameObject> , #[offset(320)]#[rename(name="m_Pos")]pub m_pos:crate::unity_engine::vector2::Vector2, #[offset(328)]#[rename(name="m_From")]pub m_from:crate::unity_engine::vector2::Vector2, #[offset(336)]#[rename(name="m_To")]pub m_to:crate::unity_engine::vector2::Vector2, #[offset(344)]#[rename(name="m_MoveTick")]pub m_move_tick:f32,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/solanelinfomenucontent/SolanelInfoMenuContent_Infomation.md"))]#[::unity2::class(namespace="App",name="SolanelInfoMenuContent.Infomation")]#[parent(crate::system::object::Object)]pub struct SolanelInfoMenuContent_Infomation{#[offset(16)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(24)]#[rename(name="m_Icon")]pub m_icon:crate::unity_engine::ui::image::Image, #[offset(32)]#[rename(name="m_Title")]pub m_title:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(40)]#[rename(name="m_Message")]pub m_message:crate::tm_pro::textmeshprougui::TextMeshProUGUI,}
 
 }
 
@@ -78,70 +78,57 @@ pub fn set_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
-#[cfg(feature="app-solanelinfomenucontent")]pub trait ISolanelInfoMenuContent_InfomationMethods:ISolanelInfoMenuContent_Infomation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_Infomation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d716b0usize)as*mut u8,();
-(SolanelInfoMenuContent_Infomation)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
-}
-#[doc="`Show(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn show(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite> ,title:impl::core::convert::Into< ::unity2::Il2CppString> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_Infomation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d70610usize)as*mut u8,();
-(SolanelInfoMenuContent_Infomation)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite),(::unity2::Il2CppString)::core::convert::Into::into(title),(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <SolanelInfoMenuContent_Infomation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d718a0usize)as*mut u8,();
-(SolanelInfoMenuContent_Infomation)__receiver)}
-}
-}
-
-#[cfg(feature="app-solanelinfomenucontent")]impl<__T:ISolanelInfoMenuContent_Infomation>ISolanelInfoMenuContent_InfomationMethods for __T{}
-
-#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_Infomation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_Infomation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SolanelInfoMenuContent_Infomation), ::core::stringify!(new),));
- <Self as ISolanelInfoMenuContent_InfomationMethods> ::ctor(this,root);
-this}
-}
-
-#[cfg(feature="app-solanelinfomenucontent")]pub trait ISolanelInfoMenuContent_SolanelUnitMethods:ISolanelInfoMenuContent_SolanelUnit{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71920usize)as*mut u8,();
-(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
-}
-#[doc="`SetUnit(crate::app::unit::Unit, crate::app::hubaccessdata::HubAccessData)` overload"]fn set_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,hub_access_data:impl::core::convert::Into<crate::app::hubaccessdata::HubAccessData>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71aa0usize)as*mut u8,();
-(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::hubaccessdata::HubAccessData)::core::convert::Into::into(hub_access_data))}
-}
-#[doc="`SetGodUnit(crate::app::goddata::GodData, crate::app::hubaccessdata::HubAccessData)` overload"]fn set_god_unit(self,god:impl::core::convert::Into<crate::app::goddata::GodData> ,hub_access_data:impl::core::convert::Into<crate::app::hubaccessdata::HubAccessData>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71fd0usize)as*mut u8,();
-(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god),(crate::app::hubaccessdata::HubAccessData)::core::convert::Into::into(hub_access_data))}
-}
-#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71c00usize)as*mut u8,();
-(SolanelInfoMenuContent_SolanelUnit)__receiver)}
-}
-#[doc="`SetTalkIcon(crate::app::hubaccessdata::HubAccessData)` overload"]fn set_talk_icon(self,hub_access_data:impl::core::convert::Into<crate::app::hubaccessdata::HubAccessData>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71c80usize)as*mut u8,();
-(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::app::hubaccessdata::HubAccessData)::core::convert::Into::into(hub_access_data))}
-}
-}
-
-#[cfg(feature="app-solanelinfomenucontent")]impl<__T:ISolanelInfoMenuContent_SolanelUnit>ISolanelInfoMenuContent_SolanelUnitMethods for __T{}
-
-#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_SolanelUnit{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn set_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_talk_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_SolanelUnit{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SolanelInfoMenuContent_SolanelUnit), ::core::stringify!(new),));
- <Self as ISolanelInfoMenuContent_SolanelUnitMethods> ::ctor(this,root);
-this}
+#[cfg(feature="app-solanelinfomenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SolanelInfoMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn after_build(this:SolanelInfoMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <SolanelInfoMenuContent as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:SolanelInfoMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <SolanelInfoMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(SolanelInfoMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn update(this:SolanelInfoMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <SolanelInfoMenuContent as::unity2::ClassIdentity> ::NAME,"Update",));
+let inner:extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_w(this:SolanelInfoMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <SolanelInfoMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:SolanelInfoMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <SolanelInfoMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(SolanelInfoMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fdfd80usize)as*mut u8,();
@@ -162,24 +149,19 @@ this}
 }
 
 #[cfg(feature="app-solanelinfomenucontent")]pub trait ISolanelInfoMenuContentMethods:ISolanelInfoMenuContent{#[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <SolanelInfoMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdf9c0usize)as*mut u8,();
-(SolanelInfoMenuContent)__receiver)}
+__SolanelInfoMenuContent_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <SolanelInfoMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdfb40usize)as*mut u8,f32;
-(SolanelInfoMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__SolanelInfoMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <SolanelInfoMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fdfc30usize)as*mut u8,();
-(SolanelInfoMenuContent)__receiver)}
+__SolanelInfoMenuContent_unity2_raw::update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <SolanelInfoMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe1960usize)as*mut u8,f32;
-(SolanelInfoMenuContent)__receiver)}
+__SolanelInfoMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <SolanelInfoMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe19d0usize)as*mut u8,f32;
-(SolanelInfoMenuContent)__receiver)}
+__SolanelInfoMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Initialize()` overload"]fn initialize(self,)->(){unsafe{let __receiver= <SolanelInfoMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fe0120usize)as*mut u8,();
@@ -224,21 +206,87 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-solanelinfomenucontent")]pub trait ISolanelInfoMenuContent_SolanelUnitMethods:ISolanelInfoMenuContent_SolanelUnit{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71920usize)as*mut u8,();
+(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`SetUnit(crate::app::unit::Unit, crate::app::hubaccessdata::HubAccessData)` overload"]fn set_unit(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,hub_access_data:impl::core::convert::Into<crate::app::hubaccessdata::HubAccessData>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71aa0usize)as*mut u8,();
+(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::app::hubaccessdata::HubAccessData)::core::convert::Into::into(hub_access_data))}
+}
+#[doc="`SetGodUnit(crate::app::goddata::GodData, crate::app::hubaccessdata::HubAccessData)` overload"]fn set_god_unit(self,god:impl::core::convert::Into<crate::app::goddata::GodData> ,hub_access_data:impl::core::convert::Into<crate::app::hubaccessdata::HubAccessData>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71fd0usize)as*mut u8,();
+(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::app::goddata::GodData)::core::convert::Into::into(god),(crate::app::hubaccessdata::HubAccessData)::core::convert::Into::into(hub_access_data))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71c00usize)as*mut u8,();
+(SolanelInfoMenuContent_SolanelUnit)__receiver)}
+}
+#[doc="`SetTalkIcon(crate::app::hubaccessdata::HubAccessData)` overload"]fn set_talk_icon(self,hub_access_data:impl::core::convert::Into<crate::app::hubaccessdata::HubAccessData>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_SolanelUnit as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d71c80usize)as*mut u8,();
+(SolanelInfoMenuContent_SolanelUnit)__receiver,(crate::app::hubaccessdata::HubAccessData)::core::convert::Into::into(hub_access_data))}
+}
+}
+
+#[cfg(feature="app-solanelinfomenucontent")]impl<__T:ISolanelInfoMenuContent_SolanelUnit>ISolanelInfoMenuContent_SolanelUnitMethods for __T{}
+
+#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_SolanelUnit{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn set_god_unit_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_talk_icon_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_SolanelUnit{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoMenuContent_SolanelUnit), ::core::stringify!(new),));
+ <Self as ISolanelInfoMenuContent_SolanelUnitMethods> ::ctor(this,root);
+this}
+}
+
+#[cfg(feature="app-solanelinfomenucontent")]pub trait ISolanelInfoMenuContent_InfomationMethods:ISolanelInfoMenuContent_Infomation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` overload"]fn ctor(self,root:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_Infomation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d716b0usize)as*mut u8,();
+(SolanelInfoMenuContent_Infomation)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(root))}
+}
+#[doc="`Show(crate::unity_engine::sprite::Sprite, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]fn show(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite> ,title:impl::core::convert::Into< ::unity2::Il2CppString> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <SolanelInfoMenuContent_Infomation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d70610usize)as*mut u8,();
+(SolanelInfoMenuContent_Infomation)__receiver,(crate::unity_engine::sprite::Sprite)::core::convert::Into::into(sprite),(::unity2::Il2CppString)::core::convert::Into::into(title),(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+#[doc="`Hide()` overload"]fn hide(self,)->(){unsafe{let __receiver= <SolanelInfoMenuContent_Infomation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d718a0usize)as*mut u8,();
+(SolanelInfoMenuContent_Infomation)__receiver)}
+}
+}
+
+#[cfg(feature="app-solanelinfomenucontent")]impl<__T:ISolanelInfoMenuContent_Infomation>ISolanelInfoMenuContent_InfomationMethods for __T{}
+
+#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_Infomation{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn show_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn hide_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-solanelinfomenucontent")]impl SolanelInfoMenuContent_Infomation{#[doc="`.ctor(crate::unity_engine::gameobject::GameObject)` — overload selector"]pub fn new(root:crate::unity_engine::gameobject::GameObject)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SolanelInfoMenuContent_Infomation), ::core::stringify!(new),));
+ <Self as ISolanelInfoMenuContent_InfomationMethods> ::ctor(this,root);
+this}
+}
+
 #[cfg(feature = "app-solanelinfomenucontent")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SolanelInfoMenuContent_HelpFastTravel;
     pub use super::ISolanelInfoMenuContent_HelpFastTravel;
     pub use super::ISolanelInfoMenuContent_HelpFastTravelMethods;
-    pub use super::SolanelInfoMenuContent_Infomation;
-    pub use super::ISolanelInfoMenuContent_Infomation;
-    pub use super::ISolanelInfoMenuContent_InfomationMethods;
-    pub use super::SolanelInfoMenuContent_SolanelUnit;
-    pub use super::ISolanelInfoMenuContent_SolanelUnit;
-    pub use super::ISolanelInfoMenuContent_SolanelUnitMethods;
     pub use super::SolanelInfoMenuContent;
     pub use super::ISolanelInfoMenuContent;
     pub use super::ISolanelInfoMenuContentMethods;
+    pub use super::SolanelInfoMenuContent_SolanelUnit;
+    pub use super::ISolanelInfoMenuContent_SolanelUnit;
+    pub use super::ISolanelInfoMenuContent_SolanelUnitMethods;
+    pub use super::SolanelInfoMenuContent_Infomation;
+    pub use super::ISolanelInfoMenuContent_Infomation;
+    pub use super::ISolanelInfoMenuContent_InfomationMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

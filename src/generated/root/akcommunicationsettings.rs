@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommunicationsettings/AkCommunicationSettings.md"))]#[::unity2::class(namespace="",name="AkCommunicationSettings")]#[parent(crate::system::object::Object)]pub struct AkCommunicationSettings{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommunicationsettings/AkCommunicationSettings_AkCommSystem.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AkCommunicationSettings_AkCommSystem{pub value:i32,}
 impl::unity2::ClassIdentity for AkCommunicationSettings_AkCommSystem{const NAMESPACE: &'static str="";
 const NAME: &'static str="AkCommunicationSettings.AkCommSystem";
@@ -31,10 +28,46 @@ pub fn ak_comm_system_htcs()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akcommunicationsettings/AkCommunicationSettings.md"))]#[::unity2::class(namespace="",name="AkCommunicationSettings")]#[parent(crate::system::object::Object)]pub struct AkCommunicationSettings{#[offset(16)]#[rename(name="swigCPtr")]pub swig_c_ptr: ::unity2::IntPtr, #[offset(24)]#[rename(name="swigCMemOwn")]pub swig_c_mem_own:bool,}
+
 }
 
 #[cfg(feature = "root-akcommunicationsettings-types")]
 pub use __types::*;
+
+#[cfg(feature="root-akcommunicationsettings")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkCommunicationSettings_unity2_raw{use super:: * ;
+pub unsafe fn set_c_ptr(this:AkCommunicationSettings,c_ptr: ::unity2::IntPtr,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkCommunicationSettings as::unity2::ClassIdentity> ::NAME,"setCPtr",));
+let inner:extern "C" fn(AkCommunicationSettings, ::unity2::IntPtr, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,c_ptr,__mi)}
+pub unsafe fn finalize(this:AkCommunicationSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AkCommunicationSettings as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AkCommunicationSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:AkCommunicationSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkCommunicationSettings as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(AkCommunicationSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="root-akcommunicationsettings")]impl AkCommunicationSettings{#[doc="`getCPtr(crate::root::akcommunicationsettings::AkCommunicationSettings)` overload"]pub fn get_c_ptr(obj:impl::core::convert::Into<crate::root::akcommunicationsettings::AkCommunicationSettings>)-> ::unity2::IntPtr{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f159f0usize)as*mut u8, ::unity2::IntPtr;
 (crate::root::akcommunicationsettings::AkCommunicationSettings)::core::convert::Into::into(obj))}
@@ -46,16 +79,13 @@ pub use __types::*;
 (AkCommunicationSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr),(bool)::core::convert::Into::into(c_memory_own))}
 }
 #[doc="`setCPtr(::unity2::IntPtr)` overload"]fn set_c_ptr(self,c_ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15a50usize)as*mut u8,();
-(AkCommunicationSettings)__receiver,(::unity2::IntPtr)::core::convert::Into::into(c_ptr))}
+__AkCommunicationSettings_unity2_raw::set_c_ptr(__receiver, ::core::convert::Into::into(c_ptr), ::core::option::Option::None)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15a80usize)as*mut u8,();
-(AkCommunicationSettings)__receiver)}
+__AkCommunicationSettings_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15af0usize)as*mut u8,();
-(AkCommunicationSettings)__receiver)}
+__AkCommunicationSettings_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor_2(self,)->(){unsafe{let __receiver= <AkCommunicationSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f15c80usize)as*mut u8,();
@@ -168,10 +198,10 @@ this}
 #[cfg(feature = "root-akcommunicationsettings")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkCommunicationSettings_AkCommSystem;
     pub use super::AkCommunicationSettings;
     pub use super::IAkCommunicationSettings;
     pub use super::IAkCommunicationSettingsMethods;
-    pub use super::AkCommunicationSettings_AkCommSystem;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

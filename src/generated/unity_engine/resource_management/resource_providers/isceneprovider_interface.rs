@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-isceneprovider_interface")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ISceneProvider_Interface_unity2_raw{use super:: * ;
-pub unsafe fn provide_scene(this:ISceneProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,load_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,activate_on_load:bool,priority:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProvideScene").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProvideScene", <ISceneProvider_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn provide_scene(this:ISceneProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,load_mode:crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,activate_on_load:bool,priority:i32,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <ISceneProvider_Interface as::unity2::ClassIdentity> ::NAME,"ProvideScene",));
 let inner:extern "C" fn(ISceneProvider_Interface,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::unity_engine::scene_management::loadscenemode::LoadSceneMode,bool,i32, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,resource_manager,location,load_mode,activate_on_load,priority,__mi)}
-pub unsafe fn release_scene(this:ISceneProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,scene_load_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ReleaseScene").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ReleaseScene", <ISceneProvider_Interface as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn release_scene(this:ISceneProvider_Interface,resource_manager:crate::unity_engine::resource_management::resourcemanager::ResourceManager,scene_load_handle:crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> ,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <ISceneProvider_Interface as::unity2::ClassIdentity> ::NAME,"ReleaseScene",));
 let inner:extern "C" fn(ISceneProvider_Interface,crate::unity_engine::resource_management::resourcemanager::ResourceManager,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> , ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::resource_management::resource_providers::sceneinstance::SceneInstance> = ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -18,13 +18,74 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-refineshoprefinetargetbasemenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refineshoprefinetargetbasemenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineShopRefineTargetBaseMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_m_target_unit_item(this:RefineShopRefineTargetBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <RefineShopRefineTargetBaseMenuItem as::unity2::ClassIdentity> ::NAME,"get_m_TargetUnitItem",));
+let inner:extern "C" fn(RefineShopRefineTargetBaseMenuItem, ::unity2::OptionalMethod,)->crate::app::unititem::UnitItem= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_m_target_unit_item(this:RefineShopRefineTargetBaseMenuItem,value:crate::app::unititem::UnitItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <RefineShopRefineTargetBaseMenuItem as::unity2::ClassIdentity> ::NAME,"set_m_TargetUnitItem",));
+let inner:extern "C" fn(RefineShopRefineTargetBaseMenuItem,crate::app::unititem::UnitItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_name(this:RefineShopRefineTargetBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RefineShopRefineTargetBaseMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RefineShopRefineTargetBaseMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_attribute(this:RefineShopRefineTargetBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RefineShopRefineTargetBaseMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(RefineShopRefineTargetBaseMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:RefineShopRefineTargetBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <RefineShopRefineTargetBaseMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(RefineShopRefineTargetBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build_menu_item_content(this:RefineShopRefineTargetBaseMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <RefineShopRefineTargetBaseMenuItem as::unity2::ClassIdentity> ::NAME,"OnBuildMenuItemContent",));
+let inner:extern "C" fn(RefineShopRefineTargetBaseMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refineshoprefinetargetbasemenuitem")]pub trait IRefineShopRefineTargetBaseMenuItemMethods:IRefineShopRefineTargetBaseMenuItem{#[doc="`get_m_TargetUnitItem()` overload"]fn get_m_target_unit_item(self,)->crate::app::unititem::UnitItem{unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296a1b0usize)as*mut u8,crate::app::unititem::UnitItem;
-(RefineShopRefineTargetBaseMenuItem)__receiver)}
+__RefineShopRefineTargetBaseMenuItem_unity2_raw::get_m_target_unit_item(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_m_TargetUnitItem(crate::app::unititem::UnitItem)` overload"]fn set_m_target_unit_item(self,value:impl::core::convert::Into<crate::app::unititem::UnitItem>)->(){unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296a1c0usize)as*mut u8,();
-(RefineShopRefineTargetBaseMenuItem)__receiver,(crate::app::unititem::UnitItem)::core::convert::Into::into(value))}
+__RefineShopRefineTargetBaseMenuItem_unity2_raw::set_m_target_unit_item(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_m_NeededIron()` overload"]fn get_m_needed_iron(self,)->i32{unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x296a1d0usize)as*mut u8,i32;
@@ -103,20 +164,16 @@ pub use __types::*;
 (RefineShopRefineTargetBaseMenuItem)__receiver)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296a300usize)as*mut u8, ::unity2::Il2CppString;
-(RefineShopRefineTargetBaseMenuItem)__receiver)}
+__RefineShopRefineTargetBaseMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296a6b0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RefineShopRefineTargetBaseMenuItem)__receiver)}
+__RefineShopRefineTargetBaseMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296a7b0usize)as*mut u8,();
-(RefineShopRefineTargetBaseMenuItem)__receiver)}
+__RefineShopRefineTargetBaseMenuItem_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuildMenuItemContent()` overload"]fn on_build_menu_item_content(self,)->(){unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x296a9a0usize)as*mut u8,();
-(RefineShopRefineTargetBaseMenuItem)__receiver)}
+__RefineShopRefineTargetBaseMenuItem_unity2_raw::on_build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetInitialColor()` overload"]fn set_initial_color(self,)->(){unsafe{let __receiver= <RefineShopRefineTargetBaseMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x296a7c0usize)as*mut u8,();

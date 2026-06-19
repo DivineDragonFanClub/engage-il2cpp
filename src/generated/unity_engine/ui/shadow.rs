@@ -28,6 +28,19 @@ use crate::unity_engine::ui::basemesheffect::{BaseMeshEffect,IBaseMeshEffect}
 #[cfg(feature = "unity_engine-ui-shadow-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-ui-shadow")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Shadow_unity2_raw{use super:: * ;
+pub unsafe fn modify_mesh(this:Shadow,vh:crate::unity_engine::ui::vertexhelper::VertexHelper,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <Shadow as::unity2::ClassIdentity> ::NAME,"ModifyMesh",));
+let inner:extern "C" fn(Shadow,crate::unity_engine::ui::vertexhelper::VertexHelper, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,vh,__mi)}
+}
+
 #[cfg(feature="unity_engine-ui-shadow")]pub trait IShadowMethods:IShadow{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x371d920usize)as*mut u8,();
 (Shadow)__receiver)}
@@ -65,8 +78,7 @@ pub use __types::*;
 (Shadow)__receiver,(crate::system::collections::generic::list_1::List_1<crate::unity_engine::uivertex::UIVertex>)::core::convert::Into::into(verts),(crate::unity_engine::color32::Color32)::core::convert::Into::into(color),(i32)::core::convert::Into::into(start),(i32)::core::convert::Into::into(end),(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(y))}
 }
 #[doc="`ModifyMesh(crate::unity_engine::ui::vertexhelper::VertexHelper)` overload"]fn modify_mesh(self,vh:impl::core::convert::Into<crate::unity_engine::ui::vertexhelper::VertexHelper>)->(){unsafe{let __receiver= <Shadow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x372e490usize)as*mut u8,();
-(Shadow)__receiver,(crate::unity_engine::ui::vertexhelper::VertexHelper)::core::convert::Into::into(vh))}
+__Shadow_unity2_raw::modify_mesh(__receiver, ::core::convert::Into::into(vh), ::core::option::Option::None)}
 }
 }
 

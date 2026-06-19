@@ -25,30 +25,42 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 pub use __types::*;
 
 #[cfg(feature="combat-launchbehaviour")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LaunchBehaviour_unity2_raw{use super:: * ;
-pub unsafe fn on_character_setup(this:LaunchBehaviour,owner:crate::combat::character::Character,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnCharacterSetup").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnCharacterSetup", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_character_setup(this:LaunchBehaviour,owner:crate::combat::character::Character,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,"OnCharacterSetup",));
 let inner:extern "C" fn(LaunchBehaviour,crate::combat::character::Character, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,owner,__mi)}
-pub unsafe fn on_enter_attack(this:LaunchBehaviour,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnEnterAttack").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnEnterAttack", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_enter_attack(this:LaunchBehaviour,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,"OnEnterAttack",));
 let inner:extern "C" fn(LaunchBehaviour, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn on_hit_time_predicted(this:LaunchBehaviour,world_hit_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnHitTimePredicted").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnHitTimePredicted", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_hit_time_predicted(this:LaunchBehaviour,world_hit_time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,"OnHitTimePredicted",));
 let inner:extern "C" fn(LaunchBehaviour,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,world_hit_time,__mi)}
-pub unsafe fn recalc_flying_time(this:LaunchBehaviour,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("RecalcFlyingTime").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","RecalcFlyingTime", <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn recalc_flying_time(this:LaunchBehaviour,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <LaunchBehaviour as::unity2::ClassIdentity> ::NAME,"RecalcFlyingTime",));
 let inner:extern "C" fn(LaunchBehaviour, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

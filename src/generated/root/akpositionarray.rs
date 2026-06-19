@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akpositionarray/AkPositionArray.md"))]#[::unity2::class(namespace="",name="AkPositionArray")]#[parent(crate::system::object::Object)]pub struct AkPositionArray{#[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_Current")]pub m_current: ::unity2::IntPtr, #[offset(32)]#[rename(name="m_MaxCount")]pub m_max_count:u32, #[static_field]#[rename(name="FloatToInt")]pub float_to_int:crate::root::akpositionarray::AkPositionArray_FloatInt32Union,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akpositionarray/AkPositionArray_FloatInt32Union.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AkPositionArray_FloatInt32Union{pub f:f32,pub i:i32,}
 impl::unity2::ClassIdentity for AkPositionArray_FloatInt32Union{const NAMESPACE: &'static str="";
 const NAME: &'static str="AkPositionArray.FloatInt32Union";
@@ -24,10 +21,36 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for AkPositionArray_FloatInt32Union{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/akpositionarray/AkPositionArray.md"))]#[::unity2::class(namespace="",name="AkPositionArray")]#[parent(crate::system::object::Object)]pub struct AkPositionArray{#[offset(16)]#[rename(name="m_Buffer")]pub m_buffer: ::unity2::IntPtr, #[offset(24)]#[rename(name="m_Current")]pub m_current: ::unity2::IntPtr, #[offset(32)]#[rename(name="m_MaxCount")]pub m_max_count:u32, #[static_field]#[rename(name="FloatToInt")]pub float_to_int:crate::root::akpositionarray::AkPositionArray_FloatInt32Union,}
+
 }
 
 #[cfg(feature = "root-akpositionarray-types")]
 pub use __types::*;
+
+#[cfg(feature="root-akpositionarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkPositionArray_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:AkPositionArray,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkPositionArray as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(AkPositionArray, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn finalize(this:AkPositionArray,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AkPositionArray as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AkPositionArray, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="root-akpositionarray")]impl AkPositionArray{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f2e380usize)as*mut u8,();
 )}
@@ -47,12 +70,10 @@ pub use __types::*;
 (AkPositionArray)__receiver,(u32)::core::convert::Into::into(value))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2de60usize)as*mut u8,();
-(AkPositionArray)__receiver)}
+__AkPositionArray_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2df00usize)as*mut u8,();
-(AkPositionArray)__receiver)}
+__AkPositionArray_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <AkPositionArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f2dfe0usize)as*mut u8,();
@@ -86,10 +107,10 @@ this}
 #[cfg(feature = "root-akpositionarray")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::AkPositionArray_FloatInt32Union;
     pub use super::AkPositionArray;
     pub use super::IAkPositionArray;
     pub use super::IAkPositionArrayMethods;
-    pub use super::AkPositionArray_FloatInt32Union;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

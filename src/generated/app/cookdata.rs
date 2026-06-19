@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cookdata/CookData.md"))]#[::unity2::class(namespace="App",name="CookData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::cookdata::CookData>)]pub struct CookData{#[offset(136)]#[rename(name="MaskColor100")]pub mask_color100:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="MaskColor075")]pub mask_color075:crate::unity_engine::color::Color,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cookdata/CookData_Difficulty.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct CookData_Difficulty{pub value:i32,}
 impl::unity2::ClassIdentity for CookData_Difficulty{const NAMESPACE: &'static str="App";
 const NAME: &'static str="CookData.Difficulty";
@@ -42,13 +45,33 @@ pub fn num()->Self{Self{value:5}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/cookdata/CookData.md"))]#[::unity2::class(namespace="App",name="CookData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::cookdata::CookData>)]pub struct CookData{#[offset(136)]#[rename(name="MaskColor100")]pub mask_color100:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="MaskColor075")]pub mask_color075:crate::unity_engine::color::Color,}
-
 }
 
 #[cfg(feature = "app-cookdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-cookdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CookData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:CookData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CookData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(CookData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:CookData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CookData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(CookData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-cookdata")]impl CookData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2543ca0usize)as*mut u8,();
 )}
@@ -203,12 +226,10 @@ pub use __types::*;
 (CookData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2543f90usize)as*mut u8,();
-(CookData)__receiver)}
+__CookData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25441f0usize)as*mut u8, ::unity2::Il2CppString;
-(CookData)__receiver)}
+__CookData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDifficulty(::unity2::Il2CppString)` overload"]fn get_difficulty(self,fid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::cookdata::CookData_Difficulty{unsafe{let __receiver= <CookData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2544200usize)as*mut u8,crate::app::cookdata::CookData_Difficulty;
@@ -301,10 +322,10 @@ this}
 #[cfg(feature = "app-cookdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::CookData_Difficulty;
     pub use super::CookData;
     pub use super::ICookData;
     pub use super::ICookDataMethods;
+    pub use super::CookData_Difficulty;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

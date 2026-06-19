@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md"))]#[::unity2::class(namespace="App",name="FortuneTellingResultSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::fortunetellingresultsequence::FortuneTellingResultSequence>)]pub struct FortuneTellingResultSequence{#[static_field]#[rename(name="ResPaths")]pub res_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_CardAnim")]pub m_card_anim:crate::unity_engine::animator::Animator, #[offset(136)]#[rename(name="m_ObjCharaImage")]pub m_obj_chara_image:crate::unity_engine::gameobject::GameObject, #[offset(144)]#[rename(name="m_ObjUnitName")]pub m_obj_unit_name:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_ObjResultMessage")]pub m_obj_result_message:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_Window")]pub m_window:crate::app::fortunetellingresultmenu::FortuneTellingResultMenu, #[static_field]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_ResId.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FortuneTellingResultSequence_ResId{pub value:i32,}
 impl::unity2::ClassIdentity for FortuneTellingResultSequence_ResId{const NAMESPACE: &'static str="App";
 const NAME: &'static str="FortuneTellingResultSequence.ResId";
@@ -35,9 +38,6 @@ pub fn eff_reverse()->Self{Self{value:2}
 pub fn count()->Self{Self{value:3}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultsequence/FortuneTellingResultSequence.md"))]#[::unity2::class(namespace="App",name="FortuneTellingResultSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::fortunetellingresultsequence::FortuneTellingResultSequence>)]pub struct FortuneTellingResultSequence{#[static_field]#[rename(name="ResPaths")]pub res_paths: ::unity2::Array< ::unity2::Il2CppString> , #[offset(120)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator, #[offset(128)]#[rename(name="m_CardAnim")]pub m_card_anim:crate::unity_engine::animator::Animator, #[offset(136)]#[rename(name="m_ObjCharaImage")]pub m_obj_chara_image:crate::unity_engine::gameobject::GameObject, #[offset(144)]#[rename(name="m_ObjUnitName")]pub m_obj_unit_name:crate::unity_engine::gameobject::GameObject, #[offset(152)]#[rename(name="m_ObjResultMessage")]pub m_obj_result_message:crate::unity_engine::gameobject::GameObject, #[offset(160)]#[rename(name="m_GameObject")]pub m_game_object:crate::unity_engine::gameobject::GameObject, #[offset(168)]#[rename(name="m_Window")]pub m_window:crate::app::fortunetellingresultmenu::FortuneTellingResultMenu, #[static_field]#[rename(name="m_unit")]pub m_unit:crate::app::unit::Unit,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fortunetellingresultsequence/FortuneTellingResultSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FortuneTellingResultSequence_Label2{pub value:i32,}
@@ -140,10 +140,10 @@ this}
 #[cfg(feature = "app-fortunetellingresultsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FortuneTellingResultSequence_ResId;
     pub use super::FortuneTellingResultSequence;
     pub use super::IFortuneTellingResultSequence;
     pub use super::IFortuneTellingResultSequenceMethods;
+    pub use super::FortuneTellingResultSequence_ResId;
     pub use super::FortuneTellingResultSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

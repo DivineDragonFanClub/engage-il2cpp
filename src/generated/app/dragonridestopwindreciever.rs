@@ -24,6 +24,19 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-dragonridestopwindreciever-types")]
 pub use __types::*;
 
+#[cfg(feature="app-dragonridestopwindreciever")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRideStopWindReciever_unity2_raw{use super:: * ;
+pub unsafe fn on_notify(this:DragonRideStopWindReciever,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <DragonRideStopWindReciever as::unity2::ClassIdentity> ::NAME,"OnNotify",));
+let inner:extern "C" fn(DragonRideStopWindReciever,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,origin,notification,context,__mi)}
+}
+
 #[cfg(feature="app-dragonridestopwindreciever")]pub trait IDragonRideStopWindRecieverMethods:IDragonRideStopWindReciever{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <DragonRideStopWindReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2adae80usize)as*mut u8,();
 (DragonRideStopWindReciever)__receiver)}
@@ -33,8 +46,7 @@ pub use __types::*;
 (DragonRideStopWindReciever)__receiver)}
 }
 #[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <DragonRideStopWindReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2adaea0usize)as*mut u8,();
-(DragonRideStopWindReciever)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(origin),(crate::unity_engine::playables::inotification::INotification)::core::convert::Into::into(notification),(crate::system::object::Object)::core::convert::Into::into(context))}
+__DragonRideStopWindReciever_unity2_raw::on_notify(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideStopWindReciever as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2adb010usize)as*mut u8,();

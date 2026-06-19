@@ -11,38 +11,15 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sort/Sort_ElementComparer.md"))]#[::unity2::class(namespace="App",name="Sort.ElementComparer")]#[parent(crate::system::object::Object)]pub struct Sort_ElementComparer{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sort/Sort.md"))]#[::unity2::class(namespace="App",name="Sort")]#[parent(crate::app::sortconstant::SortConstant)]pub struct Sort{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sort/Sort_ElementComparer.md"))]#[::unity2::class(namespace="App",name="Sort.ElementComparer")]#[parent(crate::system::object::Object)]pub struct Sort_ElementComparer{}
 
 }
 
 #[cfg(feature = "app-sort-types")]
 pub use __types::*;
-
-#[cfg(feature="app-sort")]pub trait ISort_ElementComparerMethods:ISort_ElementComparer{#[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Sort_ElementComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d727b0usize)as*mut u8,i32;
-(Sort_ElementComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Sort_ElementComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d728c0usize)as*mut u8,();
-(Sort_ElementComparer)__receiver)}
-}
-}
-
-#[cfg(feature="app-sort")]impl<__T:ISort_ElementComparer>ISort_ElementComparerMethods for __T{}
-
-#[cfg(feature="app-sort")]impl Sort_ElementComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-sort")]impl Sort_ElementComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Sort_ElementComparer), ::core::stringify!(new),));
- <Self as ISort_ElementComparerMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-sort")]impl Sort{#[doc="`InsertionSort(crate::system::collections::ilist::IList)` overload"]pub fn insertion_sort(list:impl::core::convert::Into<crate::system::collections::ilist::IList>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fe3710usize)as*mut u8,();
 (crate::system::collections::ilist::IList)::core::convert::Into::into(list))}
@@ -92,15 +69,50 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-sort")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Sort_ElementComparer_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:Sort_ElementComparer,a:crate::system::object::Object,b:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Sort_ElementComparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(Sort_ElementComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
+#[cfg(feature="app-sort")]pub trait ISort_ElementComparerMethods:ISort_ElementComparer{#[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Sort_ElementComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__Sort_ElementComparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Sort_ElementComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d728c0usize)as*mut u8,();
+(Sort_ElementComparer)__receiver)}
+}
+}
+
+#[cfg(feature="app-sort")]impl<__T:ISort_ElementComparer>ISort_ElementComparerMethods for __T{}
+
+#[cfg(feature="app-sort")]impl Sort_ElementComparer{pub fn compare_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-sort")]impl Sort_ElementComparer{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Sort_ElementComparer), ::core::stringify!(new),));
+ <Self as ISort_ElementComparerMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-sort")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Sort_ElementComparer;
-    pub use super::ISort_ElementComparer;
-    pub use super::ISort_ElementComparerMethods;
     pub use super::Sort;
     pub use super::ISort;
     pub use super::ISortMethods;
+    pub use super::Sort_ElementComparer;
+    pub use super::ISort_ElementComparer;
+    pub use super::ISort_ElementComparerMethods;
     pub use crate::app::sortconstant::ISortConstant;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-sortconstant")] pub use crate::app::sortconstant::ISortConstantMethods;

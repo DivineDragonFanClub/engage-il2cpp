@@ -28,21 +28,60 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-handposer-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-handposer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HandPoser_unity2_raw{use super:: * ;
+pub unsafe fn auto_mapping(this:HandPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <HandPoser as::unity2::ClassIdentity> ::NAME,"AutoMapping",));
+let inner:extern "C" fn(HandPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn initiate_poser(this:HandPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HandPoser as::unity2::ClassIdentity> ::NAME,"InitiatePoser",));
+let inner:extern "C" fn(HandPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn fix_poser_transforms(this:HandPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <HandPoser as::unity2::ClassIdentity> ::NAME,"FixPoserTransforms",));
+let inner:extern "C" fn(HandPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_poser(this:HandPoser,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <HandPoser as::unity2::ClassIdentity> ::NAME,"UpdatePoser",));
+let inner:extern "C" fn(HandPoser, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-handposer")]pub trait IHandPoserMethods:IHandPoser{#[doc="`AutoMapping()` overload"]fn auto_mapping(self,)->(){unsafe{let __receiver= <HandPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297af00usize)as*mut u8,();
-(HandPoser)__receiver)}
+__HandPoser_unity2_raw::auto_mapping(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InitiatePoser()` overload"]fn initiate_poser(self,)->(){unsafe{let __receiver= <HandPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297afe0usize)as*mut u8,();
-(HandPoser)__receiver)}
+__HandPoser_unity2_raw::initiate_poser(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FixPoserTransforms()` overload"]fn fix_poser_transforms(self,)->(){unsafe{let __receiver= <HandPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297b1d0usize)as*mut u8,();
-(HandPoser)__receiver)}
+__HandPoser_unity2_raw::fix_poser_transforms(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdatePoser()` overload"]fn update_poser(self,)->(){unsafe{let __receiver= <HandPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x297b2c0usize)as*mut u8,();
-(HandPoser)__receiver)}
+__HandPoser_unity2_raw::update_poser(__receiver, ::core::option::Option::None)}
 }
 #[doc="`StoreDefaultState()` overload"]fn store_default_state(self,)->(){unsafe{let __receiver= <HandPoser as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x297b050usize)as*mut u8,();

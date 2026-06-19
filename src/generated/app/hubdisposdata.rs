@@ -19,6 +19,26 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubdisposdata/HubDisposData_TimezoneFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubDisposData_TimezoneFlags{pub value:i32,}
+impl::unity2::ClassIdentity for HubDisposData_TimezoneFlags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubDisposData.TimezoneFlags";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubDisposData_TimezoneFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubDisposData_TimezoneFlags{pub fn morning()->Self{Self{value:1}
+}
+pub fn day()->Self{Self{value:2}
+}
+pub fn evening()->Self{Self{value:4}
+}
+pub fn night()->Self{Self{value:8}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubdisposdata/HubDisposData_IdleTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubDisposData_IdleTypes{pub value:i32,}
 impl::unity2::ClassIdentity for HubDisposData_IdleTypes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubDisposData.IdleTypes";
@@ -37,24 +57,6 @@ pub fn no_turn()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubdisposdata/HubDisposData_AccessTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubDisposData_AccessTypes{pub value:i32,}
-impl::unity2::ClassIdentity for HubDisposData_AccessTypes{const NAMESPACE: &'static str="App";
-const NAME: &'static str="HubDisposData.AccessTypes";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for HubDisposData_AccessTypes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl HubDisposData_AccessTypes{pub fn none()->Self{Self{value:0}
-}
-pub fn menu()->Self{Self{value:1}
-}
-pub fn door()->Self{Self{value:2}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubdisposdata/HubDisposData_DisposTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubDisposData_DisposTypes{pub value:i32,}
 impl::unity2::ClassIdentity for HubDisposData_DisposTypes{const NAMESPACE: &'static str="App";
 const NAME: &'static str="HubDisposData.DisposTypes";
@@ -69,6 +71,24 @@ impl HubDisposData_DisposTypes{pub fn none_ik()->Self{Self{value:0}
 pub fn use_ik()->Self{Self{value:1}
 }
 pub fn swiming()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubdisposdata/HubDisposData_AccessTypes.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubDisposData_AccessTypes{pub value:i32,}
+impl::unity2::ClassIdentity for HubDisposData_AccessTypes{const NAMESPACE: &'static str="App";
+const NAME: &'static str="HubDisposData.AccessTypes";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for HubDisposData_AccessTypes{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl HubDisposData_AccessTypes{pub fn none()->Self{Self{value:0}
+}
+pub fn menu()->Self{Self{value:1}
+}
+pub fn door()->Self{Self{value:2}
 }
 }
 
@@ -127,30 +147,33 @@ pub fn on_and_after()->Self{Self{value:2}
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubdisposdata/HubDisposData.md"))]#[::unity2::class(namespace="App",name="HubDisposData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::hubdisposdata::HubDisposData>)]pub struct HubDisposData{}
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/hubdisposdata/HubDisposData_TimezoneFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct HubDisposData_TimezoneFlags{pub value:i32,}
-impl::unity2::ClassIdentity for HubDisposData_TimezoneFlags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="HubDisposData.TimezoneFlags";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for HubDisposData_TimezoneFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl HubDisposData_TimezoneFlags{pub fn morning()->Self{Self{value:1}
-}
-pub fn day()->Self{Self{value:2}
-}
-pub fn evening()->Self{Self{value:4}
-}
-pub fn night()->Self{Self{value:8}
-}
-}
-
 }
 
 #[cfg(feature = "app-hubdisposdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-hubdisposdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HubDisposData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:HubDisposData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <HubDisposData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(HubDisposData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_build(this:HubDisposData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HubDisposData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(HubDisposData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-hubdisposdata")]impl HubDisposData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d87e80usize)as*mut u8,();
 )}
@@ -442,12 +465,10 @@ pub use __types::*;
 (HubDisposData)__receiver)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <HubDisposData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d886b0usize)as*mut u8, ::unity2::Il2CppString;
-(HubDisposData)__receiver)}
+__HubDisposData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <HubDisposData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d886c0usize)as*mut u8,();
-(HubDisposData)__receiver)}
+__HubDisposData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <HubDisposData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d88740usize)as*mut u8,();
@@ -544,15 +565,15 @@ this}
 #[cfg(feature = "app-hubdisposdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::HubDisposData_TimezoneFlags;
     pub use super::HubDisposData_IdleTypes;
-    pub use super::HubDisposData_AccessTypes;
     pub use super::HubDisposData_DisposTypes;
+    pub use super::HubDisposData_AccessTypes;
     pub use super::HubDisposData_Type;
     pub use super::HubDisposData_PhaseType;
     pub use super::HubDisposData;
     pub use super::IHubDisposData;
     pub use super::IHubDisposDataMethods;
-    pub use super::HubDisposData_TimezoneFlags;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

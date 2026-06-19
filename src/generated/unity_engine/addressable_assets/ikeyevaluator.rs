@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-addressable_assets-ikeyevaluator")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKeyEvaluator_unity2_raw{use super:: * ;
-pub unsafe fn get_runtime_key(this:IKeyEvaluator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_RuntimeKey").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_RuntimeKey", <IKeyEvaluator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_runtime_key(this:IKeyEvaluator,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IKeyEvaluator as::unity2::ClassIdentity> ::NAME,"get_RuntimeKey",));
 let inner:extern "C" fn(IKeyEvaluator, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn runtime_key_is_valid(this:IKeyEvaluator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("RuntimeKeyIsValid").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","RuntimeKeyIsValid", <IKeyEvaluator as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn runtime_key_is_valid(this:IKeyEvaluator,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IKeyEvaluator as::unity2::ClassIdentity> ::NAME,"RuntimeKeyIsValid",));
 let inner:extern "C" fn(IKeyEvaluator, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

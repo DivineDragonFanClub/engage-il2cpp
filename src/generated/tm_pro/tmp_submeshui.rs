@@ -30,6 +30,189 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "tm_pro-tmp_submeshui-types")]
 pub use __types::*;
 
+#[cfg(feature="tm_pro-tmp_submeshui")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TMP_SubMeshUI_unity2_raw{use super:: * ;
+pub unsafe fn get_main_texture(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"get_mainTexture",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->crate::unity_engine::texture::Texture= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_material(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"get_material",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_material(this:TMP_SubMeshUI,value:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"set_material",));
+let inner:extern "C" fn(TMP_SubMeshUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_material_for_rendering(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"get_materialForRendering",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enable(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_destroy(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_transform_parent_changed(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"OnTransformParentChanged",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_modified_material(this:TMP_SubMeshUI,base_material:crate::unity_engine::material::Material,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::material::Material{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(58usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",58usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"GetModifiedMaterial",));
+let inner:extern "C" fn(TMP_SubMeshUI,crate::unity_engine::material::Material, ::unity2::OptionalMethod,)->crate::unity_engine::material::Material= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,base_material,__mi)}
+pub unsafe fn set_all_dirty(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"SetAllDirty",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_vertices_dirty(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"SetVerticesDirty",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_layout_dirty(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"SetLayoutDirty",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_material_dirty(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"SetMaterialDirty",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn cull(this:TMP_SubMeshUI,clip_rect:crate::unity_engine::rect::Rect,valid_rect:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(59usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",59usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"Cull",));
+let inner:extern "C" fn(TMP_SubMeshUI,crate::unity_engine::rect::Rect,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip_rect,valid_rect,__mi)}
+pub unsafe fn update_geometry(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"UpdateGeometry",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn rebuild(this:TMP_SubMeshUI,update:crate::unity_engine::ui::canvasupdate::CanvasUpdate,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(37usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",37usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"Rebuild",));
+let inner:extern "C" fn(TMP_SubMeshUI,crate::unity_engine::ui::canvasupdate::CanvasUpdate, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,update,__mi)}
+pub unsafe fn update_material(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"UpdateMaterial",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn recalculate_clipping(this:TMP_SubMeshUI,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(63usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",63usize,__vt.len(), <TMP_SubMeshUI as::unity2::ClassIdentity> ::NAME,"RecalculateClipping",));
+let inner:extern "C" fn(TMP_SubMeshUI, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="tm_pro-tmp_submeshui")]impl TMP_SubMeshUI{#[doc="`AddSubTextObject(crate::tm_pro::textmeshprougui::TextMeshProUGUI, crate::tm_pro::materialreference::MaterialReference)` overload"]pub fn add_sub_text_object(text_component:impl::core::convert::Into<crate::tm_pro::textmeshprougui::TextMeshProUGUI> ,material_reference:impl::core::convert::Into<crate::tm_pro::materialreference::MaterialReference>)->crate::tm_pro::tmp_submeshui::TMP_SubMeshUI{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2830680usize)as*mut u8,crate::tm_pro::tmp_submeshui::TMP_SubMeshUI;
 (crate::tm_pro::textmeshprougui::TextMeshProUGUI)::core::convert::Into::into(text_component),(crate::tm_pro::materialreference::MaterialReference)::core::convert::Into::into(material_reference))}
 }
@@ -52,16 +235,13 @@ pub use __types::*;
 (TMP_SubMeshUI)__receiver,(crate::tm_pro::tmp_spriteasset::TMP_SpriteAsset)::core::convert::Into::into(value))}
 }
 #[doc="`get_mainTexture()` overload"]fn get_main_texture(self,)->crate::unity_engine::texture::Texture{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x282fcf0usize)as*mut u8,crate::unity_engine::texture::Texture;
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::get_main_texture(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_material()` overload"]fn get_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x282fdd0usize)as*mut u8,crate::unity_engine::material::Material;
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::get_material(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_material(crate::unity_engine::material::Material)` overload"]fn set_material(self,value:impl::core::convert::Into<crate::unity_engine::material::Material>)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x282ff60usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
+__TMP_SubMeshUI_unity2_raw::set_material(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_sharedMaterial()` overload"]fn get_shared_material(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2830170usize)as*mut u8,crate::unity_engine::material::Material;
@@ -88,8 +268,7 @@ pub use __types::*;
 (TMP_SubMeshUI)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(value))}
 }
 #[doc="`get_materialForRendering()` overload"]fn get_material_for_rendering(self,)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2830420usize)as*mut u8,crate::unity_engine::material::Material;
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::get_material_for_rendering(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_isDefaultMaterial()` overload"]fn get_is_default_material(self,)->bool{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28304a0usize)as*mut u8,bool;
@@ -120,24 +299,19 @@ pub use __types::*;
 (TMP_SubMeshUI)__receiver)}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2830b30usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2830bb0usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2830c90usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTransformParentChanged()` overload"]fn on_transform_parent_changed(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2830ea0usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::on_transform_parent_changed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetModifiedMaterial(crate::unity_engine::material::Material)` overload"]fn get_modified_material(self,base_material:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2830f10usize)as*mut u8,crate::unity_engine::material::Material;
-(TMP_SubMeshUI)__receiver,(crate::unity_engine::material::Material)::core::convert::Into::into(base_material))}
+__TMP_SubMeshUI_unity2_raw::get_modified_material(__receiver, ::core::convert::Into::into(base_material), ::core::option::Option::None)}
 }
 #[doc="`GetPaddingForMaterial()` overload"]fn get_padding_for_material(self,)->f32{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28300e0usize)as*mut u8,f32;
@@ -152,20 +326,16 @@ pub use __types::*;
 (TMP_SubMeshUI)__receiver,(bool)::core::convert::Into::into(is_extra_padding),(bool)::core::convert::Into::into(is_using_bold))}
 }
 #[doc="`SetAllDirty()` overload"]fn set_all_dirty(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831160usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::set_all_dirty(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetVerticesDirty()` overload"]fn set_vertices_dirty(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831170usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::set_vertices_dirty(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetLayoutDirty()` overload"]fn set_layout_dirty(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831240usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::set_layout_dirty(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetMaterialDirty()` overload"]fn set_material_dirty(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831250usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::set_material_dirty(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetPivotDirty()` overload"]fn set_pivot_dirty(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x28312a0usize)as*mut u8,();
@@ -176,28 +346,23 @@ pub use __types::*;
 (TMP_SubMeshUI)__receiver)}
 }
 #[doc="`Cull(crate::unity_engine::rect::Rect, bool)` overload"]fn cull(self,clip_rect:impl::core::convert::Into<crate::unity_engine::rect::Rect> ,valid_rect:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28313b0usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver,(crate::unity_engine::rect::Rect)::core::convert::Into::into(clip_rect),(bool)::core::convert::Into::into(valid_rect))}
+__TMP_SubMeshUI_unity2_raw::cull(__receiver, ::core::convert::Into::into(clip_rect), ::core::convert::Into::into(valid_rect), ::core::option::Option::None)}
 }
 #[doc="`UpdateGeometry()` overload"]fn update_geometry(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28313c0usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::update_geometry(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Rebuild(crate::unity_engine::ui::canvasupdate::CanvasUpdate)` overload"]fn rebuild(self,update:impl::core::convert::Into<crate::unity_engine::ui::canvasupdate::CanvasUpdate>)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28313d0usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver,(crate::unity_engine::ui::canvasupdate::CanvasUpdate)::core::convert::Into::into(update))}
+__TMP_SubMeshUI_unity2_raw::rebuild(__receiver, ::core::convert::Into::into(update), ::core::option::Option::None)}
 }
 #[doc="`RefreshMaterial()` overload"]fn refresh_material(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2831420usize)as*mut u8,();
 (TMP_SubMeshUI)__receiver)}
 }
 #[doc="`UpdateMaterial()` overload"]fn update_material(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2831430usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::update_material(__receiver, ::core::option::Option::None)}
 }
 #[doc="`RecalculateClipping()` overload"]fn recalculate_clipping(self,)->(){unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x28315c0usize)as*mut u8,();
-(TMP_SubMeshUI)__receiver)}
+__TMP_SubMeshUI_unity2_raw::recalculate_clipping(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMaterial(crate::unity_engine::material::Material)` overload"]fn get_material_2(self,mat:impl::core::convert::Into<crate::unity_engine::material::Material>)->crate::unity_engine::material::Material{unsafe{let __receiver= <TMP_SubMeshUI as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x282fde0usize)as*mut u8,crate::unity_engine::material::Material;

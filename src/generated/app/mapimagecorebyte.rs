@@ -20,13 +20,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapimagecorebyte-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapimagecorebyte")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapImageCoreByte_unity2_raw{use super:: * ;
+pub unsafe fn add(this:MapImageCoreByte,index:i32,v:u8,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapImageCoreByte as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(MapImageCoreByte,i32,u8, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,index,v,__mi)}
+pub unsafe fn get_hash_code(this:MapImageCoreByte,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <MapImageCoreByte as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(MapImageCoreByte, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapimagecorebyte")]pub trait IMapImageCoreByteMethods:IMapImageCoreByte{#[doc="`Add(i32, u8)` overload"]fn add(self,index:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <MapImageCoreByte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x205f700usize)as*mut u8,();
-(MapImageCoreByte)__receiver,(i32)::core::convert::Into::into(index),(u8)::core::convert::Into::into(v))}
+__MapImageCoreByte_unity2_raw::add(__receiver, ::core::convert::Into::into(index), ::core::convert::Into::into(v), ::core::option::Option::None)}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <MapImageCoreByte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x205f740usize)as*mut u8,i32;
-(MapImageCoreByte)__receiver)}
+__MapImageCoreByte_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <MapImageCoreByte as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x205f8f0usize)as*mut u8,();

@@ -19,45 +19,57 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellmenucontent/ShopSellMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="ShopSellMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct ShopSellMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellmenucontent/ShopSellMenuContent.md"))]#[::unity2::class(namespace="App",name="ShopSellMenuContent")]#[parent(crate::app::basicmenucontent::BasicMenuContent)]pub struct ShopSellMenuContent{#[offset(232)]#[rename(name="m_KindIcon")]pub m_kind_icon: ::unity2::Array<crate::app::shopsellmenucontent::ShopSellMenuContent_KindIcon> , #[offset(240)]#[rename(name="m_ColumnTitleItemText")]pub m_column_title_item_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(248)]#[rename(name="m_ColumnTitleUsableCountText")]pub m_column_title_usable_count_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(256)]#[rename(name="m_ColumnTitlePriceText")]pub m_column_title_price_text:crate::tm_pro::textmeshprougui::TextMeshProUGUI, #[offset(264)]#[rename(name="m_ContentObject")]pub m_content_object:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/shopsellmenucontent/ShopSellMenuContent_KindIcon.md"))]#[::unity2::class(namespace="App",name="ShopSellMenuContent.KindIcon")]#[parent(crate::system::object::Object)]pub struct ShopSellMenuContent_KindIcon{#[offset(16)]#[rename(name="m_Image")]pub m_image:crate::unity_engine::ui::image::Image, #[offset(24)]#[rename(name="m_Kind")]pub m_kind:crate::app::itemdata::ItemData_Kinds,}
 
 }
 
 #[cfg(feature = "app-shopsellmenucontent-types")]
 pub use __types::*;
 
-#[cfg(feature="app-shopsellmenucontent")]pub trait IShopSellMenuContent_KindIconMethods:IShopSellMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSellMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6bec0usize)as*mut u8,();
-(ShopSellMenuContent_KindIcon)__receiver)}
-}
-}
-
-#[cfg(feature="app-shopsellmenucontent")]impl<__T:IShopSellMenuContent_KindIcon>IShopSellMenuContent_KindIconMethods for __T{}
-
-#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ShopSellMenuContent_KindIcon), ::core::stringify!(new),));
- <Self as IShopSellMenuContent_KindIconMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-shopsellmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ShopSellMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn start(this:ShopSellMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <ShopSellMenuContent as::unity2::ClassIdentity> ::NAME,"Start",));
+let inner:extern "C" fn(ShopSellMenuContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_menu_item_content_max(this:ShopSellMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ShopSellMenuContent as::unity2::ClassIdentity> ::NAME,"GetMenuItemContentMax",));
+let inner:extern "C" fn(ShopSellMenuContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:ShopSellMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ShopSellMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(ShopSellMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
 }
 
 #[cfg(feature="app-shopsellmenucontent")]pub trait IShopSellMenuContentMethods:IShopSellMenuContent{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21b51f0usize)as*mut u8,();
-(ShopSellMenuContent)__receiver)}
+__ShopSellMenuContent_unity2_raw::start(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMenuItemContentMax()` overload"]fn get_menu_item_content_max(self,)->i32{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21b5410usize)as*mut u8,i32;
-(ShopSellMenuContent)__receiver)}
+__ShopSellMenuContent_unity2_raw::get_menu_item_content_max(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21b54b0usize)as*mut u8,f32;
-(ShopSellMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__ShopSellMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`SetKind(crate::app::itemdata::ItemData_Kinds)` overload"]fn set_kind(self,kind:impl::core::convert::Into<crate::app::itemdata::ItemData_Kinds>)->(){unsafe{let __receiver= <ShopSellMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21b38b0usize)as*mut u8,();
@@ -120,15 +132,33 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-shopsellmenucontent")]pub trait IShopSellMenuContent_KindIconMethods:IShopSellMenuContent_KindIcon{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ShopSellMenuContent_KindIcon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d6bec0usize)as*mut u8,();
+(ShopSellMenuContent_KindIcon)__receiver)}
+}
+}
+
+#[cfg(feature="app-shopsellmenucontent")]impl<__T:IShopSellMenuContent_KindIcon>IShopSellMenuContent_KindIconMethods for __T{}
+
+#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent_KindIcon{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-shopsellmenucontent")]impl ShopSellMenuContent_KindIcon{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ShopSellMenuContent_KindIcon), ::core::stringify!(new),));
+ <Self as IShopSellMenuContent_KindIconMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-shopsellmenucontent")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ShopSellMenuContent_KindIcon;
-    pub use super::IShopSellMenuContent_KindIcon;
-    pub use super::IShopSellMenuContent_KindIconMethods;
     pub use super::ShopSellMenuContent;
     pub use super::IShopSellMenuContent;
     pub use super::IShopSellMenuContentMethods;
+    pub use super::ShopSellMenuContent_KindIcon;
+    pub use super::IShopSellMenuContent_KindIcon;
+    pub use super::IShopSellMenuContent_KindIconMethods;
     pub use crate::app::basicmenucontent::IBasicMenuContent;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;

@@ -20,13 +20,34 @@ use crate::unity_engine::rendering::volumeparameter_1::{IVolumeParameter_1,Volum
 #[cfg(feature = "unity_engine-rendering-nointerpfloatrangeparameter-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-nointerpfloatrangeparameter")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __NoInterpFloatRangeParameter_unity2_raw{use super:: * ;
+pub unsafe fn get_value(this:NoInterpFloatRangeParameter,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <NoInterpFloatRangeParameter as::unity2::ClassIdentity> ::NAME,"get_value",));
+let inner:extern "C" fn(NoInterpFloatRangeParameter, ::unity2::OptionalMethod,)->crate::unity_engine::vector2::Vector2= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_value(this:NoInterpFloatRangeParameter,value:crate::unity_engine::vector2::Vector2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <NoInterpFloatRangeParameter as::unity2::ClassIdentity> ::NAME,"set_value",));
+let inner:extern "C" fn(NoInterpFloatRangeParameter,crate::unity_engine::vector2::Vector2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-nointerpfloatrangeparameter")]pub trait INoInterpFloatRangeParameterMethods:INoInterpFloatRangeParameter{#[doc="`get_value()` overload"]fn get_value(self,)->crate::unity_engine::vector2::Vector2{unsafe{let __receiver= <NoInterpFloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac180usize)as*mut u8,crate::unity_engine::vector2::Vector2;
-(NoInterpFloatRangeParameter)__receiver)}
+__NoInterpFloatRangeParameter_unity2_raw::get_value(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_value(crate::unity_engine::vector2::Vector2)` overload"]fn set_value(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2>)->(){unsafe{let __receiver= <NoInterpFloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac190usize)as*mut u8,();
-(NoInterpFloatRangeParameter)__receiver,(crate::unity_engine::vector2::Vector2)::core::convert::Into::into(value))}
+__NoInterpFloatRangeParameter_unity2_raw::set_value(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor(crate::unity_engine::vector2::Vector2, f32, f32, bool)` overload"]fn ctor(self,value:impl::core::convert::Into<crate::unity_engine::vector2::Vector2> ,min:impl::core::convert::Into<f32> ,max:impl::core::convert::Into<f32> ,override_state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <NoInterpFloatRangeParameter as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30ac1e0usize)as*mut u8,();

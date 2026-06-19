@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecontract/MapSequenceContract.md"))]#[::unity2::class(namespace="App",name="MapSequenceContract")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequencecontract::MapSequenceContract>)]pub struct MapSequenceContract{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecontract/MapSequenceContract_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapSequenceContract_Label{pub value:i32,}
 impl::unity2::ClassIdentity for MapSequenceContract_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapSequenceContract.Label";
@@ -38,6 +35,9 @@ pub fn skip()->Self{Self{value:1}
 pub fn after()->Self{Self{value:2}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapsequencecontract/MapSequenceContract.md"))]#[::unity2::class(namespace="App",name="MapSequenceContract")]#[parent(crate::app::commonbattlesequence_1::CommonBattleSequence_1<crate::app::mapsequencecontract::MapSequenceContract>)]pub struct MapSequenceContract{}
 
 }
 
@@ -101,10 +101,10 @@ this}
 #[cfg(feature = "app-mapsequencecontract")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::MapSequenceContract_Label;
     pub use super::MapSequenceContract;
     pub use super::IMapSequenceContract;
     pub use super::IMapSequenceContractMethods;
-    pub use super::MapSequenceContract_Label;
     pub use crate::app::commonbattlesequence_1::ICommonBattleSequence_1;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

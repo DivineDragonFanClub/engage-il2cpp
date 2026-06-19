@@ -18,6 +18,19 @@ use crate::unity_engine::yieldinstruction::{IYieldInstruction,YieldInstruction}
 #[cfg(feature = "unity_engine-coroutine-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-coroutine")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Coroutine_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:Coroutine,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <Coroutine as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(Coroutine, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-coroutine")]impl Coroutine{#[doc="`ReleaseCoroutine(::unity2::IntPtr)` overload"]pub fn release_coroutine(ptr:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c47540usize)as*mut u8,();
 (::unity2::IntPtr)::core::convert::Into::into(ptr))}
 }
@@ -28,8 +41,7 @@ pub use __types::*;
 (Coroutine)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <Coroutine as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c474a0usize)as*mut u8,();
-(Coroutine)__receiver)}
+__Coroutine_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 }
 

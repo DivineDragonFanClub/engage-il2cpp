@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-interop-registration_policies-iregistrationpolicy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IRegistrationPolicy_unity2_raw{use super:: * ;
-pub unsafe fn handle_registration(this:IRegistrationPolicy,new_descriptor:crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,old_descriptor:crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("HandleRegistration").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","HandleRegistration", <IRegistrationPolicy as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn handle_registration(this:IRegistrationPolicy,new_descriptor:crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,old_descriptor:crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IRegistrationPolicy as::unity2::ClassIdentity> ::NAME,"HandleRegistration",));
 let inner:extern "C" fn(IRegistrationPolicy,crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor,crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::interop::iuserdatadescriptor::IUserDataDescriptor= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,new_descriptor,old_descriptor,__mi)}
-pub unsafe fn allow_type_auto_registration(this:IRegistrationPolicy,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("AllowTypeAutoRegistration").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","AllowTypeAutoRegistration", <IRegistrationPolicy as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn allow_type_auto_registration(this:IRegistrationPolicy,r#type: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IRegistrationPolicy as::unity2::ClassIdentity> ::NAME,"AllowTypeAutoRegistration",));
 let inner:extern "C" fn(IRegistrationPolicy, ::unity2::SystemType, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -17,7 +17,48 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Result{pub value:i32,}
+impl::unity2::ClassIdentity for GameSkip_Result{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSkip.Result";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSkip_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSkip_Result{pub fn none()->Self{Self{value:0}
+}
+pub fn short_skip()->Self{Self{value:1}
+}
+pub fn long_skip()->Self{Self{value:2}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip.md"))]#[::unity2::class(namespace="App",name="GameSkip")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameskip::GameSkip>)]pub struct GameSkip{#[offset(28)]#[rename(name="m_Sequence")]pub m_sequence:crate::app::gameskip::GameSkip_Sequence, #[offset(32)]#[rename(name="m_Status")]pub m_status:crate::app::gameskip::GameSkip_Status, #[offset(40)]#[rename(name="m_Statck")]pub m_statck:crate::system::collections::generic::stack_1::Stack_1<crate::app::gameskip::GameSkip_Status> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_ProcWaitTime.md"))]#[::unity2::class(namespace="App",name="GameSkip.ProcWaitTime")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSkip_ProcWaitTime{#[offset(112)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(116)]#[rename(name="m_DeltaTime")]pub m_delta_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Sequence.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Sequence{pub value:i32,}
+impl::unity2::ClassIdentity for GameSkip_Sequence{const NAMESPACE: &'static str="App";
+const NAME: &'static str="GameSkip.Sequence";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for GameSkip_Sequence{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl GameSkip_Sequence{pub fn tick()->Self{Self{value:0}
+}
+pub fn fade_out()->Self{Self{value:1}
+}
+pub fn executed()->Self{Self{value:2}
+}
+pub fn fade_in()->Self{Self{value:3}
+}
+}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Status.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Status{pub value:i32,}
@@ -46,53 +87,25 @@ pub fn disable_ai_skip()->Self{Self{value:64}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_ProcWaitTime.md"))]#[::unity2::class(namespace="App",name="GameSkip.ProcWaitTime")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSkip_ProcWaitTime{#[offset(112)]#[rename(name="m_WaitTime")]pub m_wait_time:f32, #[offset(116)]#[rename(name="m_DeltaTime")]pub m_delta_time:f32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Sequence.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Sequence{pub value:i32,}
-impl::unity2::ClassIdentity for GameSkip_Sequence{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameSkip.Sequence";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameSkip_Sequence{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameSkip_Sequence{pub fn tick()->Self{Self{value:0}
-}
-pub fn fade_out()->Self{Self{value:1}
-}
-pub fn executed()->Self{Self{value:2}
-}
-pub fn fade_in()->Self{Self{value:3}
-}
-}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_ProcSuspend.md"))]#[::unity2::class(namespace="App",name="GameSkip.ProcSuspend")]#[parent(crate::app::procinst::ProcInst)]pub struct GameSkip_ProcSuspend{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameskip/GameSkip_Result.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameSkip_Result{pub value:i32,}
-impl::unity2::ClassIdentity for GameSkip_Result{const NAMESPACE: &'static str="App";
-const NAME: &'static str="GameSkip.Result";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for GameSkip_Result{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl GameSkip_Result{pub fn none()->Self{Self{value:0}
-}
-pub fn short_skip()->Self{Self{value:1}
-}
-pub fn long_skip()->Self{Self{value:2}
-}
-}
 
 }
 
 #[cfg(feature = "app-gameskip-types")]
 pub use __types::*;
+
+#[cfg(feature="app-gameskip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSkip_unity2_raw{use super:: * ;
+pub unsafe fn on_tick(this:GameSkip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GameSkip as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(GameSkip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-gameskip")]impl GameSkip{#[doc="`DebugSkip()` overload"]pub fn debug_skip()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22863b0usize)as*mut u8,bool;
 )}
@@ -180,8 +193,7 @@ pub use __types::*;
 (GameSkip)__receiver,(crate::app::gameskip::GameSkip_Status)::core::convert::Into::into(status))}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GameSkip as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2286180usize)as*mut u8,();
-(GameSkip)__receiver)}
+__GameSkip_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -223,13 +235,25 @@ pub fn suspend_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self 
 this}
 }
 
+#[cfg(feature="app-gameskip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSkip_ProcWaitTime_unity2_raw{use super:: * ;
+pub unsafe fn on_tick(this:GameSkip_ProcWaitTime,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GameSkip_ProcWaitTime as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(GameSkip_ProcWaitTime, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-gameskip")]pub trait IGameSkip_ProcWaitTimeMethods:IGameSkip_ProcWaitTime{#[doc="`.ctor(f32)` overload"]fn ctor(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GameSkip_ProcWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d990usize)as*mut u8,();
 (GameSkip_ProcWaitTime)__receiver,(f32)::core::convert::Into::into(time))}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GameSkip_ProcWaitTime as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d9d0usize)as*mut u8,();
-(GameSkip_ProcWaitTime)__receiver)}
+__GameSkip_ProcWaitTime_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -246,17 +270,47 @@ pub fn on_tick_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
+#[cfg(feature="app-gameskip")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameSkip_ProcSuspend_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:GameSkip_ProcSuspend,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <GameSkip_ProcSuspend as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(GameSkip_ProcSuspend, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_tick(this:GameSkip_ProcSuspend,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GameSkip_ProcSuspend as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(GameSkip_ProcSuspend, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:GameSkip_ProcSuspend,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GameSkip_ProcSuspend as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(GameSkip_ProcSuspend, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-gameskip")]pub trait IGameSkip_ProcSuspendMethods:IGameSkip_ProcSuspend{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d940usize)as*mut u8,();
-(GameSkip_ProcSuspend)__receiver)}
+__GameSkip_ProcSuspend_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d960usize)as*mut u8,();
-(GameSkip_ProcSuspend)__receiver)}
+__GameSkip_ProcSuspend_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d970usize)as*mut u8,();
-(GameSkip_ProcSuspend)__receiver)}
+__GameSkip_ProcSuspend_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameSkip_ProcSuspend as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6d980usize)as*mut u8,();
@@ -282,18 +336,18 @@ this}
 #[cfg(feature = "app-gameskip")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::GameSkip_Result;
     pub use super::GameSkip;
     pub use super::IGameSkip;
     pub use super::IGameSkipMethods;
-    pub use super::GameSkip_Status;
     pub use super::GameSkip_ProcWaitTime;
     pub use super::IGameSkip_ProcWaitTime;
     pub use super::IGameSkip_ProcWaitTimeMethods;
     pub use super::GameSkip_Sequence;
+    pub use super::GameSkip_Status;
     pub use super::GameSkip_ProcSuspend;
     pub use super::IGameSkip_ProcSuspend;
     pub use super::IGameSkip_ProcSuspendMethods;
-    pub use super::GameSkip_Result;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonclass_1::ISingletonClass_1;
     pub use crate::system::object::IObject;

@@ -31,16 +31,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ForEachLoopStatement as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ForEachLoopStatement as::unity2::ClassIdentity> ::class(),"Compile",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ForEachLoopStatement as::unity2::ClassIdentity> ::NAME,"Compile",e),}
-}
-}
+pub unsafe fn compile(this:ForEachLoopStatement,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ForEachLoopStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
+let inner:extern "C" fn(ForEachLoopStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-foreachloopstatement")]pub trait IForEachLoopStatementMethods:IForEachLoopStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::token::Token, crate::moon_sharp::interpreter::tree::token::Token)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext> ,first_name_token:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token> ,for_token:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::token::Token>)->(){unsafe{let __receiver= <ForEachLoopStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -48,8 +48,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ForEachLoopStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext),(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(first_name_token),(crate::moon_sharp::interpreter::tree::token::Token)::core::convert::Into::into(for_token))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <ForEachLoopStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ForEachLoopStatement_unity2_raw::__lookup_compile::get_method_info().method_ptr,();
-(ForEachLoopStatement)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+__ForEachLoopStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
 }
 }
 

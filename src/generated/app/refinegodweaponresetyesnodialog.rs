@@ -27,10 +27,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponresetyesnodialog/RefineGodWeaponResetYesNoDialog.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponResetYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RefineGodWeaponResetYesNoDialog{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponresetyesnodialog/RefineGodWeaponResetYesNoDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponResetYesNoDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct RefineGodWeaponResetYesNoDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesEventHandler")]pub m_yes_event_handler:crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponresetyesnodialog/RefineGodWeaponResetYesNoDialog.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponResetYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct RefineGodWeaponResetYesNoDialog{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/refinegodweaponresetyesnodialog/RefineGodWeaponResetYesNoDialog_YesEventHandler.md"))]#[::unity2::class(namespace="App",name="RefineGodWeaponResetYesNoDialog.YesEventHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct RefineGodWeaponResetYesNoDialog_YesEventHandler{}
@@ -39,6 +39,54 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "app-refinegodweaponresetyesnodialog-types")]
 pub use __types::*;
+
+#[cfg(feature="app-refinegodweaponresetyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponResetYesNoDialog_YesMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:RefineGodWeaponResetYesNoDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefineGodWeaponResetYesNoDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RefineGodWeaponResetYesNoDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-refinegodweaponresetyesnodialog")]pub trait IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods:IRefineGodWeaponResetYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponResetYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af71e0usize)as*mut u8,();
+(RefineGodWeaponResetYesNoDialog_YesMenuItem)__receiver,(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponResetYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__RefineGodWeaponResetYesNoDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-refinegodweaponresetyesnodialog")]impl<__T:IRefineGodWeaponResetYesNoDialog_YesMenuItem>IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-refinegodweaponresetyesnodialog")]impl RefineGodWeaponResetYesNoDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-refinegodweaponresetyesnodialog")]impl RefineGodWeaponResetYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` — overload selector"]pub fn new(yes_event_handler:crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RefineGodWeaponResetYesNoDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods> ::ctor(this,yes_event_handler);
+this}
+}
+
+#[cfg(feature="app-refinegodweaponresetyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponResetYesNoDialog_unity2_raw{use super:: * ;
+pub unsafe fn on_close(this:RefineGodWeaponResetYesNoDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <RefineGodWeaponResetYesNoDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(RefineGodWeaponResetYesNoDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-refinegodweaponresetyesnodialog")]impl RefineGodWeaponResetYesNoDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::godweaponrefinedata::GodWeaponRefineData_Kind, crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,item_data:impl::core::convert::Into<crate::app::itemdata::ItemData> ,kind:impl::core::convert::Into<crate::app::godweaponrefinedata::GodWeaponRefineData_Kind> ,yes_event_handler:impl::core::convert::Into<crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler>)->crate::app::yesnodialog::YesNoDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2381980usize)as*mut u8,crate::app::yesnodialog::YesNoDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::app::itemdata::ItemData)::core::convert::Into::into(item_data),(crate::app::godweaponrefinedata::GodWeaponRefineData_Kind)::core::convert::Into::into(kind),(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
@@ -53,8 +101,7 @@ pub use __types::*;
 (RefineGodWeaponResetYesNoDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <RefineGodWeaponResetYesNoDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2384520usize)as*mut u8,();
-(RefineGodWeaponResetYesNoDialog)__receiver)}
+__RefineGodWeaponResetYesNoDialog_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -73,27 +120,17 @@ pub fn on_close_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
-#[cfg(feature="app-refinegodweaponresetyesnodialog")]pub trait IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods:IRefineGodWeaponResetYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` overload"]fn ctor(self,yes_event_handler:impl::core::convert::Into<crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponResetYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af71e0usize)as*mut u8,();
-(RefineGodWeaponResetYesNoDialog_YesMenuItem)__receiver,(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)::core::convert::Into::into(yes_event_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponResetYesNoDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af7290usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefineGodWeaponResetYesNoDialog_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-refinegodweaponresetyesnodialog")]impl<__T:IRefineGodWeaponResetYesNoDialog_YesMenuItem>IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-refinegodweaponresetyesnodialog")]impl RefineGodWeaponResetYesNoDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-refinegodweaponresetyesnodialog")]impl RefineGodWeaponResetYesNoDialog_YesMenuItem{#[doc="`.ctor(crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)` — overload selector"]pub fn new(yes_event_handler:crate::app::refinegodweaponresetyesnodialog::RefineGodWeaponResetYesNoDialog_YesEventHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RefineGodWeaponResetYesNoDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods> ::ctor(this,yes_event_handler);
-this}
+#[cfg(feature="app-refinegodweaponresetyesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponResetYesNoDialog_YesEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:RefineGodWeaponResetYesNoDialog_YesEventHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <RefineGodWeaponResetYesNoDialog_YesEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(RefineGodWeaponResetYesNoDialog_YesEventHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-refinegodweaponresetyesnodialog")]pub trait IRefineGodWeaponResetYesNoDialog_YesEventHandlerMethods:IRefineGodWeaponResetYesNoDialog_YesEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <RefineGodWeaponResetYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -101,8 +138,7 @@ this}
 (RefineGodWeaponResetYesNoDialog_YesEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <RefineGodWeaponResetYesNoDialog_YesEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af6f90usize)as*mut u8,();
-(RefineGodWeaponResetYesNoDialog_YesEventHandler)__receiver)}
+__RefineGodWeaponResetYesNoDialog_YesEventHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -122,12 +158,12 @@ this}
 #[cfg(feature = "app-refinegodweaponresetyesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::RefineGodWeaponResetYesNoDialog;
-    pub use super::IRefineGodWeaponResetYesNoDialog;
-    pub use super::IRefineGodWeaponResetYesNoDialogMethods;
     pub use super::RefineGodWeaponResetYesNoDialog_YesMenuItem;
     pub use super::IRefineGodWeaponResetYesNoDialog_YesMenuItem;
     pub use super::IRefineGodWeaponResetYesNoDialog_YesMenuItemMethods;
+    pub use super::RefineGodWeaponResetYesNoDialog;
+    pub use super::IRefineGodWeaponResetYesNoDialog;
+    pub use super::IRefineGodWeaponResetYesNoDialogMethods;
     pub use super::RefineGodWeaponResetYesNoDialog_YesEventHandler;
     pub use super::IRefineGodWeaponResetYesNoDialog_YesEventHandler;
     pub use super::IRefineGodWeaponResetYesNoDialog_YesEventHandlerMethods;

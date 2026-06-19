@@ -16,6 +16,119 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-guilayoutentry-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-guilayoutentry")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GUILayoutEntry_unity2_raw{use super:: * ;
+pub unsafe fn get_margin_left(this:GUILayoutEntry,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"get_marginLeft",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_margin_right(this:GUILayoutEntry,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"get_marginRight",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_margin_top(this:GUILayoutEntry,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"get_marginTop",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_margin_bottom(this:GUILayoutEntry,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"get_marginBottom",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_width(this:GUILayoutEntry,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"CalcWidth",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_height(this:GUILayoutEntry,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"CalcHeight",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_horizontal(this:GUILayoutEntry,x:f32,width:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"SetHorizontal",));
+let inner:extern "C" fn(GUILayoutEntry,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,width,__mi)}
+pub unsafe fn set_vertical(this:GUILayoutEntry,y:f32,height:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"SetVertical",));
+let inner:extern "C" fn(GUILayoutEntry,f32,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,y,height,__mi)}
+pub unsafe fn apply_style_settings(this:GUILayoutEntry,style:crate::unity_engine::guistyle::GUIStyle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"ApplyStyleSettings",));
+let inner:extern "C" fn(GUILayoutEntry,crate::unity_engine::guistyle::GUIStyle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,style,__mi)}
+pub unsafe fn apply_options(this:GUILayoutEntry,options: ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"ApplyOptions",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,options,__mi)}
+pub unsafe fn to_string(this:GUILayoutEntry,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <GUILayoutEntry as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(GUILayoutEntry, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-guilayoutentry")]impl GUILayoutEntry{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3c46b40usize)as*mut u8,();
 )}
 }
@@ -30,20 +143,16 @@ pub use __types::*;
 (GUILayoutEntry)__receiver,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(value))}
 }
 #[doc="`get_marginLeft()` overload"]fn get_margin_left(self,)->i32{unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45890usize)as*mut u8,i32;
-(GUILayoutEntry)__receiver)}
+__GUILayoutEntry_unity2_raw::get_margin_left(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_marginRight()` overload"]fn get_margin_right(self,)->i32{unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45950usize)as*mut u8,i32;
-(GUILayoutEntry)__receiver)}
+__GUILayoutEntry_unity2_raw::get_margin_right(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_marginTop()` overload"]fn get_margin_top(self,)->i32{unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45a10usize)as*mut u8,i32;
-(GUILayoutEntry)__receiver)}
+__GUILayoutEntry_unity2_raw::get_margin_top(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_marginBottom()` overload"]fn get_margin_bottom(self,)->i32{unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45ad0usize)as*mut u8,i32;
-(GUILayoutEntry)__receiver)}
+__GUILayoutEntry_unity2_raw::get_margin_bottom(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_marginHorizontal()` overload"]fn get_margin_horizontal(self,)->i32{unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45b90usize)as*mut u8,i32;
@@ -62,32 +171,25 @@ pub use __types::*;
 (GUILayoutEntry)__receiver,(f32)::core::convert::Into::into(min_width),(f32)::core::convert::Into::into(max_width),(f32)::core::convert::Into::into(min_height),(f32)::core::convert::Into::into(max_height),(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style),(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))}
 }
 #[doc="`CalcWidth()` overload"]fn calc_width(self,)->(){unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45e90usize)as*mut u8,();
-(GUILayoutEntry)__receiver)}
+__GUILayoutEntry_unity2_raw::calc_width(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcHeight()` overload"]fn calc_height(self,)->(){unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45ea0usize)as*mut u8,();
-(GUILayoutEntry)__receiver)}
+__GUILayoutEntry_unity2_raw::calc_height(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetHorizontal(f32, f32)` overload"]fn set_horizontal(self,x:impl::core::convert::Into<f32> ,width:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45eb0usize)as*mut u8,();
-(GUILayoutEntry)__receiver,(f32)::core::convert::Into::into(x),(f32)::core::convert::Into::into(width))}
+__GUILayoutEntry_unity2_raw::set_horizontal(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(width), ::core::option::Option::None)}
 }
 #[doc="`SetVertical(f32, f32)` overload"]fn set_vertical(self,y:impl::core::convert::Into<f32> ,height:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45ef0usize)as*mut u8,();
-(GUILayoutEntry)__receiver,(f32)::core::convert::Into::into(y),(f32)::core::convert::Into::into(height))}
+__GUILayoutEntry_unity2_raw::set_vertical(__receiver, ::core::convert::Into::into(y), ::core::convert::Into::into(height), ::core::option::Option::None)}
 }
 #[doc="`ApplyStyleSettings(crate::unity_engine::guistyle::GUIStyle)` overload"]fn apply_style_settings(self,style:impl::core::convert::Into<crate::unity_engine::guistyle::GUIStyle>)->(){unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c45f30usize)as*mut u8,();
-(GUILayoutEntry)__receiver,(crate::unity_engine::guistyle::GUIStyle)::core::convert::Into::into(style))}
+__GUILayoutEntry_unity2_raw::apply_style_settings(__receiver, ::core::convert::Into::into(style), ::core::option::Option::None)}
 }
 #[doc="`ApplyOptions(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)` overload"]fn apply_options(self,options:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption> >)->(){unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c46100usize)as*mut u8,();
-(GUILayoutEntry)__receiver,(::unity2::Array<crate::unity_engine::guilayoutoption::GUILayoutOption>)::core::convert::Into::into(options))}
+__GUILayoutEntry_unity2_raw::apply_options(__receiver, ::core::convert::Into::into(options), ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GUILayoutEntry as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c463f0usize)as*mut u8, ::unity2::Il2CppString;
-(GUILayoutEntry)__receiver)}
+__GUILayoutEntry_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 }
 

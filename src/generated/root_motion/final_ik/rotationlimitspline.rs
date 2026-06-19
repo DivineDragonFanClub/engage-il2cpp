@@ -26,6 +26,19 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-rotationlimitspline-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-rotationlimitspline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RotationLimitSpline_unity2_raw{use super:: * ;
+pub unsafe fn limit_rotation(this:RotationLimitSpline,rotation:crate::unity_engine::quaternion::Quaternion,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RotationLimitSpline as::unity2::ClassIdentity> ::NAME,"LimitRotation",));
+let inner:extern "C" fn(RotationLimitSpline,crate::unity_engine::quaternion::Quaternion, ::unity2::OptionalMethod,)->crate::unity_engine::quaternion::Quaternion= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,rotation,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-rotationlimitspline")]pub trait IRotationLimitSplineMethods:IRotationLimitSpline{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <RotationLimitSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec2c60usize)as*mut u8,();
 (RotationLimitSpline)__receiver)}
@@ -47,8 +60,7 @@ pub use __types::*;
 (RotationLimitSpline)__receiver,(::unity2::Array<crate::unity_engine::keyframe::Keyframe>)::core::convert::Into::into(keyframes))}
 }
 #[doc="`LimitRotation(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_rotation(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec2db0usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;
-(RotationLimitSpline)__receiver,(crate::unity_engine::quaternion::Quaternion)::core::convert::Into::into(rotation))}
+__RotationLimitSpline_unity2_raw::limit_rotation(__receiver, ::core::convert::Into::into(rotation), ::core::option::Option::None)}
 }
 #[doc="`LimitSwing(crate::unity_engine::quaternion::Quaternion)` overload"]fn limit_swing(self,rotation:impl::core::convert::Into<crate::unity_engine::quaternion::Quaternion>)->crate::unity_engine::quaternion::Quaternion{unsafe{let __receiver= <RotationLimitSpline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ec2e00usize)as*mut u8,crate::unity_engine::quaternion::Quaternion;

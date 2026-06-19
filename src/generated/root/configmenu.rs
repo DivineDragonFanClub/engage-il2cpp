@@ -20,6 +20,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-configmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="root-configmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConfigMenu_unity2_raw{use super:: * ;
+pub unsafe fn b_call(this:ConfigMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <ConfigMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(ConfigMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn x_call(this:ConfigMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(52usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",52usize,__vt.len(), <ConfigMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
+let inner:extern "C" fn(ConfigMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-configmenu")]impl ConfigMenu{#[doc="`CanToggleEnableNetwork()` overload"]pub fn can_toggle_enable_network()->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2538980usize)as*mut u8,bool;
 )}
 }
@@ -33,12 +56,10 @@ pub use __types::*;
 (ConfigMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::root::configmenucontent::ConfigMenuContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ConfigMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2538370usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ConfigMenu)__receiver)}
+__ConfigMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <ConfigMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2538380usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(ConfigMenu)__receiver)}
+__ConfigMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnInitialize()` overload"]fn on_initialize(self,)->(){unsafe{let __receiver= <ConfigMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2538570usize)as*mut u8,();

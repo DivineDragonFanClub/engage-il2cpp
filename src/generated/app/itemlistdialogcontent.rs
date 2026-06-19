@@ -28,6 +28,59 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-itemlistdialogcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-itemlistdialogcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ItemListDialogContent_unity2_raw{use super:: * ;
+pub unsafe fn init_obj_reference(this:ItemListDialogContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ItemListDialogContent as::unity2::ClassIdentity> ::NAME,"InitObjReference",));
+let inner:extern "C" fn(ItemListDialogContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_menu_item_content(this:ItemListDialogContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ItemListDialogContent as::unity2::ClassIdentity> ::NAME,"BuildMenuItemContent",));
+let inner:extern "C" fn(ItemListDialogContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_item_list_count(this:ItemListDialogContent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <ItemListDialogContent as::unity2::ClassIdentity> ::NAME,"GetItemListCount",));
+let inner:extern "C" fn(ItemListDialogContent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_x(this:ItemListDialogContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ItemListDialogContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosX",));
+let inner:extern "C" fn(ItemListDialogContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:ItemListDialogContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ItemListDialogContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(ItemListDialogContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+}
+
 #[cfg(feature="app-itemlistdialogcontent")]impl ItemListDialogContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x203fcb0usize)as*mut u8,();
 )}
 }
@@ -44,24 +97,19 @@ pub use __types::*;
 (ItemListDialogContent)__receiver)}
 }
 #[doc="`InitObjReference()` overload"]fn init_obj_reference(self,)->(){unsafe{let __receiver= <ItemListDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x203ff10usize)as*mut u8,();
-(ItemListDialogContent)__receiver)}
+__ItemListDialogContent_unity2_raw::init_obj_reference(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildMenuItemContent()` overload"]fn build_menu_item_content(self,)->(){unsafe{let __receiver= <ItemListDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20401c0usize)as*mut u8,();
-(ItemListDialogContent)__receiver)}
+__ItemListDialogContent_unity2_raw::build_menu_item_content(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetItemListCount()` overload"]fn get_item_list_count(self,)->i32{unsafe{let __receiver= <ItemListDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20407d0usize)as*mut u8,i32;
-(ItemListDialogContent)__receiver)}
+__ItemListDialogContent_unity2_raw::get_item_list_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ItemListDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20408b0usize)as*mut u8,f32;
-(ItemListDialogContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__ItemListDialogContent_unity2_raw::calc_cursor_moved_pos_x(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <ItemListDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2040910usize)as*mut u8,f32;
-(ItemListDialogContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__ItemListDialogContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ItemListDialogContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2040a00usize)as*mut u8,();

@@ -26,25 +26,73 @@ use crate::unity_engine::rendering::ui::debuguihandlerwidget::{DebugUIHandlerWid
 #[cfg(feature = "unity_engine-rendering-ui-debuguihandlertoggle-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-ui-debuguihandlertoggle")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DebugUIHandlerToggle_unity2_raw{use super:: * ;
+pub unsafe fn set_widget(this:DebugUIHandlerToggle,widget:crate::unity_engine::rendering::debugui::DebugUI_Widget,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <DebugUIHandlerToggle as::unity2::ClassIdentity> ::NAME,"SetWidget",));
+let inner:extern "C" fn(DebugUIHandlerToggle,crate::unity_engine::rendering::debugui::DebugUI_Widget, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,widget,__mi)}
+pub unsafe fn on_selection(this:DebugUIHandlerToggle,from_next:bool,previous:crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <DebugUIHandlerToggle as::unity2::ClassIdentity> ::NAME,"OnSelection",));
+let inner:extern "C" fn(DebugUIHandlerToggle,bool,crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,from_next,previous,__mi)}
+pub unsafe fn on_deselection(this:DebugUIHandlerToggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <DebugUIHandlerToggle as::unity2::ClassIdentity> ::NAME,"OnDeselection",));
+let inner:extern "C" fn(DebugUIHandlerToggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_action(this:DebugUIHandlerToggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <DebugUIHandlerToggle as::unity2::ClassIdentity> ::NAME,"OnAction",));
+let inner:extern "C" fn(DebugUIHandlerToggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn update_value_label(this:DebugUIHandlerToggle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <DebugUIHandlerToggle as::unity2::ClassIdentity> ::NAME,"UpdateValueLabel",));
+let inner:extern "C" fn(DebugUIHandlerToggle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-ui-debuguihandlertoggle")]pub trait IDebugUIHandlerToggleMethods:IDebugUIHandlerToggle{#[doc="`SetWidget(crate::unity_engine::rendering::debugui::DebugUI_Widget)` overload"]fn set_widget(self,widget:impl::core::convert::Into<crate::unity_engine::rendering::debugui::DebugUI_Widget>)->(){unsafe{let __receiver= <DebugUIHandlerToggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a5820usize)as*mut u8,();
-(DebugUIHandlerToggle)__receiver,(crate::unity_engine::rendering::debugui::DebugUI_Widget)::core::convert::Into::into(widget))}
+__DebugUIHandlerToggle_unity2_raw::set_widget(__receiver, ::core::convert::Into::into(widget), ::core::option::Option::None)}
 }
 #[doc="`OnSelection(bool, crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)` overload"]fn on_selection(self,from_next:impl::core::convert::Into<bool> ,previous:impl::core::convert::Into<crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget>)->bool{unsafe{let __receiver= <DebugUIHandlerToggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a58d0usize)as*mut u8,bool;
-(DebugUIHandlerToggle)__receiver,(bool)::core::convert::Into::into(from_next),(crate::unity_engine::rendering::ui::debuguihandlerwidget::DebugUIHandlerWidget)::core::convert::Into::into(previous))}
+__DebugUIHandlerToggle_unity2_raw::on_selection(__receiver, ::core::convert::Into::into(from_next), ::core::convert::Into::into(previous), ::core::option::Option::None)}
 }
 #[doc="`OnDeselection()` overload"]fn on_deselection(self,)->(){unsafe{let __receiver= <DebugUIHandlerToggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a5930usize)as*mut u8,();
-(DebugUIHandlerToggle)__receiver)}
+__DebugUIHandlerToggle_unity2_raw::on_deselection(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnAction()` overload"]fn on_action(self,)->(){unsafe{let __receiver= <DebugUIHandlerToggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a5980usize)as*mut u8,();
-(DebugUIHandlerToggle)__receiver)}
+__DebugUIHandlerToggle_unity2_raw::on_action(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdateValueLabel()` overload"]fn update_value_label(self,)->(){unsafe{let __receiver= <DebugUIHandlerToggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x30a5a10usize)as*mut u8,();
-(DebugUIHandlerToggle)__receiver)}
+__DebugUIHandlerToggle_unity2_raw::update_value_label(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DebugUIHandlerToggle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x30a5ad0usize)as*mut u8,();

@@ -22,9 +22,21 @@ use crate::unity_engine::statemachinebehaviour::{IStateMachineBehaviour,StateMac
 #[cfg(feature = "root-profilecardchangelarge-types")]
 pub use __types::*;
 
+#[cfg(feature="root-profilecardchangelarge")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardChangeLarge_unity2_raw{use super:: * ;
+pub unsafe fn on_state_exit(this:ProfileCardChangeLarge,animator:crate::unity_engine::animator::Animator,state_info:crate::unity_engine::animatorstateinfo::AnimatorStateInfo,layer_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ProfileCardChangeLarge as::unity2::ClassIdentity> ::NAME,"OnStateExit",));
+let inner:extern "C" fn(ProfileCardChangeLarge,crate::unity_engine::animator::Animator,crate::unity_engine::animatorstateinfo::AnimatorStateInfo,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,animator,state_info,layer_index,__mi)}
+}
+
 #[cfg(feature="root-profilecardchangelarge")]pub trait IProfileCardChangeLargeMethods:IProfileCardChangeLarge{#[doc="`OnStateExit(crate::unity_engine::animator::Animator, crate::unity_engine::animatorstateinfo::AnimatorStateInfo, i32)` overload"]fn on_state_exit(self,animator:impl::core::convert::Into<crate::unity_engine::animator::Animator> ,state_info:impl::core::convert::Into<crate::unity_engine::animatorstateinfo::AnimatorStateInfo> ,layer_index:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <ProfileCardChangeLarge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x230cee0usize)as*mut u8,();
-(ProfileCardChangeLarge)__receiver,(crate::unity_engine::animator::Animator)::core::convert::Into::into(animator),(crate::unity_engine::animatorstateinfo::AnimatorStateInfo)::core::convert::Into::into(state_info),(i32)::core::convert::Into::into(layer_index))}
+__ProfileCardChangeLarge_unity2_raw::on_state_exit(__receiver, ::core::convert::Into::into(animator), ::core::convert::Into::into(state_info), ::core::convert::Into::into(layer_index), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardChangeLarge as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x230cf40usize)as*mut u8,();

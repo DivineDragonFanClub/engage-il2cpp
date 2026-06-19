@@ -24,13 +24,25 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-myroomeventreceiver-types")]
 pub use __types::*;
 
+#[cfg(feature="app-myroomeventreceiver")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MyRoomEventReceiver_unity2_raw{use super:: * ;
+pub unsafe fn on_notify(this:MyRoomEventReceiver,origin:crate::unity_engine::playables::playable::Playable,notification:crate::unity_engine::playables::inotification::INotification,context:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MyRoomEventReceiver as::unity2::ClassIdentity> ::NAME,"OnNotify",));
+let inner:extern "C" fn(MyRoomEventReceiver,crate::unity_engine::playables::playable::Playable,crate::unity_engine::playables::inotification::INotification,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,origin,notification,context,__mi)}
+}
+
 #[cfg(feature="app-myroomeventreceiver")]pub trait IMyRoomEventReceiverMethods:IMyRoomEventReceiver{#[doc="`get_AdjustedTime()` overload"]fn get_adjusted_time(self,)->f64{unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x238ee40usize)as*mut u8,f64;
 (MyRoomEventReceiver)__receiver)}
 }
 #[doc="`OnNotify(crate::unity_engine::playables::playable::Playable, crate::unity_engine::playables::inotification::INotification, crate::system::object::Object)` overload"]fn on_notify(self,origin:impl::core::convert::Into<crate::unity_engine::playables::playable::Playable> ,notification:impl::core::convert::Into<crate::unity_engine::playables::inotification::INotification> ,context:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x238ef40usize)as*mut u8,();
-(MyRoomEventReceiver)__receiver,(crate::unity_engine::playables::playable::Playable)::core::convert::Into::into(origin),(crate::unity_engine::playables::inotification::INotification)::core::convert::Into::into(notification),(crate::system::object::Object)::core::convert::Into::into(context))}
+__MyRoomEventReceiver_unity2_raw::on_notify(__receiver, ::core::convert::Into::into(origin), ::core::convert::Into::into(notification), ::core::convert::Into::into(context), ::core::option::Option::None)}
 }
 #[doc="`OnNotifyEffectMarker(crate::app::myroomeffectmarker::MyRoomEffectMarker)` overload"]fn on_notify_effect_marker(self,effect_marker:impl::core::convert::Into<crate::app::myroomeffectmarker::MyRoomEffectMarker>)->(){unsafe{let __receiver= <MyRoomEventReceiver as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x238f0a0usize)as*mut u8,();

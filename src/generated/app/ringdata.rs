@@ -41,6 +41,9 @@ pub fn max()->Self{Self{value:4}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringdata/RingData.md"))]#[::unity2::class(namespace="App",name="RingData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::ringdata::RingData>)]pub struct RingData{#[offset(120)]#[rename(name="m_Group")]pub m_group: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_FlagName")]pub m_flag_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_JewelColor")]pub m_jewel_color:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="m_RimColor")]pub m_rim_color:crate::unity_engine::color::Color,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringdata/RingData_Kinds.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct RingData_Kinds{pub value:i32,}
 impl::unity2::ClassIdentity for RingData_Kinds{const NAMESPACE: &'static str="App";
 const NAME: &'static str="RingData.Kinds";
@@ -60,13 +63,43 @@ pub fn num()->Self{Self{value:3}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ringdata/RingData.md"))]#[::unity2::class(namespace="App",name="RingData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::ringdata::RingData>)]pub struct RingData{#[offset(120)]#[rename(name="m_Group")]pub m_group: ::unity2::Il2CppString, #[offset(128)]#[rename(name="m_FlagName")]pub m_flag_name: ::unity2::Il2CppString, #[offset(136)]#[rename(name="m_JewelColor")]pub m_jewel_color:crate::unity_engine::color::Color, #[offset(152)]#[rename(name="m_RimColor")]pub m_rim_color:crate::unity_engine::color::Color,}
-
 }
 
 #[cfg(feature = "app-ringdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-ringdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RingData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:RingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RingData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(RingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_release(this:RingData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <RingData as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let inner:extern "C" fn(RingData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:RingData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RingData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(RingData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-ringdata")]impl RingData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2424070usize)as*mut u8,();
 )}
@@ -259,8 +292,7 @@ pub use __types::*;
 (RingData)__receiver)}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2424830usize)as*mut u8,();
-(RingData)__receiver)}
+__RingData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CopyRingColor()` overload"]fn copy_ring_color(self,)->(){unsafe{let __receiver= <RingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24251a0usize)as*mut u8,();
@@ -271,12 +303,10 @@ pub use __types::*;
 (RingData)__receiver)}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <RingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24254e0usize)as*mut u8,();
-(RingData)__receiver)}
+__RingData_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2425610usize)as*mut u8, ::unity2::Il2CppString;
-(RingData)__receiver)}
+__RingData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetFullName()` overload"]fn get_full_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RingData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2425620usize)as*mut u8, ::unity2::Il2CppString;
@@ -379,10 +409,10 @@ this}
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RingData_Ranks;
-    pub use super::RingData_Kinds;
     pub use super::RingData;
     pub use super::IRingData;
     pub use super::IRingDataMethods;
+    pub use super::RingData_Kinds;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

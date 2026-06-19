@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence.md"))]#[::unity2::class(namespace="App",name="FishingSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingSequence{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FishingSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for FishingSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="FishingSequence.Label";
@@ -43,10 +40,26 @@ pub fn exit()->Self{Self{value:4}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fishingsequence/FishingSequence.md"))]#[::unity2::class(namespace="App",name="FishingSequence")]#[parent(crate::app::procscenesequence_1::ProcSceneSequence_1<crate::app::hubsequence::HubSequence>)]pub struct FishingSequence{}
+
 }
 
 #[cfg(feature = "app-fishingsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-fishingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FishingSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_shutdown(this:FishingSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <FishingSequence as::unity2::ClassIdentity> ::NAME,"OnShutdown",));
+let inner:extern "C" fn(FishingSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-fishingsequence")]impl FishingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x260a4a0usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -65,8 +78,7 @@ pub use __types::*;
 (FishingSequence)__receiver,(bool)::core::convert::Into::into(value))}
 }
 #[doc="`OnShutdown()` overload"]fn on_shutdown(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x260a080usize)as*mut u8,();
-(FishingSequence)__receiver)}
+__FishingSequence_unity2_raw::on_shutdown(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ClearRecord()` overload"]fn clear_record(self,)->(){unsafe{let __receiver= <FishingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x260a0f0usize)as*mut u8,();
@@ -124,10 +136,10 @@ this}
 #[cfg(feature = "app-fishingsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::FishingSequence_Label;
     pub use super::FishingSequence;
     pub use super::IFishingSequence;
     pub use super::IFishingSequenceMethods;
-    pub use super::FishingSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::procscenesequence_1::IProcSceneSequence_1;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;

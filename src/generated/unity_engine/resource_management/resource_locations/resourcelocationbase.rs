@@ -17,56 +17,56 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-resource_locations-resourcelocationbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ResourceLocationBase_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_internal_id{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_InternalId",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_InternalId",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_provider_id{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_ProviderId",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_ProviderId",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_dependencies{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_Dependencies",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_Dependencies",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_has_dependencies{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_HasDependencies",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_HasDependencies",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_data{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_Data",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_Data",e),}
-}
-}
+pub unsafe fn get_internal_id(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_InternalId",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_provider_id(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_ProviderId",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_dependencies(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_Dependencies",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_has_dependencies(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_HasDependencies",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_data(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::object::Object{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_Data",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)->crate::system::object::Object= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_data{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"set_Data",1,param_types,false,)}
@@ -77,16 +77,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"set_Data",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_primary_key{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_PrimaryKey",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_PrimaryKey",e),}
-}
-}
+pub unsafe fn get_primary_key(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_PrimaryKey",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_set_primary_key{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"set_PrimaryKey",1,param_types,false,)}
@@ -97,46 +97,46 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"set_PrimaryKey",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_dependency_hash_code{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_DependencyHashCode",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_DependencyHashCode",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_resource_type{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"get_ResourceType",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_ResourceType",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_hash{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::SystemType as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"Hash",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"Hash",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_to_string{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),"ToString",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"ToString",e),}
-}
-}
+pub unsafe fn get_dependency_hash_code(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_DependencyHashCode",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_resource_type(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"get_ResourceType",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn hash(this:ResourceLocationBase,t: ::unity2::SystemType,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"Hash",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::SystemType, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,t,__mi)}
+pub unsafe fn to_string(this:ResourceLocationBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <ResourceLocationBase as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(ResourceLocationBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[< ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type(), < ::unity2::SystemType as::unity2::IlType> ::il_type(), < ::unity2::Array<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<ResourceLocationBase as::unity2::ClassIdentity> ::class(),".ctor",5,param_types,false,)}
@@ -160,52 +160,42 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_locations-resourcelocationbase")]pub trait IResourceLocationBaseMethods:IResourceLocationBase{#[doc="`get_InternalId()` overload"]fn get_internal_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_internal_id::get_method_info().method_ptr, ::unity2::Il2CppString;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_internal_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ProviderId()` overload"]fn get_provider_id(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_provider_id::get_method_info().method_ptr, ::unity2::Il2CppString;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_provider_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Dependencies()` overload"]fn get_dependencies(self,)->crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_dependencies::get_method_info().method_ptr,crate::system::collections::generic::ilist_1_interface::IList_1_Interface<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_dependencies(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_HasDependencies()` overload"]fn get_has_dependencies(self,)->bool{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_has_dependencies::get_method_info().method_ptr,bool;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_has_dependencies(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Data()` overload"]fn get_data(self,)->crate::system::object::Object{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_data::get_method_info().method_ptr,crate::system::object::Object;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_data(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Data(crate::system::object::Object)` overload"]fn set_data(self,value:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_set_data::get_method_info().method_ptr,();
 (ResourceLocationBase)__receiver,(crate::system::object::Object)::core::convert::Into::into(value))}
 }
 #[doc="`get_PrimaryKey()` overload"]fn get_primary_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_primary_key::get_method_info().method_ptr, ::unity2::Il2CppString;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_primary_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_PrimaryKey(::unity2::Il2CppString)` overload"]fn set_primary_key(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_set_primary_key::get_method_info().method_ptr,();
 (ResourceLocationBase)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`get_DependencyHashCode()` overload"]fn get_dependency_hash_code(self,)->i32{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_dependency_hash_code::get_method_info().method_ptr,i32;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_dependency_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ResourceType()` overload"]fn get_resource_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_get_resource_type::get_method_info().method_ptr, ::unity2::SystemType;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::get_resource_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Hash(::unity2::SystemType)` overload"]fn hash(self,t:impl::core::convert::Into< ::unity2::SystemType>)->i32{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_hash::get_method_info().method_ptr,i32;
-(ResourceLocationBase)__receiver,(::unity2::SystemType)::core::convert::Into::into(t))}
+__ResourceLocationBase_unity2_raw::hash(__receiver, ::core::convert::Into::into(t), ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_to_string::get_method_info().method_ptr, ::unity2::Il2CppString;
-(ResourceLocationBase)__receiver)}
+__ResourceLocationBase_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor(::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::Il2CppString, ::unity2::SystemType, ::unity2::Array<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,id:impl::core::convert::Into< ::unity2::Il2CppString> ,provider_id:impl::core::convert::Into< ::unity2::Il2CppString> ,t:impl::core::convert::Into< ::unity2::SystemType> ,dependencies:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> >)->(){unsafe{let __receiver= <ResourceLocationBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__ResourceLocationBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

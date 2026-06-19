@@ -24,6 +24,39 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root-akgameobj-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akgameobj")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkGameObj_unity2_raw{use super:: * ;
+pub unsafe fn get_position(this:AkGameObj,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkGameObj as::unity2::ClassIdentity> ::NAME,"GetPosition",));
+let inner:extern "C" fn(AkGameObj, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_forward(this:AkGameObj,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkGameObj as::unity2::ClassIdentity> ::NAME,"GetForward",));
+let inner:extern "C" fn(AkGameObj, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_upward(this:AkGameObj,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkGameObj as::unity2::ClassIdentity> ::NAME,"GetUpward",));
+let inner:extern "C" fn(AkGameObj, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-akgameobj")]pub trait IAkGameObjMethods:IAkGameObj{#[doc="`get_IsUsingDefaultListeners()` overload"]fn get_is_using_default_listeners(self,)->bool{unsafe{let __receiver= <AkGameObj as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f19b70usize)as*mut u8,bool;
 (AkGameObj)__receiver)}
@@ -69,16 +102,13 @@ pub use __types::*;
 (AkGameObj)__receiver)}
 }
 #[doc="`GetPosition()` overload"]fn get_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkGameObj as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1e4c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(AkGameObj)__receiver)}
+__AkGameObj_unity2_raw::get_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetForward()` overload"]fn get_forward(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkGameObj as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1e550usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(AkGameObj)__receiver)}
+__AkGameObj_unity2_raw::get_forward(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetUpward()` overload"]fn get_upward(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <AkGameObj as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1e570usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(AkGameObj)__receiver)}
+__AkGameObj_unity2_raw::get_upward(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTriggerEnter(crate::unity_engine::collider::Collider)` overload"]fn on_trigger_enter(self,other:impl::core::convert::Into<crate::unity_engine::collider::Collider>)->(){unsafe{let __receiver= <AkGameObj as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f1e590usize)as*mut u8,();

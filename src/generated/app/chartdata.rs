@@ -15,42 +15,27 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartdata/ChartData_Item.md"))]#[::unity2::class(namespace="App",name="ChartData.Item")]#[parent(crate::system::object::Object)]pub struct ChartData_Item{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartdata/ChartData.md"))]#[::unity2::class(namespace="App",name="ChartData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::chartdata::ChartData>)]pub struct ChartData{#[static_field]#[rename(name="ITEM_COUNT")]pub item_count:i32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/chartdata/ChartData_Item.md"))]#[::unity2::class(namespace="App",name="ChartData.Item")]#[parent(crate::system::object::Object)]pub struct ChartData_Item{}
 
 }
 
 #[cfg(feature = "app-chartdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-chartdata")]pub trait IChartData_ItemMethods:IChartData_Item{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61b0usize)as*mut u8, ::unity2::Il2CppString;
-(ChartData_Item)__receiver)}
-}
-#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61c0usize)as*mut u8,();
-(ChartData_Item)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61d0usize)as*mut u8,();
-(ChartData_Item)__receiver)}
-}
-}
-
-#[cfg(feature="app-chartdata")]impl<__T:IChartData_Item>IChartData_ItemMethods for __T{}
-
-#[cfg(feature="app-chartdata")]impl ChartData_Item{pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-chartdata")]impl ChartData_Item{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ChartData_Item), ::core::stringify!(new),));
- <Self as IChartData_ItemMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-chartdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ChartData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:ChartData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ChartData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(ChartData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-chartdata")]impl ChartData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1e9fc00usize)as*mut u8,();
@@ -171,8 +156,7 @@ this}
 (ChartData)__receiver,(crate::app::difficulty::Difficulty)::core::convert::Into::into(difficulty))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ea0210usize)as*mut u8, ::unity2::Il2CppString;
-(ChartData)__receiver)}
+__ChartData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -217,15 +201,43 @@ pub fn get_debug_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Sel
 this}
 }
 
+#[cfg(feature="app-chartdata")]pub trait IChartData_ItemMethods:IChartData_Item{#[doc="`get_Iid()` overload"]fn get_iid(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61b0usize)as*mut u8, ::unity2::Il2CppString;
+(ChartData_Item)__receiver)}
+}
+#[doc="`set_Iid(::unity2::Il2CppString)` overload"]fn set_iid(self,value:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61c0usize)as*mut u8,();
+(ChartData_Item)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ChartData_Item as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19c61d0usize)as*mut u8,();
+(ChartData_Item)__receiver)}
+}
+}
+
+#[cfg(feature="app-chartdata")]impl<__T:IChartData_Item>IChartData_ItemMethods for __T{}
+
+#[cfg(feature="app-chartdata")]impl ChartData_Item{pub fn get_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_iid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-chartdata")]impl ChartData_Item{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ChartData_Item), ::core::stringify!(new),));
+ <Self as IChartData_ItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-chartdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ChartData_Item;
-    pub use super::IChartData_Item;
-    pub use super::IChartData_ItemMethods;
     pub use super::ChartData;
     pub use super::IChartData;
     pub use super::IChartDataMethods;
+    pub use super::ChartData_Item;
+    pub use super::IChartData_Item;
+    pub use super::IChartData_ItemMethods;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

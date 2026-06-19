@@ -20,25 +20,64 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-capabilityint-types")]
 pub use __types::*;
 
+#[cfg(feature="app-capabilityint")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CapabilityInt_unity2_raw{use super:: * ;
+pub unsafe fn add(this:CapabilityInt,i:i32,v:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <CapabilityInt as::unity2::ClassIdentity> ::NAME,"Add",));
+let inner:extern "C" fn(CapabilityInt,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,i,v,__mi)}
+pub unsafe fn is_zero(this:CapabilityInt,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CapabilityInt as::unity2::ClassIdentity> ::NAME,"IsZero",));
+let inner:extern "C" fn(CapabilityInt, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write_to_stream(this:CapabilityInt,stream:crate::app::stream_2::Stream_2,v:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CapabilityInt as::unity2::ClassIdentity> ::NAME,"WriteToStream",));
+let inner:extern "C" fn(CapabilityInt,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,v,__mi)}
+pub unsafe fn read_from_stream(this:CapabilityInt,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CapabilityInt as::unity2::ClassIdentity> ::NAME,"ReadFromStream",));
+let inner:extern "C" fn(CapabilityInt,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+}
+
 #[cfg(feature="app-capabilityint")]pub trait ICapabilityIntMethods:ICapabilityInt{#[doc="`.ctor(i32)` overload"]fn ctor(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CapabilityInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25bdcd0usize)as*mut u8,();
 (CapabilityInt)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`Add(i32, i32)` overload"]fn add(self,i:impl::core::convert::Into<i32> ,v:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CapabilityInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25bdd30usize)as*mut u8,();
-(CapabilityInt)__receiver,(i32)::core::convert::Into::into(i),(i32)::core::convert::Into::into(v))}
+__CapabilityInt_unity2_raw::add(__receiver, ::core::convert::Into::into(i), ::core::convert::Into::into(v), ::core::option::Option::None)}
 }
 #[doc="`IsZero()` overload"]fn is_zero(self,)->bool{unsafe{let __receiver= <CapabilityInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25bddd0usize)as*mut u8,bool;
-(CapabilityInt)__receiver)}
+__CapabilityInt_unity2_raw::is_zero(__receiver, ::core::option::Option::None)}
 }
 #[doc="`WriteToStream(crate::app::stream_2::Stream_2, i32)` overload"]fn write_to_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,v:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CapabilityInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25bde70usize)as*mut u8,();
-(CapabilityInt)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(v))}
+__CapabilityInt_unity2_raw::write_to_stream(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(v), ::core::option::Option::None)}
 }
 #[doc="`ReadFromStream(crate::app::stream_2::Stream_2)` overload"]fn read_from_stream(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->i32{unsafe{let __receiver= <CapabilityInt as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25bde80usize)as*mut u8,i32;
-(CapabilityInt)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__CapabilityInt_unity2_raw::read_from_stream(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 }
 

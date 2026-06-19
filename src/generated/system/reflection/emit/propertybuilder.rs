@@ -20,61 +20,190 @@ use crate::system::reflection::propertyinfo::{IPropertyInfo,PropertyInfo}
 #[cfg(feature = "system-reflection-emit-propertybuilder-types")]
 pub use __types::*;
 
+#[cfg(feature="system-reflection-emit-propertybuilder")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PropertyBuilder_unity2_raw{use super:: * ;
+pub unsafe fn get_attributes(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::propertyattributes::PropertyAttributes{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"get_Attributes",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)->crate::system::reflection::propertyattributes::PropertyAttributes= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_read(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_write(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_declaring_type(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"get_DeclaringType",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_property_type(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"get_PropertyType",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_index_parameters(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"GetIndexParameters",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_reflected_type(this:PropertyBuilder,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"get_ReflectedType",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_accessors(this:PropertyBuilder,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"GetAccessors",));
+let inner:extern "C" fn(PropertyBuilder,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn get_custom_attributes(this:PropertyBuilder,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let inner:extern "C" fn(PropertyBuilder,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inherit,__mi)}
+pub unsafe fn get_custom_attributes_2(this:PropertyBuilder,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"GetCustomAttributes",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::system::object::Object> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+pub unsafe fn get_get_method(this:PropertyBuilder,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"GetGetMethod",));
+let inner:extern "C" fn(PropertyBuilder,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn get_set_method(this:PropertyBuilder,non_public:bool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"GetSetMethod",));
+let inner:extern "C" fn(PropertyBuilder,bool, ::unity2::OptionalMethod,)->crate::system::reflection::methodinfo::MethodInfo= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,non_public,__mi)}
+pub unsafe fn is_defined(this:PropertyBuilder,attribute_type: ::unity2::SystemType,inherit:bool,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <PropertyBuilder as::unity2::ClassIdentity> ::NAME,"IsDefined",));
+let inner:extern "C" fn(PropertyBuilder, ::unity2::SystemType,bool, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,attribute_type,inherit,__mi)}
+}
+
 #[cfg(feature="system-reflection-emit-propertybuilder")]pub trait IPropertyBuilderMethods:IPropertyBuilder{#[doc="`get_Attributes()` overload"]fn get_attributes(self,)->crate::system::reflection::propertyattributes::PropertyAttributes{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c060usize)as*mut u8,crate::system::reflection::propertyattributes::PropertyAttributes;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_attributes(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c0a0usize)as*mut u8,bool;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_can_read(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c0e0usize)as*mut u8,bool;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_can_write(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_DeclaringType()` overload"]fn get_declaring_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c120usize)as*mut u8, ::unity2::SystemType;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_declaring_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c160usize)as*mut u8, ::unity2::Il2CppString;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_PropertyType()` overload"]fn get_property_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c1a0usize)as*mut u8, ::unity2::SystemType;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_property_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetIndexParameters()` overload"]fn get_index_parameters(self,)-> ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo>{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c1e0usize)as*mut u8, ::unity2::Array<crate::system::reflection::parameterinfo::ParameterInfo> ;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_index_parameters(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ReflectedType()` overload"]fn get_reflected_type(self,)-> ::unity2::SystemType{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c220usize)as*mut u8, ::unity2::SystemType;
-(PropertyBuilder)__receiver)}
+__PropertyBuilder_unity2_raw::get_reflected_type(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetAccessors(bool)` overload"]fn get_accessors(self,non_public:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo>{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c260usize)as*mut u8, ::unity2::Array<crate::system::reflection::methodinfo::MethodInfo> ;
-(PropertyBuilder)__receiver,(bool)::core::convert::Into::into(non_public))}
+__PropertyBuilder_unity2_raw::get_accessors(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributes(bool)` overload"]fn get_custom_attributes(self,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c2a0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(PropertyBuilder)__receiver,(bool)::core::convert::Into::into(inherit))}
+__PropertyBuilder_unity2_raw::get_custom_attributes(__receiver, ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`GetCustomAttributes(::unity2::SystemType, bool)` overload"]fn get_custom_attributes_2(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)-> ::unity2::Array<crate::system::object::Object>{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c2e0usize)as*mut u8, ::unity2::Array<crate::system::object::Object> ;
-(PropertyBuilder)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__PropertyBuilder_unity2_raw::get_custom_attributes_2(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 #[doc="`GetGetMethod(bool)` overload"]fn get_get_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c320usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(PropertyBuilder)__receiver,(bool)::core::convert::Into::into(non_public))}
+__PropertyBuilder_unity2_raw::get_get_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
 }
 #[doc="`GetSetMethod(bool)` overload"]fn get_set_method(self,non_public:impl::core::convert::Into<bool>)->crate::system::reflection::methodinfo::MethodInfo{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c360usize)as*mut u8,crate::system::reflection::methodinfo::MethodInfo;
-(PropertyBuilder)__receiver,(bool)::core::convert::Into::into(non_public))}
+__PropertyBuilder_unity2_raw::get_set_method(__receiver, ::core::convert::Into::into(non_public), ::core::option::Option::None)}
 }
 #[doc="`IsDefined(::unity2::SystemType, bool)` overload"]fn is_defined(self,attribute_type:impl::core::convert::Into< ::unity2::SystemType> ,inherit:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <PropertyBuilder as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x376c3e0usize)as*mut u8,bool;
-(PropertyBuilder)__receiver,(::unity2::SystemType)::core::convert::Into::into(attribute_type),(bool)::core::convert::Into::into(inherit))}
+__PropertyBuilder_unity2_raw::is_defined(__receiver, ::core::convert::Into::into(attribute_type), ::core::convert::Into::into(inherit), ::core::option::Option::None)}
 }
 }
 

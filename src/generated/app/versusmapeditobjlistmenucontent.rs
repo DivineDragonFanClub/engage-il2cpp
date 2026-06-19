@@ -26,6 +26,59 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-versusmapeditobjlistmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-versusmapeditobjlistmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VersusMapEditObjListMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn calc_w(this:VersusMapEditObjListMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <VersusMapEditObjListMenuContent as::unity2::ClassIdentity> ::NAME,"CalcW",));
+let inner:extern "C" fn(VersusMapEditObjListMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_h(this:VersusMapEditObjListMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <VersusMapEditObjListMenuContent as::unity2::ClassIdentity> ::NAME,"CalcH",));
+let inner:extern "C" fn(VersusMapEditObjListMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn calc_cursor_moved_pos_x(this:VersusMapEditObjListMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <VersusMapEditObjListMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosX",));
+let inner:extern "C" fn(VersusMapEditObjListMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn calc_cursor_moved_pos_y(this:VersusMapEditObjListMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <VersusMapEditObjListMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(VersusMapEditObjListMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+pub unsafe fn get_line_height_for_scroll(this:VersusMapEditObjListMenuContent,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <VersusMapEditObjListMenuContent as::unity2::ClassIdentity> ::NAME,"GetLineHeightForScroll",));
+let inner:extern "C" fn(VersusMapEditObjListMenuContent, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-versusmapeditobjlistmenucontent")]impl VersusMapEditObjListMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x26ad930usize)as*mut u8,();
 )}
 }
@@ -41,24 +94,19 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-versusmapeditobjlistmenucontent")]pub trait IVersusMapEditObjListMenuContentMethods:IVersusMapEditObjListMenuContent{#[doc="`CalcW()` overload"]fn calc_w(self,)->f32{unsafe{let __receiver= <VersusMapEditObjListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26adad0usize)as*mut u8,f32;
-(VersusMapEditObjListMenuContent)__receiver)}
+__VersusMapEditObjListMenuContent_unity2_raw::calc_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcH()` overload"]fn calc_h(self,)->f32{unsafe{let __receiver= <VersusMapEditObjListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26adb40usize)as*mut u8,f32;
-(VersusMapEditObjListMenuContent)__receiver)}
+__VersusMapEditObjListMenuContent_unity2_raw::calc_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosX(i32)` overload"]fn calc_cursor_moved_pos_x(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <VersusMapEditObjListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26adbb0usize)as*mut u8,f32;
-(VersusMapEditObjListMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__VersusMapEditObjListMenuContent_unity2_raw::calc_cursor_moved_pos_x(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <VersusMapEditObjListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26adc70usize)as*mut u8,f32;
-(VersusMapEditObjListMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__VersusMapEditObjListMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`GetLineHeightForScroll()` overload"]fn get_line_height_for_scroll(self,)->f32{unsafe{let __receiver= <VersusMapEditObjListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26add30usize)as*mut u8,f32;
-(VersusMapEditObjListMenuContent)__receiver)}
+__VersusMapEditObjListMenuContent_unity2_raw::get_line_height_for_scroll(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <VersusMapEditObjListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26add40usize)as*mut u8,();

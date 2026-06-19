@@ -30,6 +30,9 @@ impl::unity2::IlType for RangeData_Offset{fn il_type()-> &'static::unity2::il2cp
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData_DirOffsets.md"))]#[::unity2::class(namespace="App",name="RangeData.DirOffsets")]#[parent(crate::system::object::Object)]pub struct RangeData_DirOffsets{#[offset(16)]#[rename(name="m_Offsets")]pub m_offsets: ::unity2::Array<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> > > , #[offset(24)]#[rename(name="m_Centers")]pub m_centers:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::rangedata::RangeData_Targets> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData.md"))]#[::unity2::class(namespace="App",name="RangeData")]#[parent(crate::app::structdataarray_1::StructDataArray_1<crate::app::rangedata::RangeData>)]pub struct RangeData{#[offset(48)]#[rename(name="m_Values")]pub m_values: ::unity2::Array<i8> , #[static_field]#[rename(name="s_DirOffsets")]pub s_dir_offsets:crate::app::rangedata::RangeData_DirOffsets,}
 
 
@@ -54,9 +57,6 @@ pub fn both()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/rangedata/RangeData_DirOffsets.md"))]#[::unity2::class(namespace="App",name="RangeData.DirOffsets")]#[parent(crate::system::object::Object)]pub struct RangeData_DirOffsets{#[offset(16)]#[rename(name="m_Offsets")]pub m_offsets: ::unity2::Array<crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> > > , #[offset(24)]#[rename(name="m_Centers")]pub m_centers:crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::app::rangedata::RangeData_Targets> ,}
-
 }
 
 #[cfg(feature = "app-rangedata-types")]
@@ -72,6 +72,57 @@ pub use __types::*;
 
 #[cfg(feature="app-rangedata")]impl RangeData_Offset{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-rangedata")]pub trait IRangeData_DirOffsetsMethods:IRangeData_DirOffsets{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1a50usize)as*mut u8,();
+(RangeData_DirOffsets)__receiver)}
+}
+#[doc="`AddCenter(::unity2::Il2CppString, crate::app::rangedata::RangeData_Targets)` overload"]fn add_center(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,target:impl::core::convert::Into<crate::app::rangedata::RangeData_Targets>)->(){unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1ce0usize)as*mut u8,();
+(RangeData_DirOffsets)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::rangedata::RangeData_Targets)::core::convert::Into::into(target))}
+}
+#[doc="`GetCenter(::unity2::Il2CppString)` overload"]fn get_center(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::rangedata::RangeData_Targets{unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1d50usize)as*mut u8,crate::app::rangedata::RangeData_Targets;
+(RangeData_DirOffsets)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
+}
+#[doc="`GetOffest(crate::app::dir_2::Dir_Type)` overload"]fn get_offest(self,dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> >{unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1db0usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> > ;
+(RangeData_DirOffsets)__receiver,(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1e60usize)as*mut u8,();
+(RangeData_DirOffsets)__receiver)}
+}
+}
+
+#[cfg(feature="app-rangedata")]impl<__T:IRangeData_DirOffsets>IRangeData_DirOffsetsMethods for __T{}
+
+#[cfg(feature="app-rangedata")]impl RangeData_DirOffsets{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn add_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn get_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn get_offest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-rangedata")]impl RangeData_DirOffsets{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(RangeData_DirOffsets), ::core::stringify!(new),));
+ <Self as IRangeData_DirOffsetsMethods> ::ctor(this,);
+this}
+}
+
+#[cfg(feature="app-rangedata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RangeData_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:RangeData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RangeData as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(RangeData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-rangedata")]impl RangeData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23763a0usize)as*mut u8,();
@@ -159,8 +210,7 @@ pub fn to_string_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 (RangeData)__receiver,(i8)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <RangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23765a0usize)as*mut u8,();
-(RangeData)__receiver)}
+__RangeData_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RangeData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2376ff0usize)as*mut u8,();
@@ -203,55 +253,17 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
-#[cfg(feature="app-rangedata")]pub trait IRangeData_DirOffsetsMethods:IRangeData_DirOffsets{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1a50usize)as*mut u8,();
-(RangeData_DirOffsets)__receiver)}
-}
-#[doc="`AddCenter(::unity2::Il2CppString, crate::app::rangedata::RangeData_Targets)` overload"]fn add_center(self,name:impl::core::convert::Into< ::unity2::Il2CppString> ,target:impl::core::convert::Into<crate::app::rangedata::RangeData_Targets>)->(){unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1ce0usize)as*mut u8,();
-(RangeData_DirOffsets)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name),(crate::app::rangedata::RangeData_Targets)::core::convert::Into::into(target))}
-}
-#[doc="`GetCenter(::unity2::Il2CppString)` overload"]fn get_center(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::rangedata::RangeData_Targets{unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1d50usize)as*mut u8,crate::app::rangedata::RangeData_Targets;
-(RangeData_DirOffsets)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
-}
-#[doc="`GetOffest(crate::app::dir_2::Dir_Type)` overload"]fn get_offest(self,dir:impl::core::convert::Into<crate::app::dir_2::Dir_Type>)->crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> >{unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1db0usize)as*mut u8,crate::system::collections::generic::dictionary_2::Dictionary_2< ::unity2::Il2CppString,crate::system::collections::generic::list_1::List_1<crate::app::rangedata::RangeData_Offset> > ;
-(RangeData_DirOffsets)__receiver,(crate::app::dir_2::Dir_Type)::core::convert::Into::into(dir))}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <RangeData_DirOffsets as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1af1e60usize)as*mut u8,();
-(RangeData_DirOffsets)__receiver)}
-}
-}
-
-#[cfg(feature="app-rangedata")]impl<__T:IRangeData_DirOffsets>IRangeData_DirOffsetsMethods for __T{}
-
-#[cfg(feature="app-rangedata")]impl RangeData_DirOffsets{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn add_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn get_center_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn get_offest_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-rangedata")]impl RangeData_DirOffsets{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(RangeData_DirOffsets), ::core::stringify!(new),));
- <Self as IRangeData_DirOffsetsMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-rangedata")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::RangeData_Offset;
+    pub use super::RangeData_DirOffsets;
+    pub use super::IRangeData_DirOffsets;
+    pub use super::IRangeData_DirOffsetsMethods;
     pub use super::RangeData;
     pub use super::IRangeData;
     pub use super::IRangeDataMethods;
     pub use super::RangeData_Targets;
-    pub use super::RangeData_DirOffsets;
-    pub use super::IRangeData_DirOffsets;
-    pub use super::IRangeData_DirOffsetsMethods;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdataarray_1::IStructDataArray_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

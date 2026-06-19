@@ -44,6 +44,19 @@ pub fn grid()->Self{Self{value:2}
 #[cfg(feature = "unity_engine-tilemaps-tile-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-tilemaps-tile")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Tile_unity2_raw{use super:: * ;
+pub unsafe fn get_tile_data(this:Tile,position:crate::unity_engine::vector3int::Vector3Int,tilemap:crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface,tile_data: *mut crate::unity_engine::tilemaps::tiledata::TileData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <Tile as::unity2::ClassIdentity> ::NAME,"GetTileData",));
+let inner:extern "C" fn(Tile,crate::unity_engine::vector3int::Vector3Int,crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mut crate::unity_engine::tilemaps::tiledata::TileData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,position,tilemap,tile_data,__mi)}
+}
+
 #[cfg(feature="unity_engine-tilemaps-tile")]pub trait ITileMethods:ITile{#[doc="`get_sprite()` overload"]fn get_sprite(self,)->crate::unity_engine::sprite::Sprite{unsafe{let __receiver= <Tile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42b50usize)as*mut u8,crate::unity_engine::sprite::Sprite;
 (Tile)__receiver)}
@@ -94,8 +107,7 @@ pub use __types::*;
 }
 #[doc="`GetTileData(crate::unity_engine::vector3int::Vector3Int, crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface, *mutcrate::unity_engine::tilemaps::tiledata::TileData)` overload"]fn get_tile_data(self,position:impl::core::convert::Into<crate::unity_engine::vector3int::Vector3Int> ,tilemap:impl::core::convert::Into<crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface>)->crate::unity_engine::tilemaps::tiledata::TileData{unsafe{let __receiver= <Tile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::tilemaps::tiledata::TileData> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f42c50usize)as*mut u8,();
-(Tile)__receiver,(crate::unity_engine::vector3int::Vector3Int)::core::convert::Into::into(position),(crate::unity_engine::tilemaps::itilemap_interface::ITilemap_Interface)::core::convert::Into::into(tilemap),(*mut crate::unity_engine::tilemaps::tiledata::TileData)__out_0.as_mut_ptr());
+__Tile_unity2_raw::get_tile_data(__receiver, ::core::convert::Into::into(position), ::core::convert::Into::into(tilemap),__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Tile as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);

@@ -22,9 +22,21 @@ use crate::unity_engine::timeline::marker::{IMarker,Marker}
 #[cfg(feature = "app-dragonrideoneshotsemarker-types")]
 pub use __types::*;
 
+#[cfg(feature="app-dragonrideoneshotsemarker")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __DragonRideOneShotSEMarker_unity2_raw{use super:: * ;
+pub unsafe fn get_id(this:DragonRideOneShotSEMarker,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <DragonRideOneShotSEMarker as::unity2::ClassIdentity> ::NAME,"get_id",));
+let inner:extern "C" fn(DragonRideOneShotSEMarker, ::unity2::OptionalMethod,)->crate::unity_engine::propertyname::PropertyName= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-dragonrideoneshotsemarker")]pub trait IDragonRideOneShotSEMarkerMethods:IDragonRideOneShotSEMarker{#[doc="`get_id()` overload"]fn get_id(self,)->crate::unity_engine::propertyname::PropertyName{unsafe{let __receiver= <DragonRideOneShotSEMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2b30usize)as*mut u8,crate::unity_engine::propertyname::PropertyName;
-(DragonRideOneShotSEMarker)__receiver)}
+__DragonRideOneShotSEMarker_unity2_raw::get_id(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <DragonRideOneShotSEMarker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2ad2b90usize)as*mut u8,();

@@ -25,6 +25,33 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldeploy/MapPanelDeploy.md"))]#[::unity2::class(namespace="App",name="MapPanelDeploy")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappaneldeploy::MapPanelDeploy>)]pub struct MapPanelDeploy{#[offset(64)]#[rename(name="m_MeshList")]pub m_mesh_list:crate::system::collections::generic::list_1::List_1<crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex> , #[offset(72)]#[rename(name="m_MoveImage")]pub m_move_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_AttackImage")]pub m_attack_image:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_HealImage")]pub m_heal_image:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_SupportImage")]pub m_support_image:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_InterferenceImage")]pub m_interference_image:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::mappaneldeploy::MapPanelDeploy_Mode, #[offset(116)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(120)]#[rename(name="m_TempImage")]pub m_temp_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(128)]#[rename(name="m_Scale")]pub m_scale:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(136)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(144)]#[rename(name="m_Range")]pub m_range:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(152)]#[rename(name="m_MoveColor")]pub m_move_color:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="m_AttackColor")]pub m_attack_color:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="m_HealColor")]pub m_heal_color:crate::unity_engine::color::Color, #[offset(200)]#[rename(name="m_SupportColor")]pub m_support_color:crate::unity_engine::color::Color, #[offset(216)]#[rename(name="m_InterferenceColor")]pub m_interference_color:crate::unity_engine::color::Color, #[offset(232)]#[rename(name="m_AlphaCurve")]pub m_alpha_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(240)]#[rename(name="m_IsIntegration")]pub m_is_integration:bool, #[offset(248)]#[rename(name="m_IntegrationImage")]pub m_integration_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(256)]#[rename(name="m_Time")]pub m_time:f32,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldeploy/MapPanelDeploy_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelDeploy_MeshIndex{pub value:i32,}
+impl::unity2::ClassIdentity for MapPanelDeploy_MeshIndex{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapPanelDeploy.MeshIndex";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapPanelDeploy_MeshIndex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapPanelDeploy_MeshIndex{pub fn r#move()->Self{Self{value:0}
+}
+pub fn attack()->Self{Self{value:1}
+}
+pub fn heal()->Self{Self{value:2}
+}
+pub fn support()->Self{Self{value:3}
+}
+pub fn interference()->Self{Self{value:4}
+}
+pub fn num()->Self{Self{value:5}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldeploy/MapPanelDeploy_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelDeploy_Mode{pub value:i32,}
 impl::unity2::ClassIdentity for MapPanelDeploy_Mode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapPanelDeploy.Mode";
@@ -84,45 +111,49 @@ pub fn full_bullet_charge()->Self{Self{value:23}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldeploy/MapPanelDeploy_MeshIndex.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelDeploy_MeshIndex{pub value:i32,}
-impl::unity2::ClassIdentity for MapPanelDeploy_MeshIndex{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapPanelDeploy.MeshIndex";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapPanelDeploy_MeshIndex{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapPanelDeploy_MeshIndex{pub fn r#move()->Self{Self{value:0}
-}
-pub fn attack()->Self{Self{value:1}
-}
-pub fn heal()->Self{Self{value:2}
-}
-pub fn support()->Self{Self{value:3}
-}
-pub fn interference()->Self{Self{value:4}
-}
-pub fn num()->Self{Self{value:5}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldeploy/MapPanelDeploy.md"))]#[::unity2::class(namespace="App",name="MapPanelDeploy")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappaneldeploy::MapPanelDeploy>)]pub struct MapPanelDeploy{#[offset(64)]#[rename(name="m_MeshList")]pub m_mesh_list:crate::system::collections::generic::list_1::List_1<crate::app::mappaneldeploy::MapPanelDeploy_MeshIndex> , #[offset(72)]#[rename(name="m_MoveImage")]pub m_move_image:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_AttackImage")]pub m_attack_image:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_HealImage")]pub m_heal_image:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_SupportImage")]pub m_support_image:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_InterferenceImage")]pub m_interference_image:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_Mode")]pub m_mode:crate::app::mappaneldeploy::MapPanelDeploy_Mode, #[offset(116)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(120)]#[rename(name="m_TempImage")]pub m_temp_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(128)]#[rename(name="m_Scale")]pub m_scale:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(136)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(144)]#[rename(name="m_Range")]pub m_range:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(152)]#[rename(name="m_MoveColor")]pub m_move_color:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="m_AttackColor")]pub m_attack_color:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="m_HealColor")]pub m_heal_color:crate::unity_engine::color::Color, #[offset(200)]#[rename(name="m_SupportColor")]pub m_support_color:crate::unity_engine::color::Color, #[offset(216)]#[rename(name="m_InterferenceColor")]pub m_interference_color:crate::unity_engine::color::Color, #[offset(232)]#[rename(name="m_AlphaCurve")]pub m_alpha_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(240)]#[rename(name="m_IsIntegration")]pub m_is_integration:bool, #[offset(248)]#[rename(name="m_IntegrationImage")]pub m_integration_image:crate::app::mapimagecorebit::MapImageCoreBit, #[offset(256)]#[rename(name="m_Time")]pub m_time:f32,}
-
 }
 
 #[cfg(feature = "app-mappaneldeploy-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mappaneldeploy")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelDeploy_unity2_raw{use super:: * ;
+pub unsafe fn get_sub_mesh_count(this:MapPanelDeploy,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapPanelDeploy as::unity2::ClassIdentity> ::NAME,"get_SubMeshCount",));
+let inner:extern "C" fn(MapPanelDeploy, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn awake(this:MapPanelDeploy,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapPanelDeploy as::unity2::ClassIdentity> ::NAME,"Awake",));
+let inner:extern "C" fn(MapPanelDeploy, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_source_materials(this:MapPanelDeploy,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapPanelDeploy as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
+let inner:extern "C" fn(MapPanelDeploy, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mappaneldeploy")]pub trait IMapPanelDeployMethods:IMapPanelDeploy{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelDeploy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x234e620usize)as*mut u8,i32;
-(MapPanelDeploy)__receiver)}
+__MapPanelDeploy_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <MapPanelDeploy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x234e630usize)as*mut u8,();
-(MapPanelDeploy)__receiver)}
+__MapPanelDeploy_unity2_raw::awake(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <MapPanelDeploy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x234e6e0usize)as*mut u8,();
@@ -141,8 +172,7 @@ pub use __types::*;
 (MapPanelDeploy)__receiver,(crate::app::mappaneldeploy::MapPanelDeploy_Mode)::core::convert::Into::into(mode))}
 }
 #[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelDeploy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2350840usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(MapPanelDeploy)__receiver)}
+__MapPanelDeploy_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UpdatePanelAlpha()` overload"]fn update_panel_alpha(self,)->(){unsafe{let __receiver= <MapPanelDeploy as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x234f020usize)as*mut u8,();
@@ -232,11 +262,11 @@ this}
 #[cfg(feature = "app-mappaneldeploy")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelDeploy_Mode;
-    pub use super::MapPanelDeploy_MeshIndex;
     pub use super::MapPanelDeploy;
     pub use super::IMapPanelDeploy;
     pub use super::IMapPanelDeployMethods;
+    pub use super::MapPanelDeploy_MeshIndex;
+    pub use super::MapPanelDeploy_Mode;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

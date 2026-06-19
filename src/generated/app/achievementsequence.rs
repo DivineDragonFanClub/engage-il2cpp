@@ -17,6 +17,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementsequence/AchievementSequence.md"))]#[::unity2::class(namespace="App",name="AchievementSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::achievementsequence::AchievementSequence>)]pub struct AchievementSequence{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementsequence/AchievementSequence_Label2.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AchievementSequence_Label2{pub value:i32,}
 impl::unity2::ClassIdentity for AchievementSequence_Label2{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AchievementSequence.Label2";
@@ -31,9 +34,6 @@ impl AchievementSequence_Label2{pub fn entry()->Self{Self{value:0}
 pub fn end()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/achievementsequence/AchievementSequence.md"))]#[::unity2::class(namespace="App",name="AchievementSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::achievementsequence::AchievementSequence>)]pub struct AchievementSequence{}
 
 }
 
@@ -92,10 +92,10 @@ this}
 #[cfg(feature = "app-achievementsequence")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AchievementSequence_Label2;
     pub use super::AchievementSequence;
     pub use super::IAchievementSequence;
     pub use super::IAchievementSequenceMethods;
+    pub use super::AchievementSequence_Label2;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::object::IObject;

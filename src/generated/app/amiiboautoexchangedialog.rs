@@ -27,12 +27,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))]#[::unity2::class(namespace="App",name="AmiiboAutoExchangeDialog")]#[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]pub struct AmiiboAutoExchangeDialog{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_ConfirmDialogNo.md"))]#[::unity2::class(namespace="App",name="AmiiboAutoExchangeDialog.ConfirmDialogNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct AmiiboAutoExchangeDialog_ConfirmDialogNo{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AmiiboAutoExchangeDialog_Type{pub value:i32,}
 impl::unity2::ClassIdentity for AmiiboAutoExchangeDialog_Type{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AmiiboAutoExchangeDialog.Type";
@@ -48,10 +42,34 @@ pub fn accessory()->Self{Self{value:1}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog_ConfirmDialogNo.md"))]#[::unity2::class(namespace="App",name="AmiiboAutoExchangeDialog.ConfirmDialogNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct AmiiboAutoExchangeDialog_ConfirmDialogNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/amiiboautoexchangedialog/AmiiboAutoExchangeDialog.md"))]#[::unity2::class(namespace="App",name="AmiiboAutoExchangeDialog")]#[parent(crate::app::exchangeyesnodialog::ExchangeYesNoDialog)]pub struct AmiiboAutoExchangeDialog{}
+
 }
 
 #[cfg(feature = "app-amiiboautoexchangedialog-types")]
 pub use __types::*;
+
+#[cfg(feature="app-amiiboautoexchangedialog")]pub trait IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods:IAmiiboAutoExchangeDialog_ConfirmDialogNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboAutoExchangeDialog_ConfirmDialogNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3260usize)as*mut u8,();
+(AmiiboAutoExchangeDialog_ConfirmDialogNo)__receiver)}
+}
+}
+
+#[cfg(feature="app-amiiboautoexchangedialog")]impl<__T:IAmiiboAutoExchangeDialog_ConfirmDialogNo>IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods for __T{}
+
+#[cfg(feature="app-amiiboautoexchangedialog")]impl AmiiboAutoExchangeDialog_ConfirmDialogNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-amiiboautoexchangedialog")]impl AmiiboAutoExchangeDialog_ConfirmDialogNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AmiiboAutoExchangeDialog_ConfirmDialogNo), ::core::stringify!(new),));
+ <Self as IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods> ::ctor(this,);
+this}
+}
 
 #[cfg(feature="app-amiiboautoexchangedialog")]impl AmiiboAutoExchangeDialog{#[doc="`CreateBind(crate::app::procinst::ProcInst, i32, crate::app::amiiboautoexchangedialog::AmiiboAutoExchangeDialog_Type)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,ticket_num:impl::core::convert::Into<i32> ,r#type:impl::core::convert::Into<crate::app::amiiboautoexchangedialog::AmiiboAutoExchangeDialog_Type>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d31370usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(i32)::core::convert::Into::into(ticket_num),(crate::app::amiiboautoexchangedialog::AmiiboAutoExchangeDialog_Type)::core::convert::Into::into(r#type))}
@@ -77,34 +95,16 @@ pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self a
 this}
 }
 
-#[cfg(feature="app-amiiboautoexchangedialog")]pub trait IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods:IAmiiboAutoExchangeDialog_ConfirmDialogNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AmiiboAutoExchangeDialog_ConfirmDialogNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba3260usize)as*mut u8,();
-(AmiiboAutoExchangeDialog_ConfirmDialogNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-amiiboautoexchangedialog")]impl<__T:IAmiiboAutoExchangeDialog_ConfirmDialogNo>IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods for __T{}
-
-#[cfg(feature="app-amiiboautoexchangedialog")]impl AmiiboAutoExchangeDialog_ConfirmDialogNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-amiiboautoexchangedialog")]impl AmiiboAutoExchangeDialog_ConfirmDialogNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AmiiboAutoExchangeDialog_ConfirmDialogNo), ::core::stringify!(new),));
- <Self as IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods> ::ctor(this,);
-this}
-}
-
 #[cfg(feature = "app-amiiboautoexchangedialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AmiiboAutoExchangeDialog;
-    pub use super::IAmiiboAutoExchangeDialog;
-    pub use super::IAmiiboAutoExchangeDialogMethods;
+    pub use super::AmiiboAutoExchangeDialog_Type;
     pub use super::AmiiboAutoExchangeDialog_ConfirmDialogNo;
     pub use super::IAmiiboAutoExchangeDialog_ConfirmDialogNo;
     pub use super::IAmiiboAutoExchangeDialog_ConfirmDialogNoMethods;
-    pub use super::AmiiboAutoExchangeDialog_Type;
+    pub use super::AmiiboAutoExchangeDialog;
+    pub use super::IAmiiboAutoExchangeDialog;
+    pub use super::IAmiiboAutoExchangeDialogMethods;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

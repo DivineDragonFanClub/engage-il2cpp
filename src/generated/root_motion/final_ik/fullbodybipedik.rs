@@ -28,13 +28,44 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-final_ik-fullbodybipedik-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-fullbodybipedik")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FullBodyBipedIK_unity2_raw{use super:: * ;
+pub unsafe fn open_user_manual(this:FullBodyBipedIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FullBodyBipedIK as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
+let inner:extern "C" fn(FullBodyBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn open_script_reference(this:FullBodyBipedIK,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <FullBodyBipedIK as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
+let inner:extern "C" fn(FullBodyBipedIK, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_ik_solver(this:FullBodyBipedIK,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FullBodyBipedIK as::unity2::ClassIdentity> ::NAME,"GetIKSolver",));
+let inner:extern "C" fn(FullBodyBipedIK, ::unity2::OptionalMethod,)->crate::root_motion::final_ik::iksolver::IKSolver= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-fullbodybipedik")]pub trait IFullBodyBipedIKMethods:IFullBodyBipedIK{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <FullBodyBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2276000usize)as*mut u8,();
-(FullBodyBipedIK)__receiver)}
+__FullBodyBipedIK_unity2_raw::open_user_manual(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <FullBodyBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2276050usize)as*mut u8,();
-(FullBodyBipedIK)__receiver)}
+__FullBodyBipedIK_unity2_raw::open_script_reference(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenSetupTutorial()` overload"]fn open_setup_tutorial(self,)->(){unsafe{let __receiver= <FullBodyBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22760a0usize)as*mut u8,();
@@ -57,8 +88,7 @@ pub use __types::*;
 (FullBodyBipedIK)__receiver,(crate::root_motion::bipedreferences::BipedReferences)::core::convert::Into::into(references),(crate::unity_engine::transform::Transform)::core::convert::Into::into(root_node))}
 }
 #[doc="`GetIKSolver()` overload"]fn get_ik_solver(self,)->crate::root_motion::final_ik::iksolver::IKSolver{unsafe{let __receiver= <FullBodyBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2276220usize)as*mut u8,crate::root_motion::final_ik::iksolver::IKSolver;
-(FullBodyBipedIK)__receiver)}
+__FullBodyBipedIK_unity2_raw::get_ik_solver(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReferencesError(*mut::unity2::Il2CppString)` overload"]fn references_error(self,)->(bool, ::unity2::Il2CppString){unsafe{let __receiver= <FullBodyBipedIK as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: < ::unity2::Il2CppString> ::uninit();

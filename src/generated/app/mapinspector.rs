@@ -15,6 +15,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinspector/MapInspector.md"))]#[::unity2::class(namespace="App",name="MapInspector")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct MapInspector{#[offset(16)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapinspector::MapInspector_Kind, #[offset(24)]#[rename(name="m_Condition")]pub m_condition:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(32)]#[rename(name="m_Function")]pub m_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(40)]#[rename(name="m_Args")]pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinspector/MapInspector_Kind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInspector_Kind{pub value:i32,}
 impl::unity2::ClassIdentity for MapInspector_Kind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapInspector.Kind";
@@ -90,13 +93,333 @@ pub fn num()->Self{Self{value:31}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinspector/MapInspector.md"))]#[::unity2::class(namespace="App",name="MapInspector")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct MapInspector{#[offset(16)]#[rename(name="m_Kind")]pub m_kind:crate::app::mapinspector::MapInspector_Kind, #[offset(24)]#[rename(name="m_Condition")]pub m_condition:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(32)]#[rename(name="m_Function")]pub m_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(40)]#[rename(name="m_Args")]pub m_args: ::unity2::Array<crate::moon_sharp::interpreter::dynvalue::DynValue> ,}
-
 }
 
 #[cfg(feature = "app-mapinspector-types")]
 pub use __types::*;
+
+#[cfg(feature="app-mapinspector")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapInspector_unity2_raw{use super:: * ;
+pub unsafe fn completed(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"Completed",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_eanble(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_eanble_2(this:MapInspector,arg:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let inner:extern "C" fn(MapInspector,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg,__mi)}
+pub unsafe fn is_eanble_3(this:MapInspector,arg1:i32,arg2:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let inner:extern "C" fn(MapInspector,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg1,arg2,__mi)}
+pub unsafe fn is_eanble_4(this:MapInspector,arg1:i32,arg2:i32,arg3:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let inner:extern "C" fn(MapInspector,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg1,arg2,arg3,__mi)}
+pub unsafe fn is_eanble_5(this:MapInspector,arg1:i32,arg2:i32,arg3:i32,arg4:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"IsEanble",));
+let inner:extern "C" fn(MapInspector,i32,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg1,arg2,arg3,arg4,__mi)}
+pub unsafe fn is_terminated(this:MapInspector,arg1:i32,arg2:i32,arg3:i32,arg4:i32,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"IsTerminated",));
+let inner:extern "C" fn(MapInspector,i32,i32,i32,i32, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,arg1,arg2,arg3,arg4,__mi)}
+pub unsafe fn get_color(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::color::Color{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_Color",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->crate::unity_engine::color::Color= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_x(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_X",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_z(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_Z",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_x1(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_X1",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_z1(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_Z1",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_x2(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_X2",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_z2(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_Z2",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_w(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_W",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_h(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_H",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_hp(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_Hp",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_hp(this:MapInspector,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(21usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",21usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"set_Hp",));
+let inner:extern "C" fn(MapInspector,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_max_hp(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"get_MaxHp",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_max_hp(this:MapInspector,value:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"set_MaxHp",));
+let inner:extern "C" fn(MapInspector,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn get_completed(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"GetCompleted",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn can_breakable(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"CanBreakable",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn can_breakable_2(this:MapInspector,unit:crate::app::unit::Unit,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"CanBreakable",));
+let inner:extern "C" fn(MapInspector,crate::app::unit::Unit, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit,__mi)}
+pub unsafe fn can_breakable_3(this:MapInspector,force:crate::app::force::Force_Type,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"CanBreakable",));
+let inner:extern "C" fn(MapInspector,crate::app::force::Force_Type, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,force,__mi)}
+pub unsafe fn can_use_cannon(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"CanUseCannon",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn can_show_break_icon(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"CanShowBreakIcon",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn pre_call(this:MapInspector,super_:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"PreCall",));
+let inner:extern "C" fn(MapInspector,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,super_,__mi)}
+pub unsafe fn post_call(this:MapInspector,super_:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"PostCall",));
+let inner:extern "C" fn(MapInspector,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,super_,__mi)}
+pub unsafe fn resume(this:MapInspector,super_:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::procinst::ProcInst{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"Resume",));
+let inner:extern "C" fn(MapInspector,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->crate::app::procinst::ProcInst= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,super_,__mi)}
+pub unsafe fn get_global_key(this:MapInspector,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"GetGlobalKey",));
+let inner:extern "C" fn(MapInspector, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn serialize(this:MapInspector,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"Serialize",));
+let inner:extern "C" fn(MapInspector,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn deserialize(this:MapInspector,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(35usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",35usize,__vt.len(), <MapInspector as::unity2::ClassIdentity> ::NAME,"Deserialize",));
+let inner:extern "C" fn(MapInspector,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+}
 
 #[cfg(feature="app-mapinspector")]impl MapInspector{#[doc="`op_Implicit(crate::app::mapinspector::MapInspector)` overload"]pub fn op_implicit(exists:impl::core::convert::Into<crate::app::mapinspector::MapInspector>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1de5b90usize)as*mut u8,bool;
 (crate::app::mapinspector::MapInspector)::core::convert::Into::into(exists))}
@@ -135,124 +458,95 @@ pub use __types::*;
 (MapInspector)__receiver,(i32)::core::convert::Into::into(x),(i32)::core::convert::Into::into(z))}
 }
 #[doc="`Completed()` overload"]fn completed(self,)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5490usize)as*mut u8,();
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsValue(i32, i32)` overload"]fn is_value(self,self_:impl::core::convert::Into<i32> ,other:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5690usize)as*mut u8,bool;
 (MapInspector)__receiver,(i32)::core::convert::Into::into(self_),(i32)::core::convert::Into::into(other))}
 }
 #[doc="`IsEanble()` overload"]fn is_eanble(self,)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de56b0usize)as*mut u8,bool;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::is_eanble(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsEanble(i32)` overload"]fn is_eanble_2(self,arg:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de56c0usize)as*mut u8,bool;
-(MapInspector)__receiver,(i32)::core::convert::Into::into(arg))}
+__MapInspector_unity2_raw::is_eanble_2(__receiver, ::core::convert::Into::into(arg), ::core::option::Option::None)}
 }
 #[doc="`IsEanble(i32, i32)` overload"]fn is_eanble_3(self,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de56d0usize)as*mut u8,bool;
-(MapInspector)__receiver,(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2))}
+__MapInspector_unity2_raw::is_eanble_3(__receiver, ::core::convert::Into::into(arg1), ::core::convert::Into::into(arg2), ::core::option::Option::None)}
 }
 #[doc="`IsEanble(i32, i32, i32)` overload"]fn is_eanble_4(self,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de56e0usize)as*mut u8,bool;
-(MapInspector)__receiver,(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3))}
+__MapInspector_unity2_raw::is_eanble_4(__receiver, ::core::convert::Into::into(arg1), ::core::convert::Into::into(arg2), ::core::convert::Into::into(arg3), ::core::option::Option::None)}
 }
 #[doc="`IsEanble(i32, i32, i32, i32)` overload"]fn is_eanble_5(self,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de56f0usize)as*mut u8,bool;
-(MapInspector)__receiver,(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
+__MapInspector_unity2_raw::is_eanble_5(__receiver, ::core::convert::Into::into(arg1), ::core::convert::Into::into(arg2), ::core::convert::Into::into(arg3), ::core::convert::Into::into(arg4), ::core::option::Option::None)}
 }
 #[doc="`IsTerminated(i32, i32, i32, i32)` overload"]fn is_terminated(self,arg1:impl::core::convert::Into<i32> ,arg2:impl::core::convert::Into<i32> ,arg3:impl::core::convert::Into<i32> ,arg4:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5700usize)as*mut u8,bool;
-(MapInspector)__receiver,(i32)::core::convert::Into::into(arg1),(i32)::core::convert::Into::into(arg2),(i32)::core::convert::Into::into(arg3),(i32)::core::convert::Into::into(arg4))}
+__MapInspector_unity2_raw::is_terminated(__receiver, ::core::convert::Into::into(arg1), ::core::convert::Into::into(arg2), ::core::convert::Into::into(arg3), ::core::convert::Into::into(arg4), ::core::option::Option::None)}
 }
 #[doc="`get_Color()` overload"]fn get_color(self,)->crate::unity_engine::color::Color{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5710usize)as*mut u8,crate::unity_engine::color::Color;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_X()` overload"]fn get_x(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5750usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_x(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Z()` overload"]fn get_z(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5760usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_z(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_X1()` overload"]fn get_x1(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5770usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_x1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Z1()` overload"]fn get_z1(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5780usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_z1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_X2()` overload"]fn get_x2(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5790usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_x2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Z2()` overload"]fn get_z2(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de57a0usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_z2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_W()` overload"]fn get_w(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de57b0usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_w(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_H()` overload"]fn get_h(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5800usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_h(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Hp()` overload"]fn get_hp(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5850usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_hp(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Hp(i32)` overload"]fn set_hp(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5860usize)as*mut u8,();
-(MapInspector)__receiver,(i32)::core::convert::Into::into(value))}
+__MapInspector_unity2_raw::set_hp(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`get_MaxHp()` overload"]fn get_max_hp(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5870usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_max_hp(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_MaxHp(i32)` overload"]fn set_max_hp(self,value:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5880usize)as*mut u8,();
-(MapInspector)__receiver,(i32)::core::convert::Into::into(value))}
+__MapInspector_unity2_raw::set_max_hp(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`GetCompleted()` overload"]fn get_completed(self,)->i32{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5890usize)as*mut u8,i32;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_completed(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanBreakable()` overload"]fn can_breakable(self,)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de58a0usize)as*mut u8,bool;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::can_breakable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanBreakable(crate::app::unit::Unit)` overload"]fn can_breakable_2(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de58e0usize)as*mut u8,bool;
-(MapInspector)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+__MapInspector_unity2_raw::can_breakable_2(__receiver, ::core::convert::Into::into(unit), ::core::option::Option::None)}
 }
 #[doc="`CanBreakable(crate::app::force::Force_Type)` overload"]fn can_breakable_3(self,force:impl::core::convert::Into<crate::app::force::Force_Type>)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5920usize)as*mut u8,bool;
-(MapInspector)__receiver,(crate::app::force::Force_Type)::core::convert::Into::into(force))}
+__MapInspector_unity2_raw::can_breakable_3(__receiver, ::core::convert::Into::into(force), ::core::option::Option::None)}
 }
 #[doc="`CanUseCannon()` overload"]fn can_use_cannon(self,)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5ae0usize)as*mut u8,bool;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::can_use_cannon(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CanShowBreakIcon()` overload"]fn can_show_break_icon(self,)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5ba0usize)as*mut u8,bool;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::can_show_break_icon(__receiver, ::core::option::Option::None)}
 }
 #[doc="`PreCall(crate::app::procinst::ProcInst)` overload"]fn pre_call(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5dd0usize)as*mut u8,();
-(MapInspector)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+__MapInspector_unity2_raw::pre_call(__receiver, ::core::convert::Into::into(super_), ::core::option::Option::None)}
 }
 #[doc="`PostCall(crate::app::procinst::ProcInst)` overload"]fn post_call(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5de0usize)as*mut u8,();
-(MapInspector)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+__MapInspector_unity2_raw::post_call(__receiver, ::core::convert::Into::into(super_), ::core::option::Option::None)}
 }
 #[doc="`Resume(crate::app::procinst::ProcInst)` overload"]fn resume(self,super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->crate::app::procinst::ProcInst{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5df0usize)as*mut u8,crate::app::procinst::ProcInst;
-(MapInspector)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
+__MapInspector_unity2_raw::resume(__receiver, ::core::convert::Into::into(super_), ::core::option::Option::None)}
 }
 #[doc="`SetFunction(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_function(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->crate::app::mapinspector::MapInspector{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1de5e00usize)as*mut u8,crate::app::mapinspector::MapInspector;
@@ -271,20 +565,17 @@ pub use __types::*;
 (MapInspector)__receiver)}
 }
 #[doc="`GetGlobalKey()` overload"]fn get_global_key(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de6140usize)as*mut u8, ::unity2::Il2CppString;
-(MapInspector)__receiver)}
+__MapInspector_unity2_raw::get_global_key(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetGlobalKey()` overload"]fn set_global_key(self,)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1de6150usize)as*mut u8,();
 (MapInspector)__receiver)}
 }
 #[doc="`Serialize(crate::app::stream_2::Stream_2)` overload"]fn serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de6380usize)as*mut u8,();
-(MapInspector)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__MapInspector_unity2_raw::serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`Deserialize(crate::app::stream_2::Stream_2)` overload"]fn deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1de6390usize)as*mut u8,();
-(MapInspector)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__MapInspector_unity2_raw::deserialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`CanEnterAround()` overload"]fn can_enter_around(self,)->bool{unsafe{let __receiver= <MapInspector as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1de6530usize)as*mut u8,bool;
@@ -354,10 +645,10 @@ this}
 #[cfg(feature = "app-mapinspector")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapInspector_Kind;
     pub use super::MapInspector;
     pub use super::IMapInspector;
     pub use super::IMapInspectorMethods;
+    pub use super::MapInspector_Kind;
     pub use crate::app::scriptutil::IScriptUtil;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

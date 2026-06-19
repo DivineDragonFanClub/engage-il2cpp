@@ -20,6 +20,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-basicdialog-types")]
 pub use __types::*;
 
+#[cfg(feature="app-basicdialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BasicDialog_unity2_raw{use super:: * ;
+pub unsafe fn create_default_desc(this:BasicDialog,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BasicDialog as::unity2::ClassIdentity> ::NAME,"CreateDefaultDesc",));
+let inner:extern "C" fn(BasicDialog, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::app::procdesc::ProcDesc> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn after_build(this:BasicDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <BasicDialog as::unity2::ClassIdentity> ::NAME,"AfterBuild",));
+let inner:extern "C" fn(BasicDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_open_sound_event(this:BasicDialog,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(64usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",64usize,__vt.len(), <BasicDialog as::unity2::ClassIdentity> ::NAME,"GetOpenSoundEvent",));
+let inner:extern "C" fn(BasicDialog, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:BasicDialog,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <BasicDialog as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(BasicDialog, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-basicdialog")]impl BasicDialog{#[doc="`CreateBasicDialogBind(crate::app::procinst::ProcInst, crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)` overload"]pub fn create_basic_dialog_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> >)->crate::app::basicdialog::BasicDialog{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2454120usize)as*mut u8,crate::app::basicdialog::BasicDialog;
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list))}
 }
@@ -30,24 +73,20 @@ pub use __types::*;
 (BasicDialog)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicdialogcontent::BasicDialogContent)::core::convert::Into::into(menu_content))}
 }
 #[doc="`CreateDefaultDesc()` overload"]fn create_default_desc(self,)-> ::unity2::Array<crate::app::procdesc::ProcDesc>{unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24535f0usize)as*mut u8, ::unity2::Array<crate::app::procdesc::ProcDesc> ;
-(BasicDialog)__receiver)}
+__BasicDialog_unity2_raw::create_default_desc(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BindBg()` overload"]fn bind_bg(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2453ae0usize)as*mut u8,();
 (BasicDialog)__receiver)}
 }
 #[doc="`AfterBuild()` overload"]fn after_build(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2453b70usize)as*mut u8,();
-(BasicDialog)__receiver)}
+__BasicDialog_unity2_raw::after_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetOpenSoundEvent()` overload"]fn get_open_sound_event(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2453c70usize)as*mut u8, ::unity2::Il2CppString;
-(BasicDialog)__receiver)}
+__BasicDialog_unity2_raw::get_open_sound_event(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2453cc0usize)as*mut u8,();
-(BasicDialog)__receiver)}
+__BasicDialog_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetText(::unity2::Il2CppString)` overload"]fn set_text(self,text:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <BasicDialog as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2453d90usize)as*mut u8,();

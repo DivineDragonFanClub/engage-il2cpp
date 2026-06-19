@@ -18,29 +18,77 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-combatlocationtraning-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-combatlocationtraning")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CombatLocationTraning_unity2_raw{use super:: * ;
+pub unsafe fn get_rough_pos_count(this:CombatLocationTraning,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <CombatLocationTraning as::unity2::ClassIdentity> ::NAME,"get_RoughPosCount",));
+let inner:extern "C" fn(CombatLocationTraning, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_rough_pos(this:CombatLocationTraning,try_count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CombatLocationTraning as::unity2::ClassIdentity> ::NAME,"SetRoughPos",));
+let inner:extern "C" fn(CombatLocationTraning,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,try_count,__mi)}
+pub unsafe fn get_pattern_count(this:CombatLocationTraning,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <CombatLocationTraning as::unity2::ClassIdentity> ::NAME,"get_PatternCount",));
+let inner:extern "C" fn(CombatLocationTraning, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_battle_patern(this:CombatLocationTraning,pattern:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <CombatLocationTraning as::unity2::ClassIdentity> ::NAME,"SetBattlePatern",));
+let inner:extern "C" fn(CombatLocationTraning,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,pattern,__mi)}
+pub unsafe fn calc_location(this:CombatLocationTraning,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <CombatLocationTraning as::unity2::ClassIdentity> ::NAME,"CalcLocation",));
+let inner:extern "C" fn(CombatLocationTraning, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-combatlocationtraning")]pub trait ICombatLocationTraningMethods:ICombatLocationTraning{#[doc="`.ctor(crate::combat::combatrecord::CombatRecord)` overload"]fn ctor(self,record:impl::core::convert::Into<crate::combat::combatrecord::CombatRecord>)->(){unsafe{let __receiver= <CombatLocationTraning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2921d20usize)as*mut u8,();
 (CombatLocationTraning)__receiver,(crate::combat::combatrecord::CombatRecord)::core::convert::Into::into(record))}
 }
 #[doc="`get_RoughPosCount()` overload"]fn get_rough_pos_count(self,)->i32{unsafe{let __receiver= <CombatLocationTraning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2921da0usize)as*mut u8,i32;
-(CombatLocationTraning)__receiver)}
+__CombatLocationTraning_unity2_raw::get_rough_pos_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetRoughPos(i32)` overload"]fn set_rough_pos(self,try_count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationTraning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2921db0usize)as*mut u8,();
-(CombatLocationTraning)__receiver,(i32)::core::convert::Into::into(try_count))}
+__CombatLocationTraning_unity2_raw::set_rough_pos(__receiver, ::core::convert::Into::into(try_count), ::core::option::Option::None)}
 }
 #[doc="`get_PatternCount()` overload"]fn get_pattern_count(self,)->i32{unsafe{let __receiver= <CombatLocationTraning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2921dc0usize)as*mut u8,i32;
-(CombatLocationTraning)__receiver)}
+__CombatLocationTraning_unity2_raw::get_pattern_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetBattlePatern(i32)` overload"]fn set_battle_patern(self,pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <CombatLocationTraning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2921dd0usize)as*mut u8,();
-(CombatLocationTraning)__receiver,(i32)::core::convert::Into::into(pattern))}
+__CombatLocationTraning_unity2_raw::set_battle_patern(__receiver, ::core::convert::Into::into(pattern), ::core::option::Option::None)}
 }
 #[doc="`CalcLocation()` overload"]fn calc_location(self,)->(){unsafe{let __receiver= <CombatLocationTraning as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2921de0usize)as*mut u8,();
-(CombatLocationTraning)__receiver)}
+__CombatLocationTraning_unity2_raw::calc_location(__receiver, ::core::option::Option::None)}
 }
 }
 

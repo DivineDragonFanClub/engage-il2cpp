@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-encountdatamanager-types")]
 pub use __types::*;
 
+#[cfg(feature="app-encountdatamanager")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EncountDataManager_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:EncountDataManager,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <EncountDataManager as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(EncountDataManager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:EncountDataManager,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <EncountDataManager as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(EncountDataManager, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-encountdatamanager")]impl EncountDataManager{#[doc="`ReductDispos(crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>)` overload"]pub fn reduct_dispos(encount_unit_data_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData> >)->crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dc250usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData> ;
 (crate::system::collections::generic::list_1::List_1<crate::app::encountunitdata::EncountUnitData>)::core::convert::Into::into(encount_unit_data_list))}
 }
@@ -33,12 +56,10 @@ pub use __types::*;
 }
 
 #[cfg(feature="app-encountdatamanager")]pub trait IEncountDataManagerMethods:IEncountDataManager{#[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22dab60usize)as*mut u8,();
-(EncountDataManager)__receiver)}
+__EncountDataManager_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22daf00usize)as*mut u8,();
-(EncountDataManager)__receiver)}
+__EncountDataManager_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetWeapons(i32, crate::app::weaponmask::WeaponMask)` overload"]fn get_weapons(self,rank:impl::core::convert::Into<i32> ,weapon_mask:impl::core::convert::Into<crate::app::weaponmask::WeaponMask>)-> ::unity2::Array<crate::app::itemdata::ItemData>{unsafe{let __receiver= <EncountDataManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22db0c0usize)as*mut u8, ::unity2::Array<crate::app::itemdata::ItemData> ;

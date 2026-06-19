@@ -32,17 +32,47 @@ use crate::unity_engine::ui::maskablegraphic::{IMaskableGraphic,MaskableGraphic}
 #[cfg(feature = "app-minimappaneldeployrenderer-types")]
 pub use __types::*;
 
+#[cfg(feature="app-minimappaneldeployrenderer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MiniMapPanelDeployRenderer_unity2_raw{use super:: * ;
+pub unsafe fn get_source_materials(this:MiniMapPanelDeployRenderer,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(65usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",65usize,__vt.len(), <MiniMapPanelDeployRenderer as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
+let inner:extern "C" fn(MiniMapPanelDeployRenderer, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_map_panel_materials(this:MiniMapPanelDeployRenderer,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(66usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",66usize,__vt.len(), <MiniMapPanelDeployRenderer as::unity2::ClassIdentity> ::NAME,"GetMapPanelMaterials",));
+let inner:extern "C" fn(MiniMapPanelDeployRenderer, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_panel_mesh(this:MiniMapPanelDeployRenderer,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(68usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",68usize,__vt.len(), <MiniMapPanelDeployRenderer as::unity2::ClassIdentity> ::NAME,"CreatePanelMesh",));
+let inner:extern "C" fn(MiniMapPanelDeployRenderer, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-minimappaneldeployrenderer")]pub trait IMiniMapPanelDeployRendererMethods:IMiniMapPanelDeployRenderer{#[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelDeployRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2778fe0usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(MiniMapPanelDeployRenderer)__receiver)}
+__MiniMapPanelDeployRenderer_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetMapPanelMaterials()` overload"]fn get_map_panel_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MiniMapPanelDeployRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2779170usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(MiniMapPanelDeployRenderer)__receiver)}
+__MiniMapPanelDeployRenderer_unity2_raw::get_map_panel_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreatePanelMesh()` overload"]fn create_panel_mesh(self,)->(){unsafe{let __receiver= <MiniMapPanelDeployRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2779200usize)as*mut u8,();
-(MiniMapPanelDeployRenderer)__receiver)}
+__MiniMapPanelDeployRenderer_unity2_raw::create_panel_mesh(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreatePanelDeployMesh()` overload"]fn create_panel_deploy_mesh(self,)->(){unsafe{let __receiver= <MiniMapPanelDeployRenderer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2779210usize)as*mut u8,();

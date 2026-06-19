@@ -18,13 +18,34 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-groupenditem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-groupenditem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GroupEndItem_unity2_raw{use super:: * ;
+pub unsafe fn get_kind(this:GroupEndItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Kind{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GroupEndItem as::unity2::ClassIdentity> ::NAME,"GetKind",));
+let inner:extern "C" fn(GroupEndItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Kind= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_visible(this:GroupEndItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <GroupEndItem as::unity2::ClassIdentity> ::NAME,"IsVisible",));
+let inner:extern "C" fn(GroupEndItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-groupenditem")]pub trait IGroupEndItemMethods:IGroupEndItem{#[doc="`GetKind()` overload"]fn get_kind(self,)->crate::app::menuitem::MenuItem_Kind{unsafe{let __receiver= <GroupEndItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29781f0usize)as*mut u8,crate::app::menuitem::MenuItem_Kind;
-(GroupEndItem)__receiver)}
+__GroupEndItem_unity2_raw::get_kind(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <GroupEndItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2978200usize)as*mut u8,bool;
-(GroupEndItem)__receiver)}
+__GroupEndItem_unity2_raw::is_visible(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GroupEndItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2978210usize)as*mut u8,();

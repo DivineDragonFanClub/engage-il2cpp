@@ -13,43 +13,15 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/grassdata/GrassData_SpriteInfo.md"))]#[::unity2::class(namespace="App",name="GrassData.SpriteInfo")]#[parent(crate::system::object::Object)]pub struct GrassData_SpriteInfo{#[offset(16)]#[rename(name="m_sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(24)]#[rename(name="m_adjustScale")]pub m_adjust_scale:crate::unity_engine::vector2::Vector2, #[offset(32)]#[rename(name="m_spriteScale")]pub m_sprite_scale:crate::unity_engine::vector2::Vector2, #[offset(40)]#[rename(name="m_spriteScaleRandom")]pub m_sprite_scale_random:crate::unity_engine::vector2::Vector2, #[offset(48)]#[rename(name="m_spriteAspect")]pub m_sprite_aspect:f32, #[offset(52)]#[rename(name="m_spriteST")]pub m_sprite_st:crate::unity_engine::vector4::Vector4, #[offset(68)]#[rename(name="m_topColor")]pub m_top_color:crate::unity_engine::color::Color, #[offset(84)]#[rename(name="m_bottomColor")]pub m_bottom_color:crate::unity_engine::color::Color, #[offset(100)]#[rename(name="m_blendCenter")]pub m_blend_center:crate::unity_engine::vector2::Vector2, #[offset(108)]#[rename(name="m_windColorInfluence")]pub m_wind_color_influence:f32, #[offset(112)]#[rename(name="m_lodPriority")]pub m_lod_priority:f32, #[offset(116)]#[rename(name="m_useAutoAdjustScale")]pub m_use_auto_adjust_scale:bool,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/grassdata/GrassData.md"))]#[::unity2::class(namespace="App",name="GrassData")]#[parent(crate::unity_engine::scriptableobject::ScriptableObject)]pub struct GrassData{#[static_field]#[rename(name="GrassInfoCount")]pub grass_info_count:i32, #[static_field]#[rename(name="GrassInfoIndexUvChannel")]pub grass_info_index_uv_channel:i32, #[static_field]#[rename(name="GrassOrgMeshUvChannel")]pub grass_org_mesh_uv_channel:i32, #[offset(24)]#[rename(name="m_bilinear")]pub m_bilinear:bool, #[offset(32)]#[rename(name="m_spriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(40)]#[rename(name="m_spriteInfos")]pub m_sprite_infos:crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/grassdata/GrassData_SpriteInfo.md"))]#[::unity2::class(namespace="App",name="GrassData.SpriteInfo")]#[parent(crate::system::object::Object)]pub struct GrassData_SpriteInfo{#[offset(16)]#[rename(name="m_sprite")]pub m_sprite:crate::unity_engine::sprite::Sprite, #[offset(24)]#[rename(name="m_adjustScale")]pub m_adjust_scale:crate::unity_engine::vector2::Vector2, #[offset(32)]#[rename(name="m_spriteScale")]pub m_sprite_scale:crate::unity_engine::vector2::Vector2, #[offset(40)]#[rename(name="m_spriteScaleRandom")]pub m_sprite_scale_random:crate::unity_engine::vector2::Vector2, #[offset(48)]#[rename(name="m_spriteAspect")]pub m_sprite_aspect:f32, #[offset(52)]#[rename(name="m_spriteST")]pub m_sprite_st:crate::unity_engine::vector4::Vector4, #[offset(68)]#[rename(name="m_topColor")]pub m_top_color:crate::unity_engine::color::Color, #[offset(84)]#[rename(name="m_bottomColor")]pub m_bottom_color:crate::unity_engine::color::Color, #[offset(100)]#[rename(name="m_blendCenter")]pub m_blend_center:crate::unity_engine::vector2::Vector2, #[offset(108)]#[rename(name="m_windColorInfluence")]pub m_wind_color_influence:f32, #[offset(112)]#[rename(name="m_lodPriority")]pub m_lod_priority:f32, #[offset(116)]#[rename(name="m_useAutoAdjustScale")]pub m_use_auto_adjust_scale:bool,}
 
 }
 
 #[cfg(feature = "app-grassdata-types")]
 pub use __types::*;
-
-#[cfg(feature="app-grassdata")]pub trait IGrassData_SpriteInfoMethods:IGrassData_SpriteInfo{#[doc="`Copy(crate::app::grassdata::GrassData_SpriteInfo)` overload"]fn copy(self,src:impl::core::convert::Into<crate::app::grassdata::GrassData_SpriteInfo>)->(){unsafe{let __receiver= <GrassData_SpriteInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb360usize)as*mut u8,();
-(GrassData_SpriteInfo)__receiver,(crate::app::grassdata::GrassData_SpriteInfo)::core::convert::Into::into(src))}
-}
-#[doc="`SetDefault()` overload"]fn set_default(self,)->(){unsafe{let __receiver= <GrassData_SpriteInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb400usize)as*mut u8,();
-(GrassData_SpriteInfo)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GrassData_SpriteInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb4b0usize)as*mut u8,();
-(GrassData_SpriteInfo)__receiver)}
-}
-}
-
-#[cfg(feature="app-grassdata")]impl<__T:IGrassData_SpriteInfo>IGrassData_SpriteInfoMethods for __T{}
-
-#[cfg(feature="app-grassdata")]impl GrassData_SpriteInfo{pub fn copy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-grassdata")]impl GrassData_SpriteInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(GrassData_SpriteInfo), ::core::stringify!(new),));
- <Self as IGrassData_SpriteInfoMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-grassdata")]impl GrassData{#[doc="`ParseSpriteInfos(crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, *mutcrate::system::collections::generic::list_1::List_1<f32>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color>, *mutcrate::system::collections::generic::list_1::List_1<f32>)` overload"]pub fn parse_sprite_infos(src:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::grassdata::GrassData_SpriteInfo> >)->(crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> ,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> ,crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> ,crate::system::collections::generic::list_1::List_1<crate::unity_engine::color::Color> ,crate::system::collections::generic::list_1::List_1<f32>){unsafe{let mut __out_0= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<crate::unity_engine::vector4::Vector4> > ::uninit();
 let mut __out_1= ::core::mem::MaybeUninit:: <crate::system::collections::generic::list_1::List_1<f32> > ::uninit();
@@ -92,15 +64,43 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-grassdata")]pub trait IGrassData_SpriteInfoMethods:IGrassData_SpriteInfo{#[doc="`Copy(crate::app::grassdata::GrassData_SpriteInfo)` overload"]fn copy(self,src:impl::core::convert::Into<crate::app::grassdata::GrassData_SpriteInfo>)->(){unsafe{let __receiver= <GrassData_SpriteInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb360usize)as*mut u8,();
+(GrassData_SpriteInfo)__receiver,(crate::app::grassdata::GrassData_SpriteInfo)::core::convert::Into::into(src))}
+}
+#[doc="`SetDefault()` overload"]fn set_default(self,)->(){unsafe{let __receiver= <GrassData_SpriteInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb400usize)as*mut u8,();
+(GrassData_SpriteInfo)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GrassData_SpriteInfo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1cdb4b0usize)as*mut u8,();
+(GrassData_SpriteInfo)__receiver)}
+}
+}
+
+#[cfg(feature="app-grassdata")]impl<__T:IGrassData_SpriteInfo>IGrassData_SpriteInfoMethods for __T{}
+
+#[cfg(feature="app-grassdata")]impl GrassData_SpriteInfo{pub fn copy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn set_default_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-grassdata")]impl GrassData_SpriteInfo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(GrassData_SpriteInfo), ::core::stringify!(new),));
+ <Self as IGrassData_SpriteInfoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-grassdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GrassData_SpriteInfo;
-    pub use super::IGrassData_SpriteInfo;
-    pub use super::IGrassData_SpriteInfoMethods;
     pub use super::GrassData;
     pub use super::IGrassData;
     pub use super::IGrassDataMethods;
+    pub use super::GrassData_SpriteInfo;
+    pub use super::IGrassData_SpriteInfo;
+    pub use super::IGrassData_SpriteInfoMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::object_2::IObject_2;
     pub use crate::unity_engine::scriptableobject::IScriptableObject;

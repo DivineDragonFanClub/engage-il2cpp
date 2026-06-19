@@ -20,6 +20,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonbattlesequence_1/CommonBattleSequence_1_RelianceList.md"))]#[::unity2::class(namespace="App",name="CommonBattleSequence`1.RelianceList")]#[parent(crate::system::collections::generic::list_1::List_1<crate::app::commonbattlesequence_1::CommonBattleSequence_1_Reliance<T0> >)]#[parent(crate::system::object::Object)]pub struct CommonBattleSequence_1_RelianceList<T0: ::unity2::ClassIdentity>{}
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonbattlesequence_1/CommonBattleSequence_1.md"))]#[::unity2::class(namespace="App",name="CommonBattleSequence`1")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<T0>)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct CommonBattleSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Info")]pub m_info:crate::app::battleinfo::BattleInfo, #[rename(name="m_SimInfo")]pub m_sim_info:crate::app::battleinfo::BattleInfo, #[rename(name="m_Calculator")]pub m_calculator:crate::app::battlecalculator::BattleCalculator, #[rename(name="m_SimCalculator")]pub m_sim_calculator:crate::app::battlecalculator::BattleCalculator, #[rename(name="m_Reliances")]pub m_reliances:crate::app::commonbattlesequence_1::CommonBattleSequence_1_RelianceList<T0> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonbattlesequence_1/CommonBattleSequence_1_Reliance.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct CommonBattleSequence_1_Reliance<T0>{pub _phantom: ::core::marker::PhantomData<(T0,)>}
 impl<T0: ::unity2::ClassIdentity> ::unity2::ClassIdentity for CommonBattleSequence_1_Reliance<T0>{const NAMESPACE: &'static str="App";
 const NAME: &'static str="CommonBattleSequence`1.Reliance";
@@ -29,9 +32,6 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 }
 impl<T0: ::unity2::ClassIdentity> ::unity2::IlType for CommonBattleSequence_1_Reliance<T0>{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/commonbattlesequence_1/CommonBattleSequence_1.md"))]#[::unity2::class(namespace="App",name="CommonBattleSequence`1")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<T0>)]#[parent(crate::app::procinst::ProcInst)]#[parent(crate::system::object::Object)]pub struct CommonBattleSequence_1<T0: ::unity2::ClassIdentity>{#[rename(name="m_Info")]pub m_info:crate::app::battleinfo::BattleInfo, #[rename(name="m_SimInfo")]pub m_sim_info:crate::app::battleinfo::BattleInfo, #[rename(name="m_Calculator")]pub m_calculator:crate::app::battlecalculator::BattleCalculator, #[rename(name="m_SimCalculator")]pub m_sim_calculator:crate::app::battlecalculator::BattleCalculator, #[rename(name="m_Reliances")]pub m_reliances:crate::app::commonbattlesequence_1::CommonBattleSequence_1_RelianceList<T0> ,}
 
 }
 
@@ -85,10 +85,10 @@ pub mod prelude {
     pub use super::CommonBattleSequence_1_RelianceList;
     pub use super::ICommonBattleSequence_1_RelianceList;
     pub use super::ICommonBattleSequence_1_RelianceListMethods;
-    pub use super::CommonBattleSequence_1_Reliance;
     pub use super::CommonBattleSequence_1;
     pub use super::ICommonBattleSequence_1;
     pub use super::ICommonBattleSequence_1Methods;
+    pub use super::CommonBattleSequence_1_Reliance;
     pub use crate::app::procinst::IProcInst;
     pub use crate::app::singletonprocinst_1::ISingletonProcInst_1;
     pub use crate::system::collections::generic::list_1::IList_1;

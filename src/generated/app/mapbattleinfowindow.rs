@@ -18,6 +18,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapbattleinfowindow-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapbattleinfowindow")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapBattleInfoWindow_unity2_raw{use super:: * ;
+pub unsafe fn on_create(this:MapBattleInfoWindow,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapBattleInfoWindow as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapBattleInfoWindow, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapBattleInfoWindow,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapBattleInfoWindow as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapBattleInfoWindow, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapbattleinfowindow")]impl MapBattleInfoWindow{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2999280usize)as*mut u8,();
 )}
 }
@@ -52,12 +75,10 @@ pub use __types::*;
 (MapBattleInfoWindow)__receiver)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2998650usize)as*mut u8,();
-(MapBattleInfoWindow)__receiver)}
+__MapBattleInfoWindow_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x29987b0usize)as*mut u8,();
-(MapBattleInfoWindow)__receiver)}
+__MapBattleInfoWindow_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`CreateObjects()` overload"]fn create_objects(self,)->(){unsafe{let __receiver= <MapBattleInfoWindow as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2998a00usize)as*mut u8,();

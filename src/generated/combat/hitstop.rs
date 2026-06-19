@@ -16,13 +16,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-hitstop-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-hitstop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __HitStop_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:HitStop,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <HitStop as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(HitStop, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-hitstop")]pub trait IHitStopMethods:IHitStop{#[doc="`.ctor(crate::unity_engine::animationcurve::AnimationCurve)` overload"]fn ctor(self,hit_stop_speed_curve:impl::core::convert::Into<crate::unity_engine::animationcurve::AnimationCurve>)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2167190usize)as*mut u8,();
 (HitStop)__receiver,(crate::unity_engine::animationcurve::AnimationCurve)::core::convert::Into::into(hit_stop_speed_curve))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2167200usize)as*mut u8,();
-(HitStop)__receiver)}
+__HitStop_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <HitStop as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21671e0usize)as*mut u8,();

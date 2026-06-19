@@ -26,17 +26,47 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-fortunetellingunitselectmenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-fortunetellingunitselectmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FortuneTellingUnitSelectMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn get_text_mesh_pro_component(this:FortuneTellingUnitSelectMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FortuneTellingUnitSelectMenuItemContent as::unity2::ClassIdentity> ::NAME,"GetTextMeshProComponent",));
+let inner:extern "C" fn(FortuneTellingUnitSelectMenuItemContent, ::unity2::OptionalMethod,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build(this:FortuneTellingUnitSelectMenuItemContent,menu_item:crate::app::basicmenuitem::BasicMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FortuneTellingUnitSelectMenuItemContent as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(FortuneTellingUnitSelectMenuItemContent,crate::app::basicmenuitem::BasicMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item,__mi)}
+pub unsafe fn update_text_color(this:FortuneTellingUnitSelectMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FortuneTellingUnitSelectMenuItemContent as::unity2::ClassIdentity> ::NAME,"UpdateTextColor",));
+let inner:extern "C" fn(FortuneTellingUnitSelectMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-fortunetellingunitselectmenuitemcontent")]pub trait IFortuneTellingUnitSelectMenuItemContentMethods:IFortuneTellingUnitSelectMenuItemContent{#[doc="`GetTextMeshProComponent()` overload"]fn get_text_mesh_pro_component(self,)->crate::tm_pro::textmeshprougui::TextMeshProUGUI{unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x261ae10usize)as*mut u8,crate::tm_pro::textmeshprougui::TextMeshProUGUI;
-(FortuneTellingUnitSelectMenuItemContent)__receiver)}
+__FortuneTellingUnitSelectMenuItemContent_unity2_raw::get_text_mesh_pro_component(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Build(crate::app::basicmenuitem::BasicMenuItem)` overload"]fn build(self,menu_item:impl::core::convert::Into<crate::app::basicmenuitem::BasicMenuItem>)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x261ae30usize)as*mut u8,();
-(FortuneTellingUnitSelectMenuItemContent)__receiver,(crate::app::basicmenuitem::BasicMenuItem)::core::convert::Into::into(menu_item))}
+__FortuneTellingUnitSelectMenuItemContent_unity2_raw::build(__receiver, ::core::convert::Into::into(menu_item), ::core::option::Option::None)}
 }
 #[doc="`UpdateTextColor()` overload"]fn update_text_color(self,)->(){unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x261af60usize)as*mut u8,();
-(FortuneTellingUnitSelectMenuItemContent)__receiver)}
+__FortuneTellingUnitSelectMenuItemContent_unity2_raw::update_text_color(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetUnit()` overload"]fn get_unit(self,)->crate::app::unit::Unit{unsafe{let __receiver= <FortuneTellingUnitSelectMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x261aee0usize)as*mut u8,crate::app::unit::Unit;

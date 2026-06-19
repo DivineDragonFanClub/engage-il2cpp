@@ -19,29 +19,86 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akcommonadvancedsettings-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akcommonadvancedsettings")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkCommonAdvancedSettings_unity2_raw{use super:: * ;
+pub unsafe fn copy_to(this:AkCommonAdvancedSettings,settings:crate::root::akdevicesettings::AkDeviceSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkCommonAdvancedSettings as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(AkCommonAdvancedSettings,crate::root::akdevicesettings::AkDeviceSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,settings,__mi)}
+pub unsafe fn copy_to_2(this:AkCommonAdvancedSettings,settings:crate::root::akinitsettings::AkInitSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <AkCommonAdvancedSettings as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(AkCommonAdvancedSettings,crate::root::akinitsettings::AkInitSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,settings,__mi)}
+pub unsafe fn copy_to_3(this:AkCommonAdvancedSettings,settings:crate::root::akplatforminitsettings::AkPlatformInitSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <AkCommonAdvancedSettings as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(AkCommonAdvancedSettings,crate::root::akplatforminitsettings::AkPlatformInitSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,settings,__mi)}
+pub unsafe fn copy_to_4(this:AkCommonAdvancedSettings,settings:crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <AkCommonAdvancedSettings as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(AkCommonAdvancedSettings,crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,settings,__mi)}
+pub unsafe fn copy_to_5(this:AkCommonAdvancedSettings,settings:crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <AkCommonAdvancedSettings as::unity2::ClassIdentity> ::NAME,"CopyTo",));
+let inner:extern "C" fn(AkCommonAdvancedSettings,crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,settings,__mi)}
+pub unsafe fn validate(this:AkCommonAdvancedSettings,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <AkCommonAdvancedSettings as::unity2::ClassIdentity> ::NAME,"Validate",));
+let inner:extern "C" fn(AkCommonAdvancedSettings, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-akcommonadvancedsettings")]pub trait IAkCommonAdvancedSettingsMethods:IAkCommonAdvancedSettings{#[doc="`CopyTo(crate::root::akdevicesettings::AkDeviceSettings)` overload"]fn copy_to(self,settings:impl::core::convert::Into<crate::root::akdevicesettings::AkDeviceSettings>)->(){unsafe{let __receiver= <AkCommonAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11770usize)as*mut u8,();
-(AkCommonAdvancedSettings)__receiver,(crate::root::akdevicesettings::AkDeviceSettings)::core::convert::Into::into(settings))}
+__AkCommonAdvancedSettings_unity2_raw::copy_to(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(crate::root::akinitsettings::AkInitSettings)` overload"]fn copy_to_2(self,settings:impl::core::convert::Into<crate::root::akinitsettings::AkInitSettings>)->(){unsafe{let __receiver= <AkCommonAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11af0usize)as*mut u8,();
-(AkCommonAdvancedSettings)__receiver,(crate::root::akinitsettings::AkInitSettings)::core::convert::Into::into(settings))}
+__AkCommonAdvancedSettings_unity2_raw::copy_to_2(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(crate::root::akplatforminitsettings::AkPlatformInitSettings)` overload"]fn copy_to_3(self,settings:impl::core::convert::Into<crate::root::akplatforminitsettings::AkPlatformInitSettings>)->(){unsafe{let __receiver= <AkCommonAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12020usize)as*mut u8,();
-(AkCommonAdvancedSettings)__receiver,(crate::root::akplatforminitsettings::AkPlatformInitSettings)::core::convert::Into::into(settings))}
+__AkCommonAdvancedSettings_unity2_raw::copy_to_3(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)` overload"]fn copy_to_4(self,settings:impl::core::convert::Into<crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings>)->(){unsafe{let __receiver= <AkCommonAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12030usize)as*mut u8,();
-(AkCommonAdvancedSettings)__receiver,(crate::root::akspatialaudioinitsettings::AkSpatialAudioInitSettings)::core::convert::Into::into(settings))}
+__AkCommonAdvancedSettings_unity2_raw::copy_to_4(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)}
 }
 #[doc="`CopyTo(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)` overload"]fn copy_to_5(self,settings:impl::core::convert::Into<crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings>)->(){unsafe{let __receiver= <AkCommonAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12080usize)as*mut u8,();
-(AkCommonAdvancedSettings)__receiver,(crate::root::akunityplatformspecificsettings::AkUnityPlatformSpecificSettings)::core::convert::Into::into(settings))}
+__AkCommonAdvancedSettings_unity2_raw::copy_to_5(__receiver, ::core::convert::Into::into(settings), ::core::option::Option::None)}
 }
 #[doc="`Validate()` overload"]fn validate(self,)->(){unsafe{let __receiver= <AkCommonAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f12090usize)as*mut u8,();
-(AkCommonAdvancedSettings)__receiver)}
+__AkCommonAdvancedSettings_unity2_raw::validate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AkCommonAdvancedSettings as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f121b0usize)as*mut u8,();

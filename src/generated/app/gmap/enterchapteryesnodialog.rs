@@ -29,13 +29,19 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog.EnterChapterDialogEncountItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::system::action::Action,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog.EnterChapterDialogRecollectionItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogMainItemYes.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog.EnterChapterDialogMainItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct EnterChapterYesNoDialog_EnterChapterDialogMainItemYes{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::system::action::Action,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogMainItemNo.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog.EnterChapterDialogMainItemNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct EnterChapterYesNoDialog_EnterChapterDialogMainItemNo{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog.EnterChapterDialogEncountItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::system::action::Action,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct EnterChapterYesNoDialog{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_Type.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EnterChapterYesNoDialog_Type{pub value:i32,}
@@ -59,48 +65,67 @@ pub fn select_battle()->Self{Self{value:4}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog.EnterChapterDialogRecollectionItemYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{#[offset(112)]#[rename(name="m_Callback")]pub m_callback:crate::system::action::Action,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gmap/enterchapteryesnodialog/EnterChapterYesNoDialog.md"))]#[::unity2::class(namespace="App.Gmap",name="EnterChapterYesNoDialog")]#[parent(crate::app::yesnodialog::YesNoDialog)]pub struct EnterChapterYesNoDialog{}
-
 }
 
 #[cfg(feature = "app-gmap-enterchapteryesnodialog-types")]
 pub use __types::*;
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]pub trait IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods:IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8960usize)as*mut u8,();
-(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(callback))}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor_2(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8a10usize)as*mut u8,();
-(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(callback))}
+
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]pub trait IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods:IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8c50usize)as*mut u8,();
+(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(callback))}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8ab0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes)__receiver)}
+#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor_2(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8d00usize)as*mut u8,();
+(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl<__T:IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes>IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods for __T{}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl<__T:IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes>IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods for __T{}
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes), ::core::stringify!(new),));
- <Self as IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods> ::ctor(this,callback);
+ failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes), ::core::stringify!(new),));
+ <Self as IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods> ::ctor(this,callback);
 this}
 #[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new_2(label: ::unity2::Il2CppString,callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes), ::core::stringify!(new_2),));
- <Self as IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods> ::ctor_2(this,label,callback);
+ failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes), ::core::stringify!(new_2),));
+ <Self as IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods> ::ctor_2(this,label,callback);
 this}
+}
+
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:EnterChapterYesNoDialog_EnterChapterDialogMainItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(EnterChapterYesNoDialog_EnterChapterDialogMainItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-gmap-enterchapteryesnodialog")]pub trait IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods:IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -108,8 +133,7 @@ this}
 (EnterChapterYesNoDialog_EnterChapterDialogMainItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(callback))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogMainItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8c20usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(EnterChapterYesNoDialog_EnterChapterDialogMainItemYes)__receiver)}
+__EnterChapterYesNoDialog_EnterChapterDialogMainItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -144,36 +168,48 @@ this}
 this}
 }
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]pub trait IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods:IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8c50usize)as*mut u8,();
-(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(callback))}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
-#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor_2(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8d00usize)as*mut u8,();
-(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(callback))}
+
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]pub trait IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods:IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{#[doc="`.ctor(crate::system::action::Action)` overload"]fn ctor(self,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8960usize)as*mut u8,();
+(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes)__receiver,(crate::system::action::Action)::core::convert::Into::into(callback))}
 }
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8da0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes)__receiver)}
+#[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` overload"]fn ctor_2(self,label:impl::core::convert::Into< ::unity2::Il2CppString> ,callback:impl::core::convert::Into<crate::system::action::Action>)->(){unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd8a10usize)as*mut u8,();
+(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(label),(crate::system::action::Action)::core::convert::Into::into(callback))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl<__T:IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes>IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods for __T{}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl<__T:IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes>IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods for __T{}
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
 pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
 pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
 }
 
-#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+#[cfg(feature="app-gmap-enterchapteryesnodialog")]impl EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes{#[doc="`.ctor(crate::system::action::Action)` — overload selector"]pub fn new(callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes), ::core::stringify!(new),));
- <Self as IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods> ::ctor(this,callback);
+ failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes), ::core::stringify!(new),));
+ <Self as IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods> ::ctor(this,callback);
 this}
 #[doc="`.ctor(::unity2::Il2CppString, crate::system::action::Action)` — overload selector"]pub fn new_2(label: ::unity2::Il2CppString,callback:crate::system::action::Action)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
 ::{}
- failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes), ::core::stringify!(new_2),));
- <Self as IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods> ::ctor_2(this,label,callback);
+ failed to instantiate", ::core::stringify!(EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes), ::core::stringify!(new_2),));
+ <Self as IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods> ::ctor_2(this,label,callback);
 this}
 }
 
@@ -208,22 +244,22 @@ this}
 #[cfg(feature = "app-gmap-enterchapteryesnodialog")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes;
-    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes;
-    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods;
+    pub use super::EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes;
+    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes;
+    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods;
     pub use super::EnterChapterYesNoDialog_EnterChapterDialogMainItemYes;
     pub use super::IEnterChapterYesNoDialog_EnterChapterDialogMainItemYes;
     pub use super::IEnterChapterYesNoDialog_EnterChapterDialogMainItemYesMethods;
     pub use super::EnterChapterYesNoDialog_EnterChapterDialogMainItemNo;
     pub use super::IEnterChapterYesNoDialog_EnterChapterDialogMainItemNo;
     pub use super::IEnterChapterYesNoDialog_EnterChapterDialogMainItemNoMethods;
-    pub use super::EnterChapterYesNoDialog_Type;
-    pub use super::EnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes;
-    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYes;
-    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogRecollectionItemYesMethods;
+    pub use super::EnterChapterYesNoDialog_EnterChapterDialogEncountItemYes;
+    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYes;
+    pub use super::IEnterChapterYesNoDialog_EnterChapterDialogEncountItemYesMethods;
     pub use super::EnterChapterYesNoDialog;
     pub use super::IEnterChapterYesNoDialog;
     pub use super::IEnterChapterYesNoDialogMethods;
+    pub use super::EnterChapterYesNoDialog_Type;
     pub use crate::app::basicdialog::IBasicDialog;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;

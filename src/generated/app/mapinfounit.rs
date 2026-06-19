@@ -23,6 +23,41 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounit/MapInfoUnit.md"))]#[::unity2::class(namespace="App",name="MapInfoUnit")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapinfounit::MapInfoUnit>)]pub struct MapInfoUnit{#[static_field]#[rename(name="BeginPage")]pub begin_page:i32, #[static_field]#[rename(name="EndPage")]pub end_page:i32, #[offset(32)]#[rename(name="m_ScaleCurve")]pub m_scale_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(40)]#[rename(name="m_Input")]pub m_input:crate::app::mapinfounit::MapInfoUnit_InputState, #[offset(44)]#[rename(name="m_IsOpenMapNavigation")]pub m_is_open_map_navigation:bool, #[offset(45)]#[rename(name="m_IsVisible")]pub m_is_visible:bool, #[offset(46)]#[rename(name="m_IsSuppress")]pub m_is_suppress:bool, #[offset(48)]#[rename(name="m_SuppressFlag")]pub m_suppress_flag:crate::app::mapinfounit::MapInfoUnit_SuppressScene, #[offset(52)]#[rename(name="m_AlphaChangeRatio")]pub m_alpha_change_ratio:f32, #[offset(56)]#[rename(name="m_WaitFrame")]pub m_wait_frame:i32, #[offset(60)]#[rename(name="m_Count")]pub m_count:i32, #[offset(64)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(72)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[static_field]#[rename(name="SpriteNames")]pub sprite_names: ::unity2::Array< ::unity2::Il2CppString> ,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounit/MapInfoUnit_InputState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnit_InputState{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoUnit_InputState{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapInfoUnit.InputState";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapInfoUnit_InputState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapInfoUnit_InputState{pub fn neutral()->Self{Self{value:0}
+}
+pub fn switch()->Self{Self{value:1}
+}
+pub fn select()->Self{Self{value:2}
+}
+}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnit_SuppressScene{pub value:i32,}
+impl::unity2::ClassIdentity for MapInfoUnit_SuppressScene{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapInfoUnit.SuppressScene";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapInfoUnit_SuppressScene{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapInfoUnit_SuppressScene{pub fn combat()->Self{Self{value:1}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounit/MapInfoUnit_SpriteKind.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnit_SpriteKind{pub value:i32,}
 impl::unity2::ClassIdentity for MapInfoUnit_SpriteKind{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapInfoUnit.SpriteKind";
@@ -101,41 +136,6 @@ pub fn battle_type_prana()->Self{Self{value:32}
 pub fn battle_type_dragon()->Self{Self{value:33}
 }
 pub fn num()->Self{Self{value:34}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounit/MapInfoUnit.md"))]#[::unity2::class(namespace="App",name="MapInfoUnit")]#[parent(crate::app::singletonmonobehaviour_1::SingletonMonoBehaviour_1<crate::app::mapinfounit::MapInfoUnit>)]pub struct MapInfoUnit{#[static_field]#[rename(name="BeginPage")]pub begin_page:i32, #[static_field]#[rename(name="EndPage")]pub end_page:i32, #[offset(32)]#[rename(name="m_ScaleCurve")]pub m_scale_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(40)]#[rename(name="m_Input")]pub m_input:crate::app::mapinfounit::MapInfoUnit_InputState, #[offset(44)]#[rename(name="m_IsOpenMapNavigation")]pub m_is_open_map_navigation:bool, #[offset(45)]#[rename(name="m_IsVisible")]pub m_is_visible:bool, #[offset(46)]#[rename(name="m_IsSuppress")]pub m_is_suppress:bool, #[offset(48)]#[rename(name="m_SuppressFlag")]pub m_suppress_flag:crate::app::mapinfounit::MapInfoUnit_SuppressScene, #[offset(52)]#[rename(name="m_AlphaChangeRatio")]pub m_alpha_change_ratio:f32, #[offset(56)]#[rename(name="m_WaitFrame")]pub m_wait_frame:i32, #[offset(60)]#[rename(name="m_Count")]pub m_count:i32, #[offset(64)]#[rename(name="m_SpriteAtlas")]pub m_sprite_atlas:crate::unity_engine::u2d::spriteatlas::SpriteAtlas, #[offset(72)]#[rename(name="m_Sprites")]pub m_sprites: ::unity2::Array<crate::unity_engine::sprite::Sprite> , #[static_field]#[rename(name="SpriteNames")]pub sprite_names: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounit/MapInfoUnit_SuppressScene.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnit_SuppressScene{pub value:i32,}
-impl::unity2::ClassIdentity for MapInfoUnit_SuppressScene{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapInfoUnit.SuppressScene";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapInfoUnit_SuppressScene{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapInfoUnit_SuppressScene{pub fn combat()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mapinfounit/MapInfoUnit_InputState.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapInfoUnit_InputState{pub value:i32,}
-impl::unity2::ClassIdentity for MapInfoUnit_InputState{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapInfoUnit.InputState";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapInfoUnit_InputState{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapInfoUnit_InputState{pub fn neutral()->Self{Self{value:0}
-}
-pub fn switch()->Self{Self{value:1}
-}
-pub fn select()->Self{Self{value:2}
 }
 }
 
@@ -276,12 +276,12 @@ this}
 #[cfg(feature = "app-mapinfounit")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapInfoUnit_SpriteKind;
     pub use super::MapInfoUnit;
     pub use super::IMapInfoUnit;
     pub use super::IMapInfoUnitMethods;
-    pub use super::MapInfoUnit_SuppressScene;
     pub use super::MapInfoUnit_InputState;
+    pub use super::MapInfoUnit_SuppressScene;
+    pub use super::MapInfoUnit_SpriteKind;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

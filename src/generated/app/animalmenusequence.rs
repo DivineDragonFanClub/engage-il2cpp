@@ -28,25 +28,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_ConfirmYes.md"))]#[::unity2::class(namespace="App",name="AnimalMenuSequence.ConfirmYes")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct AnimalMenuSequence_ConfirmYes{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalMenuSequence_From{pub value:i32,}
-impl::unity2::ClassIdentity for AnimalMenuSequence_From{const NAMESPACE: &'static str="App";
-const NAME: &'static str="AnimalMenuSequence.From";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for AnimalMenuSequence_From{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl AnimalMenuSequence_From{pub fn outside()->Self{Self{value:0}
-}
-pub fn inside()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))]#[::unity2::class(namespace="App",name="AnimalMenuSequence.ConfirmNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct AnimalMenuSequence_ConfirmNo{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalMenuSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for AnimalMenuSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AnimalMenuSequence.Label";
@@ -71,20 +52,51 @@ pub fn end()->Self{Self{value:5}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_From.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct AnimalMenuSequence_From{pub value:i32,}
+impl::unity2::ClassIdentity for AnimalMenuSequence_From{const NAMESPACE: &'static str="App";
+const NAME: &'static str="AnimalMenuSequence.From";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for AnimalMenuSequence_From{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl AnimalMenuSequence_From{pub fn outside()->Self{Self{value:0}
+}
+pub fn inside()->Self{Self{value:1}
+}
+}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence.md"))]#[::unity2::class(namespace="App",name="AnimalMenuSequence")]#[parent(crate::app::singletonprocinst_1::SingletonProcInst_1<crate::app::animalmenusequence::AnimalMenuSequence>)]pub struct AnimalMenuSequence{#[offset(184)]#[rename(name="AnimalPID")]pub animal_pid: ::unity2::Array< ::unity2::Il2CppString> , #[static_field]#[rename(name="PrefabPath")]pub prefab_path: ::unity2::Il2CppString, #[offset(224)]#[rename(name="m_Handle")]pub m_handle:crate::app::resourcehandle_2::ResourceHandle_2, #[offset(232)]#[rename(name="m_RootAnim")]pub m_root_anim:crate::unity_engine::animator::Animator,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/animalmenusequence/AnimalMenuSequence_ConfirmNo.md"))]#[::unity2::class(namespace="App",name="AnimalMenuSequence.ConfirmNo")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct AnimalMenuSequence_ConfirmNo{}
 
 }
 
 #[cfg(feature = "app-animalmenusequence-types")]
 pub use __types::*;
 
+#[cfg(feature="app-animalmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimalMenuSequence_ConfirmYes_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:AnimalMenuSequence_ConfirmYes,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AnimalMenuSequence_ConfirmYes as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(AnimalMenuSequence_ConfirmYes, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-animalmenusequence")]pub trait IAnimalMenuSequence_ConfirmYesMethods:IAnimalMenuSequence_ConfirmYes{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalMenuSequence_ConfirmYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5bf0usize)as*mut u8,();
 (AnimalMenuSequence_ConfirmYes)__receiver)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalMenuSequence_ConfirmYes as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5c80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(AnimalMenuSequence_ConfirmYes)__receiver)}
+__AnimalMenuSequence_ConfirmYes_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -98,29 +110,6 @@ pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(AnimalMenuSequence_ConfirmYes), ::core::stringify!(new),));
  <Self as IAnimalMenuSequence_ConfirmYesMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-animalmenusequence")]pub trait IAnimalMenuSequence_ConfirmNoMethods:IAnimalMenuSequence_ConfirmNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalMenuSequence_ConfirmNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5ae0usize)as*mut u8,();
-(AnimalMenuSequence_ConfirmNo)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalMenuSequence_ConfirmNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5b70usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(AnimalMenuSequence_ConfirmNo)__receiver)}
-}
-}
-
-#[cfg(feature="app-animalmenusequence")]impl<__T:IAnimalMenuSequence_ConfirmNo>IAnimalMenuSequence_ConfirmNoMethods for __T{}
-
-#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AnimalMenuSequence_ConfirmNo), ::core::stringify!(new),));
- <Self as IAnimalMenuSequence_ConfirmNoMethods> ::ctor(this,);
 this}
 }
 
@@ -447,20 +436,55 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-animalmenusequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AnimalMenuSequence_ConfirmNo_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:AnimalMenuSequence_ConfirmNo,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <AnimalMenuSequence_ConfirmNo as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(AnimalMenuSequence_ConfirmNo, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-animalmenusequence")]pub trait IAnimalMenuSequence_ConfirmNoMethods:IAnimalMenuSequence_ConfirmNo{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AnimalMenuSequence_ConfirmNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1ba5ae0usize)as*mut u8,();
+(AnimalMenuSequence_ConfirmNo)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <AnimalMenuSequence_ConfirmNo as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__AnimalMenuSequence_ConfirmNo_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-animalmenusequence")]impl<__T:IAnimalMenuSequence_ConfirmNo>IAnimalMenuSequence_ConfirmNoMethods for __T{}
+
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmNo{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-animalmenusequence")]impl AnimalMenuSequence_ConfirmNo{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AnimalMenuSequence_ConfirmNo), ::core::stringify!(new),));
+ <Self as IAnimalMenuSequence_ConfirmNoMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-animalmenusequence")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::AnimalMenuSequence_ConfirmYes;
     pub use super::IAnimalMenuSequence_ConfirmYes;
     pub use super::IAnimalMenuSequence_ConfirmYesMethods;
-    pub use super::AnimalMenuSequence_From;
-    pub use super::AnimalMenuSequence_ConfirmNo;
-    pub use super::IAnimalMenuSequence_ConfirmNo;
-    pub use super::IAnimalMenuSequence_ConfirmNoMethods;
     pub use super::AnimalMenuSequence_Label;
+    pub use super::AnimalMenuSequence_From;
     pub use super::AnimalMenuSequence;
     pub use super::IAnimalMenuSequence;
     pub use super::IAnimalMenuSequenceMethods;
+    pub use super::AnimalMenuSequence_ConfirmNo;
+    pub use super::IAnimalMenuSequence_ConfirmNo;
+    pub use super::IAnimalMenuSequence_ConfirmNoMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

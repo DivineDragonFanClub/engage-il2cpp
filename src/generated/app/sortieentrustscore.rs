@@ -12,13 +12,10 @@ use crate::system::object::{IObject,Object}
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore_EnhancePerson.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore.EnhancePerson")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore_EnhancePerson{}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore_Weapon.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore.Weapon")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore_Weapon{#[static_field]#[rename(name="PowerFactor")]pub power_factor:i32, #[static_field]#[rename(name="HitLow")]pub hit_low:i32, #[static_field]#[rename(name="HitHigh")]pub hit_high:i32,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore_Vulnerary.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore.Vulnerary")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore_Vulnerary{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore_Enhance.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore.Enhance")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore_Enhance{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore_Weapon.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore.Weapon")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore_Weapon{#[static_field]#[rename(name="PowerFactor")]pub power_factor:i32, #[static_field]#[rename(name="HitLow")]pub hit_low:i32, #[static_field]#[rename(name="HitHigh")]pub hit_high:i32,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore_Rod.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore.Rod")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore_Rod{}
@@ -28,6 +25,9 @@ use crate::system::object::{IObject,Object}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore{#[static_field]#[rename(name="MaxRangeForRangeCovered")]pub max_range_for_range_covered:i32, #[offset(16)]#[rename(name="m_StockData")]pub m_stock_data:crate::app::sortieentruststockdata::SortieEntrustStockData, #[offset(24)]#[rename(name="m_Result")]pub m_result:crate::app::sortieentrustscore::SortieEntrustScore_Result,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/sortieentrustscore/SortieEntrustScore_Vulnerary.md"))]#[::unity2::class(namespace="App",name="SortieEntrustScore.Vulnerary")]#[parent(crate::system::object::Object)]pub struct SortieEntrustScore_Vulnerary{}
 
 }
 
@@ -62,6 +62,34 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Enhance{#[doc="`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn is_exclude(unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d74580usize)as*mut u8,bool;
+(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
+}
+#[doc="`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn calc(result:impl::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result> ,unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d745b0usize)as*mut u8,();
+(crate::app::sortieentrustscore::SortieEntrustScore_Result)::core::convert::Into::into(result),(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
+}
+}
+
+#[cfg(feature="app-sortieentrustscore")]pub trait ISortieEntrustScore_EnhanceMethods:ISortieEntrustScore_Enhance{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrustScore_Enhance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d746c0usize)as*mut u8,();
+(SortieEntrustScore_Enhance)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortieentrustscore")]impl<__T:ISortieEntrustScore_Enhance>ISortieEntrustScore_EnhanceMethods for __T{}
+
+#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Enhance{pub fn is_exclude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Enhance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrustScore_Enhance), ::core::stringify!(new),));
+ <Self as ISortieEntrustScore_EnhanceMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Weapon{#[doc="`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn is_exclude(unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d74d60usize)as*mut u8,bool;
 (crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
 }
@@ -91,62 +119,6 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 ::{}
  failed to instantiate", ::core::stringify!(SortieEntrustScore_Weapon), ::core::stringify!(new),));
  <Self as ISortieEntrustScore_WeaponMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Vulnerary{#[doc="`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn is_exclude(unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d74ab0usize)as*mut u8,bool;
-(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
-}
-#[doc="`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn calc(result:impl::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result> ,unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d74b30usize)as*mut u8,();
-(crate::app::sortieentrustscore::SortieEntrustScore_Result)::core::convert::Into::into(result),(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
-}
-}
-
-#[cfg(feature="app-sortieentrustscore")]pub trait ISortieEntrustScore_VulneraryMethods:ISortieEntrustScore_Vulnerary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrustScore_Vulnerary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d74d50usize)as*mut u8,();
-(SortieEntrustScore_Vulnerary)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortieentrustscore")]impl<__T:ISortieEntrustScore_Vulnerary>ISortieEntrustScore_VulneraryMethods for __T{}
-
-#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Vulnerary{pub fn is_exclude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Vulnerary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieEntrustScore_Vulnerary), ::core::stringify!(new),));
- <Self as ISortieEntrustScore_VulneraryMethods> ::ctor(this,);
-this}
-}
-
-#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Enhance{#[doc="`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn is_exclude(unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d74580usize)as*mut u8,bool;
-(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
-}
-#[doc="`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn calc(result:impl::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result> ,unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d745b0usize)as*mut u8,();
-(crate::app::sortieentrustscore::SortieEntrustScore_Result)::core::convert::Into::into(result),(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
-}
-}
-
-#[cfg(feature="app-sortieentrustscore")]pub trait ISortieEntrustScore_EnhanceMethods:ISortieEntrustScore_Enhance{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrustScore_Enhance as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d746c0usize)as*mut u8,();
-(SortieEntrustScore_Enhance)__receiver)}
-}
-}
-
-#[cfg(feature="app-sortieentrustscore")]impl<__T:ISortieEntrustScore_Enhance>ISortieEntrustScore_EnhanceMethods for __T{}
-
-#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Enhance{pub fn is_exclude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Enhance{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(SortieEntrustScore_Enhance), ::core::stringify!(new),));
- <Self as ISortieEntrustScore_EnhanceMethods> ::ctor(this,);
 this}
 }
 
@@ -291,21 +263,46 @@ pub fn is_personal_use_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Se
 this}
 }
 
+#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Vulnerary{#[doc="`IsExclude(crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn is_exclude(unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d74ab0usize)as*mut u8,bool;
+(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
+}
+#[doc="`Calc(crate::app::sortieentrustscore::SortieEntrustScore_Result, crate::app::sortieentrustunitdata::SortieEntrustUnitData, crate::app::sortieentruststockdata::SortieEntrustStockData)` overload"]pub fn calc(result:impl::core::convert::Into<crate::app::sortieentrustscore::SortieEntrustScore_Result> ,unit_data:impl::core::convert::Into<crate::app::sortieentrustunitdata::SortieEntrustUnitData> ,stock_data:impl::core::convert::Into<crate::app::sortieentruststockdata::SortieEntrustStockData>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1d74b30usize)as*mut u8,();
+(crate::app::sortieentrustscore::SortieEntrustScore_Result)::core::convert::Into::into(result),(crate::app::sortieentrustunitdata::SortieEntrustUnitData)::core::convert::Into::into(unit_data),(crate::app::sortieentruststockdata::SortieEntrustStockData)::core::convert::Into::into(stock_data))}
+}
+}
+
+#[cfg(feature="app-sortieentrustscore")]pub trait ISortieEntrustScore_VulneraryMethods:ISortieEntrustScore_Vulnerary{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <SortieEntrustScore_Vulnerary as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d74d50usize)as*mut u8,();
+(SortieEntrustScore_Vulnerary)__receiver)}
+}
+}
+
+#[cfg(feature="app-sortieentrustscore")]impl<__T:ISortieEntrustScore_Vulnerary>ISortieEntrustScore_VulneraryMethods for __T{}
+
+#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Vulnerary{pub fn is_exclude_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn calc_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-sortieentrustscore")]impl SortieEntrustScore_Vulnerary{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(SortieEntrustScore_Vulnerary), ::core::stringify!(new),));
+ <Self as ISortieEntrustScore_VulneraryMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-sortieentrustscore")]
 #[doc(hidden)]
 pub mod prelude {
     pub use super::SortieEntrustScore_EnhancePerson;
     pub use super::ISortieEntrustScore_EnhancePerson;
     pub use super::ISortieEntrustScore_EnhancePersonMethods;
-    pub use super::SortieEntrustScore_Weapon;
-    pub use super::ISortieEntrustScore_Weapon;
-    pub use super::ISortieEntrustScore_WeaponMethods;
-    pub use super::SortieEntrustScore_Vulnerary;
-    pub use super::ISortieEntrustScore_Vulnerary;
-    pub use super::ISortieEntrustScore_VulneraryMethods;
     pub use super::SortieEntrustScore_Enhance;
     pub use super::ISortieEntrustScore_Enhance;
     pub use super::ISortieEntrustScore_EnhanceMethods;
+    pub use super::SortieEntrustScore_Weapon;
+    pub use super::ISortieEntrustScore_Weapon;
+    pub use super::ISortieEntrustScore_WeaponMethods;
     pub use super::SortieEntrustScore_Rod;
     pub use super::ISortieEntrustScore_Rod;
     pub use super::ISortieEntrustScore_RodMethods;
@@ -315,6 +312,9 @@ pub mod prelude {
     pub use super::SortieEntrustScore;
     pub use super::ISortieEntrustScore;
     pub use super::ISortieEntrustScoreMethods;
+    pub use super::SortieEntrustScore_Vulnerary;
+    pub use super::ISortieEntrustScore_Vulnerary;
+    pub use super::ISortieEntrustScore_VulneraryMethods;
     pub use crate::system::object::IObject;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;
 }

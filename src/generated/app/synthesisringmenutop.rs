@@ -26,13 +26,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-synthesisringmenutop-types")]
 pub use __types::*;
 
+#[cfg(feature="app-synthesisringmenutop")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __SynthesisRingMenuTop_DecideEventHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:SynthesisRingMenuTop_DecideEventHandler,result:crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <SynthesisRingMenuTop_DecideEventHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(SynthesisRingMenuTop_DecideEventHandler,crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,__mi)}
+}
+
 #[cfg(feature="app-synthesisringmenutop")]pub trait ISynthesisRingMenuTop_DecideEventHandlerMethods:ISynthesisRingMenuTop_DecideEventHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x21f79e0usize)as*mut u8,();
 (SynthesisRingMenuTop_DecideEventHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)` overload"]fn invoke(self,result:impl::core::convert::Into<crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result>)->(){unsafe{let __receiver= <SynthesisRingMenuTop_DecideEventHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x21f7a00usize)as*mut u8,();
-(SynthesisRingMenuTop_DecideEventHandler)__receiver,(crate::app::synthesisringmenutop::SynthesisRingMenuTop_Result)::core::convert::Into::into(result))}
+__SynthesisRingMenuTop_DecideEventHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
 }
 }
 

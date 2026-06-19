@@ -17,105 +17,70 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu_EventMenuItem.md"))]#[::unity2::class(namespace="App",name="ScriptMenu.EventMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct ScriptMenu_EventMenuItem{#[offset(32)]#[rename(name="m_Mid")]pub m_mid: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Function")]pub m_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(48)]#[rename(name="m_Args")]pub m_args:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(56)]#[rename(name="m_SelectFunction")]pub m_select_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(64)]#[rename(name="m_SelectArgs")]pub m_select_args:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(72)]#[rename(name="m_Condition")]pub m_condition:crate::app::scriptutil::ScriptUtil_MenuCondtion,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu_EventMenu.md"))]#[::unity2::class(namespace="App",name="ScriptMenu.EventMenu")]#[parent(crate::app::debugmenu::DebugMenu)]pub struct ScriptMenu_EventMenu{#[offset(220)]#[rename(name="m_Index")]pub m_index:i32, #[offset(224)]#[rename(name="m_Address")]pub m_address:i32, #[offset(232)]#[rename(name="m_CancelCall")]pub m_cancel_call:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(240)]#[rename(name="m_CancelJump")]pub m_cancel_jump:crate::moon_sharp::interpreter::dynvalue::DynValue,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu.md"))]#[::unity2::class(namespace="App",name="ScriptMenu")]#[parent(crate::app::scriptutil::ScriptUtil)]pub struct ScriptMenu{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/scriptmenu/ScriptMenu_EventMenuItem.md"))]#[::unity2::class(namespace="App",name="ScriptMenu.EventMenuItem")]#[parent(crate::app::menuitem::MenuItem)]pub struct ScriptMenu_EventMenuItem{#[offset(32)]#[rename(name="m_Mid")]pub m_mid: ::unity2::Il2CppString, #[offset(40)]#[rename(name="m_Function")]pub m_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(48)]#[rename(name="m_Args")]pub m_args:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(56)]#[rename(name="m_SelectFunction")]pub m_select_function:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(64)]#[rename(name="m_SelectArgs")]pub m_select_args:crate::moon_sharp::interpreter::dynvalue::DynValue, #[offset(72)]#[rename(name="m_Condition")]pub m_condition:crate::app::scriptutil::ScriptUtil_MenuCondtion,}
 
 }
 
 #[cfg(feature = "app-scriptmenu-types")]
 pub use __types::*;
 
-#[cfg(feature="app-scriptmenu")]pub trait IScriptMenu_EventMenuItemMethods:IScriptMenu_EventMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a50usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a60usize)as*mut u8, ::unity2::Il2CppString;
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68ad0usize)as*mut u8,bool;
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68ae0usize)as*mut u8,bool;
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`SetMid(::unity2::Il2CppString)` overload"]fn set_mid(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68af0usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
-}
-#[doc="`SetFunc(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_func(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b00usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func))}
-}
-#[doc="`SetSelectFunc(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_select_func(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b10usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func))}
-}
-#[doc="`SetArgs(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_args(self,args:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b20usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(args))}
-}
-#[doc="`SetSelectArgs(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_select_args(self,args:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b30usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(args))}
-}
-#[doc="`SetCondition(crate::app::scriptutil::ScriptUtil_MenuCondtion)` overload"]fn set_condition(self,condition:impl::core::convert::Into<crate::app::scriptutil::ScriptUtil_MenuCondtion>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b40usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver,(crate::app::scriptutil::ScriptUtil_MenuCondtion)::core::convert::Into::into(condition))}
-}
-#[doc="`SaveCursor()` overload"]fn save_cursor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b50usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68be0usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68d60usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68d70usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68d80usize)as*mut u8,();
-(ScriptMenu_EventMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-scriptmenu")]impl<__T:IScriptMenu_EventMenuItem>IScriptMenu_EventMenuItemMethods for __T{}
-
-#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn set_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn set_select_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn set_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn set_select_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn save_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-}
-
-#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ScriptMenu_EventMenuItem), ::core::stringify!(new),));
- <Self as IScriptMenu_EventMenuItemMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-scriptmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptMenu_EventMenu_unity2_raw{use super:: * ;
+pub unsafe fn on_open(this:ScriptMenu_EventMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <ScriptMenu_EventMenu as::unity2::ClassIdentity> ::NAME,"OnOpen",));
+let inner:extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_close(this:ScriptMenu_EventMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <ScriptMenu_EventMenu as::unity2::ClassIdentity> ::NAME,"OnClose",));
+let inner:extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_tick(this:ScriptMenu_EventMenu,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <ScriptMenu_EventMenu as::unity2::ClassIdentity> ::NAME,"OnTick",));
+let inner:extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:ScriptMenu_EventMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <ScriptMenu_EventMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn x_call(this:ScriptMenu_EventMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <ScriptMenu_EventMenu as::unity2::ClassIdentity> ::NAME,"XCall",));
+let inner:extern "C" fn(ScriptMenu_EventMenu, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-scriptmenu")]pub trait IScriptMenu_EventMenuMethods:IScriptMenu_EventMenu{#[doc="`GetIndex()` overload"]fn get_index(self,)->i32{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -139,24 +104,19 @@ this}
 (ScriptMenu_EventMenu)__receiver,(bool)::core::convert::Into::into(decide))}
 }
 #[doc="`OnOpen()` overload"]fn on_open(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68600usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
+__ScriptMenu_EventMenu_unity2_raw::on_open(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnClose()` overload"]fn on_close(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d687e0usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
+__ScriptMenu_EventMenu_unity2_raw::on_close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnTick()` overload"]fn on_tick(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68820usize)as*mut u8,();
-(ScriptMenu_EventMenu)__receiver)}
+__ScriptMenu_EventMenu_unity2_raw::on_tick(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68830usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ScriptMenu_EventMenu)__receiver)}
+__ScriptMenu_EventMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a20usize)as*mut u8,crate::app::menuitem::MenuItem_Result;
-(ScriptMenu_EventMenu)__receiver)}
+__ScriptMenu_EventMenu_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetCancelCall(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_cancel_call(self,value:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a30usize)as*mut u8,();
@@ -263,18 +223,172 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-scriptmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ScriptMenu_EventMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ScriptMenu_EventMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ScriptMenu_EventMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(ScriptMenu_EventMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_visible(this:ScriptMenu_EventMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <ScriptMenu_EventMenuItem as::unity2::ClassIdentity> ::NAME,"IsVisible",));
+let inner:extern "C" fn(ScriptMenu_EventMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn is_enable(this:ScriptMenu_EventMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <ScriptMenu_EventMenuItem as::unity2::ClassIdentity> ::NAME,"IsEnable",));
+let inner:extern "C" fn(ScriptMenu_EventMenuItem, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:ScriptMenu_EventMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <ScriptMenu_EventMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(ScriptMenu_EventMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:ScriptMenu_EventMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <ScriptMenu_EventMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(ScriptMenu_EventMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn x_call(this:ScriptMenu_EventMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <ScriptMenu_EventMenuItem as::unity2::ClassIdentity> ::NAME,"XCall",));
+let inner:extern "C" fn(ScriptMenu_EventMenuItem, ::unity2::OptionalMethod,)->crate::app::menuitem::MenuItem_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:ScriptMenu_EventMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(69usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",69usize,__vt.len(), <ScriptMenu_EventMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(ScriptMenu_EventMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-scriptmenu")]pub trait IScriptMenu_EventMenuItemMethods:IScriptMenu_EventMenuItem{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68a50usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptMenu_EventMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+#[doc="`IsVisible()` overload"]fn is_visible(self,)->bool{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptMenu_EventMenuItem_unity2_raw::is_visible(__receiver, ::core::option::Option::None)}
+}
+#[doc="`IsEnable()` overload"]fn is_enable(self,)->bool{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptMenu_EventMenuItem_unity2_raw::is_enable(__receiver, ::core::option::Option::None)}
+}
+#[doc="`SetMid(::unity2::Il2CppString)` overload"]fn set_mid(self,mid:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68af0usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(mid))}
+}
+#[doc="`SetFunc(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_func(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b00usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func))}
+}
+#[doc="`SetSelectFunc(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_select_func(self,func:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b10usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(func))}
+}
+#[doc="`SetArgs(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_args(self,args:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b20usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(args))}
+}
+#[doc="`SetSelectArgs(crate::moon_sharp::interpreter::dynvalue::DynValue)` overload"]fn set_select_args(self,args:impl::core::convert::Into<crate::moon_sharp::interpreter::dynvalue::DynValue>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b30usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver,(crate::moon_sharp::interpreter::dynvalue::DynValue)::core::convert::Into::into(args))}
+}
+#[doc="`SetCondition(crate::app::scriptutil::ScriptUtil_MenuCondtion)` overload"]fn set_condition(self,condition:impl::core::convert::Into<crate::app::scriptutil::ScriptUtil_MenuCondtion>)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b40usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver,(crate::app::scriptutil::ScriptUtil_MenuCondtion)::core::convert::Into::into(condition))}
+}
+#[doc="`SaveCursor()` overload"]fn save_cursor(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1d68b50usize)as*mut u8,();
+(ScriptMenu_EventMenuItem)__receiver)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptMenu_EventMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptMenu_EventMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`XCall()` overload"]fn x_call(self,)->crate::app::menuitem::MenuItem_Result{unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptMenu_EventMenuItem_unity2_raw::x_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <ScriptMenu_EventMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__ScriptMenu_EventMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-scriptmenu")]impl<__T:IScriptMenu_EventMenuItem>IScriptMenu_EventMenuItemMethods for __T{}
+
+#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_visible_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn is_enable_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn set_mid_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn set_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn set_select_func_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn set_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn set_select_args_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn set_condition_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn save_cursor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn x_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn on_select_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+}
+
+#[cfg(feature="app-scriptmenu")]impl ScriptMenu_EventMenuItem{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ScriptMenu_EventMenuItem), ::core::stringify!(new),));
+ <Self as IScriptMenu_EventMenuItemMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-scriptmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ScriptMenu_EventMenuItem;
-    pub use super::IScriptMenu_EventMenuItem;
-    pub use super::IScriptMenu_EventMenuItemMethods;
     pub use super::ScriptMenu_EventMenu;
     pub use super::IScriptMenu_EventMenu;
     pub use super::IScriptMenu_EventMenuMethods;
     pub use super::ScriptMenu;
     pub use super::IScriptMenu;
     pub use super::IScriptMenuMethods;
+    pub use super::ScriptMenu_EventMenuItem;
+    pub use super::IScriptMenu_EventMenuItem;
+    pub use super::IScriptMenu_EventMenuItemMethods;
     pub use crate::app::debugmenu::IDebugMenu;
     pub use crate::app::menuitem::IMenuItem;
     pub use crate::app::procinst::IProcInst;

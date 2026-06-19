@@ -13,9 +13,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/vcamshaker/VCamShaker.md"))]#[::unity2::class(namespace="Combat",name="VCamShaker")]pub struct VCamShaker{#[offset(80)]#[rename(name="m_Setting")]pub m_setting:crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, #[offset(88)]#[rename(name="m_ShakeType")]pub m_shake_type:crate::combat::vcamshaker::VCamShaker_ShakeType, #[offset(92)]#[rename(name="m_Life")]pub m_life:i32, #[offset(96)]#[rename(name="m_Magnitude")]pub m_magnitude:f32,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/vcamshaker/VCamShaker_ShakeType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct VCamShaker_ShakeType{pub value:i32,}
 impl::unity2::ClassIdentity for VCamShaker_ShakeType{const NAMESPACE: &'static str="Combat";
 const NAME: &'static str="VCamShaker.ShakeType";
@@ -33,14 +30,29 @@ pub fn armor_step()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/combat/vcamshaker/VCamShaker.md"))]#[::unity2::class(namespace="Combat",name="VCamShaker")]pub struct VCamShaker{#[offset(80)]#[rename(name="m_Setting")]pub m_setting:crate::combat::camerapositiondata::CameraPositionData_CameraShakeSettings, #[offset(88)]#[rename(name="m_ShakeType")]pub m_shake_type:crate::combat::vcamshaker::VCamShaker_ShakeType, #[offset(92)]#[rename(name="m_Life")]pub m_life:i32, #[offset(96)]#[rename(name="m_Magnitude")]pub m_magnitude:f32,}
+
 }
 
 #[cfg(feature = "combat-vcamshaker-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-vcamshaker")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VCamShaker_unity2_raw{use super:: * ;
+pub unsafe fn get_is_valid(this:VCamShaker,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VCamShaker as::unity2::ClassIdentity> ::NAME,"get_IsValid",));
+let inner:extern "C" fn(VCamShaker, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-vcamshaker")]pub trait IVCamShakerMethods:IVCamShaker{#[doc="`get_IsValid()` overload"]fn get_is_valid(self,)->bool{unsafe{let __receiver= <VCamShaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26a1480usize)as*mut u8,bool;
-(VCamShaker)__receiver)}
+__VCamShaker_unity2_raw::get_is_valid(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <VCamShaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26a14a0usize)as*mut u8,();
@@ -89,10 +101,10 @@ this}
 #[cfg(feature = "combat-vcamshaker")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::VCamShaker_ShakeType;
     pub use super::VCamShaker;
     pub use super::IVCamShaker;
     pub use super::IVCamShakerMethods;
-    pub use super::VCamShaker_ShakeType;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

@@ -25,6 +25,9 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldanger/MapPanelDanger.md"))]#[::unity2::class(namespace="App",name="MapPanelDanger")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappaneldanger::MapPanelDanger>)]pub struct MapPanelDanger{#[offset(64)]#[rename(name="m_ImageList")]pub m_image_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mappaneldanger::MapPanelDanger_MeshIndex> > , #[offset(72)]#[rename(name="m_AttackDanger_0")]pub m_attack_danger_0:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_AttackDanger_1")]pub m_attack_danger_1:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_AttackDanger_2")]pub m_attack_danger_2:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_AttackDanger_3")]pub m_attack_danger_3:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_RodDanger_0")]pub m_rod_danger_0:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_RodDanger_1")]pub m_rod_danger_1:crate::unity_engine::material::Material, #[offset(120)]#[rename(name="m_RodDanger_2")]pub m_rod_danger_2:crate::unity_engine::material::Material, #[offset(128)]#[rename(name="m_RodDanger_3")]pub m_rod_danger_3:crate::unity_engine::material::Material, #[offset(136)]#[rename(name="m_Mode")]pub m_mode:crate::app::mappaneldanger::MapPanelDanger_Mode, #[offset(140)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(144)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(152)]#[rename(name="m_AttackColor")]pub m_attack_color:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="m_RodColor")]pub m_rod_color:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="m_SwitchCurve")]pub m_switch_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(192)]#[rename(name="m_Time")]pub m_time:f32, #[offset(196)]#[rename(name="m_IsLoopAnime")]pub m_is_loop_anime:bool, #[offset(197)]#[rename(name="m_IsVisible")]pub m_is_visible:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldanger/MapPanelDanger_Mode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelDanger_Mode{pub value:i32,}
 impl::unity2::ClassIdentity for MapPanelDanger_Mode{const NAMESPACE: &'static str="App";
 const NAME: &'static str="MapPanelDanger.Mode";
@@ -37,24 +40,6 @@ impl::unity2::IlType for MapPanelDanger_Mode{fn il_type()-> &'static::unity2::il
 impl MapPanelDanger_Mode{pub fn hide()->Self{Self{value:0}
 }
 pub fn show()->Self{Self{value:1}
-}
-}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelDanger_DangerType{pub value:i32,}
-impl::unity2::ClassIdentity for MapPanelDanger_DangerType{const NAMESPACE: &'static str="App";
-const NAME: &'static str="MapPanelDanger.DangerType";
-fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
- *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
-)}
-}
-impl::unity2::IlType for MapPanelDanger_DangerType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
-}
-impl MapPanelDanger_DangerType{pub fn rod()->Self{Self{value:0}
-}
-pub fn attack()->Self{Self{value:1}
-}
-pub fn num()->Self{Self{value:2}
 }
 }
 
@@ -89,16 +74,53 @@ pub fn num()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldanger/MapPanelDanger.md"))]#[::unity2::class(namespace="App",name="MapPanelDanger")]#[parent(crate::root::mappanelbase_1::MapPanelBase_1<crate::app::mappaneldanger::MapPanelDanger>)]pub struct MapPanelDanger{#[offset(64)]#[rename(name="m_ImageList")]pub m_image_list: ::unity2::Array<crate::system::collections::generic::list_1::List_1<crate::app::mappaneldanger::MapPanelDanger_MeshIndex> > , #[offset(72)]#[rename(name="m_AttackDanger_0")]pub m_attack_danger_0:crate::unity_engine::material::Material, #[offset(80)]#[rename(name="m_AttackDanger_1")]pub m_attack_danger_1:crate::unity_engine::material::Material, #[offset(88)]#[rename(name="m_AttackDanger_2")]pub m_attack_danger_2:crate::unity_engine::material::Material, #[offset(96)]#[rename(name="m_AttackDanger_3")]pub m_attack_danger_3:crate::unity_engine::material::Material, #[offset(104)]#[rename(name="m_RodDanger_0")]pub m_rod_danger_0:crate::unity_engine::material::Material, #[offset(112)]#[rename(name="m_RodDanger_1")]pub m_rod_danger_1:crate::unity_engine::material::Material, #[offset(120)]#[rename(name="m_RodDanger_2")]pub m_rod_danger_2:crate::unity_engine::material::Material, #[offset(128)]#[rename(name="m_RodDanger_3")]pub m_rod_danger_3:crate::unity_engine::material::Material, #[offset(136)]#[rename(name="m_Mode")]pub m_mode:crate::app::mappaneldanger::MapPanelDanger_Mode, #[offset(140)]#[rename(name="m_IsUpdate")]pub m_is_update:bool, #[offset(144)]#[rename(name="m_Alpha")]pub m_alpha:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(152)]#[rename(name="m_AttackColor")]pub m_attack_color:crate::unity_engine::color::Color, #[offset(168)]#[rename(name="m_RodColor")]pub m_rod_color:crate::unity_engine::color::Color, #[offset(184)]#[rename(name="m_SwitchCurve")]pub m_switch_curve:crate::unity_engine::animationcurve::AnimationCurve, #[offset(192)]#[rename(name="m_Time")]pub m_time:f32, #[offset(196)]#[rename(name="m_IsLoopAnime")]pub m_is_loop_anime:bool, #[offset(197)]#[rename(name="m_IsVisible")]pub m_is_visible:bool,}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/mappaneldanger/MapPanelDanger_DangerType.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct MapPanelDanger_DangerType{pub value:i32,}
+impl::unity2::ClassIdentity for MapPanelDanger_DangerType{const NAMESPACE: &'static str="App";
+const NAME: &'static str="MapPanelDanger.DangerType";
+fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
+ *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
+)}
+}
+impl::unity2::IlType for MapPanelDanger_DangerType{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+}
+impl MapPanelDanger_DangerType{pub fn rod()->Self{Self{value:0}
+}
+pub fn attack()->Self{Self{value:1}
+}
+pub fn num()->Self{Self{value:2}
+}
+}
 
 }
 
 #[cfg(feature = "app-mappaneldanger-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mappaneldanger")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapPanelDanger_unity2_raw{use super:: * ;
+pub unsafe fn get_sub_mesh_count(this:MapPanelDanger,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <MapPanelDanger as::unity2::ClassIdentity> ::NAME,"get_SubMeshCount",));
+let inner:extern "C" fn(MapPanelDanger, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_source_materials(this:MapPanelDanger,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapPanelDanger as::unity2::ClassIdentity> ::NAME,"GetSourceMaterials",));
+let inner:extern "C" fn(MapPanelDanger, ::unity2::OptionalMethod,)-> ::unity2::Array<crate::unity_engine::material::Material> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mappaneldanger")]pub trait IMapPanelDangerMethods:IMapPanelDanger{#[doc="`get_SubMeshCount()` overload"]fn get_sub_mesh_count(self,)->i32{unsafe{let __receiver= <MapPanelDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02840usize)as*mut u8,i32;
-(MapPanelDanger)__receiver)}
+__MapPanelDanger_unity2_raw::get_sub_mesh_count(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <MapPanelDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02850usize)as*mut u8,();
@@ -113,8 +135,7 @@ pub use __types::*;
 (MapPanelDanger)__receiver)}
 }
 #[doc="`GetSourceMaterials()` overload"]fn get_source_materials(self,)-> ::unity2::Array<crate::unity_engine::material::Material>{unsafe{let __receiver= <MapPanelDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02d50usize)as*mut u8, ::unity2::Array<crate::unity_engine::material::Material> ;
-(MapPanelDanger)__receiver)}
+__MapPanelDanger_unity2_raw::get_source_materials(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetMode(crate::app::mappaneldanger::MapPanelDanger_Mode, bool)` overload"]fn set_mode(self,mode:impl::core::convert::Into<crate::app::mappaneldanger::MapPanelDanger_Mode> ,is_force_update:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <MapPanelDanger as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e02f90usize)as*mut u8,();
@@ -197,12 +218,12 @@ this}
 #[cfg(feature = "app-mappaneldanger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::MapPanelDanger_Mode;
-    pub use super::MapPanelDanger_DangerType;
-    pub use super::MapPanelDanger_MeshIndex;
     pub use super::MapPanelDanger;
     pub use super::IMapPanelDanger;
     pub use super::IMapPanelDangerMethods;
+    pub use super::MapPanelDanger_Mode;
+    pub use super::MapPanelDanger_MeshIndex;
+    pub use super::MapPanelDanger_DangerType;
     pub use crate::app::singletonmonobehaviour_1::ISingletonMonoBehaviour_1;
     pub use crate::root::mappanelbase_1::IMapPanelBase_1;
     pub use crate::system::object::IObject;

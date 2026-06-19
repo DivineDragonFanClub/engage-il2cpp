@@ -23,16 +23,16 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StandardIOFileUserDataBase_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_close{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<StandardIOFileUserDataBase as::unity2::ClassIdentity> ::class(),"Close",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <StandardIOFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Close",e),}
-}
-}
+pub unsafe fn close(this:StandardIOFileUserDataBase,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <StandardIOFileUserDataBase as::unity2::ClassIdentity> ::NAME,"Close",));
+let inner:extern "C" fn(StandardIOFileUserDataBase, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_create_input_stream{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::io::stream::Stream as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<StandardIOFileUserDataBase as::unity2::ClassIdentity> ::class(),"CreateInputStream",1,param_types,true,)}
@@ -74,8 +74,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="moon_sharp-interpreter-core_lib-io-standardiofileuserdatabase")]pub trait IStandardIOFileUserDataBaseMethods:IStandardIOFileUserDataBase{#[doc="`Close()` overload"]fn close(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <StandardIOFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__StandardIOFileUserDataBase_unity2_raw::__lookup_close::get_method_info().method_ptr, ::unity2::Il2CppString;
-(StandardIOFileUserDataBase)__receiver)}
+__StandardIOFileUserDataBase_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <StandardIOFileUserDataBase as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__StandardIOFileUserDataBase_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

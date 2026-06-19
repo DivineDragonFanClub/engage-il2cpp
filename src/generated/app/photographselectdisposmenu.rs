@@ -25,42 +25,251 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem{#[offset(112)]#[rename(name="m_NoHandler")]pub m_no_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct PhotographSelectDisposMenu_ConfirmDialog{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct PhotographSelectDisposMenu{#[offset(200)]#[rename(name="m_CameraController")]pub m_camera_controller:crate::app::photographcameracontroller::PhotographCameraController, #[offset(208)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(216)]#[rename(name="m_ReturnHandler")]pub m_return_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog.YesMenuItem")]#[parent(crate::app::basicdialogitemyes::BasicDialogItemYes)]pub struct PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem{#[offset(112)]#[rename(name="m_YesHandler")]pub m_yes_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, #[offset(120)]#[rename(name="m_NoHandler")]pub m_no_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler,}
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ReturnHandler.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ReturnHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographSelectDisposMenu_ReturnHandler{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu")]#[parent(crate::app::basicmenu::BasicMenu)]pub struct PhotographSelectDisposMenu{#[offset(200)]#[rename(name="m_CameraController")]pub m_camera_controller:crate::app::photographcameracontroller::PhotographCameraController, #[offset(208)]#[rename(name="m_DisposManager")]pub m_dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager, #[offset(216)]#[rename(name="m_ReturnHandler")]pub m_return_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_YesHandler.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog.YesHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographSelectDisposMenu_ConfirmDialog_YesHandler{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog.NoMenuItem")]#[parent(crate::app::basicdialogitemno::BasicDialogItemNo)]pub struct PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem{#[offset(112)]#[rename(name="m_NoHandler")]pub m_no_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_NoHandler.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog.NoHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographSelectDisposMenu_ConfirmDialog_NoHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog")]#[parent(crate::system::object::Object)]pub struct PhotographSelectDisposMenu_ConfirmDialog{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ReturnHandler.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ReturnHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographSelectDisposMenu_ReturnHandler{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/photographselectdisposmenu/PhotographSelectDisposMenu_ConfirmDialog_YesHandler.md"))]#[::unity2::class(namespace="App",name="PhotographSelectDisposMenu.ConfirmDialog.YesHandler")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct PhotographSelectDisposMenu_ConfirmDialog_YesHandler{}
 
 }
 
 #[cfg(feature = "app-photographselectdisposmenu-types")]
 pub use __types::*;
 
+#[cfg(feature="app-photographselectdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectDisposMenu_unity2_raw{use super:: * ;
+pub unsafe fn key_up(this:PhotographSelectDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(40usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",40usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyUp",));
+let inner:extern "C" fn(PhotographSelectDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_down(this:PhotographSelectDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(41usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",41usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyDown",));
+let inner:extern "C" fn(PhotographSelectDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_left(this:PhotographSelectDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyLeft",));
+let inner:extern "C" fn(PhotographSelectDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn key_right(this:PhotographSelectDisposMenu,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"KeyRight",));
+let inner:extern "C" fn(PhotographSelectDisposMenu,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,is_trigger,__mi)}
+pub unsafe fn plus_call(this:PhotographSelectDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(56usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",56usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"PlusCall",));
+let inner:extern "C" fn(PhotographSelectDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:PhotographSelectDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(50usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",50usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(PhotographSelectDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:PhotographSelectDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(51usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",51usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(PhotographSelectDisposMenu, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:PhotographSelectDisposMenu,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <PhotographSelectDisposMenu as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(PhotographSelectDisposMenu, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,camera_controller:impl::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,return_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2697950usize)as*mut u8,();
+(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographcameracontroller::PhotographCameraController)::core::convert::Into::into(camera_controller),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)::core::convert::Into::into(return_handler))}
+}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenuMethods:IPhotographSelectDisposMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,camera_controller:impl::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,return_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x2697c40usize)as*mut u8,();
+(PhotographSelectDisposMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographcameracontroller::PhotographCameraController)::core::convert::Into::into(camera_controller),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)::core::convert::Into::into(return_handler))}
+}
+#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::key_up(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::key_down(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::key_left(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::key_right(__receiver, ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
+}
+#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::plus_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl<__T:IPhotographSelectDisposMenu>IPhotographSelectDisposMenuMethods for __T{}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,camera_controller:crate::app::photographcameracontroller::PhotographCameraController,dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager,return_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectDisposMenu), ::core::stringify!(new),));
+ <Self as IPhotographSelectDisposMenuMethods> ::ctor(this,menu_item_list,menu_content,camera_controller,dispos_manager,return_handler);
+this}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods:IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` overload"]fn ctor(self,yes_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler> ,no_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b794d0usize)as*mut u8,();
+(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem)__receiver,(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler)::core::convert::Into::into(yes_handler),(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)::core::convert::Into::into(no_handler))}
+}
+#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
+}
+#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl<__T:IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem>IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods for __T{}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` — overload selector"]pub fn new(yes_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler,no_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem), ::core::stringify!(new),));
+ <Self as IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods> ::ctor(this,yes_handler,no_handler);
+this}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn a_call(this:PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn b_call(this:PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as::unity2::ClassIdentity> ::NAME,"BCall",));
+let inner:extern "C" fn(PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods:IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem{#[doc="`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` overload"]fn ctor(self,no_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b791f0usize)as*mut u8,();
 (PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem)__receiver,(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)::core::convert::Into::into(no_handler))}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79230usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem)__receiver)}
+__PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79250usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem)__receiver)}
+__PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem_unity2_raw::b_call(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -75,6 +284,41 @@ pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 ::{}
  failed to instantiate", ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem), ::core::stringify!(new),));
  <Self as IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods> ::ctor(this,no_handler);
+this}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:PhotographSelectDisposMenu_ConfirmDialog_NoHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographSelectDisposMenu_ConfirmDialog_NoHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(PhotographSelectDisposMenu_ConfirmDialog_NoHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods:IPhotographSelectDisposMenu_ConfirmDialog_NoHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_NoHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b78f80usize)as*mut u8,();
+(PhotographSelectDisposMenu_ConfirmDialog_NoHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_NoHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__PhotographSelectDisposMenu_ConfirmDialog_NoHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl<__T:IPhotographSelectDisposMenu_ConfirmDialog_NoHandler>IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods for __T{}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_NoHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_NoHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_NoHandler), ::core::stringify!(new),));
+ <Self as IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods> ::ctor(this,object,method);
 this}
 }
 
@@ -102,32 +346,17 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
-#[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods:IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` overload"]fn ctor(self,yes_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler> ,no_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b794d0usize)as*mut u8,();
-(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem)__receiver,(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler)::core::convert::Into::into(yes_handler),(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)::core::convert::Into::into(no_handler))}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79520usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79540usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem)__receiver)}
-}
-}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl<__T:IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem>IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods for __T{}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem{#[doc="`.ctor(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)` — overload selector"]pub fn new(yes_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_YesHandler,no_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ConfirmDialog_NoHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem), ::core::stringify!(new),));
- <Self as IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods> ::ctor(this,yes_handler,no_handler);
-this}
+#[cfg(feature="app-photographselectdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectDisposMenu_ReturnHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:PhotographSelectDisposMenu_ReturnHandler,next_label:crate::app::photographsequence::PhotographSequence_Label,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographSelectDisposMenu_ReturnHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(PhotographSelectDisposMenu_ReturnHandler,crate::app::photographsequence::PhotographSequence_Label, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,next_label,__mi)}
 }
 
 #[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenu_ReturnHandlerMethods:IPhotographSelectDisposMenu_ReturnHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ReturnHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -135,8 +364,7 @@ this}
 (PhotographSelectDisposMenu_ReturnHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::app::photographsequence::PhotographSequence_Label)` overload"]fn invoke(self,next_label:impl::core::convert::Into<crate::app::photographsequence::PhotographSequence_Label>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ReturnHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2264220usize)as*mut u8,();
-(PhotographSelectDisposMenu_ReturnHandler)__receiver,(crate::app::photographsequence::PhotographSequence_Label)::core::convert::Into::into(next_label))}
+__PhotographSelectDisposMenu_ReturnHandler_unity2_raw::invoke(__receiver, ::core::convert::Into::into(next_label), ::core::option::Option::None)}
 }
 }
 
@@ -153,68 +381,17 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu{#[doc="`CreateBind(crate::app::procinst::ProcInst, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst> ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,camera_controller:impl::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,return_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2697950usize)as*mut u8,();
-(crate::app::procinst::ProcInst)::core::convert::Into::into(super_),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographcameracontroller::PhotographCameraController)::core::convert::Into::into(camera_controller),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)::core::convert::Into::into(return_handler))}
-}
-}
-
-#[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenuMethods:IPhotographSelectDisposMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)` overload"]fn ctor(self,menu_item_list:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> > ,menu_content:impl::core::convert::Into<crate::app::basicmenucontent::BasicMenuContent> ,camera_controller:impl::core::convert::Into<crate::app::photographcameracontroller::PhotographCameraController> ,dispos_manager:impl::core::convert::Into<crate::app::photographdisposmanager::PhotographDisposManager> ,return_handler:impl::core::convert::Into<crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697c40usize)as*mut u8,();
-(PhotographSelectDisposMenu)__receiver,(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>)::core::convert::Into::into(menu_item_list),(crate::app::basicmenucontent::BasicMenuContent)::core::convert::Into::into(menu_content),(crate::app::photographcameracontroller::PhotographCameraController)::core::convert::Into::into(camera_controller),(crate::app::photographdisposmanager::PhotographDisposManager)::core::convert::Into::into(dispos_manager),(crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)::core::convert::Into::into(return_handler))}
-}
-#[doc="`KeyUp(bool)` overload"]fn key_up(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697cb0usize)as*mut u8,();
-(PhotographSelectDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyDown(bool)` overload"]fn key_down(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697cc0usize)as*mut u8,();
-(PhotographSelectDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyLeft(bool)` overload"]fn key_left(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697cd0usize)as*mut u8,();
-(PhotographSelectDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`KeyRight(bool)` overload"]fn key_right(self,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697d10usize)as*mut u8,();
-(PhotographSelectDisposMenu)__receiver,(bool)::core::convert::Into::into(is_trigger))}
-}
-#[doc="`PlusCall()` overload"]fn plus_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697d50usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographSelectDisposMenu)__receiver)}
-}
-#[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697d80usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographSelectDisposMenu)__receiver)}
-}
-#[doc="`BCall()` overload"]fn b_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697db0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(PhotographSelectDisposMenu)__receiver)}
-}
-#[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <PhotographSelectDisposMenu as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2697f50usize)as*mut u8, ::unity2::Il2CppString;
-(PhotographSelectDisposMenu)__receiver)}
-}
-}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl<__T:IPhotographSelectDisposMenu>IPhotographSelectDisposMenuMethods for __T{}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu{pub fn create_bind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn key_up_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn key_down_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn key_left_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn key_right_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn plus_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn a_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn b_call_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_name_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu{#[doc="`.ctor(crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem>, crate::app::basicmenucontent::BasicMenuContent, crate::app::photographcameracontroller::PhotographCameraController, crate::app::photographdisposmanager::PhotographDisposManager, crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)` — overload selector"]pub fn new(menu_item_list:crate::system::collections::generic::list_1::List_1<crate::app::basicmenuitem::BasicMenuItem> ,menu_content:crate::app::basicmenucontent::BasicMenuContent,camera_controller:crate::app::photographcameracontroller::PhotographCameraController,dispos_manager:crate::app::photographdisposmanager::PhotographDisposManager,return_handler:crate::app::photographselectdisposmenu::PhotographSelectDisposMenu_ReturnHandler)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(PhotographSelectDisposMenu), ::core::stringify!(new),));
- <Self as IPhotographSelectDisposMenuMethods> ::ctor(this,menu_item_list,menu_content,camera_controller,dispos_manager,return_handler);
-this}
+#[cfg(feature="app-photographselectdisposmenu")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:PhotographSelectDisposMenu_ConfirmDialog_YesHandler,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <PhotographSelectDisposMenu_ConfirmDialog_YesHandler as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(PhotographSelectDisposMenu_ConfirmDialog_YesHandler, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods:IPhotographSelectDisposMenu_ConfirmDialog_YesHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -222,8 +399,7 @@ this}
 (PhotographSelectDisposMenu_ConfirmDialog_YesHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_YesHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b79280usize)as*mut u8,();
-(PhotographSelectDisposMenu_ConfirmDialog_YesHandler)__receiver)}
+__PhotographSelectDisposMenu_ConfirmDialog_YesHandler_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -240,53 +416,30 @@ pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::un
 this}
 }
 
-#[cfg(feature="app-photographselectdisposmenu")]pub trait IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods:IPhotographSelectDisposMenu_ConfirmDialog_NoHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_NoHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b78f80usize)as*mut u8,();
-(PhotographSelectDisposMenu_ConfirmDialog_NoHandler)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <PhotographSelectDisposMenu_ConfirmDialog_NoHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b78fa0usize)as*mut u8,();
-(PhotographSelectDisposMenu_ConfirmDialog_NoHandler)__receiver)}
-}
-}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl<__T:IPhotographSelectDisposMenu_ConfirmDialog_NoHandler>IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods for __T{}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_NoHandler{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-photographselectdisposmenu")]impl PhotographSelectDisposMenu_ConfirmDialog_NoHandler{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(PhotographSelectDisposMenu_ConfirmDialog_NoHandler), ::core::stringify!(new),));
- <Self as IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "app-photographselectdisposmenu")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods;
-    pub use super::PhotographSelectDisposMenu_ConfirmDialog;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialog;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialogMethods;
-    pub use super::PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods;
-    pub use super::PhotographSelectDisposMenu_ReturnHandler;
-    pub use super::IPhotographSelectDisposMenu_ReturnHandler;
-    pub use super::IPhotographSelectDisposMenu_ReturnHandlerMethods;
     pub use super::PhotographSelectDisposMenu;
     pub use super::IPhotographSelectDisposMenu;
     pub use super::IPhotographSelectDisposMenuMethods;
-    pub use super::PhotographSelectDisposMenu_ConfirmDialog_YesHandler;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesHandler;
-    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods;
+    pub use super::PhotographSelectDisposMenu_ConfirmDialog_YesMenuItem;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItem;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesMenuItemMethods;
+    pub use super::PhotographSelectDisposMenu_ConfirmDialog_NoMenuItem;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItem;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_NoMenuItemMethods;
     pub use super::PhotographSelectDisposMenu_ConfirmDialog_NoHandler;
     pub use super::IPhotographSelectDisposMenu_ConfirmDialog_NoHandler;
     pub use super::IPhotographSelectDisposMenu_ConfirmDialog_NoHandlerMethods;
+    pub use super::PhotographSelectDisposMenu_ConfirmDialog;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialog;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialogMethods;
+    pub use super::PhotographSelectDisposMenu_ReturnHandler;
+    pub use super::IPhotographSelectDisposMenu_ReturnHandler;
+    pub use super::IPhotographSelectDisposMenu_ReturnHandlerMethods;
+    pub use super::PhotographSelectDisposMenu_ConfirmDialog_YesHandler;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesHandler;
+    pub use super::IPhotographSelectDisposMenu_ConfirmDialog_YesHandlerMethods;
     pub use crate::app::basicdialogitem::IBasicDialogItem;
     pub use crate::app::basicdialogitemno::IBasicDialogItemNo;
     pub use crate::app::basicdialogitemyes::IBasicDialogItemYes;

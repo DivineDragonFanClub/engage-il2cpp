@@ -20,9 +20,41 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-gctimeitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-gctimeitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GCTimeItem_unity2_raw{use super:: * ;
+pub unsafe fn get_column_name0(this:GCTimeItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(42usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",42usize,__vt.len(), <GCTimeItem as::unity2::ClassIdentity> ::NAME,"GetColumnName0",));
+let inner:extern "C" fn(GCTimeItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_column_name1(this:GCTimeItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(43usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",43usize,__vt.len(), <GCTimeItem as::unity2::ClassIdentity> ::NAME,"GetColumnName1",));
+let inner:extern "C" fn(GCTimeItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_left_right(this:GCTimeItem,step:i32,is_trigger:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(70usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",70usize,__vt.len(), <GCTimeItem as::unity2::ClassIdentity> ::NAME,"OnLeftRight",));
+let inner:extern "C" fn(GCTimeItem,i32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,step,is_trigger,__mi)}
+}
+
 #[cfg(feature="app-gctimeitem")]pub trait IGCTimeItemMethods:IGCTimeItem{#[doc="`GetColumnName0()` overload"]fn get_column_name0(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GCTimeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2276ed0usize)as*mut u8, ::unity2::Il2CppString;
-(GCTimeItem)__receiver)}
+__GCTimeItem_unity2_raw::get_column_name0(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetValue()` overload"]fn get_value(self,)->i32{unsafe{let __receiver= <GCTimeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2276f20usize)as*mut u8,i32;
@@ -33,12 +65,10 @@ pub use __types::*;
 (GCTimeItem)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`GetColumnName1()` overload"]fn get_column_name1(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <GCTimeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2276f70usize)as*mut u8, ::unity2::Il2CppString;
-(GCTimeItem)__receiver)}
+__GCTimeItem_unity2_raw::get_column_name1(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnLeftRight(i32, bool)` overload"]fn on_left_right(self,step:impl::core::convert::Into<i32> ,is_trigger:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GCTimeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2277000usize)as*mut u8,();
-(GCTimeItem)__receiver,(i32)::core::convert::Into::into(step),(bool)::core::convert::Into::into(is_trigger))}
+__GCTimeItem_unity2_raw::on_left_right(__receiver, ::core::convert::Into::into(step), ::core::convert::Into::into(is_trigger), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GCTimeItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22770c0usize)as*mut u8,();

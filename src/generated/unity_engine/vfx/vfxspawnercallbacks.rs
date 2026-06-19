@@ -21,23 +21,32 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-vfx-vfxspawnercallbacks")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VFXSpawnerCallbacks_unity2_raw{use super:: * ;
-pub unsafe fn on_play(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnPlay").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnPlay", <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_play(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,"OnPlay",));
 let inner:extern "C" fn(VFXSpawnerCallbacks,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,crate::unity_engine::vfx::visualeffect::VisualEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,state,vfx_values,vfx_component,__mi)}
-pub unsafe fn on_update(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnUpdate").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnUpdate", <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_update(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
 let inner:extern "C" fn(VFXSpawnerCallbacks,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,crate::unity_engine::vfx::visualeffect::VisualEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,state,vfx_values,vfx_component,__mi)}
-pub unsafe fn on_stop(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("OnStop").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","OnStop", <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn on_stop(this:VFXSpawnerCallbacks,state:crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,vfx_values:crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,vfx_component:crate::unity_engine::vfx::visualeffect::VisualEffect,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <VFXSpawnerCallbacks as::unity2::ClassIdentity> ::NAME,"OnStop",));
 let inner:extern "C" fn(VFXSpawnerCallbacks,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState,crate::unity_engine::vfx::vfxexpressionvalues::VFXExpressionValues,crate::unity_engine::vfx::visualeffect::VisualEffect, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

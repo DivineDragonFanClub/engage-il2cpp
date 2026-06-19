@@ -29,17 +29,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-exptable-types")]
 pub use __types::*;
 
+#[cfg(feature="app-exptable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExpTable_TableCommand_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ExpTable_TableCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ExpTable_TableCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ExpTable_TableCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn func_impl(this:ExpTable_TableCommand,unit:crate::app::unit::Unit,args:crate::system::collections::generic::list_1::List_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(34usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",34usize,__vt.len(), <ExpTable_TableCommand as::unity2::ClassIdentity> ::NAME,"FuncImpl",));
+let inner:extern "C" fn(ExpTable_TableCommand,crate::app::unit::Unit,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,unit,args,__mi)}
+}
+
 #[cfg(feature="app-exptable")]pub trait IExpTable_TableCommandMethods:IExpTable_TableCommand{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ExpTable_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e59e10usize)as*mut u8,();
 (ExpTable_TableCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ExpTable_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e59e50usize)as*mut u8, ::unity2::Il2CppString;
-(ExpTable_TableCommand)__receiver)}
+__ExpTable_TableCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`FuncImpl(crate::app::unit::Unit, crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func_impl(self,unit:impl::core::convert::Into<crate::app::unit::Unit> ,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <ExpTable_TableCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e59e60usize)as*mut u8,f32;
-(ExpTable_TableCommand)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit),(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
+__ExpTable_TableCommand_unity2_raw::func_impl(__receiver, ::core::convert::Into::into(unit), ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 }
 
@@ -55,6 +76,39 @@ pub fn func_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
  failed to instantiate", ::core::stringify!(ExpTable_TableCommand), ::core::stringify!(new),));
  <Self as IExpTable_TableCommandMethods> ::ctor(this,name);
 this}
+}
+
+#[cfg(feature="app-exptable")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ExpTable_unity2_raw{use super:: * ;
+pub unsafe fn on_build(this:ExpTable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ExpTable as::unity2::ClassIdentity> ::NAME,"OnBuild",));
+let inner:extern "C" fn(ExpTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_release(this:ExpTable,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ExpTable as::unity2::ClassIdentity> ::NAME,"OnRelease",));
+let inner:extern "C" fn(ExpTable, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:ExpTable,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ExpTable as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(ExpTable, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-exptable")]impl ExpTable{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x24e9220usize)as*mut u8,();
@@ -722,16 +776,13 @@ this}
 (ExpTable)__receiver,(i32)::core::convert::Into::into(value))}
 }
 #[doc="`OnBuild()` overload"]fn on_build(self,)->(){unsafe{let __receiver= <ExpTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24e9dd0usize)as*mut u8,();
-(ExpTable)__receiver)}
+__ExpTable_unity2_raw::on_build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnRelease()` overload"]fn on_release(self,)->(){unsafe{let __receiver= <ExpTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ea3e0usize)as*mut u8,();
-(ExpTable)__receiver)}
+__ExpTable_unity2_raw::on_release(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ExpTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x24ea490usize)as*mut u8, ::unity2::Il2CppString;
-(ExpTable)__receiver)}
+__ExpTable_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ExpTable as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x24ea4a0usize)as*mut u8,();

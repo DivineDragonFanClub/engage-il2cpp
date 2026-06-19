@@ -16,6 +16,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-generic-objectequalitycomparer-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-generic-objectequalitycomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ObjectEqualityComparer_unity2_raw{use super:: * ;
+pub unsafe fn system_collections_i_equality_comparer_get_hash_code(this:ObjectEqualityComparer,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <ObjectEqualityComparer as::unity2::ClassIdentity> ::NAME,"System.Collections.IEqualityComparer.GetHashCode",));
+let inner:extern "C" fn(ObjectEqualityComparer,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn system_collections_i_equality_comparer_equals(this:ObjectEqualityComparer,x:crate::system::object::Object,y:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ObjectEqualityComparer as::unity2::ClassIdentity> ::NAME,"System.Collections.IEqualityComparer.Equals",));
+let inner:extern "C" fn(ObjectEqualityComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,x,y,__mi)}
+}
+
 #[cfg(feature="system-collections-generic-objectequalitycomparer")]impl ObjectEqualityComparer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x37df840usize)as*mut u8,();
 )}
 }
@@ -26,12 +49,10 @@ pub use __types::*;
 (ObjectEqualityComparer)__receiver)}
 }
 #[doc="`System.Collections.IEqualityComparer.GetHashCode(crate::system::object::Object)` overload"]fn system_collections_i_equality_comparer_get_hash_code(self,obj:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <ObjectEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x37df7f0usize)as*mut u8,i32;
-(ObjectEqualityComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__ObjectEqualityComparer_unity2_raw::system_collections_i_equality_comparer_get_hash_code(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`System.Collections.IEqualityComparer.Equals(crate::system::object::Object, crate::system::object::Object)` overload"]fn system_collections_i_equality_comparer_equals(self,x:impl::core::convert::Into<crate::system::object::Object> ,y:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <ObjectEqualityComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x37df810usize)as*mut u8,bool;
-(ObjectEqualityComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(x),(crate::system::object::Object)::core::convert::Into::into(y))}
+__ObjectEqualityComparer_unity2_raw::system_collections_i_equality_comparer_equals(__receiver, ::core::convert::Into::into(x), ::core::convert::Into::into(y), ::core::option::Option::None)}
 }
 }
 

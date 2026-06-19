@@ -39,17 +39,47 @@ impl::unity2::IlType for GrounderQuadruped_Foot{fn il_type()-> &'static::unity2:
 #[cfg(feature = "root_motion-final_ik-grounderquadruped-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-grounderquadruped")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GrounderQuadruped_unity2_raw{use super:: * ;
+pub unsafe fn open_user_manual(this:GrounderQuadruped,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GrounderQuadruped as::unity2::ClassIdentity> ::NAME,"OpenUserManual",));
+let inner:extern "C" fn(GrounderQuadruped, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn open_script_reference(this:GrounderQuadruped,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GrounderQuadruped as::unity2::ClassIdentity> ::NAME,"OpenScriptReference",));
+let inner:extern "C" fn(GrounderQuadruped, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn reset_position(this:GrounderQuadruped,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GrounderQuadruped as::unity2::ClassIdentity> ::NAME,"ResetPosition",));
+let inner:extern "C" fn(GrounderQuadruped, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-grounderquadruped")]pub trait IGrounderQuadrupedMethods:IGrounderQuadruped{#[doc="`OpenUserManual()` overload"]fn open_user_manual(self,)->(){unsafe{let __receiver= <GrounderQuadruped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2974c50usize)as*mut u8,();
-(GrounderQuadruped)__receiver)}
+__GrounderQuadruped_unity2_raw::open_user_manual(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OpenScriptReference()` overload"]fn open_script_reference(self,)->(){unsafe{let __receiver= <GrounderQuadruped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2974ca0usize)as*mut u8,();
-(GrounderQuadruped)__receiver)}
+__GrounderQuadruped_unity2_raw::open_script_reference(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ResetPosition()` overload"]fn reset_position(self,)->(){unsafe{let __receiver= <GrounderQuadruped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2974cf0usize)as*mut u8,();
-(GrounderQuadruped)__receiver)}
+__GrounderQuadruped_unity2_raw::reset_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsReadyToInitiate()` overload"]fn is_ready_to_initiate(self,)->bool{unsafe{let __receiver= <GrounderQuadruped as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2974de0usize)as*mut u8,bool;

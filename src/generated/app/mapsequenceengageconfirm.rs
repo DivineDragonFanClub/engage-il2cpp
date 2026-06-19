@@ -20,22 +20,52 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-mapsequenceengageconfirm-types")]
 pub use __types::*;
 
+#[cfg(feature="app-mapsequenceengageconfirm")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapSequenceEngageConfirm_unity2_raw{use super:: * ;
+pub unsafe fn get_global_asset_path(this:MapSequenceEngageConfirm,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <MapSequenceEngageConfirm as::unity2::ClassIdentity> ::NAME,"get_GlobalAssetPath",));
+let inner:extern "C" fn(MapSequenceEngageConfirm, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_create(this:MapSequenceEngageConfirm,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <MapSequenceEngageConfirm as::unity2::ClassIdentity> ::NAME,"OnCreate",));
+let inner:extern "C" fn(MapSequenceEngageConfirm, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_dispose(this:MapSequenceEngageConfirm,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MapSequenceEngageConfirm as::unity2::ClassIdentity> ::NAME,"OnDispose",));
+let inner:extern "C" fn(MapSequenceEngageConfirm, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-mapsequenceengageconfirm")]impl MapSequenceEngageConfirm{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x23ce480usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
 }
 }
 
 #[cfg(feature="app-mapsequenceengageconfirm")]pub trait IMapSequenceEngageConfirmMethods:IMapSequenceEngageConfirm{#[doc="`get_GlobalAssetPath()` overload"]fn get_global_asset_path(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <MapSequenceEngageConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23ce430usize)as*mut u8, ::unity2::Il2CppString;
-(MapSequenceEngageConfirm)__receiver)}
+__MapSequenceEngageConfirm_unity2_raw::get_global_asset_path(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnCreate()` overload"]fn on_create(self,)->(){unsafe{let __receiver= <MapSequenceEngageConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23ce8f0usize)as*mut u8,();
-(MapSequenceEngageConfirm)__receiver)}
+__MapSequenceEngageConfirm_unity2_raw::on_create(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDispose()` overload"]fn on_dispose(self,)->(){unsafe{let __receiver= <MapSequenceEngageConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23ce970usize)as*mut u8,();
-(MapSequenceEngageConfirm)__receiver)}
+__MapSequenceEngageConfirm_unity2_raw::on_dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LoadRes()` overload"]fn load_res(self,)->(){unsafe{let __receiver= <MapSequenceEngageConfirm as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x23ce9e0usize)as*mut u8,();

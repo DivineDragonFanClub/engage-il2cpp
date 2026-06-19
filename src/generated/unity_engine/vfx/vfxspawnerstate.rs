@@ -16,6 +16,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "unity_engine-vfx-vfxspawnerstate-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-vfx-vfxspawnerstate")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VFXSpawnerState_unity2_raw{use super:: * ;
+pub unsafe fn finalize(this:VFXSpawnerState,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <VFXSpawnerState as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(VFXSpawnerState, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:VFXSpawnerState,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VFXSpawnerState as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(VFXSpawnerState, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-vfx-vfxspawnerstate")]impl VFXSpawnerState{#[doc="`CreateSpawnerStateWrapper()` overload"]pub fn create_spawner_state_wrapper()->crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f448f0usize)as*mut u8,crate::unity_engine::vfx::vfxspawnerstate::VFXSpawnerState;
 )}
 }
@@ -37,12 +60,10 @@ pub use __types::*;
 (VFXSpawnerState)__receiver)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <VFXSpawnerState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44ab0usize)as*mut u8,();
-(VFXSpawnerState)__receiver)}
+__VFXSpawnerState_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <VFXSpawnerState as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f44b90usize)as*mut u8,();
-(VFXSpawnerState)__receiver)}
+__VFXSpawnerState_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 }
 

@@ -19,6 +19,12 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct TimelineAsset{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(24)]#[rename(name="m_Version")]pub m_version:i32, #[offset(32)]#[rename(name="m_Tracks")]pub m_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> , #[offset(40)]#[rename(name="m_FixedDuration")]pub m_fixed_duration:f64, #[offset(48)]#[rename(name="m_CacheOutputTracks")]pub m_cache_output_tracks: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(56)]#[rename(name="m_CacheRootTracks")]pub m_cache_root_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(64)]#[rename(name="m_CacheFlattenedTracks")]pub m_cache_flattened_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(72)]#[rename(name="m_EditorSettings")]pub m_editor_settings:crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings, #[offset(80)]#[rename(name="m_DurationMode")]pub m_duration_mode:crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode, #[offset(88)]#[rename(name="m_MarkerTrack")]pub m_marker_track:crate::unity_engine::timeline::markertrack::MarkerTrack,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset.EditorSettings")]#[parent(crate::system::object::Object)]pub struct TimelineAsset_EditorSettings{#[static_field]#[rename(name="kMinFps")]pub k_min_fps:f32, #[static_field]#[rename(name="kMaxFps")]pub k_max_fps:f32, #[static_field]#[rename(name="kDefaultFps")]pub k_default_fps:f32, #[offset(16)]#[rename(name="m_Framerate")]pub m_framerate:f32, #[offset(20)]#[rename(name="m_ScenePreview")]pub m_scene_preview:bool,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_DurationMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct TimelineAsset_DurationMode{pub value:i32,}
 impl::unity2::ClassIdentity for TimelineAsset_DurationMode{const NAMESPACE: &'static str="UnityEngine.Timeline";
 const NAME: &'static str="TimelineAsset.DurationMode";
@@ -34,16 +40,83 @@ pub fn fixed_length()->Self{Self{value:1}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset")]#[parent(crate::unity_engine::playables::playableasset::PlayableAsset)]pub struct TimelineAsset{#[static_field]#[rename(name="k_LatestVersion")]pub k_latest_version:i32, #[offset(24)]#[rename(name="m_Version")]pub m_version:i32, #[offset(32)]#[rename(name="m_Tracks")]pub m_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::scriptableobject::ScriptableObject> , #[offset(40)]#[rename(name="m_FixedDuration")]pub m_fixed_duration:f64, #[offset(48)]#[rename(name="m_CacheOutputTracks")]pub m_cache_output_tracks: ::unity2::Array<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(56)]#[rename(name="m_CacheRootTracks")]pub m_cache_root_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(64)]#[rename(name="m_CacheFlattenedTracks")]pub m_cache_flattened_tracks:crate::system::collections::generic::list_1::List_1<crate::unity_engine::timeline::trackasset::TrackAsset> , #[offset(72)]#[rename(name="m_EditorSettings")]pub m_editor_settings:crate::unity_engine::timeline::timelineasset::TimelineAsset_EditorSettings, #[offset(80)]#[rename(name="m_DurationMode")]pub m_duration_mode:crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode, #[offset(88)]#[rename(name="m_MarkerTrack")]pub m_marker_track:crate::unity_engine::timeline::markertrack::MarkerTrack,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/timeline/timelineasset/TimelineAsset_EditorSettings.md"))]#[::unity2::class(namespace="UnityEngine.Timeline",name="TimelineAsset.EditorSettings")]#[parent(crate::system::object::Object)]pub struct TimelineAsset_EditorSettings{#[static_field]#[rename(name="kMinFps")]pub k_min_fps:f32, #[static_field]#[rename(name="kMaxFps")]pub k_max_fps:f32, #[static_field]#[rename(name="kDefaultFps")]pub k_default_fps:f32, #[offset(16)]#[rename(name="m_Framerate")]pub m_framerate:f32, #[offset(20)]#[rename(name="m_ScenePreview")]pub m_scene_preview:bool,}
-
 }
 
 #[cfg(feature = "unity_engine-timeline-timelineasset-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-timeline-timelineasset")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TimelineAsset_unity2_raw{use super:: * ;
+pub unsafe fn get_duration(this:TimelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TimelineAsset as::unity2::ClassIdentity> ::NAME,"get_duration",));
+let inner:extern "C" fn(TimelineAsset, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_outputs(this:TimelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TimelineAsset as::unity2::ClassIdentity> ::NAME,"get_outputs",));
+let inner:extern "C" fn(TimelineAsset, ::unity2::OptionalMethod,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_clip_caps(this:TimelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TimelineAsset as::unity2::ClassIdentity> ::NAME,"get_clipCaps",));
+let inner:extern "C" fn(TimelineAsset, ::unity2::OptionalMethod,)->crate::unity_engine::timeline::clipcaps::ClipCaps= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn create_playable(this:TimelineAsset,graph:crate::unity_engine::playables::playablegraph::PlayableGraph,go:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TimelineAsset as::unity2::ClassIdentity> ::NAME,"CreatePlayable",));
+let inner:extern "C" fn(TimelineAsset,crate::unity_engine::playables::playablegraph::PlayableGraph,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::unity_engine::playables::playable::Playable= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,graph,go,__mi)}
+pub unsafe fn unity_engine_i_serialization_callback_receiver_on_before_serialize(this:TimelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TimelineAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize",));
+let inner:extern "C" fn(TimelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(this:TimelineAsset,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TimelineAsset as::unity2::ClassIdentity> ::NAME,"UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize",));
+let inner:extern "C" fn(TimelineAsset, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn gather_properties(this:TimelineAsset,director:crate::unity_engine::playables::playabledirector::PlayableDirector,driver:crate::unity_engine::timeline::ipropertycollector::IPropertyCollector,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TimelineAsset as::unity2::ClassIdentity> ::NAME,"GatherProperties",));
+let inner:extern "C" fn(TimelineAsset,crate::unity_engine::playables::playabledirector::PlayableDirector,crate::unity_engine::timeline::ipropertycollector::IPropertyCollector, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,director,driver,__mi)}
+}
 
 #[cfg(feature="unity_engine-timeline-timelineasset")]impl TimelineAsset{#[doc="`GetValidFramerate(f32)` overload"]pub fn get_valid_framerate(framerate:impl::core::convert::Into<f32>)->f32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x35dd940usize)as*mut u8,f32;
 (f32)::core::convert::Into::into(framerate))}
@@ -64,8 +137,7 @@ __out_0.assume_init()}
 (TimelineAsset)__receiver)}
 }
 #[doc="`get_duration()` overload"]fn get_duration(self,)->f64{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35dc340usize)as*mut u8,f64;
-(TimelineAsset)__receiver)}
+__TimelineAsset_unity2_raw::get_duration(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_fixedDuration()` overload"]fn get_fixed_duration(self,)->f64{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35dc9c0usize)as*mut u8,f64;
@@ -84,12 +156,10 @@ __out_0.assume_init()}
 (TimelineAsset)__receiver,(crate::unity_engine::timeline::timelineasset::TimelineAsset_DurationMode)::core::convert::Into::into(value))}
 }
 #[doc="`get_outputs()` overload"]fn get_outputs(self,)->crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding>{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcc10usize)as*mut u8,crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::playables::playablebinding::PlayableBinding> ;
-(TimelineAsset)__receiver)}
+__TimelineAsset_unity2_raw::get_outputs(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_clipCaps()` overload"]fn get_clip_caps(self,)->crate::unity_engine::timeline::clipcaps::ClipCaps{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35dcce0usize)as*mut u8,crate::unity_engine::timeline::clipcaps::ClipCaps;
-(TimelineAsset)__receiver)}
+__TimelineAsset_unity2_raw::get_clip_caps(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_outputTrackCount()` overload"]fn get_output_track_count(self,)->i32{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35dd100usize)as*mut u8,i32;
@@ -148,24 +218,20 @@ __out_0.assume_init()}
 (TimelineAsset)__receiver,(crate::unity_engine::timeline::trackasset::TrackAsset)::core::convert::Into::into(track))}
 }
 #[doc="`CreatePlayable(crate::unity_engine::playables::playablegraph::PlayableGraph, crate::unity_engine::gameobject::GameObject)` overload"]fn create_playable(self,graph:impl::core::convert::Into<crate::unity_engine::playables::playablegraph::PlayableGraph> ,go:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::unity_engine::playables::playable::Playable{unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35de2e0usize)as*mut u8,crate::unity_engine::playables::playable::Playable;
-(TimelineAsset)__receiver,(crate::unity_engine::playables::playablegraph::PlayableGraph)::core::convert::Into::into(graph),(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(go))}
+__TimelineAsset_unity2_raw::create_playable(__receiver, ::core::convert::Into::into(graph), ::core::convert::Into::into(go), ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnBeforeSerialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_before_serialize(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35de6b0usize)as*mut u8,();
-(TimelineAsset)__receiver)}
+__TimelineAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_before_serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`UnityEngine.ISerializationCallbackReceiver.OnAfterDeserialize()` overload"]fn unity_engine_i_serialization_callback_receiver_on_after_deserialize(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35de6c0usize)as*mut u8,();
-(TimelineAsset)__receiver)}
+__TimelineAsset_unity2_raw::unity_engine_i_serialization_callback_receiver_on_after_deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`__internalAwake()` overload"]fn internal_awake(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35de710usize)as*mut u8,();
 (TimelineAsset)__receiver)}
 }
 #[doc="`GatherProperties(crate::unity_engine::playables::playabledirector::PlayableDirector, crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)` overload"]fn gather_properties(self,director:impl::core::convert::Into<crate::unity_engine::playables::playabledirector::PlayableDirector> ,driver:impl::core::convert::Into<crate::unity_engine::timeline::ipropertycollector::IPropertyCollector>)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x35de8e0usize)as*mut u8,();
-(TimelineAsset)__receiver,(crate::unity_engine::playables::playabledirector::PlayableDirector)::core::convert::Into::into(director),(crate::unity_engine::timeline::ipropertycollector::IPropertyCollector)::core::convert::Into::into(driver))}
+__TimelineAsset_unity2_raw::gather_properties(__receiver, ::core::convert::Into::into(director), ::core::convert::Into::into(driver), ::core::option::Option::None)}
 }
 #[doc="`CreateMarkerTrack()` overload"]fn create_marker_track(self,)->(){unsafe{let __receiver= <TimelineAsset as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x35ded70usize)as*mut u8,();
@@ -370,13 +436,13 @@ this}
 #[cfg(feature = "unity_engine-timeline-timelineasset")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::TimelineAsset_DurationMode;
     pub use super::TimelineAsset;
     pub use super::ITimelineAsset;
     pub use super::ITimelineAssetMethods;
     pub use super::TimelineAsset_EditorSettings;
     pub use super::ITimelineAsset_EditorSettings;
     pub use super::ITimelineAsset_EditorSettingsMethods;
+    pub use super::TimelineAsset_DurationMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

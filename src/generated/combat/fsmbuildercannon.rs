@@ -18,18 +18,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-fsmbuildercannon-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-fsmbuildercannon")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FSMBuilderCannon_unity2_raw{use super:: * ;
+pub unsafe fn build(this:FSMBuilderCannon,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FSMBuilderCannon as::unity2::ClassIdentity> ::NAME,"Build",));
+let inner:extern "C" fn(FSMBuilderCannon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn build_skipover(this:FSMBuilderCannon,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FSMBuilderCannon as::unity2::ClassIdentity> ::NAME,"BuildSkipover",));
+let inner:extern "C" fn(FSMBuilderCannon, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="combat-fsmbuildercannon")]impl FSMBuilderCannon{#[doc="`Rotate()` overload"]pub fn rotate()->crate::system::collections::ienumerator::IEnumerator{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2d488c0usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
 )}
 }
 }
 
 #[cfg(feature="combat-fsmbuildercannon")]pub trait IFSMBuilderCannonMethods:IFSMBuilderCannon{#[doc="`Build()` overload"]fn build(self,)->(){unsafe{let __receiver= <FSMBuilderCannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48330usize)as*mut u8,();
-(FSMBuilderCannon)__receiver)}
+__FSMBuilderCannon_unity2_raw::build(__receiver, ::core::option::Option::None)}
 }
 #[doc="`BuildSkipover()` overload"]fn build_skipover(self,)->(){unsafe{let __receiver= <FSMBuilderCannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2d48920usize)as*mut u8,();
-(FSMBuilderCannon)__receiver)}
+__FSMBuilderCannon_unity2_raw::build_skipover(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <FSMBuilderCannon as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2d47890usize)as*mut u8,();

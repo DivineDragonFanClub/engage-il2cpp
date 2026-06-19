@@ -20,6 +20,49 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root_motion-final_ik-iksolveraim-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-final_ik-iksolveraim")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IKSolverAim_unity2_raw{use super:: * ;
+pub unsafe fn on_initiate(this:IKSolverAim,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <IKSolverAim as::unity2::ClassIdentity> ::NAME,"OnInitiate",));
+let inner:extern "C" fn(IKSolverAim, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_update(this:IKSolverAim,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <IKSolverAim as::unity2::ClassIdentity> ::NAME,"OnUpdate",));
+let inner:extern "C" fn(IKSolverAim, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_min_bones(this:IKSolverAim,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <IKSolverAim as::unity2::ClassIdentity> ::NAME,"get_minBones",));
+let inner:extern "C" fn(IKSolverAim, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_local_direction(this:IKSolverAim,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <IKSolverAim as::unity2::ClassIdentity> ::NAME,"get_localDirection",));
+let inner:extern "C" fn(IKSolverAim, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root_motion-final_ik-iksolveraim")]pub trait IIKSolverAimMethods:IIKSolverAim{#[doc="`GetAngle()` overload"]fn get_angle(self,)->f32{unsafe{let __receiver= <IKSolverAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c268f0usize)as*mut u8,f32;
 (IKSolverAim)__receiver)}
@@ -33,16 +76,13 @@ pub use __types::*;
 (IKSolverAim)__receiver)}
 }
 #[doc="`OnInitiate()` overload"]fn on_initiate(self,)->(){unsafe{let __receiver= <IKSolverAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c26a00usize)as*mut u8,();
-(IKSolverAim)__receiver)}
+__IKSolverAim_unity2_raw::on_initiate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnUpdate()` overload"]fn on_update(self,)->(){unsafe{let __receiver= <IKSolverAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c26c30usize)as*mut u8,();
-(IKSolverAim)__receiver)}
+__IKSolverAim_unity2_raw::on_update(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_minBones()` overload"]fn get_min_bones(self,)->i32{unsafe{let __receiver= <IKSolverAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c27510usize)as*mut u8,i32;
-(IKSolverAim)__receiver)}
+__IKSolverAim_unity2_raw::get_min_bones(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Solve()` overload"]fn solve(self,)->(){unsafe{let __receiver= <IKSolverAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c27450usize)as*mut u8,();
@@ -57,8 +97,7 @@ pub use __types::*;
 (IKSolverAim)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(target_position),(crate::root_motion::final_ik::iksolver::IKSolver_Bone)::core::convert::Into::into(bone),(f32)::core::convert::Into::into(weight))}
 }
 #[doc="`get_localDirection()` overload"]fn get_local_direction(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <IKSolverAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c278f0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(IKSolverAim)__receiver)}
+__IKSolverAim_unity2_raw::get_local_direction(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <IKSolverAim as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c27950usize)as*mut u8,();

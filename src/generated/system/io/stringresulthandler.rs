@@ -18,17 +18,38 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-stringresulthandler-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-stringresulthandler")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __StringResultHandler_unity2_raw{use super:: * ;
+pub unsafe fn is_result_included(this:StringResultHandler,result:crate::system::io::searchresult::SearchResult,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <StringResultHandler as::unity2::ClassIdentity> ::NAME,"IsResultIncluded",));
+let inner:extern "C" fn(StringResultHandler,crate::system::io::searchresult::SearchResult, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,__mi)}
+pub unsafe fn create_object(this:StringResultHandler,result:crate::system::io::searchresult::SearchResult,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <StringResultHandler as::unity2::ClassIdentity> ::NAME,"CreateObject",));
+let inner:extern "C" fn(StringResultHandler,crate::system::io::searchresult::SearchResult, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,result,__mi)}
+}
+
 #[cfg(feature="system-io-stringresulthandler")]pub trait IStringResultHandlerMethods:IStringResultHandler{#[doc="`.ctor(bool, bool)` overload"]fn ctor(self,include_files:impl::core::convert::Into<bool> ,include_dirs:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x358c0a0usize)as*mut u8,();
 (StringResultHandler)__receiver,(bool)::core::convert::Into::into(include_files),(bool)::core::convert::Into::into(include_dirs))}
 }
 #[doc="`IsResultIncluded(crate::system::io::searchresult::SearchResult)` overload"]fn is_result_included(self,result:impl::core::convert::Into<crate::system::io::searchresult::SearchResult>)->bool{unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x358c120usize)as*mut u8,bool;
-(StringResultHandler)__receiver,(crate::system::io::searchresult::SearchResult)::core::convert::Into::into(result))}
+__StringResultHandler_unity2_raw::is_result_included(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
 }
 #[doc="`CreateObject(crate::system::io::searchresult::SearchResult)` overload"]fn create_object(self,result:impl::core::convert::Into<crate::system::io::searchresult::SearchResult>)-> ::unity2::Il2CppString{unsafe{let __receiver= <StringResultHandler as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x358c190usize)as*mut u8, ::unity2::Il2CppString;
-(StringResultHandler)__receiver,(crate::system::io::searchresult::SearchResult)::core::convert::Into::into(result))}
+__StringResultHandler_unity2_raw::create_object(__receiver, ::core::convert::Into::into(result), ::core::option::Option::None)}
 }
 }
 

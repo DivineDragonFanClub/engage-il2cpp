@@ -19,9 +19,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampdata/ProfileCardStampData.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardstampdata::ProfileCardStampData>)]pub struct ProfileCardStampData{#[static_field]#[rename(name="CategoryMid")]pub category_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampdata/ProfileCardStampData_Categories.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct ProfileCardStampData_Categories{pub value:i32,}
 impl::unity2::ClassIdentity for ProfileCardStampData_Categories{const NAMESPACE: &'static str="App";
 const NAME: &'static str="ProfileCardStampData.Categories";
@@ -49,10 +46,26 @@ pub fn num()->Self{Self{value:7}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/profilecardstampdata/ProfileCardStampData.md"))]#[::unity2::class(namespace="App",name="ProfileCardStampData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::profilecardstampdata::ProfileCardStampData>)]pub struct ProfileCardStampData{#[static_field]#[rename(name="CategoryMid")]pub category_mid: ::unity2::Array< ::unity2::Il2CppString> ,}
+
 }
 
 #[cfg(feature = "app-profilecardstampdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-profilecardstampdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardStampData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:ProfileCardStampData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <ProfileCardStampData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(ProfileCardStampData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-profilecardstampdata")]impl ProfileCardStampData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1170usize)as*mut u8,();
 )}
@@ -106,8 +119,7 @@ pub use __types::*;
 (ProfileCardStampData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf1220usize)as*mut u8, ::unity2::Il2CppString;
-(ProfileCardStampData)__receiver)}
+__ProfileCardStampData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ProfileCardStampData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2bf12f0usize)as*mut u8,();
@@ -144,10 +156,10 @@ this}
 #[cfg(feature = "app-profilecardstampdata")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::ProfileCardStampData_Categories;
     pub use super::ProfileCardStampData;
     pub use super::IProfileCardStampData;
     pub use super::IProfileCardStampDataMethods;
-    pub use super::ProfileCardStampData_Categories;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

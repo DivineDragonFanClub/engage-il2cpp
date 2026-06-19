@@ -54,6 +54,29 @@ pub fn restore_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::u
 this}
 }
 
+#[cfg(feature="app-versusservercasualdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VersusServerCasualData_unity2_raw{use super:: * ;
+pub unsafe fn serialize(this:VersusServerCasualData,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VersusServerCasualData as::unity2::ClassIdentity> ::NAME,"Serialize",));
+let inner:extern "C" fn(VersusServerCasualData, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn deserialize(this:VersusServerCasualData,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <VersusServerCasualData as::unity2::ClassIdentity> ::NAME,"Deserialize",));
+let inner:extern "C" fn(VersusServerCasualData, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-versusservercasualdata")]pub trait IVersusServerCasualDataMethods:IVersusServerCasualData{#[doc="`get_UnitList()` overload"]fn get_unit_list(self,)->crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit>{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b49c0usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::app::unit::Unit> ;
 (VersusServerCasualData)__receiver)}
@@ -71,8 +94,7 @@ this}
 (VersusServerCasualData)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
 }
 #[doc="`Serialize()` overload"]fn serialize(self,)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b4b70usize)as*mut u8,();
-(VersusServerCasualData)__receiver)}
+__VersusServerCasualData_unity2_raw::serialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SerializeInit()` overload"]fn serialize_init(self,)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26a7130usize)as*mut u8,();
@@ -99,8 +121,7 @@ this}
 (VersusServerCasualData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
 }
 #[doc="`Deserialize()` overload"]fn deserialize(self,)->bool{unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26b5c40usize)as*mut u8,bool;
-(VersusServerCasualData)__receiver)}
+__VersusServerCasualData_unity2_raw::deserialize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadHeader(crate::app::stream_2::Stream_2)` overload"]fn read_header(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <VersusServerCasualData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x26b5ee0usize)as*mut u8,();

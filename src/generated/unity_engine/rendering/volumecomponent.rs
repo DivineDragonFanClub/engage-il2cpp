@@ -20,6 +20,59 @@ use crate::unity_engine::scriptableobject::{IScriptableObject,ScriptableObject}
 #[cfg(feature = "unity_engine-rendering-volumecomponent-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-rendering-volumecomponent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __VolumeComponent_unity2_raw{use super:: * ;
+pub unsafe fn on_enable(this:VolumeComponent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <VolumeComponent as::unity2::ClassIdentity> ::NAME,"OnEnable",));
+let inner:extern "C" fn(VolumeComponent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_disable(this:VolumeComponent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <VolumeComponent as::unity2::ClassIdentity> ::NAME,"OnDisable",));
+let inner:extern "C" fn(VolumeComponent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn r#override(this:VolumeComponent,state:crate::unity_engine::rendering::volumecomponent::VolumeComponent,interp_factor:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <VolumeComponent as::unity2::ClassIdentity> ::NAME,"Override",));
+let inner:extern "C" fn(VolumeComponent,crate::unity_engine::rendering::volumecomponent::VolumeComponent,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,state,interp_factor,__mi)}
+pub unsafe fn get_hash_code(this:VolumeComponent,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <VolumeComponent as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(VolumeComponent, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_destroy(this:VolumeComponent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <VolumeComponent as::unity2::ClassIdentity> ::NAME,"OnDestroy",));
+let inner:extern "C" fn(VolumeComponent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-rendering-volumecomponent")]pub trait IVolumeComponentMethods:IVolumeComponent{#[doc="`get_displayName()` overload"]fn get_display_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e56b0usize)as*mut u8, ::unity2::Il2CppString;
 (VolumeComponent)__receiver)}
@@ -37,16 +90,13 @@ pub use __types::*;
 (VolumeComponent)__receiver,(crate::system::collections::object_model::readonlycollection_1::ReadOnlyCollection_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>)::core::convert::Into::into(value))}
 }
 #[doc="`OnEnable()` overload"]fn on_enable(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e56f0usize)as*mut u8,();
-(VolumeComponent)__receiver)}
+__VolumeComponent_unity2_raw::on_enable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDisable()` overload"]fn on_disable(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e5cc0usize)as*mut u8,();
-(VolumeComponent)__receiver)}
+__VolumeComponent_unity2_raw::on_disable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Override(crate::unity_engine::rendering::volumecomponent::VolumeComponent, f32)` overload"]fn r#override(self,state:impl::core::convert::Into<crate::unity_engine::rendering::volumecomponent::VolumeComponent> ,interp_factor:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e5ef0usize)as*mut u8,();
-(VolumeComponent)__receiver,(crate::unity_engine::rendering::volumecomponent::VolumeComponent)::core::convert::Into::into(state),(f32)::core::convert::Into::into(interp_factor))}
+__VolumeComponent_unity2_raw::r#override(__receiver, ::core::convert::Into::into(state), ::core::convert::Into::into(interp_factor), ::core::option::Option::None)}
 }
 #[doc="`SetAllOverridesTo(bool)` overload"]fn set_all_overrides_to(self,state:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6020usize)as*mut u8,();
@@ -57,12 +107,10 @@ pub use __types::*;
 (VolumeComponent)__receiver,(crate::system::collections::generic::ienumerable_1::IEnumerable_1<crate::unity_engine::rendering::volumeparameter::VolumeParameter>)::core::convert::Into::into(enumerable),(bool)::core::convert::Into::into(state))}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e6500usize)as*mut u8,i32;
-(VolumeComponent)__receiver)}
+__VolumeComponent_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnDestroy()` overload"]fn on_destroy(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x33e65d0usize)as*mut u8,();
-(VolumeComponent)__receiver)}
+__VolumeComponent_unity2_raw::on_destroy(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <VolumeComponent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x33e65e0usize)as*mut u8,();

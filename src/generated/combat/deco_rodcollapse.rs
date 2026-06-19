@@ -20,18 +20,39 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "combat-deco_rodcollapse-types")]
 pub use __types::*;
 
+#[cfg(feature="combat-deco_rodcollapse")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Deco_RodCollapse_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:Deco_RodCollapse,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Deco_RodCollapse as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(Deco_RodCollapse, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_enemy_damage(this:Deco_RodCollapse,ev:crate::unity_engine::animationevent::AnimationEvent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <Deco_RodCollapse as::unity2::ClassIdentity> ::NAME,"OnEnemyDamage_",));
+let inner:extern "C" fn(Deco_RodCollapse,crate::unity_engine::animationevent::AnimationEvent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,ev,__mi)}
+}
+
 #[cfg(feature="combat-deco_rodcollapse")]impl Deco_RodCollapse{#[doc="`IsAvailable(crate::combat::decoratorargs::DecoratorArgs)` overload"]pub fn is_available(that:impl::core::convert::Into<crate::combat::decoratorargs::DecoratorArgs>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8320usize)as*mut u8,bool;
 (crate::combat::decoratorargs::DecoratorArgs)::core::convert::Into::into(that))}
 }
 }
 
 #[cfg(feature="combat-deco_rodcollapse")]pub trait IDeco_RodCollapseMethods:IDeco_RodCollapse{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <Deco_RodCollapse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce82d0usize)as*mut u8, ::unity2::Il2CppString;
-(Deco_RodCollapse)__receiver)}
+__Deco_RodCollapse_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnEnemyDamage_(crate::unity_engine::animationevent::AnimationEvent)` overload"]fn on_enemy_damage(self,ev:impl::core::convert::Into<crate::unity_engine::animationevent::AnimationEvent>)->(){unsafe{let __receiver= <Deco_RodCollapse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce8460usize)as*mut u8,();
-(Deco_RodCollapse)__receiver,(crate::unity_engine::animationevent::AnimationEvent)::core::convert::Into::into(ev))}
+__Deco_RodCollapse_unity2_raw::on_enemy_damage(__receiver, ::core::convert::Into::into(ev), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <Deco_RodCollapse as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1ce85c0usize)as*mut u8,();

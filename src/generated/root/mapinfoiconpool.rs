@@ -14,13 +14,25 @@ mod __types {
 #[cfg(feature = "root-mapinfoiconpool-types")]
 pub use __types::*;
 
+#[cfg(feature="root-mapinfoiconpool")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MapInfoIconPool_unity2_raw{use super:: * ;
+pub unsafe fn create_instance(this:MapInfoIconPool,__unity2_method_info: ::unity2::OptionalMethod,)->crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <MapInfoIconPool as::unity2::ClassIdentity> ::NAME,"CreateInstance",));
+let inner:extern "C" fn(MapInfoIconPool, ::unity2::OptionalMethod,)->crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-mapinfoiconpool")]pub trait IMapInfoIconPoolMethods:IMapInfoIconPool{#[doc="`.ctor(crate::unity_engine::transform::Transform, crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)` overload"]fn ctor(self,transform:impl::core::convert::Into<crate::unity_engine::transform::Transform> ,prefab:impl::core::convert::Into<crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot>)->(){unsafe{let __receiver= <MapInfoIconPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2085760usize)as*mut u8,();
 (MapInfoIconPool)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(transform),(crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot)::core::convert::Into::into(prefab))}
 }
 #[doc="`CreateInstance()` overload"]fn create_instance(self,)->crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot{unsafe{let __receiver= <MapInfoIconPool as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x20857f0usize)as*mut u8,crate::root::mapinfoiconlocatorroot::MapInfoIconLocatorRoot;
-(MapInfoIconPool)__receiver)}
+__MapInfoIconPool_unity2_raw::create_instance(__receiver, ::core::option::Option::None)}
 }
 }
 

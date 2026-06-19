@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-comparer-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-comparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Comparer_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:Comparer,a:crate::system::object::Object,b:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <Comparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(Comparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="system-collections-comparer")]impl Comparer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x31ddab0usize)as*mut u8,();
 )}
 }
@@ -26,8 +39,7 @@ pub use __types::*;
 (Comparer)__receiver)}
 }
 #[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <Comparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x31dd7b0usize)as*mut u8,i32;
-(Comparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
+__Comparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 }
 

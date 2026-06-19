@@ -27,36 +27,36 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_hash_code{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
- ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"GetHashCode",0,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"GetHashCode",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals_2{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",e),}
-}
-}
+pub unsafe fn get_hash_code(this:LocationCacheKey,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(2usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",2usize,__vt.len(), <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"GetHashCode",));
+let inner:extern "C" fn(LocationCacheKey, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn equals(this:LocationCacheKey,obj:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(LocationCacheKey,crate::system::object::Object, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj,__mi)}
+pub unsafe fn equals_2(this:LocationCacheKey,other:crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <LocationCacheKey as::unity2::ClassIdentity> ::NAME,"Equals",));
+let inner:extern "C" fn(LocationCacheKey,crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,other,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_equals_3{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<LocationCacheKey as::unity2::ClassIdentity> ::class(),"Equals",1,param_types,false,)}
@@ -74,16 +74,13 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (LocationCacheKey)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(::unity2::SystemType)::core::convert::Into::into(desired_type))}
 }
 #[doc="`GetHashCode()` overload"]fn get_hash_code(self,)->i32{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_get_hash_code::get_method_info().method_ptr,i32;
-(LocationCacheKey)__receiver)}
+__LocationCacheKey_unity2_raw::get_hash_code(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::system::object::Object)` overload"]fn equals(self,obj:impl::core::convert::Into<crate::system::object::Object>)->bool{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_equals::get_method_info().method_ptr,bool;
-(LocationCacheKey)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj))}
+__LocationCacheKey_unity2_raw::equals(__receiver, ::core::convert::Into::into(obj), ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)` overload"]fn equals_2(self,other:impl::core::convert::Into<crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey>)->bool{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_equals_2::get_method_info().method_ptr,bool;
-(LocationCacheKey)__receiver,(crate::unity_engine::resource_management::util::ioperationcachekey::IOperationCacheKey)::core::convert::Into::into(other))}
+__LocationCacheKey_unity2_raw::equals_2(__receiver, ::core::convert::Into::into(other), ::core::option::Option::None)}
 }
 #[doc="`Equals(crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey)` overload"]fn equals_3(self,other:impl::core::convert::Into<crate::unity_engine::resource_management::util::locationcachekey::LocationCacheKey>)->bool{unsafe{let __receiver= <LocationCacheKey as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__LocationCacheKey_unity2_raw::__lookup_equals_3::get_method_info().method_ptr,bool;

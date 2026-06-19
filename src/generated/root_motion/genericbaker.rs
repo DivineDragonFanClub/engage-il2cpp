@@ -26,31 +26,79 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "root_motion-genericbaker-types")]
 pub use __types::*;
 
+#[cfg(feature="root_motion-genericbaker")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GenericBaker_unity2_raw{use super:: * ;
+pub unsafe fn get_character_root(this:GenericBaker,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GenericBaker as::unity2::ClassIdentity> ::NAME,"GetCharacterRoot",));
+let inner:extern "C" fn(GenericBaker, ::unity2::OptionalMethod,)->crate::unity_engine::transform::Transform= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_start_baking(this:GenericBaker,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GenericBaker as::unity2::ClassIdentity> ::NAME,"OnStartBaking",));
+let inner:extern "C" fn(GenericBaker, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_set_loop_frame(this:GenericBaker,time:f32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <GenericBaker as::unity2::ClassIdentity> ::NAME,"OnSetLoopFrame",));
+let inner:extern "C" fn(GenericBaker,f32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,time,__mi)}
+pub unsafe fn on_set_curves(this:GenericBaker,clip: *mut crate::unity_engine::animationclip::AnimationClip,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <GenericBaker as::unity2::ClassIdentity> ::NAME,"OnSetCurves",));
+let inner:extern "C" fn(GenericBaker, *mut crate::unity_engine::animationclip::AnimationClip, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,clip,__mi)}
+pub unsafe fn on_set_keyframes(this:GenericBaker,time:f32,last_frame:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <GenericBaker as::unity2::ClassIdentity> ::NAME,"OnSetKeyframes",));
+let inner:extern "C" fn(GenericBaker,f32,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,time,last_frame,__mi)}
+}
+
 #[cfg(feature="root_motion-genericbaker")]pub trait IGenericBakerMethods:IGenericBaker{#[doc="`Awake()` overload"]fn awake(self,)->(){unsafe{let __receiver= <GenericBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2520ce0usize)as*mut u8,();
 (GenericBaker)__receiver)}
 }
 #[doc="`GetCharacterRoot()` overload"]fn get_character_root(self,)->crate::unity_engine::transform::Transform{unsafe{let __receiver= <GenericBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25210f0usize)as*mut u8,crate::unity_engine::transform::Transform;
-(GenericBaker)__receiver)}
+__GenericBaker_unity2_raw::get_character_root(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnStartBaking()` overload"]fn on_start_baking(self,)->(){unsafe{let __receiver= <GenericBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2521100usize)as*mut u8,();
-(GenericBaker)__receiver)}
+__GenericBaker_unity2_raw::on_start_baking(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSetLoopFrame(f32)` overload"]fn on_set_loop_frame(self,time:impl::core::convert::Into<f32>)->(){unsafe{let __receiver= <GenericBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2521210usize)as*mut u8,();
-(GenericBaker)__receiver,(f32)::core::convert::Into::into(time))}
+__GenericBaker_unity2_raw::on_set_loop_frame(__receiver, ::core::convert::Into::into(time), ::core::option::Option::None)}
 }
 #[doc="`OnSetCurves(*mutcrate::unity_engine::animationclip::AnimationClip)` overload"]fn on_set_curves(self,)->crate::unity_engine::animationclip::AnimationClip{unsafe{let __receiver= <GenericBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
 let mut __out_0= ::core::mem::MaybeUninit:: <crate::unity_engine::animationclip::AnimationClip> ::uninit();
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2521290usize)as*mut u8,();
-(GenericBaker)__receiver,(*mut crate::unity_engine::animationclip::AnimationClip)__out_0.as_mut_ptr());
+__GenericBaker_unity2_raw::on_set_curves(__receiver,__out_0.as_mut_ptr(), ::core::option::Option::None);
 __out_0.assume_init()}
 }
 #[doc="`OnSetKeyframes(f32, bool)` overload"]fn on_set_keyframes(self,time:impl::core::convert::Into<f32> ,last_frame:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <GenericBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2521310usize)as*mut u8,();
-(GenericBaker)__receiver,(f32)::core::convert::Into::into(time),(bool)::core::convert::Into::into(last_frame))}
+__GenericBaker_unity2_raw::on_set_keyframes(__receiver, ::core::convert::Into::into(time), ::core::convert::Into::into(last_frame), ::core::option::Option::None)}
 }
 #[doc="`IsIgnored(crate::unity_engine::transform::Transform)` overload"]fn is_ignored(self,t:impl::core::convert::Into<crate::unity_engine::transform::Transform>)->bool{unsafe{let __receiver= <GenericBaker as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2520f30usize)as*mut u8,bool;

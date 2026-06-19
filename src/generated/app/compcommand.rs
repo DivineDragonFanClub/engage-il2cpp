@@ -18,17 +18,47 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-compcommand-types")]
 pub use __types::*;
 
+#[cfg(feature="app-compcommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __CompCommand_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:CompCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <CompCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(CompCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_arg_num(this:CompCommand,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <CompCommand as::unity2::ClassIdentity> ::NAME,"get_ArgNum",));
+let inner:extern "C" fn(CompCommand, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn func(this:CompCommand,args:crate::system::collections::generic::list_1::List_1<f32> ,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <CompCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(CompCommand,crate::system::collections::generic::list_1::List_1<f32> , ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,__mi)}
+}
+
 #[cfg(feature="app-compcommand")]pub trait ICompCommandMethods:ICompCommand{#[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <CompCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2536710usize)as*mut u8, ::unity2::Il2CppString;
-(CompCommand)__receiver)}
+__CompCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_ArgNum()` overload"]fn get_arg_num(self,)->i32{unsafe{let __receiver= <CompCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2536760usize)as*mut u8,i32;
-(CompCommand)__receiver)}
+__CompCommand_unity2_raw::get_arg_num(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>)` overload"]fn func(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> >)->f32{unsafe{let __receiver= <CompCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2536770usize)as*mut u8,f32;
-(CompCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args))}
+__CompCommand_unity2_raw::func(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <CompCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2536870usize)as*mut u8,();

@@ -25,7 +25,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData_FlagField.md"))]#[::unity2::class(namespace="App",name="EncountJobData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::encountjobdata::EncountJobData_Flags>)]pub struct EncountJobData_FlagField{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData.md"))]#[::unity2::class(namespace="App",name="EncountJobData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::encountjobdata::EncountJobData>)]pub struct EncountJobData{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EncountJobData_Flags{pub value:i32,}
@@ -46,44 +46,34 @@ pub fn reserve()->Self{Self{value:2}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData.md"))]#[::unity2::class(namespace="App",name="EncountJobData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::encountjobdata::EncountJobData>)]pub struct EncountJobData{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/encountjobdata/EncountJobData_FlagField.md"))]#[::unity2::class(namespace="App",name="EncountJobData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::encountjobdata::EncountJobData_Flags>)]pub struct EncountJobData_FlagField{}
 
 }
 
 #[cfg(feature = "app-encountjobdata-types")]
 pub use __types::*;
 
-#[cfg(feature="app-encountjobdata")]pub trait IEncountJobData_FlagFieldMethods:IEncountJobData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6a70usize)as*mut u8,();
-(EncountJobData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
-}
-#[doc="`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData_Flags>)->(){unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6ad0usize)as*mut u8,();
-(EncountJobData_FlagField)__receiver,(crate::app::encountjobdata::EncountJobData_Flags)::core::convert::Into::into(f))}
-}
-#[doc="`ToInt(crate::app::encountjobdata::EncountJobData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData_Flags>)->i32{unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6b30usize)as*mut u8,i32;
-(EncountJobData_FlagField)__receiver,(crate::app::encountjobdata::EncountJobData_Flags)::core::convert::Into::into(value))}
-}
-}
-
-#[cfg(feature="app-encountjobdata")]impl<__T:IEncountJobData_FlagField>IEncountJobData_FlagFieldMethods for __T{}
-
-#[cfg(feature="app-encountjobdata")]impl EncountJobData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-}
-
-#[cfg(feature="app-encountjobdata")]impl EncountJobData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EncountJobData_FlagField), ::core::stringify!(new),));
- <Self as IEncountJobData_FlagFieldMethods> ::ctor(this,f);
-this}
-#[doc="`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` — overload selector"]pub fn new_2(f:crate::app::encountjobdata::EncountJobData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EncountJobData_FlagField), ::core::stringify!(new_2),));
- <Self as IEncountJobData_FlagFieldMethods> ::ctor_2(this,f);
-this}
+#[cfg(feature="app-encountjobdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EncountJobData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:EncountJobData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <EncountJobData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(EncountJobData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn to_string(this:EncountJobData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(3usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",3usize,__vt.len(), <EncountJobData as::unity2::ClassIdentity> ::NAME,"ToString",));
+let inner:extern "C" fn(EncountJobData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-encountjobdata")]impl EncountJobData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22dae50usize)as*mut u8,();
@@ -119,12 +109,10 @@ this}
 (EncountJobData)__receiver,(crate::app::encountjobdata::EncountJobData_FlagField)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22de370usize)as*mut u8, ::unity2::Il2CppString;
-(EncountJobData)__receiver)}
+__EncountJobData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ToString()` overload"]fn to_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22de380usize)as*mut u8, ::unity2::Il2CppString;
-(EncountJobData)__receiver)}
+__EncountJobData_unity2_raw::to_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetJid(i32)` overload"]fn get_jid(self,index:impl::core::convert::Into<i32>)-> ::unity2::Il2CppString{unsafe{let __receiver= <EncountJobData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22de3d0usize)as*mut u8, ::unity2::Il2CppString;
@@ -184,16 +172,61 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-encountjobdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EncountJobData_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:EncountJobData_FlagField,value:crate::app::encountjobdata::EncountJobData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <EncountJobData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(EncountJobData_FlagField,crate::app::encountjobdata::EncountJobData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
+#[cfg(feature="app-encountjobdata")]pub trait IEncountJobData_FlagFieldMethods:IEncountJobData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6a70usize)as*mut u8,();
+(EncountJobData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
+}
+#[doc="`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` overload"]fn ctor_2(self,f:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData_Flags>)->(){unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6ad0usize)as*mut u8,();
+(EncountJobData_FlagField)__receiver,(crate::app::encountjobdata::EncountJobData_Flags)::core::convert::Into::into(f))}
+}
+#[doc="`ToInt(crate::app::encountjobdata::EncountJobData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::encountjobdata::EncountJobData_Flags>)->i32{unsafe{let __receiver= <EncountJobData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__EncountJobData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="app-encountjobdata")]impl<__T:IEncountJobData_FlagField>IEncountJobData_FlagFieldMethods for __T{}
+
+#[cfg(feature="app-encountjobdata")]impl EncountJobData_FlagField{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn to_int_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+}
+
+#[cfg(feature="app-encountjobdata")]impl EncountJobData_FlagField{#[doc="`.ctor(i32)` — overload selector"]pub fn new(f:i32)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountJobData_FlagField), ::core::stringify!(new),));
+ <Self as IEncountJobData_FlagFieldMethods> ::ctor(this,f);
+this}
+#[doc="`.ctor(crate::app::encountjobdata::EncountJobData_Flags)` — overload selector"]pub fn new_2(f:crate::app::encountjobdata::EncountJobData_Flags)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EncountJobData_FlagField), ::core::stringify!(new_2),));
+ <Self as IEncountJobData_FlagFieldMethods> ::ctor_2(this,f);
+this}
+}
+
 #[cfg(feature = "app-encountjobdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EncountJobData_FlagField;
-    pub use super::IEncountJobData_FlagField;
-    pub use super::IEncountJobData_FlagFieldMethods;
-    pub use super::EncountJobData_Flags;
     pub use super::EncountJobData;
     pub use super::IEncountJobData;
     pub use super::IEncountJobDataMethods;
+    pub use super::EncountJobData_Flags;
+    pub use super::EncountJobData_FlagField;
+    pub use super::IEncountJobData_FlagField;
+    pub use super::IEncountJobData_FlagFieldMethods;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

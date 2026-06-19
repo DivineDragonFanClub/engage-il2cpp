@@ -17,13 +17,36 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-rendering-renderpipeline")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RenderPipeline_unity2_raw{use super:: * ;
-pub unsafe fn render(this:RenderPipeline,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,cameras: ::unity2::Array<crate::unity_engine::camera::Camera> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Render").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Render", <RenderPipeline as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn render(this:RenderPipeline,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,cameras: ::unity2::Array<crate::unity_engine::camera::Camera> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RenderPipeline as::unity2::ClassIdentity> ::NAME,"Render",));
 let inner:extern "C" fn(RenderPipeline,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,context,cameras,__mi)}
+pub unsafe fn process_render_requests(this:RenderPipeline,context:crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,camera:crate::unity_engine::camera::Camera,render_requests:crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <RenderPipeline as::unity2::ClassIdentity> ::NAME,"ProcessRenderRequests",));
+let inner:extern "C" fn(RenderPipeline,crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext,crate::unity_engine::camera::Camera,crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,context,camera,render_requests,__mi)}
+pub unsafe fn dispose_2(this:RenderPipeline,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <RenderPipeline as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(RenderPipeline,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
 }
 
 #[cfg(feature="unity_engine-rendering-renderpipeline")]impl RenderPipeline{#[doc="`BeginFrameRendering(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]pub fn begin_frame_rendering(context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext> ,cameras:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::camera::Camera> >)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2f7f9c0usize)as*mut u8,();
@@ -44,8 +67,7 @@ inner(this,context,cameras,__mi)}
 __RenderPipeline_unity2_raw::render(__receiver, ::core::convert::Into::into(context), ::core::convert::Into::into(cameras), ::core::option::Option::None)}
 }
 #[doc="`ProcessRenderRequests(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, crate::unity_engine::camera::Camera, crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest>)` overload"]fn process_render_requests(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext> ,camera:impl::core::convert::Into<crate::unity_engine::camera::Camera> ,render_requests:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest> >)->(){unsafe{let __receiver= <RenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f7f9b0usize)as*mut u8,();
-(RenderPipeline)__receiver,(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext)::core::convert::Into::into(context),(crate::unity_engine::camera::Camera)::core::convert::Into::into(camera),(crate::system::collections::generic::list_1::List_1<crate::unity_engine::camera::Camera_RenderRequest>)::core::convert::Into::into(render_requests))}
+__RenderPipeline_unity2_raw::process_render_requests(__receiver, ::core::convert::Into::into(context), ::core::convert::Into::into(camera), ::core::convert::Into::into(render_requests), ::core::option::Option::None)}
 }
 #[doc="`InternalRender(crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext, ::unity2::Array<crate::unity_engine::camera::Camera>)` overload"]fn internal_render(self,context:impl::core::convert::Into<crate::unity_engine::rendering::scriptablerendercontext::ScriptableRenderContext> ,cameras:impl::core::convert::Into< ::unity2::Array<crate::unity_engine::camera::Camera> >)->(){unsafe{let __receiver= <RenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f800c0usize)as*mut u8,();
@@ -68,8 +90,7 @@ __RenderPipeline_unity2_raw::render(__receiver, ::core::convert::Into::into(cont
 (RenderPipeline)__receiver)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <RenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f802b0usize)as*mut u8,();
-(RenderPipeline)__receiver,(bool)::core::convert::Into::into(disposing))}
+__RenderPipeline_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <RenderPipeline as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f802c0usize)as*mut u8,();

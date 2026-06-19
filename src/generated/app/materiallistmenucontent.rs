@@ -58,6 +58,19 @@ pub fn end()->Self{Self{value:4}
 #[cfg(feature = "app-materiallistmenucontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-materiallistmenucontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __MaterialListMenuContent_unity2_raw{use super:: * ;
+pub unsafe fn calc_cursor_moved_pos_y(this:MaterialListMenuContent,menu_item_index:i32,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <MaterialListMenuContent as::unity2::ClassIdentity> ::NAME,"CalcCursorMovedPosY",));
+let inner:extern "C" fn(MaterialListMenuContent,i32, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,menu_item_index,__mi)}
+}
+
 #[cfg(feature="app-materiallistmenucontent")]impl MaterialListMenuContent{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25c8e10usize)as*mut u8,();
 )}
 }
@@ -81,8 +94,7 @@ pub use __types::*;
 (MaterialListMenuContent)__receiver,(crate::app::materiallistmenucontent::MaterialListMenuContent_CategoryType)::core::convert::Into::into(value))}
 }
 #[doc="`CalcCursorMovedPosY(i32)` overload"]fn calc_cursor_moved_pos_y(self,menu_item_index:impl::core::convert::Into<i32>)->f32{unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x25c8fb0usize)as*mut u8,f32;
-(MaterialListMenuContent)__receiver,(i32)::core::convert::Into::into(menu_item_index))}
+__MaterialListMenuContent_unity2_raw::calc_cursor_moved_pos_y(__receiver, ::core::convert::Into::into(menu_item_index), ::core::option::Option::None)}
 }
 #[doc="`InitCategory()` overload"]fn init_category(self,)->(){unsafe{let __receiver= <MaterialListMenuContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x25c7ba0usize)as*mut u8,();

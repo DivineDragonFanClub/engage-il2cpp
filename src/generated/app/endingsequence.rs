@@ -15,9 +15,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endingsequence/EndingSequence.md"))]#[::unity2::class(namespace="App",name="EndingSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct EndingSequence{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endingsequence/EndingSequence_Label.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct EndingSequence_Label{pub value:i32,}
 impl::unity2::ClassIdentity for EndingSequence_Label{const NAMESPACE: &'static str="App";
 const NAME: &'static str="EndingSequence.Label";
@@ -35,10 +32,26 @@ pub fn end_roll()->Self{Self{value:2}
 }
 }
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/endingsequence/EndingSequence.md"))]#[::unity2::class(namespace="App",name="EndingSequence")]#[parent(crate::app::procinst::ProcInst)]pub struct EndingSequence{}
+
 }
 
 #[cfg(feature = "app-endingsequence-types")]
 pub use __types::*;
+
+#[cfg(feature="app-endingsequence")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __EndingSequence_unity2_raw{use super:: * ;
+pub unsafe fn on_persistent(this:EndingSequence,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <EndingSequence as::unity2::ClassIdentity> ::NAME,"OnPersistent",));
+let inner:extern "C" fn(EndingSequence, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-endingsequence")]impl EndingSequence{#[doc="`CreateBind(crate::app::procinst::ProcInst)` overload"]pub fn create_bind(super_:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22e8b00usize)as*mut u8,();
 (crate::app::procinst::ProcInst)::core::convert::Into::into(super_))}
@@ -58,8 +71,7 @@ pub use __types::*;
 (EndingSequence)__receiver)}
 }
 #[doc="`OnPersistent()` overload"]fn on_persistent(self,)->(){unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22e91f0usize)as*mut u8,();
-(EndingSequence)__receiver)}
+__EndingSequence_unity2_raw::on_persistent(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Setup()` overload"]fn setup(self,)->crate::system::collections::ienumerator::IEnumerator{unsafe{let __receiver= <EndingSequence as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22e9200usize)as*mut u8,crate::system::collections::ienumerator::IEnumerator;
@@ -127,10 +139,10 @@ this}
 #[cfg(feature = "app-endingsequence")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::EndingSequence_Label;
     pub use super::EndingSequence;
     pub use super::IEndingSequence;
     pub use super::IEndingSequenceMethods;
-    pub use super::EndingSequence_Label;
     pub use crate::app::procinst::IProcInst;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

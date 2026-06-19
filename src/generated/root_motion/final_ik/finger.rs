@@ -13,6 +13,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/finger/Finger.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Finger")]#[parent(crate::system::object::Object)]pub struct Finger{#[offset(16)]#[rename(name="weight")]pub weight:f32, #[offset(20)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(24)]#[rename(name="rotationDOF")]pub rotation_dof:crate::root_motion::final_ik::finger::Finger_DOF, #[offset(28)]#[rename(name="fixBone1Twist")]pub fix_bone1_twist:bool, #[offset(32)]#[rename(name="bone1")]pub bone1:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="bone2")]pub bone2:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="bone3")]pub bone3:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="tip")]pub tip:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="target")]pub target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="solver")]pub solver:crate::root_motion::final_ik::iksolverlimb::IKSolverLimb, #[offset(88)]#[rename(name="bone3RelativeToTarget")]pub bone3_relative_to_target:crate::unity_engine::quaternion::Quaternion, #[offset(104)]#[rename(name="bone3DefaultLocalPosition")]pub bone3_default_local_position:crate::unity_engine::vector3::Vector3, #[offset(116)]#[rename(name="bone3DefaultLocalRotation")]pub bone3_default_local_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(132)]#[rename(name="bone1Axis")]pub bone1_axis:crate::unity_engine::vector3::Vector3, #[offset(144)]#[rename(name="tipAxis")]pub tip_axis:crate::unity_engine::vector3::Vector3, #[offset(156)]#[rename(name="bone1TwistAxis")]pub bone1_twist_axis:crate::unity_engine::vector3::Vector3, #[offset(168)]#[rename(name="defaultBendNormal")]pub default_bend_normal:crate::unity_engine::vector3::Vector3,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/finger/Finger_DOF.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Finger_DOF{pub value:i32,}
 impl::unity2::ClassIdentity for Finger_DOF{const NAMESPACE: &'static str="RootMotion.FinalIK";
 const NAME: &'static str="Finger.DOF";
@@ -27,9 +30,6 @@ impl Finger_DOF{pub fn one()->Self{Self{value:0}
 pub fn three()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root_motion/final_ik/finger/Finger.md"))]#[::unity2::class(namespace="RootMotion.FinalIK",name="Finger")]#[parent(crate::system::object::Object)]pub struct Finger{#[offset(16)]#[rename(name="weight")]pub weight:f32, #[offset(20)]#[rename(name="rotationWeight")]pub rotation_weight:f32, #[offset(24)]#[rename(name="rotationDOF")]pub rotation_dof:crate::root_motion::final_ik::finger::Finger_DOF, #[offset(28)]#[rename(name="fixBone1Twist")]pub fix_bone1_twist:bool, #[offset(32)]#[rename(name="bone1")]pub bone1:crate::unity_engine::transform::Transform, #[offset(40)]#[rename(name="bone2")]pub bone2:crate::unity_engine::transform::Transform, #[offset(48)]#[rename(name="bone3")]pub bone3:crate::unity_engine::transform::Transform, #[offset(56)]#[rename(name="tip")]pub tip:crate::unity_engine::transform::Transform, #[offset(64)]#[rename(name="target")]pub target:crate::unity_engine::transform::Transform, #[offset(80)]#[rename(name="solver")]pub solver:crate::root_motion::final_ik::iksolverlimb::IKSolverLimb, #[offset(88)]#[rename(name="bone3RelativeToTarget")]pub bone3_relative_to_target:crate::unity_engine::quaternion::Quaternion, #[offset(104)]#[rename(name="bone3DefaultLocalPosition")]pub bone3_default_local_position:crate::unity_engine::vector3::Vector3, #[offset(116)]#[rename(name="bone3DefaultLocalRotation")]pub bone3_default_local_rotation:crate::unity_engine::quaternion::Quaternion, #[offset(132)]#[rename(name="bone1Axis")]pub bone1_axis:crate::unity_engine::vector3::Vector3, #[offset(144)]#[rename(name="tipAxis")]pub tip_axis:crate::unity_engine::vector3::Vector3, #[offset(156)]#[rename(name="bone1TwistAxis")]pub bone1_twist_axis:crate::unity_engine::vector3::Vector3, #[offset(168)]#[rename(name="defaultBendNormal")]pub default_bend_normal:crate::unity_engine::vector3::Vector3,}
 
 }
 
@@ -115,10 +115,10 @@ this}
 #[cfg(feature = "root_motion-final_ik-finger")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Finger_DOF;
     pub use super::Finger;
     pub use super::IFinger;
     pub use super::IFingerMethods;
+    pub use super::Finger_DOF;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

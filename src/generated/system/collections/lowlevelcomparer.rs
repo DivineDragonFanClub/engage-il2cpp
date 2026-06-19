@@ -16,6 +16,19 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-collections-lowlevelcomparer-types")]
 pub use __types::*;
 
+#[cfg(feature="system-collections-lowlevelcomparer")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __LowLevelComparer_unity2_raw{use super:: * ;
+pub unsafe fn compare(this:LowLevelComparer,a:crate::system::object::Object,b:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <LowLevelComparer as::unity2::ClassIdentity> ::NAME,"Compare",));
+let inner:extern "C" fn(LowLevelComparer,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,a,b,__mi)}
+}
+
 #[cfg(feature="system-collections-lowlevelcomparer")]impl LowLevelComparer{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3272c40usize)as*mut u8,();
 )}
 }
@@ -26,8 +39,7 @@ pub use __types::*;
 (LowLevelComparer)__receiver)}
 }
 #[doc="`Compare(crate::system::object::Object, crate::system::object::Object)` overload"]fn compare(self,a:impl::core::convert::Into<crate::system::object::Object> ,b:impl::core::convert::Into<crate::system::object::Object>)->i32{unsafe{let __receiver= <LowLevelComparer as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3272a70usize)as*mut u8,i32;
-(LowLevelComparer)__receiver,(crate::system::object::Object)::core::convert::Into::into(a),(crate::system::object::Object)::core::convert::Into::into(b))}
+__LowLevelComparer_unity2_raw::compare(__receiver, ::core::convert::Into::into(a), ::core::convert::Into::into(b), ::core::option::Option::None)}
 }
 }
 

@@ -127,13 +127,25 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root-windactor")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __WindActor_Func_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:WindActor_Func,pos:crate::unity_engine::vector3::Vector3,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <WindActor_Func as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(WindActor_Func,crate::unity_engine::vector3::Vector3, ::unity2::OptionalMethod,)->crate::unity_engine::vector3::Vector3= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,pos,__mi)}
+}
+
 #[cfg(feature="root-windactor")]pub trait IWindActor_FuncMethods:IWindActor_Func{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <WindActor_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dcf0usize)as*mut u8,();
 (WindActor_Func)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(crate::unity_engine::vector3::Vector3)` overload"]fn invoke(self,pos:impl::core::convert::Into<crate::unity_engine::vector3::Vector3>)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <WindActor_Func as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b2dd10usize)as*mut u8,crate::unity_engine::vector3::Vector3;
-(WindActor_Func)__receiver,(crate::unity_engine::vector3::Vector3)::core::convert::Into::into(pos))}
+__WindActor_Func_unity2_raw::invoke(__receiver, ::core::convert::Into::into(pos), ::core::option::Option::None)}
 }
 }
 

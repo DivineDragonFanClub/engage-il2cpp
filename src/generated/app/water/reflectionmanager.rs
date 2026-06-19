@@ -24,6 +24,19 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-water-reflectionmanager-types")]
 pub use __types::*;
 
+#[cfg(feature="app-water-reflectionmanager")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ReflectionManager_unity2_raw{use super:: * ;
+pub unsafe fn add_reflection_camera(this:ReflectionManager,obj_camera:crate::unity_engine::gameobject::GameObject,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::water::reflectioncamera::ReflectionCamera{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ReflectionManager as::unity2::ClassIdentity> ::NAME,"AddReflectionCamera",));
+let inner:extern "C" fn(ReflectionManager,crate::unity_engine::gameobject::GameObject, ::unity2::OptionalMethod,)->crate::app::water::reflectioncamera::ReflectionCamera= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj_camera,__mi)}
+}
+
 #[cfg(feature="app-water-reflectionmanager")]pub trait IReflectionManagerMethods:IReflectionManager{#[doc="`Start()` overload"]fn start(self,)->(){unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22b6cc0usize)as*mut u8,();
 (ReflectionManager)__receiver)}
@@ -49,8 +62,7 @@ pub use __types::*;
 (ReflectionManager)__receiver,(crate::unity_engine::transform::Transform)::core::convert::Into::into(tr),(crate::unity_engine::camera::Camera)::core::convert::Into::into(cam),(i16)::core::convert::Into::into(number))}
 }
 #[doc="`AddReflectionCamera(crate::unity_engine::gameobject::GameObject)` overload"]fn add_reflection_camera(self,obj_camera:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::app::water::reflectioncamera::ReflectionCamera{unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x22b7ac0usize)as*mut u8,crate::app::water::reflectioncamera::ReflectionCamera;
-(ReflectionManager)__receiver,(crate::unity_engine::gameobject::GameObject)::core::convert::Into::into(obj_camera))}
+__ReflectionManager_unity2_raw::add_reflection_camera(__receiver, ::core::convert::Into::into(obj_camera), ::core::option::Option::None)}
 }
 #[doc="`GetReflectionTexture(i16)` overload"]fn get_reflection_texture(self,number:impl::core::convert::Into<i16>)->crate::unity_engine::rendertexture::RenderTexture{unsafe{let __receiver= <ReflectionManager as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x22b7b20usize)as*mut u8,crate::unity_engine::rendertexture::RenderTexture;

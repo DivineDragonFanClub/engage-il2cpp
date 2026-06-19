@@ -91,26 +91,26 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"DefineArguments",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_create_upvalue{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope as::unity2::IlType> ::il_type(), <crate::moon_sharp::interpreter::symbolref::SymbolRef as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FunctionDefinitionExpression as::unity2::ClassIdentity> ::class(),"CreateUpvalue",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"CreateUpvalue",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_eval{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FunctionDefinitionExpression as::unity2::ClassIdentity> ::class(),"Eval",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"Eval",e),}
-}
-}
+pub unsafe fn create_upvalue(this:FunctionDefinitionExpression,scope:crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,symbol:crate::moon_sharp::interpreter::symbolref::SymbolRef,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"CreateUpvalue",));
+let inner:extern "C" fn(FunctionDefinitionExpression,crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope,crate::moon_sharp::interpreter::symbolref::SymbolRef, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::symbolref::SymbolRef= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,scope,symbol,__mi)}
+pub unsafe fn eval(this:FunctionDefinitionExpression,context:crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext,__unity2_method_info: ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"Eval",));
+let inner:extern "C" fn(FunctionDefinitionExpression,crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext, ::unity2::OptionalMethod,)->crate::moon_sharp::interpreter::dynvalue::DynValue= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,context,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile_body{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type(), < ::unity2::Il2CppString as::unity2::IlType> ::il_type()];
  ::unity2::lookup::method_info_on_class_with_signature(<FunctionDefinitionExpression as::unity2::ClassIdentity> ::class(),"CompileBody",2,param_types,false,)}
@@ -131,16 +131,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"Compile",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile_2{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<FunctionDefinitionExpression as::unity2::ClassIdentity> ::class(),"Compile",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"Compile",e),}
-}
-}
+pub unsafe fn compile_2(this:FunctionDefinitionExpression,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <FunctionDefinitionExpression as::unity2::ClassIdentity> ::NAME,"Compile",));
+let inner:extern "C" fn(FunctionDefinitionExpression,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-expressions-functiondefinitionexpression")]pub trait IFunctionDefinitionExpressionMethods:IFunctionDefinitionExpression{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, bool)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext> ,uses_global_env:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FunctionDefinitionExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -172,12 +172,10 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (FunctionDefinitionExpression)__receiver,(crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString>)::core::convert::Into::into(paramnames),(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
 }
 #[doc="`CreateUpvalue(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope, crate::moon_sharp::interpreter::symbolref::SymbolRef)` overload"]fn create_upvalue(self,scope:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope> ,symbol:impl::core::convert::Into<crate::moon_sharp::interpreter::symbolref::SymbolRef>)->crate::moon_sharp::interpreter::symbolref::SymbolRef{unsafe{let __receiver= <FunctionDefinitionExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FunctionDefinitionExpression_unity2_raw::__lookup_create_upvalue::get_method_info().method_ptr,crate::moon_sharp::interpreter::symbolref::SymbolRef;
-(FunctionDefinitionExpression)__receiver,(crate::moon_sharp::interpreter::execution::buildtimescope::BuildTimeScope)::core::convert::Into::into(scope),(crate::moon_sharp::interpreter::symbolref::SymbolRef)::core::convert::Into::into(symbol))}
+__FunctionDefinitionExpression_unity2_raw::create_upvalue(__receiver, ::core::convert::Into::into(scope), ::core::convert::Into::into(symbol), ::core::option::Option::None)}
 }
 #[doc="`Eval(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)` overload"]fn eval(self,context:impl::core::convert::Into<crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext>)->crate::moon_sharp::interpreter::dynvalue::DynValue{unsafe{let __receiver= <FunctionDefinitionExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FunctionDefinitionExpression_unity2_raw::__lookup_eval::get_method_info().method_ptr,crate::moon_sharp::interpreter::dynvalue::DynValue;
-(FunctionDefinitionExpression)__receiver,(crate::moon_sharp::interpreter::scriptexecutioncontext::ScriptExecutionContext)::core::convert::Into::into(context))}
+__FunctionDefinitionExpression_unity2_raw::eval(__receiver, ::core::convert::Into::into(context), ::core::option::Option::None)}
 }
 #[doc="`CompileBody(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::Il2CppString)` overload"]fn compile_body(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode> ,friendly_name:impl::core::convert::Into< ::unity2::Il2CppString>)->i32{unsafe{let __receiver= <FunctionDefinitionExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__FunctionDefinitionExpression_unity2_raw::__lookup_compile_body::get_method_info().method_ptr,i32;
@@ -188,8 +186,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (FunctionDefinitionExpression)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc),(crate::system::func_1::Func_1<i32>)::core::convert::Into::into(after_decl),(::unity2::Il2CppString)::core::convert::Into::into(friendly_name))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile_2(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <FunctionDefinitionExpression as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__FunctionDefinitionExpression_unity2_raw::__lookup_compile_2::get_method_info().method_ptr,();
-(FunctionDefinitionExpression)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+__FunctionDefinitionExpression_unity2_raw::compile_2(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
 }
 }
 

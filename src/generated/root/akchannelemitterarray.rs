@@ -16,6 +16,29 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "root-akchannelemitterarray-types")]
 pub use __types::*;
 
+#[cfg(feature="root-akchannelemitterarray")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AkChannelEmitterArray_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:AkChannelEmitterArray,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <AkChannelEmitterArray as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn finalize(this:AkChannelEmitterArray,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <AkChannelEmitterArray as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(AkChannelEmitterArray, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="root-akchannelemitterarray")]pub trait IAkChannelEmitterArrayMethods:IAkChannelEmitterArray{#[doc="`.ctor(u32)` overload"]fn ctor(self,in_count:impl::core::convert::Into<u32>)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11130usize)as*mut u8,();
 (AkChannelEmitterArray)__receiver,(u32)::core::convert::Into::into(in_count))}
@@ -29,12 +52,10 @@ pub use __types::*;
 (AkChannelEmitterArray)__receiver,(u32)::core::convert::Into::into(value))}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f111e0usize)as*mut u8,();
-(AkChannelEmitterArray)__receiver)}
+__AkChannelEmitterArray_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11280usize)as*mut u8,();
-(AkChannelEmitterArray)__receiver)}
+__AkChannelEmitterArray_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Reset()` overload"]fn reset(self,)->(){unsafe{let __receiver= <AkChannelEmitterArray as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2f11360usize)as*mut u8,();

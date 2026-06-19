@@ -25,7 +25,7 @@
  #[cfg(feature="system-io-cstreamwriter")]pub use cstreamwriter::{ICStreamWriterMethods}
 ;
  #[cfg(any(feature="system-io-directory-types"))]pub mod directory;
- #[cfg(feature="system-io-directory-types")]pub use directory::{Directory,IDirectory,Directory_SearchData,IDirectory_SearchData}
+ #[cfg(feature="system-io-directory-types")]pub use directory::{Directory_SearchData,IDirectory_SearchData,Directory,IDirectory}
 ;
  #[cfg(feature="system-io-directory")]pub use directory::{IDirectory_SearchDataMethods}
 ;
@@ -83,9 +83,9 @@
  #[cfg(feature="system-io-fileshare-types")]pub use fileshare::{FileShare}
 ;
  #[cfg(any(feature="system-io-filestream-types"))]pub mod filestream;
- #[cfg(feature="system-io-filestream-types")]pub use filestream::{FileStream,IFileStream,FileStream_ReadDelegate,IFileStream_ReadDelegate,FileStream_WriteDelegate,IFileStream_WriteDelegate}
+ #[cfg(feature="system-io-filestream-types")]pub use filestream::{FileStream_ReadDelegate,IFileStream_ReadDelegate,FileStream,IFileStream,FileStream_WriteDelegate,IFileStream_WriteDelegate}
 ;
- #[cfg(feature="system-io-filestream")]pub use filestream::{IFileStreamMethods,IFileStream_ReadDelegateMethods,IFileStream_WriteDelegateMethods}
+ #[cfg(feature="system-io-filestream")]pub use filestream::{IFileStream_ReadDelegateMethods,IFileStreamMethods,IFileStream_WriteDelegateMethods}
 ;
  #[cfg(any(feature="system-io-filestreamasyncresult-types"))]pub mod filestreamasyncresult;
  #[cfg(feature="system-io-filestreamasyncresult-types")]pub use filestreamasyncresult::{FileStreamAsyncResult,IFileStreamAsyncResult}
@@ -168,9 +168,9 @@
  #[cfg(feature="system-io-seekorigin-types")]pub use seekorigin::{SeekOrigin}
 ;
  #[cfg(any(feature="system-io-stream-types"))]pub mod stream;
- #[cfg(feature="system-io-stream-types")]pub use stream::{Stream_SynchronousAsyncResult,IStream_SynchronousAsyncResult,Stream,IStream,Stream_NullStream,IStream_NullStream,Stream_ReadWriteTask,IStream_ReadWriteTask,Stream_ReadWriteParameters}
+ #[cfg(feature="system-io-stream-types")]pub use stream::{Stream_SynchronousAsyncResult,IStream_SynchronousAsyncResult,Stream_ReadWriteTask,IStream_ReadWriteTask,Stream,IStream,Stream_ReadWriteParameters,Stream_NullStream,IStream_NullStream}
 ;
- #[cfg(feature="system-io-stream")]pub use stream::{IStream_SynchronousAsyncResultMethods,IStreamMethods,IStream_NullStreamMethods,IStream_ReadWriteTaskMethods}
+ #[cfg(feature="system-io-stream")]pub use stream::{IStream_SynchronousAsyncResultMethods,IStream_ReadWriteTaskMethods,IStreamMethods,IStream_NullStreamMethods}
 ;
  #[cfg(any(feature="system-io-streamreader-types"))]pub mod streamreader;
  #[cfg(feature="system-io-streamreader-types")]pub use streamreader::{StreamReader_NullStreamReader,IStreamReader_NullStreamReader,StreamReader,IStreamReader}
@@ -198,9 +198,9 @@
  #[cfg(feature="system-io-textreader")]pub use textreader::{ITextReaderMethods,ITextReader_NullTextReaderMethods,ITextReader_SyncTextReaderMethods}
 ;
  #[cfg(any(feature="system-io-textwriter-types"))]pub mod textwriter;
- #[cfg(feature="system-io-textwriter-types")]pub use textwriter::{TextWriter_NullTextWriter,ITextWriter_NullTextWriter,TextWriter,ITextWriter,TextWriter_SyncTextWriter,ITextWriter_SyncTextWriter}
+ #[cfg(feature="system-io-textwriter-types")]pub use textwriter::{TextWriter_NullTextWriter,ITextWriter_NullTextWriter,TextWriter_SyncTextWriter,ITextWriter_SyncTextWriter,TextWriter,ITextWriter}
 ;
- #[cfg(feature="system-io-textwriter")]pub use textwriter::{ITextWriter_NullTextWriterMethods,ITextWriterMethods,ITextWriter_SyncTextWriterMethods}
+ #[cfg(feature="system-io-textwriter")]pub use textwriter::{ITextWriter_NullTextWriterMethods,ITextWriter_SyncTextWriterMethods,ITextWriterMethods}
 ;
  #[cfg(any(feature="system-io-unexceptionalstreamreader-types"))]pub mod unexceptionalstreamreader;
  #[cfg(feature="system-io-unexceptionalstreamreader-types")]pub use unexceptionalstreamreader::{UnexceptionalStreamReader,IUnexceptionalStreamReader}

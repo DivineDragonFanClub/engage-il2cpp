@@ -11,9 +11,6 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack{#[static_field]#[rename(name="MaxAttackCountLunatic")]pub max_attack_count_lunatic:i32, #[static_field]#[rename(name="MaxAttackCountDefault")]pub max_attack_count_default:i32, #[static_field]#[rename(name="MaxCandidate")]pub max_candidate:i32, #[offset(16)]#[rename(name="m_Original")]pub m_original:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_OriginalMoveX")]pub m_original_move_x:i32, #[offset(28)]#[rename(name="m_OriginalMoveZ")]pub m_original_move_z:i32, #[offset(32)]#[rename(name="m_OriginalAttackX")]pub m_original_attack_x:i32, #[offset(36)]#[rename(name="m_OriginalAttackZ")]pub m_original_attack_z:i32, #[offset(40)]#[rename(name="m_OriginalItemIndex")]pub m_original_item_index:i32, #[offset(44)]#[rename(name="m_OriginalBulletPattern")]pub m_original_bullet_pattern:i32, #[offset(48)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit, #[offset(56)]#[rename(name="m_TargetBaseX")]pub m_target_base_x:i32, #[offset(60)]#[rename(name="m_TargetBaseZ")]pub m_target_base_z:i32, #[offset(64)]#[rename(name="m_TargetX")]pub m_target_x:i32, #[offset(68)]#[rename(name="m_TargetZ")]pub m_target_z:i32, #[offset(72)]#[rename(name="m_Candidates")]pub m_candidates:crate::app::aiinterruptattack::AIInterruptAttack_CandidateList, #[offset(80)]#[rename(name="m_AttackCount")]pub m_attack_count:i32, #[offset(84)]#[rename(name="m_MaxAttackCount")]pub m_max_attack_count:i32, #[offset(88)]#[rename(name="m_IsDecidedAttacker")]pub m_is_decided_attacker:bool, #[offset(96)]#[rename(name="m_BattleSimulator")]pub m_battle_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(104)]#[rename(name="m_ASResult")]pub m_as_result:crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack_AttackScoreResult.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct AIInterruptAttack_AttackScoreResult{}
 impl::unity2::ClassIdentity for AIInterruptAttack_AttackScoreResult{const NAMESPACE: &'static str="App";
 const NAME: &'static str="AIInterruptAttack.AttackScoreResult";
@@ -30,126 +27,13 @@ impl::unity2::IlType for AIInterruptAttack_AttackScoreResult{fn il_type()-> &'st
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack_CandidateList.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack.CandidateList")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack_CandidateList{#[offset(16)]#[rename(name="m_Pool")]pub m_pool:crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate> , #[offset(24)]#[rename(name="m_List")]pub m_list:crate::system::collections::generic::list_1::List_1<crate::app::aiinterruptattack::AIInterruptAttack_Candidate> ,}
 
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/aiinterruptattack/AIInterruptAttack.md"))]#[::unity2::class(namespace="App",name="AIInterruptAttack")]#[parent(crate::system::object::Object)]pub struct AIInterruptAttack{#[static_field]#[rename(name="MaxAttackCountLunatic")]pub max_attack_count_lunatic:i32, #[static_field]#[rename(name="MaxAttackCountDefault")]pub max_attack_count_default:i32, #[static_field]#[rename(name="MaxCandidate")]pub max_candidate:i32, #[offset(16)]#[rename(name="m_Original")]pub m_original:crate::app::unit::Unit, #[offset(24)]#[rename(name="m_OriginalMoveX")]pub m_original_move_x:i32, #[offset(28)]#[rename(name="m_OriginalMoveZ")]pub m_original_move_z:i32, #[offset(32)]#[rename(name="m_OriginalAttackX")]pub m_original_attack_x:i32, #[offset(36)]#[rename(name="m_OriginalAttackZ")]pub m_original_attack_z:i32, #[offset(40)]#[rename(name="m_OriginalItemIndex")]pub m_original_item_index:i32, #[offset(44)]#[rename(name="m_OriginalBulletPattern")]pub m_original_bullet_pattern:i32, #[offset(48)]#[rename(name="m_Target")]pub m_target:crate::app::unit::Unit, #[offset(56)]#[rename(name="m_TargetBaseX")]pub m_target_base_x:i32, #[offset(60)]#[rename(name="m_TargetBaseZ")]pub m_target_base_z:i32, #[offset(64)]#[rename(name="m_TargetX")]pub m_target_x:i32, #[offset(68)]#[rename(name="m_TargetZ")]pub m_target_z:i32, #[offset(72)]#[rename(name="m_Candidates")]pub m_candidates:crate::app::aiinterruptattack::AIInterruptAttack_CandidateList, #[offset(80)]#[rename(name="m_AttackCount")]pub m_attack_count:i32, #[offset(84)]#[rename(name="m_MaxAttackCount")]pub m_max_attack_count:i32, #[offset(88)]#[rename(name="m_IsDecidedAttacker")]pub m_is_decided_attacker:bool, #[offset(96)]#[rename(name="m_BattleSimulator")]pub m_battle_simulator:crate::app::aibattlesimulator::AIBattleSimulator, #[offset(104)]#[rename(name="m_ASResult")]pub m_as_result:crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult,}
+
 }
 
 #[cfg(feature = "app-aiinterruptattack-types")]
 pub use __types::*;
-
-#[cfg(feature="app-aiinterruptattack")]pub trait IAIInterruptAttackMethods:IAIInterruptAttack{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19233b0usize)as*mut u8,();
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`Think(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32, i32, i32)` overload"]fn think(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x192d360usize)as*mut u8,bool;
-(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::unit::Unit)::core::convert::Into::into(target),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z),(i32)::core::convert::Into::into(bullet_pattern))}
-}
-#[doc="`ThinkImpl(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32, i32, i32)` overload"]fn think_impl(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1931240usize)as*mut u8,bool;
-(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::unit::Unit)::core::convert::Into::into(target),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z),(i32)::core::convert::Into::into(bullet_pattern))}
-}
-#[doc="`Attack()` overload"]fn attack(self,)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1926d40usize)as*mut u8,bool;
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`IsReserved()` overload"]fn is_reserved(self,)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1926d30usize)as*mut u8,bool;
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19270e0usize)as*mut u8,();
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`EnumerateCandidates(bool, bool)` overload"]fn enumerate_candidates(self,is_original_think_break:impl::core::convert::Into<bool> ,is_original_think_chain:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19316a0usize)as*mut u8,();
-(AIInterruptAttack)__receiver,(bool)::core::convert::Into::into(is_original_think_break),(bool)::core::convert::Into::into(is_original_think_chain))}
-}
-#[doc="`DecideAttacker(bool)` overload"]fn decide_attacker(self,is_add_moved_original:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19317b0usize)as*mut u8,bool;
-(AIInterruptAttack)__receiver,(bool)::core::convert::Into::into(is_add_moved_original))}
-}
-#[doc="`Deploy(crate::app::unit::Unit)` overload"]fn deploy(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1931bb0usize)as*mut u8,();
-(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`GetAttackScore(crate::app::unit::Unit, i32, i32, *mutcrate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult)` overload"]fn get_attack_score(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,flag:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->(bool,crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
-let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult> ::uninit();
-let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1932060usize)as*mut u8,bool;
-(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(flag),(i32)::core::convert::Into::into(bullet_pattern),(*mut crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult)__out_0.as_mut_ptr())}
-;
-(__ret,__out_0.assume_init())}
-}
-#[doc="`GetRange(crate::app::unit::Unit)` overload"]fn get_range(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19326b0usize)as*mut u8,i32;
-(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
-}
-#[doc="`GetMaxAttackCount()` overload"]fn get_max_attack_count(self,)->i32{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1931480usize)as*mut u8,i32;
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`AddMovedOriginalToImage()` overload"]fn add_moved_original_to_image(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19315f0usize)as*mut u8,();
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`DeleteMovedOriginalFromImage()` overload"]fn delete_moved_original_from_image(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1931b00usize)as*mut u8,();
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`Mind(crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]fn mind(self,attacker:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1931e00usize)as*mut u8,();
-(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(bullet_pattern))}
-}
-#[doc="`DbgLog(::unity2::Il2CppString)` overload"]fn dbg_log(self,msg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1932bb0usize)as*mut u8,();
-(AIInterruptAttack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(msg))}
-}
-#[doc="`DbgLogOrignalAndTarget()` overload"]fn dbg_log_orignal_and_target(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1932bc0usize)as*mut u8,();
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`DbgLogCandidates()` overload"]fn dbg_log_candidates(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19331e0usize)as*mut u8,();
-(AIInterruptAttack)__receiver)}
-}
-#[doc="`DbgLogAttacker(::unity2::Il2CppString, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]fn dbg_log_attacker(self,msg:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1933710usize)as*mut u8,();
-(AIInterruptAttack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(msg),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(bullet_pattern))}
-}
-#[doc="`DbgLogExist(::unity2::Il2CppString, crate::app::unit::Unit, i32, i32)` overload"]fn dbg_log_exist(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,attacker:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1933b90usize)as*mut u8,();
-(AIInterruptAttack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(method_name),(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z))}
-}
-}
-
-#[cfg(feature="app-aiinterruptattack")]impl<__T:IAIInterruptAttack>IAIInterruptAttackMethods for __T{}
-
-#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn think_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn think_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn is_reserved_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
-pub fn enumerate_candidates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
-pub fn decide_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
-pub fn deploy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
-pub fn get_attack_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
-pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
-pub fn get_max_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
-pub fn add_moved_original_to_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
-pub fn delete_moved_original_from_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
-pub fn mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
-pub fn dbg_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
-pub fn dbg_log_orignal_and_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
-pub fn dbg_log_candidates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
-pub fn dbg_log_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
-pub fn dbg_log_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
-}
-
-#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(AIInterruptAttack), ::core::stringify!(new),));
- <Self as IAIInterruptAttackMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack_AttackScoreResult{#[doc="`get_Score()` overload"]pub fn get_score(&mut self,)->u32{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2944870usize)as*mut u8,u32;
 (*mut AIInterruptAttack_AttackScoreResult)self as*mut AIInterruptAttack_AttackScoreResult)}
@@ -388,12 +272,125 @@ pub fn get_item_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 this}
 }
 
+#[cfg(feature="app-aiinterruptattack")]pub trait IAIInterruptAttackMethods:IAIInterruptAttack{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19233b0usize)as*mut u8,();
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`Think(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32, i32, i32)` overload"]fn think(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x192d360usize)as*mut u8,bool;
+(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::unit::Unit)::core::convert::Into::into(target),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z),(i32)::core::convert::Into::into(bullet_pattern))}
+}
+#[doc="`ThinkImpl(crate::app::unit::Unit, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32, i32, i32)` overload"]fn think_impl(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,target:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,target_x:impl::core::convert::Into<i32> ,target_z:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1931240usize)as*mut u8,bool;
+(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(crate::app::unit::Unit)::core::convert::Into::into(target),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(target_x),(i32)::core::convert::Into::into(target_z),(i32)::core::convert::Into::into(bullet_pattern))}
+}
+#[doc="`Attack()` overload"]fn attack(self,)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1926d40usize)as*mut u8,bool;
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`IsReserved()` overload"]fn is_reserved(self,)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1926d30usize)as*mut u8,bool;
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`Clear()` overload"]fn clear(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19270e0usize)as*mut u8,();
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`EnumerateCandidates(bool, bool)` overload"]fn enumerate_candidates(self,is_original_think_break:impl::core::convert::Into<bool> ,is_original_think_chain:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19316a0usize)as*mut u8,();
+(AIInterruptAttack)__receiver,(bool)::core::convert::Into::into(is_original_think_break),(bool)::core::convert::Into::into(is_original_think_chain))}
+}
+#[doc="`DecideAttacker(bool)` overload"]fn decide_attacker(self,is_add_moved_original:impl::core::convert::Into<bool>)->bool{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19317b0usize)as*mut u8,bool;
+(AIInterruptAttack)__receiver,(bool)::core::convert::Into::into(is_add_moved_original))}
+}
+#[doc="`Deploy(crate::app::unit::Unit)` overload"]fn deploy(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1931bb0usize)as*mut u8,();
+(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetAttackScore(crate::app::unit::Unit, i32, i32, *mutcrate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult)` overload"]fn get_attack_score(self,actor:impl::core::convert::Into<crate::app::unit::Unit> ,flag:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->(bool,crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+let mut __out_0= ::core::mem::MaybeUninit:: <crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult> ::uninit();
+let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1932060usize)as*mut u8,bool;
+(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(actor),(i32)::core::convert::Into::into(flag),(i32)::core::convert::Into::into(bullet_pattern),(*mut crate::app::aiinterruptattack::AIInterruptAttack_AttackScoreResult)__out_0.as_mut_ptr())}
+;
+(__ret,__out_0.assume_init())}
+}
+#[doc="`GetRange(crate::app::unit::Unit)` overload"]fn get_range(self,unit:impl::core::convert::Into<crate::app::unit::Unit>)->i32{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19326b0usize)as*mut u8,i32;
+(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(unit))}
+}
+#[doc="`GetMaxAttackCount()` overload"]fn get_max_attack_count(self,)->i32{unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1931480usize)as*mut u8,i32;
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`AddMovedOriginalToImage()` overload"]fn add_moved_original_to_image(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19315f0usize)as*mut u8,();
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`DeleteMovedOriginalFromImage()` overload"]fn delete_moved_original_from_image(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1931b00usize)as*mut u8,();
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`Mind(crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]fn mind(self,attacker:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1931e00usize)as*mut u8,();
+(AIInterruptAttack)__receiver,(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(bullet_pattern))}
+}
+#[doc="`DbgLog(::unity2::Il2CppString)` overload"]fn dbg_log(self,msg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1932bb0usize)as*mut u8,();
+(AIInterruptAttack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(msg))}
+}
+#[doc="`DbgLogOrignalAndTarget()` overload"]fn dbg_log_orignal_and_target(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1932bc0usize)as*mut u8,();
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`DbgLogCandidates()` overload"]fn dbg_log_candidates(self,)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19331e0usize)as*mut u8,();
+(AIInterruptAttack)__receiver)}
+}
+#[doc="`DbgLogAttacker(::unity2::Il2CppString, crate::app::unit::Unit, i32, i32, i32, i32, i32, i32)` overload"]fn dbg_log_attacker(self,msg:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32> ,attack_x:impl::core::convert::Into<i32> ,attack_z:impl::core::convert::Into<i32> ,item_index:impl::core::convert::Into<i32> ,bullet_pattern:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1933710usize)as*mut u8,();
+(AIInterruptAttack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(msg),(crate::app::unit::Unit)::core::convert::Into::into(unit),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z),(i32)::core::convert::Into::into(attack_x),(i32)::core::convert::Into::into(attack_z),(i32)::core::convert::Into::into(item_index),(i32)::core::convert::Into::into(bullet_pattern))}
+}
+#[doc="`DbgLogExist(::unity2::Il2CppString, crate::app::unit::Unit, i32, i32)` overload"]fn dbg_log_exist(self,method_name:impl::core::convert::Into< ::unity2::Il2CppString> ,attacker:impl::core::convert::Into<crate::app::unit::Unit> ,move_x:impl::core::convert::Into<i32> ,move_z:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <AIInterruptAttack as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1933b90usize)as*mut u8,();
+(AIInterruptAttack)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(method_name),(crate::app::unit::Unit)::core::convert::Into::into(attacker),(i32)::core::convert::Into::into(move_x),(i32)::core::convert::Into::into(move_z))}
+}
+}
+
+#[cfg(feature="app-aiinterruptattack")]impl<__T:IAIInterruptAttack>IAIInterruptAttackMethods for __T{}
+
+#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn think_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn think_impl_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn attack_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn is_reserved_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+pub fn clear_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[5]}
+pub fn enumerate_candidates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[6]}
+pub fn decide_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[7]}
+pub fn deploy_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[8]}
+pub fn get_attack_score_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[9]}
+pub fn get_range_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[10]}
+pub fn get_max_attack_count_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[11]}
+pub fn add_moved_original_to_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[12]}
+pub fn delete_moved_original_from_image_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[13]}
+pub fn mind_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[14]}
+pub fn dbg_log_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[15]}
+pub fn dbg_log_orignal_and_target_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[16]}
+pub fn dbg_log_candidates_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[17]}
+pub fn dbg_log_attacker_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[18]}
+pub fn dbg_log_exist_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[19]}
+}
+
+#[cfg(feature="app-aiinterruptattack")]impl AIInterruptAttack{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(AIInterruptAttack), ::core::stringify!(new),));
+ <Self as IAIInterruptAttackMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-aiinterruptattack")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::AIInterruptAttack;
-    pub use super::IAIInterruptAttack;
-    pub use super::IAIInterruptAttackMethods;
     pub use super::AIInterruptAttack_AttackScoreResult;
     pub use super::AIInterruptAttack_Candidate;
     pub use super::IAIInterruptAttack_Candidate;
@@ -401,6 +398,9 @@ pub mod prelude {
     pub use super::AIInterruptAttack_CandidateList;
     pub use super::IAIInterruptAttack_CandidateList;
     pub use super::IAIInterruptAttack_CandidateListMethods;
+    pub use super::AIInterruptAttack;
+    pub use super::IAIInterruptAttack;
+    pub use super::IAIInterruptAttackMethods;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

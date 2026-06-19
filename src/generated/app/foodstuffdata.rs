@@ -25,6 +25,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData.md"))]#[::unity2::class(namespace="App",name="FoodstuffData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::foodstuffdata::FoodstuffData>)]pub struct FoodstuffData{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FoodstuffData_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for FoodstuffData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="FoodstuffData.Flags";
@@ -45,15 +48,25 @@ pub fn raise_reliance()->Self{Self{value:8}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData.md"))]#[::unity2::class(namespace="App",name="FoodstuffData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::foodstuffdata::FoodstuffData>)]pub struct FoodstuffData{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/foodstuffdata/FoodstuffData_FlagField.md"))]#[::unity2::class(namespace="App",name="FoodstuffData.FlagField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::foodstuffdata::FoodstuffData_Flags>)]pub struct FoodstuffData_FlagField{}
 
 }
 
 #[cfg(feature = "app-foodstuffdata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-foodstuffdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FoodstuffData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:FoodstuffData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FoodstuffData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(FoodstuffData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-foodstuffdata")]impl FoodstuffData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2610be0usize)as*mut u8,();
 )}
@@ -96,8 +109,7 @@ pub use __types::*;
 (FoodstuffData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2610d10usize)as*mut u8, ::unity2::Il2CppString;
-(FoodstuffData)__receiver)}
+__FoodstuffData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`IsCategory()` overload"]fn is_category(self,)->bool{unsafe{let __receiver= <FoodstuffData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2610d90usize)as*mut u8,bool;
@@ -173,6 +185,19 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-foodstuffdata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FoodstuffData_FlagField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:FoodstuffData_FlagField,value:crate::app::foodstuffdata::FoodstuffData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <FoodstuffData_FlagField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(FoodstuffData_FlagField,crate::app::foodstuffdata::FoodstuffData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="app-foodstuffdata")]pub trait IFoodstuffData_FlagFieldMethods:IFoodstuffData_FlagField{#[doc="`.ctor(i32)` overload"]fn ctor(self,f:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62df0usize)as*mut u8,();
 (FoodstuffData_FlagField)__receiver,(i32)::core::convert::Into::into(f))}
@@ -182,8 +207,7 @@ this}
 (FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(f))}
 }
 #[doc="`ToInt(crate::app::foodstuffdata::FoodstuffData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::foodstuffdata::FoodstuffData_Flags>)->i32{unsafe{let __receiver= <FoodstuffData_FlagField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e62eb0usize)as*mut u8,i32;
-(FoodstuffData_FlagField)__receiver,(crate::app::foodstuffdata::FoodstuffData_Flags)::core::convert::Into::into(value))}
+__FoodstuffData_FlagField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 }
 
@@ -209,10 +233,10 @@ this}
 #[cfg(feature = "app-foodstuffdata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FoodstuffData_Flags;
     pub use super::FoodstuffData;
     pub use super::IFoodstuffData;
     pub use super::IFoodstuffDataMethods;
+    pub use super::FoodstuffData_Flags;
     pub use super::FoodstuffData_FlagField;
     pub use super::IFoodstuffData_FlagField;
     pub use super::IFoodstuffData_FlagFieldMethods;

@@ -18,6 +18,49 @@ use crate::unity_engine::resource_management::async_operations::asyncoperationba
 #[cfg(feature = "unity_engine-addressable_assets-initialization-initializationoperation-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-addressable_assets-initialization-initializationoperation")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InitializationOperation_unity2_raw{use super:: * ;
+pub unsafe fn get_progress(this:InitializationOperation,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <InitializationOperation as::unity2::ClassIdentity> ::NAME,"get_Progress",));
+let inner:extern "C" fn(InitializationOperation, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_debug_name(this:InitializationOperation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <InitializationOperation as::unity2::ClassIdentity> ::NAME,"get_DebugName",));
+let inner:extern "C" fn(InitializationOperation, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn invoke_wait_for_completion(this:InitializationOperation,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(33usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",33usize,__vt.len(), <InitializationOperation as::unity2::ClassIdentity> ::NAME,"InvokeWaitForCompletion",));
+let inner:extern "C" fn(InitializationOperation, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn execute(this:InitializationOperation,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <InitializationOperation as::unity2::ClassIdentity> ::NAME,"Execute",));
+let inner:extern "C" fn(InitializationOperation, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-addressable_assets-initialization-initializationoperation")]impl InitializationOperation{#[doc="`CreateInitializationOperation(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl, ::unity2::Il2CppString, ::unity2::Il2CppString)` overload"]pub fn create_initialization_operation(aa:impl::core::convert::Into<crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl> ,player_settings_location:impl::core::convert::Into< ::unity2::Il2CppString> ,provider_suffix:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator>{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dac260usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> ;
 (crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa),(::unity2::Il2CppString)::core::convert::Into::into(player_settings_location),(::unity2::Il2CppString)::core::convert::Into::into(provider_suffix))}
 }
@@ -37,20 +80,16 @@ pub use __types::*;
 (InitializationOperation)__receiver,(crate::unity_engine::addressable_assets::addressablesimpl::AddressablesImpl)::core::convert::Into::into(aa))}
 }
 #[doc="`get_Progress()` overload"]fn get_progress(self,)->f32{unsafe{let __receiver= <InitializationOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db7cf0usize)as*mut u8,f32;
-(InitializationOperation)__receiver)}
+__InitializationOperation_unity2_raw::get_progress(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_DebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <InitializationOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db7d80usize)as*mut u8, ::unity2::Il2CppString;
-(InitializationOperation)__receiver)}
+__InitializationOperation_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InvokeWaitForCompletion()` overload"]fn invoke_wait_for_completion(self,)->bool{unsafe{let __receiver= <InitializationOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db7dd0usize)as*mut u8,bool;
-(InitializationOperation)__receiver)}
+__InitializationOperation_unity2_raw::invoke_wait_for_completion(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Execute()` overload"]fn execute(self,)->(){unsafe{let __receiver= <InitializationOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2db7fb0usize)as*mut u8,();
-(InitializationOperation)__receiver)}
+__InitializationOperation_unity2_raw::execute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`LoadContentCatalog(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::Il2CppString, crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn load_content_catalog_2(self,loc:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,provider_suffix:impl::core::convert::Into< ::unity2::Il2CppString> ,remote_hash_location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)->crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator>{unsafe{let __receiver= <InitializationOperation as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbacf0usize)as*mut u8,crate::unity_engine::resource_management::async_operations::asyncoperationhandle_1::AsyncOperationHandle_1<crate::unity_engine::addressable_assets::resource_locators::iresourcelocator::IResourceLocator> ;

@@ -17,58 +17,82 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="nintendo-message_studio-lib-tagprocessorbase")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TagProcessorBase_unity2_raw{use super:: * ;
-pub unsafe fn process_char(this:TagProcessorBase,c:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessChar").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessChar", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_char(this:TagProcessorBase,c:u16,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessChar",));
 let inner:extern "C" fn(TagProcessorBase,u16, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,c,__mi)}
-pub unsafe fn process_ruby_tag(this:TagProcessorBase,ruby_tag_info:crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessRubyTag").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessRubyTag", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_ruby_tag(this:TagProcessorBase,ruby_tag_info:crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessRubyTag",));
 let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::rubytaginfo::RubyTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,ruby_tag_info,__mi)}
-pub unsafe fn process_font_tag(this:TagProcessorBase,font_tag_info:crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessFontTag").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessFontTag", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_font_tag(this:TagProcessorBase,font_tag_info:crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessFontTag",));
 let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::fonttaginfo::FontTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,font_tag_info,__mi)}
-pub unsafe fn process_size_tag(this:TagProcessorBase,size_tag_info:crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessSizeTag").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessSizeTag", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_size_tag(this:TagProcessorBase,size_tag_info:crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessSizeTag",));
 let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::sizetaginfo::SizeTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,size_tag_info,__mi)}
-pub unsafe fn process_color_tag(this:TagProcessorBase,color_tag_info:crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessColorTag").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessColorTag", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_color_tag(this:TagProcessorBase,color_tag_info:crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessColorTag",));
 let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::colortaginfo::ColorTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,color_tag_info,__mi)}
-pub unsafe fn process_page_break_tag(this:TagProcessorBase,page_break_tag_info:crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessPageBreakTag").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessPageBreakTag", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_page_break_tag(this:TagProcessorBase,page_break_tag_info:crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessPageBreakTag",));
 let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::pagebreaktaginfo::PageBreakTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,page_break_tag_info,__mi)}
-pub unsafe fn process_custom_tag(this:TagProcessorBase,tag_info:crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessCustomTag").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessCustomTag", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_custom_tag(this:TagProcessorBase,tag_info:crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessCustomTag",));
 let inner:extern "C" fn(TagProcessorBase,crate::nintendo::message_studio::lib::customtaginfo::CustomTagInfo, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,tag_info,__mi)}
-pub unsafe fn process_end(this:TagProcessorBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("ProcessEnd").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","ProcessEnd", <TagProcessorBase as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn process_end(this:TagProcessorBase,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TagProcessorBase as::unity2::ClassIdentity> ::NAME,"ProcessEnd",));
 let inner:extern "C" fn(TagProcessorBase, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

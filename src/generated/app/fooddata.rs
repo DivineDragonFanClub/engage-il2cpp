@@ -19,6 +19,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fooddata/FoodData.md"))]#[::unity2::class(namespace="App",name="FoodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::fooddata::FoodData>)]pub struct FoodData{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fooddata/FoodData_FoodCountry.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct FoodData_FoodCountry{pub value:i32,}
 impl::unity2::ClassIdentity for FoodData_FoodCountry{const NAMESPACE: &'static str="App";
 const NAME: &'static str="FoodData.FoodCountry";
@@ -42,13 +45,23 @@ pub fn other()->Self{Self{value:5}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/fooddata/FoodData.md"))]#[::unity2::class(namespace="App",name="FoodData")]#[parent(crate::app::structdata_1::StructData_1<crate::app::fooddata::FoodData>)]pub struct FoodData{}
-
 }
 
 #[cfg(feature = "app-fooddata-types")]
 pub use __types::*;
+
+#[cfg(feature="app-fooddata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FoodData_unity2_raw{use super:: * ;
+pub unsafe fn get_debug_name(this:FoodData,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FoodData as::unity2::ClassIdentity> ::NAME,"GetDebugName",));
+let inner:extern "C" fn(FoodData, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
 
 #[cfg(feature="app-fooddata")]impl FoodData{#[doc="`Load()` overload"]pub fn load()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2610830usize)as*mut u8,();
 )}
@@ -124,8 +137,7 @@ pub use __types::*;
 (FoodData)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(value))}
 }
 #[doc="`GetDebugName()` overload"]fn get_debug_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <FoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x26109e0usize)as*mut u8, ::unity2::Il2CppString;
-(FoodData)__receiver)}
+__FoodData_unity2_raw::get_debug_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetDifficulty(::unity2::Il2CppString)` overload"]fn get_difficulty(self,pid:impl::core::convert::Into< ::unity2::Il2CppString>)->crate::app::cookdata::CookData_Difficulty{unsafe{let __receiver= <FoodData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2610b50usize)as*mut u8,crate::app::cookdata::CookData_Difficulty;
@@ -167,10 +179,10 @@ this}
 #[cfg(feature = "app-fooddata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FoodData_FoodCountry;
     pub use super::FoodData;
     pub use super::IFoodData;
     pub use super::IFoodDataMethods;
+    pub use super::FoodData_FoodCountry;
     pub use crate::app::structbase::IStructBase;
     pub use crate::app::structdata_1::IStructData_1;
     pub use crate::app::structtemplate_1::IStructTemplate_1;

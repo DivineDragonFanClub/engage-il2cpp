@@ -20,25 +20,64 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-refinegodweaponparamemptymenuitem-types")]
 pub use __types::*;
 
+#[cfg(feature="app-refinegodweaponparamemptymenuitem")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __RefineGodWeaponParamEmptyMenuItem_unity2_raw{use super:: * ;
+pub unsafe fn build_attribute(this:RefineGodWeaponParamEmptyMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <RefineGodWeaponParamEmptyMenuItem as::unity2::ClassIdentity> ::NAME,"BuildAttribute",));
+let inner:extern "C" fn(RefineGodWeaponParamEmptyMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenuitem::BasicMenuItem_Attribute= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_name(this:RefineGodWeaponParamEmptyMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <RefineGodWeaponParamEmptyMenuItem as::unity2::ClassIdentity> ::NAME,"GetName",));
+let inner:extern "C" fn(RefineGodWeaponParamEmptyMenuItem, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_select(this:RefineGodWeaponParamEmptyMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <RefineGodWeaponParamEmptyMenuItem as::unity2::ClassIdentity> ::NAME,"OnSelect",));
+let inner:extern "C" fn(RefineGodWeaponParamEmptyMenuItem, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn a_call(this:RefineGodWeaponParamEmptyMenuItem,__unity2_method_info: ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <RefineGodWeaponParamEmptyMenuItem as::unity2::ClassIdentity> ::NAME,"ACall",));
+let inner:extern "C" fn(RefineGodWeaponParamEmptyMenuItem, ::unity2::OptionalMethod,)->crate::app::basicmenu::BasicMenu_Result= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-refinegodweaponparamemptymenuitem")]pub trait IRefineGodWeaponParamEmptyMenuItemMethods:IRefineGodWeaponParamEmptyMenuItem{#[doc="`.ctor(crate::app::godunit::GodUnit, crate::app::itemdata::ItemData, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler, crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)` overload"]fn ctor(self,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,god_weapon:impl::core::convert::Into<crate::app::itemdata::ItemData> ,select_event_handler:impl::core::convert::Into<crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler> ,request_close_event_handler:impl::core::convert::Into<crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler>)->(){unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x237fd30usize)as*mut u8,();
 (RefineGodWeaponParamEmptyMenuItem)__receiver,(crate::app::godunit::GodUnit)::core::convert::Into::into(god_unit),(crate::app::itemdata::ItemData)::core::convert::Into::into(god_weapon),(crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_SelectEventHandler)::core::convert::Into::into(select_event_handler),(crate::app::refinegodweaponparammenu::RefineGodWeaponParamMenu_RequestCloseEventHandler)::core::convert::Into::into(request_close_event_handler))}
 }
 #[doc="`BuildAttribute()` overload"]fn build_attribute(self,)->crate::app::basicmenuitem::BasicMenuItem_Attribute{unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23800e0usize)as*mut u8,crate::app::basicmenuitem::BasicMenuItem_Attribute;
-(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+__RefineGodWeaponParamEmptyMenuItem_unity2_raw::build_attribute(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetName()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23800f0usize)as*mut u8, ::unity2::Il2CppString;
-(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+__RefineGodWeaponParamEmptyMenuItem_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSelect()` overload"]fn on_select(self,)->(){unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2380140usize)as*mut u8,();
-(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+__RefineGodWeaponParamEmptyMenuItem_unity2_raw::on_select(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ACall()` overload"]fn a_call(self,)->crate::app::basicmenu::BasicMenu_Result{unsafe{let __receiver= <RefineGodWeaponParamEmptyMenuItem as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x23802e0usize)as*mut u8,crate::app::basicmenu::BasicMenu_Result;
-(RefineGodWeaponParamEmptyMenuItem)__receiver)}
+__RefineGodWeaponParamEmptyMenuItem_unity2_raw::a_call(__receiver, ::core::option::Option::None)}
 }
 }
 

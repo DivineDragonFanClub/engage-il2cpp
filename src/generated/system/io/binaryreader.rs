@@ -16,81 +16,286 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-binaryreader-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-binaryreader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BinaryReader_unity2_raw{use super:: * ;
+pub unsafe fn get_base_stream(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->crate::system::io::stream::Stream{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"get_BaseStream",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->crate::system::io::stream::Stream= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn close(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Close",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:BinaryReader,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BinaryReader,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn dispose_2(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_boolean(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadBoolean",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_byte(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u8{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadByte",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u8= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_s_byte(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i8{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadSByte",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i8= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_char(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadChar",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_int16(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt16",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_u_int16(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u16{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt16",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u16= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_int32(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt32",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_u_int32(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt32",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_int64(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadInt64",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_u_int64(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->u64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(18usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",18usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadUInt64",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->u64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_single(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadSingle",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_double(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)->f64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadDouble",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)->f64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_string(this:BinaryReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(22usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",22usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadString",));
+let inner:extern "C" fn(BinaryReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_chars(this:BinaryReader,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<u16>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(23usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",23usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadChars",));
+let inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u16> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,count,__mi)}
+pub unsafe fn read_2(this:BinaryReader,buffer: ::unity2::Array<u8> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(24usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",24usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(BinaryReader, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn read_bytes(this:BinaryReader,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Array<u8>{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(25usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",25usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"ReadBytes",));
+let inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)-> ::unity2::Array<u8> = ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,count,__mi)}
+pub unsafe fn fill_buffer(this:BinaryReader,num_bytes:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <BinaryReader as::unity2::ClassIdentity> ::NAME,"FillBuffer",));
+let inner:extern "C" fn(BinaryReader,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,num_bytes,__mi)}
+}
+
 #[cfg(feature="system-io-binaryreader")]pub trait IBinaryReaderMethods:IBinaryReader{#[doc="`.ctor(crate::system::io::stream::Stream)` overload"]fn ctor(self,input:impl::core::convert::Into<crate::system::io::stream::Stream>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x338e130usize)as*mut u8,();
 (BinaryReader)__receiver,(crate::system::io::stream::Stream)::core::convert::Into::into(input))}
 }
 #[doc="`get_BaseStream()` overload"]fn get_base_stream(self,)->crate::system::io::stream::Stream{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e460usize)as*mut u8,crate::system::io::stream::Stream;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::get_base_stream(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e470usize)as*mut u8,();
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e480usize)as*mut u8,();
-(BinaryReader)__receiver,(bool)::core::convert::Into::into(disposing))}
+__BinaryReader_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose_2(self,)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e530usize)as*mut u8,();
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::dispose_2(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e540usize)as*mut u8,i32;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadBoolean()` overload"]fn read_boolean(self,)->bool{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e810usize)as*mut u8,bool;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_boolean(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadByte()` overload"]fn read_byte(self,)->u8{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e870usize)as*mut u8,u8;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_byte(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadSByte()` overload"]fn read_s_byte(self,)->i8{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e8e0usize)as*mut u8,i8;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_s_byte(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadChar()` overload"]fn read_char(self,)->u16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e930usize)as*mut u8,u16;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_char(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadInt16()` overload"]fn read_int16(self,)->i16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e980usize)as*mut u8,i16;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_int16(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadUInt16()` overload"]fn read_u_int16(self,)->u16{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338e9e0usize)as*mut u8,u16;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_u_int16(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadInt32()` overload"]fn read_int32(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338ea40usize)as*mut u8,i32;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_int32(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadUInt32()` overload"]fn read_u_int32(self,)->u32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338eb60usize)as*mut u8,u32;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_u_int32(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadInt64()` overload"]fn read_int64(self,)->i64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338ebe0usize)as*mut u8,i64;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_int64(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadUInt64()` overload"]fn read_u_int64(self,)->u64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338ecb0usize)as*mut u8,u64;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_u_int64(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadSingle()` overload"]fn read_single(self,)->f32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338ed80usize)as*mut u8,f32;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_single(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadDouble()` overload"]fn read_double(self,)->f64{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338ee00usize)as*mut u8,f64;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_double(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadString()` overload"]fn read_string(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338efe0usize)as*mut u8, ::unity2::Il2CppString;
-(BinaryReader)__receiver)}
+__BinaryReader_unity2_raw::read_string(__receiver, ::core::option::Option::None)}
 }
 #[doc="`InternalReadChars(::unity2::Array<u16>, i32, i32)` overload"]fn internal_read_chars(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x338f370usize)as*mut u8,i32;
@@ -101,20 +306,16 @@ pub use __types::*;
 (BinaryReader)__receiver)}
 }
 #[doc="`ReadChars(i32)` overload"]fn read_chars(self,count:impl::core::convert::Into<i32>)-> ::unity2::Array<u16>{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338f6a0usize)as*mut u8, ::unity2::Array<u16> ;
-(BinaryReader)__receiver,(i32)::core::convert::Into::into(count))}
+__BinaryReader_unity2_raw::read_chars(__receiver, ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338f820usize)as*mut u8,i32;
-(BinaryReader)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__BinaryReader_unity2_raw::read_2(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadBytes(i32)` overload"]fn read_bytes(self,count:impl::core::convert::Into<i32>)-> ::unity2::Array<u8>{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338f9c0usize)as*mut u8, ::unity2::Array<u8> ;
-(BinaryReader)__receiver,(i32)::core::convert::Into::into(count))}
+__BinaryReader_unity2_raw::read_bytes(__receiver, ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`FillBuffer(i32)` overload"]fn fill_buffer(self,num_bytes:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x338fb60usize)as*mut u8,();
-(BinaryReader)__receiver,(i32)::core::convert::Into::into(num_bytes))}
+__BinaryReader_unity2_raw::fill_buffer(__receiver, ::core::convert::Into::into(num_bytes), ::core::option::Option::None)}
 }
 #[doc="`Read7BitEncodedInt()` overload"]fn read7_bit_encoded_int(self,)->i32{unsafe{let __receiver= <BinaryReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x338f2c0usize)as*mut u8,i32;

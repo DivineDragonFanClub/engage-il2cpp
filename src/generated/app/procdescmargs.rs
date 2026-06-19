@@ -20,13 +20,25 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "app-procdescmargs-types")]
 pub use __types::*;
 
+#[cfg(feature="app-procdescmargs")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProcDescMArgS_unity2_raw{use super:: * ;
+pub unsafe fn execute_impl(this:ProcDescMArgS,inst:crate::app::procinst::ProcInst,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <ProcDescMArgS as::unity2::ClassIdentity> ::NAME,"ExecuteImpl",));
+let inner:extern "C" fn(ProcDescMArgS,crate::app::procinst::ProcInst, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,inst,__mi)}
+}
+
 #[cfg(feature="app-procdescmargs")]pub trait IProcDescMArgSMethods:IProcDescMArgS{#[doc="`.ctor(crate::system::action_1::Action_1<::unity2::Il2CppString>, ::unity2::Il2CppString)` overload"]fn ctor(self,method:impl::core::convert::Into<crate::system::action_1::Action_1< ::unity2::Il2CppString> > ,arg:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ProcDescMArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x281b4d0usize)as*mut u8,();
 (ProcDescMArgS)__receiver,(crate::system::action_1::Action_1< ::unity2::Il2CppString>)::core::convert::Into::into(method),(::unity2::Il2CppString)::core::convert::Into::into(arg))}
 }
 #[doc="`ExecuteImpl(crate::app::procinst::ProcInst)` overload"]fn execute_impl(self,inst:impl::core::convert::Into<crate::app::procinst::ProcInst>)->(){unsafe{let __receiver= <ProcDescMArgS as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x281d2f0usize)as*mut u8,();
-(ProcDescMArgS)__receiver,(crate::app::procinst::ProcInst)::core::convert::Into::into(inst))}
+__ProcDescMArgS_unity2_raw::execute_impl(__receiver, ::core::convert::Into::into(inst), ::core::option::Option::None)}
 }
 }
 

@@ -17,16 +17,22 @@ use crate::system::object::{IObject,Object}
 pub use __types::*;
 
 #[cfg(feature="unity_engine-events-baseinvokablecall")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __BaseInvokableCall_unity2_raw{use super:: * ;
-pub unsafe fn invoke(this:BaseInvokableCall,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Invoke").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Invoke", <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn invoke(this:BaseInvokableCall,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,"Invoke",));
 let inner:extern "C" fn(BaseInvokableCall, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,args,__mi)}
-pub unsafe fn find(this:BaseInvokableCall,target_obj:crate::system::object::Object,method:crate::system::reflection::methodinfo::MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("Find").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","Find", <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn find(this:BaseInvokableCall,target_obj:crate::system::object::Object,method:crate::system::reflection::methodinfo::MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <BaseInvokableCall as::unity2::ClassIdentity> ::NAME,"Find",));
 let inner:extern "C" fn(BaseInvokableCall,crate::system::object::Object,crate::system::reflection::methodinfo::MethodInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

@@ -19,15 +19,50 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/canvas/Canvas.md"))]#[::unity2::class(namespace="UnityEngine",name="Canvas")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct Canvas{#[static_field]#[rename(name="preWillRenderCanvases")]pub pre_will_render_canvases:crate::unity_engine::canvas::Canvas_WillRenderCanvases, #[static_field]#[rename(name="willRenderCanvases")]pub will_render_canvases:crate::unity_engine::canvas::Canvas_WillRenderCanvases,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/canvas/Canvas_WillRenderCanvases.md"))]#[::unity2::class(namespace="UnityEngine",name="Canvas.WillRenderCanvases")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct Canvas_WillRenderCanvases{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/canvas/Canvas.md"))]#[::unity2::class(namespace="UnityEngine",name="Canvas")]#[parent(crate::unity_engine::behaviour::Behaviour)]pub struct Canvas{#[static_field]#[rename(name="preWillRenderCanvases")]pub pre_will_render_canvases:crate::unity_engine::canvas::Canvas_WillRenderCanvases, #[static_field]#[rename(name="willRenderCanvases")]pub will_render_canvases:crate::unity_engine::canvas::Canvas_WillRenderCanvases,}
 
 }
 
 #[cfg(feature = "unity_engine-canvas-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-canvas")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Canvas_WillRenderCanvases_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:Canvas_WillRenderCanvases,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <Canvas_WillRenderCanvases as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(Canvas_WillRenderCanvases, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="unity_engine-canvas")]pub trait ICanvas_WillRenderCanvasesMethods:ICanvas_WillRenderCanvases{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Canvas_WillRenderCanvases as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x3f24860usize)as*mut u8,();
+(Canvas_WillRenderCanvases)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Canvas_WillRenderCanvases as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__Canvas_WillRenderCanvases_unity2_raw::invoke(__receiver, ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="unity_engine-canvas")]impl<__T:ICanvas_WillRenderCanvases>ICanvas_WillRenderCanvasesMethods for __T{}
+
+#[cfg(feature="unity_engine-canvas")]impl Canvas_WillRenderCanvases{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="unity_engine-canvas")]impl Canvas_WillRenderCanvases{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(Canvas_WillRenderCanvases), ::core::stringify!(new),));
+ <Self as ICanvas_WillRenderCanvasesMethods> ::ctor(this,object,method);
+this}
+}
 
 #[cfg(feature="unity_engine-canvas")]impl Canvas{#[doc="`add_preWillRenderCanvases(crate::unity_engine::canvas::Canvas_WillRenderCanvases)` overload"]pub fn add_pre_will_render_canvases(value:impl::core::convert::Into<crate::unity_engine::canvas::Canvas_WillRenderCanvases>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f20050usize)as*mut u8,();
 (crate::unity_engine::canvas::Canvas_WillRenderCanvases)::core::convert::Into::into(value))}
@@ -288,38 +323,15 @@ pub fn get_rendering_display_size_injected_method_info()-> & 'static::unity2::il
 this}
 }
 
-#[cfg(feature="unity_engine-canvas")]pub trait ICanvas_WillRenderCanvasesMethods:ICanvas_WillRenderCanvases{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <Canvas_WillRenderCanvases as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f24860usize)as*mut u8,();
-(Canvas_WillRenderCanvases)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke()` overload"]fn invoke(self,)->(){unsafe{let __receiver= <Canvas_WillRenderCanvases as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3f211d0usize)as*mut u8,();
-(Canvas_WillRenderCanvases)__receiver)}
-}
-}
-
-#[cfg(feature="unity_engine-canvas")]impl<__T:ICanvas_WillRenderCanvases>ICanvas_WillRenderCanvasesMethods for __T{}
-
-#[cfg(feature="unity_engine-canvas")]impl Canvas_WillRenderCanvases{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="unity_engine-canvas")]impl Canvas_WillRenderCanvases{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(Canvas_WillRenderCanvases), ::core::stringify!(new),));
- <Self as ICanvas_WillRenderCanvasesMethods> ::ctor(this,object,method);
-this}
-}
-
 #[cfg(feature = "unity_engine-canvas")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Canvas;
-    pub use super::ICanvas;
-    pub use super::ICanvasMethods;
     pub use super::Canvas_WillRenderCanvases;
     pub use super::ICanvas_WillRenderCanvases;
     pub use super::ICanvas_WillRenderCanvasesMethods;
+    pub use super::Canvas;
+    pub use super::ICanvas;
+    pub use super::ICanvasMethods;
     pub use crate::system::delegate::IDelegate;
     pub use crate::system::multicastdelegate::IMulticastDelegate;
     pub use crate::system::object::IObject;

@@ -19,36 +19,36 @@ use crate::unity_engine::resource_management::resource_providers::resourceprovid
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-assetbundleprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __AssetBundleProvider_unity2_raw{use super:: * ;
- #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_provide{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleProvider as::unity2::ClassIdentity> ::class(),"Provide",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <AssetBundleProvider as::unity2::ClassIdentity> ::NAME,"Provide",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_get_default_type{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleProvider as::unity2::ClassIdentity> ::class(),"GetDefaultType",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <AssetBundleProvider as::unity2::ClassIdentity> ::NAME,"GetDefaultType",e),}
-}
-}
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_release{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation as::unity2::IlType> ::il_type(), <crate::system::object::Object as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleProvider as::unity2::ClassIdentity> ::class(),"Release",2,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <AssetBundleProvider as::unity2::ClassIdentity> ::NAME,"Release",e),}
-}
-}
+pub unsafe fn provide(this:AssetBundleProvider,provider_interface:crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(17usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",17usize,__vt.len(), <AssetBundleProvider as::unity2::ClassIdentity> ::NAME,"Provide",));
+let inner:extern "C" fn(AssetBundleProvider,crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,provider_interface,__mi)}
+pub unsafe fn get_default_type(this:AssetBundleProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::SystemType{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(16usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",16usize,__vt.len(), <AssetBundleProvider as::unity2::ClassIdentity> ::NAME,"GetDefaultType",));
+let inner:extern "C" fn(AssetBundleProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, ::unity2::OptionalMethod,)-> ::unity2::SystemType= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,location,__mi)}
+pub unsafe fn release(this:AssetBundleProvider,location:crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,asset:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(15usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",15usize,__vt.len(), <AssetBundleProvider as::unity2::ClassIdentity> ::NAME,"Release",));
+let inner:extern "C" fn(AssetBundleProvider,crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation,crate::system::object::Object, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,location,asset,__mi)}
 #[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_ctor{use super:: * ;
 static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[];
  ::unity2::lookup::method_info_on_class_with_signature(<AssetBundleProvider as::unity2::ClassIdentity> ::class(),".ctor",0,param_types,false,)}
@@ -62,16 +62,13 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 }
 
 #[cfg(feature="unity_engine-resource_management-resource_providers-assetbundleprovider")]pub trait IAssetBundleProviderMethods:IAssetBundleProvider{#[doc="`Provide(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)` overload"]fn provide(self,provider_interface:impl::core::convert::Into<crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle>)->(){unsafe{let __receiver= <AssetBundleProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__AssetBundleProvider_unity2_raw::__lookup_provide::get_method_info().method_ptr,();
-(AssetBundleProvider)__receiver,(crate::unity_engine::resource_management::resource_providers::providehandle::ProvideHandle)::core::convert::Into::into(provider_interface))}
+__AssetBundleProvider_unity2_raw::provide(__receiver, ::core::convert::Into::into(provider_interface), ::core::option::Option::None)}
 }
 #[doc="`GetDefaultType(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)` overload"]fn get_default_type(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation>)-> ::unity2::SystemType{unsafe{let __receiver= <AssetBundleProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__AssetBundleProvider_unity2_raw::__lookup_get_default_type::get_method_info().method_ptr, ::unity2::SystemType;
-(AssetBundleProvider)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location))}
+__AssetBundleProvider_unity2_raw::get_default_type(__receiver, ::core::convert::Into::into(location), ::core::option::Option::None)}
 }
 #[doc="`Release(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation, crate::system::object::Object)` overload"]fn release(self,location:impl::core::convert::Into<crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation> ,asset:impl::core::convert::Into<crate::system::object::Object>)->(){unsafe{let __receiver= <AssetBundleProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__AssetBundleProvider_unity2_raw::__lookup_release::get_method_info().method_ptr,();
-(AssetBundleProvider)__receiver,(crate::unity_engine::resource_management::resource_locations::iresourcelocation::IResourceLocation)::core::convert::Into::into(location),(crate::system::object::Object)::core::convert::Into::into(asset))}
+__AssetBundleProvider_unity2_raw::release(__receiver, ::core::convert::Into::into(location), ::core::convert::Into::into(asset), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <AssetBundleProvider as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!(__AssetBundleProvider_unity2_raw::__lookup_ctor::get_method_info().method_ptr,();

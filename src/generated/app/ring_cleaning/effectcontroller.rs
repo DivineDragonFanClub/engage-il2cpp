@@ -17,38 +17,15 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))]#[::unity2::class(namespace="App.RingCleaning",name="EffectController.AutoDelete")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EffectController_AutoDelete{}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/effectcontroller/EffectController.md"))]#[::unity2::class(namespace="App.RingCleaning",name="EffectController")]#[parent(crate::system::object::Object)]pub struct EffectController{#[static_field]#[rename(name="GlitterEffectPrefab")]pub glitter_effect_prefab: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterStrongEffectPrefab")]pub glitter_strong_effect_prefab: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterWeakNotHit")]pub glitter_weak_not_hit: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterWeakNear")]pub glitter_weak_near: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterStrongA")]pub glitter_strong_a: ::unity2::Il2CppString, #[static_field]#[rename(name="GlitterStrongB")]pub glitter_strong_b: ::unity2::Il2CppString, #[static_field]#[rename(name="NoteEffectA")]pub note_effect_a: ::unity2::Il2CppString, #[static_field]#[rename(name="NoteEffectB")]pub note_effect_b: ::unity2::Il2CppString, #[static_field]#[rename(name="HitEffect2D")]pub hit_effect2_d: ::unity2::Il2CppString, #[static_field]#[rename(name="RubEffect")]pub rub_effect: ::unity2::Il2CppString, #[static_field]#[rename(name="s_EffectRoot")]pub s_effect_root:crate::unity_engine::gameobject::GameObject, #[static_field]#[rename(name="s_Rub")]pub s_rub:crate::unity_engine::gameobject::GameObject,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/ring_cleaning/effectcontroller/EffectController_AutoDelete.md"))]#[::unity2::class(namespace="App.RingCleaning",name="EffectController.AutoDelete")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct EffectController_AutoDelete{}
 
 }
 
 #[cfg(feature = "app-ring_cleaning-effectcontroller-types")]
 pub use __types::*;
-
-#[cfg(feature="app-ring_cleaning-effectcontroller")]pub trait IEffectController_AutoDeleteMethods:IEffectController_AutoDelete{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EffectController_AutoDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6550usize)as*mut u8,();
-(EffectController_AutoDelete)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectController_AutoDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd65f0usize)as*mut u8,();
-(EffectController_AutoDelete)__receiver)}
-}
-}
-
-#[cfg(feature="app-ring_cleaning-effectcontroller")]impl<__T:IEffectController_AutoDelete>IEffectController_AutoDeleteMethods for __T{}
-
-#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController_AutoDelete{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController_AutoDelete{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(EffectController_AutoDelete), ::core::stringify!(new),));
- <Self as IEffectController_AutoDeleteMethods> ::ctor(this,);
-this}
-}
 
 #[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController{#[doc="`LoadPrefabAsync()` overload"]pub fn load_prefab_async()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x22d7650usize)as*mut u8,();
 )}
@@ -106,15 +83,38 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="app-ring_cleaning-effectcontroller")]pub trait IEffectController_AutoDeleteMethods:IEffectController_AutoDelete{#[doc="`Update()` overload"]fn update(self,)->(){unsafe{let __receiver= <EffectController_AutoDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd6550usize)as*mut u8,();
+(EffectController_AutoDelete)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <EffectController_AutoDelete as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1bd65f0usize)as*mut u8,();
+(EffectController_AutoDelete)__receiver)}
+}
+}
+
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl<__T:IEffectController_AutoDelete>IEffectController_AutoDeleteMethods for __T{}
+
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController_AutoDelete{pub fn update_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="app-ring_cleaning-effectcontroller")]impl EffectController_AutoDelete{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(EffectController_AutoDelete), ::core::stringify!(new),));
+ <Self as IEffectController_AutoDeleteMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-ring_cleaning-effectcontroller")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::EffectController_AutoDelete;
-    pub use super::IEffectController_AutoDelete;
-    pub use super::IEffectController_AutoDeleteMethods;
     pub use super::EffectController;
     pub use super::IEffectController;
     pub use super::IEffectControllerMethods;
+    pub use super::EffectController_AutoDelete;
+    pub use super::IEffectController_AutoDelete;
+    pub use super::IEffectController_AutoDeleteMethods;
     pub use crate::system::object::IObject;
     pub use crate::unity_engine::behaviour::IBehaviour;
     pub use crate::unity_engine::component::IComponent;

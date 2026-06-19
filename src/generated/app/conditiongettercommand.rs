@@ -11,32 +11,47 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/conditiongettercommand/ConditionGetterCommand_Command.md"))]#[::unity2::class(namespace="App",name="ConditionGetterCommand.Command")]#[parent(crate::system::object::Object)]pub struct ConditionGetterCommand_Command{#[offset(16)]#[rename(name="Condition")]pub condition:crate::app::stringcalculator::StringCalculator, #[offset(24)]#[rename(name="Function")]pub function:crate::app::stringcalculator::StringCalculator,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/conditiongettercommand/ConditionGetterCommand.md"))]#[::unity2::class(namespace="App",name="ConditionGetterCommand")]#[parent(crate::app::calculatorcommand::CalculatorCommand)]pub struct ConditionGetterCommand{#[offset(24)]#[rename(name="m_Commands")]pub m_commands:crate::system::collections::generic::list_1::List_1<crate::app::conditiongettercommand::ConditionGetterCommand_Command> , #[offset(32)]#[rename(name="m_Name")]pub m_name: ::unity2::Il2CppString,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/conditiongettercommand/ConditionGetterCommand_Command.md"))]#[::unity2::class(namespace="App",name="ConditionGetterCommand.Command")]#[parent(crate::system::object::Object)]pub struct ConditionGetterCommand_Command{#[offset(16)]#[rename(name="Condition")]pub condition:crate::app::stringcalculator::StringCalculator, #[offset(24)]#[rename(name="Function")]pub function:crate::app::stringcalculator::StringCalculator,}
 
 }
 
 #[cfg(feature = "app-conditiongettercommand-types")]
 pub use __types::*;
 
-#[cfg(feature="app-conditiongettercommand")]pub trait IConditionGetterCommand_CommandMethods:IConditionGetterCommand_Command{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConditionGetterCommand_Command as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbb20usize)as*mut u8,();
-(ConditionGetterCommand_Command)__receiver)}
-}
-}
-
-#[cfg(feature="app-conditiongettercommand")]impl<__T:IConditionGetterCommand_Command>IConditionGetterCommand_CommandMethods for __T{}
-
-#[cfg(feature="app-conditiongettercommand")]impl ConditionGetterCommand_Command{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
-#[cfg(feature="app-conditiongettercommand")]impl ConditionGetterCommand_Command{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(ConditionGetterCommand_Command), ::core::stringify!(new),));
- <Self as IConditionGetterCommand_CommandMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-conditiongettercommand")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ConditionGetterCommand_unity2_raw{use super:: * ;
+pub unsafe fn get_name(this:ConditionGetterCommand,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ConditionGetterCommand as::unity2::ClassIdentity> ::NAME,"get_Name",));
+let inner:extern "C" fn(ConditionGetterCommand, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get(this:ConditionGetterCommand,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <ConditionGetterCommand as::unity2::ClassIdentity> ::NAME,"Get",));
+let inner:extern "C" fn(ConditionGetterCommand,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,obj1,obj2,__mi)}
+pub unsafe fn func(this:ConditionGetterCommand,args:crate::system::collections::generic::list_1::List_1<f32> ,obj1:crate::system::object::Object,obj2:crate::system::object::Object,__unity2_method_info: ::unity2::OptionalMethod,)->f32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(26usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",26usize,__vt.len(), <ConditionGetterCommand as::unity2::ClassIdentity> ::NAME,"Func",));
+let inner:extern "C" fn(ConditionGetterCommand,crate::system::collections::generic::list_1::List_1<f32> ,crate::system::object::Object,crate::system::object::Object, ::unity2::OptionalMethod,)->f32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,obj1,obj2,__mi)}
 }
 
 #[cfg(feature="app-conditiongettercommand")]pub trait IConditionGetterCommandMethods:IConditionGetterCommand{#[doc="`.ctor(::unity2::Il2CppString)` overload"]fn ctor(self,name:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ConditionGetterCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -44,16 +59,13 @@ this}
 (ConditionGetterCommand)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(name))}
 }
 #[doc="`get_Name()` overload"]fn get_name(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <ConditionGetterCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2536bd0usize)as*mut u8, ::unity2::Il2CppString;
-(ConditionGetterCommand)__receiver)}
+__ConditionGetterCommand_unity2_raw::get_name(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Get(crate::system::object::Object, crate::system::object::Object)` overload"]fn get(self,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <ConditionGetterCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2536be0usize)as*mut u8,f32;
-(ConditionGetterCommand)__receiver,(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__ConditionGetterCommand_unity2_raw::get(__receiver, ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Func(crate::system::collections::generic::list_1::List_1<f32>, crate::system::object::Object, crate::system::object::Object)` overload"]fn func(self,args:impl::core::convert::Into<crate::system::collections::generic::list_1::List_1<f32> > ,obj1:impl::core::convert::Into<crate::system::object::Object> ,obj2:impl::core::convert::Into<crate::system::object::Object>)->f32{unsafe{let __receiver= <ConditionGetterCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2536bf0usize)as*mut u8,f32;
-(ConditionGetterCommand)__receiver,(crate::system::collections::generic::list_1::List_1<f32>)::core::convert::Into::into(args),(crate::system::object::Object)::core::convert::Into::into(obj1),(crate::system::object::Object)::core::convert::Into::into(obj2))}
+__ConditionGetterCommand_unity2_raw::func(__receiver, ::core::convert::Into::into(args), ::core::convert::Into::into(obj1), ::core::convert::Into::into(obj2), ::core::option::Option::None)}
 }
 #[doc="`Add(::unity2::Il2CppString)` overload"]fn add(self,funcion:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{let __receiver= <ConditionGetterCommand as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2536d80usize)as*mut u8,();
@@ -82,15 +94,33 @@ pub fn add_2_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="app-conditiongettercommand")]pub trait IConditionGetterCommand_CommandMethods:IConditionGetterCommand_Command{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <ConditionGetterCommand_Command as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x19cbb20usize)as*mut u8,();
+(ConditionGetterCommand_Command)__receiver)}
+}
+}
+
+#[cfg(feature="app-conditiongettercommand")]impl<__T:IConditionGetterCommand_Command>IConditionGetterCommand_CommandMethods for __T{}
+
+#[cfg(feature="app-conditiongettercommand")]impl ConditionGetterCommand_Command{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
+#[cfg(feature="app-conditiongettercommand")]impl ConditionGetterCommand_Command{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(ConditionGetterCommand_Command), ::core::stringify!(new),));
+ <Self as IConditionGetterCommand_CommandMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-conditiongettercommand")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::ConditionGetterCommand_Command;
-    pub use super::IConditionGetterCommand_Command;
-    pub use super::IConditionGetterCommand_CommandMethods;
     pub use super::ConditionGetterCommand;
     pub use super::IConditionGetterCommand;
     pub use super::IConditionGetterCommandMethods;
+    pub use super::ConditionGetterCommand_Command;
+    pub use super::IConditionGetterCommand_Command;
+    pub use super::IConditionGetterCommand_CommandMethods;
     pub use crate::app::calculatorcommand::ICalculatorCommand;
     pub use crate::system::object::IObject;
     #[cfg(feature = "app-calculatorcommand")] pub use crate::app::calculatorcommand::ICalculatorCommandMethods;

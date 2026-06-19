@@ -15,16 +15,22 @@ mod __types {
 pub use __types::*;
 
 #[cfg(feature="unity_engine-resource_management-util-iobjectinitializationdataprovider")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __IObjectInitializationDataProvider_unity2_raw{use super:: * ;
-pub unsafe fn get_name(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("get_Name").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","get_Name", <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn get_name(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(0usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",0usize,__vt.len(), <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,"get_Name",));
 let inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
 inner(this,__mi)}
-pub unsafe fn create_object_initialization_data(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{let __vi= ::unity2::Cast::get_class(this).raw().get_virtual_method("CreateObjectInitializationData").unwrap_or_else(||panic!("unity2: abstract method `{}
-` not found on the runtime class behind {}
-","CreateObjectInitializationData", <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,));
+pub unsafe fn create_object_initialization_data(this:IObjectInitializationDataProvider,__unity2_method_info: ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <IObjectInitializationDataProvider as::unity2::ClassIdentity> ::NAME,"CreateObjectInitializationData",));
 let inner:extern "C" fn(IObjectInitializationDataProvider, ::unity2::OptionalMethod,)->crate::unity_engine::resource_management::util::objectinitializationdata::ObjectInitializationData= ::core::mem::transmute(__vi.method_ptr);
 let _=__unity2_method_info;
 let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);

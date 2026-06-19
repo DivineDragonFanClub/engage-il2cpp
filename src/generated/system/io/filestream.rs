@@ -15,10 +15,10 @@ use crate::system::object::{IObject,Object}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream.md"))]#[::unity2::class(namespace="System.IO",name="FileStream")]#[parent(crate::system::io::stream::Stream)]pub struct FileStream{#[static_field]#[rename(name="buf_recycle")]pub buf_recycle: ::unity2::Array<u8> , #[static_field]#[rename(name="buf_recycle_lock")]pub buf_recycle_lock: ::unity2::IlInstance, #[offset(40)]#[rename(name="buf")]pub buf: ::unity2::Array<u8> , #[offset(48)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(64)]#[rename(name="isExposed")]pub is_exposed:bool, #[offset(72)]#[rename(name="append_startpos")]pub append_startpos:i64, #[offset(80)]#[rename(name="access")]pub access:crate::system::io::fileaccess::FileAccess, #[offset(84)]#[rename(name="owner")]pub owner:bool, #[offset(85)]#[rename(name="async")]pub r#async:bool, #[offset(86)]#[rename(name="canseek")]pub canseek:bool, #[offset(87)]#[rename(name="anonymous")]pub anonymous:bool, #[offset(88)]#[rename(name="buf_dirty")]pub buf_dirty:bool, #[offset(92)]#[rename(name="buf_size")]pub buf_size:i32, #[offset(96)]#[rename(name="buf_length")]pub buf_length:i32, #[offset(100)]#[rename(name="buf_offset")]pub buf_offset:i32, #[offset(104)]#[rename(name="buf_start")]pub buf_start:i64,}
-
-
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream_ReadDelegate.md"))]#[::unity2::class(namespace="System.IO",name="FileStream.ReadDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FileStream_ReadDelegate{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream.md"))]#[::unity2::class(namespace="System.IO",name="FileStream")]#[parent(crate::system::io::stream::Stream)]pub struct FileStream{#[static_field]#[rename(name="buf_recycle")]pub buf_recycle: ::unity2::Array<u8> , #[static_field]#[rename(name="buf_recycle_lock")]pub buf_recycle_lock: ::unity2::IlInstance, #[offset(40)]#[rename(name="buf")]pub buf: ::unity2::Array<u8> , #[offset(48)]#[rename(name="name")]pub name: ::unity2::Il2CppString, #[offset(64)]#[rename(name="isExposed")]pub is_exposed:bool, #[offset(72)]#[rename(name="append_startpos")]pub append_startpos:i64, #[offset(80)]#[rename(name="access")]pub access:crate::system::io::fileaccess::FileAccess, #[offset(84)]#[rename(name="owner")]pub owner:bool, #[offset(85)]#[rename(name="async")]pub r#async:bool, #[offset(86)]#[rename(name="canseek")]pub canseek:bool, #[offset(87)]#[rename(name="anonymous")]pub anonymous:bool, #[offset(88)]#[rename(name="buf_dirty")]pub buf_dirty:bool, #[offset(92)]#[rename(name="buf_size")]pub buf_size:i32, #[offset(96)]#[rename(name="buf_length")]pub buf_length:i32, #[offset(100)]#[rename(name="buf_offset")]pub buf_offset:i32, #[offset(104)]#[rename(name="buf_start")]pub buf_start:i64,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/system/io/filestream/FileStream_WriteDelegate.md"))]#[::unity2::class(namespace="System.IO",name="FileStream.WriteDelegate")]#[parent(crate::system::multicastdelegate::MulticastDelegate)]pub struct FileStream_WriteDelegate{}
@@ -27,6 +27,194 @@ use crate::system::object::{IObject,Object}
 
 #[cfg(feature = "system-io-filestream-types")]
 pub use __types::*;
+
+#[cfg(feature="system-io-filestream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileStream_ReadDelegate_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:FileStream_ReadDelegate,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <FileStream_ReadDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(FileStream_ReadDelegate, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,offset,count,__mi)}
+}
+
+#[cfg(feature="system-io-filestream")]pub trait IFileStream_ReadDelegateMethods:IFileStream_ReadDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FileStream_ReadDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x34d63f0usize)as*mut u8,();
+(FileStream_ReadDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
+}
+#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <FileStream_ReadDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__FileStream_ReadDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
+}
+}
+
+#[cfg(feature="system-io-filestream")]impl<__T:IFileStream_ReadDelegate>IFileStream_ReadDelegateMethods for __T{}
+
+#[cfg(feature="system-io-filestream")]impl FileStream_ReadDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+}
+
+#[cfg(feature="system-io-filestream")]impl FileStream_ReadDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(FileStream_ReadDelegate), ::core::stringify!(new),));
+ <Self as IFileStream_ReadDelegateMethods> ::ctor(this,object,method);
+this}
+}
+
+#[cfg(feature="system-io-filestream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileStream_unity2_raw{use super:: * ;
+pub unsafe fn get_can_read(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"get_CanRead",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_write(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"get_CanWrite",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_can_seek(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"get_CanSeek",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_length(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"get_Length",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn get_position(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"get_Position",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn set_position(this:FileStream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"set_Position",));
+let inner:extern "C" fn(FileStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn read_byte(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(30usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",30usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"ReadByte",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn write_byte(this:FileStream,value:u8,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(32usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",32usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"WriteByte",));
+let inner:extern "C" fn(FileStream,u8, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn read(this:FileStream,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(29usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",29usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(FileStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,offset,count,__mi)}
+pub unsafe fn write(this:FileStream,array: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(31usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",31usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"Write",));
+let inner:extern "C" fn(FileStream, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,array,offset,count,__mi)}
+pub unsafe fn seek(this:FileStream,offset:i64,origin:crate::system::io::seekorigin::SeekOrigin,__unity2_method_info: ::unity2::OptionalMethod,)->i64{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(27usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",27usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"Seek",));
+let inner:extern "C" fn(FileStream,i64,crate::system::io::seekorigin::SeekOrigin, ::unity2::OptionalMethod,)->i64= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,offset,origin,__mi)}
+pub unsafe fn set_length(this:FileStream,value:i64,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(28usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",28usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"SetLength",));
+let inner:extern "C" fn(FileStream,i64, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+pub unsafe fn flush(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(20usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",20usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"Flush",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn finalize(this:FileStream,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(1usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",1usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"Finalize",));
+let inner:extern "C" fn(FileStream, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:FileStream,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(19usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",19usize,__vt.len(), <FileStream as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(FileStream,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+}
 
 #[cfg(feature="system-io-filestream")]impl FileStream{#[doc="`.cctor()` overload"]pub fn cctor()->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3812030usize)as*mut u8,();
 )}
@@ -74,76 +262,61 @@ pub use __types::*;
 (FileStream)__receiver,(::unity2::Il2CppString)::core::convert::Into::into(path),(crate::system::io::filemode::FileMode)::core::convert::Into::into(mode),(crate::system::io::fileaccess::FileAccess)::core::convert::Into::into(access),(crate::system::io::fileshare::FileShare)::core::convert::Into::into(share),(i32)::core::convert::Into::into(buffer_size),(bool)::core::convert::Into::into(anonymous),(crate::system::io::fileoptions::FileOptions)::core::convert::Into::into(options))}
 }
 #[doc="`get_CanRead()` overload"]fn get_can_read(self,)->bool{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380f3a0usize)as*mut u8,bool;
-(FileStream)__receiver)}
+__FileStream_unity2_raw::get_can_read(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanWrite()` overload"]fn get_can_write(self,)->bool{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380f3c0usize)as*mut u8,bool;
-(FileStream)__receiver)}
+__FileStream_unity2_raw::get_can_write(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_CanSeek()` overload"]fn get_can_seek(self,)->bool{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380f3e0usize)as*mut u8,bool;
-(FileStream)__receiver)}
+__FileStream_unity2_raw::get_can_seek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Length()` overload"]fn get_length(self,)->i64{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380f3f0usize)as*mut u8,i64;
-(FileStream)__receiver)}
+__FileStream_unity2_raw::get_length(__receiver, ::core::option::Option::None)}
 }
 #[doc="`get_Position()` overload"]fn get_position(self,)->i64{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380f610usize)as*mut u8,i64;
-(FileStream)__receiver)}
+__FileStream_unity2_raw::get_position(__receiver, ::core::option::Option::None)}
 }
 #[doc="`set_Position(i64)` overload"]fn set_position(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380f830usize)as*mut u8,();
-(FileStream)__receiver,(i64)::core::convert::Into::into(value))}
+__FileStream_unity2_raw::set_position(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`ExposeHandle()` overload"]fn expose_handle(self,)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x380f310usize)as*mut u8,();
 (FileStream)__receiver)}
 }
 #[doc="`ReadByte()` overload"]fn read_byte(self,)->i32{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380fbd0usize)as*mut u8,i32;
-(FileStream)__receiver)}
+__FileStream_unity2_raw::read_byte(__receiver, ::core::option::Option::None)}
 }
 #[doc="`WriteByte(u8)` overload"]fn write_byte(self,value:impl::core::convert::Into<u8>)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x380ff50usize)as*mut u8,();
-(FileStream)__receiver,(u8)::core::convert::Into::into(value))}
+__FileStream_unity2_raw::write_byte(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Read(::unity2::Array<u8>, i32, i32)` overload"]fn read(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x38100a0usize)as*mut u8,i32;
-(FileStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+__FileStream_unity2_raw::read(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadInternal(::unity2::Array<u8>, i32, i32)` overload"]fn read_internal(self,dest:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x38102f0usize)as*mut u8,i32;
 (FileStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(dest),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
 }
 #[doc="`Write(::unity2::Array<u8>, i32, i32)` overload"]fn write(self,array:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3810990usize)as*mut u8,();
-(FileStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(array),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+__FileStream_unity2_raw::write(__receiver, ::core::convert::Into::into(array), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`WriteInternal(::unity2::Array<u8>, i32, i32)` overload"]fn write_internal(self,src:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3810bb0usize)as*mut u8,();
 (FileStream)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(src),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
 }
 #[doc="`Seek(i64, crate::system::io::seekorigin::SeekOrigin)` overload"]fn seek(self,offset:impl::core::convert::Into<i64> ,origin:impl::core::convert::Into<crate::system::io::seekorigin::SeekOrigin>)->i64{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3811480usize)as*mut u8,i64;
-(FileStream)__receiver,(i64)::core::convert::Into::into(offset),(crate::system::io::seekorigin::SeekOrigin)::core::convert::Into::into(origin))}
+__FileStream_unity2_raw::seek(__receiver, ::core::convert::Into::into(offset), ::core::convert::Into::into(origin), ::core::option::Option::None)}
 }
 #[doc="`SetLength(i64)` overload"]fn set_length(self,value:impl::core::convert::Into<i64>)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3811780usize)as*mut u8,();
-(FileStream)__receiver,(i64)::core::convert::Into::into(value))}
+__FileStream_unity2_raw::set_length(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`Flush()` overload"]fn flush(self,)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3811a30usize)as*mut u8,();
-(FileStream)__receiver)}
+__FileStream_unity2_raw::flush(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Finalize()` overload"]fn finalize(self,)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3811ab0usize)as*mut u8,();
-(FileStream)__receiver)}
+__FileStream_unity2_raw::finalize(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3811b30usize)as*mut u8,();
-(FileStream)__receiver,(bool)::core::convert::Into::into(disposing))}
+__FileStream_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`ReadSegment(::unity2::Array<u8>, i32, i32)` overload"]fn read_segment(self,dest:impl::core::convert::Into< ::unity2::Array<u8> > ,dest_offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <FileStream as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x38104b0usize)as*mut u8,i32;
@@ -272,27 +445,17 @@ this}
 this}
 }
 
-#[cfg(feature="system-io-filestream")]pub trait IFileStream_ReadDelegateMethods:IFileStream_ReadDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FileStream_ReadDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d63f0usize)as*mut u8,();
-(FileStream_ReadDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
-}
-#[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <FileStream_ReadDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d6410usize)as*mut u8,i32;
-(FileStream_ReadDelegate)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
-}
-}
-
-#[cfg(feature="system-io-filestream")]impl<__T:IFileStream_ReadDelegate>IFileStream_ReadDelegateMethods for __T{}
-
-#[cfg(feature="system-io-filestream")]impl FileStream_ReadDelegate{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn invoke_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-}
-
-#[cfg(feature="system-io-filestream")]impl FileStream_ReadDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` — overload selector"]pub fn new(object:crate::system::object::Object,method: ::unity2::IntPtr)->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(FileStream_ReadDelegate), ::core::stringify!(new),));
- <Self as IFileStream_ReadDelegateMethods> ::ctor(this,object,method);
-this}
+#[cfg(feature="system-io-filestream")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __FileStream_WriteDelegate_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:FileStream_WriteDelegate,buffer: ::unity2::Array<u8> ,offset:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <FileStream_WriteDelegate as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(FileStream_WriteDelegate, ::unity2::Array<u8> ,i32,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,offset,count,__mi)}
 }
 
 #[cfg(feature="system-io-filestream")]pub trait IFileStream_WriteDelegateMethods:IFileStream_WriteDelegate{#[doc="`.ctor(crate::system::object::Object, ::unity2::IntPtr)` overload"]fn ctor(self,object:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into< ::unity2::IntPtr>)->(){unsafe{let __receiver= <FileStream_WriteDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -300,8 +463,7 @@ this}
 (FileStream_WriteDelegate)__receiver,(crate::system::object::Object)::core::convert::Into::into(object),(::unity2::IntPtr)::core::convert::Into::into(method))}
 }
 #[doc="`Invoke(::unity2::Array<u8>, i32, i32)` overload"]fn invoke(self,buffer:impl::core::convert::Into< ::unity2::Array<u8> > ,offset:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <FileStream_WriteDelegate as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34d68b0usize)as*mut u8,();
-(FileStream_WriteDelegate)__receiver,(::unity2::Array<u8>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(offset),(i32)::core::convert::Into::into(count))}
+__FileStream_WriteDelegate_unity2_raw::invoke(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(offset), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 }
 
@@ -321,12 +483,12 @@ this}
 #[cfg(feature = "system-io-filestream")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::FileStream;
-    pub use super::IFileStream;
-    pub use super::IFileStreamMethods;
     pub use super::FileStream_ReadDelegate;
     pub use super::IFileStream_ReadDelegate;
     pub use super::IFileStream_ReadDelegateMethods;
+    pub use super::FileStream;
+    pub use super::IFileStream;
+    pub use super::IFileStreamMethods;
     pub use super::FileStream_WriteDelegate;
     pub use super::IFileStream_WriteDelegate;
     pub use super::IFileStream_WriteDelegateMethods;

@@ -11,6 +11,9 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/packedplaymodebuildlogs/PackedPlayModeBuildLogs.md"))]#[::unity2::class(namespace="",name="PackedPlayModeBuildLogs")]#[parent(crate::system::object::Object)]pub struct PackedPlayModeBuildLogs{#[offset(16)]#[rename(name="m_RuntimeBuildLogs")]pub m_runtime_build_logs:crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/packedplaymodebuildlogs/PackedPlayModeBuildLogs_RuntimeBuildLog.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy)]pub struct PackedPlayModeBuildLogs_RuntimeBuildLog{pub r#type:crate::unity_engine::logtype::LogType,pub message: ::unity2::Il2CppString,}
 impl::unity2::ClassIdentity for PackedPlayModeBuildLogs_RuntimeBuildLog{const NAMESPACE: &'static str="";
 const NAME: &'static str="PackedPlayModeBuildLogs.RuntimeBuildLog";
@@ -21,21 +24,10 @@ fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class
 impl::unity2::IlType for PackedPlayModeBuildLogs_RuntimeBuildLog{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/root/packedplaymodebuildlogs/PackedPlayModeBuildLogs.md"))]#[::unity2::class(namespace="",name="PackedPlayModeBuildLogs")]#[parent(crate::system::object::Object)]pub struct PackedPlayModeBuildLogs{#[offset(16)]#[rename(name="m_RuntimeBuildLogs")]pub m_runtime_build_logs:crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog> ,}
-
 }
 
 #[cfg(feature = "root-packedplaymodebuildlogs-types")]
 pub use __types::*;
-
-#[cfg(feature="root-packedplaymodebuildlogs")]impl PackedPlayModeBuildLogs_RuntimeBuildLog{#[doc="`.ctor(crate::unity_engine::logtype::LogType, ::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0960usize)as*mut u8,();
-(*mut PackedPlayModeBuildLogs_RuntimeBuildLog)self as*mut PackedPlayModeBuildLogs_RuntimeBuildLog,(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(message))}
-}
-}
-
-#[cfg(feature="root-packedplaymodebuildlogs")]impl PackedPlayModeBuildLogs_RuntimeBuildLog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
 
 #[cfg(feature="root-packedplaymodebuildlogs")]pub trait IPackedPlayModeBuildLogsMethods:IPackedPlayModeBuildLogs{#[doc="`get_RuntimeBuildLogs()` overload"]fn get_runtime_build_logs(self,)->crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog>{unsafe{let __receiver= <PackedPlayModeBuildLogs as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2dbb800usize)as*mut u8,crate::system::collections::generic::list_1::List_1<crate::root::packedplaymodebuildlogs::PackedPlayModeBuildLogs_RuntimeBuildLog> ;
@@ -65,13 +57,21 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
 this}
 }
 
+#[cfg(feature="root-packedplaymodebuildlogs")]impl PackedPlayModeBuildLogs_RuntimeBuildLog{#[doc="`.ctor(crate::unity_engine::logtype::LogType, ::unity2::Il2CppString)` overload"]pub fn ctor(&mut self,r#type:impl::core::convert::Into<crate::unity_engine::logtype::LogType> ,message:impl::core::convert::Into< ::unity2::Il2CppString>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2dc0960usize)as*mut u8,();
+(*mut PackedPlayModeBuildLogs_RuntimeBuildLog)self as*mut PackedPlayModeBuildLogs_RuntimeBuildLog,(crate::unity_engine::logtype::LogType)::core::convert::Into::into(r#type),(::unity2::Il2CppString)::core::convert::Into::into(message))}
+}
+}
+
+#[cfg(feature="root-packedplaymodebuildlogs")]impl PackedPlayModeBuildLogs_RuntimeBuildLog{pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
+
 #[cfg(feature = "root-packedplaymodebuildlogs")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::PackedPlayModeBuildLogs_RuntimeBuildLog;
     pub use super::PackedPlayModeBuildLogs;
     pub use super::IPackedPlayModeBuildLogs;
     pub use super::IPackedPlayModeBuildLogsMethods;
+    pub use super::PackedPlayModeBuildLogs_RuntimeBuildLog;
     pub use crate::system::object::IObject;
     pub use crate::system::valuetype::IValueType;
     #[cfg(feature = "system-object")] pub use crate::system::object::IObjectMethods;

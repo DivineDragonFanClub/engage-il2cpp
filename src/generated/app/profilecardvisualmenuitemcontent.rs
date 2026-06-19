@@ -26,9 +26,21 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 #[cfg(feature = "app-profilecardvisualmenuitemcontent-types")]
 pub use __types::*;
 
+#[cfg(feature="app-profilecardvisualmenuitemcontent")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __ProfileCardVisualMenuItemContent_unity2_raw{use super:: * ;
+pub unsafe fn build_text(this:ProfileCardVisualMenuItemContent,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <ProfileCardVisualMenuItemContent as::unity2::ClassIdentity> ::NAME,"BuildText",));
+let inner:extern "C" fn(ProfileCardVisualMenuItemContent, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="app-profilecardvisualmenuitemcontent")]pub trait IProfileCardVisualMenuItemContentMethods:IProfileCardVisualMenuItemContent{#[doc="`BuildText()` overload"]fn build_text(self,)->(){unsafe{let __receiver= <ProfileCardVisualMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c06ff0usize)as*mut u8,();
-(ProfileCardVisualMenuItemContent)__receiver)}
+__ProfileCardVisualMenuItemContent_unity2_raw::build_text(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetSprite(crate::unity_engine::sprite::Sprite)` overload"]fn set_sprite(self,sprite:impl::core::convert::Into<crate::unity_engine::sprite::Sprite>)->(){unsafe{let __receiver= <ProfileCardVisualMenuItemContent as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c03b10usize)as*mut u8,();

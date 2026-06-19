@@ -20,6 +20,19 @@ use crate::unity_engine::texture::{ITexture,Texture}
 #[cfg(feature = "unity_engine-cubemap-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-cubemap")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __Cubemap_unity2_raw{use super:: * ;
+pub unsafe fn get_is_readable(this:Cubemap,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <Cubemap as::unity2::ClassIdentity> ::NAME,"get_isReadable",));
+let inner:extern "C" fn(Cubemap, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="unity_engine-cubemap")]impl Cubemap{#[doc="`Internal_CreateImpl(crate::unity_engine::cubemap::Cubemap, i32, i32, crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat, crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags, ::unity2::IntPtr)` overload"]pub fn internal_create_impl(mono:impl::core::convert::Into<crate::unity_engine::cubemap::Cubemap> ,ext:impl::core::convert::Into<i32> ,mip_count:impl::core::convert::Into<i32> ,format:impl::core::convert::Into<crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat> ,flags:impl::core::convert::Into<crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags> ,native_tex:impl::core::convert::Into< ::unity2::IntPtr>)->bool{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x2c47620usize)as*mut u8,bool;
 (crate::unity_engine::cubemap::Cubemap)::core::convert::Into::into(mono),(i32)::core::convert::Into::into(ext),(i32)::core::convert::Into::into(mip_count),(crate::unity_engine::experimental::rendering::graphicsformat::GraphicsFormat)::core::convert::Into::into(format),(crate::unity_engine::experimental::rendering::texturecreationflags::TextureCreationFlags)::core::convert::Into::into(flags),(::unity2::IntPtr)::core::convert::Into::into(native_tex))}
 }
@@ -47,8 +60,7 @@ pub use __types::*;
 (Cubemap)__receiver,(::unity2::IntPtr)::core::convert::Into::into(native_texture))}
 }
 #[doc="`get_isReadable()` overload"]fn get_is_readable(self,)->bool{unsafe{let __receiver= <Cubemap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47820usize)as*mut u8,bool;
-(Cubemap)__receiver)}
+__Cubemap_unity2_raw::get_is_readable(__receiver, ::core::option::Option::None)}
 }
 #[doc="`SetPixelImpl(i32, i32, i32, crate::unity_engine::color::Color)` overload"]fn set_pixel_impl(self,image:impl::core::convert::Into<i32> ,x:impl::core::convert::Into<i32> ,y:impl::core::convert::Into<i32> ,color:impl::core::convert::Into<crate::unity_engine::color::Color>)->(){unsafe{let __receiver= <Cubemap as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c47870usize)as*mut u8,();

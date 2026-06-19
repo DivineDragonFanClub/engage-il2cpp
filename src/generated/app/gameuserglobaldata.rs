@@ -21,6 +21,12 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)]pub struct GameUserGlobalData_FlagsField{}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserglobaldata::GameUserGlobalData>)]pub struct GameUserGlobalData{#[offset(48)]#[rename(name="m_CompletedHash")]pub m_completed_hash:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_CompletedList")]pub m_completed_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_Flags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct GameUserGlobalData_Flags{pub value:i32,}
 impl::unity2::ClassIdentity for GameUserGlobalData_Flags{const NAMESPACE: &'static str="App";
 const NAME: &'static str="GameUserGlobalData.Flags";
@@ -58,20 +64,26 @@ pub fn dlc_news_patch3()->Self{Self{value:512}
 }
 }
 
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData_FlagsField.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData.FlagsField")]#[parent(crate::app::bitfieldtemplate32_1::BitFieldTemplate32_1<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)]pub struct GameUserGlobalData_FlagsField{}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/gameuserglobaldata/GameUserGlobalData.md"))]#[::unity2::class(namespace="App",name="GameUserGlobalData")]#[parent(crate::app::singletonclass_1::SingletonClass_1<crate::app::gameuserglobaldata::GameUserGlobalData>)]pub struct GameUserGlobalData{#[offset(48)]#[rename(name="m_CompletedHash")]pub m_completed_hash:crate::system::collections::generic::hashset_1::HashSet_1< ::unity2::Il2CppString> , #[offset(56)]#[rename(name="m_CompletedList")]pub m_completed_list:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
-
 }
 
 #[cfg(feature = "app-gameuserglobaldata-types")]
 pub use __types::*;
 
+#[cfg(feature="app-gameuserglobaldata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameUserGlobalData_FlagsField_unity2_raw{use super:: * ;
+pub unsafe fn to_int(this:GameUserGlobalData_FlagsField,value:crate::app::gameuserglobaldata::GameUserGlobalData_Flags,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <GameUserGlobalData_FlagsField as::unity2::ClassIdentity> ::NAME,"ToInt",));
+let inner:extern "C" fn(GameUserGlobalData_FlagsField,crate::app::gameuserglobaldata::GameUserGlobalData_Flags, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,value,__mi)}
+}
+
 #[cfg(feature="app-gameuserglobaldata")]pub trait IGameUserGlobalData_FlagsFieldMethods:IGameUserGlobalData_FlagsField{#[doc="`ToInt(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)` overload"]fn to_int(self,value:impl::core::convert::Into<crate::app::gameuserglobaldata::GameUserGlobalData_Flags>)->i32{unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1e0usize)as*mut u8,i32;
-(GameUserGlobalData_FlagsField)__receiver,(crate::app::gameuserglobaldata::GameUserGlobalData_Flags)::core::convert::Into::into(value))}
+__GameUserGlobalData_FlagsField_unity2_raw::to_int(__receiver, ::core::convert::Into::into(value), ::core::option::Option::None)}
 }
 #[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <GameUserGlobalData_FlagsField as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1e6e1f0usize)as*mut u8,();
@@ -90,6 +102,39 @@ pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unit
  failed to instantiate", ::core::stringify!(GameUserGlobalData_FlagsField), ::core::stringify!(new),));
  <Self as IGameUserGlobalData_FlagsFieldMethods> ::ctor(this,);
 this}
+}
+
+#[cfg(feature="app-gameuserglobaldata")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __GameUserGlobalData_unity2_raw{use super:: * ;
+pub unsafe fn get_version(this:GameUserGlobalData,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <GameUserGlobalData as::unity2::ClassIdentity> ::NAME,"get_Version",));
+let inner:extern "C" fn(GameUserGlobalData, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn on_serialize(this:GameUserGlobalData,stream:crate::app::stream_2::Stream_2,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <GameUserGlobalData as::unity2::ClassIdentity> ::NAME,"OnSerialize",));
+let inner:extern "C" fn(GameUserGlobalData,crate::app::stream_2::Stream_2, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,__mi)}
+pub unsafe fn on_deserialize(this:GameUserGlobalData,stream:crate::app::stream_2::Stream_2,version:i32,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <GameUserGlobalData as::unity2::ClassIdentity> ::NAME,"OnDeserialize",));
+let inner:extern "C" fn(GameUserGlobalData,crate::app::stream_2::Stream_2,i32, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,stream,version,__mi)}
 }
 
 #[cfg(feature="app-gameuserglobaldata")]impl GameUserGlobalData{#[doc="`CreateIdentifier()` overload"]pub fn create_identifier()->u64{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x25118c0usize)as*mut u8,u64;
@@ -126,16 +171,13 @@ this}
 (GameUserGlobalData)__receiver,(crate::app::gamesavedata::GameSaveData_Types)::core::convert::Into::into(r#type),(i32)::core::convert::Into::into(index))}
 }
 #[doc="`get_Version()` overload"]fn get_version(self,)->i32{unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x251baa0usize)as*mut u8,i32;
-(GameUserGlobalData)__receiver)}
+__GameUserGlobalData_unity2_raw::get_version(__receiver, ::core::option::Option::None)}
 }
 #[doc="`OnSerialize(crate::app::stream_2::Stream_2)` overload"]fn on_serialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x251bab0usize)as*mut u8,();
-(GameUserGlobalData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream))}
+__GameUserGlobalData_unity2_raw::on_serialize(__receiver, ::core::convert::Into::into(stream), ::core::option::Option::None)}
 }
 #[doc="`OnDeserialize(crate::app::stream_2::Stream_2, i32)` overload"]fn on_deserialize(self,stream:impl::core::convert::Into<crate::app::stream_2::Stream_2> ,version:impl::core::convert::Into<i32>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x251bcd0usize)as*mut u8,();
-(GameUserGlobalData)__receiver,(crate::app::stream_2::Stream_2)::core::convert::Into::into(stream),(i32)::core::convert::Into::into(version))}
+__GameUserGlobalData_unity2_raw::on_deserialize(__receiver, ::core::convert::Into::into(stream), ::core::convert::Into::into(version), ::core::option::Option::None)}
 }
 #[doc="`set_LastSaveDataType(crate::app::gamesavedata::GameSaveData_Types)` overload"]fn set_last_save_data_type(self,value:impl::core::convert::Into<crate::app::gamesavedata::GameSaveData_Types>)->(){unsafe{let __receiver= <GameUserGlobalData as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x251c3e0usize)as*mut u8,();
@@ -219,13 +261,13 @@ this}
 #[cfg(feature = "app-gameuserglobaldata")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::GameUserGlobalData_Flags;
     pub use super::GameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsField;
     pub use super::IGameUserGlobalData_FlagsFieldMethods;
     pub use super::GameUserGlobalData;
     pub use super::IGameUserGlobalData;
     pub use super::IGameUserGlobalDataMethods;
+    pub use super::GameUserGlobalData_Flags;
     pub use crate::app::bitfield32::IBitField32;
     pub use crate::app::bitfieldcommon::IBitFieldCommon;
     pub use crate::app::bitfieldtemplate32_1::IBitFieldTemplate32_1;

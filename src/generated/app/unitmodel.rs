@@ -21,32 +21,22 @@ use crate::unity_engine::object_2::{IObject_2,Object_2}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel_ColorFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitModel_ColorFlags{pub value:i32,}
-impl::unity2::ClassIdentity for UnitModel_ColorFlags{const NAMESPACE: &'static str="App";
-const NAME: &'static str="UnitModel.ColorFlags";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel_LoadMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitModel_LoadMode{pub value:i32,}
+impl::unity2::ClassIdentity for UnitModel_LoadMode{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitModel.LoadMode";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for UnitModel_ColorFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for UnitModel_LoadMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl UnitModel_ColorFlags{pub fn fixed()->Self{Self{value:1}
+impl UnitModel_LoadMode{pub fn none()->Self{Self{value:0}
 }
-pub fn danager()->Self{Self{value:2}
+pub fn loading()->Self{Self{value:1}
 }
-pub fn enemy()->Self{Self{value:4}
-}
-pub fn ally()->Self{Self{value:8}
-}
-pub fn dirty()->Self{Self{value:16}
+pub fn done()->Self{Self{value:2}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel_ResourceHandle.md"))]#[::unity2::class(namespace="App",name="UnitModel.ResourceHandle")]#[parent(crate::system::object::Object)]pub struct UnitModel_ResourceHandle{#[offset(16)]#[rename(name="BodyPrefab")]pub body_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(24)]#[rename(name="HeadPrefab")]pub head_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(32)]#[rename(name="RidePrefab")]pub ride_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(40)]#[rename(name="LeftHandPrefab")]pub left_hand_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(48)]#[rename(name="RightHandPrefab")]pub right_hand_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(56)]#[rename(name="BodyAnim")]pub body_anim:crate::app::resourceanimatorcontroller::ResourceAnimatorController, #[offset(64)]#[rename(name="RideAnim")]pub ride_anim:crate::app::resourceanimatorcontroller::ResourceAnimatorController, #[offset(72)]#[rename(name="AccPrefabs")]pub acc_prefabs:crate::system::collections::generic::list_1::List_1<crate::app::resourcegameobject::ResourceGameObject> , #[offset(80)]#[rename(name="AccLocators")]pub acc_locators:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel.md"))]#[::unity2::class(namespace="App",name="UnitModel")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitModel{#[offset(24)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(40)]#[rename(name="m_HandleA")]pub m_handle_a:crate::app::unitmodel::UnitModel_ResourceHandle, #[offset(48)]#[rename(name="m_HandleB")]pub m_handle_b:crate::app::unitmodel::UnitModel_ResourceHandle, #[offset(56)]#[rename(name="m_Handle")]pub m_handle:crate::app::unitmodel::UnitModel_ResourceHandle, #[offset(64)]#[rename(name="m_Materials")]pub m_materials:crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material> , #[offset(72)]#[rename(name="m_Renderers")]pub m_renderers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer> , #[offset(80)]#[rename(name="m_HairColor")]pub m_hair_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_SkinColor")]pub m_skin_color:crate::unity_engine::color::Color, #[offset(112)]#[rename(name="m_MaskColor100")]pub m_mask_color100:crate::unity_engine::color::Color, #[offset(128)]#[rename(name="m_MaskColor075")]pub m_mask_color075:crate::unity_engine::color::Color, #[offset(144)]#[rename(name="m_MaskColor050")]pub m_mask_color050:crate::unity_engine::color::Color, #[offset(160)]#[rename(name="m_MaskColor025")]pub m_mask_color025:crate::unity_engine::color::Color, #[offset(176)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_RootScale")]pub m_root_scale:crate::unity_engine::vector3::Vector3, #[offset(196)]#[rename(name="m_WingScale")]pub m_wing_scale:crate::unity_engine::vector3::Vector3, #[offset(208)]#[rename(name="m_LoadMode")]pub m_load_mode:crate::app::unitmodel::UnitModel_LoadMode, #[offset(216)]#[rename(name="m_Joint")]pub m_joint:crate::combat::characterjoint::CharacterJoint, #[offset(224)]#[rename(name="m_ProportionParameters")]pub m_proportion_parameters:crate::combat::proportionparameters::ProportionParameters, #[offset(232)]#[rename(name="m_LeftHandObject")]pub m_left_hand_object:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_RightHandObject")]pub m_right_hand_object:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_SkinQuality")]pub m_skin_quality:crate::unity_engine::skinquality::SkinQuality, #[offset(256)]#[rename(name="m_SkinnedMeshRenderers")]pub m_skinned_mesh_renderers: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer> , #[offset(264)]#[rename(name="m_Animators")]pub m_animators: ::unity2::Array<crate::unity_engine::animator::Animator> , #[offset(272)]#[rename(name="m_PlayAnim")]pub m_play_anim:crate::app::unitanim::UnitAnim_Types, #[offset(276)]#[rename(name="m_IdleAnim")]pub m_idle_anim:crate::app::unitanim::UnitAnim_Types, #[offset(280)]#[rename(name="m_PlayTime")]pub m_play_time:crate::app::unitanim::UnitAnim_Times, #[offset(288)]#[rename(name="m_EquipItem")]pub m_equip_item:crate::app::itemdata::ItemData, #[offset(296)]#[rename(name="m_ForceItem")]pub m_force_item:crate::app::itemdata::ItemData, #[offset(304)]#[rename(name="m_ModelHash")]pub m_model_hash:i32, #[offset(308)]#[rename(name="m_EquipHash")]pub m_equip_hash:i32, #[offset(312)]#[rename(name="m_Speed")]pub m_speed:f32, #[offset(316)]#[rename(name="m_Alpha")]pub m_alpha:f32, #[offset(320)]#[rename(name="m_MapAlpha")]pub m_map_alpha:f32, #[offset(324)]#[rename(name="m_IsVisible")]pub m_is_visible:bool, #[offset(328)]#[rename(name="m_ColorFlags")]pub m_color_flags:crate::app::unitmodel::UnitModel_ColorFlags, #[offset(332)]#[rename(name="m_DirtyFlags")]pub m_dirty_flags:crate::app::unitmodel::UnitModel_DirtyFlags, #[offset(336)]#[rename(name="m_InterpolatorShine")]pub m_interpolator_shine:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(344)]#[rename(name="m_InterpolatorFader")]pub m_interpolator_fader:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(352)]#[rename(name="m_InterpolatorGoder")]pub m_interpolator_goder:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(360)]#[rename(name="m_Head")]pub m_head:crate::unity_engine::gameobject::GameObject, #[offset(368)]#[rename(name="m_Body")]pub m_body:crate::unity_engine::gameobject::GameObject, #[offset(376)]#[rename(name="m_Ride")]pub m_ride:crate::unity_engine::gameobject::GameObject, #[offset(384)]#[rename(name="m_WingL")]pub m_wing_l:crate::unity_engine::transform::Transform, #[offset(392)]#[rename(name="m_WingR")]pub m_wing_r:crate::unity_engine::transform::Transform, #[offset(400)]#[rename(name="m_Trans")]pub m_trans:crate::unity_engine::transform::Transform, #[offset(408)]#[rename(name="m_Sound")]pub m_sound:crate::app::assettable::AssetTable_Sound,}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel_DirtyFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitModel_DirtyFlags{pub value:i32,}
@@ -73,64 +63,49 @@ pub fn bright()->Self{Self{value:32}
 }
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel_LoadMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitModel_LoadMode{pub value:i32,}
-impl::unity2::ClassIdentity for UnitModel_LoadMode{const NAMESPACE: &'static str="App";
-const NAME: &'static str="UnitModel.LoadMode";
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel.md"))]#[::unity2::class(namespace="App",name="UnitModel")]#[parent(crate::unity_engine::monobehaviour::MonoBehaviour)]pub struct UnitModel{#[offset(24)]#[rename(name="m_Unit")]pub m_unit:crate::app::unit::Unit, #[offset(32)]#[rename(name="m_GodUnit")]pub m_god_unit:crate::app::godunit::GodUnit, #[offset(40)]#[rename(name="m_HandleA")]pub m_handle_a:crate::app::unitmodel::UnitModel_ResourceHandle, #[offset(48)]#[rename(name="m_HandleB")]pub m_handle_b:crate::app::unitmodel::UnitModel_ResourceHandle, #[offset(56)]#[rename(name="m_Handle")]pub m_handle:crate::app::unitmodel::UnitModel_ResourceHandle, #[offset(64)]#[rename(name="m_Materials")]pub m_materials:crate::system::collections::generic::list_1::List_1<crate::unity_engine::material::Material> , #[offset(72)]#[rename(name="m_Renderers")]pub m_renderers:crate::system::collections::generic::list_1::List_1<crate::unity_engine::renderer::Renderer> , #[offset(80)]#[rename(name="m_HairColor")]pub m_hair_color:crate::unity_engine::color::Color, #[offset(96)]#[rename(name="m_SkinColor")]pub m_skin_color:crate::unity_engine::color::Color, #[offset(112)]#[rename(name="m_MaskColor100")]pub m_mask_color100:crate::unity_engine::color::Color, #[offset(128)]#[rename(name="m_MaskColor075")]pub m_mask_color075:crate::unity_engine::color::Color, #[offset(144)]#[rename(name="m_MaskColor050")]pub m_mask_color050:crate::unity_engine::color::Color, #[offset(160)]#[rename(name="m_MaskColor025")]pub m_mask_color025:crate::unity_engine::color::Color, #[offset(176)]#[rename(name="m_Root")]pub m_root:crate::unity_engine::gameobject::GameObject, #[offset(184)]#[rename(name="m_RootScale")]pub m_root_scale:crate::unity_engine::vector3::Vector3, #[offset(196)]#[rename(name="m_WingScale")]pub m_wing_scale:crate::unity_engine::vector3::Vector3, #[offset(208)]#[rename(name="m_LoadMode")]pub m_load_mode:crate::app::unitmodel::UnitModel_LoadMode, #[offset(216)]#[rename(name="m_Joint")]pub m_joint:crate::combat::characterjoint::CharacterJoint, #[offset(224)]#[rename(name="m_ProportionParameters")]pub m_proportion_parameters:crate::combat::proportionparameters::ProportionParameters, #[offset(232)]#[rename(name="m_LeftHandObject")]pub m_left_hand_object:crate::unity_engine::gameobject::GameObject, #[offset(240)]#[rename(name="m_RightHandObject")]pub m_right_hand_object:crate::unity_engine::gameobject::GameObject, #[offset(248)]#[rename(name="m_SkinQuality")]pub m_skin_quality:crate::unity_engine::skinquality::SkinQuality, #[offset(256)]#[rename(name="m_SkinnedMeshRenderers")]pub m_skinned_mesh_renderers: ::unity2::Array<crate::unity_engine::skinnedmeshrenderer::SkinnedMeshRenderer> , #[offset(264)]#[rename(name="m_Animators")]pub m_animators: ::unity2::Array<crate::unity_engine::animator::Animator> , #[offset(272)]#[rename(name="m_PlayAnim")]pub m_play_anim:crate::app::unitanim::UnitAnim_Types, #[offset(276)]#[rename(name="m_IdleAnim")]pub m_idle_anim:crate::app::unitanim::UnitAnim_Types, #[offset(280)]#[rename(name="m_PlayTime")]pub m_play_time:crate::app::unitanim::UnitAnim_Times, #[offset(288)]#[rename(name="m_EquipItem")]pub m_equip_item:crate::app::itemdata::ItemData, #[offset(296)]#[rename(name="m_ForceItem")]pub m_force_item:crate::app::itemdata::ItemData, #[offset(304)]#[rename(name="m_ModelHash")]pub m_model_hash:i32, #[offset(308)]#[rename(name="m_EquipHash")]pub m_equip_hash:i32, #[offset(312)]#[rename(name="m_Speed")]pub m_speed:f32, #[offset(316)]#[rename(name="m_Alpha")]pub m_alpha:f32, #[offset(320)]#[rename(name="m_MapAlpha")]pub m_map_alpha:f32, #[offset(324)]#[rename(name="m_IsVisible")]pub m_is_visible:bool, #[offset(328)]#[rename(name="m_ColorFlags")]pub m_color_flags:crate::app::unitmodel::UnitModel_ColorFlags, #[offset(332)]#[rename(name="m_DirtyFlags")]pub m_dirty_flags:crate::app::unitmodel::UnitModel_DirtyFlags, #[offset(336)]#[rename(name="m_InterpolatorShine")]pub m_interpolator_shine:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(344)]#[rename(name="m_InterpolatorFader")]pub m_interpolator_fader:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(352)]#[rename(name="m_InterpolatorGoder")]pub m_interpolator_goder:crate::app::interpolatorfloat::InterpolatorFloat, #[offset(360)]#[rename(name="m_Head")]pub m_head:crate::unity_engine::gameobject::GameObject, #[offset(368)]#[rename(name="m_Body")]pub m_body:crate::unity_engine::gameobject::GameObject, #[offset(376)]#[rename(name="m_Ride")]pub m_ride:crate::unity_engine::gameobject::GameObject, #[offset(384)]#[rename(name="m_WingL")]pub m_wing_l:crate::unity_engine::transform::Transform, #[offset(392)]#[rename(name="m_WingR")]pub m_wing_r:crate::unity_engine::transform::Transform, #[offset(400)]#[rename(name="m_Trans")]pub m_trans:crate::unity_engine::transform::Transform, #[offset(408)]#[rename(name="m_Sound")]pub m_sound:crate::app::assettable::AssetTable_Sound,}
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel_ColorFlags.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct UnitModel_ColorFlags{pub value:i32,}
+impl::unity2::ClassIdentity for UnitModel_ColorFlags{const NAMESPACE: &'static str="App";
+const NAME: &'static str="UnitModel.ColorFlags";
 fn class()-> ::unity2::Class{static CACHE: ::std::sync::OnceLock<::unity2::Class> = ::std::sync::OnceLock::new();
  *CACHE.get_or_init(||{::unity2::Class::lookup(Self::NAMESPACE,Self::NAME)}
 )}
 }
-impl::unity2::IlType for UnitModel_LoadMode{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
+impl::unity2::IlType for UnitModel_ColorFlags{fn il_type()-> &'static::unity2::il2cpp::Il2CppType{&<Self as::unity2::ClassIdentity>::class().raw()._1.byval_arg}
 }
-impl UnitModel_LoadMode{pub fn none()->Self{Self{value:0}
+impl UnitModel_ColorFlags{pub fn fixed()->Self{Self{value:1}
 }
-pub fn loading()->Self{Self{value:1}
+pub fn danager()->Self{Self{value:2}
 }
-pub fn done()->Self{Self{value:2}
+pub fn enemy()->Self{Self{value:4}
+}
+pub fn ally()->Self{Self{value:8}
+}
+pub fn dirty()->Self{Self{value:16}
 }
 }
+
+
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/app/unitmodel/UnitModel_ResourceHandle.md"))]#[::unity2::class(namespace="App",name="UnitModel.ResourceHandle")]#[parent(crate::system::object::Object)]pub struct UnitModel_ResourceHandle{#[offset(16)]#[rename(name="BodyPrefab")]pub body_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(24)]#[rename(name="HeadPrefab")]pub head_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(32)]#[rename(name="RidePrefab")]pub ride_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(40)]#[rename(name="LeftHandPrefab")]pub left_hand_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(48)]#[rename(name="RightHandPrefab")]pub right_hand_prefab:crate::app::resourcegameobject::ResourceGameObject, #[offset(56)]#[rename(name="BodyAnim")]pub body_anim:crate::app::resourceanimatorcontroller::ResourceAnimatorController, #[offset(64)]#[rename(name="RideAnim")]pub ride_anim:crate::app::resourceanimatorcontroller::ResourceAnimatorController, #[offset(72)]#[rename(name="AccPrefabs")]pub acc_prefabs:crate::system::collections::generic::list_1::List_1<crate::app::resourcegameobject::ResourceGameObject> , #[offset(80)]#[rename(name="AccLocators")]pub acc_locators:crate::system::collections::generic::list_1::List_1< ::unity2::Il2CppString> ,}
 
 }
 
 #[cfg(feature = "app-unitmodel-types")]
 pub use __types::*;
 
-#[cfg(feature="app-unitmodel")]pub trait IUnitModel_ResourceHandleMethods:IUnitModel_ResourceHandle{#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53510usize)as*mut u8,();
-(UnitModel_ResourceHandle)__receiver)}
-}
-#[doc="`LoadAsync(crate::app::assettable::AssetTable_Result)` overload"]fn load_async(self,result:impl::core::convert::Into<crate::app::assettable::AssetTable_Result>)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53660usize)as*mut u8,();
-(UnitModel_ResourceHandle)__receiver,(crate::app::assettable::AssetTable_Result)::core::convert::Into::into(result))}
-}
-#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53ef0usize)as*mut u8,bool;
-(UnitModel_ResourceHandle)__receiver)}
-}
-#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53520usize)as*mut u8,();
-(UnitModel_ResourceHandle)__receiver)}
-}
-#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1b54060usize)as*mut u8,();
-(UnitModel_ResourceHandle)__receiver)}
-}
-}
-
-#[cfg(feature="app-unitmodel")]impl<__T:IUnitModel_ResourceHandle>IUnitModel_ResourceHandleMethods for __T{}
-
-#[cfg(feature="app-unitmodel")]impl UnitModel_ResourceHandle{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
-pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
-pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
-pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
-}
-
-#[cfg(feature="app-unitmodel")]impl UnitModel_ResourceHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
-::{}
- failed to instantiate", ::core::stringify!(UnitModel_ResourceHandle), ::core::stringify!(new),));
- <Self as IUnitModel_ResourceHandleMethods> ::ctor(this,);
-this}
+#[cfg(feature="app-unitmodel")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitModel_unity2_raw{use super:: * ;
+pub unsafe fn on_game_color_validate(this:UnitModel,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnitModel as::unity2::ClassIdentity> ::NAME,"OnGameColorValidate",));
+let inner:extern "C" fn(UnitModel, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
 }
 
 #[cfg(feature="app-unitmodel")]impl UnitModel{#[doc="`Create(::unity2::Il2CppString, crate::app::unit::Unit, crate::app::godunit::GodUnit, crate::unity_engine::gameobject::GameObject)` overload"]pub fn create(name:impl::core::convert::Into< ::unity2::Il2CppString> ,unit:impl::core::convert::Into<crate::app::unit::Unit> ,god_unit:impl::core::convert::Into<crate::app::godunit::GodUnit> ,parent:impl::core::convert::Into<crate::unity_engine::gameobject::GameObject>)->crate::app::unitmodel::UnitModel{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x1fbb490usize)as*mut u8,crate::app::unitmodel::UnitModel;
@@ -429,8 +404,7 @@ let __ret={::unity2::il2cpp_call!((::unity2::module_base()+0x1fbea70usize)as*mut
 (UnitModel)__receiver)}
 }
 #[doc="`OnGameColorValidate()` overload"]fn on_game_color_validate(self,)->(){unsafe{let __receiver= <UnitModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc09b0usize)as*mut u8,();
-(UnitModel)__receiver)}
+__UnitModel_unity2_raw::on_game_color_validate(__receiver, ::core::option::Option::None)}
 }
 #[doc="`GetEffectPosition()` overload"]fn get_effect_position(self,)->crate::unity_engine::vector3::Vector3{unsafe{let __receiver= <UnitModel as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x1fc09c0usize)as*mut u8,crate::unity_engine::vector3::Vector3;
@@ -526,18 +500,68 @@ pub fn get_effect_position_method_info()-> & 'static::unity2::il2cpp::MethodInfo
 this}
 }
 
+#[cfg(feature="app-unitmodel")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __UnitModel_ResourceHandle_unity2_raw{use super:: * ;
+pub unsafe fn dispose(this:UnitModel_ResourceHandle,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <UnitModel_ResourceHandle as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(UnitModel_ResourceHandle, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
+#[cfg(feature="app-unitmodel")]pub trait IUnitModel_ResourceHandleMethods:IUnitModel_ResourceHandle{#[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+__UnitModel_ResourceHandle_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
+}
+#[doc="`LoadAsync(crate::app::assettable::AssetTable_Result)` overload"]fn load_async(self,result:impl::core::convert::Into<crate::app::assettable::AssetTable_Result>)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53660usize)as*mut u8,();
+(UnitModel_ResourceHandle)__receiver,(crate::app::assettable::AssetTable_Result)::core::convert::Into::into(result))}
+}
+#[doc="`IsLoading()` overload"]fn is_loading(self,)->bool{unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53ef0usize)as*mut u8,bool;
+(UnitModel_ResourceHandle)__receiver)}
+}
+#[doc="`Release()` overload"]fn release(self,)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b53520usize)as*mut u8,();
+(UnitModel_ResourceHandle)__receiver)}
+}
+#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <UnitModel_ResourceHandle as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
+ ::unity2::il2cpp_call!((::unity2::module_base()+0x1b54060usize)as*mut u8,();
+(UnitModel_ResourceHandle)__receiver)}
+}
+}
+
+#[cfg(feature="app-unitmodel")]impl<__T:IUnitModel_ResourceHandle>IUnitModel_ResourceHandleMethods for __T{}
+
+#[cfg(feature="app-unitmodel")]impl UnitModel_ResourceHandle{pub fn dispose_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+pub fn load_async_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[1]}
+pub fn is_loading_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[2]}
+pub fn release_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
+pub fn ctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[4]}
+}
+
+#[cfg(feature="app-unitmodel")]impl UnitModel_ResourceHandle{#[doc="`.ctor()` — no args"]pub fn new()->Self{let this= <Self as::unity2::FromIlInstance> ::instantiate().unwrap_or_else(||panic!("{}
+::{}
+ failed to instantiate", ::core::stringify!(UnitModel_ResourceHandle), ::core::stringify!(new),));
+ <Self as IUnitModel_ResourceHandleMethods> ::ctor(this,);
+this}
+}
+
 #[cfg(feature = "app-unitmodel")]
 #[doc(hidden)]
 pub mod prelude {
+    pub use super::UnitModel_LoadMode;
+    pub use super::UnitModel_DirtyFlags;
+    pub use super::UnitModel;
+    pub use super::IUnitModel;
+    pub use super::IUnitModelMethods;
     pub use super::UnitModel_ColorFlags;
     pub use super::UnitModel_ResourceHandle;
     pub use super::IUnitModel_ResourceHandle;
     pub use super::IUnitModel_ResourceHandleMethods;
-    pub use super::UnitModel;
-    pub use super::IUnitModel;
-    pub use super::IUnitModelMethods;
-    pub use super::UnitModel_DirtyFlags;
-    pub use super::UnitModel_LoadMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;
     pub use crate::system::valuetype::IValueType;

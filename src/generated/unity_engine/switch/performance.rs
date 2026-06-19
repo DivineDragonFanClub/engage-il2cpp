@@ -13,7 +13,7 @@ use crate::system::valuetype::{IValueType,ValueType}
 ;
 
 
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/performance/Performance.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Performance")]#[parent(crate::system::object::Object)]pub struct Performance{}
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/performance/Performance_Debug.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Performance.Debug")]#[parent(crate::system::object::Object)]pub struct Performance_Debug{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/performance/Performance_PerformanceMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Performance_PerformanceMode{pub value:i32,}
@@ -32,9 +32,6 @@ pub fn normal()->Self{Self{value:0}
 pub fn boost()->Self{Self{value:1}
 }
 }
-
-
-#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/performance/Performance_Debug.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Performance.Debug")]#[parent(crate::system::object::Object)]pub struct Performance_Debug{}
 
 
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/performance/Performance_Debug_HudMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Performance_Debug_HudMode{pub value:i32,}
@@ -57,6 +54,9 @@ pub fn gpu_counters()->Self{Self{value:3}
 }
 
 
+#[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/performance/Performance.md"))]#[::unity2::class(namespace="UnityEngine.Switch",name="Performance")]#[parent(crate::system::object::Object)]pub struct Performance{}
+
+
 #[doc=include_str!(concat!(env!("CARGO_MANIFEST_DIR"),"/","docs/unity_engine/switch/performance/Performance_CpuBoostMode.md"))]#[repr(C)]#[derive(::core::clone::Clone, ::core::marker::Copy, ::core::fmt::Debug, ::core::cmp::PartialEq, ::core::cmp::Eq)]pub struct Performance_CpuBoostMode{pub value:i32,}
 impl::unity2::ClassIdentity for Performance_CpuBoostMode{const NAMESPACE: &'static str="UnityEngine.Switch";
 const NAME: &'static str="Performance.CpuBoostMode";
@@ -76,6 +76,14 @@ pub fn fast_load()->Self{Self{value:1}
 
 #[cfg(feature = "unity_engine-switch-performance-types")]
 pub use __types::*;
+
+#[cfg(feature="unity_engine-switch-performance")]impl Performance_Debug{#[doc="`SetHUDMode(crate::unity_engine::switch::performance::Performance_Debug_HudMode)` overload"]pub fn set_hud_mode(mode:impl::core::convert::Into<crate::unity_engine::switch::performance::Performance_Debug_HudMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f41e10usize)as*mut u8,();
+(crate::unity_engine::switch::performance::Performance_Debug_HudMode)::core::convert::Into::into(mode))}
+}
+}
+
+#[cfg(feature="unity_engine-switch-performance")]impl Performance_Debug{pub fn set_hud_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
+}
 
 #[cfg(feature="unity_engine-switch-performance")]impl Performance{#[doc="`SetCpuBoostMode(crate::unity_engine::switch::performance::Performance_CpuBoostMode)` overload"]pub fn set_cpu_boost_mode(mode:impl::core::convert::Into<crate::unity_engine::switch::performance::Performance_CpuBoostMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f418c0usize)as*mut u8,();
 (crate::unity_engine::switch::performance::Performance_CpuBoostMode)::core::convert::Into::into(mode))}
@@ -97,23 +105,15 @@ pub fn get_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::
 pub fn get_mode_internal_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[3]}
 }
 
-#[cfg(feature="unity_engine-switch-performance")]impl Performance_Debug{#[doc="`SetHUDMode(crate::unity_engine::switch::performance::Performance_Debug_HudMode)` overload"]pub fn set_hud_mode(mode:impl::core::convert::Into<crate::unity_engine::switch::performance::Performance_Debug_HudMode>)->(){unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x3f41e10usize)as*mut u8,();
-(crate::unity_engine::switch::performance::Performance_Debug_HudMode)::core::convert::Into::into(mode))}
-}
-}
-
-#[cfg(feature="unity_engine-switch-performance")]impl Performance_Debug{pub fn set_hud_mode_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::unity2::ClassIdentity> ::class().raw().get_methods()[0]}
-}
-
 #[cfg(feature = "unity_engine-switch-performance")]
 #[doc(hidden)]
 pub mod prelude {
-    pub use super::Performance;
-    pub use super::IPerformance;
-    pub use super::Performance_PerformanceMode;
     pub use super::Performance_Debug;
     pub use super::IPerformance_Debug;
+    pub use super::Performance_PerformanceMode;
     pub use super::Performance_Debug_HudMode;
+    pub use super::Performance;
+    pub use super::IPerformance;
     pub use super::Performance_CpuBoostMode;
     pub use crate::system::object::IObject;
     pub use crate::system::r#enum::IEnum;

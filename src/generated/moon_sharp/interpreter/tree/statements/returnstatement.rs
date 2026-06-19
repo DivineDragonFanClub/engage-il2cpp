@@ -41,16 +41,16 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 ", <ReturnStatement as::unity2::ClassIdentity> ::NAME,".ctor",e),}
 }
 }
-#[doc(hidden)]#[allow(non_snake_case)]pub mod __lookup_compile{use super:: * ;
-static METHOD: ::std::sync::LazyLock< ::unity2::Il2CppResult< & 'static::unity2::il2cpp::MethodInfo> , > = ::std::sync::LazyLock::new(||{let param_types: &[& 'static::unity2::il2cpp::Il2CppType]= &[<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode as::unity2::IlType> ::il_type()];
- ::unity2::lookup::method_info_on_class_with_signature(<ReturnStatement as::unity2::ClassIdentity> ::class(),"Compile",1,param_types,false,)}
-);
-pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{::core::result::Result::Ok(mi)=> *mi, ::core::result::Result::Err(e)=>panic!("method lookup failed: {}
-::{}
-: {}
-", <ReturnStatement as::unity2::ClassIdentity> ::NAME,"Compile",e),}
-}
-}
+pub unsafe fn compile(this:ReturnStatement,bc:crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <ReturnStatement as::unity2::ClassIdentity> ::NAME,"Compile",));
+let inner:extern "C" fn(ReturnStatement,crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,bc,__mi)}
 }
 
 #[cfg(feature="moon_sharp-interpreter-tree-statements-returnstatement")]pub trait IReturnStatementMethods:IReturnStatement{#[doc="`.ctor(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext, crate::moon_sharp::interpreter::tree::expression::Expression, crate::moon_sharp::interpreter::debugging::sourceref::SourceRef)` overload"]fn ctor(self,lcontext:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext> ,e:impl::core::convert::Into<crate::moon_sharp::interpreter::tree::expression::Expression> ,sref:impl::core::convert::Into<crate::moon_sharp::interpreter::debugging::sourceref::SourceRef>)->(){unsafe{let __receiver= <ReturnStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
@@ -62,8 +62,7 @@ pub fn get_method_info()-> & 'static::unity2::il2cpp::MethodInfo{match& *METHOD{
 (ReturnStatement)__receiver,(crate::moon_sharp::interpreter::execution::scriptloadingcontext::ScriptLoadingContext)::core::convert::Into::into(lcontext))}
 }
 #[doc="`Compile(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)` overload"]fn compile(self,bc:impl::core::convert::Into<crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode>)->(){unsafe{let __receiver= <ReturnStatement as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!(__ReturnStatement_unity2_raw::__lookup_compile::get_method_info().method_ptr,();
-(ReturnStatement)__receiver,(crate::moon_sharp::interpreter::execution::vm::bytecode::ByteCode)::core::convert::Into::into(bc))}
+__ReturnStatement_unity2_raw::compile(__receiver, ::core::convert::Into::into(bc), ::core::option::Option::None)}
 }
 }
 

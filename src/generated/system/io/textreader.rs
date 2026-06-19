@@ -22,6 +22,99 @@ use crate::system::object::{IObject,Object}
 #[cfg(feature = "system-io-textreader-types")]
 pub use __types::*;
 
+#[cfg(feature="system-io-textreader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextReader_unity2_raw{use super:: * ;
+pub unsafe fn close(this:TextReader,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"Close",));
+let inner:extern "C" fn(TextReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:TextReader,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(6usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",6usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(TextReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose_2(this:TextReader,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(TextReader,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn peek(this:TextReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"Peek",));
+let inner:extern "C" fn(TextReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read(this:TextReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(TextReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_2(this:TextReader,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(TextReader, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn read_to_end(this:TextReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"ReadToEnd",));
+let inner:extern "C" fn(TextReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_block(this:TextReader,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"ReadBlock",));
+let inner:extern "C" fn(TextReader, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn read_line(this:TextReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <TextReader as::unity2::ClassIdentity> ::NAME,"ReadLine",));
+let inner:extern "C" fn(TextReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-io-textreader")]impl TextReader{#[doc="`Synchronized(crate::system::io::textreader::TextReader)` overload"]pub fn synchronized(reader:impl::core::convert::Into<crate::system::io::textreader::TextReader>)->crate::system::io::textreader::TextReader{unsafe{::unity2::il2cpp_call!((::unity2::module_base()+0x34e10b0usize)as*mut u8,crate::system::io::textreader::TextReader;
 (crate::system::io::textreader::TextReader)::core::convert::Into::into(reader))}
 }
@@ -35,40 +128,31 @@ pub use __types::*;
 (TextReader)__receiver)}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0b40usize)as*mut u8,();
-(TextReader)__receiver)}
+__TextReader_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose()` overload"]fn dispose(self,)->(){unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0bc0usize)as*mut u8,();
-(TextReader)__receiver)}
+__TextReader_unity2_raw::dispose(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose_2(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0c40usize)as*mut u8,();
-(TextReader)__receiver,(bool)::core::convert::Into::into(disposing))}
+__TextReader_unity2_raw::dispose_2(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0c50usize)as*mut u8,i32;
-(TextReader)__receiver)}
+__TextReader_unity2_raw::peek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0c60usize)as*mut u8,i32;
-(TextReader)__receiver)}
+__TextReader_unity2_raw::read(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0c70usize)as*mut u8,i32;
-(TextReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__TextReader_unity2_raw::read_2(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0e50usize)as*mut u8, ::unity2::Il2CppString;
-(TextReader)__receiver)}
+__TextReader_unity2_raw::read_to_end(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadBlock(::unity2::Array<u16>, i32, i32)` overload"]fn read_block(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0f40usize)as*mut u8,i32;
-(TextReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__TextReader_unity2_raw::read_block(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x34e0fb0usize)as*mut u8, ::unity2::Il2CppString;
-(TextReader)__receiver)}
+__TextReader_unity2_raw::read_line(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -95,17 +179,38 @@ pub fn cctor_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as::uni
 this}
 }
 
+#[cfg(feature="system-io-textreader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextReader_NullTextReader_unity2_raw{use super:: * ;
+pub unsafe fn read(this:TextReader_NullTextReader,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TextReader_NullTextReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(TextReader_NullTextReader, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn read_line(this:TextReader_NullTextReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <TextReader_NullTextReader as::unity2::ClassIdentity> ::NAME,"ReadLine",));
+let inner:extern "C" fn(TextReader_NullTextReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-io-textreader")]pub trait ITextReader_NullTextReaderMethods:ITextReader_NullTextReader{#[doc="`.ctor()` overload"]fn ctor(self,)->(){unsafe{let __receiver= <TextReader_NullTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a6e0usize)as*mut u8,();
 (TextReader_NullTextReader)__receiver)}
 }
 #[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <TextReader_NullTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a750usize)as*mut u8,i32;
-(TextReader_NullTextReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__TextReader_NullTextReader_unity2_raw::read(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextReader_NullTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a760usize)as*mut u8, ::unity2::Il2CppString;
-(TextReader_NullTextReader)__receiver)}
+__TextReader_NullTextReader_unity2_raw::read_line(__receiver, ::core::option::Option::None)}
 }
 }
 
@@ -123,41 +228,116 @@ pub fn read_line_method_info()-> & 'static::unity2::il2cpp::MethodInfo{<Self as:
 this}
 }
 
+#[cfg(feature="system-io-textreader")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __TextReader_SyncTextReader_unity2_raw{use super:: * ;
+pub unsafe fn close(this:TextReader_SyncTextReader,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(7usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",7usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"Close",));
+let inner:extern "C" fn(TextReader_SyncTextReader, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn dispose(this:TextReader_SyncTextReader,disposing:bool,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(8usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",8usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"Dispose",));
+let inner:extern "C" fn(TextReader_SyncTextReader,bool, ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,disposing,__mi)}
+pub unsafe fn peek(this:TextReader_SyncTextReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(9usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",9usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"Peek",));
+let inner:extern "C" fn(TextReader_SyncTextReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read(this:TextReader_SyncTextReader,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(10usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",10usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(TextReader_SyncTextReader, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_2(this:TextReader_SyncTextReader,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(11usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",11usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"Read",));
+let inner:extern "C" fn(TextReader_SyncTextReader, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn read_block(this:TextReader_SyncTextReader,buffer: ::unity2::Array<u16> ,index:i32,count:i32,__unity2_method_info: ::unity2::OptionalMethod,)->i32{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(13usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",13usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"ReadBlock",));
+let inner:extern "C" fn(TextReader_SyncTextReader, ::unity2::Array<u16> ,i32,i32, ::unity2::OptionalMethod,)->i32= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,buffer,index,count,__mi)}
+pub unsafe fn read_line(this:TextReader_SyncTextReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(14usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",14usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"ReadLine",));
+let inner:extern "C" fn(TextReader_SyncTextReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+pub unsafe fn read_to_end(this:TextReader_SyncTextReader,__unity2_method_info: ::unity2::OptionalMethod,)-> ::unity2::Il2CppString{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(12usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",12usize,__vt.len(), <TextReader_SyncTextReader as::unity2::ClassIdentity> ::NAME,"ReadToEnd",));
+let inner:extern "C" fn(TextReader_SyncTextReader, ::unity2::OptionalMethod,)-> ::unity2::Il2CppString= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,__mi)}
+}
+
 #[cfg(feature="system-io-textreader")]pub trait ITextReader_SyncTextReaderMethods:ITextReader_SyncTextReader{#[doc="`.ctor(crate::system::io::textreader::TextReader)` overload"]fn ctor(self,t:impl::core::convert::Into<crate::system::io::textreader::TextReader>)->(){unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a770usize)as*mut u8,();
 (TextReader_SyncTextReader)__receiver,(crate::system::io::textreader::TextReader)::core::convert::Into::into(t))}
 }
 #[doc="`Close()` overload"]fn close(self,)->(){unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a7f0usize)as*mut u8,();
-(TextReader_SyncTextReader)__receiver)}
+__TextReader_SyncTextReader_unity2_raw::close(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Dispose(bool)` overload"]fn dispose(self,disposing:impl::core::convert::Into<bool>)->(){unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a800usize)as*mut u8,();
-(TextReader_SyncTextReader)__receiver,(bool)::core::convert::Into::into(disposing))}
+__TextReader_SyncTextReader_unity2_raw::dispose(__receiver, ::core::convert::Into::into(disposing), ::core::option::Option::None)}
 }
 #[doc="`Peek()` overload"]fn peek(self,)->i32{unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a8c0usize)as*mut u8,i32;
-(TextReader_SyncTextReader)__receiver)}
+__TextReader_SyncTextReader_unity2_raw::peek(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Read()` overload"]fn read(self,)->i32{unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a8d0usize)as*mut u8,i32;
-(TextReader_SyncTextReader)__receiver)}
+__TextReader_SyncTextReader_unity2_raw::read(__receiver, ::core::option::Option::None)}
 }
 #[doc="`Read(::unity2::Array<u16>, i32, i32)` overload"]fn read_2(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a8e0usize)as*mut u8,i32;
-(TextReader_SyncTextReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__TextReader_SyncTextReader_unity2_raw::read_2(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadBlock(::unity2::Array<u16>, i32, i32)` overload"]fn read_block(self,buffer:impl::core::convert::Into< ::unity2::Array<u16> > ,index:impl::core::convert::Into<i32> ,count:impl::core::convert::Into<i32>)->i32{unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a8f0usize)as*mut u8,i32;
-(TextReader_SyncTextReader)__receiver,(::unity2::Array<u16>)::core::convert::Into::into(buffer),(i32)::core::convert::Into::into(index),(i32)::core::convert::Into::into(count))}
+__TextReader_SyncTextReader_unity2_raw::read_block(__receiver, ::core::convert::Into::into(buffer), ::core::convert::Into::into(index), ::core::convert::Into::into(count), ::core::option::Option::None)}
 }
 #[doc="`ReadLine()` overload"]fn read_line(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a910usize)as*mut u8, ::unity2::Il2CppString;
-(TextReader_SyncTextReader)__receiver)}
+__TextReader_SyncTextReader_unity2_raw::read_line(__receiver, ::core::option::Option::None)}
 }
 #[doc="`ReadToEnd()` overload"]fn read_to_end(self,)-> ::unity2::Il2CppString{unsafe{let __receiver= <TextReader_SyncTextReader as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x3c5a930usize)as*mut u8, ::unity2::Il2CppString;
-(TextReader_SyncTextReader)__receiver)}
+__TextReader_SyncTextReader_unity2_raw::read_to_end(__receiver, ::core::option::Option::None)}
 }
 }
 

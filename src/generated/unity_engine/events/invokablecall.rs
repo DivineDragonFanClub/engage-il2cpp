@@ -18,6 +18,29 @@ use crate::unity_engine::events::baseinvokablecall::{BaseInvokableCall,IBaseInvo
 #[cfg(feature = "unity_engine-events-invokablecall-types")]
 pub use __types::*;
 
+#[cfg(feature="unity_engine-events-invokablecall")]#[doc(hidden)]#[allow(non_snake_case,non_camel_case_types,clippy::too_many_arguments)]mod __InvokableCall_unity2_raw{use super:: * ;
+pub unsafe fn invoke(this:InvokableCall,args: ::unity2::Array<crate::system::object::Object> ,__unity2_method_info: ::unity2::OptionalMethod,)->(){let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(4usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",4usize,__vt.len(), <InvokableCall as::unity2::ClassIdentity> ::NAME,"Invoke",));
+let inner:extern "C" fn(InvokableCall, ::unity2::Array<crate::system::object::Object> , ::unity2::OptionalMethod,)->()= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,args,__mi)}
+pub unsafe fn find(this:InvokableCall,target_obj:crate::system::object::Object,method:crate::system::reflection::methodinfo::MethodInfo,__unity2_method_info: ::unity2::OptionalMethod,)->bool{let __vt= ::unity2::Cast::get_class(this).raw().get_vtable();
+let __vi= *__vt.get(5usize).unwrap_or_else(||panic!("unity2: virtual slot {}
+ out of range (vtable len {}
+) on the runtime class behind {}
+ (method `{}
+`)",5usize,__vt.len(), <InvokableCall as::unity2::ClassIdentity> ::NAME,"Find",));
+let inner:extern "C" fn(InvokableCall,crate::system::object::Object,crate::system::reflection::methodinfo::MethodInfo, ::unity2::OptionalMethod,)->bool= ::core::mem::transmute(__vi.method_ptr);
+let _=__unity2_method_info;
+let __mi: ::unity2::OptionalMethod= ::core::option::Option::Some(& *(__vi.method_info as*const::unity2::MethodInfo as*const()),);
+inner(this,target_obj,method,__mi)}
+}
+
 #[cfg(feature="unity_engine-events-invokablecall")]pub trait IInvokableCallMethods:IInvokableCall{#[doc="`add_Delegate(crate::unity_engine::events::unityaction::UnityAction)` overload"]fn add_delegate(self,value:impl::core::convert::Into<crate::unity_engine::events::unityaction::UnityAction>)->(){unsafe{let __receiver= <InvokableCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c515b0usize)as*mut u8,();
 (InvokableCall)__receiver,(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(value))}
@@ -35,16 +58,14 @@ pub use __types::*;
 (InvokableCall)__receiver,(crate::unity_engine::events::unityaction::UnityAction)::core::convert::Into::into(action))}
 }
 #[doc="`Invoke(::unity2::Array<crate::system::object::Object>)` overload"]fn invoke(self,args:impl::core::convert::Into< ::unity2::Array<crate::system::object::Object> >)->(){unsafe{let __receiver= <InvokableCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51920usize)as*mut u8,();
-(InvokableCall)__receiver,(::unity2::Array<crate::system::object::Object>)::core::convert::Into::into(args))}
+__InvokableCall_unity2_raw::invoke(__receiver, ::core::convert::Into::into(args), ::core::option::Option::None)}
 }
 #[doc="`Invoke()` overload"]fn invoke_2(self,)->(){unsafe{let __receiver= <InvokableCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
  ::unity2::il2cpp_call!((::unity2::module_base()+0x2c519f0usize)as*mut u8,();
 (InvokableCall)__receiver)}
 }
 #[doc="`Find(crate::system::object::Object, crate::system::reflection::methodinfo::MethodInfo)` overload"]fn find(self,target_obj:impl::core::convert::Into<crate::system::object::Object> ,method:impl::core::convert::Into<crate::system::reflection::methodinfo::MethodInfo>)->bool{unsafe{let __receiver= <InvokableCall as::unity2::FromIlInstance> ::from_il_instance(<Self as::unity2::SystemObject> ::as_instance(self),);
- ::unity2::il2cpp_call!((::unity2::module_base()+0x2c51ac0usize)as*mut u8,bool;
-(InvokableCall)__receiver,(crate::system::object::Object)::core::convert::Into::into(target_obj),(crate::system::reflection::methodinfo::MethodInfo)::core::convert::Into::into(method))}
+__InvokableCall_unity2_raw::find(__receiver, ::core::convert::Into::into(target_obj), ::core::convert::Into::into(method), ::core::option::Option::None)}
 }
 }
 
